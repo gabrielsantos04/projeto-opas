@@ -1,0 +1,24 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Nome:</strong>
+  <%= @cidade.nome %>
+</p>
+
+<p>
+  <strong>Uf:</strong>
+  <%= @cidade.uf %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @cidade.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @cidade.longitude %>
+</p>
+
+</div>
+<%= link_to 'Voltar', cidades_path, class:"btn" %>

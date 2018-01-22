@@ -1,0 +1,40 @@
+# == Schema Information
+#
+# Table name: episodio_reacionals
+#
+#  id                     :integer          not null, primary key
+#  notificacao_id         :integer
+#  tipo                   :string
+#  numero_episodios       :integer
+#  conduta_mendicamentosa :string
+#  data_inicio            :date
+#  data_termino           :date
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+# Indexes
+#
+#  index_episodio_reacionals_on_notificacao_id  (notificacao_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (notificacao_id => notificacaos.id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notificacao: one
+  tipo: MyString
+  numero_episodios: 1
+  conduta_mendicamentosa: MyString
+  data_inicio: 2018-01-22
+  data_termino: 2018-01-22
+
+two:
+  notificacao: two
+  tipo: MyString
+  numero_episodios: 1
+  conduta_mendicamentosa: MyString
+  data_inicio: 2018-01-22
+  data_termino: 2018-01-22

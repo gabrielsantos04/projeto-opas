@@ -1,0 +1,59 @@
+<%= form_for(episodio_reacional) do |f| %>
+  <% if episodio_reacional.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% episodio_reacional.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+    <%= f.collection_select :notificacao_id, Notificacao.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :tipo %>
+    <%= f.text_field :tipo %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :numero_episodios %>
+    <%= f.number_field :numero_episodios %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :conduta_mendicamentosa %>
+    <%= f.text_field :conduta_mendicamentosa %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :data_inicio %>
+    <%= f.date_select :data_inicio %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :data_termino %>
+    <%= f.date_select :data_termino %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

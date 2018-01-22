@@ -1,0 +1,16 @@
+pt-BR:
+  hello: "Hello world"
+  errors:
+    messages:
+      blank: "Campo em branco"
+      expired: 'expirou, por favor solicite um novo'
+      not_found: 'não encontrado'
+      already_confirmed: 'já foi confirmado, por favor tente fazer login'
+      not_a_number: "Não é um número"
+      not_an_integer: "Não é um número inteiro"
+      not_saved:
+        one: "1 erro impediu atualização"
+        other: "%{count} erros"
+
+
+

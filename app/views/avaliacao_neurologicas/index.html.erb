@@ -1,0 +1,57 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+      <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Queixa</th>
+            <th>Avaliacao notificacao</th>
+            <th>Direito</th>
+            <th>Esquerdo</th>
+            <th>Data</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @avaliacao_neurologicas.each do |avaliacao_neurologica| %>
+    <tr>
+              
+          <td><%= link_to avaliacao_neurologica.queixa,avaliacao_neurologica %></td>
+        
+              
+
+          <td><%= avaliacao_neurologica.avaliacao_notificacao %></td>
+        
+              
+
+          <td><%= avaliacao_neurologica.direito %></td>
+        
+              
+
+          <td><%= avaliacao_neurologica.esquerdo %></td>
+        
+              
+
+          <td><%= avaliacao_neurologica.data %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@avaliacao_neurologicas)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_avaliacao_neurologica_path, class:"btn" %>

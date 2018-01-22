@@ -1,0 +1,82 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+      <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Avaliacao notificacao</th>
+            <th>Data</th>
+            <th>Olho direito</th>
+            <th>Olho esquerdo</th>
+            <th>Mao direita</th>
+            <th>Mao esqueda</th>
+            <th>Pe direito</th>
+            <th>Pe esquerdo</th>
+            <th>Maior grau</th>
+            <th>Escore omp</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @classificacao_graus.each do |classificacao_grau| %>
+    <tr>
+              
+          <td><%= link_to classificacao_grau.avaliacao_notificacao,classificacao_grau %></td>
+        
+              
+
+          <td><%= classificacao_grau.data %></td>
+        
+              
+
+          <td><%= classificacao_grau.olho_direito %></td>
+        
+              
+
+          <td><%= classificacao_grau.olho_esquerdo %></td>
+        
+              
+
+          <td><%= classificacao_grau.mao_direita %></td>
+        
+              
+
+          <td><%= classificacao_grau.mao_esqueda %></td>
+        
+              
+
+          <td><%= classificacao_grau.pe_direito %></td>
+        
+              
+
+          <td><%= classificacao_grau.pe_esquerdo %></td>
+        
+              
+
+          <td><%= classificacao_grau.maior_grau %></td>
+        
+              
+
+          <td><%= classificacao_grau.escore_omp %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@classificacao_graus)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_classificacao_grau_path, class:"btn" %>

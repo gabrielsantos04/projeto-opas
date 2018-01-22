@@ -1,0 +1,2 @@
+module EpisodioReacionalsHelper
+end

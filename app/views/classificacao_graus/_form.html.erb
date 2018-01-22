@@ -1,0 +1,87 @@
+<%= form_for(classificacao_grau) do |f| %>
+  <% if classificacao_grau.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% classificacao_grau.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+    <%= f.collection_select :avaliacao_notificacao_id, AvaliacaoNotificacao.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :data %>
+    <%= f.date_select :data %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :olho_direito %>
+    <%= f.number_field :olho_direito %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :olho_esquerdo %>
+    <%= f.number_field :olho_esquerdo %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mao_direita %>
+    <%= f.number_field :mao_direita %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mao_esqueda %>
+    <%= f.number_field :mao_esqueda %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_direito %>
+    <%= f.number_field :pe_direito %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_esquerdo %>
+    <%= f.number_field :pe_esquerdo %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :maior_grau %>
+    <%= f.number_field :maior_grau %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :escore_omp %>
+    <%= f.number_field :escore_omp %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

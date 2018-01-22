@@ -1,0 +1,57 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+      <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Lesoes cultaneas</th>
+            <th>Forma clinica</th>
+            <th>Classificacao operacional</th>
+            <th>Nervos afetados</th>
+            <th>Notificacao</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @dados_clinicos.each do |dados_clinico| %>
+    <tr>
+              
+          <td><%= link_to dados_clinico.lesoes_cultaneas,dados_clinico %></td>
+        
+              
+
+          <td><%= dados_clinico.forma_clinica %></td>
+        
+              
+
+          <td><%= dados_clinico.classificacao_operacional %></td>
+        
+              
+
+          <td><%= dados_clinico.nervos_afetados %></td>
+        
+              
+
+          <td><%= dados_clinico.notificacao %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@dados_clinicos)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_dados_clinico_path, class:"btn" %>

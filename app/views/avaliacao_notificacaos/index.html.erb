@@ -1,0 +1,92 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+      <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Classificacao operacional</th>
+            <th>Inicio pqt</th>
+            <th>Alta pqt</th>
+            <th>Profissao</th>
+            <th>Unidade saude</th>
+            <th>Atividades realizadas ubs</th>
+            <th>Grupo autocuidado</th>
+            <th>Encaminhamentos</th>
+            <th>Imobilizacoes</th>
+            <th>Adaptacoes</th>
+            <th>Observacoes</th>
+            <th>Notificacao</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @avaliacao_notificacaos.each do |avaliacao_notificacao| %>
+    <tr>
+              
+          <td><%= link_to avaliacao_notificacao.classificacao_operacional,avaliacao_notificacao %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.inicio_pqt %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.alta_pqt %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.profissao %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.unidade_saude %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.atividades_realizadas_ubs %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.grupo_autocuidado %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.encaminhamentos %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.imobilizacoes %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.adaptacoes %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.observacoes %></td>
+        
+              
+
+          <td><%= avaliacao_notificacao.notificacao %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@avaliacao_notificacaos)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_avaliacao_notificacao_path, class:"btn" %>

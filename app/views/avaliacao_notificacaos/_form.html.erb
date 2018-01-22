@@ -1,0 +1,101 @@
+<%= form_for(avaliacao_notificacao) do |f| %>
+  <% if avaliacao_notificacao.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% avaliacao_notificacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :classificacao_operacional %>
+    <%= f.text_field :classificacao_operacional %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :inicio_pqt %>
+    <%= f.date_select :inicio_pqt %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :alta_pqt %>
+    <%= f.date_select :alta_pqt %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :profissao %>
+    <%= f.text_field :profissao %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :unidade_saude %>
+    <%= f.text_field :unidade_saude %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :atividades_realizadas_ubs %>
+    <%= f.check_box :atividades_realizadas_ubs %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :grupo_autocuidado %>
+    <%= f.check_box :grupo_autocuidado %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :encaminhamentos %>
+    <%= f.text_field :encaminhamentos %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :imobilizacoes %>
+    <%= f.text_field :imobilizacoes %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :adaptacoes %>
+    <%= f.text_field :adaptacoes %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :observacoes %>
+    <%= f.text_field :observacoes %>
+    
+  </div>
+
+  <div class="input-field">
+    <%= f.collection_select :notificacao_id, Notificacao.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

@@ -1,0 +1,212 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+      <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Avaliacao notificacao</th>
+            <th>Data</th>
+            <th>Dedao direito</th>
+            <th>Indicador d ponta</th>
+            <th>Indicador d</th>
+            <th>Mindinho d ponta</th>
+            <th>Mindinho d</th>
+            <th>Mao direita</th>
+            <th>Mao d costa</th>
+            <th>Dedao esquerdo</th>
+            <th>Indicador e ponta</th>
+            <th>Indicador e</th>
+            <th>Mindinho e ponta</th>
+            <th>Mindinho e</th>
+            <th>Mao esquerda</th>
+            <th>Mao e costa</th>
+            <th>Pe direito</th>
+            <th>Pe d 1 ponta</th>
+            <th>Pe d 3 ponta</th>
+            <th>Pe d 5 ponta</th>
+            <th>Pe d 1</th>
+            <th>Pe d 3</th>
+            <th>Pe d 5</th>
+            <th>Pe d e1</th>
+            <th>Pe d e1</th>
+            <th>Pe d calcanhar</th>
+            <th>Pe esquerdo</th>
+            <th>Pe e 1 ponta</th>
+            <th>Pe e 3 ponta</th>
+            <th>Pe e 5 ponta</th>
+            <th>Pe e 1</th>
+            <th>Pe e 3</th>
+            <th>Pe e 5</th>
+            <th>Pe e e1</th>
+            <th>Pe e e2</th>
+            <th>Pe e calcanhar</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @avaliacao_sensitivas.each do |avaliacao_sensitiva| %>
+    <tr>
+              
+          <td><%= link_to avaliacao_sensitiva.avaliacao_notificacao,avaliacao_sensitiva %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.data %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.dedao_direito %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.indicador_d_ponta %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.indicador_d %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.mindinho_d_ponta %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.mindinho_d %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.mao_direita %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.mao_d_costa %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.dedao_esquerdo %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.indicador_e_ponta %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.indicador_e %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.mindinho_e_ponta %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.mindinho_e %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.mao_esquerda %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.mao_e_costa %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_direito %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_d_1_ponta %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_d_3_ponta %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_d_5_ponta %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_d_1 %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_d_3 %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_d_5 %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_d_e1 %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_d_e1 %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_d_calcanhar %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_esquerdo %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_e_1_ponta %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_e_3_ponta %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_e_5_ponta %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_e_1 %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_e_3 %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_e_5 %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_e_e1 %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_e_e2 %></td>
+        
+              
+
+          <td><%= avaliacao_sensitiva.pe_e_calcanhar %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@avaliacao_sensitivas)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_avaliacao_sensitiva_path, class:"btn" %>

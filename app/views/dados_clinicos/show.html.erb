@@ -1,0 +1,29 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Lesoes cultaneas:</strong>
+  <%= @dados_clinico.lesoes_cultaneas %>
+</p>
+
+<p>
+  <strong>Forma clinica:</strong>
+  <%= @dados_clinico.forma_clinica %>
+</p>
+
+<p>
+  <strong>Classificacao operacional:</strong>
+  <%= @dados_clinico.classificacao_operacional %>
+</p>
+
+<p>
+  <strong>Nervos afetados:</strong>
+  <%= @dados_clinico.nervos_afetados %>
+</p>
+
+<p>
+  <strong>Notificacao:</strong>
+  <%= @dados_clinico.notificacao %>
+</p>
+
+</div>
+<%= link_to 'Voltar', dados_clinicos_path, class:"btn" %>

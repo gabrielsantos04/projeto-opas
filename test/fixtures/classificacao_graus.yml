@@ -1,0 +1,52 @@
+# == Schema Information
+#
+# Table name: classificacao_graus
+#
+#  id                       :integer          not null, primary key
+#  avaliacao_notificacao_id :integer
+#  data                     :date
+#  olho_direito             :integer
+#  olho_esquerdo            :integer
+#  mao_direita              :integer
+#  mao_esqueda              :integer
+#  pe_direito               :integer
+#  pe_esquerdo              :integer
+#  maior_grau               :integer
+#  escore_omp               :integer
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#
+# Indexes
+#
+#  index_classificacao_graus_on_avaliacao_notificacao_id  (avaliacao_notificacao_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (avaliacao_notificacao_id => avaliacao_notificacaos.id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  avaliacao_notificacao: one
+  data: 2018-01-22
+  olho_direito: 1
+  olho_esquerdo: 1
+  mao_direita: 1
+  mao_esqueda: 1
+  pe_direito: 1
+  pe_esquerdo: 1
+  maior_grau: 1
+  escore_omp: 1
+
+two:
+  avaliacao_notificacao: two
+  data: 2018-01-22
+  olho_direito: 1
+  olho_esquerdo: 1
+  mao_direita: 1
+  mao_esqueda: 1
+  pe_direito: 1
+  pe_esquerdo: 1
+  maior_grau: 1
+  escore_omp: 1

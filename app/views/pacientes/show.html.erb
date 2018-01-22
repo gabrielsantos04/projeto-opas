@@ -1,0 +1,79 @@
+<div class="card-panel">
+  <div class="row">
+    <div class="col s12 l6">
+      <p>
+        <strong>Nome:</strong>
+        <%= @paciente.nome %>
+      </p>
+
+      <p>
+        <strong>Nome mae:</strong>
+        <%= @paciente.nome_mae %>
+      </p>
+
+      <p>
+        <strong>Idade:</strong>
+        <%= @paciente.idade %>
+      </p>
+
+      <p>
+        <strong>Peso:</strong>
+        <%= @paciente.peso %>
+      </p>
+    </div>
+    <div class="col s12 l6">
+      <p>
+        <strong>Endereco:</strong>
+        <%= @paciente.endereco %>
+      </p>
+      <p>
+        <strong>Cidade:</strong>
+        <%= @paciente.cidade %>
+      </p>
+      <p>
+        <strong>Latitude:</strong>
+        <%= @paciente.latitude %>
+      </p>
+
+      <p>
+        <strong>Longitude:</strong>
+        <%= @paciente.longitude %>
+      </p>
+    </div>
+
+
+  </div>
+	
+<div class="row">
+  <p>
+    <strong>Sexo:</strong>
+    <%= @paciente.sexo == 1 ? "Masculino" : "Feminino" %>
+  </p>
+
+  <p>
+    <strong>Telefone:</strong>
+    <%= @paciente.telefone %>
+  </p>
+
+
+
+  <p>
+    <strong>Ocupacao:</strong>
+    <%= @paciente.ocupacao %>
+  </p>
+</div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Notificações</span>
+        <%= render partial: "notificacoes", locals: {notificacoes: @paciente.notificacaos} %>
+      </div>
+      <div class="card-action">
+        <a href="/notificacaos/new?paciente=<%= @paciente.id %>">Nova Notificação</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<%= link_to 'Voltar', pacientes_path, class:"btn" %>

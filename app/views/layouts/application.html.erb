@@ -79,11 +79,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.10/sweetalert2.min.css">
   <link rel="stylesheet" href="/chosen/chosen.min.css">
   <script type="text/javascript">
-      $(function() {
-          // Set idle time
-          //$( document ).idleTimer( 5000 );
-          //clearInterval(intervalo_area);
-      });
+
 
     function toggle_sidebar() {
       var sidebar = $('#left-sidebar-nav');
@@ -189,7 +185,7 @@
 
 </head>
 
-<body <%= yield :body_tag %> ng-app="app">
+<body <%= yield :body_tag %> > <!-- ng-app="app" -->
 
 <!-- Start Page Loading -->
 <!--div id="loader-wrapper">

@@ -1,0 +1,36 @@
+<%= form_for(esquema_substitutivo) do |f| %>
+  <% if esquema_substitutivo.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% esquema_substitutivo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :miligramas %>
+    <%= f.text_field :miligramas %>
+    
+  </div>
+
+  <div class="input-field">
+    <%= f.collection_select :medicamento_id, Medicamento.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+  <div class="input-field">
+    <%= f.collection_select :notificacao_id, Notificacao.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

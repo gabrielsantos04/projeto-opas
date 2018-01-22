@@ -1,0 +1,52 @@
+<%= form_for(dados_clinico) do |f| %>
+  <% if dados_clinico.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% dados_clinico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :lesoes_cultaneas %>
+    <%= f.number_field :lesoes_cultaneas %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :forma_clinica %>
+    <%= f.text_field :forma_clinica %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :classificacao_operacional %>
+    <%= f.text_field :classificacao_operacional %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :nervos_afetados %>
+    <%= f.number_field :nervos_afetados %>
+    
+  </div>
+
+  <div class="input-field">
+    <%= f.collection_select :notificacao_id, Notificacao.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

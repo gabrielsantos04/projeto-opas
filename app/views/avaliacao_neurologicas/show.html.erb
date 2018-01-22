@@ -1,0 +1,29 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Queixa:</strong>
+  <%= @avaliacao_neurologica.queixa %>
+</p>
+
+<p>
+  <strong>Avaliacao notificacao:</strong>
+  <%= @avaliacao_neurologica.avaliacao_notificacao %>
+</p>
+
+<p>
+  <strong>Direito:</strong>
+  <%= @avaliacao_neurologica.direito %>
+</p>
+
+<p>
+  <strong>Esquerdo:</strong>
+  <%= @avaliacao_neurologica.esquerdo %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @avaliacao_neurologica.data %>
+</p>
+
+</div>
+<%= link_to 'Voltar', avaliacao_neurologicas_path, class:"btn" %>

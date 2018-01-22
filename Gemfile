@@ -32,6 +32,17 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'devise'
+gem 'oauth2'
+gem 'rest-client'
+gem "cancan"
+gem 'enumerize'
+gem 'ryanb-uniquify'
+gem "ransack", github:"activerecord-hackery/ransack", branch:"master"
+gem "kaminari", github: "amatsuda/kaminari", branch: '0-17-stable'
+gem 'nested_form'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+#gem 'paper_trail'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,6 +59,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'annotate'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

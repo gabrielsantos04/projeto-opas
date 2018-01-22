@@ -1,0 +1,82 @@
+<%= form_for(notificacao) do |f| %>
+  <% if notificacao.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% notificacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  <%= f.hidden_field :paciente_id %>
+  <div class="input-field">
+
+    <%= f.label :numero, "Número" %>
+    <%= f.text_field :numero %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :data %>
+    <%= f.text_field :data, class:"datepicker" %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :grau_incapacidade %>
+    <%= f.text_field :grau_incapacidade %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :modo_entrada %>
+    <%= f.text_field :modo_entrada %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :modo_deteccao %>
+    <%= f.text_field :modo_deteccao %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :observacoes %>
+    <%= f.text_field :observacoes %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :baciloscopia %>
+    <%= f.text_field :baciloscopia %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :data_inicio %>
+    <%= f.date_select :data_inicio %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :esquema_terapeutico %>
+    <%= f.text_field :esquema_terapeutico %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

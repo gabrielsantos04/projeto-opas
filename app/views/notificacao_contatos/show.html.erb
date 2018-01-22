@@ -1,0 +1,29 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Nome:</strong>
+  <%= @notificacao_contato.nome %>
+</p>
+
+<p>
+  <strong>Tipo contato:</strong>
+  <%= @notificacao_contato.tipo_contato %>
+</p>
+
+<p>
+  <strong>Suspeito:</strong>
+  <%= @notificacao_contato.suspeito %>
+</p>
+
+<p>
+  <strong>Confirmado:</strong>
+  <%= @notificacao_contato.confirmado %>
+</p>
+
+<p>
+  <strong>Notificacao:</strong>
+  <%= @notificacao_contato.notificacao %>
+</p>
+
+</div>
+<%= link_to 'Voltar', notificacao_contatos_path, class:"btn" %>

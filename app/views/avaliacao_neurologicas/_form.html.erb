@@ -1,0 +1,50 @@
+<%= form_for(avaliacao_neurologica) do |f| %>
+  <% if avaliacao_neurologica.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% avaliacao_neurologica.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+    <%= f.collection_select :queixa_id, Queixa.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+  <div class="input-field">
+    <%= f.collection_select :avaliacao_notificacao_id, AvaliacaoNotificacao.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :direito %>
+    <%= f.text_field :direito %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :esquerdo %>
+    <%= f.text_field :esquerdo %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :data %>
+    <%= f.date_select :data %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

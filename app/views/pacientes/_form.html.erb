@@ -1,0 +1,97 @@
+<%= form_for(paciente) do |f| %>
+  <% if paciente.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% paciente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :nome_mae,"Nome da Mãe" %>
+    <%= f.text_field :nome_mae %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :idade %>
+    <%= f.number_field :idade %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :peso %>
+    <%= f.text_field :peso %>
+    
+  </div>
+
+  <div class="input-field">
+    <p>Sexo</p>
+    <input class="with-gap" type="radio" name="paciente[sexo]" id="masculino" value="1">
+    <label for="masculino">Masculino</label>
+    <input class="with-gap" type="radio" name="paciente[sexo]" id="feminino" value="2">
+    <label for="feminino">Feminino</label>
+
+  </div>
+  <br>
+  <div class="input">
+    <%= f.label :cidade_id, "Cidade" %>
+    <%= f.select :cidade_id, @cidades,{ prompt: true},{class:"browser-default chosen-select"}  %>
+
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :endereco, "Endereço" %>
+    <%= f.text_field :endereco %>
+    
+  </div>
+
+  <div class="row">
+    <div class="col s12 l6 input-field">
+      <%= f.label :latitude %>
+      <%= f.text_field :latitude %>
+    </div>
+    <div class="col s12 l6 input-field">
+      <%= f.label :longitude %>
+      <%= f.text_field :longitude %>
+    </div>
+  </div>
+
+
+
+  <div class="input-field">
+
+    <%= f.label :telefone %>
+    <%= f.text_field :telefone %>
+    
+  </div>
+
+
+
+  <div class="input">
+    <%= f.label :ocupacao_id, "Ocupação" %>
+    <%= f.select :ocupacao_id, @ocupacoes,{ prompt: true},{class:"browser-default chosen-select"}  %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

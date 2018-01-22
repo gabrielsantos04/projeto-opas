@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: cidades
+#
+#  id         :integer          not null, primary key
+#  nome       :string
+#  uf         :string
+#  latitude   :string
+#  longitude  :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  uf: MyString
+  latitude: MyString
+  longitude: MyString
+
+two:
+  nome: MyString
+  uf: MyString
+  latitude: MyString
+  longitude: MyString

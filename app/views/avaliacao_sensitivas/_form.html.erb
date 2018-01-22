@@ -1,0 +1,269 @@
+<%= form_for(avaliacao_sensitiva) do |f| %>
+  <% if avaliacao_sensitiva.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% avaliacao_sensitiva.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+    <%= f.collection_select :avaliacao_notificacao_id, AvaliacaoNotificacao.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :data %>
+    <%= f.date_select :data %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :dedao_direito %>
+    <%= f.number_field :dedao_direito %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :indicador_d_ponta %>
+    <%= f.number_field :indicador_d_ponta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :indicador_d %>
+    <%= f.number_field :indicador_d %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mindinho_d_ponta %>
+    <%= f.number_field :mindinho_d_ponta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mindinho_d %>
+    <%= f.number_field :mindinho_d %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mao_direita %>
+    <%= f.number_field :mao_direita %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mao_d_costa %>
+    <%= f.number_field :mao_d_costa %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :dedao_esquerdo %>
+    <%= f.number_field :dedao_esquerdo %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :indicador_e_ponta %>
+    <%= f.number_field :indicador_e_ponta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :indicador_e %>
+    <%= f.number_field :indicador_e %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mindinho_e_ponta %>
+    <%= f.number_field :mindinho_e_ponta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mindinho_e %>
+    <%= f.number_field :mindinho_e %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mao_esquerda %>
+    <%= f.number_field :mao_esquerda %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mao_e_costa %>
+    <%= f.number_field :mao_e_costa %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_direito %>
+    <%= f.number_field :pe_direito %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_d_1_ponta %>
+    <%= f.number_field :pe_d_1_ponta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_d_3_ponta %>
+    <%= f.number_field :pe_d_3_ponta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_d_5_ponta %>
+    <%= f.number_field :pe_d_5_ponta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_d_1 %>
+    <%= f.number_field :pe_d_1 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_d_3 %>
+    <%= f.number_field :pe_d_3 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_d_5 %>
+    <%= f.number_field :pe_d_5 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_d_e1 %>
+    <%= f.number_field :pe_d_e1 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_d_e1 %>
+    <%= f.number_field :pe_d_e1 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_d_calcanhar %>
+    <%= f.number_field :pe_d_calcanhar %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_esquerdo %>
+    <%= f.number_field :pe_esquerdo %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_e_1_ponta %>
+    <%= f.number_field :pe_e_1_ponta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_e_3_ponta %>
+    <%= f.number_field :pe_e_3_ponta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_e_5_ponta %>
+    <%= f.number_field :pe_e_5_ponta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_e_1 %>
+    <%= f.number_field :pe_e_1 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_e_3 %>
+    <%= f.number_field :pe_e_3 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_e_5 %>
+    <%= f.number_field :pe_e_5 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_e_e1 %>
+    <%= f.number_field :pe_e_e1 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_e_e2 %>
+    <%= f.number_field :pe_e_e2 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :pe_e_calcanhar %>
+    <%= f.number_field :pe_e_calcanhar %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

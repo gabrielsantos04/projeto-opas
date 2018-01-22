@@ -1,0 +1,52 @@
+<%= form_for(notificacao_contato) do |f| %>
+  <% if notificacao_contato.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% notificacao_contato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :tipo_contato %>
+    <%= f.text_field :tipo_contato %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :suspeito %>
+    <%= f.check_box :suspeito %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :confirmado %>
+    <%= f.check_box :confirmado %>
+    
+  </div>
+
+  <div class="input-field">
+    <%= f.collection_select :notificacao_id, Notificacao.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

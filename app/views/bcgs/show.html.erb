@@ -1,0 +1,24 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Primeira dose:</strong>
+  <%= @bcg.primeira_dose %>
+</p>
+
+<p>
+  <strong>Segunda dose:</strong>
+  <%= @bcg.segunda_dose %>
+</p>
+
+<p>
+  <strong>Cicatriz:</strong>
+  <%= @bcg.cicatriz %>
+</p>
+
+<p>
+  <strong>Notificacao contato:</strong>
+  <%= @bcg.notificacao_contato %>
+</p>
+
+</div>
+<%= link_to 'Voltar', bcgs_path, class:"btn" %>

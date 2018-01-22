@@ -1,0 +1,40 @@
+<%= form_for(monofilamento) do |f| %>
+  <% if monofilamento.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% monofilamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :cor %>
+    <%= f.text_field :cor %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :interpretacao %>
+    <%= f.text_field :interpretacao %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

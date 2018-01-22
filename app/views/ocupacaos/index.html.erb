@@ -1,0 +1,37 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+      <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Nome</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @ocupacaos.each do |ocupacao| %>
+    <tr>
+              
+          <td><%= link_to ocupacao.nome,ocupacao %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@ocupacaos)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_ocupacao_path, class:"btn" %>

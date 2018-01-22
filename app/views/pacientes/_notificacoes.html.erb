@@ -1,0 +1,25 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Número</th>
+    <th>Data</th>
+    <th>Modo de entrada</th>
+    <th>Modo de detecção</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% notificacoes.each do |notificacao| %>
+      <tr>
+
+        <td><%= link_to notificacao.numero,notificacao %></td>
+        <td><%= notificacao.data %></td>
+        <td><%= notificacao.modo_entrada %></td>
+        <td><%= notificacao.modo_deteccao %></td>
+
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
