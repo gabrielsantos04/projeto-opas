@@ -1,0 +1,37 @@
+<header id="header" class="page-topbar">
+  <!-- start header nav-->
+  <div class="navbar-fixed">
+    <nav class="teal darken-4">
+      <div class="nav-wrapper">
+
+        <ul class="left">
+          <li class="">
+            <div class="logo-wrapper">
+              <a href="/" class="brand-logo darken-1">
+                <img src="/logo_boamassa.png" alt="" width="auto">
+              </a>
+            </div>
+          </li>
+        </ul>
+        <div class="header-search-wrapper hide-on-med-and-down">
+          Sistema de Gestão da Cantina Boamassa
+        </div>
+        <ul class="right hide-on-med-and-down no-print">
+          <%= yield :icon_top  %>
+          <% if params[:action] == "show" %>
+              <li class="white-text">
+                <%= link_to "#{current_uri = request.env['PATH_INFO']}/edit", target: "_self", class:"waves-effect waves-block waves-light" do  %>
+                    <i class="mdi-image-edit white-text"></i>
+                <% end %>
+              </li>
+          <% end %>
+          <li><a href="javascript:void(0);" class="white-text waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
+          </li>
+          <li><a onclick="toggle_sidebar()" class="white-text waves-effect waves-block waves-light"><i class="mdi-action-input"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- end header nav-->
+</header>

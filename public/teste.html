@@ -1,0 +1,37 @@
+RestClient::Request.execute(
+    method:  :post,
+    url:     'https://assine.vivo.com.br/ChannelSalesManagement/V2/AddressCommons/getServiceAddress',
+    headers:
+    {
+      'Content-Type' => 'application/json;charset=UTF-8',
+      'Accept' => "application/json, text/plain, */*",
+      'WWW-Authenticate' => "bf84fc087244157e20f7937de8f6fcf97b0a220ab93ad47b16d53ca054a21fcc",
+      "Host" => "assine.vivo.com.br",
+      "Origin" => "assine.vivo.com.br",
+    },
+    payload:
+    {
+      'cep' => '77023430',
+      'cidade' => "Palmas",
+      'estado' => 'TO',
+      'numero' => 3,
+      'pageNumber' => "3",
+      'pageSize' => '59',
+      'prioridadeAtual' => 1,
+      'tipoPrioridade' => "ALTA",
+    }.to_json
+  )
+
+
+
+token = RestClient::Request.execute(
+  method:  :post,
+  url:     'https://assine.vivo.com.br/ChannelSalesManagement/Authentication/getToken',
+  headers:
+  {
+    'Content-Type' => 'application/json;charset=UTF-8',
+    'Accept' => "application/json, text/plain, */*",
+    "Host" => "assine.vivo.com.br",
+    "Origin" => "assine.vivo.com.br",
+  },
+)  

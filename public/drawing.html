@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drawing tools</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+        }
+    </style>
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <link href="/materialize/css/materialize.css" type="text/css" rel="stylesheet" >
+</head>
+<body>
+    <div id="map"></div>
+    <div class="btn red" id="clear_button" style="display: none; position: absolute; right: 40%; top:5px;" onclick="clear_polygon()">Apagar Desenho</div>
+    <script>
+       function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+        return '';
+    };
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: parseFloat(getUrlParameter('lat')), lng: parseFloat(getUrlParameter('lng'))},
+            zoom: 14
+        });
+
+        if(getUrlParameter('coord') != '')
+        {
+            var triangleCoords = JSON.parse(getUrlParameter('coord'));
+
+          // Construct the polygon.
+            polygon = new google.maps.Polygon({
+                paths: triangleCoords,
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35 
+            });
+
+            polygon.setMap(map);
+            $("#clear_button").show();  
+        }
+
+        if(getUrlParameter('r') != '')
+        {
+            // Add the circle for this city to the map.
+            var cityCircle = new google.maps.Circle({
+              strokeColor: '#3366FF',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#3366FF',
+              fillOpacity: 0.35,
+              map: map,
+              center: map.center,
+              radius: getUrlParameter('r')*1
+            });
+        }
+
+        
+
+    drawingManager = new google.maps.drawing.DrawingManager({
+        drawingControl: true,
+        drawingControlOptions: {
+            position: google.maps.ControlPosition.TOP_CENTER,
+            drawingModes: [
+            google.maps.drawing.OverlayType.POLYGON,
+            ]
+        },
+    });
+
+    google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
+        window.parent.$("#area_field").val(
+            JSON.stringify(event.overlay.getPaths().b[0].b)
+            );
+        drawingManager.setOptions({
+            drawingControl: false
+        });
+
+        drawingManager.setMap(null);
+
+        polygon = event.overlay
+
+        $("#clear_button").show();
+
+    });
+  drawingManager.setMap(map);
+}
+
+function clear_polygon() {
+    polygon.setMap(null)
+    drawingManager.setMap(map)
+    drawingManager.setOptions({
+        drawingControl: true
+    });
+    window.parent.$("#area_field").val('');
+    $("#clear_button").hide();
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMUpi9klfsed7huZAVkkPp-U8S_9SUwao&signed_in=true&libraries=drawing&callback=initMap"
+async defer></script>
+</body>
+</html>
