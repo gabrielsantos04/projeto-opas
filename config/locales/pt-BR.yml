@@ -11,6 +11,52 @@ pt-BR:
       not_saved:
         one: "1 erro impediu atualização"
         other: "%{count} erros"
+  enumerize:
+    defaults:
+      grau_incapacidade:
+        grau_1: "Grau 1"
+        grau_2: "Grau 2"
+        grau_0: "Grau 0"
+        nao_avaliado: "Não Avaliado"
+      modo_entrada:
+        caso_novo: "Caso Novo"
+        outra_unidade: "Transferência do mesmo município (outra unidade)"
+        outro_municipio: "Transferência de outro município (mesma uf)"
+        outro_estado: "Transferência de outro estado"
+        outro_pais: "Transferência de outro país"
+        recidiva: "Recidiva"
+        outros_reingressos: "Outros Reingressos"
+      modo_deteccao:
+        encaminhamento: "Encaminhamento"
+        demanda_expontanea: "Demanda Expontânea"
+        exame_coletividade: "Exame de Coletividade"
+        exame_contatos: "Exame de Contatos"
+        outros_modos: "Outros Modos"
+      baciloscopia:
+        positivo: "Positivo"
+        negativo: "Negativo"
+        nao_realizado: "Não Realizado"
+      esquema_terapeutico:
+        pb_infantil: "PB Infantil"
+        pb_adulto: "PB Adulto"
+        mb_infantil: "MB Infantil"
+        mb_adulto: "MB Adulto"
+        outros_esquemas: "Outros esquemas substitutivos"
+      forma_clinica:
+        i: "I - Indeterminada"
+        t: "T - Tuberculoide"
+        d: "D - Diforma"
+        v: "V - Wirchoviana"
+      classificacao_operacional:
+        multibacilar: "Multibacilar"
+        paucibacilar: "Paucibalicar"
+    episodio_reacional:
+      tipo:
+        tipo_1: "Tipo 1"
+        tipo_2: "Tipo 2"
+        tipo_1_2: "Tipo 1 e 2"
+        neurites: "Neurites"
+        sem_reacao: "Sem Reação"
 
 
 

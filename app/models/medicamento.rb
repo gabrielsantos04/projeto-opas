@@ -9,4 +9,9 @@
 #
 
 class Medicamento < ApplicationRecord
+  has_many :esquema_substitutivos
+
+  def to_s
+    self.nome
+  end
 end

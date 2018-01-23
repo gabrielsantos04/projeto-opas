@@ -23,4 +23,8 @@
 
 class EpisodioReacional < ApplicationRecord
   belongs_to :notificacao
+
+  extend Enumerize
+
+  enumerize :tipo, in: [:tipo_1, :tipo_2,:tipo_1_2,:neurites,:sem_reacao], predicate: true
 end

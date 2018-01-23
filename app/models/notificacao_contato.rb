@@ -22,4 +22,7 @@
 
 class NotificacaoContato < ApplicationRecord
   belongs_to :notificacao
+
+  extend Enumerize
+  enumerize :tipo_contato, in: [:domiciliar, :vizinhanca,:social], predicate: true
 end

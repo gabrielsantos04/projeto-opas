@@ -22,4 +22,9 @@
 
 class DadosClinico < ApplicationRecord
   belongs_to :notificacao
+
+  extend Enumerize
+
+  enumerize :forma_clinica, in: [:i, :t,:d,:v], predicate: true
+  enumerize :classificacao_operacional, in: [:multibacilar, :paucibacilar], predicate: true
 end

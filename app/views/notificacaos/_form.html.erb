@@ -1,4 +1,4 @@
-<%= form_for(notificacao) do |f| %>
+<%= nested_form_for(notificacao) do |f| %>
   <% if notificacao.errors.any? %>
     <div id="error_explanation" class="card-panel red white-text">
       <h5>Resolva os problemas a seguir antes de Salvar:</h5>
@@ -12,67 +12,224 @@
   <% end %>
 <div class="card-panel">
   <%= f.hidden_field :paciente_id %>
-  <div class="input-field">
+  <div class="row">
+    <div class="col s12 l6 input-field">
 
-    <%= f.label :numero, "Número" %>
-    <%= f.text_field :numero %>
-    
+      <%= f.label :numero, "Número" %>
+      <%= f.text_field :numero %>
+
+    </div>
+
+    <div class="col s12 l6 input-field">
+
+      <%= f.label :data %>
+      <%= f.text_field :data, class:"datepicker" %>
+
+    </div>
+
   </div>
 
-  <div class="input-field">
+  <div class="row">
 
-    <%= f.label :data %>
-    <%= f.text_field :data, class:"datepicker" %>
-    
+    <div class="col s12 l6 input-field">
+
+
+      <%= f.select :grau_incapacidade, @graus_incapacidade,{prompt: true} %>
+      <%= f.label :grau_incapacidade,"Avaliação do Grau de Incapacidade no Diagnóstico" %>
+    </div>
+
+    <div class="col s12 l6 input-field">
+
+
+      <%= f.select :modo_entrada, @modos_entrada, {prompt: true} %>
+      <%= f.label :modo_entrada, "Modo de Entrada" %>
+
+    </div>
   </div>
 
-  <div class="input-field">
+  <div class="row">
+    <div class="input-field">
 
-    <%= f.label :grau_incapacidade %>
-    <%= f.text_field :grau_incapacidade %>
-    
+
+      <%= f.select :modo_deteccao, @modos_deteccao, {prompt: true} %>
+      <%= f.label :modo_deteccao, "Modo de Detecção do Caso Novo" %>
+
+    </div>
   </div>
 
-  <div class="input-field">
-
-    <%= f.label :modo_entrada %>
-    <%= f.text_field :modo_entrada %>
-    
-  </div>
-
-  <div class="input-field">
-
-    <%= f.label :modo_deteccao %>
-    <%= f.text_field :modo_deteccao %>
-    
-  </div>
-
+<div class="row">
   <div class="input-field">
 
     <%= f.label :observacoes %>
-    <%= f.text_field :observacoes %>
+    <%= f.text_area :observacoes,class:"materialize-textarea" %>
     
   </div>
+</div>
 
-  <div class="input-field">
 
+  <div class="row input-field">
+
+
+    <%= f.select :baciloscopia, @baciloscopias,{prompt: true} %>
     <%= f.label :baciloscopia %>
-    <%= f.text_field :baciloscopia %>
     
   </div>
+  <div class="row">
+    <div class="row">
+      <div class="col s12 l6 input-field">
 
-  <div class="input-field">
+        <%= f.label :data_inicio, "Data do Início do Tratamento" %>
+        <%= f.text_field :data_inicio, class:"datepicker" %>
 
-    <%= f.label :data_inicio %>
-    <%= f.date_select :data_inicio %>
-    
+      </div>
+
+      <div class="col s12 l6 input-field">
+
+
+        <%= f.select :esquema_terapeutico,@esquemas,{prompt:true} %>
+        <%= f.label :esquema_terapeutico, "Esquema Terapêutico" %>
+
+      </div>
+    </div>
+
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Esquema Substitutivo</span>
+          <p>Informar se Esquema Terapêutico for outros esquemas substitutivos</p>
+          <%= f.fields_for :esquema_substitutivos do |esq| %>
+              <div class="row">
+                <div class="col s4 input">
+                  <%= esq.label :medicamento_id, "Medicamento" %>
+                  <%= esq.select :medicamento_id, @medicamentos, {prompt: true}, {class:"browser-default chosen-select"} %>
+
+                </div>
+                <div class="col s4 input-field">
+                  <%= esq.label :miligramas %>
+                  <%= esq.text_field :miligramas %>
+                </div>
+                <div class="col s4">
+                  <%= esq.link_to_remove "Remover" %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+        <div class="card-action">
+          <%= f.link_to_add "Novo Esquema", :esquema_substitutivos %>
+        </div>
+      </div>
+
+  </div>
+  <!-- Episodio Reacional -->
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Episódios Relacionais</span>
+      <%= f.fields_for :episodio_reacionals do |esq| %>
+          <div class="row">
+            <div class="col s6 l2 input-field">
+
+              <%= esq.select :tipo, @episodios_reacionais %>
+              <%= esq.label :tipo, "Tipo" %>
+
+            </div>
+            <div class="col s6 l2 input-field">
+
+              <%= esq.label :numero_episodios, "Número de Episódios" %>
+              <%= esq.number_field :numero_episodios %>
+            </div>
+            <div class="col s12 l3 input-field">
+              <%= esq.label :conduta_mendicamentosa,"Conduta Mendicamentosa" %>
+              <%= esq.text_field :conduta_mendicamentosa %>
+            </div>
+            <div class="col s6 l2">
+              <%= esq.label :data_inicio, "Início" %>
+              <%= esq.text_field :data_inicio, class:"datepicker" %>
+            </div>
+            <div class="col s6 l2">
+              <%= esq.label :data_termino, "Término" %>
+              <%= esq.text_field :data_termino, class:"datepicker" %>
+            </div>
+            <div class="col s4 l1">
+              <%= esq.link_to_remove "Remover" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <div class="card-action">
+      <%= f.link_to_add "Novo Episódio Reacional", :episodio_reacionals %>
+    </div>
   </div>
 
-  <div class="input-field">
+  <!-- dados clinicos -->
 
-    <%= f.label :esquema_terapeutico %>
-    <%= f.text_field :esquema_terapeutico %>
-    
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Dados Clínicos</span>
+      <%= f.fields_for :dados_clinicos do |esq| %>
+          <div class="row">
+            <div class="col s6 l3 input-field">
+              <%= esq.label :lesoes_cultaneas, "Número de Lesões Cultaneas" %>
+              <%= esq.number_field :lesoes_cultaneas %>
+
+            </div>
+            <div class="col s6 l3 input-field">
+
+              <%= esq.select :forma_clinica, @formas_clinicas, {prompt: true} %>
+              <%= esq.label :forma_clinica %>
+            </div>
+            <div class="col s4 l2 input-field">
+              <%= esq.select :classificacao_operacional, @classificacoes_operacional, {prompt: true} %>
+              <%= esq.label :classificacao_operacional,"Classificação Operacional" %>
+            </div>
+            <div class="col s4 l1">
+              <%= esq.label :nervos_afetados, "Nervos Afetados" %>
+              <%= esq.number_field :nervos_afetados %>
+            </div>
+            <div class="col s4 l2">
+              <%= esq.link_to_remove "Remover" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <div class="card-action">
+      <%= f.link_to_add "Novo Dado Clínico", :dados_clinicos %>
+    </div>
+  </div>
+
+  <!-- contatos -->
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Contatos</span>
+      <%= f.fields_for :notificacao_contatoes do |esq| %>
+          <div class="row">
+            <div class="col s6 l3 input-field">
+              <%= esq.label :nome, "Nome" %>
+              <%= esq.text_field :nome %>
+
+            </div>
+            <div class="col s6 l3 input-field">
+
+              <%= esq.select :tipo_contato, @tipos_contato, {prompt: true} %>
+              <%= esq.label :tipo_contato %>
+            </div>
+            <div class="col s4 l2">
+              <%= esq.check_box :suspeito %>
+              <%= esq.label :suspeito %>
+            </div>
+            <div class="col s4 l2">
+              <%= esq.check_box :confirmado %>
+              <%= esq.label :confirmado %>
+            </div>
+            <div class="col s4 l2">
+              <%= esq.link_to_remove "Remover" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <div class="card-action">
+      <%= f.link_to_add "Novo Contato", :notificacao_contatoes %>
+    </div>
   </div>
 
 </div>
