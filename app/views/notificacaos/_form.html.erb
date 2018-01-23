@@ -225,6 +225,23 @@
               <%= esq.link_to_remove "Remover" %>
             </div>
           </div>
+          <strong>BCG</strong>
+          <div class="row">
+
+              <div class="col s4 input-field">
+                <%= esq.label :bcg_primeira, "Primeira Dose" %>
+                <%= esq.text_field :bcg_primeira, class:"datepicker" %>
+              </div>
+            <div class="col s4 input-field">
+              <%= esq.label :bcg_segunda, "Segunda Dose" %>
+              <%= esq.text_field :bcg_segunda, class:"datepicker" %>
+            </div>
+            <div class="col s4 input-field">
+
+              <%= esq.check_box :bcg_cicatriz %>
+              <%= esq.label :bcg_cicatriz, "Possui Cicatriz?" %>
+            </div>
+          </div>
       <% end %>
     </div>
     <div class="card-action">

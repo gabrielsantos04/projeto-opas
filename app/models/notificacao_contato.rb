@@ -10,6 +10,9 @@
 #  notificacao_id :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  bcg_primeira   :date
+#  bcg_segunda    :date
+#  bcg_cicatriz   :boolean
 #
 # Indexes
 #

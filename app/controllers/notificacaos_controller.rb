@@ -70,7 +70,7 @@ class NotificacaosController < ApplicationController
     def notificacao_params
       params.require(:notificacao).permit(:paciente_id,:numero, :data, :grau_incapacidade, :modo_entrada, :modo_deteccao, :observacoes, :baciloscopia, :data_inicio, :esquema_terapeutico,
                                           esquema_substitutivos_attributes:[:id,:notificacao_id,:miligramas,:medicamento_id,:_destroy],
-                                          notificacao_contatoes_attributes:[:id,:notificacao_id,:nome,:tipo_contato,:suspeito,:confirmado,:_destroy],
+                                          notificacao_contatoes_attributes:[:bcg_primeira,:bcg_segunda,:bcg_cicatriz,:id,:notificacao_id,:nome,:tipo_contato,:suspeito,:confirmado,:_destroy],
       dados_clinicos_attributes:[:id,:notificacao_id,:lesoes_cultaneas,:forma_clinica,:classificacao_operacional,:nervos_afetados,:_destroy],
                                           episodio_reacionals_attributes:[:id,:notificacao_id,:tipo,:numero_episodios,:conduta_mendicamentosa,:data_inicio,:data_termino,:_destroy])
     end
