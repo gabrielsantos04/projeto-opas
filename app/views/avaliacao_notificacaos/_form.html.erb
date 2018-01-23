@@ -1,4 +1,4 @@
-<%= form_for(avaliacao_notificacao) do |f| %>
+<%= nested_form_for(avaliacao_notificacao) do |f| %>
   <% if avaliacao_notificacao.errors.any? %>
     <div id="error_explanation" class="card-panel red white-text">
       <h5>Resolva os problemas a seguir antes de Salvar:</h5>
@@ -14,23 +14,25 @@
   
   <div class="input-field">
 
+
+    <%= f.select :classificacao_operacional, @classificacoes_operacionais, {prompt: true} %>
     <%= f.label :classificacao_operacional %>
-    <%= f.text_field :classificacao_operacional %>
-    
   </div>
 
-  <div class="input-field">
+  <div class="row">
+    <div class="input-field col s6">
 
-    <%= f.label :inicio_pqt %>
-    <%= f.date_select :inicio_pqt %>
-    
-  </div>
+      <%= f.label :inicio_pqt, "Início PQT" %>
+      <%= f.text_field :inicio_pqt, class:"datepicker" %>
 
-  <div class="input-field">
+    </div>
 
-    <%= f.label :alta_pqt %>
-    <%= f.date_select :alta_pqt %>
-    
+    <div class="input-field col s6">
+
+      <%= f.label :alta_pqt, "Alta PQT" %>
+      <%= f.text_field :alta_pqt, class:"datepicker"  %>
+
+    </div>
   </div>
 
   <div class="input-field">
@@ -46,52 +48,162 @@
     <%= f.text_field :unidade_saude %>
     
   </div>
+  <br>
+  <strong>Tratamentos Propostos</strong>
+  <br>
+  <div class="row">
+    <div class="input-field col s4">
 
-  <div class="input-field">
 
-    <%= f.label :atividades_realizadas_ubs %>
-    <%= f.check_box :atividades_realizadas_ubs %>
-    
+      <%= f.check_box :atividades_orientadas %>
+      <%= f.label :atividades_orientadas %>
+
+    </div>
+    <div class="input-field col s4">
+
+
+      <%= f.check_box :atividades_realizadas_ubs %>
+      <%= f.label :atividades_realizadas_ubs, "Atividades realizadas na UBS" %>
+
+    </div>
+
+    <div class="input-field col s4">
+
+
+      <%= f.check_box :grupo_autocuidado %>
+      <%= f.label :grupo_autocuidado, "Participação em grupo de autocuidadeo" %>
+
+    </div>
+
+
   </div>
 
-  <div class="input-field">
-
-    <%= f.label :grupo_autocuidado %>
-    <%= f.check_box :grupo_autocuidado %>
-    
-  </div>
-
-  <div class="input-field">
+  <br>
+  <div class="row input-field">
 
     <%= f.label :encaminhamentos %>
     <%= f.text_field :encaminhamentos %>
     
   </div>
 
-  <div class="input-field">
+  <div class="row">
 
-    <%= f.label :imobilizacoes %>
-    <%= f.text_field :imobilizacoes %>
-    
+    <div class="input-field col s6">
+
+      <%= f.label :imobilizacoes, "Imobilizações" %>
+      <%= f.text_field :imobilizacoes %>
+
+    </div>
+
+    <div class="input-field col s6">
+
+      <%= f.label :adaptacoes, "Adaptações" %>
+      <%= f.text_field :adaptacoes %>
+
+    </div>
   </div>
 
   <div class="input-field">
 
-    <%= f.label :adaptacoes %>
-    <%= f.text_field :adaptacoes %>
+    <%= f.label :observacoes, "Observações" %>
+    <%= f.text_area :observacoes,class:"materialize-textarea" %>
     
   </div>
 
-  <div class="input-field">
 
-    <%= f.label :observacoes %>
-    <%= f.text_field :observacoes %>
-    
+  <%= f.hidden_field :notificacao_id %>
+
+  <!-- Episodio Reacional -->
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Avaliação Neurológica Simplificada</span>
+      <%= f.fields_for :avaliacao_neurologicas do |esq| %>
+          <div class="row">
+            <div class="col s12 l4 input">
+              <%= esq.label :queixa_id, "Queixa" %>
+              <%#= esq.select :queixa_id, @queixas, {prompt: true}, {class: "browser-default select2"} %>
+              <%= esq.grouped_collection_select :queixa_id, CategoriaQueixa.all,:queixas,:nome, :id, :nome,{prompt:true},{class:"browser-default select2"} %>
+            </div>
+            <div class="col s6 l2 input-field">
+
+              <%= esq.label :direito, "Direito" %>
+              <%= esq.text_field :direito %>
+            </div>
+            <div class="col s6 l2 input-field">
+              <%= esq.label :esquerdo,"Esquerdo" %>
+              <%= esq.text_field :esquerdo %>
+            </div>
+            <div class="col s12 l2">
+              <%= esq.label :data, "Data" %>
+              <%= esq.text_field :data, class:"datepicker" %>
+            </div>
+            <div class="col s4 l1">
+              <%= esq.link_to_remove "Remover" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <div class="card-action">
+      <%= f.link_to_add "Novo Avaliação Neurológica", :avaliacao_neurologicas %>
+    </div>
   </div>
 
-  <div class="input-field">
-    <%= f.collection_select :notificacao_id, Notificacao.all, :id, :name, prompt: true  %>
-    
+  <!-- Classificação do Grau -->
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Classificação do Grau</span>
+      <%= f.fields_for :classificacao_graus do |esq| %>
+          <div class="row">
+            <div class="col s2 input-field">
+              <%= esq.label :olho_direito, "Olho Direito" %>
+              <%= esq.number_field :olho_direito %>
+            </div>
+            <div class="col s2 input-field">
+
+              <%= esq.label :olho_esquerdo, "Olho Esquerdo" %>
+              <%= esq.number_field :olho_esquerdo %>
+            </div>
+            <div class="col s2 input-field">
+              <%= esq.label :mao_direita,"Mão Direita" %>
+              <%= esq.number_field :mao_direita %>
+            </div>
+            <div class="col s2 input-field">
+              <%= esq.label :mao_esqueda, "Mão Esquerda" %>
+              <%= esq.number_field :mao_esqueda %>
+            </div>
+            <div class="col s2 input-field">
+
+              <%= esq.label :pe_direito, "Pé Direito" %>
+              <%= esq.number_field :pe_direito %>
+            </div>
+            <div class="col s2 input-field">
+              <%= esq.label :pe_esquerdo,"Pé Esquerdo" %>
+              <%= esq.number_field :pe_esquerdo %>
+            </div>
+            <div class="col s2 input-field">
+
+              <%= esq.label :maior_grau, "Maior Grau" %>
+              <%= esq.number_field :maior_grau %>
+            </div>
+            <div class="col s2 input-field">
+              <%= esq.label :escore_omp,"Escore OMP" %>
+              <%= esq.number_field :escore_omp %>
+            </div>
+            <div class="col s2">
+              <%= esq.label :data, "Data" %>
+              <%= esq.text_field :data, class:"datepicker" %>
+            </div>
+            <div class="col s4 l1">
+              <%= esq.link_to_remove "Remover" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <div class="card-action">
+      <%= f.link_to_add "Novo Classificação do Grau", :classificacao_graus %>
+    </div>
   </div>
 
 </div>

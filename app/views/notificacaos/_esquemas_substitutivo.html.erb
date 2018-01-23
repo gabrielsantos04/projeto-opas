@@ -1,0 +1,18 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Medicamento</th>
+    <th>Miligramas</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% esquema_substitutivos.each do |esquema_substitutivo| %>
+      <tr>
+        <td><%= esquema_substitutivo.medicamento %></td>
+        <td><%= esquema_substitutivo.miligramas %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

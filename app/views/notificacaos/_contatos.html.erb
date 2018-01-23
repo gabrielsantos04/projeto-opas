@@ -1,0 +1,33 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>Tipo contato</th>
+    <th>Suspeito</th>
+    <th>Confirmado</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% notificacao_contatos.each do |notificacao_contato| %>
+      <tr>
+
+        <td><%= notificacao_contato.nome %></td>
+
+
+
+        <td><%= notificacao_contato.tipo_contato_text %></td>
+
+
+
+        <td><%= notificacao_contato.suspeito == true ? "SIM" : "NÃO" %></td>
+
+
+
+        <td><%= notificacao_contato.confirmado == true ? "SIM" : "NÃO" %></td>
+
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

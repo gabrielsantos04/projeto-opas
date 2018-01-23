@@ -1,0 +1,38 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Tipo</th>
+    <th>Número de episódios</th>
+    <th>Conduta mendicamentosa</th>
+    <th>Data início</th>
+    <th>Data término</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% episodio_reacionals.each do |episodio_reacional| %>
+      <tr>
+
+
+        <td><%= episodio_reacional.tipo_text %></td>
+
+
+
+        <td><%= episodio_reacional.numero_episodios %></td>
+
+
+
+        <td><%= episodio_reacional.conduta_mendicamentosa %></td>
+
+
+
+        <td><%= episodio_reacional.data_inicio %></td>
+
+
+
+        <td><%= episodio_reacional.data_termino %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

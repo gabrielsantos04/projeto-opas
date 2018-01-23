@@ -1,5 +1,6 @@
 class QueixasController < ApplicationController
   before_action :set_queixa, only: [:show, :edit, :update, :destroy]
+  before_action :set_combos, only: [:new, :edit, :create]
 
   # GET /queixas
   def index
@@ -25,7 +26,7 @@ class QueixasController < ApplicationController
     @queixa = Queixa.new(queixa_params)
 
     if @queixa.save
-      redirect_to @queixa, notice: 'Queixa was successfully created.'
+      redirect_to queixas_path, notice: 'Queixa criada com sucesso.'
     else
       render :new
     end
@@ -46,7 +47,13 @@ class QueixasController < ApplicationController
     redirect_to queixas_url, notice: 'Queixa was successfully destroyed.'
   end
 
+
+
   private
+
+  def set_combos
+    @categorias = CategoriaQueixa.all.map{|a| [a.nome,a.id]}
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_queixa
       @queixa = Queixa.find(params[:id])
@@ -54,6 +61,6 @@ class QueixasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def queixa_params
-      params.require(:queixa).permit(:nome, :categoria)
+      params.require(:queixa).permit(:nome, :categoria,:categoria_queixa_id)
     end
 end

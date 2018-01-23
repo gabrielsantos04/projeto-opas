@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categoria_queixas
   resources :avaliacao_sensitivas
   resources :episodio_reacionals
   resources :avaliacao_neurologicas

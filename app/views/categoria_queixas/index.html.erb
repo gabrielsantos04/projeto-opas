@@ -16,19 +16,14 @@
   <thead>
     <tr>
             <th>Nome</th>
-            <th>Categoria</th>
           </tr>
   </thead>
 
   <tbody>
-    <% @queixas.each do |queixa| %>
+    <% @categoria_queixas.each do |categoria_queixa| %>
     <tr>
               
-          <td><%= link_to queixa.nome,queixa %></td>
-        
-              
-
-          <td><%= queixa.categoria_queixa %></td>
+          <td><%= link_to categoria_queixa.nome,categoria_queixa %></td>
         
           </tr>
     <% end %>
@@ -36,7 +31,7 @@
 </table>
 
 <div class="card-panel">
-  <%= paginate(@queixas)  %>
+  <%= paginate(@categoria_queixas)  %>
 </div>
 
-<%= link_to '+ Cadastrar', new_queixa_path, class:"btn" %>
+<%= link_to '+ Cadastrar', new_categoria_queixa_path, class:"btn" %>

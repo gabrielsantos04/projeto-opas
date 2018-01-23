@@ -17,6 +17,7 @@
 #  notificacao_id            :integer
 #  created_at                :datetime         not null
 #  updated_at                :datetime         not null
+#  atividades_orientadas     :boolean
 #
 # Indexes
 #
@@ -29,4 +30,14 @@
 
 class AvaliacaoNotificacao < ApplicationRecord
   belongs_to :notificacao
+
+  has_many :avaliacao_neurologicas
+  has_many :classificacao_graus
+
+  accepts_nested_attributes_for :avaliacao_neurologicas, allow_destroy: true
+  accepts_nested_attributes_for :classificacao_graus, allow_destroy: true
+
+  extend Enumerize
+
+  enumerize :classificacao_operacional, in: [:multibacilar, :paucibacilar], predicate: true
 end

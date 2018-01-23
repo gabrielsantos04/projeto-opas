@@ -1,5 +1,6 @@
 class AvaliacaoNotificacaosController < ApplicationController
   before_action :set_avaliacao_notificacao, only: [:show, :edit, :update, :destroy]
+  before_action :set_combos, only: [:new, :edit, :create]
 
   # GET /avaliacao_notificacaos
   def index
@@ -13,7 +14,7 @@ class AvaliacaoNotificacaosController < ApplicationController
 
   # GET /avaliacao_notificacaos/new
   def new
-    @avaliacao_notificacao = AvaliacaoNotificacao.new
+    @avaliacao_notificacao = AvaliacaoNotificacao.new(notificacao_id: params[:notificacao])
   end
 
   # GET /avaliacao_notificacaos/1/edit
@@ -47,6 +48,12 @@ class AvaliacaoNotificacaosController < ApplicationController
   end
 
   private
+
+  def set_combos
+    @classificacoes_operacionais = AvaliacaoNotificacao.classificacao_operacional.options
+    @queixas = Queixa.all.group_by(&:categoria)#.map{|a| [a.nome,a.id]}
+    @categorias = Queixa.categoria.options
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_avaliacao_notificacao
       @avaliacao_notificacao = AvaliacaoNotificacao.find(params[:id])
@@ -54,6 +61,9 @@ class AvaliacaoNotificacaosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def avaliacao_notificacao_params
-      params.require(:avaliacao_notificacao).permit(:classificacao_operacional, :inicio_pqt, :alta_pqt, :profissao, :unidade_saude, :atividades_realizadas_ubs, :grupo_autocuidado, :encaminhamentos, :imobilizacoes, :adaptacoes, :observacoes, :notificacao_id)
+      params.require(:avaliacao_notificacao).permit(:classificacao_operacional, :inicio_pqt, :alta_pqt, :profissao, :unidade_saude, :atividades_realizadas_ubs, :grupo_autocuidado, :encaminhamentos,
+                                                    :imobilizacoes, :adaptacoes, :observacoes, :notificacao_id,
+                                                    avaliacao_neurologicas_attributes:[:id,:queixa_id,:avaliacao_notificacao_id,:direito,:esquerdo,:data,:_destroy],
+                                                    classificacao_graus_attributes:[:id,:avaliacao_notificacao_id,:data,:olho_direito,:olho_esquerdo,:mao_direita,:mao_esqueda,:pe_direito,:pe_esquerdo,:maior_grau,:escore_omp,:_destroy])
     end
 end

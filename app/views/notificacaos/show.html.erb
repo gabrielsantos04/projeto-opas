@@ -1,14 +1,18 @@
-<div class="card-panel">
-	
-<p>
-  <strong>Numero:</strong>
-  <%= @notificacao.numero %>
-</p>
+<br>
+<%= link_to 'Nova Avaliação', new_avaliacao_notificacao_path(notificacao: @notificacao.id), class:"btn" %>
 
-<p>
-  <strong>Data:</strong>
-  <%= @notificacao.data %>
-</p>
+<div class="card-panel">
+	<div class="row">
+    <div class="col s6">
+      <strong>Numero:</strong>
+      <%= @notificacao.numero %>
+    </div>
+
+    <div class="col s6">
+      <strong>Data:</strong>
+      <%= @notificacao.data %>
+    </div>
+  </div>
 
 <p>
   <strong>Grau incapacidade:</strong>
@@ -16,17 +20,17 @@
 </p>
 
 <p>
-  <strong>Modo entrada:</strong>
+  <strong>Modo de entrada:</strong>
   <%= @notificacao.modo_entrada_text %>
 </p>
 
 <p>
-  <strong>Modo deteccao:</strong>
+  <strong>Modo de deteccao:</strong>
   <%= @notificacao.modo_deteccao_text %>
 </p>
 
 <p>
-  <strong>Observacoes:</strong>
+  <strong>Observações:</strong>
   <%= @notificacao.observacoes %>
 </p>
 
@@ -36,14 +40,64 @@
 </p>
 
 <p>
-  <strong>Data inicio:</strong>
+  <strong>Data de início do Tratamento:</strong>
   <%= @notificacao.data_inicio %>
 </p>
 
 <p>
-  <strong>Esquema terapeutico:</strong>
+  <strong>Esquema terapêutico:</strong>
   <%= @notificacao.esquema_terapeutico_text %>
 </p>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Esquema Substitutivo</span>
+        <%= render partial: "esquemas_substitutivo", locals:{esquema_substitutivos: @notificacao.esquema_substitutivos} %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Episódios Relacionais</span>
+        <%= render partial: "episodios_relacionais", locals:{episodio_reacionals: @notificacao.episodio_reacionals} %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Dados Clínicos</span>
+        <%= render partial: "dados_clinicos", locals:{dados_clinicos: @notificacao.dados_clinicos} %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Contatos</span>
+        <%= render partial: "contatos", locals:{notificacao_contatos: @notificacao.notificacao_contatoes} %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Avaliações</span>
+        <%= render partial: "avaliacoes", locals:{avaliacao_notificacaos: @notificacao.avaliacao_notificacaos} %>
+      </div>
+
+    </div>
+  </div>
 
 </div>
 <%= link_to 'Voltar', notificacaos_path, class:"btn" %>

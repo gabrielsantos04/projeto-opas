@@ -57,6 +57,16 @@ pt-BR:
         tipo_1_2: "Tipo 1 e 2"
         neurites: "Neurites"
         sem_reacao: "Sem Reação"
+    queixa:
+      categoria:
+        olhos: "Olhos"
+        nariz: "Nariz"
+        membros_superiores: "Membros Superiores"
+        membros_inferiores: "Membros Inferiores"
+    avaliacao_notificacao:
+      classificacao_operacional:
+        multibacilar: "Multibacilar"
+        paucibacilar: "Paucibalicar"
 
 
 

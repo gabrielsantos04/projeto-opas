@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180123144727) do
+ActiveRecord::Schema.define(version: 20180123192435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20180123144727) do
     t.bigint "notificacao_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "atividades_orientadas"
     t.index ["notificacao_id"], name: "index_avaliacao_notificacaos_on_notificacao_id"
   end
 
@@ -94,6 +95,12 @@ ActiveRecord::Schema.define(version: 20180123144727) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["notificacao_contato_id"], name: "index_bcgs_on_notificacao_contato_id"
+  end
+
+  create_table "categoria_queixas", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cidades", force: :cascade do |t|
@@ -237,6 +244,8 @@ ActiveRecord::Schema.define(version: 20180123144727) do
     t.string "categoria"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "categoria_queixa_id"
+    t.index ["categoria_queixa_id"], name: "index_queixas_on_categoria_queixa_id"
   end
 
   add_foreign_key "avaliacao_neurologicas", "avaliacao_notificacaos"
@@ -254,4 +263,5 @@ ActiveRecord::Schema.define(version: 20180123144727) do
   add_foreign_key "notificacaos", "pacientes"
   add_foreign_key "pacientes", "cidades"
   add_foreign_key "pacientes", "ocupacaos"
+  add_foreign_key "queixas", "categoria_queixas"
 end

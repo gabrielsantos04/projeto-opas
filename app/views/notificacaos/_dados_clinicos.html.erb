@@ -1,0 +1,33 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Lesoes cultâneas</th>
+    <th>Forma clínica</th>
+    <th>Classificação operacional</th>
+    <th>Nervos afetados</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% dados_clinicos.each do |dados_clinico| %>
+      <tr>
+
+        <td><%= dados_clinico.lesoes_cultaneas %></td>
+
+
+
+        <td><%= dados_clinico.forma_clinica_text %></td>
+
+
+
+        <td><%= dados_clinico.classificacao_operacional_text %></td>
+
+
+
+        <td><%= dados_clinico.nervos_afetados %></td>
+
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
