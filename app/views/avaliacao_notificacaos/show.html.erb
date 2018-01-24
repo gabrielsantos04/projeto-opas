@@ -1,64 +1,99 @@
 <div class="card-panel">
-	
-<p>
-  <strong>Classificacao operacional:</strong>
-  <%= @avaliacao_notificacao.classificacao_operacional %>
-</p>
 
-<p>
-  <strong>Inicio pqt:</strong>
-  <%= @avaliacao_notificacao.inicio_pqt %>
-</p>
+  <div class="row">
+    <div class="col s12 l6">
+      <strong>Paciente:</strong>
+      <%= @avaliacao_notificacao.paciente %>
+    </div>
+    <div class="col s12 l6">
+      <strong>Notificação:</strong>
+      <%= @avaliacao_notificacao.notificacao.numero %>
+    </div>
+  </div>
+	<div class="row">
+    <div class="col s12 l4">
+      <strong>Classificação Operacional:</strong>
+      <%= @avaliacao_notificacao.classificacao_operacional_text %>
+    </div >
 
-<p>
-  <strong>Alta pqt:</strong>
-  <%= @avaliacao_notificacao.alta_pqt %>
-</p>
+    <div class="col s6 l4">
+      <strong>Inicio PQT:</strong>
+      <%= @avaliacao_notificacao.inicio_pqt %>
+    </div>
 
+    <div class="col s6 l4">
+      <strong>Alta PQT:</strong>
+      <%= @avaliacao_notificacao.alta_pqt %>
+    </div>
+  </div>
 <p>
-  <strong>Profissao:</strong>
+  <strong>Profissão:</strong>
   <%= @avaliacao_notificacao.profissao %>
 </p>
 
 <p>
-  <strong>Unidade saude:</strong>
+  <strong>Unidade de saúde:</strong>
   <%= @avaliacao_notificacao.unidade_saude %>
 </p>
+<div class="row">
+  <div class="col s12 l4">
+    <strong>Atividades Orientadas:</strong>
+    <%= @avaliacao_notificacao.atividades_orientadas == true ? "SIM" : "NÃO" %>
+  </div>
+  <div class="col s12 l4">
+    <strong>Atividades realizadas na UBS:</strong>
+    <%= @avaliacao_notificacao.atividades_realizadas_ubs == true ? "SIM" : "NÃO" %>
+  </div>
 
-<p>
-  <strong>Atividades realizadas ubs:</strong>
-  <%= @avaliacao_notificacao.atividades_realizadas_ubs %>
-</p>
+  <div class="col s12 l4">
+    <strong>Participação em grupo de autocuidado:</strong>
+    <%= @avaliacao_notificacao.grupo_autocuidado == true ? "SIM" : "NÃO" %>
+  </div>
 
-<p>
-  <strong>Grupo autocuidado:</strong>
-  <%= @avaliacao_notificacao.grupo_autocuidado %>
-</p>
-
+</div>
 <p>
   <strong>Encaminhamentos:</strong>
   <%= @avaliacao_notificacao.encaminhamentos %>
 </p>
 
 <p>
-  <strong>Imobilizacoes:</strong>
+  <strong>Imobilizações:</strong>
   <%= @avaliacao_notificacao.imobilizacoes %>
 </p>
 
 <p>
-  <strong>Adaptacoes:</strong>
+  <strong>Adaptações:</strong>
   <%= @avaliacao_notificacao.adaptacoes %>
 </p>
 
 <p>
-  <strong>Observacoes:</strong>
+  <strong>Observações:</strong>
   <%= @avaliacao_notificacao.observacoes %>
 </p>
 
-<p>
-  <strong>Notificacao:</strong>
-  <%= @avaliacao_notificacao.notificacao %>
-</p>
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Avaliações Neurológicas</span>
+        <%= render partial: "avaliacao_neurologica", locals:{avaliacao_neurologicas: @avaliacao_notificacao.avaliacao_neurologicas} %>
+      </div>
+
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Classificação do Grau</span>
+        <%= render partial: "classificacao_grau", locals:{classificacao_graus: @avaliacao_notificacao.classificacao_graus} %>
+      </div>
+
+    </div>
+  </div>
 
 </div>
+<%= link_to 'Nova Avaliação Sensitiva', new_avaliacao_sensitiva_path(avaliacao: @avaliacao_notificacao.id), class:"btn" %>
 <%= link_to 'Voltar', avaliacao_notificacaos_path, class:"btn" %>
+
+

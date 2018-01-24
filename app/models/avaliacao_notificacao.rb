@@ -33,9 +33,13 @@ class AvaliacaoNotificacao < ApplicationRecord
 
   has_many :avaliacao_neurologicas
   has_many :classificacao_graus
+  has_many :avaliacao_sensitivas
+
+  has_one :paciente, through: :notificacao
 
   accepts_nested_attributes_for :avaliacao_neurologicas, allow_destroy: true
   accepts_nested_attributes_for :classificacao_graus, allow_destroy: true
+  accepts_nested_attributes_for :avaliacao_sensitivas, allow_destroy: true
 
   extend Enumerize
 

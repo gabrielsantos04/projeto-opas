@@ -1,0 +1,32 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Data</th>
+    <th>Olho Direito</th>
+    <th>Olho esquerdo</th>
+    <th>Mão direita</th>
+    <th>Mão esqueda</th>
+    <th>Pé direito</th>
+    <th>Pé esquerdo</th>
+    <th>Maior grau</th>
+    <th>Escore omp</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% classificacao_graus.each do |classificacao_grau| %>
+      <tr>
+        <td><%= classificacao_grau.data %></td>
+        <td><%= classificacao_grau.olho_direito %></td>
+        <td><%= classificacao_grau.olho_esquerdo %></td>
+        <td><%= classificacao_grau.mao_direita %></td>
+        <td><%= classificacao_grau.mao_esqueda %></td>
+        <td><%= classificacao_grau.pe_direito %></td>
+        <td><%= classificacao_grau.pe_esquerdo %></td>
+        <td><%= classificacao_grau.maior_grau %></td>
+        <td><%= classificacao_grau.escore_omp %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

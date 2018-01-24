@@ -33,4 +33,8 @@ class Paciente < ApplicationRecord
   belongs_to :ocupacao
 
   has_many :notificacaos
+
+  def to_s
+    self.nome
+  end
 end

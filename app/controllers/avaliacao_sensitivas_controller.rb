@@ -1,5 +1,6 @@
 class AvaliacaoSensitivasController < ApplicationController
   before_action :set_avaliacao_sensitiva, only: [:show, :edit, :update, :destroy]
+  before_action :set_combos, only: [:new, :edit, :create]
 
   # GET /avaliacao_sensitivas
   def index
@@ -13,7 +14,7 @@ class AvaliacaoSensitivasController < ApplicationController
 
   # GET /avaliacao_sensitivas/new
   def new
-    @avaliacao_sensitiva = AvaliacaoSensitiva.new
+    @avaliacao_sensitiva = AvaliacaoSensitiva.new(avaliacao_notificacao_id: params[:avaliacao])
   end
 
   # GET /avaliacao_sensitivas/1/edit
@@ -47,6 +48,9 @@ class AvaliacaoSensitivasController < ApplicationController
   end
 
   private
+  def set_combos
+    @monofilamentos = Monofilamento.all
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_avaliacao_sensitiva
       @avaliacao_sensitiva = AvaliacaoSensitiva.find(params[:id])

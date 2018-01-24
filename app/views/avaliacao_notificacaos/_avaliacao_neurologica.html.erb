@@ -1,0 +1,23 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Queixa</th>
+    <th>Direito</th>
+    <th>Esquerdo</th>
+    <th>Data</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% avaliacao_neurologicas.each do |avaliacao_neurologica| %>
+      <tr>
+
+        <td><%= avaliacao_neurologica.queixa %></td>
+        <td><%= avaliacao_neurologica.direito %></td>
+        <td><%= avaliacao_neurologica.esquerdo %></td>
+        <td><%= avaliacao_neurologica.data %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

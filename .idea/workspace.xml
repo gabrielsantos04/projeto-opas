@@ -2,29 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notificacaos/_avaliacoes.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notificacaos/_contatos.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notificacaos/_dados_clinicos.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notificacaos/_episodios_relacionais.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notificacaos/_esquemas_substitutivo.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_neurologica.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_classificacao_grau.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/queixas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/queixas_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/avaliacao_notificacao.rb" afterPath="$PROJECT_DIR$/app/models/avaliacao_notificacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/queixa.rb" afterPath="$PROJECT_DIR$/app/models/queixa.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/paciente.rb" afterPath="$PROJECT_DIR$/app/models/paciente.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notificacaos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/notificacaos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pacientes/_notificacoes.html.erb" afterPath="$PROJECT_DIR$/app/views/pacientes/_notificacoes.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/queixas/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/queixas/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/queixas/index.html.erb" afterPath="$PROJECT_DIR$/app/views/queixas/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/pt-BR.yml" afterPath="$PROJECT_DIR$/config/locales/pt-BR.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/avaliacao_notificacaos.yml" afterPath="$PROJECT_DIR$/test/fixtures/avaliacao_notificacaos.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/queixas.yml" afterPath="$PROJECT_DIR$/test/fixtures/queixas.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/avaliacao_notificacao_test.rb" afterPath="$PROJECT_DIR$/test/models/avaliacao_notificacao_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/queixa_test.rb" afterPath="$PROJECT_DIR$/test/models/queixa_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pacientes/show.html.erb" afterPath="$PROJECT_DIR$/app/views/pacientes/show.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -40,32 +27,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb">
+        <entry file="file://$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
-              <caret line="158" column="42" lean-forward="false" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="avaliacao_notificacaos_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="66" column="233" lean-forward="false" selection-start-line="66" selection-start-column="233" selection-end-line="66" selection-end-column="233" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="classificacao_grau.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/classificacao_grau.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="-31">
+              <caret line="84" column="35" lean-forward="true" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,8 +53,28 @@
       <file leaf-file-name="avaliacao_notificacao.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/avaliacao_notificacao.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="31" />
+            <state relative-caret-position="486">
+              <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="avaliacao_sensitivas_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="51" column="39" lean-forward="false" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paciente.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/paciente.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="541">
+              <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -101,8 +101,6 @@
         <option value="$PROJECT_DIR$/app/controllers/pacientes_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/ocupacao.rb" />
         <option value="$PROJECT_DIR$/app/models/cidade.rb" />
-        <option value="$PROJECT_DIR$/app/models/paciente.rb" />
-        <option value="$PROJECT_DIR$/app/views/pacientes/show.html.erb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/models/notificacao.rb" />
         <option value="$PROJECT_DIR$/app/models/medicamento.rb" />
@@ -117,7 +115,6 @@
         <option value="$PROJECT_DIR$/app/views/notificacaos/_episodios_relacionais.html.erb" />
         <option value="$PROJECT_DIR$/app/views/notificacaos/_dados_clinicos.html.erb" />
         <option value="$PROJECT_DIR$/app/views/notificacaos/_contatos.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb" />
         <option value="$PROJECT_DIR$/app/views/pacientes/_notificacoes.html.erb" />
         <option value="$PROJECT_DIR$/config/locales/pt-BR.yml" />
         <option value="$PROJECT_DIR$/app/views/notificacaos/show.html.erb" />
@@ -127,9 +124,17 @@
         <option value="$PROJECT_DIR$/app/controllers/queixas_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/categoria_queixa.rb" />
         <option value="$PROJECT_DIR$/app/views/queixas/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/avaliacao_notificacao.rb" />
         <option value="$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/paciente.rb" />
+        <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_neurologica.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_classificacao_grau.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/avaliacao_notificacao.rb" />
+        <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pacientes/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb" />
       </list>
     </option>
   </component>
@@ -194,21 +199,14 @@
               <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="avaliacao_notificacaos" type="462c0819:PsiDirectoryNode" />
+              <item name="avaliacao_sensitivas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
               <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="notificacaos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="queixas" type="462c0819:PsiDirectoryNode" />
+              <item name="pacientes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,6 +220,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -352,12 +351,12 @@
       <option name="presentableId" value="Default" />
       <updated>1516620365927</updated>
       <workItem from="1516620367451" duration="6158000" />
-      <workItem from="1516708039675" duration="18357000" />
+      <workItem from="1516708039675" duration="38548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24515000" />
+    <option name="totallyTimeSpent" value="44706000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="708" extended-state="6" />
@@ -394,74 +393,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/notificacao.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pacientes/_notificacoes.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/paciente.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="25" column="34" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pacientes/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pacientes/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/cidade.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ocupacao.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/notificacaos/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -482,14 +413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
           <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/paciente.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -630,26 +553,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pacientes/_notificacoes.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pacientes/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="72" column="60" lean-forward="false" selection-start-line="72" selection-start-column="60" selection-end-line="72" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -698,14 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="28" column="91" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="28" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/notificacaos/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="95" column="109" lean-forward="false" selection-start-line="95" selection-start-column="109" selection-end-line="95" selection-end-column="109" />
           <folding />
         </state>
       </provider>
@@ -766,18 +665,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_notificacao.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/classificacao_grau.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/paciente.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/notificacaos/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="99" column="8" lean-forward="true" selection-start-line="91" selection-start-column="2" selection-end-line="99" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/avaliacao_neurologicas/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="50" column="8" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="50" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_neurologica.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/classificacao_graus/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="75" column="8" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="75" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_classificacao_grau.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -792,9 +739,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="158" column="42" lean-forward="false" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
+        <state relative-caret-position="415">
+          <caret line="206" column="8" lean-forward="true" selection-start-line="206" selection-start-column="8" selection-end-line="206" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="47" column="49" lean-forward="false" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pacientes/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="77" column="2" lean-forward="false" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_notificacao.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/monofilamento.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="51" column="39" lean-forward="false" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31">
+          <caret line="84" column="35" lean-forward="true" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
