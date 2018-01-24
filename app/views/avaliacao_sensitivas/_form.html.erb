@@ -84,11 +84,8 @@
     <div class="modal-content">
       <h4>Escolha um filamento</h4>
       <% @monofilamentos.each do |m|%>
-          <a class="btn-floating btn-large waves-effect waves-light " style="color: <%= m.cor  %>; background-color: <%= m.cor %>"></a>
+          <a onclick="setFilamento(<%= m.id %>,'<%= m.cor %>');" class="btn-floating btn-large waves-effect waves-light modal-close" style="color: <%= m.cor  %>; background-color: <%= m.cor %>"></a>
       <% end %>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
   </div>
 
@@ -99,6 +96,19 @@
 <% end %>
 
 <script type="text/javascript" charset="utf-8">
+  var filamento;
+
+    function setFilamento(id,cor)
+    {
+        console.log(id);
+        var ctx = cnvs_mao_direita.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(filamento.x, filamento.y, filamento.radius, 0, 2 * Math.PI, false);
+        ctx.lineWidth = 2;
+        ctx.fillStyle = cor;
+        ctx.fill();
+    }
+
     $(document).ready(function(){
         var mao_direita = document.getElementById("mao_direita");
         var cnvs_mao_direita = document.getElementById("cnvs_mao_direita");
@@ -190,7 +200,7 @@
                 var isInCircle = (dx * dx + dy * dy) < (circles_mao_direita[i].radius * circles_mao_direita[i].radius);
                 console.log(isInCircle);
                 if (isInCircle) {
-                    openModal();
+                    openModal(circles_mao_direita[i]);
                 }
             }
         }
@@ -225,8 +235,10 @@
         ctx.fill();
     }
 
-    function openModal()
+    function openModal(circle)
     {
+        filamento = circle;
+        console.log(filamento.x);
         $('#modal_cores').openModal();
     }
 </script>
