@@ -40,6 +40,7 @@
 #  pe_e_calcanhar           :integer
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
+#  pe_d_e2                  :integer
 #
 # Indexes
 #
