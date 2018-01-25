@@ -22,10 +22,11 @@ class ContatoAvaliacaosController < ApplicationController
 
   # POST /contato_avaliacaos
   def create
+    binding.pry
     @contato_avaliacao = ContatoAvaliacao.new(contato_avaliacao_params)
 
     if @contato_avaliacao.save
-      redirect_to @contato_avaliacao, notice: 'Contato avaliacao was successfully created.'
+      redirect_to @contato_avaliacao.notificacao_contato, notice: 'Avaliação do Contato criado com sucesso.'
     else
       render :new
     end
@@ -34,7 +35,7 @@ class ContatoAvaliacaosController < ApplicationController
   # PATCH/PUT /contato_avaliacaos/1
   def update
     if @contato_avaliacao.update(contato_avaliacao_params)
-      redirect_to @contato_avaliacao, notice: 'Contato avaliacao was successfully updated.'
+      redirect_to @contato_avaliacao.notificacao_contato, notice: 'Avaliação do Contato atualizada com sucesso.'
     else
       render :edit
     end
@@ -43,7 +44,7 @@ class ContatoAvaliacaosController < ApplicationController
   # DELETE /contato_avaliacaos/1
   def destroy
     @contato_avaliacao.destroy
-    redirect_to contato_avaliacaos_url, notice: 'Contato avaliacao was successfully destroyed.'
+    redirect_to  @contato_avaliacao.notificacao_contato, notice: 'Avaliação do Contato excluída com sucesso.'
   end
 
   private

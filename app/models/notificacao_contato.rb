@@ -25,7 +25,12 @@
 
 class NotificacaoContato < ApplicationRecord
   belongs_to :notificacao
+  has_many :contato_avaliacaos
 
   extend Enumerize
   enumerize :tipo_contato, in: [:domiciliar, :vizinhanca,:social], predicate: true
+
+  def to_s
+    self.nome
+  end
 end

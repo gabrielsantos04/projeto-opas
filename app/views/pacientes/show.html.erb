@@ -45,22 +45,23 @@
   </div>
 	
 <div class="row">
-  <p>
-    <strong>Sexo:</strong>
-    <%= @paciente.sexo == 1 ? "Masculino" : "Feminino" %>
-  </p>
-
-  <p>
-    <strong>Telefone:</strong>
-    <%= @paciente.telefone %>
-  </p>
-
-
-
-  <p>
-    <strong>Ocupacao:</strong>
-    <%= @paciente.ocupacao %>
-  </p>
+  <div class="col s12 l6">
+    <p>
+      <strong>Sexo:</strong>
+      <%= @paciente.sexo == 1 ? "Masculino" : "Feminino" %>
+    </p>
+    <p>
+      <strong>Telefone:</strong>
+      <%= @paciente.telefone %>
+    </p>
+    <p>
+      <strong>Ocupacao:</strong>
+      <%= @paciente.ocupacao %>
+    </p>
+  </div>
+  <div class="col s12 l6">
+    <div id="map" style="height: 200px;width: 200px"></div>
+  </div>
 </div>
 
   <div class="row">
@@ -80,4 +81,25 @@
 </div>
 <%= link_to 'Voltar', pacientes_path, class:"btn" %>
 
+
+<script>
+
+
+
+    function initMap()
+    {
+        var posicao = {lat: <%= @paciente.latitude %>, lng: <%= @paciente.longitude %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: posicao
+        });
+        var marker = new google.maps.Marker({
+            position: posicao,
+            map: map
+        });
+    }
+
+</script>
+<!-- google map api -->
+<script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWFnF5py8BuNUpvpcvuAVZQxJAm36NTA8&callback=initMap"></script>
 

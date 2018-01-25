@@ -15,28 +15,28 @@
   <div class="input-field">
 
     <%= f.label :data %>
-    <%= f.date_select :data %>
+    <%= f.text_field :data, class:"datepicker" %>
     
   </div>
 
   <div class="input-field">
 
-    <%= f.label :suspeito %>
+
     <%= f.check_box :suspeito %>
+    <%= f.label :suspeito %>
     
   </div>
 
   <div class="input-field">
 
-    <%= f.label :confirmado %>
+
     <%= f.check_box :confirmado %>
+    <%= f.label :confirmado %>
     
   </div>
 
-  <div class="input-field">
-    <%= f.collection_select :notificacao_contato_id, NotificacaoContato.all, :id, :name, prompt: true  %>
-    
-  </div>
+    <%= f.hidden_field :notificacao_contato_id  %>
+
 
 </div>
   <div class="actions">

@@ -49,4 +49,8 @@ class Notificacao < ApplicationRecord
   enumerize :modo_deteccao, in: [:encaminhamento, :demanda_expontanea,:exame_coletividade,:exame_contatos,:outros_modos], predicate: true
   enumerize :baciloscopia, in: [:positivo, :negativo,:nao_realizado], predicate: true
   enumerize :esquema_terapeutico, in: [:pb_infantil, :pb_adulto,:mb_infantil,:mb_adulto,:outros_esquemas], predicate: true
+
+  def to_s
+    self.numero
+  end
 end

@@ -15,15 +15,15 @@
 <table class="card striped responsive-table">
   <thead>
     <tr>
-            <th>Numero</th>
+            <th>Número</th>
             <th>Data</th>
             <th>Grau incapacidade</th>
             <th>Modo entrada</th>
-            <th>Modo deteccao</th>
-            <th>Observacoes</th>
+            <th>Modo detecção</th>
+            <th>Observações</th>
             <th>Baciloscopia</th>
-            <th>Data inicio</th>
-            <th>Esquema terapeutico</th>
+            <th>Data início</th>
+            <th>Esquema terapêutico</th>
           </tr>
   </thead>
 
@@ -39,15 +39,15 @@
         
               
 
-          <td><%= notificacao.grau_incapacidade %></td>
+          <td><%= notificacao.grau_incapacidade_text %></td>
         
               
 
-          <td><%= notificacao.modo_entrada %></td>
+          <td><%= notificacao.modo_entrada_text %></td>
         
               
 
-          <td><%= notificacao.modo_deteccao %></td>
+          <td><%= notificacao.modo_deteccao_text %></td>
         
               
 
@@ -55,7 +55,7 @@
         
               
 
-          <td><%= notificacao.baciloscopia %></td>
+          <td><%= notificacao.baciloscopia_text %></td>
         
               
 
@@ -63,7 +63,7 @@
         
               
 
-          <td><%= notificacao.esquema_terapeutico %></td>
+          <td><%= notificacao.esquema_terapeutico_text %></td>
         
           </tr>
     <% end %>

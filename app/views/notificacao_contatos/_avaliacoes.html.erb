@@ -1,0 +1,19 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Data</th>
+    <th>Suspeito</th>
+    <th>Confirmado</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% contato_avaliacaos.each do |contato_avaliacao| %>
+      <tr>
+        <td><%= link_to contato_avaliacao.data,contato_avaliacao %></td>
+        <td><%= contato_avaliacao.suspeito == true ? "SIM" : "NÃO" %></td>
+        <td><%= contato_avaliacao.confirmado == true ? "SIM" : "NÃO" %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

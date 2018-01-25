@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   resources :notificacao_contatos
   resources :dados_clinicos
   resources :notificacaos
-  resources :pacientes
+  resources :pacientes do
+    collection do
+      get "mapa"
+    end
+  end
   resources :medicamentos
   resources :queixas
   resources :monofilamentos

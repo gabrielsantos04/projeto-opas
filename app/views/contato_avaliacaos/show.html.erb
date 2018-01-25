@@ -1,5 +1,9 @@
 <div class="card-panel">
-	
+
+  <p>
+    <strong>Contato:</strong>
+    <%= @contato_avaliacao.notificacao_contato %>
+  </p>
 <p>
   <strong>Data:</strong>
   <%= @contato_avaliacao.data %>
@@ -7,18 +11,19 @@
 
 <p>
   <strong>Suspeito:</strong>
-  <%= @contato_avaliacao.suspeito %>
+  <%= @contato_avaliacao.suspeito == true ? "SIM" : "NÃO"  %>
 </p>
 
 <p>
   <strong>Confirmado:</strong>
-  <%= @contato_avaliacao.confirmado %>
+  <%= @contato_avaliacao.confirmado == true ? "SIM" : "NÃO"  %>
 </p>
+  <p>
+    <strong>Paciente:</strong>
+    <%= @contato_avaliacao.notificacao_contato.notificacao.paciente %>
+  </p>
 
-<p>
-  <strong>Notificacao contato:</strong>
-  <%= @contato_avaliacao.notificacao_contato %>
-</p>
+
 
 </div>
-<%= link_to 'Voltar', contato_avaliacaos_path, class:"btn" %>
+<%= link_to 'Voltar', @contato_avaliacao.notificacao_contato, class:"btn" %>

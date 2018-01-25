@@ -12,6 +12,10 @@ class PacientesController < ApplicationController
   def show
   end
 
+  def mapa
+    @pacientes = Paciente.all
+  end
+
   # GET /pacientes/new
   def new
     @paciente = Paciente.new
