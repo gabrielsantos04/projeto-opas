@@ -1,0 +1,15 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Data</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% avaliacao_sensitivas.each do |avaliacao_sensitiva| %>
+      <tr>
+        <td><%= link_to avaliacao_sensitiva.data,edit_avaliacao_sensitiva_path(avaliacao_sensitiva) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

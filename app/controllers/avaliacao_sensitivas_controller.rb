@@ -26,7 +26,7 @@ class AvaliacaoSensitivasController < ApplicationController
     @avaliacao_sensitiva = AvaliacaoSensitiva.new(avaliacao_sensitiva_params)
 
     if @avaliacao_sensitiva.save
-      redirect_to @avaliacao_sensitiva, notice: 'Avaliacao sensitiva was successfully created.'
+      redirect_to @avaliacao_sensitiva.avaliacao_notificacao, notice: 'Avaliação Sensitiva criada com sucesso.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class AvaliacaoSensitivasController < ApplicationController
   # PATCH/PUT /avaliacao_sensitivas/1
   def update
     if @avaliacao_sensitiva.update(avaliacao_sensitiva_params)
-      redirect_to @avaliacao_sensitiva, notice: 'Avaliacao sensitiva was successfully updated.'
+      redirect_to @avaliacao_sensitiva.avaliacao_notificacao, notice: 'Avaliação Sensitiva atualizada com sucesso.'
     else
       render :edit
     end
@@ -44,7 +44,7 @@ class AvaliacaoSensitivasController < ApplicationController
   # DELETE /avaliacao_sensitivas/1
   def destroy
     @avaliacao_sensitiva.destroy
-    redirect_to avaliacao_sensitivas_url, notice: 'Avaliacao sensitiva was successfully destroyed.'
+    redirect_to @avaliacao_sensitiva.avaliacao_notificacao, notice: 'Avaliação Sensitiva removida com sucesso.'
   end
 
   private
