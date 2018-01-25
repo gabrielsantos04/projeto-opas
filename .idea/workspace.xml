@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notificacao_contatos/_avaliacoes.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pacientes/mapa.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/hanseniase.iml" afterPath="$PROJECT_DIR$/.idea/hanseniase.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/contato_avaliacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/contato_avaliacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/pacientes_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/pacientes_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/notificacao.rb" afterPath="$PROJECT_DIR$/app/models/notificacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/notificacao_contato.rb" afterPath="$PROJECT_DIR$/app/models/notificacao_contato.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contato_avaliacaos/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/contato_avaliacaos/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contato_avaliacaos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/contato_avaliacaos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notificacao_contatos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/notificacao_contatos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notificacaos/_contatos.html.erb" afterPath="$PROJECT_DIR$/app/views/notificacaos/_contatos.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notificacaos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/notificacaos/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pacientes/index.html.erb" afterPath="$PROJECT_DIR$/app/views/pacientes/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pacientes/show.html.erb" afterPath="$PROJECT_DIR$/app/views/pacientes/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pacientes/mapa.html.erb" afterPath="$PROJECT_DIR$/app/views/pacientes/mapa.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -73,8 +54,8 @@
       <file leaf-file-name="mapa.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/pacientes/mapa.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="29" column="45" lean-forward="false" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+            <state relative-caret-position="469">
+              <caret line="45" column="71" lean-forward="false" selection-start-line="45" selection-start-column="71" selection-end-line="45" selection-end-column="71" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -368,12 +349,12 @@
       <option name="presentableId" value="Default" />
       <updated>1516620365927</updated>
       <workItem from="1516620367451" duration="6158000" />
-      <workItem from="1516708039675" duration="56067000" />
+      <workItem from="1516708039675" duration="57683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62225000" />
+    <option name="totallyTimeSpent" value="63841000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="708" extended-state="6" />
@@ -820,8 +801,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pacientes/mapa.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="29" column="45" lean-forward="false" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+        <state relative-caret-position="469">
+          <caret line="45" column="71" lean-forward="false" selection-start-line="45" selection-start-column="71" selection-end-line="45" selection-end-column="71" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>

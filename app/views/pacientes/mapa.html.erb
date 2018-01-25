@@ -18,19 +18,40 @@
         // Note: The code uses the JavaScript Array.prototype.map() method to
         // create an array of markers based on a given "locations" array.
         // The map() method here has nothing to do with the Google Maps API.
-        var markers = locations.map(function(location, i) {
-            return new google.maps.Marker({
-                position: location,
+        var markers = pacientes.map(function(paciente, i)
+        {
+            var maker = new google.maps.Marker({
+                position: paciente.location,
                 label: labels[i % labels.length]
             });
+            maker.addListener('click',function(){
+                abrirInfoWindow(i,map,maker);
+            });
+            return maker;
         });
 
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: '/images/map_cluster/'});
     }
-    console.log(<%= @pacientes.map{|a| {lat: a.latitude.to_f, lng: a.longitude.to_f} }.to_json.to_s.html_safe %>);
-    var locations = <%= @pacientes.map{|a| {lat: a.latitude.to_f, lng: a.longitude.to_f} }.to_json.to_s.html_safe %>;
+
+    var pacientes = <%= @pacientes.map{|a| {id: a.id,nome: a.nome, location:{lat: a.latitude.to_f, lng: a.longitude.to_f} }}.to_json.to_s.html_safe %>;
+
+    function abrirInfoWindow(i,map,maker)
+    {
+        var paciente = pacientes[i];
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">'+paciente.nome+'</h1>'+
+            '<div id="bodyContent">'+
+            '<p></p>'+
+            '</div>'+
+            '</div>';
+
+        var infoWindow = new google.maps.InfoWindow({content: contentString});
+        infoWindow.open(map,maker);
+    }
 
 </script>
 <script src="/js/markerclusterer.js">
