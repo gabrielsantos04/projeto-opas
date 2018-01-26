@@ -54,6 +54,6 @@ class CidadesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def cidade_params
-      params.require(:cidade).permit(:nome, :uf, :latitude, :longitude)
+      params.require(:cidade).permit(:nome, :uf, :latitude, :longitude,:pacientes_count)
     end
 end

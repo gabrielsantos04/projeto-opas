@@ -29,12 +29,15 @@
 #
 
 class Paciente < ApplicationRecord
-  belongs_to :cidade
+  belongs_to :cidade, counter_cache: true
   belongs_to :ocupacao
 
   has_many :notificacaos
 
+
   def to_s
     self.nome
   end
+
+
 end

@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   resources :bcgs
   resources :notificacao_contatos
   resources :dados_clinicos
-  resources :notificacaos
+  resources :notificacaos do
+    collection do
+      get 'home'
+    end
+  end
   resources :pacientes do
     collection do
       get "mapa"

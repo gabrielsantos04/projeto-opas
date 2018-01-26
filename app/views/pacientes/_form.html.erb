@@ -41,11 +41,14 @@
   </div>
 
   <div class="input-field">
-    <p>Sexo</p>
-    <input class="with-gap" type="radio" name="paciente[sexo]" id="masculino" value="1">
-    <label for="masculino">Masculino</label>
-    <input class="with-gap" type="radio" name="paciente[sexo]" id="feminino" value="2">
-    <label for="feminino">Feminino</label>
+    <%= f.label :sexo %> <br>
+
+    <%= f.radio_button :sexo, 1 %>
+
+    <%= f.label :sexo, "Masculino", value: 1 %>
+
+    <%= f.radio_button :sexo, 2 %>
+    <%= f.label :sexo, "Feminino", value: 2 %>
 
   </div>
   <br>
@@ -95,3 +98,62 @@
     <%= f.submit "Salvar", class:"btn" %>
   </div>
 <% end %>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWFnF5py8BuNUpvpcvuAVZQxJAm36NTA8&libraries=places"></script>
+
+<script>
+
+    // This example adds a search box to a map, using the Google Place Autocomplete
+    // feature. People can enter geographical searches. The search box will return a
+    // pick list containing a mix of places and predicted search terms.
+
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+    function initAutocomplete() {
+
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('paciente_endereco');
+        var defaultBounds = new google.maps.LatLngBounds(
+            new google.maps.LatLng(-9.768768, -48.352231),
+            new google.maps.LatLng(-10.379600, -48.342440));
+
+        var options = {
+            componentRestrictions: {country: "br"}
+        };
+
+        var searchBox = new google.maps.places.Autocomplete(input, options);
+
+
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        google.maps.event.addListener(searchBox,'place_changed', function()
+        {
+
+
+            var place = searchBox.getPlace();
+
+            if (!place.geometry) {
+                console.log("Returned place contains no geometry");
+                return;
+            }
+
+            //Seta valores de endereço, latitude e longitude aos comapos correspondentes
+            $("#paciente_endereco").val(place.formatted_address);
+            $("#paciente_latitude").val(place.geometry.location.lat());
+            $("#paciente_longitude").val(place.geometry.location.lng());
+            $("#paciente_latitude").focus();
+            $("#paciente_longitude").focus();
+
+        });
+
+    }
+
+    setTimeout(
+        function () {
+            initAutocomplete()
+        }
+        ,300)
+
+</script>

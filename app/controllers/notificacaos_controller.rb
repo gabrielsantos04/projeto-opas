@@ -8,6 +8,13 @@ class NotificacaosController < ApplicationController
     @notificacaos = @q.result.page(params[:page])
   end
 
+  def home
+    @pacientes = Paciente.all
+    @notificacoes = Notificacao.all
+    @contatos = NotificacaoContato.all
+    @incidencia = Cidade.order(pacientes_count: :desc).first
+  end
+
   # GET /notificacaos/1
   def show
   end

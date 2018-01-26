@@ -1,12 +1,35 @@
-<div class="card">  
+<div class="card">
   <div class="card-content">
     <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
       Pesquisa
     </span>
     <div id="pesquisa" class="not-show">
       <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
-      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
-      <%= f.submit "Filtrar", class:"btn" %>
+          <%= f.text_field :numero_or_paciente_nome_cont, placeholder: "Número, Paciente" %>
+          <div class="row">
+            <div class="col s12 l2">
+              <label >Grau</label>
+              <%= f.select :grau_incapacidade_eq, Notificacao.grau_incapacidade.options,{include_blank:true},{class:"browser-default select2"} %>
+            </div>
+            <div class="col s12 l2">
+              <label >Entrada</label>
+              <%= f.select :modo_entrada_eq, Notificacao.modo_entrada.options,{include_blank:true},{class:"browser-default select2"} %>
+            </div>
+            <div class="col s12 l2">
+              <label >Detecção</label>
+              <%= f.select :modo_deteccao_eq, Notificacao.modo_deteccao.options,{include_blank:true},{class:"browser-default select2"} %>
+            </div>
+            <div class="col s12 l2">
+              <label >Baciloscopia</label>
+              <%= f.select :baciloscopia_eq, Notificacao.baciloscopia.options,{include_blank:true},{class:"browser-default select2"} %>
+            </div>
+            <div class="col s12 l2">
+              <label >Esquema</label>
+              <%= f.select :esquema_terapeutico_eq, Notificacao.esquema_terapeutico.options,{include_blank:true},{class:"browser-default select2"} %>
+            </div>
+          </div>
+          <br>
+          <%= f.submit "Filtrar", class:"btn" %>
       <% end %>
     </div>
   </div>
@@ -14,59 +37,56 @@
 
 <table class="card striped responsive-table">
   <thead>
-    <tr>
-            <th>Número</th>
-            <th>Data</th>
-            <th>Grau incapacidade</th>
-            <th>Modo entrada</th>
-            <th>Modo detecção</th>
-            <th>Observações</th>
-            <th>Baciloscopia</th>
-            <th>Data início</th>
-            <th>Esquema terapêutico</th>
-          </tr>
+  <tr>
+    <th>Número</th>
+    <th>Paciente</th>
+    <th>Data</th>
+    <th>Grau incapacidade</th>
+    <th>Modo entrada</th>
+    <th>Modo detecção</th>
+    <th>Baciloscopia</th>
+    <th>Data início</th>
+    <th>Esquema terapêutico</th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @notificacaos.each do |notificacao| %>
-    <tr>
-              
-          <td><%= link_to notificacao.numero,notificacao %></td>
-        
-              
+  <% @notificacaos.each do |notificacao| %>
+      <tr>
 
-          <td><%= notificacao.data %></td>
-        
-              
+        <td><%= link_to notificacao.numero,notificacao %></td>
 
-          <td><%= notificacao.grau_incapacidade_text %></td>
-        
-              
+        <td><%= link_to notificacao.paciente,notificacao.paciente %></td>
 
-          <td><%= notificacao.modo_entrada_text %></td>
-        
-              
 
-          <td><%= notificacao.modo_deteccao_text %></td>
-        
-              
+        <td><%= notificacao.data %></td>
 
-          <td><%= notificacao.observacoes %></td>
-        
-              
 
-          <td><%= notificacao.baciloscopia_text %></td>
-        
-              
 
-          <td><%= notificacao.data_inicio %></td>
-        
-              
+        <td><%= notificacao.grau_incapacidade_text %></td>
 
-          <td><%= notificacao.esquema_terapeutico_text %></td>
-        
-          </tr>
-    <% end %>
+
+
+        <td><%= notificacao.modo_entrada_text %></td>
+
+
+
+        <td><%= notificacao.modo_deteccao_text %></td>
+
+
+
+        <td><%= notificacao.baciloscopia_text %></td>
+
+
+
+        <td><%= notificacao.data_inicio %></td>
+
+
+
+        <td><%= notificacao.esquema_terapeutico_text %></td>
+
+      </tr>
+  <% end %>
   </tbody>
 </table>
 

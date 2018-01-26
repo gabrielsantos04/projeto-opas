@@ -13,7 +13,9 @@ class PacientesController < ApplicationController
   end
 
   def mapa
+
     @pacientes = Paciente.all
+    @cidades = Cidade.where(id: @pacientes.pluck(:cidade_id))
   end
 
   # GET /pacientes/new
