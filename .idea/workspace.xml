@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb" afterPath="$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -27,8 +23,8 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="825" column="4" lean-forward="false" selection-start-line="825" selection-start-column="4" selection-end-line="825" selection-end-column="4" />
+            <state relative-caret-position="252">
+              <caret line="833" column="53" lean-forward="false" selection-start-line="833" selection-start-column="53" selection-end-line="833" selection-end-column="53" />
               <folding>
                 <element signature="e#9819#11608#0#HTML" expanded="false" />
                 <element signature="e#11648#13474#0#HTML" expanded="false" />
@@ -38,10 +34,10 @@
                 <element signature="e#19079#19306#0#HTML" expanded="false" />
                 <element signature="e#19361#19603#0#HTML" expanded="false" />
                 <element signature="e#19659#19901#0#HTML" expanded="false" />
-                <element signature="e#20584#22308#0#HTML" expanded="false" />
-                <element signature="e#22427#24102#0#HTML" expanded="false" />
-                <element signature="e#24235#26422#0#HTML" expanded="false" />
-                <element signature="e#26497#28755#0#HTML" expanded="false" />
+                <element signature="e#20672#22396#0#HTML" expanded="false" />
+                <element signature="e#22515#24190#0#HTML" expanded="false" />
+                <element signature="e#24323#26510#0#HTML" expanded="false" />
+                <element signature="e#26585#28843#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -50,8 +46,8 @@
       <file leaf-file-name="avaliacao_sensitivas_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+            <state relative-caret-position="126">
+              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -143,8 +139,8 @@
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva.html.erb" />
         <option value="$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb" />
       </list>
     </option>
@@ -378,12 +374,12 @@
       <workItem from="1516620367451" duration="6158000" />
       <workItem from="1516708039675" duration="70076000" />
       <workItem from="1517226599012" duration="314000" />
-      <workItem from="1517421472933" duration="7962000" />
+      <workItem from="1517421472933" duration="10127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84510000" />
+    <option name="totallyTimeSpent" value="86675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="708" extended-state="6" />
@@ -683,14 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -779,18 +767,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+        <state relative-caret-position="126">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="825" column="4" lean-forward="false" selection-start-line="825" selection-start-column="4" selection-end-line="825" selection-end-column="4" />
+        <state relative-caret-position="252">
+          <caret line="833" column="53" lean-forward="false" selection-start-line="833" selection-start-column="53" selection-end-line="833" selection-end-column="53" />
           <folding>
             <element signature="e#9819#11608#0#HTML" expanded="false" />
             <element signature="e#11648#13474#0#HTML" expanded="false" />
@@ -800,10 +796,10 @@
             <element signature="e#19079#19306#0#HTML" expanded="false" />
             <element signature="e#19361#19603#0#HTML" expanded="false" />
             <element signature="e#19659#19901#0#HTML" expanded="false" />
-            <element signature="e#20584#22308#0#HTML" expanded="false" />
-            <element signature="e#22427#24102#0#HTML" expanded="false" />
-            <element signature="e#24235#26422#0#HTML" expanded="false" />
-            <element signature="e#26497#28755#0#HTML" expanded="false" />
+            <element signature="e#20672#22396#0#HTML" expanded="false" />
+            <element signature="e#22515#24190#0#HTML" expanded="false" />
+            <element signature="e#24323#26510#0#HTML" expanded="false" />
+            <element signature="e#26585#28843#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

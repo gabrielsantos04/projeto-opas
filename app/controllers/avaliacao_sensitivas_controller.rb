@@ -17,6 +17,11 @@ class AvaliacaoSensitivasController < ApplicationController
     render json: {msg:"ok", marcacao: marcacao.to_json}
   end
 
+  def remover_marcacao
+    Marcacao.find(params[:marca]).destroy
+    render json: {msg:"ok"}
+  end
+
   # GET /avaliacao_sensitivas/new
   def new
     @avaliacao_sensitiva = AvaliacaoSensitiva.new(avaliacao_notificacao_id: params[:avaliacao])

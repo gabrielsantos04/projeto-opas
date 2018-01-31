@@ -601,22 +601,22 @@
         //Handle click
         $("#cnvs_mao_direita").mousedown(function (e) {
 
-            handleMouseDown(e,circles_mao_direita,cnvs_mao_direita);
+            handleMouseDown(e,circles_mao_direita,cnvs_mao_direita,marcacoes_mao_direita);
         });
 
         $("#cnvs_mao_esquerda").mousedown(function (e) {
 
-            handleMouseDown(e,circles_mao_esquerda,cnvs_mao_esquerda);
+            handleMouseDown(e,circles_mao_esquerda,cnvs_mao_esquerda,marcacoes_mao_esquerda);
         });
 
         $("#cnvs_pe_direito").mousedown(function (e) {
 
-            handleMouseDown(e,circles_pe_direito,cnvs_pe_direito);
+            handleMouseDown(e,circles_pe_direito,cnvs_pe_direito,marcacoes_pe_direito);
         });
 
         $("#cnvs_pe_esquerdo").mousedown(function (e) {
 
-            handleMouseDown(e,circles_pe_esquerdo,cnvs_pe_esquerdo);
+            handleMouseDown(e,circles_pe_esquerdo,cnvs_pe_esquerdo,marcacoes_pe_esquerdo);
         });
 
         //Pinta novamente para edição
@@ -796,17 +796,17 @@
 
     });
 
-  function handleMouseDown(e,circles,canvas)
+  function handleMouseDown(e,circles,canvas,images)
   {
       var offset =  canvas.getBoundingClientRect();
       var offsetX = offset.left;
       var offsetY = offset.top;
       var isInCircle = false;
-      // get canvasXY of click
+      //Obtem o click do mouse descontando o tamanho da tela
       canvasMouseX = parseInt(e.clientX - offsetX);
       canvasMouseY = parseInt(e.clientY - offsetY);
 
-      // test if we clicked in any cities
+      //Verifica se o clice foi dentro de um dos circulos
       for (var i = 0; i < circles.length; i++) {
           var dx = canvasMouseX - circles[i].x;
           var dy = canvasMouseY - circles[i].y;
@@ -818,12 +818,36 @@
           }
       }
 
+      //Verifica se o clice foi dentro de uma das marcacoes
+      for (var i = 0; i < images.length; i++)
+      {
+
+          if( (canvasMouseX >= images[i].posicaox - 20 && canvasMouseX <= images[i].posicaox + 20) && (canvasMouseY >= images[i].posicaoy - 20 && canvasMouseY <= images[i].posicaoy + 20) )
+          {
+              $.get("/avaliacao_sensitivas/remover_marcacao?marca="+images[i].id,function(data)
+              {
+                if(data.msg)
+                {
+                    var ctx = canvas.getContext("2d");
+                    var x = images[i].posicaox;
+                    var y = images[i].posicaoy;
+                    ctx.clearRect(x - 20 ,y - 20,40 ,40 );
+
+                }
+              });
+              //delete images[i];
+              isInCircle = true;
+              break;
+          }
+
+      }
+
       if(isInCircle == false)
       {
           openModalMarcacoes(canvas,canvasMouseX,canvasMouseY);
       }
   }
-    
+
 
 
 

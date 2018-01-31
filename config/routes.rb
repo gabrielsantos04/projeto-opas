@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     member do
       get "inserir_marcacao"
     end
+    collection do
+      get "remover_marcacao"
+    end
   end
   resources :episodio_reacionals
   resources :avaliacao_neurologicas
