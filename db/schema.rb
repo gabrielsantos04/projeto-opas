@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126135942) do
+ActiveRecord::Schema.define(version: 20180131185448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -173,6 +173,17 @@ ActiveRecord::Schema.define(version: 20180126135942) do
     t.index ["notificacao_id"], name: "index_esquema_substitutivos_on_notificacao_id"
   end
 
+  create_table "marcacaos", force: :cascade do |t|
+    t.bigint "avaliacao_sensitiva_id"
+    t.string "imagem"
+    t.integer "posicaox"
+    t.integer "posicaoy"
+    t.string "membro"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["avaliacao_sensitiva_id"], name: "index_marcacaos_on_avaliacao_sensitiva_id"
+  end
+
   create_table "medicamentos", force: :cascade do |t|
     t.string "nome"
     t.datetime "created_at", null: false
@@ -261,6 +272,7 @@ ActiveRecord::Schema.define(version: 20180126135942) do
   add_foreign_key "episodio_reacionals", "notificacaos"
   add_foreign_key "esquema_substitutivos", "medicamentos"
   add_foreign_key "esquema_substitutivos", "notificacaos"
+  add_foreign_key "marcacaos", "avaliacao_sensitivas"
   add_foreign_key "notificacao_contatos", "notificacaos"
   add_foreign_key "notificacaos", "pacientes"
   add_foreign_key "pacientes", "cidades"

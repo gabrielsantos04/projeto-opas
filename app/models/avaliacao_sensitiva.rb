@@ -53,4 +53,7 @@
 
 class AvaliacaoSensitiva < ApplicationRecord
   belongs_to :avaliacao_notificacao
+  has_many :marcacaos
+
+  accepts_nested_attributes_for :marcacaos, allow_destroy: true
 end

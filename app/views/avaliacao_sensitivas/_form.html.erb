@@ -103,6 +103,26 @@
     </div>
   </div>
 
+  <div id="modal_marcacoes" class="modal">
+    <div class="modal-content">
+      <h4>Escolha uma Marcação</h4>
+      <div class="row">
+        <div class="col s6 l2">
+          <img src="/images/reabsorcao.png" class="modal-close" alt="Reabsorção" onclick="posicionaImagem('reabsorcao',true)">
+        </div>
+        <div class="col s6 l2">
+          <img src="/images/garramovel.png" class="modal-close" alt="" onclick="posicionaImagem('garramovel',true)">
+        </div>
+        <div class="col s6 l2">
+          <img src="/images/garrarigida.png" class="modal-close" alt="" onclick="posicionaImagem('garrarigida',true)">
+        </div>
+        <div class="col s6 l2">
+          <img src="/images/ferida.png" class="modal-close" alt="" onclick="posicionaImagem('ferida',true)">
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
   <div class="actions">
     <%= f.submit "Salvar", class:"btn" %>
@@ -112,6 +132,12 @@
 <script type="text/javascript" charset="utf-8">
     var filamento;
     var canvas;
+    var posicaox;
+    var posicaoy;
+    var marcacoes_mao_direita = [];
+    var marcacoes_mao_esquerda = [];
+    var marcacoes_pe_direito = [];
+    var marcacoes_pe_esquerdo = [];
 
     function setFilamento(id,cor)
     {
@@ -125,11 +151,55 @@
         $('#'+filamento.id).val(id);
     }
 
+    function posicionaImagem(img,inserir)
+    {
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        var imagem = new Image();
+        imagem.src = "/images/"+img+".png";
+        var x = posicaox - imagem.width/2;
+        var y = posicaoy - imagem.height/2;
+        ctx.drawImage(imagem,x,y);
+        if(inserir == true)
+        {
+          $.get("/avaliacao_sensitivas/<%= @avaliacao_sensitiva.id %>/inserir_marcacao?imagem="+img+"&posicaox="+posicaox+"&posicaoy="+posicaoy+"&membro="+canvas.id, function(data)
+          {
+             if(data.marcacao)
+             {
+                 m = JSON.parse(data.marcacao);
+                 switch(m.membro)
+                 {
+                     case 'cnvs_mao_direita':
+                         marcacoes_mao_direita.push(m);
+                         break;
+                     case 'cnvs_mao_esquerda':
+                         marcacoes_mao_esquerda.push(m);
+                         break;
+                     case 'cnvs_pe_direito':
+                        marcacoes_pe_direito.push(m);
+                         break;
+                     case 'cnvs_pe_esquerdo':
+                        marcacoes_pe_esquerdo.push(m);
+                         break;
+                 }
+             }
+          });
+        }
+    }
+
     function openModal(circle,cnv)
     {
         filamento = circle;
         canvas = cnv;
         $('#modal_cores').openModal();
+    }
+
+    function openModalMarcacoes(cnv,x,y)
+    {
+        canvas = cnv;
+        posicaox = x;
+        posicaoy = y;
+        $('#modal_marcacoes').openModal();
     }
 
     $(document).ready(function()
@@ -169,6 +239,43 @@
         cnvs_pe_esquerdo.style.position = "absolute";
         cnvs_pe_esquerdo.style.left = pe_esquerdo.offsetLeft + "px";
         cnvs_pe_esquerdo.style.top = pe_esquerdo.offsetTop + "px";
+
+        //carrega as marcacoes
+        <% @avaliacao_sensitiva.marcacaos.each do |m| %>
+            var marca = "<%= m.membro %>";
+            switch(marca)
+            {
+                case 'cnvs_mao_direita':
+                    marcacoes_mao_direita.push(<%= m.to_json.to_s.html_safe %>);
+                    canvas = cnvs_mao_direita;
+                    posicaox = '<%= m.posicaox %>';
+                    posicaoy = '<%= m.posicaoy %>';
+                    posicionaImagem('<%= m.imagem %>',false);
+                    break;
+                case 'cnvs_mao_esquerda':
+                    marcacoes_mao_esquerda.push(<%= m.to_json.to_s.html_safe %>);
+                    canvas = cnvs_mao_esquerda;
+                    posicaox = '<%= m.posicaox %>';
+                    posicaoy = '<%= m.posicaoy %>';
+                    posicionaImagem('<%= m.imagem %>',false);
+                    break;
+                case 'cnvs_pe_direito':
+                    marcacoes_pe_direito.push(<%= m.to_json.to_s.html_safe %>);
+                    canvas = cnvs_pe_direito;
+                    posicaox = '<%= m.posicaox %>';
+                    posicaoy = '<%= m.posicaoy %>';
+                    posicionaImagem('<%= m.imagem %>',false);
+                    break;
+                case 'cnvs_pe_esquerdo':
+                    marcacoes_pe_esquerdo.push(<%= m.to_json.to_s.html_safe %>);
+                    canvas = cnvs_pe_esquerdo;
+                    posicaox = '<%= m.posicaox %>';
+                    posicaoy = '<%= m.posicaoy %>';
+                    posicionaImagem('<%= m.imagem %>',false);
+                    break;
+            }
+
+        <% end %>
 
         const circles_mao_direita = [
             {//mao_d_costa
@@ -694,6 +801,7 @@
       var offset =  canvas.getBoundingClientRect();
       var offsetX = offset.left;
       var offsetY = offset.top;
+      var isInCircle = false;
       // get canvasXY of click
       canvasMouseX = parseInt(e.clientX - offsetX);
       canvasMouseY = parseInt(e.clientY - offsetY);
@@ -702,13 +810,20 @@
       for (var i = 0; i < circles.length; i++) {
           var dx = canvasMouseX - circles[i].x;
           var dy = canvasMouseY - circles[i].y;
-          var isInCircle = (dx * dx + dy * dy) < (circles[i].radius * circles[i].radius);
-          console.log(isInCircle);
-          if (isInCircle) {
+          isInCircle = (dx * dx + dy * dy) < (circles[i].radius * circles[i].radius);
+
+          if (isInCircle == true) {
               openModal(circles[i],canvas);
+              break;
           }
       }
+
+      if(isInCircle == false)
+      {
+          openModalMarcacoes(canvas,canvasMouseX,canvasMouseY);
+      }
   }
+    
 
 
 

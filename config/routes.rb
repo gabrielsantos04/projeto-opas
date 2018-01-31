@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :categoria_queixas
-  resources :avaliacao_sensitivas
+  resources :avaliacao_sensitivas do
+    member do
+      get "inserir_marcacao"
+    end
+  end
   resources :episodio_reacionals
   resources :avaliacao_neurologicas
   resources :classificacao_graus
