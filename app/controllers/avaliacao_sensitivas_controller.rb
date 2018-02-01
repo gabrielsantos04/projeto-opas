@@ -18,13 +18,17 @@ class AvaliacaoSensitivasController < ApplicationController
   end
 
   def remover_marcacao
-    Marcacao.find(params[:marca]).destroy
+    marcacao = Marcacao.find(params[:marca])
+    marcacao.destroy
+    #redirect_to edit_avaliacao_sensitiva_path(marcacao.avaliacao_sensitiva)
     render json: {msg:"ok"}
   end
 
   # GET /avaliacao_sensitivas/new
   def new
     @avaliacao_sensitiva = AvaliacaoSensitiva.new(avaliacao_notificacao_id: params[:avaliacao])
+    @avaliacao_sensitiva.save
+    redirect_to edit_avaliacao_sensitiva_path(@avaliacao_sensitiva)
   end
 
   # GET /avaliacao_sensitivas/1/edit

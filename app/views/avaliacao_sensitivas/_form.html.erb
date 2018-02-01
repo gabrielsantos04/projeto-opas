@@ -97,9 +97,16 @@
   <div id="modal_cores" class="modal">
     <div class="modal-content">
       <h4>Escolha um filamento</h4>
+      <div class="row">
       <% @monofilamentos.each do |m|%>
+            <div class="col s1 l1">
           <a onclick="setFilamento(<%= m.id %>,'<%= m.cor %>');" class="btn-floating btn-large waves-effect waves-light modal-close" style="color: <%= m.cor  %>; background-color: <%= m.cor %>"></a>
+            </div>
       <% end %>
+        <div class="col s1 l1">
+          <a  class="modal-close" onclick="limpaFilamento();"><i class="medium material-icons ">not_interested</i></a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -119,6 +126,7 @@
         <div class="col s6 l2">
           <img src="/images/ferida.png" class="modal-close" alt="" onclick="posicionaImagem('ferida',true)">
         </div>
+       
       </div>
     </div>
   </div>
@@ -149,6 +157,17 @@
         ctx.fillStyle = cor;
         ctx.fill();
         $('#'+filamento.id).val(id);
+    }
+
+    function limpaFilamento()
+    {
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(filamento.x, filamento.y, filamento.radius, 0, 2 * Math.PI, false);
+        ctx.lineWidth = 2;
+        ctx.fillStyle = "#ffffff";
+        ctx.fill();
+        $('#'+filamento.id).val("");
     }
 
     function posicionaImagem(img,inserir)
@@ -622,31 +641,32 @@
         //Pinta novamente para edição
         circles_mao_direita.forEach(function(circle)
         {
-            if($('#'+circle.id).val())
+            if($('#'+circle.id).val() != '')
             {
+
                 var cor;
                 switch(circle.id)
                 {
                     case 'avaliacao_sensitiva_mao_d_costa':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mao_d_costa).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mao_d_costa).cor if @avaliacao_sensitiva.mao_d_costa.present? %>'
                         break;
                     case 'avaliacao_sensitiva_dedao_direito':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.dedao_direito).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.dedao_direito).cor if @avaliacao_sensitiva.dedao_direito.present? %>'
                         break;
                     case 'avaliacao_sensitiva_indicador_d_ponta':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.indicador_d_ponta).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.indicador_d_ponta).cor if @avaliacao_sensitiva.indicador_d_ponta.present? %>'
                         break;
                     case 'avaliacao_sensitiva_indicador_d':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.indicador_d).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.indicador_d).cor if @avaliacao_sensitiva.indicador_d.present? %>'
                         break;
                     case 'avaliacao_sensitiva_mindinho_d_ponta':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mindinho_d_ponta).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mindinho_d_ponta).cor if @avaliacao_sensitiva.mindinho_d_ponta.present? %>'
                         break;
                     case 'avaliacao_sensitiva_mindinho_d':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mindinho_d).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mindinho_d).cor if @avaliacao_sensitiva.mindinho_d.present? %>'
                         break;
                     case 'avaliacao_sensitiva_mao_direita':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mao_direita).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mao_direita).cor if @avaliacao_sensitiva.mao_direita.present? %>'
                         break;
 
                 }
@@ -667,25 +687,25 @@
                 switch(circle.id)
                 {
                     case 'avaliacao_sensitiva_mao_e_costa':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mao_e_costa).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mao_e_costa).cor  if @avaliacao_sensitiva.mao_e_costa.present? %>'
                         break;
                     case 'avaliacao_sensitiva_dedao_esquerdo':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.dedao_esquerdo).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.dedao_esquerdo).cor if @avaliacao_sensitiva.dedao_esquerdo.present?  %>'
                         break;
                     case 'avaliacao_sensitiva_indicador_e_ponta':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.indicador_e_ponta).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.indicador_e_ponta).cor  if @avaliacao_sensitiva.indicador_e_ponta.present? %>'
                         break;
                     case 'avaliacao_sensitiva_indicador_e':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.indicador_e).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.indicador_e).cor if @avaliacao_sensitiva.indicador_e.present?  %>'
                         break;
                     case 'avaliacao_sensitiva_mindinho_e_ponta':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mindinho_e_ponta).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mindinho_e_ponta).cor if @avaliacao_sensitiva.mindinho_e_ponta.present?  %>'
                         break;
                     case 'avaliacao_sensitiva_mindinho_e':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mindinho_e).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mindinho_e).cor if @avaliacao_sensitiva.mindinho_e.present?  %>'
                         break;
                     case 'avaliacao_sensitiva_mao_esquerda':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mao_esquerda).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.mao_esquerda).cor if @avaliacao_sensitiva.mao_esquerda.present?  %>'
                         break;
 
                 }
@@ -706,34 +726,34 @@
                 switch(circle.id)
                 {
                     case 'avaliacao_sensitiva_pe_direito':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_direito).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_direito).cor  if @avaliacao_sensitiva.pe_direito.present? %>'
                         break;
                     case 'avaliacao_sensitiva_pe_d_1_ponta':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_1_ponta).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_1_ponta).cor  if @avaliacao_sensitiva.pe_d_1_ponta.present? %>'
                         break;
                     case 'avaliacao_sensitiva_pe_d_1':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_1).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_1).cor if @avaliacao_sensitiva.pe_d_1.present?  %>'
                         break;
                     case 'avaliacao_sensitiva_pe_d_3_ponta':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_3_ponta).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_3_ponta).cor if @avaliacao_sensitiva.pe_d_3_ponta.present?  %>'
                         break;
                     case 'avaliacao_sensitiva_pe_d_3':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_3).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_3).cor if @avaliacao_sensitiva.pe_d_3.present?  %>'
                         break;
                     case 'avaliacao_sensitiva_pe_d_5_ponta':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_5_ponta).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_5_ponta).cor if @avaliacao_sensitiva.pe_d_5_ponta.present?  %>'
                         break;
                     case 'avaliacao_sensitiva_pe_d_5':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_5).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_5).cor  if @avaliacao_sensitiva.pe_d_5.present? %>'
                         break;
                     case 'avaliacao_sensitiva_pe_d_e1':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_e1).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_e1).cor if @avaliacao_sensitiva.pe_d_e1.present?  %>'
                         break;
                     case 'avaliacao_sensitiva_pe_d_e2':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_e2).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_e2).cor if @avaliacao_sensitiva.pe_d_e2.present?  %>'
                         break;
                     case 'avaliacao_sensitiva_pe_d_calcanhar':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_calcanhar).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_d_calcanhar).cor  if @avaliacao_sensitiva.pe_d_calcanhar.present? %>'
                         break;
 
                 }
@@ -750,38 +770,39 @@
         {
             if($('#'+circle.id).val() != '')
             {
+
                 var cor;
                 switch(circle.id)
                 {
                     case 'avaliacao_sensitiva_pe_esquerdo':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_esquerdo).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_esquerdo).cor if @avaliacao_sensitiva.pe_esquerdo.present? %>'
                         break;
                     case 'avaliacao_sensitiva_pe_e_1_ponta':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_1_ponta).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_1_ponta).cor if @avaliacao_sensitiva.pe_e_1_ponta.present? %>'
                         break;
                     case 'avaliacao_sensitiva_pe_e_1':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_1).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_1).cor if @avaliacao_sensitiva.pe_e_1.present? %>'
                         break;
                     case 'avaliacao_sensitiva_pe_e_3_ponta':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_3_ponta).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_3_ponta).cor if @avaliacao_sensitiva.pe_e_3_ponta.present? %>'
                         break;
                     case 'avaliacao_sensitiva_pe_e_3':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_3).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_3).cor if @avaliacao_sensitiva.pe_e_3.present? %>'
                         break;
                     case 'avaliacao_sensitiva_pe_e_5_ponta':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_5_ponta).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_5_ponta).cor  if @avaliacao_sensitiva.pe_e_5_ponta.present?%>'
                         break;
                     case 'avaliacao_sensitiva_pe_e_5':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_5).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_5).cor if @avaliacao_sensitiva.pe_e_5.present? %>'
                         break;
                     case 'avaliacao_sensitiva_pe_e_e1':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_e1).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_e1).cor  if @avaliacao_sensitiva.pe_e_e1.present?%>'
                         break;
                     case 'avaliacao_sensitiva_pe_e_e2':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_e2).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_e2).cor  if @avaliacao_sensitiva.pe_e_e2.present?%>'
                         break;
                     case 'avaliacao_sensitiva_pe_e_calcanhar':
-                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_calcanhar).cor %>'
+                        cor = '<%= Monofilamento.find(@avaliacao_sensitiva.pe_e_calcanhar).cor if @avaliacao_sensitiva.pe_e_calcanhar.present? %>'
                         break;
 
                 }
@@ -828,11 +849,7 @@
               {
                 if(data.msg)
                 {
-                    var ctx = canvas.getContext("2d");
-                    var x = images[i].posicaox;
-                    var y = images[i].posicaoy;
-                    ctx.clearRect(x - 20 ,y - 20,40 ,40 );
-
+                  window.location = '<%= edit_avaliacao_sensitiva_path(@avaliacao_sensitiva) %>';
                 }
               });
               //delete images[i];
