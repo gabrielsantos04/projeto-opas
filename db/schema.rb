@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180131185448) do
+ActiveRecord::Schema.define(version: 20180206191559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,6 +130,21 @@ ActiveRecord::Schema.define(version: 20180131185448) do
     t.index ["avaliacao_notificacao_id"], name: "index_classificacao_graus_on_avaliacao_notificacao_id"
   end
 
+  create_table "conduta", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conduta_recidivas", force: :cascade do |t|
+    t.bigint "conduta_id"
+    t.bigint "recidiva_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conduta_id"], name: "index_conduta_recidivas_on_conduta_id"
+    t.index ["recidiva_id"], name: "index_conduta_recidivas_on_recidiva_id"
+  end
+
   create_table "contato_avaliacaos", force: :cascade do |t|
     t.date "data"
     t.boolean "suspeito"
@@ -149,6 +164,47 @@ ActiveRecord::Schema.define(version: 20180131185448) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["notificacao_id"], name: "index_dados_clinicos_on_notificacao_id"
+  end
+
+  create_table "dermatologicas", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dermatologico_recidivas", force: :cascade do |t|
+    t.bigint "dermatologica_id"
+    t.string "momento"
+    t.bigint "recidiva_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dermatologica_id"], name: "index_dermatologico_recidivas_on_dermatologica_id"
+    t.index ["recidiva_id"], name: "index_dermatologico_recidivas_on_recidiva_id"
+  end
+
+  create_table "diagnostico_recidivas", force: :cascade do |t|
+    t.bigint "recidiva_id"
+    t.bigint "diagnostico_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diagnostico_id"], name: "index_diagnostico_recidivas_on_diagnostico_id"
+    t.index ["recidiva_id"], name: "index_diagnostico_recidivas_on_recidiva_id"
+  end
+
+  create_table "diagnosticos", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "epidosios_reacionais_recidivas", force: :cascade do |t|
+    t.string "tipo"
+    t.string "conduta_mendicamentosa"
+    t.string "momento"
+    t.bigint "recidiva_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recidiva_id"], name: "index_epidosios_reacionais_recidivas_on_recidiva_id"
   end
 
   create_table "episodio_reacionals", force: :cascade do |t|
@@ -196,6 +252,15 @@ ActiveRecord::Schema.define(version: 20180131185448) do
     t.string "interpretacao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "nervos_recidivas", force: :cascade do |t|
+    t.string "nervo"
+    t.bigint "recidiva_id"
+    t.string "momento"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recidiva_id"], name: "index_nervos_recidivas_on_recidiva_id"
   end
 
   create_table "notificacao_contatos", force: :cascade do |t|
@@ -261,21 +326,75 @@ ActiveRecord::Schema.define(version: 20180131185448) do
     t.index ["categoria_queixa_id"], name: "index_queixas_on_categoria_queixa_id"
   end
 
+  create_table "recidivas", force: :cascade do |t|
+    t.string "unidade_saude"
+    t.string "prontuario"
+    t.date "data_diagnostico"
+    t.string "classificacao_operacional"
+    t.string "forma_clinica"
+    t.string "baciloscopia"
+    t.string "baciloscopia_lb"
+    t.string "grau_incapacidade"
+    t.date "inicio_tratamento"
+    t.string "esquema_terapeutico"
+    t.integer "tempo_tratamento"
+    t.integer "doses"
+    t.boolean "regularidade"
+    t.string "tratamento_observacoes"
+    t.integer "tempo_alta_cura"
+    t.date "data_primeiros_sintomas"
+    t.string "baciloscopia_alta"
+    t.string "baciloscopia_lb_alta"
+    t.string "grau_incapacidade_alta"
+    t.string "classificacao_operacional_alta"
+    t.bigint "notificacao_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "termino_tratamento"
+    t.index ["notificacao_id"], name: "index_recidivas_on_notificacao_id"
+  end
+
+  create_table "sinais_sintomas", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sintomas_recidivas", force: :cascade do |t|
+    t.bigint "sinais_sintoma_id"
+    t.bigint "recidiva_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recidiva_id"], name: "index_sintomas_recidivas_on_recidiva_id"
+    t.index ["sinais_sintoma_id"], name: "index_sintomas_recidivas_on_sinais_sintoma_id"
+  end
+
   add_foreign_key "avaliacao_neurologicas", "avaliacao_notificacaos"
   add_foreign_key "avaliacao_neurologicas", "queixas"
   add_foreign_key "avaliacao_notificacaos", "notificacaos"
   add_foreign_key "avaliacao_sensitivas", "avaliacao_notificacaos"
   add_foreign_key "bcgs", "notificacao_contatos"
   add_foreign_key "classificacao_graus", "avaliacao_notificacaos"
+  add_foreign_key "conduta_recidivas", "conduta", column: "conduta_id"
+  add_foreign_key "conduta_recidivas", "recidivas"
   add_foreign_key "contato_avaliacaos", "notificacao_contatos"
   add_foreign_key "dados_clinicos", "notificacaos"
+  add_foreign_key "dermatologico_recidivas", "dermatologicas"
+  add_foreign_key "dermatologico_recidivas", "recidivas"
+  add_foreign_key "diagnostico_recidivas", "diagnosticos"
+  add_foreign_key "diagnostico_recidivas", "recidivas"
+  add_foreign_key "epidosios_reacionais_recidivas", "recidivas"
   add_foreign_key "episodio_reacionals", "notificacaos"
   add_foreign_key "esquema_substitutivos", "medicamentos"
   add_foreign_key "esquema_substitutivos", "notificacaos"
   add_foreign_key "marcacaos", "avaliacao_sensitivas"
+  add_foreign_key "nervos_recidivas", "recidivas"
   add_foreign_key "notificacao_contatos", "notificacaos"
   add_foreign_key "notificacaos", "pacientes"
   add_foreign_key "pacientes", "cidades"
   add_foreign_key "pacientes", "ocupacaos"
   add_foreign_key "queixas", "categoria_queixas"
+  add_foreign_key "recidivas", "notificacaos"
+  add_foreign_key "sintomas_recidivas", "recidivas"
+  add_foreign_key "sintomas_recidivas", "sinais_sintomas"
 end

@@ -1,0 +1,142 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+      <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Unidade saude</th>
+            <th>Prontuario</th>
+            <th>Data diagnostico</th>
+            <th>Classificacao operacional</th>
+            <th>Forma clinica</th>
+            <th>Baciloscopia</th>
+            <th>Baciloscopia lb</th>
+            <th>Grau incapacidade</th>
+            <th>Inicio tratamento</th>
+            <th>Esquema terapeutico</th>
+            <th>Tempo tratamento</th>
+            <th>Doses</th>
+            <th>Regularidade</th>
+            <th>Termino tratamento</th>
+            <th>Tratamento observacoes</th>
+            <th>Tempo alta cura</th>
+            <th>Data primeiros sintomas</th>
+            <th>Baciloscopia alta</th>
+            <th>Baciloscopia lb alta</th>
+            <th>Grau incapacidade alta</th>
+            <th>Classificacao operacional alta</th>
+            <th>Notificacao</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @recidivas.each do |recidiva| %>
+    <tr>
+              
+          <td><%= link_to recidiva.unidade_saude,recidiva %></td>
+        
+              
+
+          <td><%= recidiva.prontuario %></td>
+        
+              
+
+          <td><%= recidiva.data_diagnostico %></td>
+        
+              
+
+          <td><%= recidiva.classificacao_operacional %></td>
+        
+              
+
+          <td><%= recidiva.forma_clinica %></td>
+        
+              
+
+          <td><%= recidiva.baciloscopia %></td>
+        
+              
+
+          <td><%= recidiva.baciloscopia_lb %></td>
+        
+              
+
+          <td><%= recidiva.grau_incapacidade %></td>
+        
+              
+
+          <td><%= recidiva.inicio_tratamento %></td>
+        
+              
+
+          <td><%= recidiva.esquema_terapeutico %></td>
+        
+              
+
+          <td><%= recidiva.tempo_tratamento %></td>
+        
+              
+
+          <td><%= recidiva.doses %></td>
+        
+              
+
+          <td><%= recidiva.regularidade %></td>
+        
+              
+
+          <td><%= recidiva.termino_tratamento %></td>
+        
+              
+
+          <td><%= recidiva.tratamento_observacoes %></td>
+        
+              
+
+          <td><%= recidiva.tempo_alta_cura %></td>
+        
+              
+
+          <td><%= recidiva.data_primeiros_sintomas %></td>
+        
+              
+
+          <td><%= recidiva.baciloscopia_alta %></td>
+        
+              
+
+          <td><%= recidiva.baciloscopia_lb_alta %></td>
+        
+              
+
+          <td><%= recidiva.grau_incapacidade_alta %></td>
+        
+              
+
+          <td><%= recidiva.classificacao_operacional_alta %></td>
+        
+              
+
+          <td><%= recidiva.notificacao %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@recidivas)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_recidiva_path, class:"btn" %>

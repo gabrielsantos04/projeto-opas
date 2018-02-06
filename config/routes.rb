@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :condutas
+  resources :diagnosticos
+  resources :sinais_sintomas
+  resources :dermatologicas
+  resources :recidivas
   resources :categoria_queixas
   resources :avaliacao_sensitivas do
     member do
@@ -20,6 +25,9 @@ Rails.application.routes.draw do
   resources :notificacaos do
     collection do
       get 'home'
+    end
+    member do
+      get "recidiva"
     end
   end
   resources :pacientes do

@@ -35,12 +35,15 @@ class Notificacao < ApplicationRecord
   has_many :episodio_reacionals
   has_many :avaliacao_sensitivas
 
+  has_many :recidivas
+
   accepts_nested_attributes_for :dados_clinicos, allow_destroy: true
   accepts_nested_attributes_for :notificacao_contatoes, allow_destroy: true
   accepts_nested_attributes_for :avaliacao_notificacaos, allow_destroy: true
   accepts_nested_attributes_for :esquema_substitutivos, allow_destroy: true
   accepts_nested_attributes_for :episodio_reacionals, allow_destroy: true
   accepts_nested_attributes_for :avaliacao_sensitivas, allow_destroy: true
+  accepts_nested_attributes_for :recidivas, allow_destroy: true
 
   extend Enumerize
 
@@ -49,6 +52,8 @@ class Notificacao < ApplicationRecord
   enumerize :modo_deteccao, in: [:encaminhamento, :demanda_expontanea,:exame_coletividade,:exame_contatos,:outros_modos], predicate: true
   enumerize :baciloscopia, in: [:positivo, :negativo,:nao_realizado], predicate: true
   enumerize :esquema_terapeutico, in: [:pb_infantil, :pb_adulto,:mb_infantil,:mb_adulto,:outros_esquemas], predicate: true
+
+
 
   def to_s
     self.numero
