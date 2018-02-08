@@ -9,4 +9,9 @@
 #
 
 class SinaisSintoma < ApplicationRecord
+  has_many :sintomas_recidivas
+
+  def to_s
+    self.nome
+  end
 end

@@ -77,9 +77,16 @@ class Recidiva < ApplicationRecord
   extend Enumerize
   enumerize :grau_incapacidade, in: [:grau_0, :grau_1,:grau_2,:nao_avaliado], predicate: true
   enumerize :grau_incapacidade_alta, in: [:grau_0, :grau_1,:grau_2,:nao_avaliado], predicate: true
+  enumerize :grau_incapacidade_suspeita, in: [:grau_0, :grau_1,:grau_2,:nao_avaliado], predicate: true
   enumerize :baciloscopia, in: [:positivo, :negativo,:nao_realizado], predicate: true
   enumerize :esquema_terapeutico, in: [:pb_infantil, :pb_adulto,:mb_infantil,:mb_adulto,:outros_esquemas], predicate: true
-  enumerize :baciloscopia_alta, in: [:positivo, :negativo,:nao_realizado], predicate: true
+  enumerize :baciloscopia_suspeita, in: [:positivo, :negativo,:nao_realizado], predicate: true
+  enumerize :classificacao_operacional, in: [:multibacilar, :paucibacilar], predicate: true
+  enumerize :forma_clinica, in: [:i, :t,:d,:v], predicate: true
+  enumerize :forma_clinica_suspeita, in: [:i, :t,:d,:v], predicate: true
+  enumerize :forma_clinica_alta, in: [:i, :t,:d,:v], predicate: true
+  enumerize :classificacao_operacional_alta, in: [:multibacilar, :paucibacilar], predicate: true
+  enumerize :classificacao_operacional_suspeita, in: [:multibacilar, :paucibacilar], predicate: true
 
 
 end

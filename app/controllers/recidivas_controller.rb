@@ -72,10 +72,10 @@ class RecidivasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def recidiva_params
-      params.require(:recidiva).permit(:unidade_saude,:forma_clinica_suspeita,:classificacao_operacional_suspeita, :prontuario, :data_diagnostico, :classificacao_operacional, :forma_clinica, :baciloscopia, :baciloscopia_lb,
+      params.require(:recidiva).permit(:unidade_saude,:forma_clinica_alta,:forma_clinica_suspeita,:classificacao_operacional_suspeita, :prontuario, :data_diagnostico, :classificacao_operacional, :forma_clinica, :baciloscopia, :baciloscopia_lb,
                                        :grau_incapacidade, :inicio_tratamento, :esquema_terapeutico,
                                        :tempo_tratamento, :doses, :regularidade, :termino_tratamento,
-                                       :tratamento_observacoes,:grau_incapacidade_supeita, :tempo_alta_cura, :data_primeiros_sintomas,
+                                       :tratamento_observacoes,:grau_incapacidade_suspeita, :tempo_alta_cura, :data_primeiros_sintomas,
                                        :baciloscopia_suspeita, :baciloscopia_lb_suspeita, :grau_incapacidade_alta,
                                        :classificacao_operacional_alta, :notificacao_id,
                                        nervos_recidivas_attributes:[:id,:nervo,:recidiva_id,:momento,:_destroy],

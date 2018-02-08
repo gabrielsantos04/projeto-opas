@@ -9,4 +9,9 @@
 #
 
 class Diagnostico < ApplicationRecord
+  has_many :diagnostico_recidivas
+
+  def to_s
+    self.nome
+  end
 end

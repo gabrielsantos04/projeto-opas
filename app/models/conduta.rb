@@ -9,4 +9,9 @@
 #
 
 class Conduta < ApplicationRecord
+  has_many :conduta_recidivas
+
+  def to_s
+    self.nome
+  end
 end

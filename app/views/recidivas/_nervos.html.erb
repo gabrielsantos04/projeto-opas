@@ -1,14 +1,14 @@
 <table class="card striped responsive-table">
   <thead>
   <tr>
-    <th>Tipo</th>
+    <th>Nervo</th>
   </tr>
   </thead>
 
   <tbody>
-  <% exames.each do |e| %>
+  <% dados.each do |e| %>
       <tr>
-        <td><%= e.dermatologica %></td>
+        <td><%= e.nervo_text %></td>
 
       </tr>
   <% end %>

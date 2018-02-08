@@ -22,4 +22,8 @@
 
 class EpidosiosReacionaisRecidiva < ApplicationRecord
   belongs_to :recidiva, optional: true
+
+  extend Enumerize
+
+  enumerize :tipo, in: [:tipo_1, :tipo_2,:tipo_1_2,:neurites,:sem_reacao], predicate: true
 end

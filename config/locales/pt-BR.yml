@@ -18,6 +18,16 @@ pt-BR:
         grau_2: "Grau 2"
         grau_0: "Grau 0"
         nao_avaliado: "Não Avaliado"
+      grau_incapacidade_alta:
+        grau_1: "Grau 1"
+        grau_2: "Grau 2"
+        grau_0: "Grau 0"
+        nao_avaliado: "Não Avaliado"
+      grau_incapacidade_suspeita:
+        grau_1: "Grau 1"
+        grau_2: "Grau 2"
+        grau_0: "Grau 0"
+        nao_avaliado: "Não Avaliado"
       modo_entrada:
         caso_novo: "Caso Novo"
         outra_unidade: "Transferência do mesmo município (outra unidade)"
@@ -47,10 +57,47 @@ pt-BR:
         t: "T - Tuberculoide"
         d: "D - Diforma"
         v: "V - Wirchoviana"
+      forma_clinica_alta:
+        i: "I - Indeterminada"
+        t: "T - Tuberculoide"
+        d: "D - Diforma"
+        v: "V - Wirchoviana"
+      forma_clinica_suspeita:
+        i: "I - Indeterminada"
+        t: "T - Tuberculoide"
+        d: "D - Diforma"
+        v: "V - Wirchoviana"
       classificacao_operacional:
         multibacilar: "Multibacilar"
         paucibacilar: "Paucibalicar"
+      classificacao_operacional_alta:
+        multibacilar: "Multibacilar"
+        paucibacilar: "Paucibalicar"
+      classificacao_operacional_suspeita:
+        multibacilar: "Multibacilar"
+        paucibacilar: "Paucibalicar"
+      nervo:
+        auricular: "Auricular"
+        mediano: "Mediano"
+        radial: "Radial"
+        ulnar: "Ulnar"
+        fibular_comum: "Fibular Comum"
+        tibial_posterior: "Tibial Posterior"
     episodio_reacional:
+      tipo:
+        tipo_1: "Tipo 1"
+        tipo_2: "Tipo 2"
+        tipo_1_2: "Tipo 1 e 2"
+        neurites: "Neurites"
+        sem_reacao: "Sem Reação"
+    epidosios_reacionais_recidivas:
+      tipo:
+        tipo_1: "Tipo 1"
+        tipo_2: "Tipo 2"
+        tipo_1_2: "Tipo 1 e 2"
+        neurites: "Neurites"
+        sem_reacao: "Sem Reação"
+    epidosios_reacionais_recidivas_alta:
       tipo:
         tipo_1: "Tipo 1"
         tipo_2: "Tipo 2"
