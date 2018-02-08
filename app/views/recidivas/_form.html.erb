@@ -59,7 +59,7 @@
             <% end %>
           </div>
           <div class="card-action">
-            <%= f.link_to_add "Novo Esquema", :dermatologico_recidivas %>
+            <%= f.link_to_add "Novo Exame", :dermatologico_recidivas %>
           </div>
         </div>
 
@@ -71,11 +71,9 @@
                 <div class="row">
                   <div class="col s4 input">
                     <%= esq.label :nervo, "Nervo" %>
-                    <%= esq.select :nervo, @dermatologicas, {prompt: true}, {class:"browser-default select2"} %>
+                    <%= esq.select :nervo, @nervos, {prompt: true}, {class:"browser-default select2"} %>
 
                   </div>
-
-                  <%= esq.hidden_field :momento, value: "historia_anterior" %>
 
                   <div class="col s4">
                     <%= esq.link_to_remove "Remover" %>
@@ -84,7 +82,7 @@
             <% end %>
           </div>
           <div class="card-action">
-            <%= f.link_to_add "Novo Esquema", :nervos_recidivas %>
+            <%= f.link_to_add "Novo Nervo", :nervos_recidivas %>
           </div>
         </div>
 
@@ -189,6 +187,38 @@
             <%= f.text_area :tratamento_observacoes, class:"materialize-textarea"%>
 
           </div>
+
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Episódios Relacionais durante o tratamento</span>
+              <%= f.fields_for :epidosios_reacionais_recidivas do |esq| %>
+                  <div class="row">
+                    <div class="col s6 l2 input-field">
+
+                      <%= esq.select :tipo, @episodios_reacionais %>
+                      <%= esq.label :tipo, "Tipo" %>
+
+                    </div>
+                    <div class="col s6 l2 input-field">
+
+                      <%= esq.label :numero_episodios, "Número de Episódios" %>
+                      <%= esq.number_field :numero_episodios %>
+                    </div>
+                    <div class="col s12 l3 input-field">
+                      <%= esq.label :conduta_mendicamentosa,"condutas Mendicamentosa" %>
+                      <%= esq.text_field :conduta_mendicamentosa %>
+                    </div>
+                    <div class="col s4 l1">
+                      <%= esq.link_to_remove "Remover" %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <div class="card-action">
+              <%= f.link_to_add "Novo Episódio Reacional", :epidosios_reacionais_recidivas %>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -207,7 +237,7 @@
         <div class="card">
           <div class="card-content">
             <span class="card-title"><b>Exame Dermatolócigo</b></span>
-            <%= f.fields_for :dermatologico_recidivas do |esq| %>
+            <%= f.fields_for :dermatologico_recidivas_alta do |esq| %>
                 <div class="row">
                   <div class="col s4 input">
                     <%= esq.label :dermatologica_id, "Tipo" %>
@@ -215,8 +245,6 @@
 
                   </div>
 
-                  <%= esq.hidden_field :momento, value: "historia_anterior" %>
-
                   <div class="col s4">
                     <%= esq.link_to_remove "Remover" %>
                   </div>
@@ -224,7 +252,7 @@
             <% end %>
           </div>
           <div class="card-action">
-            <%= f.link_to_add "Novo Esquema", :dermatologico_recidivas %>
+            <%= f.link_to_add "Novo Exame", :dermatologico_recidivas_alta %>
           </div>
         </div>
 
@@ -232,15 +260,13 @@
         <div class="card">
           <div class="card-content">
             <span class="card-title"><b>Nervos Acometidos</b></span>
-            <%= f.fields_for :nervos_recidivas do |esq| %>
+            <%= f.fields_for :nervos_recidivas_alta do |esq| %>
                 <div class="row">
                   <div class="col s4 input">
                     <%= esq.label :nervo, "Nervo" %>
-                    <%= esq.select :nervo, @dermatologicas, {prompt: true}, {class:"browser-default select2"} %>
+                    <%= esq.select :nervo, @nervos, {prompt: true}, {class:"browser-default select2"} %>
 
                   </div>
-
-                  <%= esq.hidden_field :momento, value: "historia_anterior" %>
 
                   <div class="col s4">
                     <%= esq.link_to_remove "Remover" %>
@@ -249,9 +275,250 @@
             <% end %>
           </div>
           <div class="card-action">
-            <%= f.link_to_add "Novo Esquema", :nervos_recidivas %>
+            <%= f.link_to_add "Novo Nervo", :nervos_recidivas_alta %>
           </div>
         </div>
+
+        <div class="row">
+          <div class="input-field col s12 l4">
+
+
+            <%= f.select :classificacao_operacional_alta, @classificacoes_operacional, {prompt:true} %>
+            <%= f.label :classificacao_operacional_alta, "Classificação Operacional" %>
+
+          </div>
+
+          <div class="input-field col s12 l4">
+
+
+            <%= f.select :forma_clinica_alta, @formas_clinicas, {prompt: true} %>
+            <%= f.label :forma_clinica_alta,"Forma Clínica" %>
+
+          </div>
+
+          <div class="input-field col s12 l4">
+
+            <%= f.select :grau_incapacidade_alta, @graus_incapacidade, {prompt: true} %>
+            <%= f.label :grau_incapacidade_alta, "Grau Incapacidade" %>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- episodios reacionais -->
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Episódios Relacionais durante o tratamento</span>
+            <%= f.fields_for :epidosios_reacionais_recidivas_alta do |esq| %>
+                <div class="row">
+                  <div class="col s6 l2 input-field">
+
+                    <%= esq.select :tipo, @episodios_reacionais,{prompt: true} %>
+                    <%= esq.label :tipo, "Tipo" %>
+
+                  </div>
+                  <div class="col s6 l2 input-field">
+
+                    <%= esq.label :numero_episodios, "Número de Episódios" %>
+                    <%= esq.number_field :numero_episodios %>
+                  </div>
+                  <div class="col s12 l3 input-field">
+                    <%= esq.label :conduta_mendicamentosa,"Conduta Mendicamentosa" %>
+                    <%= esq.text_field :conduta_mendicamentosa %>
+                  </div>
+                  <div class="col s4 l1">
+                    <%= esq.link_to_remove "Remover" %>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+          <div class="card-action">
+            <%= f.link_to_add "Novo Episódio Reacional", :epidosios_reacionais_recidivas_alta %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><b>Situação do Paciente no Suspeita de Recidiva</b></span>
+        <div class="row">
+          <div class="input-field col s6 l6">
+            <%= f.label :tempo_alta_cura, "Tempo de alta por cura" %>
+            <%= f.number_field :tempo_alta_cura %>
+          </div>
+          <div class="input-field  col s6 l6">
+            <%= f.label :data_primeiros_sintomas, "Data dos primeiros sintomas na recidiva" %>
+            <%= f.text_field :data_primeiros_sintomas, class:"datepicker" %>
+          </div>
+        </div>
+        <div class="row">
+          <!--Exame Dermatologico -->
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title"><b>Exame Dermatolócigo</b></span>
+              <%= f.fields_for :dermatologico_recidivas_recidiva do |esq| %>
+                  <div class="row">
+                    <div class="col s4 input">
+                      <%= esq.label :dermatologica_id, "Tipo" %>
+                      <%= esq.select :dermatologica_id, @dermatologicas, {prompt: true}, {class:"browser-default select2"} %>
+
+                    </div>
+
+                    <div class="col s4">
+                      <%= esq.link_to_remove "Remover" %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <div class="card-action">
+              <%= f.link_to_add "Novo Exame", :dermatologico_recidivas_recidiva %>
+            </div>
+          </div>
+
+          <!-- Nervos Acometidos -->
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title"><b>Nervos Acometidos</b></span>
+              <%= f.fields_for :nervos_recidivas_recidiva do |esq| %>
+                  <div class="row">
+                    <div class="col s4 input">
+                      <%= esq.label :nervo, "Nervo" %>
+                      <%= esq.select :nervo, @nervos, {prompt: true}, {class:"browser-default select2"} %>
+
+                    </div>
+
+                    <div class="col s4">
+                      <%= esq.link_to_remove "Remover" %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <div class="card-action">
+              <%= f.link_to_add "Novo Nervo", :nervos_recidivas_recidiva %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s6 l4">
+
+            <%= f.select :baciloscopia_suspeita, @baciloscopias, {prompt:true} %>
+            <%= f.label :baciloscopia_suspeita, "Baciloscopia" %>
+
+
+          </div>
+
+          <div class="input-field col s6 l3">
+
+            <%= f.label :baciloscopia_lb_suspeita, "Baciloscopia lb" %>
+            <%= f.text_field :baciloscopia_lb_suspeita %>
+
+          </div>
+
+          <div class="input-field col s12 l4">
+
+            <%= f.select :grau_incapacidade_suspeita, @graus_incapacidade, {prompt: true} %>
+            <%= f.label :grau_incapacidade_suspeita, "Grau Incapacidade" %>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title"><b>Aparecimento de Sinais e Sintomas</b></span>
+              <%= f.fields_for :sintomas_recidivas do |esq| %>
+                  <div class="row">
+                    <div class="col s4 input">
+                      <%= esq.label :sinais_sintoma_id, "Sintoma" %>
+                      <%= esq.select :sinais_sintoma_id, @sintomas, {prompt: true}, {class:"browser-default select2"} %>
+
+                    </div>
+
+                    <div class="col s4">
+                      <%= esq.link_to_remove "Remover" %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <div class="card-action">
+              <%= f.link_to_add "Novo Sintoma", :sintomas_recidivas %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title"><b>Diagnóstico</b></span>
+              <%= f.fields_for :diagnostico_recidivas do |esq| %>
+                  <div class="row">
+                    <div class="col s4 input">
+                      <%= esq.label :diagnostico_id, "Diagnóstico" %>
+                      <%= esq.select :diagnostico_id, @diagnosticos, {prompt: true}, {class:"browser-default select2"} %>
+
+                    </div>
+
+                    <div class="col s4">
+                      <%= esq.link_to_remove "Remover" %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <div class="card-action">
+              <%= f.link_to_add "Novo Diagnóstico", :diagnostico_recidivas %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title"><b>Conduta</b></span>
+              <%= f.fields_for :conduta_recidivas do |esq| %>
+                  <div class="row">
+                    <div class="col s4 input">
+                      <%= esq.label :conduta_id, "Conduta" %>
+                      <%= esq.select :conduta_id, @condutas, {prompt: true}, {class:"browser-default select2"} %>
+
+                    </div>
+
+                    <div class="col s4">
+                      <%= esq.link_to_remove "Remover" %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <div class="card-action">
+              <%= f.link_to_add "Nova Conduta", :conduta_recidivas %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input col s12 l4">
+
+            <%= f.label :classificacao_operacional_suspeita, "Classificação Operacional" %>
+            <%= f.select :classificacao_operacional_suspeita, @classificacoes_operacional, {prompt:true},{class:"browser-default select2"} %>
+
+
+          </div>
+
+          <div class="input col s12 l4">
+
+            <%= f.label :forma_clinica_alta,"Forma Clínica" %>
+            <%= f.select :forma_clinica_suspeita, @formas_clinicas, {prompt: true},{class:"browser-default select2"} %>
+
+
+          </div>
+        </div>
+
 
       </div>
     </div>
@@ -261,52 +528,6 @@
 
 
 
-
-
-
-
-
-  <div class="input-field">
-
-    <%= f.label :tempo_alta_cura %>
-    <%= f.number_field :tempo_alta_cura %>
-    
-  </div>
-
-  <div class="input-field">
-
-    <%= f.label :data_primeiros_sintomas %>
-    <%= f.date_select :data_primeiros_sintomas %>
-    
-  </div>
-
-  <div class="input-field">
-
-    <%= f.label :baciloscopia_alta %>
-    <%= f.text_field :baciloscopia_alta %>
-    
-  </div>
-
-  <div class="input-field">
-
-    <%= f.label :baciloscopia_lb_alta %>
-    <%= f.text_field :baciloscopia_lb_alta %>
-    
-  </div>
-
-  <div class="input-field">
-
-    <%= f.label :grau_incapacidade_alta %>
-    <%= f.text_field :grau_incapacidade_alta %>
-    
-  </div>
-
-  <div class="input-field">
-
-    <%= f.label :classificacao_operacional_alta %>
-    <%= f.text_field :classificacao_operacional_alta %>
-    
-  </div>
 
     <%= f.hidden_field :notificacao_id %>
     

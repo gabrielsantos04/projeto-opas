@@ -21,5 +21,5 @@
 
 class CondutaRecidiva < ApplicationRecord
   belongs_to :conduta
-  belongs_to :recidiva
+  belongs_to :recidiva, optional: true
 end

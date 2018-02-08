@@ -9,4 +9,9 @@
 #
 
 class Dermatologica < ApplicationRecord
+  has_many :dermatologico_recidivas
+
+  def to_s
+    self.nome
+  end
 end

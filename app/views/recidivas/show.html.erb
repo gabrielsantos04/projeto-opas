@@ -1,114 +1,130 @@
 <div class="card-panel">
 	
-<p>
-  <strong>Unidade saude:</strong>
-  <%= @recidiva.unidade_saude %>
-</p>
+  <div class="row">
+    <div class="col s12 l4">
+      <strong>Unidade saude:</strong>
+      <%= @recidiva.unidade_saude %>
+    </div >
 
-<p>
-  <strong>Prontuario:</strong>
-  <%= @recidiva.prontuario %>
-</p>
+    <div class="col s12 l4">
+      <strong>Prontuario:</strong>
+      <%= @recidiva.prontuario %>
+    </div>
 
-<p>
-  <strong>Data diagnostico:</strong>
-  <%= @recidiva.data_diagnostico %>
-</p>
+    <div class="col s12 l4">
+      <strong>Data diagnostico:</strong>
+      <%= @recidiva.data_diagnostico %>
+    </div>
+  </div>
 
-<p>
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">História Anterior</span>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Exame Dermatológico</span>
+            <%= render partial: "exame_dermatologico", locals:{exames: @recidiva.dermatologico_recidivas} %>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+<div>
   <strong>Classificacao operacional:</strong>
   <%= @recidiva.classificacao_operacional %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Forma clinica:</strong>
   <%= @recidiva.forma_clinica %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Baciloscopia:</strong>
   <%= @recidiva.baciloscopia %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Baciloscopia lb:</strong>
   <%= @recidiva.baciloscopia_lb %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Grau incapacidade:</strong>
   <%= @recidiva.grau_incapacidade %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Inicio tratamento:</strong>
   <%= @recidiva.inicio_tratamento %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Esquema terapeutico:</strong>
   <%= @recidiva.esquema_terapeutico %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Tempo tratamento:</strong>
   <%= @recidiva.tempo_tratamento %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Doses:</strong>
   <%= @recidiva.doses %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Regularidade:</strong>
   <%= @recidiva.regularidade %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Termino tratamento:</strong>
   <%= @recidiva.termino_tratamento %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Tratamento observacoes:</strong>
   <%= @recidiva.tratamento_observacoes %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Tempo alta cura:</strong>
   <%= @recidiva.tempo_alta_cura %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Data primeiros sintomas:</strong>
   <%= @recidiva.data_primeiros_sintomas %>
-</p>
+</div>
 
-<p>
-  <strong>Baciloscopia alta:</strong>
-  <%= @recidiva.baciloscopia_alta %>
-</p>
 
-<p>
-  <strong>Baciloscopia lb alta:</strong>
-  <%= @recidiva.baciloscopia_lb_alta %>
-</p>
 
-<p>
+
+
+<div>
   <strong>Grau incapacidade alta:</strong>
   <%= @recidiva.grau_incapacidade_alta %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Classificacao operacional alta:</strong>
   <%= @recidiva.classificacao_operacional_alta %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Notificacao:</strong>
   <%= @recidiva.notificacao %>
-</p>
+</div>
 
 </div>
 <%= link_to 'Voltar', recidivas_path, class:"btn" %>

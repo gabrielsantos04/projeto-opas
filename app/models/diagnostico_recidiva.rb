@@ -21,5 +21,5 @@
 
 class DiagnosticoRecidiva < ApplicationRecord
   belongs_to :recidiva
-  belongs_to :diagnostico
+  belongs_to :diagnostico, optional: true
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206191559) do
+ActiveRecord::Schema.define(version: 20180208135507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -204,6 +204,7 @@ ActiveRecord::Schema.define(version: 20180206191559) do
     t.bigint "recidiva_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "numero_episodios"
     t.index ["recidiva_id"], name: "index_epidosios_reacionais_recidivas_on_recidiva_id"
   end
 
@@ -343,14 +344,18 @@ ActiveRecord::Schema.define(version: 20180206191559) do
     t.string "tratamento_observacoes"
     t.integer "tempo_alta_cura"
     t.date "data_primeiros_sintomas"
-    t.string "baciloscopia_alta"
-    t.string "baciloscopia_lb_alta"
     t.string "grau_incapacidade_alta"
     t.string "classificacao_operacional_alta"
     t.bigint "notificacao_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "termino_tratamento"
+    t.string "forma_clinica_alta"
+    t.string "baciloscopia_suspeita"
+    t.string "baciloscopia_lb_suspeita"
+    t.string "grau_incapacidade_suspeita"
+    t.string "classificacao_operacional_suspeita"
+    t.string "forma_clinica_suspeita"
     t.index ["notificacao_id"], name: "index_recidivas_on_notificacao_id"
   end
 

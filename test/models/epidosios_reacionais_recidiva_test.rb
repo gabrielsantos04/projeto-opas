@@ -9,6 +9,7 @@
 #  recidiva_id            :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  numero_episodios       :integer
 #
 # Indexes
 #

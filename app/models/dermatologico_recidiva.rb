@@ -22,5 +22,5 @@
 
 class DermatologicoRecidiva < ApplicationRecord
   belongs_to :dermatologica
-  belongs_to :recidiva
+  belongs_to :recidiva, optional: true
 end

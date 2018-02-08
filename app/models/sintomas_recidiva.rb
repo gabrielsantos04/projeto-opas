@@ -21,5 +21,5 @@
 
 class SintomasRecidiva < ApplicationRecord
   belongs_to :sinais_sintoma
-  belongs_to :recidiva
+  belongs_to :recidiva, optional: true
 end
