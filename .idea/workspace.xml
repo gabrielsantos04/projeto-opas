@@ -41,8 +41,8 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="867" column="26" lean-forward="false" selection-start-line="867" selection-start-column="26" selection-end-line="867" selection-end-column="26" />
+            <state relative-caret-position="10859">
+              <caret line="817" column="5" lean-forward="false" selection-start-line="817" selection-start-column="5" selection-end-line="817" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -391,12 +391,12 @@
       <workItem from="1517935264065" duration="9482000" />
       <workItem from="1518089164109" duration="13213000" />
       <workItem from="1518629875553" duration="218000" />
-      <workItem from="1518699551701" duration="679000" />
+      <workItem from="1518699551701" duration="818000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114041000" />
+    <option name="totallyTimeSpent" value="114180000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1366" height="708" extended-state="6" />
@@ -793,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="867" column="26" lean-forward="false" selection-start-line="867" selection-start-column="26" selection-end-line="867" selection-end-column="26" />
+        <state relative-caret-position="10859">
+          <caret line="817" column="5" lean-forward="false" selection-start-line="817" selection-start-column="5" selection-end-line="817" selection-end-column="5" />
           <folding />
         </state>
       </provider>
