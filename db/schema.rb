@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208135507) do
+ActiveRecord::Schema.define(version: 20180216132628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,16 @@ ActiveRecord::Schema.define(version: 20180208135507) do
     t.index ["avaliacao_notificacao_id"], name: "index_avaliacao_sensitivas_on_avaliacao_notificacao_id"
   end
 
+  create_table "bcgs", force: :cascade do |t|
+    t.date "primeira_dose"
+    t.date "segunda_dose"
+    t.boolean "cicatriz"
+    t.bigint "notificacao_contato_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notificacao_contato_id"], name: "index_bcgs_on_notificacao_contato_id"
+  end
+
   create_table "categoria_queixas", force: :cascade do |t|
     t.string "nome"
     t.datetime "created_at", null: false
@@ -101,7 +111,7 @@ ActiveRecord::Schema.define(version: 20180208135507) do
     t.string "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "pacientes_count", default: 0
+    t.integer "pacientes_count"
   end
 
   create_table "classificacao_graus", force: :cascade do |t|
@@ -364,10 +374,32 @@ ActiveRecord::Schema.define(version: 20180208135507) do
     t.index ["sinais_sintoma_id"], name: "index_sintomas_recidivas_on_sinais_sintoma_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "nome"
+    t.string "cpf"
+    t.string "email"
+    t.bigint "cidade_id"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.index ["cidade_id"], name: "index_users_on_cidade_id"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
   add_foreign_key "avaliacao_neurologicas", "avaliacao_notificacaos"
   add_foreign_key "avaliacao_neurologicas", "queixas"
   add_foreign_key "avaliacao_notificacaos", "notificacaos"
   add_foreign_key "avaliacao_sensitivas", "avaliacao_notificacaos"
+  add_foreign_key "bcgs", "notificacao_contatos"
   add_foreign_key "classificacao_graus", "avaliacao_notificacaos"
   add_foreign_key "conduta_recidivas", "conduta", column: "conduta_id"
   add_foreign_key "conduta_recidivas", "recidivas"
@@ -391,4 +423,5 @@ ActiveRecord::Schema.define(version: 20180208135507) do
   add_foreign_key "recidivas", "notificacaos"
   add_foreign_key "sintomas_recidivas", "recidivas"
   add_foreign_key "sintomas_recidivas", "sinais_sintomas"
+  add_foreign_key "users", "cidades"
 end
