@@ -1,104 +1,108 @@
 <aside id="left-sidebar-nav" class="no-print">
   <ul id="slide-out" class="side-nav fixed leftside-navigation">
-    <%# if user_signed_in? %>
+    <% if user_signed_in? %>
 
-    <li class="user-details red darken-4">
-      <div class="row">
-        <div class="col col s4 m4 l4">
-          <img src="/images/user.png" alt="" class="circle responsive-img valign profile-image">
-        </div>
-        <div class="col col s8 m8 l8">
-          <ul id="profile-dropdown" class="dropdown-content">
-            <li><a href="<%#= destroy_user_session_path  %>" data-method="delete"><i class="mdi-hardware-keyboard-tab"></i> Sair</a>
+        <li class="user-details red darken-4">
+          <div class="row">
+            <div class="col col s4 m4 l4">
+              <img src="/images/user.png" alt="" class="circle responsive-img valign profile-image">
+            </div>
+            <div class="col col s8 m8 l8">
+              <ul id="profile-dropdown" class="dropdown-content">
+                <li><a href="<%= destroy_user_session_path  %>" data-method="delete"><i class="mdi-hardware-keyboard-tab"></i> Sair</a>
+                </li>
+              </ul>
+              <a class="btn-flat dropdown-button waves-effect waves-light profile-btn white-text" href="#" data-activates="profile-dropdown"><%= current_user.nome %><i class="mdi-navigation-arrow-drop-down right"></i></a>
+              <p class="user-roal"><%= current_user.role.titleize %></p>
+            </div>
+          </div>
+        </li>
+
+        <% if current_user.administrador? %>
+        <li class="bold">
+          <a href="/notificacaos/home" class="waves-effect waves-cyan">
+            <i class="fa fa-home"></i> Início
+          </a>
+        </li>
+        <% end %>
+        <li class="bold">
+          <a href="/pacientes" class="waves-effect waves-cyan">
+            <i class="fa fa-group"></i> Pacientes
+          </a>
+        </li>
+        <li class="bold">
+          <a href="/notificacaos" class="waves-effect waves-cyan">
+            <i class="fa fa-bell"></i> Notificações
+          </a>
+        </li>
+        <li class="bold">
+          <a href="/pacientes/mapa" class="waves-effect waves-cyan">
+            <i class="fa fa-map"></i> Mapa dos Pacientes
+          </a>
+        </li>
+        <% if current_user.administrador?  %>
+            <li class="bold">
+              <a href="/ocupacaos" class="waves-effect waves-cyan">
+                <i class="fa fa-briefcase"></i> Ocupações
+              </a>
             </li>
-          </ul>
-          <a class="btn-flat dropdown-button waves-effect waves-light profile-btn white-text" href="#" data-activates="profile-dropdown"><%#= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i></a>
-          <p class="user-roal"><%#= current_user.role.titleize %></p>
-        </div>
-      </div>
-    </li>
-
-    <li class="bold">
-      <a href="/notificacaos/home" class="waves-effect waves-cyan">
-        <i class="fa fa-home"></i> Início
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/pacientes" class="waves-effect waves-cyan">
-        <i class="fa fa-group"></i> Pacientes
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/notificacaos" class="waves-effect waves-cyan">
-        <i class="fa fa-bell"></i> Notificações
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/pacientes/mapa" class="waves-effect waves-cyan">
-        <i class="fa fa-map"></i> Mapa dos Pacientes
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/ocupacaos" class="waves-effect waves-cyan">
-        <i class="fa fa-briefcase"></i> Ocupações
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/medicamentos" class="waves-effect waves-cyan">
-        <i class="fa fa-medkit"></i> Medicamentos
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/queixas" class="waves-effect waves-cyan">
-        <i class="fa fa-stethoscope"></i> Queixas
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/categoria_queixas" class="waves-effect waves-cyan">
-        <i class="fa fa-list"></i> Categoria Queixas
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/monofilamentos" class="waves-effect waves-cyan">
-        <i class="fa fa-list"></i> Monofilamentos
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/cidades" class="waves-effect waves-cyan">
-        <i class="fa fa-map-marker"></i> Cidades
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/dermatologicas" class="waves-effect waves-cyan">
-        <i class="fa fa-map-marker"></i> Sinais Dermatológicos
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/sinais_sintomas" class="waves-effect waves-cyan">
-        <i class="fa fa-map-marker"></i> Sinais e Sintomas
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/diagnosticos" class="waves-effect waves-cyan">
-        <i class="fa fa-map-marker"></i> Diagnósticos
-      </a>
-    </li>
-    <li class="bold">
-      <a href="/condutas" class="waves-effect waves-cyan">
-        <i class="fa fa-map-marker"></i> Condutas
-      </a>
-    </li>
+            <li class="bold">
+              <a href="/medicamentos" class="waves-effect waves-cyan">
+                <i class="fa fa-medkit"></i> Medicamentos
+              </a>
+            </li>
+            <li class="bold">
+              <a href="/queixas" class="waves-effect waves-cyan">
+                <i class="fa fa-stethoscope"></i> Queixas
+              </a>
+            </li>
+            <li class="bold">
+              <a href="/categoria_queixas" class="waves-effect waves-cyan">
+                <i class="fa fa-list"></i> Categoria Queixas
+              </a>
+            </li>
+            <li class="bold">
+              <a href="/monofilamentos" class="waves-effect waves-cyan">
+                <i class="fa fa-list"></i> Monofilamentos
+              </a>
+            </li>
+            <li class="bold">
+              <a href="/cidades" class="waves-effect waves-cyan">
+                <i class="fa fa-map-marker"></i> Cidades
+              </a>
+            </li>
+            <li class="bold">
+              <a href="/dermatologicas" class="waves-effect waves-cyan">
+                <i class="fa fa-map-marker"></i> Sinais Dermatológicos
+              </a>
+            </li>
+            <li class="bold">
+              <a href="/sinais_sintomas" class="waves-effect waves-cyan">
+                <i class="fa fa-map-marker"></i> Sinais e Sintomas
+              </a>
+            </li>
+            <li class="bold">
+              <a href="/diagnosticos" class="waves-effect waves-cyan">
+                <i class="fa fa-map-marker"></i> Diagnósticos
+              </a>
+            </li>
+            <li class="bold">
+              <a href="/condutas" class="waves-effect waves-cyan">
+                <i class="fa fa-map-marker"></i> Condutas
+              </a>
+            </li>
 
 
-    <li class="bold">
-      <a href="/users" class="waves-effect waves-cyan">
-        <i class="fa fa-users"></i> Usuários
-      </a>
-    </li>
-    <%# end %>
+            <li class="bold">
+              <a href="/users" class="waves-effect waves-cyan">
+                <i class="fa fa-users"></i> Usuários
+              </a>
+            </li>
+        <% end %>
+    <% end %>
 
   </ul>
-  <%# if user_signed_in? %>
-  <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only teal"><i class="mdi-navigation-menu"></i></a>
-  <%# end %>
+  <% if user_signed_in? %>
+      <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only teal"><i class="mdi-navigation-menu"></i></a>
+  <% end %>
 </aside>

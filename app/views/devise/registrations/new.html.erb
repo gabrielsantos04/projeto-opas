@@ -13,8 +13,13 @@
     <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
+    <div class="field">
+      <%= f.label :cidade_id, "Cidade" %><br />
+      <%= f.select :cidade_id, Cidade.all.sort_by{|a| a.nome}.map{|a| [a.nome,a.id]},{prompt:true},{class:"browser-default select2"} %>
+    </div>
+    <br>
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "Senha" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -22,7 +27,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "Confirmação de senha" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -30,5 +35,4 @@
     <%= f.submit "Registrar", class:"btn" %>
   </div>
 <% end %>
-
 

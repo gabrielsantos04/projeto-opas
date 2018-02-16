@@ -1,4 +1,6 @@
 class CategoriaQueixasController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_categoria_queixa, only: [:show, :edit, :update, :destroy]
 
   # GET /categoria_queixas

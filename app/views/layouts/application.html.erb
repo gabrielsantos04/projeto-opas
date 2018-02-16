@@ -217,7 +217,9 @@
   <div class="wrapper">
 
     <!-- START LEFT SIDEBAR NAV-->
+    <% if user_signed_in? %>
         <%= render 'layouts/left_sidebar'  if params[:appframe].blank?%>
+    <% end %>
     <!-- END LEFT SIDEBAR NAV-->
 
     <!-- //////////////////////////////////////////////////////////////////////////// -->

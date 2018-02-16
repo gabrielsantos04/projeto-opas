@@ -24,7 +24,7 @@ class Queixa < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :categoria, in: [:olhos, :nariz,:membros_superiores,:membros_inferiores], predicate: true
+  enumerize :categoria, in: [:olhos, :nariz,:membros_superiores,:membros_inferiores], predicates: true
 
 
   def to_s

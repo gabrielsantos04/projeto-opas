@@ -43,5 +43,5 @@ class AvaliacaoNotificacao < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :classificacao_operacional, in: [:multibacilar, :paucibacilar], predicate: true
+  enumerize :classificacao_operacional, in: [:multibacilar, :paucibacilar], predicates: true
 end

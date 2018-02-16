@@ -1,4 +1,6 @@
 class SinaisSintomasController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_sinais_sintoma, only: [:show, :edit, :update, :destroy]
 
   # GET /sinais_sintomas

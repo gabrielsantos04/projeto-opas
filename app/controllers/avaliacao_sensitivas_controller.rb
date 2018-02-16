@@ -1,4 +1,6 @@
 class AvaliacaoSensitivasController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_avaliacao_sensitiva, only: [:show, :edit, :update, :destroy,:inserir_marcacao]
   before_action :set_combos, only: [:new, :edit, :create]
 

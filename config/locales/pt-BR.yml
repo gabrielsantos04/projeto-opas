@@ -1,4 +1,8 @@
 pt-BR:
+  devise:
+    sessions:
+      user:
+        signed_in: 'Bem Vindo.'
   hello: "Hello world"
   errors:
     messages:

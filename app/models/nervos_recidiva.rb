@@ -22,5 +22,5 @@ class NervosRecidiva < ApplicationRecord
   belongs_to :recidiva, optional: true
 
   extend Enumerize
-  enumerize :nervo, in: [:auricular, :mediano,:radial,:ulnar,:fibular_comum,:tibial_posterior], predicate: true
+  enumerize :nervo, in: [:auricular, :mediano,:radial,:ulnar,:fibular_comum,:tibial_posterior], predicates: true
 end

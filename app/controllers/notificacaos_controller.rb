@@ -1,10 +1,17 @@
 class NotificacaosController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_notificacao, only: [:show, :edit, :update, :destroy,:recidiva]
   before_action :set_combos, only: [:new, :edit, :create]
 
   # GET /notificacaos
   def index
-    @q = Notificacao.all.ransack(params[:q])
+    if current_user.administrador?
+      @q = Notificacao.all.ransack(params[:q])
+    else
+      @q = Notificacao.includes(:paciente).where(pacientes: {cidade: current_user.cidade}).ransack(params[:q])
+    end
+
     @notificacaos = @q.result.page(params[:page])
   end
 

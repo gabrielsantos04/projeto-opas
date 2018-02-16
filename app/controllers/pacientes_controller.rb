@@ -1,11 +1,17 @@
 class PacientesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_paciente, only: [:show, :edit, :update, :destroy]
   before_action :set_combos, only: [:new, :create, :edit]
 
   # GET /pacientes
   def index
-    @q = Paciente.all.ransack(params[:q])
+    if current_user.administrador?
+      @q = Paciente.all.ransack(params[:q])
+    else
+      @q = Paciente.where(cidade: current_user.cidade).ransack(params[:q])
+    end
+
     @pacientes = @q.result.page(params[:page])
   end
 
@@ -21,7 +27,7 @@ class PacientesController < ApplicationController
 
   # GET /pacientes/new
   def new
-    @paciente = Paciente.new
+    @paciente = Paciente.new(cidade_id: current_user.cidade.id)
   end
 
   # GET /pacientes/1/edit

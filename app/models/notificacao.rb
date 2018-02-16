@@ -47,11 +47,11 @@ class Notificacao < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :grau_incapacidade, in: [:grau_0, :grau_1,:grau_2,:nao_avaliado], predicate: true
-  enumerize :modo_entrada, in: [:caso_novo, :outra_unidade,:outro_municipio,:outro_estado,:outro_pais,:recidiva,:outros_reingressos], predicate: true
-  enumerize :modo_deteccao, in: [:encaminhamento, :demanda_expontanea,:exame_coletividade,:exame_contatos,:outros_modos], predicate: true
-  enumerize :baciloscopia, in: [:positivo, :negativo,:nao_realizado], predicate: true
-  enumerize :esquema_terapeutico, in: [:pb_infantil, :pb_adulto,:mb_infantil,:mb_adulto,:outros_esquemas], predicate: true
+  enumerize :grau_incapacidade, in: [:grau_0, :grau_1,:grau_2,:nao_avaliado], predicates: true
+  enumerize :modo_entrada, in: [:caso_novo, :outra_unidade,:outro_municipio,:outro_estado,:outro_pais,:recidiva,:outros_reingressos], predicates: true
+  enumerize :modo_deteccao, in: [:encaminhamento, :demanda_expontanea,:exame_coletividade,:exame_contatos,:outros_modos], predicates: true
+  enumerize :baciloscopia, in: [:positivo, :negativo,:nao_realizado], predicates: true
+  enumerize :esquema_terapeutico, in: [:pb_infantil, :pb_adulto,:mb_infantil,:mb_adulto,:outros_esquemas], predicates: true
 
 
 

@@ -52,11 +52,15 @@
 
   </div>
   <br>
+  <% if current_user.administrador? %>
   <div class="input">
     <%= f.label :cidade_id, "Cidade" %>
     <%= f.select :cidade_id, @cidades,{ prompt: true},{class:"browser-default chosen-select"}  %>
 
   </div>
+  <% else %>
+    <%= f.hidden_field :cidade_id %>
+  <% end %>
 
   <div class="input-field">
 

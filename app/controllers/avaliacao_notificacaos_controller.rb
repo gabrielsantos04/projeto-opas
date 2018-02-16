@@ -1,4 +1,6 @@
 class AvaliacaoNotificacaosController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_avaliacao_notificacao, only: [:show, :edit, :update, :destroy]
   before_action :set_combos, only: [:new, :edit, :create]
 
