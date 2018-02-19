@@ -88,16 +88,6 @@ ActiveRecord::Schema.define(version: 20180216132628) do
     t.index ["avaliacao_notificacao_id"], name: "index_avaliacao_sensitivas_on_avaliacao_notificacao_id"
   end
 
-  create_table "bcgs", force: :cascade do |t|
-    t.date "primeira_dose"
-    t.date "segunda_dose"
-    t.boolean "cicatriz"
-    t.bigint "notificacao_contato_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["notificacao_contato_id"], name: "index_bcgs_on_notificacao_contato_id"
-  end
-
   create_table "categoria_queixas", force: :cascade do |t|
     t.string "nome"
     t.datetime "created_at", null: false
@@ -111,7 +101,7 @@ ActiveRecord::Schema.define(version: 20180216132628) do
     t.string "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "pacientes_count"
+    t.integer "pacientes_count", default: 0
   end
 
   create_table "classificacao_graus", force: :cascade do |t|
@@ -130,19 +120,19 @@ ActiveRecord::Schema.define(version: 20180216132628) do
     t.index ["avaliacao_notificacao_id"], name: "index_classificacao_graus_on_avaliacao_notificacao_id"
   end
 
-  create_table "conduta", force: :cascade do |t|
-    t.string "nome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "conduta_recidivas", force: :cascade do |t|
-    t.bigint "conduta_id"
+    t.bigint "condutas_id"
     t.bigint "recidiva_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["conduta_id"], name: "index_conduta_recidivas_on_conduta_id"
+    t.index ["condutas_id"], name: "index_conduta_recidivas_on_condutas_id"
     t.index ["recidiva_id"], name: "index_conduta_recidivas_on_recidiva_id"
+  end
+
+  create_table "condutas", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contato_avaliacaos", force: :cascade do |t|
@@ -399,9 +389,8 @@ ActiveRecord::Schema.define(version: 20180216132628) do
   add_foreign_key "avaliacao_neurologicas", "queixas"
   add_foreign_key "avaliacao_notificacaos", "notificacaos"
   add_foreign_key "avaliacao_sensitivas", "avaliacao_notificacaos"
-  add_foreign_key "bcgs", "notificacao_contatos"
   add_foreign_key "classificacao_graus", "avaliacao_notificacaos"
-  add_foreign_key "conduta_recidivas", "conduta", column: "conduta_id"
+  add_foreign_key "conduta_recidivas", "condutas", column: "condutas_id"
   add_foreign_key "conduta_recidivas", "recidivas"
   add_foreign_key "contato_avaliacaos", "notificacao_contatos"
   add_foreign_key "dados_clinicos", "notificacaos"
