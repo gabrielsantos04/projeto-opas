@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'oauth2'
 gem 'rest-client'
-gem "cancan"
+gem 'cancancan', '~> 2.0'
 gem 'enumerize'
 gem 'ryanb-uniquify'
 gem "ransack", github:"activerecord-hackery/ransack", branch:"master"

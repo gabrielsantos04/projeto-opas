@@ -1,0 +1,2 @@
+json.extract! recidiva, :id, :unidade_saude, :prontuario, :data_diagnostico, :classificacao_operacional, :forma_clinica, :baciloscopia, :baciloscopia_lb, :grau_incapacidade, :inicio_tratamento, :esquema_terapeutico, :tempo_tratamento, :doses, :regularidade, :termino_tratamento, :tratamento_observacoes, :tempo_alta_cura, :data_primeiros_sintomas, :baciloscopia_alta, :baciloscopia_lb_alta, :grau_incapacidade_alta, :classificacao_operacional_alta, :notificacao_id, :created_at, :updated_at
+json.url recidiva_url(recidiva, format: :json)

@@ -1,0 +1,29 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Nome:</strong>
+  <%= @user.nome %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @user.cpf %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @user.cidade %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @user.role %>
+</p>
+
+</div>
+<%= link_to 'Voltar', users_path, class:"btn" %>

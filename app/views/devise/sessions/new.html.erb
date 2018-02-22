@@ -1,0 +1,34 @@
+<p>&nbsp;</p>
+<div class="center">
+   <img src="/profile.jpg" alt="" class="circle responsive-img valign profile-image-login">
+</div>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "login-form"}) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "Senha" %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class=" right">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, "Lembre-me" %>
+    </div>
+  <% end -%>
+  <p>&nbsp;</p>
+  <div class="actions">
+    <%= f.submit "Entrar", class:"btn teal", style:"width: 100%" %>
+  </div>
+<% end %>
+
+<p>&nbsp;</p>
+<div class="center">
+<%= render "devise/shared/links" %>
+  
+</div>
+<p>&nbsp;</p>

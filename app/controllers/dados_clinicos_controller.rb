@@ -1,4 +1,6 @@
 class DadosClinicosController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_dados_clinico, only: [:show, :edit, :update, :destroy]
 
   # GET /dados_clinicos

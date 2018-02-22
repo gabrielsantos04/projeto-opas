@@ -25,6 +25,6 @@ class DadosClinico < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :forma_clinica, in: [:i, :t,:d,:v], predicate: true
-  enumerize :classificacao_operacional, in: [:multibacilar, :paucibacilar], predicate: true
+  enumerize :forma_clinica, in: [:i, :t,:d,:v], predicates: true
+  enumerize :classificacao_operacional, in: [:multibacilar, :paucibacilar], predicates: true
 end

@@ -14,6 +14,7 @@
 
 class Cidade < ApplicationRecord
   has_many :pacientes
+  has_many :users
 
   def to_s
     self.nome

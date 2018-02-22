@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users
+  resources :condutas
+  resources :diagnosticos
+  resources :sinais_sintomas
+  resources :dermatologicas
+  resources :recidivas
   resources :categoria_queixas
-  resources :avaliacao_sensitivas
+  resources :avaliacao_sensitivas do
+    member do
+      get "inserir_marcacao"
+    end
+    collection do
+      get "remover_marcacao"
+    end
+  end
   resources :episodio_reacionals
   resources :avaliacao_neurologicas
   resources :classificacao_graus
@@ -13,6 +27,9 @@ Rails.application.routes.draw do
   resources :notificacaos do
     collection do
       get 'home'
+    end
+    member do
+      get "recidiva"
     end
   end
   resources :pacientes do

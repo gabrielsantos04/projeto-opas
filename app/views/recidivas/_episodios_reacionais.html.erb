@@ -1,0 +1,20 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Tipo</th>
+    <th>Conduta Medicamentosa</th>
+    <th>Número de episódios</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% dados.each do |e| %>
+      <tr>
+        <td><%= e.tipo_text %></td>
+        <td><%= e.conduta_mendicamentosa %></td>
+        <td><%= e.numero_episodios %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

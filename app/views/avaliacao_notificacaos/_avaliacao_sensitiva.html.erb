@@ -6,9 +6,10 @@
   </thead>
 
   <tbody>
-  <% avaliacao_sensitivas.each do |avaliacao_sensitiva| %>
+  <% avaliacao_sensitivas.each_with_index  do |avaliacao_sensitiva, index| %>
       <tr>
-        <td><%= link_to avaliacao_sensitiva.data,edit_avaliacao_sensitiva_path(avaliacao_sensitiva) %></td>
+        <td><%= link_to index + 1, edit_avaliacao_sensitiva_path(avaliacao_sensitiva), target:"_self"  %></td>
+        <td><%= avaliacao_sensitiva.data%></td>
       </tr>
   <% end %>
   </tbody>

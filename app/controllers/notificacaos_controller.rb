@@ -1,10 +1,17 @@
 class NotificacaosController < ApplicationController
-  before_action :set_notificacao, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  load_and_authorize_resource
+  before_action :set_notificacao, only: [:show, :edit, :update, :destroy,:recidiva]
   before_action :set_combos, only: [:new, :edit, :create]
 
   # GET /notificacaos
   def index
-    @q = Notificacao.all.ransack(params[:q])
+    if current_user.administrador?
+      @q = Notificacao.all.ransack(params[:q])
+    else
+      @q = Notificacao.includes(:paciente).where(pacientes: {cidade: current_user.cidade}).ransack(params[:q])
+    end
+
     @notificacaos = @q.result.page(params[:page])
   end
 
@@ -37,6 +44,16 @@ class NotificacaosController < ApplicationController
     else
       render :new
     end
+  end
+
+  def recidiva
+    recidiva = @notificacao.recidivas.first
+    if recidiva
+      redirect_to recidiva_path(recidiva)
+    else
+      redirect_to new_recidiva_path(notificacao: @notificacao.id)
+    end
+
   end
 
   # PATCH/PUT /notificacaos/1
@@ -79,6 +96,7 @@ class NotificacaosController < ApplicationController
                                           esquema_substitutivos_attributes:[:id,:notificacao_id,:miligramas,:medicamento_id,:_destroy],
                                           notificacao_contatoes_attributes:[:bcg_primeira,:bcg_segunda,:bcg_cicatriz,:id,:notificacao_id,:nome,:tipo_contato,:suspeito,:confirmado,:_destroy],
       dados_clinicos_attributes:[:id,:notificacao_id,:lesoes_cultaneas,:forma_clinica,:classificacao_operacional,:nervos_afetados,:_destroy],
-                                          episodio_reacionals_attributes:[:id,:notificacao_id,:tipo,:numero_episodios,:conduta_mendicamentosa,:data_inicio,:data_termino,:_destroy])
+                                          episodio_reacionals_attributes:[:id,:notificacao_id,:tipo,:numero_episodios,:conduta_mendicamentosa,:data_inicio,:data_termino,:_destroy],
+      recidiva_attributes:[:id,:unidade_saude, :prontuario, :data_diagnostico, :classificacao_operacional, :forma_clinica, :baciloscopia, :baciloscopia_lb, :grau_incapacidade, :inicio_tratamento, :esquema_terapeutico, :tempo_tratamento, :doses, :regularidade, :termino_tratamento, :tratamento_observacoes, :tempo_alta_cura, :data_primeiros_sintomas, :baciloscopia_alta, :baciloscopia_lb_alta, :grau_incapacidade_alta, :classificacao_operacional_alta, :notificacao_id,:_destroy])
     end
 end

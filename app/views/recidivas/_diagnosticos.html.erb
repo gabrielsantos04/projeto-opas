@@ -1,0 +1,16 @@
+<table class="card striped responsive-table">
+  <thead>
+  <th>
+    Diagnóstico
+  </th>
+  </thead>
+
+  <tbody>
+  <% dados.each do |e| %>
+      <tr>
+        <td><%= e.diagnostico %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

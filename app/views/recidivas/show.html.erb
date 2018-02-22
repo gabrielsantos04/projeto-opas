@@ -1,0 +1,277 @@
+<div class="card-panel">
+	
+  <div class="row">
+    <div class="col s12 l4">
+      <strong>Unidade saude:</strong>
+      <%= @recidiva.unidade_saude %>
+    </div >
+
+    <div class="col s12 l4">
+      <strong>Prontuario:</strong>
+      <%= @recidiva.prontuario %>
+    </div>
+
+    <div class="col s12 l4">
+      <strong>Data diagnostico:</strong>
+      <%= @recidiva.data_diagnostico %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><b>História Anterior</b></span>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Exame Dermatológico</span>
+            <%= render partial: "exame_dermatologico", locals:{exames: @recidiva.dermatologico_recidivas} %>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Nervos Acometidos</span>
+            <%= render partial: "nervos", locals:{dados: @recidiva.nervos_recidivas} %>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Episódios Reacionais durante o tratamento</span>
+            <%= render partial: "episodios_reacionais", locals:{dados: @recidiva.epidosios_reacionais_recidivas} %>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <div class="row">
+        <div class="col s12 l3">
+          <strong>Classificação operacional:</strong>
+          <%= @recidiva.classificacao_operacional_text %>
+        </div>
+
+        <div class="col s12 l3">
+          <strong>Forma clínica:</strong>
+          <%= @recidiva.forma_clinica_text %>
+        </div>
+
+        <div class="col s12 l3">
+          <strong>Baciloscopia:</strong>
+          <%= @recidiva.baciloscopia_text %>
+        </div>
+
+        <div class="col s12 l3">
+          <strong>Baciloscopia lb:</strong>
+          <%= @recidiva.baciloscopia_lb %>
+        </div>
+
+        <div class="col s12 l3">
+          <strong>Grau incapacidade:</strong>
+          <%= @recidiva.grau_incapacidade_text %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 l4">
+          <strong>Início tratamento:</strong>
+          <%= @recidiva.inicio_tratamento %>
+        </div>
+
+        <div class="col s12 l4">
+          <strong>Esquema terapêutico:</strong>
+          <%= @recidiva.esquema_terapeutico_text %>
+        </div>
+
+        <div class="col s12 l4">
+          <strong>Tempo tratamento:</strong>
+          <%= @recidiva.tempo_tratamento %>
+        </div>
+
+        <div class="col s12 l4">
+          <strong>Doses:</strong>
+          <%= @recidiva.doses %>
+        </div>
+
+        <div class="col s12 l4">
+          <strong>Regularidade:</strong>
+          <%= @recidiva.regularidade == true ? "SIM" : "NÃO" %>
+        </div>
+
+        <div class="col s12 l4">
+          <strong>Termino tratamento:</strong>
+          <%= @recidiva.termino_tratamento %>
+        </div>
+
+        <div class="col s12 l12">
+          <strong>Tratamento observacoes:</strong>
+          <%= @recidiva.tratamento_observacoes %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><b>Situação do Paciente no momento da alta por cura</b></span>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Exame Dermatológico</span>
+            <%= render partial: "exame_dermatologico", locals:{exames: @recidiva.dermatologico_recidivas_alta} %>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Nervos Acometidos</span>
+            <%= render partial: "nervos", locals:{dados: @recidiva.nervos_recidivas_alta} %>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Episódios Reacionais</span>
+            <%= render partial: "episodios_reacionais", locals:{dados: @recidiva.epidosios_reacionais_recidivas_alta} %>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col s12 l3">
+            <strong>Classificação operacional:</strong>
+            <%= @recidiva.classificacao_operacional_alta_text %>
+          </div>
+
+          <div class="col s12 l3">
+            <strong>Forma clínica:</strong>
+            <%= @recidiva.forma_clinica_alta_text %>
+          </div>
+
+          <div class="col s12 l3">
+            <strong>Grau incapacidade:</strong>
+            <%= @recidiva.grau_incapacidade_alta_text %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><b>Situação do Paciente na suspeita de recidiva</b></span>
+        <div class="row">
+          <div class="col s12 l6">
+            <strong>Tempo de alta por cura:</strong>
+            <%= @recidiva.tempo_alta_cura %>
+          </div>
+
+          <div class="col s12 l6">
+            <strong>Data dos primeiros sintomas:</strong>
+            <%= @recidiva.data_primeiros_sintomas %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Exame Dermatológico</span>
+              <%= render partial: "exame_dermatologico", locals:{exames: @recidiva.dermatologico_recidivas_recidiva} %>
+            </div>
+
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Nervos Acometidos</span>
+              <%= render partial: "nervos", locals:{dados: @recidiva.nervos_recidivas_recidiva} %>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12 l6">
+            <strong>Grau incapacidade:</strong>
+            <%= @recidiva.grau_incapacidade_suspeita_text %>
+          </div>
+
+          <div class="col s12 l3">
+            <strong>Baciloscopia:</strong>
+            <%= @recidiva.baciloscopia_suspeita %>
+          </div>
+
+          <div class="col s12 l3">
+            <strong>Baciloscopia lb:</strong>
+            <%= @recidiva.baciloscopia_lb_suspeita %>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Aparecimento de sinais e sintomas</span>
+              <%= render partial: "sinais", locals:{dados: @recidiva.sintomas_recidivas} %>
+            </div>
+
+          </div>
+
+
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Diagnóstico</span>
+              <%= render partial: "diagnosticos", locals:{dados: @recidiva.diagnostico_recidivas} %>
+            </div>
+
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Conduta</span>
+              <%= render partial: "condutas", locals:{dados: @recidiva.conduta_recidivas} %>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col s12 l6">
+            <strong>Classificação operacional:</strong>
+            <%= @recidiva.classificacao_operacional_suspeita_text %>
+          </div>
+          <div class="col s12 l6">
+            <strong>Forma Clínica:</strong>
+            <%= @recidiva.forma_clinica_suspeita_text %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<%= link_to 'Voltar', notificacao_path(@recidiva.notificacao), class:"btn" %>
