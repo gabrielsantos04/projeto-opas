@@ -1,6 +1,6 @@
-class CreateCondutas < ActiveRecord::Migration[5.1]
+class CreateConduta < ActiveRecord::Migration[5.1]
   def change
-    create_table :condutas do |t|
+    create_table :conduta do |t|
       t.string :nome
 
       t.timestamps
