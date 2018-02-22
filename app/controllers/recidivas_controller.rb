@@ -65,7 +65,7 @@ class RecidivasController < ApplicationController
       @nervos = NervosRecidiva.nervo.options
       @sintomas = SinaisSintoma.all.map{|a|[a.nome,a.id]}
       @diagnosticos = Diagnostico.all.map{|a|[a.nome,a.id]}
-      @condutas = Conduta.all.map{|a|[a.nome,a.id]}
+      #@condutas = Conduta.all.map{|a|[a.nome,a.id]}
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_recidiva
