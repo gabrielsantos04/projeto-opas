@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/recidivas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/recidivas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recidivas/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/recidivas/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recidivas/show.html.erb" afterPath="$PROJECT_DIR$/app/views/recidivas/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20180206173013_create_conduta.rb" afterPath="$PROJECT_DIR$/db/migrate/20180206173013_create_conduta.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -75,8 +71,8 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/recidivas/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-279">
-              <caret line="502" column="17" lean-forward="false" selection-start-line="502" selection-start-column="17" selection-end-line="502" selection-end-column="17" />
+            <state relative-caret-position="369">
+              <caret line="496" column="17" lean-forward="false" selection-start-line="496" selection-start-column="17" selection-end-line="496" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -438,12 +434,12 @@
       <workItem from="1518784160476" duration="11881000" />
       <workItem from="1519041850250" duration="603000" />
       <workItem from="1519046200136" duration="12000" />
-      <workItem from="1519297918467" duration="1307000" />
+      <workItem from="1519297918467" duration="1334000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128847000" />
+    <option name="totallyTimeSpent" value="128874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1366" height="708" extended-state="6" />
@@ -844,8 +840,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recidivas/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-279">
-          <caret line="502" column="17" lean-forward="false" selection-start-line="502" selection-start-column="17" selection-end-line="502" selection-end-column="17" />
+        <state relative-caret-position="369">
+          <caret line="496" column="17" lean-forward="false" selection-start-line="496" selection-start-column="17" selection-end-line="496" selection-end-column="17" />
           <folding />
         </state>
       </provider>
