@@ -9,6 +9,7 @@
 #
 
 class Conduta < ApplicationRecord
+  self.table_name = "condutas"
   has_many :conduta_recidivas
 
   def to_s

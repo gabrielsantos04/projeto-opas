@@ -4,6 +4,34 @@ pt-BR:
       user:
         signed_in: 'Bem Vindo.'
   hello: "Hello world"
+  activerecord:
+    models:
+      notificacao: "Notificacao"
+      dados_clinico: "Dados Clínicos"
+      notificacao/dados_clinicos: "Dados Clínicos"
+      notificacao/avaliacao_notificacaos: "Avaliação"
+      avaliacao_notificacao: "Avaliação"
+
+
+    attributes:
+      notificacao:
+        numero: "Número"
+        grau_incapacidade: "Gráu incapacidade"
+        modo_entrada: "Modo de entrada"
+        modo_deteccao: "Modo de detecção"
+        observacoes: "Observações"
+        data_inicio: "Data do Início do tratamento"
+        esquema_terapeutico: "Esquema Terapêutico"
+        dados_clinicos: "Dados Clínicos"
+      dados_clinicos:
+        lesoes_cultaneas: "Dados Clínicos - Lesões cultâneas"
+      almox/invoice/invoice_products:
+        almox_product_id: "Produto"
+        quantity: "Quantidade"
+        value: "Valor do produto"
+        discount: "Desconto"
+        calculated_value: "Valor Calculado"
+
   errors:
     messages:
       blank: "Campo em branco"

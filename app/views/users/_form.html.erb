@@ -34,15 +34,15 @@
   </div>
 
   <div class="input-field">
-    <%= f.collection_select :cidade_id, Cidade.all, :id, :name, prompt: true  %>
+    <%= f.collection_select :cidade_id, Cidade.all, :id, :nome, prompt: true  %>
     
   </div>
 
   <div class="input-field">
 
+
+    <%= f.select :role, User.role.options,{prompt:true} %>
     <%= f.label :role %>
-    <%= f.text_field :role %>
-    
   </div>
 
 </div>

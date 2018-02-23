@@ -84,6 +84,9 @@ class NotificacaosController < ApplicationController
     @formas_clinicas = DadosClinico.forma_clinica.options
     @classificacoes_operacional = DadosClinico.classificacao_operacional.options
     @episodios_reacionais = EpisodioReacional.tipo.options
+    @classificacoes_operacionais = AvaliacaoNotificacao.classificacao_operacional.options
+    @queixas = Queixa.all.group_by(&:categoria)#.map{|a| [a.nome,a.id]}
+    @categorias = Queixa.categoria.options
   end
     # Use callbacks to share common setup or constraints between actions.
     def set_notificacao
@@ -97,6 +100,14 @@ class NotificacaosController < ApplicationController
                                           notificacao_contatoes_attributes:[:bcg_primeira,:bcg_segunda,:bcg_cicatriz,:id,:notificacao_id,:nome,:tipo_contato,:suspeito,:confirmado,:_destroy],
       dados_clinicos_attributes:[:id,:notificacao_id,:lesoes_cultaneas,:forma_clinica,:classificacao_operacional,:nervos_afetados,:_destroy],
                                           episodio_reacionals_attributes:[:id,:notificacao_id,:tipo,:numero_episodios,:conduta_mendicamentosa,:data_inicio,:data_termino,:_destroy],
-      recidiva_attributes:[:id,:unidade_saude, :prontuario, :data_diagnostico, :classificacao_operacional, :forma_clinica, :baciloscopia, :baciloscopia_lb, :grau_incapacidade, :inicio_tratamento, :esquema_terapeutico, :tempo_tratamento, :doses, :regularidade, :termino_tratamento, :tratamento_observacoes, :tempo_alta_cura, :data_primeiros_sintomas, :baciloscopia_alta, :baciloscopia_lb_alta, :grau_incapacidade_alta, :classificacao_operacional_alta, :notificacao_id,:_destroy])
+      recidiva_attributes:[:id,:unidade_saude, :prontuario, :data_diagnostico, :classificacao_operacional, :forma_clinica, :baciloscopia, :baciloscopia_lb, :grau_incapacidade,
+                           :inicio_tratamento, :esquema_terapeutico, :tempo_tratamento, :doses,
+                           :regularidade, :termino_tratamento, :tratamento_observacoes, :tempo_alta_cura,
+                           :data_primeiros_sintomas, :baciloscopia_alta, :baciloscopia_lb_alta,
+                           :grau_incapacidade_alta, :classificacao_operacional_alta, :notificacao_id,:_destroy],
+                                          avaliacao_notificacaos_attributes:[:id,:classificacao_operacional, :inicio_pqt, :alta_pqt, :profissao, :unidade_saude, :atividades_realizadas_ubs, :grupo_autocuidado, :encaminhamentos,
+                                                                             :imobilizacoes, :adaptacoes, :observacoes, :notificacao_id,:_destroy,
+                                                                             avaliacao_neurologicas_attributes:[:id,:queixa_id,:avaliacao_notificacao_id,:direito,:esquerdo,:data,:_destroy],
+                                                                             classificacao_graus_attributes:[:id,:avaliacao_notificacao_id,:data,:olho_direito,:olho_esquerdo,:mao_direita,:mao_esqueda,:pe_direito,:pe_esquerdo,:maior_grau,:escore_omp,:_destroy]])
     end
 end

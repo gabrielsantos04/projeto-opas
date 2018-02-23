@@ -41,6 +41,8 @@ class AvaliacaoNotificacao < ApplicationRecord
   accepts_nested_attributes_for :classificacao_graus, allow_destroy: true
   accepts_nested_attributes_for :avaliacao_sensitivas, allow_destroy: true
 
+  validates :classificacao_operacional,:inicio_pqt,:alta_pqt,:unidade_saude,:profissao, presence: true
+
   extend Enumerize
 
   enumerize :classificacao_operacional, in: [:multibacilar, :paucibacilar], predicates: true

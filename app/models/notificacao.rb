@@ -53,6 +53,8 @@ class Notificacao < ApplicationRecord
   enumerize :baciloscopia, in: [:positivo, :negativo,:nao_realizado], predicates: true
   enumerize :esquema_terapeutico, in: [:pb_infantil, :pb_adulto,:mb_infantil,:mb_adulto,:outros_esquemas], predicates: true
 
+  validates_presence_of Notificacao.attribute_names - %w(id created_at updated_at observacoes)
+  validates_presence_of :dados_clinicos,:notificacao_contatoes,:avaliacao_notificacaos
 
 
   def to_s
