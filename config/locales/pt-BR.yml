@@ -25,12 +25,7 @@ pt-BR:
         dados_clinicos: "Dados Clínicos"
       dados_clinicos:
         lesoes_cultaneas: "Dados Clínicos - Lesões cultâneas"
-      almox/invoice/invoice_products:
-        almox_product_id: "Produto"
-        quantity: "Quantidade"
-        value: "Valor do produto"
-        discount: "Desconto"
-        calculated_value: "Valor Calculado"
+
 
   errors:
     messages:
