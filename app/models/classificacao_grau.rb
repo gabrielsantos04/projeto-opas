@@ -27,4 +27,6 @@
 
 class ClassificacaoGrau < ApplicationRecord
   belongs_to :avaliacao_notificacao
+
+  validates_presence_of ClassificacaoGrau.attribute_names - %w(id created_at updated_at avaliacao_notificacao_id)
 end

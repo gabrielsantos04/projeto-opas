@@ -10,31 +10,31 @@
   </div>
 
   <div class="row">
-    <div class="input-field col s6">
+    <div class="input col s6">
 
       <%= f.label :inicio_pqt, "Início PQT" %>
-      <%= f.text_field :inicio_pqt, class:"datepicker" %>
+      <%= f.date_field :inicio_pqt %>
 
     </div>
 
-    <div class="input-field col s6">
+    <div class="input col s6">
 
       <%= f.label :alta_pqt, "Alta PQT" %>
-      <%= f.text_field :alta_pqt, class:"datepicker"  %>
+      <%= f.date_field :alta_pqt  %>
 
     </div>
   </div>
 
   <div class="input-field">
 
-    <%= f.label :profissao %>
+    <%= f.label :profissao, "Profissão" %>
     <%= f.text_field :profissao %>
     
   </div>
 
   <div class="input-field">
 
-    <%= f.label :unidade_saude %>
+    <%= f.label :unidade_saude, "Unidade de Saúde" %>
     <%= f.text_field :unidade_saude %>
     
   </div>
@@ -113,7 +113,7 @@
             <div class="row">
               <div class="col s12 l2">
                 <%= esq.label :data, "Data" %>
-                <%= esq.text_field :data, class:"datepicker" %>
+                <%= esq.date_field :data %>
               </div>
             </div>
             <b>OLHOS</b><br>
@@ -443,7 +443,7 @@
             </div>
             <div class="col s2">
               <%= esq.label :data, "Data" %>
-              <%= esq.text_field :data, class:"datepicker" %>
+              <%= esq.date_field :data %>
             </div>
             <div class="col s4 l1">
               <%= esq.link_to_remove "Remover" %>

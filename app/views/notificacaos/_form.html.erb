@@ -20,10 +20,11 @@
 
     </div>
 
-    <div class="col s12 l6 input-field">
+    <div class="col s12 l6 input">
 
       <%= f.label :data %>
-      <%= f.text_field :data, class:"datepicker" %>
+      <%= f.date_field :data %>
+
 
     </div>
 
@@ -79,10 +80,10 @@
   </div>
   <div class="row">
     <div class="row">
-      <div class="col s12 l6 input-field">
+      <div class="col s12 l6 input">
 
         <%= f.label :data_inicio, "Data do Início do Tratamento" %>
-        <%= f.text_field :data_inicio, class:"datepicker" %>
+        <%= f.date_field :data_inicio %>
 
       </div>
 
@@ -129,10 +130,10 @@
       <span class="card-title">Episódios Reacionais</span>
       <%= f.fields_for :episodio_reacionals do |esq| %>
           <div class="row">
-            <div class="col s6 l2 input-field">
-
-              <%= esq.select :tipo, @episodios_reacionais %>
+            <div class="col s6 l2 field">
               <%= esq.label :tipo, "Tipo" %>
+              <%= esq.select :tipo, @episodios_reacionais,{prompt: true},{class:"browser-default select2"} %>
+
 
             </div>
             <div class="col s6 l2 input-field">
@@ -146,11 +147,11 @@
             </div>
             <div class="col s6 l2">
               <%= esq.label :data_inicio, "Início" %>
-              <%= esq.text_field :data_inicio, class:"datepicker" %>
+              <%= esq.date_field :data_inicio %>
             </div>
             <div class="col s6 l2">
               <%= esq.label :data_termino, "Término" %>
-              <%= esq.text_field :data_termino, class:"datepicker" %>
+              <%= esq.date_field :data_termino %>
             </div>
             <div class="col s4 l1">
               <%= esq.link_to_remove "Remover" %>
@@ -231,13 +232,13 @@
           <strong>BCG</strong>
           <div class="row">
 
-              <div class="col s4 input-field">
+              <div class="col s4 input">
                 <%= esq.label :bcg_primeira, "Primeira Dose" %>
-                <%= esq.text_field :bcg_primeira, class:"datepicker" %>
+                <%= esq.date_field :bcg_primeira %>
               </div>
-            <div class="col s4 input-field">
+            <div class="col s4 input">
               <%= esq.label :bcg_segunda, "Segunda Dose" %>
-              <%= esq.text_field :bcg_segunda, class:"datepicker" %>
+              <%= esq.date_field :bcg_segunda %>
             </div>
             <div class="col s4 input-field">
 
