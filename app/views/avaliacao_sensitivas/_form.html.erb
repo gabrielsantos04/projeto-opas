@@ -93,6 +93,10 @@
   <%= f.hidden_field :pe_e_e1 %>
   <%= f.hidden_field :pe_e_e2 %>
   <%= f.hidden_field :pe_e_calcanhar %>
+  <input type="hidden" id="base64_mao_direita" value="" name="base64_mao_direita">
+  <input type="hidden" id="base64_mao_esquerda" value="" name="base64_mao_esquerda">
+  <input type="hidden" id="base64_pe_direito" value="" name="base64_pe_direito">
+  <input type="hidden" id="base64_pe_esquerdo" value="" name="base64_pe_esquerdo">
 
   <div id="modal_cores" class="modal">
     <div class="modal-content">
@@ -106,6 +110,9 @@
         <div class="col s1 l1">
           <a  class="modal-close" onclick="limpaFilamento();"><i class="medium material-icons ">not_interested</i></a>
         </div>
+      </div>
+      <div class="row">
+        <%= render partial: "legenda_cores" %>
       </div>
     </div>
   </div>
@@ -130,7 +137,19 @@
       </div>
     </div>
   </div>
-
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Legenda</span>
+      <div class="row">
+        <div class="col s12 l6">
+          <%= render partial: "legenda_cores" %>
+        </div>
+        <div class="col s12 l6">
+          <%= render partial: "legenda_marcas" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
   <div class="actions">
     <%= f.submit "Salvar", class:"btn" %>
@@ -147,6 +166,27 @@
     var marcacoes_pe_direito = [];
     var marcacoes_pe_esquerdo = [];
 
+    function setBase64()
+    {
+      var dataUrl = canvas.toDataURL();
+      switch(canvas.id)
+      {
+          case 'cnvs_mao_direita':
+              $("#base64_mao_direita").val(dataUrl);
+              break;
+          case 'cnvs_mao_esquerda':
+              $("#base64_mao_esquerda").val(dataUrl);
+              break;
+          case 'cnvs_pe_direito':
+              $("#base64_pe_direito").val(dataUrl);
+              break;
+          case 'cnvs_pe_esquerdo':
+              $("#base64_pe_esquerdo").val(dataUrl);
+              break;
+      }
+
+    }
+
     function setFilamento(id,cor)
     {
 
@@ -157,6 +197,7 @@
         ctx.fillStyle = cor;
         ctx.fill();
         $('#'+filamento.id).val(id);
+        setBase64();
     }
 
     function limpaFilamento()
@@ -168,6 +209,7 @@
         ctx.fillStyle = "#ffffff";
         ctx.fill();
         $('#'+filamento.id).val("");
+        setBase64();
     }
 
     function posicionaImagem(img,inserir)
@@ -204,6 +246,7 @@
              }
           });
         }
+        setBase64();
     }
 
     function openModal(circle,cnv)
@@ -231,15 +274,24 @@
         cnvs_mao_direita.style.position = "absolute";
         cnvs_mao_direita.style.left = mao_direita.offsetLeft + "px";
         cnvs_mao_direita.style.top = mao_direita.offsetTop + "px";
+        base_image = new Image();
+        base_image.src = "/images/mao_direita.png";
+        ctx.beginPath();
+        ctx.drawImage(base_image,0,0);
 
         //Mão Esquerda
         var mao_esquerda = document.getElementById("mao_esquerda");
         var cnvs_mao_esquerda = document.getElementById("cnvs_mao_esquerda");
         var ctx_e = cnvs_mao_esquerda.getContext("2d");
 
+
         cnvs_mao_esquerda.style.position = "absolute";
         cnvs_mao_esquerda.style.left = mao_esquerda.offsetLeft + "px";
         cnvs_mao_esquerda.style.top = mao_esquerda.offsetTop + "px";
+        base_image = new Image();
+        base_image.src = "/images/mao_esquerda.png";
+        ctx_e.beginPath();
+        ctx_e.drawImage(base_image,0,0);
 
         //Pé Direito
         var pe_direito = document.getElementById("pe_direito");
@@ -249,6 +301,10 @@
         cnvs_pe_direito.style.position = "absolute";
         cnvs_pe_direito.style.left = pe_direito.offsetLeft + "px";
         cnvs_pe_direito.style.top = pe_direito.offsetTop + "px";
+        base_image = new Image();
+        base_image.src = "/images/pe_direito.png";
+        ctx_pe_d.beginPath();
+        ctx_pe_d.drawImage(base_image,0,0);
 
         //Pé Esquerdo
         var pe_esquerdo = document.getElementById("pe_esquerdo");
@@ -258,6 +314,10 @@
         cnvs_pe_esquerdo.style.position = "absolute";
         cnvs_pe_esquerdo.style.left = pe_esquerdo.offsetLeft + "px";
         cnvs_pe_esquerdo.style.top = pe_esquerdo.offsetTop + "px";
+        base_image = new Image();
+        base_image.src = "/images/pe_esquerdo.png";
+        ctx_pe_e.beginPath();
+        ctx_pe_e.drawImage(base_image,0,0);
 
         //carrega as marcacoes
         <% @avaliacao_sensitiva.marcacaos.each do |m| %>

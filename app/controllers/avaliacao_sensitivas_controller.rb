@@ -30,6 +30,10 @@ class AvaliacaoSensitivasController < ApplicationController
   def new
     @avaliacao_sensitiva = AvaliacaoSensitiva.new(avaliacao_notificacao_id: params[:avaliacao])
     @avaliacao_sensitiva.save
+    SensitivaImage.create!(avaliacao_sensitiva: @avaliacao_sensitiva,opcao: 'mao_direita')
+    SensitivaImage.create!(avaliacao_sensitiva: @avaliacao_sensitiva,opcao: 'mao_esquerda')
+    SensitivaImage.create!(avaliacao_sensitiva: @avaliacao_sensitiva,opcao: 'pe_direito')
+    SensitivaImage.create!(avaliacao_sensitiva: @avaliacao_sensitiva,opcao: 'pe_esquerdo')
     redirect_to edit_avaliacao_sensitiva_path(@avaliacao_sensitiva)
   end
 
@@ -51,6 +55,35 @@ class AvaliacaoSensitivasController < ApplicationController
   # PATCH/PUT /avaliacao_sensitivas/1
   def update
     if @avaliacao_sensitiva.update(avaliacao_sensitiva_params)
+      #salva as imagens da avaliacao sensitiva
+      unless params[:base64_mao_direita].empty?
+        data =  params[:base64_mao_direita]
+        img = SensitivaImage.where("avaliacao_sensitiva_id = ? and opcao = ?",@avaliacao_sensitiva.id,'mao_direita').first_or_create(avaliacao_sensitiva: @avaliacao_sensitiva, opcao: 'mao_direita')
+        img.imagem = params[:base64_mao_direita]
+        img.imagem.recreate_versions!
+        img.save
+      end
+      unless params[:base64_mao_esquerda].empty?
+        data =  params[:base64_mao_esquerda]
+        img = SensitivaImage.where("avaliacao_sensitiva_id = ? and opcao = ?",@avaliacao_sensitiva.id,'mao_esquerda').first_or_create(avaliacao_sensitiva: @avaliacao_sensitiva, opcao: 'mao_esquerda')
+        img.imagem = params[:base64_mao_esquerda]
+        img.imagem.recreate_versions!
+        img.save
+      end
+      unless params[:base64_pe_direito].empty?
+        data =  params[:base64_pe_direito]
+        img = SensitivaImage.where("avaliacao_sensitiva_id = ? and opcao = ?",@avaliacao_sensitiva.id,'pe_direito').first_or_create(avaliacao_sensitiva: @avaliacao_sensitiva, opcao: 'pe_direito')
+        img.imagem = params[:base64_pe_direito]
+        img.imagem.recreate_versions!
+        img.save
+      end
+      unless params[:base64_pe_esquerdo].empty?
+        data =  params[:base64_pe_esquerdo]
+        img = SensitivaImage.where("avaliacao_sensitiva_id = ? and opcao = ?",@avaliacao_sensitiva.id,'pe_esquerdo').first_or_create(avaliacao_sensitiva: @avaliacao_sensitiva, opcao: 'pe_esquerdo')
+        img.imagem = params[:base64_pe_esquerdo]
+        img.imagem.recreate_versions!
+        img.save
+      end
       redirect_to @avaliacao_sensitiva.avaliacao_notificacao, notice: 'Avaliação Sensitiva atualizada com sucesso.'
     else
       render :edit

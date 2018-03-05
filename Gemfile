@@ -42,6 +42,8 @@ gem "ransack", github:"activerecord-hackery/ransack", branch:"master"
 gem "kaminari", github: "amatsuda/kaminari", branch: '0-17-stable'
 gem 'nested_form'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave-base64'
+
 #gem 'paper_trail'
 
 group :development, :test do

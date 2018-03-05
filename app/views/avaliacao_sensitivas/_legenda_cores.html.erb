@@ -1,0 +1,10 @@
+<% @monofilamentos.each do |m| %>
+  <div class="row">
+    <div class="col s2">
+      <img src="/images/<%= m.nome.downcase %>.png" alt="">
+    </div>
+    <div class="col s10">
+      <%= m.interpretacao %>
+    </div>
+  </div>
+<% end %>

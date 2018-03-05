@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227181958) do
+ActiveRecord::Schema.define(version: 20180305132754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -397,6 +397,15 @@ ActiveRecord::Schema.define(version: 20180227181958) do
     t.index ["notificacao_id"], name: "index_recidivas_on_notificacao_id"
   end
 
+  create_table "sensitiva_images", force: :cascade do |t|
+    t.string "imagem"
+    t.bigint "avaliacao_sensitiva_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "opcao"
+    t.index ["avaliacao_sensitiva_id"], name: "index_sensitiva_images_on_avaliacao_sensitiva_id"
+  end
+
   create_table "sinais_sintomas", force: :cascade do |t|
     t.string "nome"
     t.datetime "created_at", null: false
@@ -458,6 +467,7 @@ ActiveRecord::Schema.define(version: 20180227181958) do
   add_foreign_key "pacientes", "ocupacaos"
   add_foreign_key "queixas", "categoria_queixas"
   add_foreign_key "recidivas", "notificacaos"
+  add_foreign_key "sensitiva_images", "avaliacao_sensitivas"
   add_foreign_key "sintomas_recidivas", "recidivas"
   add_foreign_key "sintomas_recidivas", "sinais_sintomas"
   add_foreign_key "users", "cidades"
