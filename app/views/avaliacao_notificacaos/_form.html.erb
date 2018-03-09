@@ -269,13 +269,13 @@
             <div class="row">
               <div class="col s12 l4 input-field">Nervo Radial (N / E / D / C)</div>
               <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_radial_d,["N","E","D","C"],{prompt: true} %>
                 <%= esq.label :nervo_radial_d, "D" %>
+                <%= esq.text_field :nervo_radial_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4%>
+
               </div>
               <div class="col s6 l3 input-field">
 
-                <%= esq.select :nervo_radial_e,["N","E","D","C"],{prompt: true} %>
+                <%= esq.text_field :nervo_radial_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4%>
                 <%= esq.label :nervo_radial_e, "E" %>
               </div>
             </div>
@@ -283,12 +283,12 @@
               <div class="col s12 l4 input-field">Nervo Ulnar (N / E / D / C)</div>
               <div class="col s6 l3 input-field">
 
-                <%= esq.select :nervo_ulnar_d,["N","E","D","C"],{prompt: true} %>
+                <%= esq.text_field :nervo_ulnar_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4%>
                 <%= esq.label :nervo_ulnar_d, "D" %>
               </div>
               <div class="col s6 l3 input-field">
 
-                <%= esq.select :nervo_ulnar_e,["N","E","D","C"],{prompt: true} %>
+                <%= esq.text_field :nervo_ulnar_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
                 <%= esq.label :nervo_ulnar_e, "E" %>
               </div>
             </div>
@@ -296,12 +296,12 @@
               <div class="col s12 l4 input-field">Nervo Mediano (N / E / D / C)</div>
               <div class="col s6 l3 input-field">
 
-                <%= esq.select :nervo_mediano_d,["N","E","D","C"],{prompt: true} %>
+                <%= esq.text_field :nervo_mediano_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
                 <%= esq.label :nervo_mediano_d, "D" %>
               </div>
               <div class="col s6 l3 input-field">
 
-                <%= esq.select :nervo_mediano_e,["N","E","D","C"],{prompt: true} %>
+                <%= esq.text_field :nervo_mediano_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
                 <%= esq.label :nervo_mediano_e, "E" %>
               </div>
             </div>
@@ -349,12 +349,12 @@
               <div class="col s12 l4 input-field">Nervo Fibular (N / E / D / C)</div>
               <div class="col s6 l3 input-field">
 
-                <%= esq.select :nervo_fibular_d,["N","E","D","C"],{prompt: true} %>
+                <%= esq.text_field :nervo_fibular_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
                 <%= esq.label :nervo_fibular_d, "D" %>
               </div>
               <div class="col s6 l3 input-field">
 
-                <%= esq.select :nervo_fibular_e,["N","E","D","C"],{prompt: true} %>
+                <%= esq.text_field :nervo_fibular_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
                 <%= esq.label :nervo_fibular_e, "E" %>
               </div>
             </div>
@@ -362,12 +362,12 @@
               <div class="col s12 l4 input-field">Nervo Tibial Posterior (N / E / D / C)</div>
               <div class="col s6 l3 input-field">
 
-                <%= esq.select :nervo_tibial_d,["N","E","D","C"],{prompt: true} %>
+                <%= esq.text_field :nervo_tibial_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
                 <%= esq.label :nervo_tibial_d, "D" %>
               </div>
               <div class="col s6 l3 input-field">
 
-                <%= esq.select :nervo_tibial_e,["N","E","D","C"],{prompt: true} %>
+                <%= esq.text_field :nervo_tibial_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
                 <%= esq.label :nervo_tibial_e, "E" %>
               </div>
             </div>
@@ -470,3 +470,13 @@
     <%= f.submit "Salvar", class:"btn" %>
   </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $(".nedc").on("keydown", function(e)
+  {
+
+      if(e.keyCode != 8 && e.keyCode != 68 && e.keyCode != 37 && e.keyCode != 39 && e.keyCode != 78 && e.keyCode != 69&& e.keyCode != 67&& e.keyCode != 46 ) {
+          return false;
+      }
+  })
+</script>

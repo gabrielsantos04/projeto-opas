@@ -98,7 +98,7 @@
 
       <div class="card">
         <div class="card-content">
-          <span class="card-title">Esquema Substitutivo</span>
+          <span class="card-title">Esquema de Tratamento</span>
           <p>Informar se Esquema Terapêutico for outros esquemas substitutivos</p>
           <%= f.fields_for :esquema_substitutivos do |esq| %>
               <div class="row">
@@ -142,7 +142,7 @@
               <%= esq.number_field :numero_episodios %>
             </div>
             <div class="col s12 l3 input-field">
-              <%= esq.label :conduta_mendicamentosa,"condutas Mendicamentosa" %>
+              <%= esq.label :conduta_mendicamentosa,"condutas Medicamentosa" %>
               <%= esq.text_field :conduta_mendicamentosa %>
             </div>
             <div class="col s6 l2">
@@ -176,10 +176,10 @@
               <%= esq.number_field :lesoes_cultaneas %>
 
             </div>
-            <div class="col s6 l3 input-field">
-
-              <%= esq.select :forma_clinica, @formas_clinicas, {prompt: true} %>
+            <div class="col s6 l3 input">
               <%= esq.label :forma_clinica %>
+              <%= esq.select :forma_clinica, @formas_clinicas, {prompt: true},{class:"browser-default"} %>
+
             </div>
             <div class="col s4 l2 input-field">
               <%= esq.select :classificacao_operacional, @classificacoes_operacional, {prompt: true} %>

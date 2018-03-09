@@ -258,10 +258,10 @@
             <b>MEMBROS SUPERIORES</b><br>
             <div class="row">
               <div class="col s12 l4 input-field">Nervo Radial (N / E / D / C)</div>
-              <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_radial_d,["N","E","D","C"],{prompt: true} %>
+              <div class="col s6 l3 input">
                 <%= esq.label :nervo_radial_d, "D" %>
+                <%= esq.select :nervo_radial_d,["N","E","D","C"],{prompt: true},{class:"browser-default select2", multiple: true} %>
+
               </div>
               <div class="col s6 l3 input-field">
 

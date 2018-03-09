@@ -58,4 +58,6 @@ class AvaliacaoSensitiva < ApplicationRecord
   has_many :sensitiva_images
 
   accepts_nested_attributes_for :marcacaos, allow_destroy: true
+
+  validates_presence_of AvaliacaoSensitiva.attribute_names - %w(id created_at updated_at avaliacao_notificacao_id), on: :update
 end

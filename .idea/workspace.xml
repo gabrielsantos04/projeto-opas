@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_legenda_cores.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_legenda_marcas.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/hanseniase.iml" afterPath="$PROJECT_DIR$/.idea/hanseniase.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/mao_direita.png" afterPath="$PROJECT_DIR$/public/images/mao_direita.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/mao_esquerda.png" afterPath="$PROJECT_DIR$/public/images/mao_esquerda.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/pe_direito.png" afterPath="$PROJECT_DIR$/public/images/pe_direito.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/pe_esquerdo.png" afterPath="$PROJECT_DIR$/public/images/pe_esquerdo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/1/imagem.png" afterPath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/1/imagem.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/6/imagem.png" afterPath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/6/imagem.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/7/imagem.png" afterPath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/7/imagem.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/8/imagem.png" afterPath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/8/imagem.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/avaliacao_notificacao.rb" afterPath="$PROJECT_DIR$/app/models/avaliacao_notificacao.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb" afterPath="$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/esquema_substitutivo.rb" afterPath="$PROJECT_DIR$/app/models/esquema_substitutivo.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_sensitivas/show.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_sensitivas/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notificacaos/_avaliacao_notificacao_fields.html.erb" afterPath="$PROJECT_DIR$/app/views/notificacaos/_avaliacao_notificacao_fields.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notificacaos/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/notificacaos/_form.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -29,23 +35,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb">
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/notificacaos/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2917">
-              <caret line="319" column="16" lean-forward="false" selection-start-line="319" selection-start-column="16" selection-end-line="319" selection-end-column="16" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="271">
+              <caret line="260" column="26" lean-forward="false" selection-start-line="260" selection-start-column="26" selection-end-line="260" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="avaliacao_sensitivas_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb">
+      <file leaf-file-name="_avaliacao_notificacao_fields.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/notificacaos/_avaliacao_notificacao_fields.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-121">
-              <caret line="81" column="195" lean-forward="false" selection-start-line="81" selection-start-column="195" selection-end-line="81" selection-end-column="195" />
+            <state relative-caret-position="246">
+              <caret line="262" column="129" lean-forward="false" selection-start-line="262" selection-start-column="79" selection-end-line="262" selection-end-column="129" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="171" column="49" lean-forward="true" selection-start-line="171" selection-start-column="49" selection-end-line="171" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ocupacao.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/ocupacao.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="avaliacao_neurologica.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/avaliacao_neurologica.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="419">
+              <caret line="63" column="116" lean-forward="true" selection-start-line="63" selection-start-column="2" selection-end-line="63" selection-end-column="116" />
               <folding />
             </state>
           </provider>
@@ -73,6 +107,9 @@
       <find>tipo_conta</find>
       <find>datepicker</find>
       <find>materia</find>
+      <find>esquema</find>
+      <find>episo</find>
+      <find>avalia</find>
     </findStrings>
     <replaceStrings>
       <replace>conduta</replace>
@@ -92,8 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/condutas_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/contato_avaliacaos_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/dados_clinicos_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/dermatologicas_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/diagnosticos_controller.rb" />
@@ -118,31 +153,33 @@
         <option value="$PROJECT_DIR$/app/views/notificacaos/_form_avaliacao.html.erb" />
         <option value="$PROJECT_DIR$/app/models/episodio_reacional.rb" />
         <option value="$PROJECT_DIR$/app/models/dados_clinico.rb" />
-        <option value="$PROJECT_DIR$/app/models/avaliacao_notificacao.rb" />
         <option value="$PROJECT_DIR$/app/views/notificacaos/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/notificacao.rb" />
         <option value="$PROJECT_DIR$/app/controllers/notificacaos_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_neurologicas/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_neurologica.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/notificacao_contato.rb" />
         <option value="$PROJECT_DIR$/app/models/classificacao_grau.rb" />
         <option value="$PROJECT_DIR$/app/models/avaliacao_neurologica.rb" />
         <option value="$PROJECT_DIR$/config/locales/pt-BR.yml" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/notificacaos/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/notificacaos/_avaliacao_notificacao_fields.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_legenda_cores.html.erb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_legenda_marcas.html.erb" />
         <option value="$PROJECT_DIR$/app/models/sensitiva_image.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva.html.erb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_sensitivas/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/esquema_substitutivo.rb" />
+        <option value="$PROJECT_DIR$/app/views/notificacaos/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/avaliacao_notificacao.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb" />
+        <option value="$PROJECT_DIR$/app/views/notificacaos/_avaliacao_notificacao_fields.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb" />
       </list>
     </option>
   </component>
@@ -174,18 +211,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="RailsProjectView" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="hanseniase" type="cbb8eebc:String" user="hanseniase" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,6 +222,12 @@
               <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
               <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
@@ -228,7 +259,7 @@
               <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="avaliacao_sensitivas" type="462c0819:PsiDirectoryNode" />
+              <item name="notificacaos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
@@ -250,11 +281,23 @@
           <select />
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="hanseniase" type="cbb8eebc:String" user="hanseniase" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../quiz" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../piloto" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
   </component>
   <component name="RecentsManager">
@@ -413,12 +456,13 @@
       <workItem from="1520015310512" duration="4900000" />
       <workItem from="1520020549708" duration="24000" />
       <workItem from="1520022235647" duration="616000" />
-      <workItem from="1520249360759" duration="11216000" />
+      <workItem from="1520249360759" duration="11628000" />
+      <workItem from="1520617405225" duration="9702000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164653000" />
+    <option name="totallyTimeSpent" value="174767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1366" height="708" extended-state="6" />
@@ -429,19 +473,19 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,20 +499,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/queixas_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/sinais_sintomas_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -617,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/esquema_substitutivo.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/episodio_reacional.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -645,13 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/notificacao.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="35" column="32" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/classificacao_grau.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -659,31 +675,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_neurologica.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="63" column="115" lean-forward="false" selection-start-line="63" selection-start-column="115" selection-end-line="63" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_notificacao.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/pt-BR.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="175" column="6" lean-forward="false" selection-start-line="175" selection-start-column="6" selection-end-line="175" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/notificacaos/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
-          <caret line="238" column="36" lean-forward="false" selection-start-line="238" selection-start-column="36" selection-end-line="238" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -708,26 +703,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/notificacaos/_avaliacao_notificacao_fields.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="455" column="10" lean-forward="false" selection-start-line="455" selection-start-column="10" selection-end-line="455" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_left_sidebar.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="119" column="72" lean-forward="true" selection-start-line="117" selection-start-column="2" selection-end-line="119" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -735,7 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -743,7 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="505">
           <caret line="29" column="10" lean-forward="false" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,7 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,7 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="24" column="2" lean-forward="false" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-121">
           <caret line="77" column="131" lean-forward="true" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="131" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,15 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -799,25 +764,102 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/notificacao.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="35" column="32" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/esquema_substitutivo.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-121">
-          <caret line="81" column="195" lean-forward="false" selection-start-line="81" selection-start-column="195" selection-end-line="81" selection-end-column="195" />
+        <state relative-caret-position="468">
+          <caret line="26" column="43" lean-forward="true" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="41" column="62" lean-forward="false" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_notificacao.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="43" column="50" lean-forward="false" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/avaliacao_sensitivas/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2917">
-          <caret line="319" column="16" lean-forward="false" selection-start-line="319" selection-start-column="16" selection-end-line="319" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="396">
+          <caret line="635" column="22" lean-forward="false" selection-start-line="635" selection-start-column="22" selection-end-line="635" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_sensitiva.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="61" column="33" lean-forward="false" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/notificacaos/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="260" column="26" lean-forward="false" selection-start-line="260" selection-start-column="26" selection-end-line="260" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_neurologica.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="63" column="116" lean-forward="true" selection-start-line="63" selection-start-column="2" selection-end-line="63" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/notificacaos/_avaliacao_notificacao_fields.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="262" column="129" lean-forward="false" selection-start-line="262" selection-start-column="79" selection-end-line="262" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="171" column="49" lean-forward="true" selection-start-line="171" selection-start-column="49" selection-end-line="171" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ocupacao.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
