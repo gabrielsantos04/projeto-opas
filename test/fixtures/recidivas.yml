@@ -21,7 +21,6 @@
 #  data_primeiros_sintomas            :date
 #  grau_incapacidade_alta             :string
 #  classificacao_operacional_alta     :string
-#  notificacao_id                     :integer
 #  created_at                         :datetime         not null
 #  updated_at                         :datetime         not null
 #  termino_tratamento                 :date
@@ -31,14 +30,15 @@
 #  grau_incapacidade_suspeita         :string
 #  classificacao_operacional_suspeita :string
 #  forma_clinica_suspeita             :string
+#  paciente_id                        :integer
 #
 # Indexes
 #
-#  index_recidivas_on_notificacao_id  (notificacao_id)
+#  index_recidivas_on_paciente_id  (paciente_id)
 #
 # Foreign Keys
 #
-#  fk_rails_...  (notificacao_id => notificacaos.id)
+#  fk_rails_...  (paciente_id => pacientes.id)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

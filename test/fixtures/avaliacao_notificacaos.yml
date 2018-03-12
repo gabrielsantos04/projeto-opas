@@ -18,14 +18,18 @@
 #  created_at                :datetime         not null
 #  updated_at                :datetime         not null
 #  atividades_orientadas     :boolean
+#  paciente_id               :integer
+#  inicial                   :boolean
 #
 # Indexes
 #
 #  index_avaliacao_notificacaos_on_notificacao_id  (notificacao_id)
+#  index_avaliacao_notificacaos_on_paciente_id     (paciente_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (notificacao_id => notificacaos.id)
+#  fk_rails_...  (paciente_id => pacientes.id)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

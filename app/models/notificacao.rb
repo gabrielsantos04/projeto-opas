@@ -15,18 +15,22 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  paciente_id         :integer
+#  recidiva_id         :integer
 #
 # Indexes
 #
 #  index_notificacaos_on_paciente_id  (paciente_id)
+#  index_notificacaos_on_recidiva_id  (recidiva_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (paciente_id => pacientes.id)
+#  fk_rails_...  (recidiva_id => recidivas.id)
 #
 
 class Notificacao < ApplicationRecord
   belongs_to :paciente
+  belongs_to :recidiva, optional: true
 
   has_many :dados_clinicos
   has_many :notificacao_contatoes
@@ -54,7 +58,7 @@ class Notificacao < ApplicationRecord
   enumerize :esquema_terapeutico, in: [:pb_infantil, :pb_adulto,:mb_infantil,:mb_adulto,:outros_esquemas], predicates: true
 
   validates_presence_of Notificacao.attribute_names - %w(id created_at updated_at observacoes)
-  validates_presence_of :dados_clinicos,:notificacao_contatoes,:avaliacao_notificacaos
+  validates_presence_of :dados_clinicos,:notificacao_contatoes#,:avaliacao_notificacaos
 
 
   def to_s

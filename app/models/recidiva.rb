@@ -21,7 +21,6 @@
 #  data_primeiros_sintomas            :date
 #  grau_incapacidade_alta             :string
 #  classificacao_operacional_alta     :string
-#  notificacao_id                     :integer
 #  created_at                         :datetime         not null
 #  updated_at                         :datetime         not null
 #  termino_tratamento                 :date
@@ -31,35 +30,38 @@
 #  grau_incapacidade_suspeita         :string
 #  classificacao_operacional_suspeita :string
 #  forma_clinica_suspeita             :string
+#  paciente_id                        :integer
 #
 # Indexes
 #
-#  index_recidivas_on_notificacao_id  (notificacao_id)
+#  index_recidivas_on_paciente_id  (paciente_id)
 #
 # Foreign Keys
 #
-#  fk_rails_...  (notificacao_id => notificacaos.id)
+#  fk_rails_...  (paciente_id => pacientes.id)
 #
 
 class Recidiva < ApplicationRecord
-  belongs_to :notificacao
-  has_one :paciente, through: :notificacao
-  has_many :diagnostico_recidivas
 
-  has_many :sintomas_recidivas
-  has_many :conduta_recidivas
+  belongs_to :paciente
+  has_one :notificacao
 
-  has_many :epidosios_reacionais_recidivas, -> {where momento: :historia_anterior}, class_name: "EpidosiosReacionaisRecidiva", foreign_key: :recidiva_id
-  has_many :nervos_recidivas, -> {where momento: :historia_anterior}, class_name: "NervosRecidiva", foreign_key: :recidiva_id
-  has_many :dermatologico_recidivas, -> {where momento: :historia_anterior}, class_name: "DermatologicoRecidiva", foreign_key: :recidiva_id
+  has_many :diagnostico_recidivas, dependent: :destroy
+
+  has_many :sintomas_recidivas, dependent: :destroy
+  has_many :conduta_recidivas, dependent: :destroy
+
+  has_many :epidosios_reacionais_recidivas, -> {where momento: :historia_anterior}, class_name: "EpidosiosReacionaisRecidiva", foreign_key: :recidiva_id, dependent: :destroy
+  has_many :nervos_recidivas, -> {where momento: :historia_anterior}, class_name: "NervosRecidiva", foreign_key: :recidiva_id, dependent: :destroy
+  has_many :dermatologico_recidivas, -> {where momento: :historia_anterior}, class_name: "DermatologicoRecidiva", foreign_key: :recidiva_id, dependent: :destroy
 
 
-  has_many :epidosios_reacionais_recidivas_alta, -> {where momento: :alta_cura}, class_name: "EpidosiosReacionaisRecidiva", foreign_key: :recidiva_id
-  has_many :nervos_recidivas_alta, -> {where momento: :alta_cura}, class_name: "NervosRecidiva", foreign_key: :recidiva_id
-  has_many :dermatologico_recidivas_alta, -> {where momento: :alta_cura}, class_name: "DermatologicoRecidiva", foreign_key: :recidiva_id
+  has_many :epidosios_reacionais_recidivas_alta, -> {where momento: :alta_cura}, class_name: "EpidosiosReacionaisRecidiva", foreign_key: :recidiva_id, dependent: :destroy
+  has_many :nervos_recidivas_alta, -> {where momento: :alta_cura}, class_name: "NervosRecidiva", foreign_key: :recidiva_id, dependent: :destroy
+  has_many :dermatologico_recidivas_alta, -> {where momento: :alta_cura}, class_name: "DermatologicoRecidiva", foreign_key: :recidiva_id, dependent: :destroy
 
-  has_many :nervos_recidivas_recidiva, -> {where momento: :suspeita_recidiva}, class_name: "NervosRecidiva", foreign_key: :recidiva_id
-  has_many :dermatologico_recidivas_recidiva, -> {where momento: :suspeita_recidiva}, class_name: "DermatologicoRecidiva", foreign_key: :recidiva_id
+  has_many :nervos_recidivas_recidiva, -> {where momento: :suspeita_recidiva}, class_name: "NervosRecidiva", foreign_key: :recidiva_id, dependent: :destroy
+  has_many :dermatologico_recidivas_recidiva, -> {where momento: :suspeita_recidiva}, class_name: "DermatologicoRecidiva", foreign_key: :recidiva_id, dependent: :destroy
 
   accepts_nested_attributes_for :diagnostico_recidivas, allow_destroy: true
   accepts_nested_attributes_for :epidosios_reacionais_recidivas, allow_destroy: true

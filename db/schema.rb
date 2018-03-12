@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309204114) do
+ActiveRecord::Schema.define(version: 20180312135921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,7 +81,10 @@ ActiveRecord::Schema.define(version: 20180309204114) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "atividades_orientadas"
+    t.bigint "paciente_id"
+    t.boolean "inicial"
     t.index ["notificacao_id"], name: "index_avaliacao_notificacaos_on_notificacao_id"
+    t.index ["paciente_id"], name: "index_avaliacao_notificacaos_on_paciente_id"
   end
 
   create_table "avaliacao_sensitivas", force: :cascade do |t|
@@ -126,16 +129,6 @@ ActiveRecord::Schema.define(version: 20180309204114) do
     t.index ["avaliacao_notificacao_id"], name: "index_avaliacao_sensitivas_on_avaliacao_notificacao_id"
   end
 
-  create_table "bcgs", force: :cascade do |t|
-    t.date "primeira_dose"
-    t.date "segunda_dose"
-    t.boolean "cicatriz"
-    t.bigint "notificacao_contato_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["notificacao_contato_id"], name: "index_bcgs_on_notificacao_contato_id"
-  end
-
   create_table "categoria_queixas", force: :cascade do |t|
     t.string "nome"
     t.datetime "created_at", null: false
@@ -149,7 +142,7 @@ ActiveRecord::Schema.define(version: 20180309204114) do
     t.string "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "pacientes_count"
+    t.integer "pacientes_count", default: 0
   end
 
   create_table "classificacao_graus", force: :cascade do |t|
@@ -168,19 +161,19 @@ ActiveRecord::Schema.define(version: 20180309204114) do
     t.index ["avaliacao_notificacao_id"], name: "index_classificacao_graus_on_avaliacao_notificacao_id"
   end
 
-  create_table "conduta", force: :cascade do |t|
-    t.string "nome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "conduta_recidivas", force: :cascade do |t|
-    t.bigint "conduta_id"
+    t.bigint "condutas_id"
     t.bigint "recidiva_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["conduta_id"], name: "index_conduta_recidivas_on_conduta_id"
+    t.index ["condutas_id"], name: "index_conduta_recidivas_on_condutas_id"
     t.index ["recidiva_id"], name: "index_conduta_recidivas_on_recidiva_id"
+  end
+
+  create_table "condutas", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contato_avaliacaos", force: :cascade do |t|
@@ -329,7 +322,9 @@ ActiveRecord::Schema.define(version: 20180309204114) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "paciente_id"
+    t.bigint "recidiva_id"
     t.index ["paciente_id"], name: "index_notificacaos_on_paciente_id"
+    t.index ["recidiva_id"], name: "index_notificacaos_on_recidiva_id"
   end
 
   create_table "ocupacaos", force: :cascade do |t|
@@ -385,7 +380,6 @@ ActiveRecord::Schema.define(version: 20180309204114) do
     t.date "data_primeiros_sintomas"
     t.string "grau_incapacidade_alta"
     t.string "classificacao_operacional_alta"
-    t.bigint "notificacao_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "termino_tratamento"
@@ -395,7 +389,8 @@ ActiveRecord::Schema.define(version: 20180309204114) do
     t.string "grau_incapacidade_suspeita"
     t.string "classificacao_operacional_suspeita"
     t.string "forma_clinica_suspeita"
-    t.index ["notificacao_id"], name: "index_recidivas_on_notificacao_id"
+    t.bigint "paciente_id"
+    t.index ["paciente_id"], name: "index_recidivas_on_paciente_id"
   end
 
   create_table "sensitiva_images", force: :cascade do |t|
@@ -445,10 +440,10 @@ ActiveRecord::Schema.define(version: 20180309204114) do
 
   add_foreign_key "avaliacao_neurologicas", "avaliacao_notificacaos"
   add_foreign_key "avaliacao_notificacaos", "notificacaos"
+  add_foreign_key "avaliacao_notificacaos", "pacientes"
   add_foreign_key "avaliacao_sensitivas", "avaliacao_notificacaos"
-  add_foreign_key "bcgs", "notificacao_contatos"
   add_foreign_key "classificacao_graus", "avaliacao_notificacaos"
-  add_foreign_key "conduta_recidivas", "conduta", column: "conduta_id"
+  add_foreign_key "conduta_recidivas", "condutas", column: "condutas_id"
   add_foreign_key "conduta_recidivas", "recidivas"
   add_foreign_key "contato_avaliacaos", "notificacao_contatos"
   add_foreign_key "dados_clinicos", "notificacaos"
@@ -464,10 +459,11 @@ ActiveRecord::Schema.define(version: 20180309204114) do
   add_foreign_key "nervos_recidivas", "recidivas"
   add_foreign_key "notificacao_contatos", "notificacaos"
   add_foreign_key "notificacaos", "pacientes"
+  add_foreign_key "notificacaos", "recidivas"
   add_foreign_key "pacientes", "cidades"
   add_foreign_key "pacientes", "ocupacaos"
   add_foreign_key "queixas", "categoria_queixas"
-  add_foreign_key "recidivas", "notificacaos"
+  add_foreign_key "recidivas", "pacientes"
   add_foreign_key "sensitiva_images", "avaliacao_sensitivas"
   add_foreign_key "sintomas_recidivas", "recidivas"
   add_foreign_key "sintomas_recidivas", "sinais_sintomas"

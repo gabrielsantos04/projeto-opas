@@ -67,12 +67,38 @@
   <div class="row">
     <div class="card">
       <div class="card-content">
+        <span class="card-title">Avaliações Iniciais</span>
+        <%= render partial: "avaliacoes", locals: {avaliacao_notificacaos: @paciente.avaliacao_notificacaos.where(inicial: true)} %>
+      </div>
+      <div class="card-action">
+        <a href="/avaliacao_notificacaos/new?paciente=<%= @paciente.id %>">Nova Avaliação</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
         <span class="card-title">Notificações</span>
         <%= render partial: "notificacoes", locals: {notificacoes: @paciente.notificacaos} %>
       </div>
       <div class="card-action">
-        <a href="/notificacaos/new?paciente=<%= @paciente.id %>">Nova Notificação</a>
+       <!-- <a href="/notificacaos/new?paciente=<%#= @paciente.id %>">Nova Notificação</a>-->
       </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Recidivas</span>
+        <%= render partial: "recidivas", locals: {recidivas: @paciente.recidivas} %>
+      </div>
+      <% if current_user.administrador? || current_user.referencia? %>
+        <div class="card-action">
+          <a href="/recidivas/new?paciente=<%= @paciente.id %>">Nova Recidiva</a>
+        </div>
+      <% end %>
     </div>
   </div>
 

@@ -29,6 +29,10 @@ class NotificacaosController < ApplicationController
   # GET /notificacaos/new
   def new
     @notificacao = Notificacao.new(paciente_id: params[:paciente])
+    if params[:recidiva].present?
+      @notificacao.recidiva_id = params[:recidiva]
+      @notificacao.modo_entrada = :recidiva
+    end
   end
 
   # GET /notificacaos/1/edit
@@ -95,7 +99,7 @@ class NotificacaosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def notificacao_params
-      params.require(:notificacao).permit(:paciente_id,:numero, :data, :grau_incapacidade, :modo_entrada, :modo_deteccao, :observacoes, :baciloscopia, :data_inicio, :esquema_terapeutico,
+      params.require(:notificacao).permit(:recidiva_id,:paciente_id,:numero, :data, :grau_incapacidade, :modo_entrada, :modo_deteccao, :observacoes, :baciloscopia, :data_inicio, :esquema_terapeutico,
                                           esquema_substitutivos_attributes:[:id,:notificacao_id,:miligramas,:medicamento_id,:_destroy],
                                           notificacao_contatoes_attributes:[:bcg_primeira,:bcg_segunda,:bcg_cicatriz,:id,:notificacao_id,:nome,:tipo_contato,:suspeito,:confirmado,:_destroy],
       dados_clinicos_attributes:[:id,:notificacao_id,:lesoes_cultaneas,:forma_clinica,:classificacao_operacional,:nervos_afetados,:_destroy],

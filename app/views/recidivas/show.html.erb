@@ -1,5 +1,6 @@
 <div class="card-panel">
-	
+
+  <h3>Paciente: <%= @recidiva.paciente %></h3>
   <div class="row">
     <div class="col s12 l4">
       <strong>Unidade saude:</strong>
@@ -274,4 +275,4 @@
 
 
 </div>
-<%= link_to 'Voltar', notificacao_path(@recidiva.notificacao), class:"btn" %>
+<%= link_to 'Voltar', paciente_path(@recidiva.paciente), class:"btn" %>

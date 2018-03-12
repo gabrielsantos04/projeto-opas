@@ -1,3 +1,7 @@
+
+<% if @avaliacao_notificacao.inicial %>
+    <%= link_to 'Mova Notificação', new_notificacao_path(paciente: @avaliacao_notificacao.paciente), class:"btn" %>
+<% end %>
 <div class="card-panel">
 
   <div class="row">
@@ -5,10 +9,12 @@
       <strong>Paciente:</strong>
       <%= @avaliacao_notificacao.paciente %>
     </div>
-    <div class="col s12 l6">
-      <strong>Notificação:</strong>
-      <%= @avaliacao_notificacao.notificacao.numero %>
-    </div>
+    <% if @avaliacao_notificacao.notificacao.present? %>
+      <div class="col s12 l6">
+        <strong>Notificação:</strong>
+        <%= @avaliacao_notificacao.notificacao.numero %>
+      </div>
+    <% end %>
   </div>
 	<div class="row">
     <div class="col s12 l4">
@@ -104,6 +110,10 @@
 
 </div>
 <%= link_to 'Nova Avaliação Sensitiva', new_avaliacao_sensitiva_path(avaliacao: @avaliacao_notificacao.id), class:"btn" %>
-<%= link_to 'Voltar', notificacao_path(@avaliacao_notificacao.notificacao), class:"btn" %>
+<% if @avaliacao_notificacao.notificacao.present? %>
+  <%= link_to 'Voltar', notificacao_path(@avaliacao_notificacao.notificacao), class:"btn" %>
+<% else %>
+    <%= link_to 'Voltar', paciente_path(@avaliacao_notificacao.paciente), class:"btn" %>
+<% end %>
 
 

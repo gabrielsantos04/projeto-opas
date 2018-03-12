@@ -181,6 +181,13 @@
             close: 'Ok',
             closeOnSelect: true // Close upon selecting a date,
         });
+        $(".nedc").on("keydown", function(e)
+        {
+
+            if(e.keyCode != 8 && e.keyCode != 68 && e.keyCode != 37 && e.keyCode != 39 && e.keyCode != 78 && e.keyCode != 69&& e.keyCode != 67&& e.keyCode != 46 ) {
+                return false;
+            }
+        })
     });
 
   </script>

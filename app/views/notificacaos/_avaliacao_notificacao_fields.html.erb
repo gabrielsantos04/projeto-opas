@@ -105,8 +105,8 @@
 
   <!-- Episodio Reacional -->
 
-  <div class="card">
-    <div class="card-content">
+  <div class="card" style="overflow: visible;">
+    <div class="card-content" style="overflow: visible;">
       <span class="card-title"><b>Avaliação Neurológica Simplificada</b></span>
       <%= f.fields_for :avaliacao_neurologicas do |esq| %>
           <div class="row">
@@ -258,41 +258,41 @@
             <b>MEMBROS SUPERIORES</b><br>
             <div class="row">
               <div class="col s12 l4 input-field">Nervo Radial (N / E / D / C)</div>
-              <div class="col s6 l3 input">
+              <div class="col s6 l3 input-field">
                 <%= esq.label :nervo_radial_d, "D" %>
-                <%= esq.select :nervo_radial_d,["N","E","D","C"],{prompt: true},{class:"browser-default select2", multiple: true} %>
+                <%= esq.text_field :nervo_radial_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
 
               </div>
               <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_radial_e,["N","E","D","C"],{prompt: true} %>
                 <%= esq.label :nervo_radial_e, "E" %>
+                <%= esq.select :nervo_radial_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+
               </div>
             </div>
             <div class="row">
               <div class="col s12 l4 input-field">Nervo Ulnar (N / E / D / C)</div>
               <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_ulnar_d,["N","E","D","C"],{prompt: true} %>
                 <%= esq.label :nervo_ulnar_d, "D" %>
+                <%= esq.text_field :nervo_ulnar_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+
               </div>
               <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_ulnar_e,["N","E","D","C"],{prompt: true} %>
                 <%= esq.label :nervo_ulnar_e, "E" %>
+                <%= esq.text_field :nervo_ulnar_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+
               </div>
             </div>
             <div class="row">
               <div class="col s12 l4 input-field">Nervo Mediano (N / E / D / C)</div>
               <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_mediano_d,["N","E","D","C"],{prompt: true} %>
                 <%= esq.label :nervo_mediano_d, "D" %>
+                <%= esq.text_field :nervo_mediano_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+
               </div>
               <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_mediano_e,["N","E","D","C"],{prompt: true} %>
                 <%= esq.label :nervo_mediano_e, "E" %>
+                <%= esq.text_field :nervo_mediano_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+
               </div>
             </div>
             <div class="row">
@@ -338,27 +338,27 @@
             <div class="row">
               <div class="col s12 l4 input-field">Nervo Fibular (N / E / D / C)</div>
               <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_fibular_d,["N","E","D","C"],{prompt: true} %>
                 <%= esq.label :nervo_fibular_d, "D" %>
+                <%= esq.text_field :nervo_fibular_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+
               </div>
               <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_fibular_e,["N","E","D","C"],{prompt: true} %>
                 <%= esq.label :nervo_fibular_e, "E" %>
+                <%= esq.text_field :nervo_fibular_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+
               </div>
             </div>
             <div class="row">
               <div class="col s12 l4 input-field">Nervo Tibial Posterior (N / E / D / C)</div>
               <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_tibial_d,["N","E","D","C"],{prompt: true} %>
                 <%= esq.label :nervo_tibial_d, "D" %>
+                <%= esq.text_field :nervo_tibial_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+
               </div>
               <div class="col s6 l3 input-field">
-
-                <%= esq.select :nervo_tibial_e,["N","E","D","C"],{prompt: true} %>
                 <%= esq.label :nervo_tibial_e, "E" %>
+                <%= esq.text_field :nervo_tibial_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+
               </div>
             </div>
             <div class="row">
@@ -458,4 +458,14 @@
 
   <%= f.link_to_remove "Remover" %>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+    $(".nedc").on("keydown", function(e)
+    {
+
+        if(e.keyCode != 8 && e.keyCode != 68 && e.keyCode != 37 && e.keyCode != 39 && e.keyCode != 78 && e.keyCode != 69&& e.keyCode != 67&& e.keyCode != 46 ) {
+            return false;
+        }
+    })
+</script>
 

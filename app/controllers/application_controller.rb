@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nome,:cidade_id])
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to "/403.html", alert: "Você não tem autorização para realizar essa ação!"
+  end
 end
