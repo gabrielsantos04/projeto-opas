@@ -10,6 +10,7 @@
       <tr>
         <td><%= link_to index + 1, edit_avaliacao_sensitiva_path(avaliacao_sensitiva), target:"_self"  %></td>
         <td><%= avaliacao_sensitiva.data%></td>
+        <td><%= link_to 'Excluir', avaliacao_sensitiva, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
       </tr>
   <% end %>
   </tbody>
