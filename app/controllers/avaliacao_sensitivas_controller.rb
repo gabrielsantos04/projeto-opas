@@ -20,8 +20,47 @@ class AvaliacaoSensitivasController < ApplicationController
   end
 
   def remover_marcacao
+
     marcacao = Marcacao.find(params[:marca])
     marcacao.destroy
+
+    avaliacao = marcacao.avaliacao_sensitiva
+    avaliacao.dedao_direito = params[:dedao_direito]
+    avaliacao.indicador_d_ponta = params[:indicador_d_ponta]
+    avaliacao.indicador_d = params[:indicador_d]
+    avaliacao.mindinho_d_ponta = params[:mindinho_d_ponta]
+    avaliacao.mindinho_d = params[:mindinho_d]
+    avaliacao.mao_direita = params[:mao_direita]
+    avaliacao.mao_d_costa = params[:mao_d_costa]
+    avaliacao.dedao_esquerdo = params[:dedao_esquerdo]
+    avaliacao.indicador_e_ponta = params[:indicador_e_ponta]
+    avaliacao.indicador_e = params[:indicador_e]
+    avaliacao.mindinho_e_ponta = params[:mindinho_e_ponta]
+    avaliacao.mindinho_e = params[:mindinho_e]
+    avaliacao.mao_esquerda = params[:mao_esquerda]
+    avaliacao.mao_e_costa = params[:mao_e_costa]
+    avaliacao.pe_direito = params[:pe_direito]
+    avaliacao.pe_d_1_ponta = params[:pe_d_1_ponta]
+    avaliacao.pe_d_3_ponta = params[:pe_d_3_ponta]
+    avaliacao.pe_d_5_ponta = params[:pe_d_5_ponta]
+    avaliacao.pe_d_1 = params[:pe_d_1]
+    avaliacao.pe_d_3 = params[:pe_d_3]
+    avaliacao.pe_d_5 = params[:pe_d_5]
+    avaliacao.pe_d_e1 = params[:pe_d_e1]
+    avaliacao.pe_d_calcanhar = params[:pe_d_calcanhar]
+    avaliacao.pe_esquerdo = params[:pe_esquerdo]
+    avaliacao.pe_e_1_ponta = params[:pe_e_1_ponta]
+    avaliacao.pe_e_3_ponta = params[:pe_e_3_ponta]
+    avaliacao.pe_e_5_ponta = params[:pe_e_5_ponta]
+    avaliacao.pe_e_1 = params[:pe_e_1]
+    avaliacao.pe_e_3 = params[:pe_e_3]
+    avaliacao.pe_e_5 = params[:pe_e_5]
+    avaliacao.pe_e_e1 = params[:pe_e_e1]
+    avaliacao.pe_e_e2 = params[:pe_e_e2]
+    avaliacao.pe_e_calcanhar = params[:pe_e_calcanhar]
+    avaliacao.pe_d_e2 = params[:pe_d_e2]
+    avaliacao.save(validate: false)
+
     #redirect_to edit_avaliacao_sensitiva_path(marcacao.avaliacao_sensitiva)
     render json: {msg:"ok"}
   end

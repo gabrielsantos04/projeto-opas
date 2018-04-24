@@ -268,6 +268,11 @@
                 <%= esq.label :perfuracao_septo_e, "E" %>
               </div>
             </div>
+            <div class="row">
+              <div class="col s12">
+              <span style="font-size: 10px"><b>Legenda: S/N:</b> SIM/NÃO, <b>mm:</b> MILIMETROS, <b>ACUIDADE VISUAL:</b> ANOTAR RESULTADO DO TESTE COM ESCALA DE SNELLEN OU CONTAGEM DE DEDOS </span> <br>
+              </div>
+            </div>
             <b>MEMBROS SUPERIORES</b><br>
             <div class="row">
               <div class="col s12 l4 input-field">Nervo Radial (N / E / D / C)</div>
@@ -400,6 +405,13 @@
                 <%= esq.label :dorsiflexao_pe_e, "E" %>
               </div>
             </div>
+            <div class="row">
+              <div class="col s12">
+                <span style="font-size: 10px"><b>Legenda: N/E/D/C: </b>Normal/Espessado/Dor/Choque;  </span><br>
+                <span style="font-size: 10px"><b>GRAUS DE FORÇA: </b>0 = Paralisado; 1 = Contração; 2 = Movimento Parcial; 3 = Movimento Completo; 4 = Resistência Parcial; 5 = Forte </span><br>
+                <span style="font-size: 10px"><b>Teste de função neural: Abdução do 5º dedo - nervo ulnar; Abdução do polegar - nervo mediano; e Extensão do punho - nervo radial</b></span><br>
+              </div>
+            </div>
             <div class="col s4 l1">
               <%= esq.link_to_remove "Remover" %>
             </div>
@@ -415,43 +427,43 @@
 
   <div class="card">
     <div class="card-content">
-      <span class="card-title">Classificação do Grau</span>
+      <span class="card-title">Classificação do Grau de Incapacidade</span>
       <%= f.fields_for :classificacao_graus do |esq| %>
           <div class="row">
             <div class="col s2 input-field">
               <%= esq.label :olho_direito, "Olho Direito" %>
-              <%= esq.number_field :olho_direito %>
+              <%= esq.number_field :olho_direito, max: 2, min: 0, step: 1 %>
             </div>
             <div class="col s2 input-field">
 
               <%= esq.label :olho_esquerdo, "Olho Esquerdo" %>
-              <%= esq.number_field :olho_esquerdo %>
+              <%= esq.number_field :olho_esquerdo, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
               <%= esq.label :mao_direita,"Mão Direita" %>
-              <%= esq.number_field :mao_direita %>
+              <%= esq.number_field :mao_direita, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
               <%= esq.label :mao_esqueda, "Mão Esquerda" %>
-              <%= esq.number_field :mao_esqueda %>
+              <%= esq.number_field :mao_esqueda, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
 
               <%= esq.label :pe_direito, "Pé Direito" %>
-              <%= esq.number_field :pe_direito %>
+              <%= esq.number_field :pe_direito, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
               <%= esq.label :pe_esquerdo,"Pé Esquerdo" %>
-              <%= esq.number_field :pe_esquerdo %>
+              <%= esq.number_field :pe_esquerdo, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
 
               <%= esq.label :maior_grau, "Maior Grau" %>
-              <%= esq.number_field :maior_grau %>
+              <%= esq.number_field :maior_grau, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
               <%= esq.label :escore_omp,"Escore OMP" %>
-              <%= esq.number_field :escore_omp %>
+              <%= esq.number_field :escore_omp, max: 12, min: 0, step: 1  %>
             </div>
             <div class="col s2">
               <%= esq.label :data, "Data" %>
@@ -462,9 +474,53 @@
             </div>
           </div>
       <% end %>
+
+
     </div>
     <div class="card-action">
-      <%= f.link_to_add "Novo Classificação do Grau", :classificacao_graus %>
+
+      <%= f.link_to_add "Classificação do Grau de Incapacidade", :classificacao_graus %>
+      <br>
+      <span style="font-size: 10px"><b>Legenda:</b> 0 = Grau Zero, 1 = Grau Um, 2 = Grau Dois.</span> <br>
+      <span style="font-size: 10px"><b>Escore OMP - Olhos, mãos e pés</b> = Soma dos graus atribuídos aos olhos, mãos e pés, varia de 0 a 12.</span>
+      <br>
+      <div class="center-align">
+        <span style="font-size: 15px">PARÂMETRO PARA ATRIBUIÇÃO DO GRAU DE INCAPACIDADES FÍSICAS EM HANSENÍASE</span>
+        <table style="font-size: x-small">
+          <thead>
+          <tr>
+            <th>GRAU</th>
+            <th>CARACTERÍSTICAS</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td >0</td>
+            <td><b>Olhos:</b> Força muscular das pálpebras e sensibilidade da córnea preservadas e conta dedoa a 6 metros
+              ou acuidade visual >=0,1 ou 6:60.<br>
+              <b>Mãos:</b> Força muscular nas mãos preservada e sensibilidade palmas: sente o monofilamento 2g (lilás)
+              ou o toque da ponta de caneta esferográfica. <br>
+              <b>Pés: </b>Força muscular dos pés preservada e sensibilidade plantar: sente o monofilamento 2g (lilás) ou o toque da ponta de caneta esferográfica.</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><b>Olhos: </b>Diminuição da força muscular das pálpebras sem deficiências visíveis e/ou diminuição ou perda da sensibilidade da córnea:
+              resposta demorada ou ausente ao toque do fio dental ou diminuição/ausência do piscar. <br>
+              <b>Mãos: </b>Diminuição da força muscular das mãos sem deficiências visíveis e/ou alteração da sensibilidade palmas: não sente o monofilamento 2g (lilás) ou o toque da ponta de caneta esferográfica.
+              <br>
+              <b>Pés: </b>Diminuição da força muscular dos pés sem deficiências visíveis e/ou alteração da sensibilidade plantar: não sente o monofilamento 2g (lilás) ou o toque da ponta de caneta esferográfica.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><b>Olhos: </b>Deficiência(s) visível(eis) causadas pela hanseníase, como: lagoftalmo; ectrópio; triquíase; opacidade corneana central; iridociclite e/ou não conta dedos a 6 metros ou acuidade visual < 0,1 ou 6:60, excluídas outras causas.
+              <br>
+              <b>Mãos: </b>Deficiência(s) visível(eis) causadas pela hanseníase, como: garras, reabsorção óssea, atrofia muscular, mão caída, contratura, feridas.
+              <br>
+              <b>Pés: </b>Deficiência(s) visível(eis) causadas pela hanseníase, como: garras, reabsorção óssea, atrofia muscular, pé caído, contratura, feridas.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 

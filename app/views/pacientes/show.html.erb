@@ -71,7 +71,7 @@
         <%= render partial: "avaliacoes", locals: {avaliacao_notificacaos: @paciente.avaliacao_notificacaos.where(inicial: true)} %>
       </div>
       <div class="card-action">
-        <a href="/avaliacao_notificacaos/new?paciente=<%= @paciente.id %>">Nova Avaliação</a>
+        <a href="/avaliacao_notificacaos/new?paciente=<%= @paciente.id %>"><%= @paciente.avaliacao_notificacaos.count > 0 ? "Nova Avaliação" : "Primeira Avaliação" %></a>
       </div>
     </div>
   </div>
@@ -96,7 +96,7 @@
       </div>
       <% if current_user.administrador? || current_user.referencia? %>
         <div class="card-action">
-          <a href="/recidivas/new?paciente=<%= @paciente.id %>">Nova Recidiva</a>
+          <a href="/recidivas/new?paciente=<%= @paciente.id %>">Recidiva</a>
         </div>
       <% end %>
     </div>

@@ -1,7 +1,6 @@
 <table class="card striped responsive-table">
   <thead>
   <tr>
-    <th>Data</th>
     <th>Queixa</th>
     <th>Direita</th>
     <th>Esquerda</th>
@@ -9,130 +8,155 @@
   </thead>
 
   <tbody>
-  <% avaliacao_neurologicas.each do |avaliacao_neurologica| %>
-
+  <% avaliacao_neurologicas.sort_by{|a| a.data}.each do |avaliacao_neurologica| %>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+        <td><b>Data da Avaliação: <%= avaliacao_neurologica.data %></b></td>
+      </tr>
+      <tr>
+        <td class="center-align"><b>FACE</b></td>
+      </tr>
+      <tr>
+        <td class="center-align"><b>OLHOS</b></td>
+        <td><b>D</b></td>
+        <td><b>E</b></td>
+      </tr>
+      <tr>
+
         <td>Fecha olhos sem força</td>
         <td><%= avaliacao_neurologica.olhos_sem_forca_d %></td>
         <td><%= avaliacao_neurologica.olhos_sem_forca_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Fecha olhos com força</td>
         <td><%= avaliacao_neurologica.olhos_com_forca_d %></td>
         <td><%= avaliacao_neurologica.olhos_com_forca_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Triquíase</td>
         <td><%= avaliacao_neurologica.triquiase_d %></td>
         <td><%= avaliacao_neurologica.triquiase_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Ectrópio</td>
         <td><%= avaliacao_neurologica.ectropio_d %></td>
         <td><%= avaliacao_neurologica.ectropio_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Catarata</td>
         <td><%= avaliacao_neurologica.catarata_d %></td>
         <td><%= avaliacao_neurologica.catarata_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Dimin. Sensibilidade da Córnea</td>
         <td><%= avaliacao_neurologica.sensibilidade_cornea_d %></td>
         <td><%= avaliacao_neurologica.sensibilidade_cornea_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Opacidade Corneana Central</td>
         <td><%= avaliacao_neurologica.opacidade_corneana_d %></td>
         <td><%= avaliacao_neurologica.opacidade_corneana_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Acuidade visual</td>
         <td><%= avaliacao_neurologica.acuidade_visual_d %></td>
         <td><%= avaliacao_neurologica.acuidade_visual_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+        <td class="center-align"><b>NARIZ</b></td>
+        <td ><b>D</b></td>
+        <td ><b>E</b></td>
+      </tr>
+      <tr>
+
         <td>Ressecamento</td>
         <td><%= avaliacao_neurologica.ressecamento_d %></td>
         <td><%= avaliacao_neurologica.ressecamento_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Feridas</td>
         <td><%= avaliacao_neurologica.feridas_d %></td>
         <td><%= avaliacao_neurologica.feridas_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Perfuração de septo</td>
         <td><%= avaliacao_neurologica.perfuracao_septo_d %></td>
         <td><%= avaliacao_neurologica.perfuracao_septo_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+        <td class="center-align"><b>MEMBROS SUPERIORES</b></td>
+        <td ><b>D</b></td>
+        <td ><b>E</b></td>
+      </tr>
+      <tr>
+
         <td>Nervo Radial</td>
         <td><%= avaliacao_neurologica.nervo_radial_d %></td>
         <td><%= avaliacao_neurologica.nervo_radial_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Nervo Ulnar</td>
         <td><%= avaliacao_neurologica.nervo_ulnar_d %></td>
         <td><%= avaliacao_neurologica.nervo_ulnar_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Nervo Mediano</td>
         <td><%= avaliacao_neurologica.nervo_mediano_d %></td>
         <td><%= avaliacao_neurologica.nervo_mediano_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Abdução do 5º dedo</td>
         <td><%= avaliacao_neurologica.abducao_5_dedo_d %></td>
         <td><%= avaliacao_neurologica.abducao_5_dedo_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Abdução do polegar</td>
         <td><%= avaliacao_neurologica.abducao_polegar_d %></td>
         <td><%= avaliacao_neurologica.abducao_polegar_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Extensores do punho</td>
         <td><%= avaliacao_neurologica.extensores_punho_d %></td>
         <td><%= avaliacao_neurologica.extensores_punho_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
-        <td>Nervo Figular</td>
+        <td class="center-align"><b>MEMBROS INFERIORES</b></td>
+        <td ><b>D</b></td>
+        <td ><b>E</b></td>
+      </tr>
+      <tr>
+
+        <td>Nervo Fibular</td>
         <td><%= avaliacao_neurologica.nervo_fibular_d %></td>
         <td><%= avaliacao_neurologica.nervo_fibular_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Nervo Tibial Posterior</td>
         <td><%= avaliacao_neurologica.nervo_tibial_d %></td>
         <td><%= avaliacao_neurologica.nervo_tibial_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Extensão Hálux</td>
         <td><%= avaliacao_neurologica.extensao_halux_d %></td>
         <td><%= avaliacao_neurologica.extensao_halux_e %></td>
       </tr>
       <tr>
-        <td><%= avaliacao_neurologica.data %></td>
+
         <td>Dorsiflexão do pé</td>
         <td><%= avaliacao_neurologica.dorsiflexao_pe_d %></td>
         <td><%= avaliacao_neurologica.dorsiflexao_pe_e %></td>

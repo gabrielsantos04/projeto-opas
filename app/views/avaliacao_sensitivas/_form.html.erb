@@ -21,7 +21,9 @@
 
     <%= f.label :data %>
     <%= f.date_field :data %>
-    
+
+    <span style="font-size: 10px">* Clique nos círculos para adicionar a cor</span><br>
+    <span style="font-size: 10px">* Clique fora dos círculos para adicionar uma marca. Para remove-la clique sobre ela novamente.</span><br>
   </div>
 
   <div class="row">
@@ -165,6 +167,21 @@
     var marcacoes_mao_esquerda = [];
     var marcacoes_pe_direito = [];
     var marcacoes_pe_esquerdo = [];
+
+    //Salva as imagens dos canvas antes do submit
+   $("#edit_avaliacao_sensitiva_"+<%= @avaliacao_sensitiva.id %>).submit(function(event){
+       var cnvs_mao_direita = document.getElementById("cnvs_mao_direita");
+       $("#base64_mao_direita").val(cnvs_mao_direita.toDataURL());
+
+       var cnvs_mao_esquerda = document.getElementById("cnvs_mao_esquerda");
+       $("#base64_mao_esquerda").val(cnvs_mao_esquerda.toDataURL());
+
+       var cnvs_pe_direito = document.getElementById("cnvs_pe_direito");
+       $("#base64_pe_direito").val(cnvs_pe_direito.toDataURL());
+
+       var cnvs_pe_esquerdo = document.getElementById("cnvs_pe_esquerdo");
+       $("#base64_pe_esquerdo").val(cnvs_pe_esquerdo.toDataURL());
+   })
 
     function setBase64()
     {
@@ -905,11 +922,48 @@
 
           if( (canvasMouseX >= images[i].posicaox - 20 && canvasMouseX <= images[i].posicaox + 20) && (canvasMouseY >= images[i].posicaoy - 20 && canvasMouseY <= images[i].posicaoy + 20) )
           {
-              $.get("/avaliacao_sensitivas/remover_marcacao?marca="+images[i].id,function(data)
+
+              $.get("/avaliacao_sensitivas/remover_marcacao?marca="+images[i].id,
+                  {"dedao_direito": $("#avaliacao_sensitiva_dedao_direito").val(),
+                      "indicador_d_ponta": $("#avaliacao_sensitiva_indicador_d_ponta").val(),
+                      "indicador_d": $("#avaliacao_sensitiva_indicador_d").val(),
+                      "mindinho_d_ponta": $("#avaliacao_sensitiva_mindinho_d_ponta").val(),
+                      "mindinho_d": $("#avaliacao_sensitiva_mindinho_d").val(),
+                      "mao_direita": $("#avaliacao_sensitiva_mao_direita").val(),
+                      "mao_d_costa": $("#avaliacao_sensitiva_mao_d_costa").val(),
+                      "dedao_esquerdo": $("#avaliacao_sensitiva_dedao_esquerdo").val(),
+                      "indicador_e_ponta": $("#avaliacao_sensitiva_indicador_e_ponta").val(),
+                      "indicador_e": $("#avaliacao_sensitiva_indicador_e").val(),
+                      "mindinho_e_ponta": $("#avaliacao_sensitiva_mindinho_e_ponta").val(),
+                      "mindinho_e": $("#avaliacao_sensitiva_mindinho_e").val(),
+                      "mao_esquerda": $("#avaliacao_sensitiva_mao_esquerda").val(),
+                      "mao_e_costa": $("#avaliacao_sensitiva_mao_e_costa").val(),
+                      "pe_direito": $("#avaliacao_sensitiva_pe_direito").val(),
+                      "pe_d_1_ponta": $("#avaliacao_sensitiva_pe_d_1_ponta").val(),
+                      "pe_d_3_ponta": $("#avaliacao_sensitiva_pe_d_3_ponta").val(),
+                      "pe_d_5_ponta": $("#avaliacao_sensitiva_pe_d_5_ponta").val(),
+                      "pe_d_1": $("#avaliacao_sensitiva_pe_d_1").val(),
+                      "pe_d_3": $("#avaliacao_sensitiva_pe_d_3").val(),
+                      "pe_d_5": $("#avaliacao_sensitiva_pe_d_5").val(),
+                      "pe_d_e1": $("#avaliacao_sensitiva_pe_d_e1").val(),
+                      "pe_d_calcanhar": $("#avaliacao_sensitiva_pe_d_calcanhar").val(),
+                      "pe_esquerdo": $("#avaliacao_sensitiva_pe_esquerdo").val(),
+                      "pe_e_1_ponta": $("#avaliacao_sensitiva_pe_e_1_ponta").val(),
+                      "pe_e_3_ponta": $("#avaliacao_sensitiva_pe_e_3_ponta").val(),
+                      "pe_e_5_ponta": $("#avaliacao_sensitiva_pe_e_5_ponta").val(),
+                      "pe_e_1": $("#avaliacao_sensitiva_pe_e_1").val(),
+                      "pe_e_3": $("#avaliacao_sensitiva_pe_e_3").val(),
+                      "pe_e_5": $("#avaliacao_sensitiva_pe_e_5").val(),
+                      "pe_e_e1": $("#avaliacao_sensitiva_pe_e_e1").val(),
+                      "pe_e_e2": $("#avaliacao_sensitiva_pe_e_e2").val(),
+                      "pe_e_calcanhar": $("#avaliacao_sensitiva_pe_e_calcanhar").val(),
+                      "pe_d_e2": $("#avaliacao_sensitiva_pe_d_e2").val()}
+                  ,function(data)
               {
                 if(data.msg)
                 {
                   window.location = '<%= edit_avaliacao_sensitiva_path(@avaliacao_sensitiva) %>';
+
                 }
               });
               //delete images[i];
