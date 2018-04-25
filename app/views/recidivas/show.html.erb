@@ -1,6 +1,7 @@
-<div class="card-panel">
+<%= render partial: "layouts/cabecalho_print" %>
 
-  <h3>Paciente: <%= @recidiva.paciente %></h3>
+<div class="card-panel">
+  <h5 align="center">FICHA DE INVESTIGAÇÃO DE SUSPEITA DE RECIDIVA</h5>
   <div class="row">
     <div class="col s12 l4">
       <strong>Unidade saude:</strong>
@@ -17,6 +18,30 @@
       <%= @recidiva.data_diagnostico %>
     </div>
   </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title"><b>Identificação do Paciente</b></span>
+      <div class="row">
+        <b>Nome:</b> <%= @recidiva.paciente %>
+        <div class="row">
+          <div class="col s6">
+            <strong>Idade:</strong>
+            <%= @recidiva.paciente.idade %>
+          </div>
+          <div class="col s6">
+            <strong>Sexo:</strong>
+            <%= @recidiva.paciente.sexo == 1 ? "Masculino" : "Feminino" %>
+          </div>
+          <div class="col s12">
+            <strong>Nome da Mãe:</strong>
+            <%= @recidiva.paciente.nome_mae %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="row">
     <div class="card">
@@ -275,4 +300,7 @@
 
 
 </div>
+<div class="no-print">
 <%= link_to 'Voltar', paciente_path(@recidiva.paciente), class:"btn" %>
+  <a href="" onclick="window.print();" class="btn">Imprimir</a>
+</div>

@@ -1,7 +1,9 @@
-
+<%= render partial: "layouts/cabecalho_print" %>
+<div class="no-print">
 <% if @avaliacao_notificacao.inicial %>
     <%= link_to 'Nova Notificação', new_notificacao_path(paciente: @avaliacao_notificacao.paciente,avaliacao: @avaliacao_notificacao), class:"btn" %>
 <% end %>
+</div>
 <div class="card-panel">
 
   <div class="row">
