@@ -25,7 +25,7 @@
 
 class NotificacaoContato < ApplicationRecord
   belongs_to :notificacao
-  has_many :contato_avaliacaos
+  has_many :contato_avaliacaos, dependent: :destroy
 
   validates :nome, :tipo_contato, presence: true
 

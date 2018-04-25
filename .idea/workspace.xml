@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva_print.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notificacaos/_avaliacao_completa.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/notificacaos/show.pdf.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/print.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/1/imagem.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/2/imagem.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/3/imagem.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/sensitiva_image/imagem/4/imagem.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/notificacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/notificacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/avaliacao_notificacao.rb" afterPath="$PROJECT_DIR$/app/models/avaliacao_notificacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/notificacao.rb" afterPath="$PROJECT_DIR$/app/models/notificacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notificacaos/_episodios_relacionais.html.erb" afterPath="$PROJECT_DIR$/app/views/notificacaos/_episodios_relacionais.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notificacaos/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/notificacaos/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notificacaos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/notificacaos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pacientes/_notificacoes.html.erb" afterPath="$PROJECT_DIR$/app/views/pacientes/_notificacoes.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/notificacaos.yml" afterPath="$PROJECT_DIR$/test/fixtures/notificacaos.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/notificacao_test.rb" afterPath="$PROJECT_DIR$/test/models/notificacao_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/notificacao_contato.rb" afterPath="$PROJECT_DIR$/app/models/notificacao_contato.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -50,11 +28,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/notificacaos/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="137" column="22" lean-forward="true" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+            <state relative-caret-position="504">
+              <caret line="139" column="24" lean-forward="false" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notificacao_contato.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/notificacao_contato.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,7 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/locales/pt-BR.yml" />
         <option value="$PROJECT_DIR$/app/views/cidades/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/cidades/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/condutas/new.html.erb" />
@@ -165,6 +152,7 @@
         <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva_print.html.erb" />
         <option value="$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/notificacaos/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/notificacao_contato.rb" />
       </list>
     </option>
   </component>
@@ -462,12 +450,12 @@
       <workItem from="1520249360759" duration="11628000" />
       <workItem from="1520617405225" duration="10259000" />
       <workItem from="1520853473503" duration="10958000" />
-      <workItem from="1524576075702" duration="30177000" />
+      <workItem from="1524576075702" duration="30455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216459000" />
+    <option name="totallyTimeSpent" value="216737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1366" height="708" extended-state="6" />
@@ -504,14 +492,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/recidivas/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -909,8 +889,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/notificacaos/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="137" column="22" lean-forward="true" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+        <state relative-caret-position="504">
+          <caret line="139" column="24" lean-forward="false" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/notificacao_contato.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
