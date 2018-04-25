@@ -1,6 +1,6 @@
 
 <% if @avaliacao_notificacao.inicial %>
-    <%= link_to 'Nova Notificação', new_notificacao_path(paciente: @avaliacao_notificacao.paciente), class:"btn" %>
+    <%= link_to 'Nova Notificação', new_notificacao_path(paciente: @avaliacao_notificacao.paciente,avaliacao: @avaliacao_notificacao), class:"btn" %>
 <% end %>
 <div class="card-panel">
 
@@ -102,18 +102,25 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">Avaliações Sensitivas</span>
-        <%= render partial: "avaliacao_sensitiva", locals:{avaliacao_sensitivas: @avaliacao_notificacao.avaliacao_sensitivas} %>
+        <div class="no-print">
+          <%= render partial: "avaliacao_sensitiva", locals:{avaliacao_sensitivas: @avaliacao_notificacao.avaliacao_sensitivas} %>
+        </div>
+        <div class="print">
+          <%= render partial: "avaliacao_sensitiva_print", locals:{avaliacao_sensitivas: @avaliacao_notificacao.avaliacao_sensitivas} %>
+        </div>
       </div>
 
     </div>
   </div>
 
 </div>
+<div class="no-print">
 <%= link_to 'Nova Avaliação Sensitiva', new_avaliacao_sensitiva_path(avaliacao: @avaliacao_notificacao.id), class:"btn" %>
 <% if @avaliacao_notificacao.notificacao.present? %>
   <%= link_to 'Voltar', notificacao_path(@avaliacao_notificacao.notificacao), class:"btn" %>
 <% else %>
     <%= link_to 'Voltar', paciente_path(@avaliacao_notificacao.paciente), class:"btn" %>
 <% end %>
-
+  <a href="" onclick="window.print();" class="btn">Imprimir</a>
+</div>
 

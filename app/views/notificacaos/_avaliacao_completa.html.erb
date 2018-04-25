@@ -1,0 +1,100 @@
+
+<div class="card-panel">
+
+
+	<div class="row">
+    <div class="col s12 l4">
+      <strong>Classificação Operacional:</strong>
+      <%= avaliacao_notificacao.classificacao_operacional_text %>
+    </div >
+
+    <div class="col s6 l4">
+      <strong>Inicio PQT:</strong>
+      <%= avaliacao_notificacao.inicio_pqt %>
+    </div>
+
+    <div class="col s6 l4">
+      <strong>Alta PQT:</strong>
+      <%= avaliacao_notificacao.alta_pqt %>
+    </div>
+  </div>
+<p>
+  <strong>Profissão:</strong>
+  <%= avaliacao_notificacao.profissao %>
+</p>
+
+<p>
+  <strong>Unidade de saúde:</strong>
+  <%= avaliacao_notificacao.unidade_saude %>
+</p>
+<div class="row">
+  <div class="col s12 l4">
+    <strong>Atividades Orientadas:</strong>
+    <%= avaliacao_notificacao.atividades_orientadas == true ? "SIM" : "NÃO" %>
+  </div>
+  <div class="col s12 l4">
+    <strong>Atividades realizadas na UBS:</strong>
+    <%= avaliacao_notificacao.atividades_realizadas_ubs == true ? "SIM" : "NÃO" %>
+  </div>
+
+  <div class="col s12 l4">
+    <strong>Participação em grupo de autocuidado:</strong>
+    <%= avaliacao_notificacao.grupo_autocuidado == true ? "SIM" : "NÃO" %>
+  </div>
+
+</div>
+<p>
+  <strong>Encaminhamentos:</strong>
+  <%= avaliacao_notificacao.encaminhamentos %>
+</p>
+
+<p>
+  <strong>Imobilizações:</strong>
+  <%= avaliacao_notificacao.imobilizacoes %>
+</p>
+
+<p>
+  <strong>Adaptações:</strong>
+  <%= avaliacao_notificacao.adaptacoes %>
+</p>
+
+<p>
+  <strong>Observações:</strong>
+  <%= avaliacao_notificacao.observacoes %>
+</p>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Avaliações Neurológicas</span>
+        <%= render partial: "avaliacao_notificacaos/avaliacao_neurologica", locals:{avaliacao_neurologicas: avaliacao_notificacao.avaliacao_neurologicas} %>
+      </div>
+
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Classificação do Grau de Incapacidade</span>
+        <%= render partial: "avaliacao_notificacaos/classificacao_grau", locals:{classificacao_graus: avaliacao_notificacao.classificacao_graus} %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Avaliações Sensitivas</span>
+        <%= render partial: "avaliacao_notificacaos/avaliacao_sensitiva_print", locals:{avaliacao_sensitivas: avaliacao_notificacao.avaliacao_sensitivas} %>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+

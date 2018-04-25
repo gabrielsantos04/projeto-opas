@@ -34,11 +34,11 @@
 
 class AvaliacaoNotificacao < ApplicationRecord
   belongs_to :notificacao, optional: true
-  belongs_to :paciente
+  belongs_to :paciente, optional: true
 
-  has_many :avaliacao_neurologicas
-  has_many :classificacao_graus
-  has_many :avaliacao_sensitivas
+  has_many :avaliacao_neurologicas, dependent: :destroy
+  has_many :classificacao_graus, dependent: :destroy
+  has_many :avaliacao_sensitivas, dependent: :destroy
 
 
 

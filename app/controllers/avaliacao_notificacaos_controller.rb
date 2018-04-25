@@ -19,7 +19,7 @@ class AvaliacaoNotificacaosController < ApplicationController
     if params[:notificacao].present?
       @avaliacao_notificacao = AvaliacaoNotificacao.new(notificacao_id: params[:notificacao])
       notificacao = Notificacao.find(params[:notificacao])
-      @avaliacao_notificacao.paciente_id = notificacao.id
+      @avaliacao_notificacao.paciente_id = notificacao.paciente_id
     else
       @avaliacao_notificacao = AvaliacaoNotificacao.new(paciente_id: params[:paciente])
       @avaliacao_notificacao.inicial = true

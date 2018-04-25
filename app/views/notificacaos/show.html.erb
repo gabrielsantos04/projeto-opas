@@ -1,8 +1,34 @@
+<div class="print">
+
+</div>
+
 <br>
+<div class="no-print">
 <%= link_to 'Nova Avaliação', new_avaliacao_notificacao_path(notificacao: @notificacao.id), class:"btn" %>
+</div>
 <%#= link_to 'Ficha de Suspeita de Recidiva', recidiva_notificacao_path(@notificacao), class:"btn" %>
 
 <div class="card-panel">
+
+  <div class="row">
+    <div class="col s6">
+      <strong>Paciente:</strong>
+      <%= @notificacao.paciente %>
+    </div>
+    <div class="col s6">
+      <strong>Idade:</strong>
+      <%= @notificacao.paciente.idade %>
+    </div>
+    <div class="col s6">
+      <strong>Sexo:</strong>
+      <%= @notificacao.paciente.sexo == 1 ? "Masculino" : "Feminino"  %>
+    </div>
+    <div class="col s6">
+      <strong>Cidade:</strong>
+      <%= @notificacao.paciente.cidade%>
+    </div>
+  </div>
+  <br>
 	<div class="row">
     <div class="col s6">
       <strong>Numero:</strong>
@@ -14,41 +40,42 @@
       <%= @notificacao.data %>
     </div>
   </div>
+  <div class="row">
+    <div class="col s6 l3">
+      <strong>Grau incapacidade:</strong>
+      <%= @notificacao.grau_incapacidade_text %>
+    </div>
+    <div class="col s6 l3">
+      <strong>Modo de entrada:</strong>
+      <%= @notificacao.modo_entrada_text %>
+    </div>
+    <div class="col s6 l4">
+      <strong>Modo de deteccao:</strong>
+      <%= @notificacao.modo_deteccao_text %>
+    </div>
+    <div class="col s6 l2">
+      <strong>Baciloscopia:</strong>
+      <%= @notificacao.baciloscopia_text %>
+    </div>
 
-<p>
-  <strong>Grau incapacidade:</strong>
-  <%= @notificacao.grau_incapacidade_text %>
-</p>
+  </div>
 
-<p>
-  <strong>Modo de entrada:</strong>
-  <%= @notificacao.modo_entrada_text %>
-</p>
-
-<p>
-  <strong>Modo de deteccao:</strong>
-  <%= @notificacao.modo_deteccao_text %>
-</p>
+  <div class="row">
+    <div class="col s6 l4">
+      <strong>Data de início do Tratamento:</strong>
+      <%= @notificacao.data_inicio %>
+    </div>
+    <div class="col s6 l3">
+      <strong>Esquema terapêutico:</strong>
+      <%= @notificacao.esquema_terapeutico_text %>
+    </div>
+  </div>
 
 <p>
   <strong>Observações:</strong>
   <%= @notificacao.observacoes %>
 </p>
 
-<p>
-  <strong>Baciloscopia:</strong>
-  <%= @notificacao.baciloscopia_text %>
-</p>
-
-<p>
-  <strong>Data de início do Tratamento:</strong>
-  <%= @notificacao.data_inicio %>
-</p>
-
-<p>
-  <strong>Esquema terapêutico:</strong>
-  <%= @notificacao.esquema_terapeutico_text %>
-</p>
 
   <div class="row">
     <div class="card">
@@ -94,11 +121,21 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">Avaliações</span>
+        <div class="no-print">
         <%= render partial: "avaliacoes", locals:{avaliacao_notificacaos: @notificacao.avaliacao_notificacaos} %>
+        </div>
+        <div class="print">
+          <% @notificacao.avaliacao_notificacaos.each do |a| %>
+              <%= render partial: "avaliacao_completa", locals:{avaliacao_notificacao: a} %>
+          <% end %>
+        </div>
       </div>
 
     </div>
   </div>
 
 </div>
+<div class="no-print">
 <%= link_to 'Voltar', notificacaos_path, class:"btn" %>
+  <a href="" onclick="window.print();" class="btn">Imprimir</a>
+</div>

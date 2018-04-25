@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312135921) do
+ActiveRecord::Schema.define(version: 20180425172602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -323,6 +323,8 @@ ActiveRecord::Schema.define(version: 20180312135921) do
     t.datetime "updated_at", null: false
     t.bigint "paciente_id"
     t.bigint "recidiva_id"
+    t.bigint "avaliacao_notificacao_id"
+    t.index ["avaliacao_notificacao_id"], name: "index_notificacaos_on_avaliacao_notificacao_id"
     t.index ["paciente_id"], name: "index_notificacaos_on_paciente_id"
     t.index ["recidiva_id"], name: "index_notificacaos_on_recidiva_id"
   end
@@ -458,6 +460,7 @@ ActiveRecord::Schema.define(version: 20180312135921) do
   add_foreign_key "marcacaos", "avaliacao_sensitivas"
   add_foreign_key "nervos_recidivas", "recidivas"
   add_foreign_key "notificacao_contatos", "notificacaos"
+  add_foreign_key "notificacaos", "avaliacao_notificacaos"
   add_foreign_key "notificacaos", "pacientes"
   add_foreign_key "notificacaos", "recidivas"
   add_foreign_key "pacientes", "cidades"
