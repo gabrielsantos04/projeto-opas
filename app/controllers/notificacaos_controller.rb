@@ -32,6 +32,31 @@ class NotificacaosController < ApplicationController
     end
   end
 
+  def avaliacao_pendente
+    if current_user.administrador?
+      notificacoes = Notificacao.includes(:paciente,:avaliacao_notificacaos).all
+    else
+      notificacoes = Notificacao.includes(:paciente,:avaliacao_notificacaos).where(pacientes: {cidade: current_user.cidade})
+    end
+    @pendentes = []
+    notificacoes.each do |n|
+      meses = (DateTime.now.year * 12 + DateTime.now.month) - (n.data_inicio.year * 12 + n.data_inicio.month)
+      if (meses >=3 and meses < 6) and n.avaliacao_notificacaos.size < 1
+        @pendentes << n
+      end
+      if (meses >=6 and meses < 9) and n.avaliacao_notificacaos.size < 2
+        @pendentes << n
+      end
+      if (meses >=9 and meses < 12) and n.avaliacao_notificacaos.size < 3
+        @pendentes << n
+      end
+      if meses >= 12  and n.avaliacao_notificacaos.size < 4
+        @pendentes << n
+      end
+
+    end
+  end
+
   # GET /notificacaos/new
   def new
     @notificacao = Notificacao.new(paciente_id: params[:paciente])
