@@ -56,6 +56,6 @@ class OcupacaosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def ocupacao_params
-      params.require(:ocupacao).permit(:nome)
+      params.require(:ocupacao).permit(:nome,:codigo)
     end
 end

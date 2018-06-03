@@ -103,7 +103,7 @@
                     <%= esq.number_field :numero_episodios %>
                   </div>
                   <div class="col s12 l3 input-field">
-                    <%= esq.label :conduta_mendicamentosa,"condutas Mendicamentosa" %>
+                    <%= esq.label :conduta_mendicamentosa,"Conduta Medicamentosa" %>
                     <%= esq.text_field :conduta_mendicamentosa %>
                   </div>
                   <div class="col s4 l1">
@@ -179,7 +179,7 @@
 
           <div class="input-field  col s12 l4">
 
-            <%= f.label :tempo_tratamento %>
+            <%= f.label :tempo_tratamento, "Tempo Tratamento (meses)" %>
             <%= f.number_field :tempo_tratamento %>
 
           </div>
@@ -350,7 +350,7 @@
         <span class="card-title"><b>Situação do Paciente no Suspeita de Recidiva</b></span>
         <div class="row">
           <div class="input-field col s6 l6">
-            <%= f.label :tempo_alta_cura, "Tempo de alta por cura" %>
+            <%= f.label :tempo_alta_cura, "Tempo de alta por cura (meses)" %>
             <%= f.number_field :tempo_alta_cura %>
           </div>
           <div class="input-field  col s6 l6">
@@ -525,12 +525,7 @@
     </div>
   </div>
 
-
-
-
-
-
-    <%= f.hidden_field :notificacao_id %>
+  <%= f.hidden_field :paciente_id %>
     
 
 

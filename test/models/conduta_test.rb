@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: conduta
+# Table name: condutas
 #
 #  id         :integer          not null, primary key
 #  nome       :string

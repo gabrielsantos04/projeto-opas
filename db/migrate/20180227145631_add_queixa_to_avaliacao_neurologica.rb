@@ -1,0 +1,46 @@
+class AddQueixaToAvaliacaoNeurologica < ActiveRecord::Migration[5.1]
+  def change
+    add_column :avaliacao_neurologicas, :olhos_sem_forca_d, :decimal
+    add_column :avaliacao_neurologicas, :olhos_sem_forca_e, :decimal
+    add_column :avaliacao_neurologicas, :olhos_com_forca_d, :decimal
+    add_column :avaliacao_neurologicas, :olhos_com_forca_e, :decimal
+    add_column :avaliacao_neurologicas, :triquiase_d, :string
+    add_column :avaliacao_neurologicas, :triquiase_e, :string
+    add_column :avaliacao_neurologicas, :ectropio_d, :string
+    add_column :avaliacao_neurologicas, :ectropio_e, :string
+    add_column :avaliacao_neurologicas, :catarata_d, :string
+    add_column :avaliacao_neurologicas, :catarata_e, :string
+    add_column :avaliacao_neurologicas, :sensibilidade_cornea_d, :string
+    add_column :avaliacao_neurologicas, :sensibilidade_cornea_e, :string
+    add_column :avaliacao_neurologicas, :opacidade_corneana_d, :string
+    add_column :avaliacao_neurologicas, :opacidade_corneada_e, :string
+    add_column :avaliacao_neurologicas, :acuidade_visual_d, :decimal
+    add_column :avaliacao_neurologicas, :acuidade_visual_e, :decimal
+    add_column :avaliacao_neurologicas, :ressecamento_d, :string
+    add_column :avaliacao_neurologicas, :ressecamento_e, :string
+    add_column :avaliacao_neurologicas, :feridas_d, :string
+    add_column :avaliacao_neurologicas, :feridas_e, :string
+    add_column :avaliacao_neurologicas, :perfuracao_septo_d, :string
+    add_column :avaliacao_neurologicas, :perfuracap_septo_e, :string
+    add_column :avaliacao_neurologicas, :nervo_radial_d, :string
+    add_column :avaliacao_neurologicas, :nervo_radial_e, :string
+    add_column :avaliacao_neurologicas, :nervo_ulnar_d, :string
+    add_column :avaliacao_neurologicas, :nervo_ultar_e, :string
+    add_column :avaliacao_neurologicas, :nervo_mediano_d, :string
+    add_column :avaliacao_neurologicas, :nervo_mediano_e, :string
+    add_column :avaliacao_neurologicas, :abducao_5_dedo_d, :integer
+    add_column :avaliacao_neurologicas, :abducao_5_dedo_e, :integer
+    add_column :avaliacao_neurologicas, :abducao_polegar_d, :integer
+    add_column :avaliacao_neurologicas, :abducao_polegar_e, :integer
+    add_column :avaliacao_neurologicas, :extensores_punho_d, :integer
+    add_column :avaliacao_neurologicas, :extensores_punho_e, :integer
+    add_column :avaliacao_neurologicas, :nervo_fibular_d, :string
+    add_column :avaliacao_neurologicas, :nervo_fibular_e, :string
+    add_column :avaliacao_neurologicas, :nervo_tibial_d, :string
+    add_column :avaliacao_neurologicas, :nervo_tibial_e, :string
+    add_column :avaliacao_neurologicas, :extensao_halux_d, :integer
+    add_column :avaliacao_neurologicas, :extensao_halux_e, :integer
+    add_column :avaliacao_neurologicas, :dorsiflexao_pe_d, :integer
+    add_column :avaliacao_neurologicas, :dorsiflexao_pe_e, :integer
+  end
+end

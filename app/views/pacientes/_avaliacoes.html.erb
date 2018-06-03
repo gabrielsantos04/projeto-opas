@@ -1,0 +1,37 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Classificação operacional</th>
+    <th>Início PQT</th>
+    <th>Alta PQT</th>
+    <th>Unidade saúde</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% avaliacao_notificacaos.each do |avaliacao_notificacao| %>
+      <tr>
+
+        <td><%= link_to avaliacao_notificacao.classificacao_operacional_text,avaliacao_notificacao %></td>
+
+
+
+        <td><%= avaliacao_notificacao.inicio_pqt %></td>
+
+
+
+        <td><%= avaliacao_notificacao.alta_pqt %></td>
+
+
+
+        <td><%= avaliacao_notificacao.unidade_saude %></td>
+
+
+
+
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

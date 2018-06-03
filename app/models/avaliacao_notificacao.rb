@@ -18,28 +18,35 @@
 #  created_at                :datetime         not null
 #  updated_at                :datetime         not null
 #  atividades_orientadas     :boolean
+#  paciente_id               :integer
+#  inicial                   :boolean
 #
 # Indexes
 #
 #  index_avaliacao_notificacaos_on_notificacao_id  (notificacao_id)
+#  index_avaliacao_notificacaos_on_paciente_id     (paciente_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (notificacao_id => notificacaos.id)
+#  fk_rails_...  (paciente_id => pacientes.id)
 #
 
 class AvaliacaoNotificacao < ApplicationRecord
-  belongs_to :notificacao
+  belongs_to :notificacao, optional: true
+  belongs_to :paciente, optional: true
 
-  has_many :avaliacao_neurologicas
-  has_many :classificacao_graus
-  has_many :avaliacao_sensitivas
+  has_many :avaliacao_neurologicas, dependent: :destroy
+  has_many :classificacao_graus, dependent: :destroy
+  has_many :avaliacao_sensitivas, dependent: :destroy
 
-  has_one :paciente, through: :notificacao
+
 
   accepts_nested_attributes_for :avaliacao_neurologicas, allow_destroy: true
   accepts_nested_attributes_for :classificacao_graus, allow_destroy: true
   accepts_nested_attributes_for :avaliacao_sensitivas, allow_destroy: true
+
+  validates :classificacao_operacional,:inicio_pqt,:unidade_saude,:profissao, presence: true
 
   extend Enumerize
 

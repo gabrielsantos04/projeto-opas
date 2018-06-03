@@ -1,0 +1,26 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Data Diagnóstico</th>
+    <th>Classificação Operacional</th>
+    <th>Unidade saúde</th>
+    <th>Notificação</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% recidivas.each do |recidiva| %>
+      <tr>
+        <td><%= link_to recidiva.data_diagnostico ,recidiva %></td>
+        <td><%= recidiva.classificacao_operacional_text%></td>
+        <td><%= recidiva.unidade_saude %></td>
+        <% if recidiva.notificacao %>
+          <td><%= link_to recidiva.notificacao ,recidiva.notificacao %></td>
+        <% else %>
+            <td><%= link_to "Criar Notificação" , new_notificacao_path(recidiva: recidiva.id,paciente: recidiva.paciente.id) %></td>
+        <% end  %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

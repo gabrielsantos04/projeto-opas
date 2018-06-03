@@ -1,15 +1,5 @@
-<div class="card">  
-  <div class="card-content">
-    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
-      Pesquisa
-    </span>
-    <div id="pesquisa" class="not-show">
-      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
-      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
-      <%= f.submit "Filtrar", class:"btn" %>
-      <% end %>
-    </div>
-  </div>
+<div class="card">
+<h1 class="center-align">Monofilamentos</h1>
 </div>
 
 <table class="card striped responsive-table">
@@ -44,4 +34,4 @@
   <%= paginate(@monofilamentos)  %>
 </div>
 
-<%= link_to '+ Cadastrar', new_monofilamento_path, class:"btn" %>
+<%#= link_to '+ Cadastrar', new_monofilamento_path, class:"btn" %>

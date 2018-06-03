@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   resources :notificacaos do
     collection do
       get 'home'
+      get 'avaliacao_pendente'
     end
     member do
       get "recidiva"

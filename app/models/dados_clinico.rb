@@ -23,6 +23,8 @@
 class DadosClinico < ApplicationRecord
   belongs_to :notificacao
 
+  validates_presence_of DadosClinico.attribute_names - %w(id created_at updated_at notificacao_id)
+
   extend Enumerize
 
   enumerize :forma_clinica, in: [:i, :t,:d,:v], predicates: true

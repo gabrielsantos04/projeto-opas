@@ -33,6 +33,8 @@ class Paciente < ApplicationRecord
   belongs_to :ocupacao
 
   has_many :notificacaos
+  has_many :avaliacao_notificacaos
+  has_many :recidivas
 
 
   def to_s

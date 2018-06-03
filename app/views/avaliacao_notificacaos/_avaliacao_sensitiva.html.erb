@@ -1,4 +1,4 @@
-<table class="card striped responsive-table">
+<!--<table class="card striped responsive-table">
   <thead>
   <tr>
     <th>Data</th>
@@ -6,11 +6,32 @@
   </thead>
 
   <tbody>
-  <% avaliacao_sensitivas.each_with_index  do |avaliacao_sensitiva, index| %>
+  <%# avaliacao_sensitivas.each_with_index  do |avaliacao_sensitiva, index| %>
       <tr>
-        <td><%= link_to index + 1, edit_avaliacao_sensitiva_path(avaliacao_sensitiva), target:"_self"  %></td>
-        <td><%= avaliacao_sensitiva.data%></td>
+        <td><%#= link_to index + 1, edit_avaliacao_sensitiva_path(avaliacao_sensitiva), target:"_self"  %></td>
+        <td><%#= avaliacao_sensitiva.data%></td>
+        <td><%#= link_to 'Excluir', avaliacao_sensitiva, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
       </tr>
-  <% end %>
+  <%# end %>
   </tbody>
-</table>
+</table>-->
+
+<% avaliacao_sensitivas.each_with_index  do |avaliacao_sensitiva, index| %>
+    <div class="row">
+      <strong>Data Avaliação:</strong>
+      <%= avaliacao_sensitiva.data %>
+    </div>
+    <div class="row">
+      <% avaliacao_sensitiva.sensitiva_images.each do |s| %>
+          <div class="col s12 l4">
+            <img src="<%= s.imagem.url %>" alt="" width="200px">
+          </div>
+      <% end %>
+    </div>
+    <div class="no-print">
+    <tr >
+      <td><%= link_to "Editar", edit_avaliacao_sensitiva_path(avaliacao_sensitiva), target:"_self"  %></td>
+      <td><%= link_to 'Excluir', avaliacao_sensitiva, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
+    </tr>
+    </div>
+<% end %>

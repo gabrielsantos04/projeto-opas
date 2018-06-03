@@ -1,0 +1,57 @@
+<div class="card">
+  <h1 class="center-align">Notificações com Avaliações Pendentes</h1>
+</div>
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Número</th>
+    <th>Paciente</th>
+    <th>Data</th>
+    <th>Grau incapacidade</th>
+    <th>Modo entrada</th>
+    <th>Modo detecção</th>
+    <th>Baciloscopia</th>
+    <th>Data início</th>
+    <th>Esquema terapêutico</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @pendentes.each do |notificacao| %>
+      <tr>
+
+        <td><%= link_to notificacao.numero,notificacao %></td>
+
+        <td><%= link_to notificacao.paciente,notificacao.paciente %></td>
+
+
+        <td><%= notificacao.data %></td>
+
+
+
+        <td><%= notificacao.grau_incapacidade_text %></td>
+
+
+
+        <td><%= notificacao.modo_entrada_text %></td>
+
+
+
+        <td><%= notificacao.modo_deteccao_text %></td>
+
+
+
+        <td><%= notificacao.baciloscopia_text %></td>
+
+
+
+        <td><%= notificacao.data_inicio %></td>
+
+
+
+        <td><%= notificacao.esquema_terapeutico_text %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

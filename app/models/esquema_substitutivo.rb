@@ -23,4 +23,6 @@
 class EsquemaSubstitutivo < ApplicationRecord
   belongs_to :medicamento
   belongs_to :notificacao
+
+  validates :medicamento_id, presence: true
 end

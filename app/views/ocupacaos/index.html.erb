@@ -1,12 +1,16 @@
-<div class="card">  
+<div class="card">
+  <h1 class="center-align">Ocupações</h1>
+</div>
+
+<div class="card">
   <div class="card-content">
     <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
       Pesquisa
     </span>
     <div id="pesquisa" class="not-show">
       <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
-      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
-      <%= f.submit "Filtrar", class:"btn" %>
+          <%= f.text_field :nome_cont, placeholder: "Pesquisar..." %>
+          <%= f.submit "Filtrar", class:"btn" %>
       <% end %>
     </div>
   </div>
@@ -14,19 +18,22 @@
 
 <table class="card striped responsive-table">
   <thead>
-    <tr>
-            <th>Nome</th>
-          </tr>
+  <tr>
+    <th>Nome</th>
+    <th>Cógido</th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @ocupacaos.each do |ocupacao| %>
-    <tr>
-              
-          <td><%= link_to ocupacao.nome,ocupacao %></td>
-        
-          </tr>
-    <% end %>
+  <% @ocupacaos.each do |ocupacao| %>
+      <tr>
+
+        <td><%= link_to ocupacao.nome,ocupacao %></td>
+        <td><%= ocupacao.codigo %></td>
+        <td><%= link_to 'Excluir', ocupacao, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
+
+      </tr>
+  <% end %>
   </tbody>
 </table>
 

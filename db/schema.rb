@@ -10,21 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180216132628) do
+ActiveRecord::Schema.define(version: 20180425172602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "avaliacao_neurologicas", force: :cascade do |t|
-    t.bigint "queixa_id"
     t.bigint "avaliacao_notificacao_id"
-    t.string "direito"
-    t.string "esquerdo"
     t.date "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "olhos_sem_forca_d"
+    t.decimal "olhos_sem_forca_e"
+    t.decimal "olhos_com_forca_d"
+    t.decimal "olhos_com_forca_e"
+    t.string "triquiase_d"
+    t.string "triquiase_e"
+    t.string "ectropio_d"
+    t.string "ectropio_e"
+    t.string "catarata_d"
+    t.string "catarata_e"
+    t.string "sensibilidade_cornea_d"
+    t.string "sensibilidade_cornea_e"
+    t.string "opacidade_corneana_d"
+    t.decimal "acuidade_visual_d"
+    t.decimal "acuidade_visual_e"
+    t.string "ressecamento_d"
+    t.string "ressecamento_e"
+    t.string "feridas_d"
+    t.string "feridas_e"
+    t.string "perfuracao_septo_d"
+    t.string "nervo_radial_d"
+    t.string "nervo_radial_e"
+    t.string "nervo_ulnar_d"
+    t.string "nervo_mediano_d"
+    t.string "nervo_mediano_e"
+    t.integer "abducao_5_dedo_d"
+    t.integer "abducao_5_dedo_e"
+    t.integer "abducao_polegar_d"
+    t.integer "abducao_polegar_e"
+    t.integer "extensores_punho_d"
+    t.integer "extensores_punho_e"
+    t.string "nervo_fibular_d"
+    t.string "nervo_fibular_e"
+    t.string "nervo_tibial_d"
+    t.string "nervo_tibial_e"
+    t.integer "extensao_halux_d"
+    t.integer "extensao_halux_e"
+    t.integer "dorsiflexao_pe_d"
+    t.integer "dorsiflexao_pe_e"
+    t.string "opacidade_corneana_e"
+    t.string "perfuracao_septo_e"
+    t.string "nervo_ulnar_e"
     t.index ["avaliacao_notificacao_id"], name: "index_avaliacao_neurologicas_on_avaliacao_notificacao_id"
-    t.index ["queixa_id"], name: "index_avaliacao_neurologicas_on_queixa_id"
   end
 
   create_table "avaliacao_notificacaos", force: :cascade do |t|
@@ -43,7 +81,10 @@ ActiveRecord::Schema.define(version: 20180216132628) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "atividades_orientadas"
+    t.bigint "paciente_id"
+    t.boolean "inicial"
     t.index ["notificacao_id"], name: "index_avaliacao_notificacaos_on_notificacao_id"
+    t.index ["paciente_id"], name: "index_avaliacao_notificacaos_on_paciente_id"
   end
 
   create_table "avaliacao_sensitivas", force: :cascade do |t|
@@ -281,13 +322,18 @@ ActiveRecord::Schema.define(version: 20180216132628) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "paciente_id"
+    t.bigint "recidiva_id"
+    t.bigint "avaliacao_notificacao_id"
+    t.index ["avaliacao_notificacao_id"], name: "index_notificacaos_on_avaliacao_notificacao_id"
     t.index ["paciente_id"], name: "index_notificacaos_on_paciente_id"
+    t.index ["recidiva_id"], name: "index_notificacaos_on_recidiva_id"
   end
 
   create_table "ocupacaos", force: :cascade do |t|
     t.string "nome"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "codigo"
   end
 
   create_table "pacientes", force: :cascade do |t|
@@ -336,7 +382,6 @@ ActiveRecord::Schema.define(version: 20180216132628) do
     t.date "data_primeiros_sintomas"
     t.string "grau_incapacidade_alta"
     t.string "classificacao_operacional_alta"
-    t.bigint "notificacao_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "termino_tratamento"
@@ -346,7 +391,17 @@ ActiveRecord::Schema.define(version: 20180216132628) do
     t.string "grau_incapacidade_suspeita"
     t.string "classificacao_operacional_suspeita"
     t.string "forma_clinica_suspeita"
-    t.index ["notificacao_id"], name: "index_recidivas_on_notificacao_id"
+    t.bigint "paciente_id"
+    t.index ["paciente_id"], name: "index_recidivas_on_paciente_id"
+  end
+
+  create_table "sensitiva_images", force: :cascade do |t|
+    t.string "imagem"
+    t.bigint "avaliacao_sensitiva_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "opcao"
+    t.index ["avaliacao_sensitiva_id"], name: "index_sensitiva_images_on_avaliacao_sensitiva_id"
   end
 
   create_table "sinais_sintomas", force: :cascade do |t|
@@ -386,8 +441,8 @@ ActiveRecord::Schema.define(version: 20180216132628) do
   end
 
   add_foreign_key "avaliacao_neurologicas", "avaliacao_notificacaos"
-  add_foreign_key "avaliacao_neurologicas", "queixas"
   add_foreign_key "avaliacao_notificacaos", "notificacaos"
+  add_foreign_key "avaliacao_notificacaos", "pacientes"
   add_foreign_key "avaliacao_sensitivas", "avaliacao_notificacaos"
   add_foreign_key "classificacao_graus", "avaliacao_notificacaos"
   add_foreign_key "conduta_recidivas", "condutas", column: "condutas_id"
@@ -405,11 +460,14 @@ ActiveRecord::Schema.define(version: 20180216132628) do
   add_foreign_key "marcacaos", "avaliacao_sensitivas"
   add_foreign_key "nervos_recidivas", "recidivas"
   add_foreign_key "notificacao_contatos", "notificacaos"
+  add_foreign_key "notificacaos", "avaliacao_notificacaos"
   add_foreign_key "notificacaos", "pacientes"
+  add_foreign_key "notificacaos", "recidivas"
   add_foreign_key "pacientes", "cidades"
   add_foreign_key "pacientes", "ocupacaos"
   add_foreign_key "queixas", "categoria_queixas"
-  add_foreign_key "recidivas", "notificacaos"
+  add_foreign_key "recidivas", "pacientes"
+  add_foreign_key "sensitiva_images", "avaliacao_sensitivas"
   add_foreign_key "sintomas_recidivas", "recidivas"
   add_foreign_key "sintomas_recidivas", "sinais_sintomas"
   add_foreign_key "users", "cidades"

@@ -155,11 +155,52 @@
       opacity: 1;
       background:white;
     }
-      @media print{
-        .hide_print{
-          display:none;
-        }
+
+
+
+    .no-print{
+      display:block;
+    }
+
+    .print{
+      display:none;
+    }
+
+    @media print{
+      .container{
+        width: 100%;
       }
+
+      #main{
+        padding: 0 !important;
+      }
+
+
+
+      body {
+        margin:0;
+        padding:0;
+        line-height: 1.4em;
+      }
+
+      @page {
+        margin: 0.5cm;
+      }
+
+      nav, footer, video, audio, object, embed,aside {
+        display:none;
+      }
+
+      .no-print{
+        display:none;
+      }
+
+      .print{
+        display:block;
+      }
+
+
+    }
   </style>
   <script type="text/javascript">
     $(document).on('nested:fieldAdded', function(event){
@@ -173,14 +214,21 @@
       chosenField.chosen();
       $('select').material_select();
       $('.select2').select2();
-        $('.datepicker').pickadate({
+      $('.datepicker').pickadate({
             selectMonths: true, // Creates a dropdown to control month
-            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            selectYears: 100, // Creates a dropdown of 15 years to control year,
             today: 'Hoje',
             clear: 'Limpar',
             close: 'Ok',
             closeOnSelect: true // Close upon selecting a date,
         });
+        $(".nedc").on("keydown", function(e)
+        {
+
+            if(e.keyCode != 8 && e.keyCode != 68 && e.keyCode != 37 && e.keyCode != 39 && e.keyCode != 78 && e.keyCode != 69&& e.keyCode != 67&& e.keyCode != 46 ) {
+                return false;
+            }
+        })
     });
 
   </script>

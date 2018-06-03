@@ -16,11 +16,14 @@ class RecidivasController < ApplicationController
 
   # GET /recidivas/new
   def new
-    @recidiva = Recidiva.new(notificacao_id: params[:notificacao])
+    @recidiva = Recidiva.new(paciente_id: params[:paciente])
   end
 
   # GET /recidivas/1/edit
   def edit
+    if current_user.municipio?
+      redirect_to @recidiva.paciente, alert: "Você não tem autorização para realizar essa ação!"
+    end
   end
 
   # POST /recidivas
@@ -28,7 +31,7 @@ class RecidivasController < ApplicationController
     @recidiva = Recidiva.new(recidiva_params)
 
     if @recidiva.save
-      redirect_to @recidiva.notificacao, notice: 'Recidiva was successfully created.'
+      redirect_to @recidiva.paciente, notice: 'Recidiva criada com sucesso.'
     else
       render :new
     end
@@ -37,7 +40,7 @@ class RecidivasController < ApplicationController
   # PATCH/PUT /recidivas/1
   def update
     if @recidiva.update(recidiva_params)
-      redirect_to @recidiva.notificacao, notice: 'Recidiva was successfully updated.'
+      redirect_to @recidiva.paciente, notice: 'Recidiva atualizada com sucesso.'
     else
       render :edit
     end
@@ -46,7 +49,7 @@ class RecidivasController < ApplicationController
   # DELETE /recidivas/1
   def destroy
     @recidiva.destroy
-    redirect_to recidivas_url, notice: 'Recidiva was successfully destroyed.'
+    redirect_to recidivas_url, notice: 'Recidiva excluída com sucesso.'
   end
 
   private
@@ -74,12 +77,12 @@ class RecidivasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def recidiva_params
-      params.require(:recidiva).permit(:unidade_saude,:forma_clinica_alta,:forma_clinica_suspeita,:classificacao_operacional_suspeita, :prontuario, :data_diagnostico, :classificacao_operacional, :forma_clinica, :baciloscopia, :baciloscopia_lb,
+      params.require(:recidiva).permit(:paciente_id,:unidade_saude,:forma_clinica_alta,:forma_clinica_suspeita,:classificacao_operacional_suspeita, :prontuario, :data_diagnostico, :classificacao_operacional, :forma_clinica, :baciloscopia, :baciloscopia_lb,
                                        :grau_incapacidade, :inicio_tratamento, :esquema_terapeutico,
                                        :tempo_tratamento, :doses, :regularidade, :termino_tratamento,
                                        :tratamento_observacoes,:grau_incapacidade_suspeita, :tempo_alta_cura, :data_primeiros_sintomas,
                                        :baciloscopia_suspeita, :baciloscopia_lb_suspeita, :grau_incapacidade_alta,
-                                       :classificacao_operacional_alta, :notificacao_id,
+                                       :classificacao_operacional_alta,
                                        nervos_recidivas_attributes:[:id,:nervo,:recidiva_id,:momento,:_destroy],
                                        nervos_recidivas_alta_attributes:[:id,:nervo,:recidiva_id,:momento,:_destroy],
                                        dermatologico_recidivas_attributes:[:id,:dermatologica_id,:momento,:recidiva_id,:_destroy],

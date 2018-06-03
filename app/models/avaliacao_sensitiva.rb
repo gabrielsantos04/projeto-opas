@@ -53,8 +53,11 @@
 
 class AvaliacaoSensitiva < ApplicationRecord
   belongs_to :avaliacao_notificacao
-  has_many :marcacaos
+  has_many :marcacaos, dependent: :destroy
   has_one :paciente, through: :avaliacao_notificacao
+  has_many :sensitiva_images, dependent: :destroy
 
   accepts_nested_attributes_for :marcacaos, allow_destroy: true
+
+  validates_presence_of AvaliacaoSensitiva.attribute_names - %w(id created_at updated_at avaliacao_notificacao_id), on: :update
 end

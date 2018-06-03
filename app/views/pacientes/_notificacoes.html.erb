@@ -5,6 +5,8 @@
     <th>Data</th>
     <th>Modo de entrada</th>
     <th>Modo de detecção</th>
+    <th>Gerada por</th>
+
 
   </tr>
   </thead>
@@ -17,6 +19,13 @@
         <td><%= notificacao.data %></td>
         <td><%= notificacao.modo_entrada_text %></td>
         <td><%= notificacao.modo_deteccao_text %></td>
+        <td>
+          <% if notificacao.recidiva_id.present? %>
+            <%= link_to "Recidiva", recidiva_path(notificacao.recidiva) %>
+          <% else %>
+              <%= link_to "Avaliação", avaliacao_notificacao_path(notificacao.avaliacao_notificacao) %>
+          <% end %>
+        </td>
 
 
       </tr>

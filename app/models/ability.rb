@@ -5,7 +5,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.administrador?
       can :manage, :all
-    else
+    elsif user.municipio?
       can :create, Paciente
       can :manage, Paciente do |p|
         p.cidade == user.cidade
@@ -30,7 +30,18 @@ class Ability
       can [:show,:edit,:update,:destroy], AvaliacaoSensitiva do |p|
         p.paciente.cidade == user.cidade
       end
+    else
+      can :create, Paciente
+      can :manage, Paciente do |p|
+        p.cidade == user.cidade
+      end
+
+      can :create, Recidiva
+      can :manage, Recidiva
+
+      can :show, :all
     end
+
 
   end
 end

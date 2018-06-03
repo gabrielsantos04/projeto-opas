@@ -16,35 +16,36 @@
 
 
     <%= f.select :classificacao_operacional, @classificacoes_operacionais, {prompt: true} %>
-    <%= f.label :classificacao_operacional %>
+    <%= f.label :classificacao_operacional, "Classificação Operacional" %>
   </div>
 
   <div class="row">
-    <div class="input-field col s6">
+    <div class="input col s6">
 
       <%= f.label :inicio_pqt, "Início PQT" %>
-      <%= f.text_field :inicio_pqt, class:"datepicker" %>
+      <%= f.date_field :inicio_pqt %>
+
 
     </div>
 
-    <div class="input-field col s6">
+    <div class="input col s6">
 
       <%= f.label :alta_pqt, "Alta PQT" %>
-      <%= f.text_field :alta_pqt, class:"datepicker"  %>
+      <%= f.date_field :alta_pqt  %>
 
     </div>
   </div>
 
   <div class="input-field">
 
-    <%= f.label :profissao %>
+    <%= f.label :profissao, "Profissão" %>
     <%= f.text_field :profissao %>
     
   </div>
 
   <div class="input-field">
 
-    <%= f.label :unidade_saude %>
+    <%= f.label :unidade_saude, "Unidade de Saúde" %>
     <%= f.text_field :unidade_saude %>
     
   </div>
@@ -56,7 +57,7 @@
 
 
       <%= f.check_box :atividades_orientadas %>
-      <%= f.label :atividades_orientadas %>
+      <%= f.label :atividades_orientadas, "Atividades Orientadas" %>
 
     </div>
     <div class="input-field col s4">
@@ -81,7 +82,7 @@
   <br>
   <div class="row input-field">
 
-    <%= f.label :encaminhamentos %>
+    <%= f.label :encaminhamentos, "Encaminhamentos" %>
     <%= f.text_field :encaminhamentos %>
     
   </div>
@@ -112,31 +113,304 @@
 
 
   <%= f.hidden_field :notificacao_id %>
+  <%= f.hidden_field :paciente_id %>
+  <%= f.hidden_field :inicial %>
 
   <!-- Episodio Reacional -->
 
-  <div class="card">
-    <div class="card-content">
+  <div class="card" style="overflow: visible;">
+    <div class="card-content" style="overflow: visible;">
       <span class="card-title">Avaliação Neurológica Simplificada</span>
       <%= f.fields_for :avaliacao_neurologicas do |esq| %>
           <div class="row">
-            <div class="col s12 l4 input">
-              <%= esq.label :queixa_id, "Queixa" %>
-              <%#= esq.select :queixa_id, @queixas, {prompt: true}, {class: "browser-default select2"} %>
-              <%= esq.grouped_collection_select :queixa_id, CategoriaQueixa.all,:queixas,:nome, :id, :nome,{prompt:true},{class:"browser-default select2"} %>
+            <div class="row">
+              <div class="col s12 l2">
+                <%= esq.label :data, "Data" %>
+                <%= esq.text_field :data, class:"datepicker" %>
+              </div>
             </div>
-            <div class="col s6 l2 input-field">
+            <b>OLHOS</b><br>
+            <div class="row">
+              <div class="col s12 l4 input-field">Fecha olhos sem força (mm)</div>
+              <div class="col s6 l3 input-field">
+                <%= esq.label :olhos_sem_forca_d, "D" %>
+                <%= esq.number_field :olhos_sem_forca_d %>
+              </div>
+              <div class="col s6 l3 input-field">
+                <%= esq.label :olhos_sem_forca_e, "E" %>
+                <%= esq.number_field :olhos_sem_forca_e %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Fecha olhos com força (mm)</div>
+              <div class="col s6 l3 input-field">
+                <%= esq.label :olhos_com_forca_d, "D" %>
+                <%= esq.number_field :olhos_com_forca_d %>
+              </div>
+              <div class="col s6 l3 input-field">
+                <%= esq.label :olhos_com_forca_e, "E" %>
+                <%= esq.number_field :olhos_com_forca_e %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Triquíase (S/N)</div>
+              <div class="col s6 l3 input-field">
 
-              <%= esq.label :direito, "Direito" %>
-              <%= esq.text_field :direito %>
+                <%= esq.select :triquiase_d,["S","N"],{prompt: true} %>
+                <%= esq.label :triquiase_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :triquiase_e,["S","N"],{prompt: true} %>
+                <%= esq.label :triquiase_e, "E" %>
+              </div>
             </div>
-            <div class="col s6 l2 input-field">
-              <%= esq.label :esquerdo,"Esquerdo" %>
-              <%= esq.text_field :esquerdo %>
+            <div class="row">
+              <div class="col s12 l4 input-field">Ectrópio (S/N)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :ectropio_d,["S","N"],{prompt: true} %>
+                <%= esq.label :ectropio_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :ectropio_e,["S","N"],{prompt: true} %>
+                <%= esq.label :ectropio_e, "E" %>
+              </div>
             </div>
-            <div class="col s12 l2">
-              <%= esq.label :data, "Data" %>
-              <%= esq.text_field :data, class:"datepicker" %>
+            <div class="row">
+              <div class="col s12 l4 input-field">Catarata (S/N)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :catarata_d,["S","N"],{prompt: true} %>
+                <%= esq.label :catarata_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :catarata_e,["S","N"],{prompt: true} %>
+                <%= esq.label :catarata_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Dimin. Sensibilidade da Córnea (S/N)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :sensibilidade_cornea_d,["S","N"],{prompt: true} %>
+                <%= esq.label :sensibilidade_cornea_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :sensibilidade_cornea_e,["S","N"],{prompt: true} %>
+                <%= esq.label :sensibilidade_cornea_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Opacidade Corneana Central (S/N)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :opacidade_corneana_d,["S","N"],{prompt: true} %>
+                <%= esq.label :opacidade_corneana_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :opacidade_corneana_e,["S","N"],{prompt: true} %>
+                <%= esq.label :opacidade_corneana_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Acuidade Visual</div>
+              <div class="col s6 l3 input-field">
+                <%= esq.label :acuidade_visual_d, "D" %>
+                <%= esq.number_field :acuidade_visual_d, step: :any %>
+              </div>
+              <div class="col s6 l3 input-field">
+                <%= esq.label :acuidade_visual_e, "E" %>
+                <%= esq.number_field :acuidade_visual_e, step: :any %>
+              </div>
+            </div>
+            <b>NARIZ</b><br>
+            <div class="row">
+              <div class="col s12 l4 input-field">Ressecamento (S/N)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :ressecamento_d,["S","N"],{prompt: true} %>
+                <%= esq.label :ressecamento_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :ressecamento_e,["S","N"],{prompt: true} %>
+                <%= esq.label :ressecamento_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Feridas (S/N)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :feridas_d,["S","N"],{prompt: true} %>
+                <%= esq.label :feridas_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :feridas_e,["S","N"],{prompt: true} %>
+                <%= esq.label :feridas_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Perfuração de septo (S/N)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :perfuracao_septo_d,["S","N"],{prompt: true} %>
+                <%= esq.label :perfuracao_septo_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :perfuracao_septo_e,["S","N"],{prompt: true} %>
+                <%= esq.label :perfuracao_septo_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+              <span style="font-size: 10px"><b>Legenda: S/N:</b> SIM/NÃO, <b>mm:</b> MILIMETROS, <b>ACUIDADE VISUAL:</b> ANOTAR RESULTADO DO TESTE COM ESCALA DE SNELLEN OU CONTAGEM DE DEDOS </span> <br>
+              </div>
+            </div>
+            <b>MEMBROS SUPERIORES</b><br>
+            <div class="row">
+              <div class="col s12 l4 input-field">Nervo Radial (N / E / D / C)</div>
+              <div class="col s6 l3 input-field">
+                <%= esq.label :nervo_radial_d, "D" %>
+                <%= esq.text_field :nervo_radial_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4%>
+
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.text_field :nervo_radial_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4%>
+                <%= esq.label :nervo_radial_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Nervo Ulnar (N / E / D / C)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.text_field :nervo_ulnar_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4%>
+                <%= esq.label :nervo_ulnar_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.text_field :nervo_ulnar_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+                <%= esq.label :nervo_ulnar_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Nervo Mediano (N / E / D / C)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.text_field :nervo_mediano_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+                <%= esq.label :nervo_mediano_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.text_field :nervo_mediano_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+                <%= esq.label :nervo_mediano_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Abdução do 5º dedo(abrir dedo mínimo)(0 a 5)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :abducao_5_dedo_d,["0","1","2","3","4","5"],{prompt: true} %>
+                <%= esq.label :abducao_5_dedo_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :abducao_5_dedo_e,["0","1","2","3","4","5"],{prompt: true} %>
+                <%= esq.label :abducao_5_dedo_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Abdução do polegar(elevar o polegar)(0 a 5)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :abducao_polegar_d,["0","1","2","3","4","5"],{prompt: true} %>
+                <%= esq.label :abducao_polegar_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :abducao_polegar_e,["0","1","2","3","4","5"],{prompt: true} %>
+                <%= esq.label :abducao_polegar_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Extensores do punho(levantar punho)(0 a 5)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :extensores_punho_d,["0","1","2","3","4","5"],{prompt: true} %>
+                <%= esq.label :extensores_punho_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :extensores_punho_e,["0","1","2","3","4","5"],{prompt: true} %>
+                <%= esq.label :extensores_punho_e, "E" %>
+              </div>
+            </div>
+            <b>MEMBROS INFERIORES</b><br>
+            <div class="row">
+              <div class="col s12 l4 input-field">Nervo Fibular (N / E / D / C)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.text_field :nervo_fibular_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+                <%= esq.label :nervo_fibular_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.text_field :nervo_fibular_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+                <%= esq.label :nervo_fibular_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Nervo Tibial Posterior (N / E / D / C)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.text_field :nervo_tibial_d, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+                <%= esq.label :nervo_tibial_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.text_field :nervo_tibial_e, class:"nedc",style: 'text-transform: uppercase;',maxlength:4 %>
+                <%= esq.label :nervo_tibial_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Extensão Hálux(levantar levantar dedão p/ cima)(0 a 5)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :extensao_halux_d,["0","1","2","3","4","5"],{prompt: true} %>
+                <%= esq.label :extensao_halux_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :extensao_halux_e,["0","1","2","3","4","5"],{prompt: true} %>
+                <%= esq.label :extensao_halux_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l4 input-field">Dorsiflexão do pé(puxar pé p/ si)(0 a 5)</div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :dorsiflexao_pe_d,["0","1","2","3","4","5"],{prompt: true} %>
+                <%= esq.label :dorsiflexao_pe_d, "D" %>
+              </div>
+              <div class="col s6 l3 input-field">
+
+                <%= esq.select :dorsiflexao_pe_e,["0","1","2","3","4","5"],{prompt: true} %>
+                <%= esq.label :dorsiflexao_pe_e, "E" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <span style="font-size: 10px"><b>Legenda: N/E/D/C: </b>Normal/Espessado/Dor/Choque;  </span><br>
+                <span style="font-size: 10px"><b>GRAUS DE FORÇA: </b>0 = Paralisado; 1 = Contração; 2 = Movimento Parcial; 3 = Movimento Completo; 4 = Resistência Parcial; 5 = Forte </span><br>
+                <span style="font-size: 10px"><b>Teste de função neural: Abdução do 5º dedo - nervo ulnar; Abdução do polegar - nervo mediano; e Extensão do punho - nervo radial</b></span><br>
+              </div>
             </div>
             <div class="col s4 l1">
               <%= esq.link_to_remove "Remover" %>
@@ -145,7 +419,7 @@
       <% end %>
     </div>
     <div class="card-action">
-      <%= f.link_to_add "Novo Avaliação Neurológica", :avaliacao_neurologicas %>
+      <%= f.link_to_add "#{ avaliacao_notificacao.avaliacao_neurologicas.count > 0 ? "NOVA AVALIAÇÃO NEUROLÓGICA" : "PRIMEIRA AVALIAÇÃO NEUROLÓGICA"}", :avaliacao_neurologicas %>
     </div>
   </div>
 
@@ -153,43 +427,43 @@
 
   <div class="card">
     <div class="card-content">
-      <span class="card-title">Classificação do Grau</span>
+      <span class="card-title">Classificação do Grau de Incapacidade</span>
       <%= f.fields_for :classificacao_graus do |esq| %>
           <div class="row">
             <div class="col s2 input-field">
               <%= esq.label :olho_direito, "Olho Direito" %>
-              <%= esq.number_field :olho_direito %>
+              <%= esq.number_field :olho_direito, max: 2, min: 0, step: 1 %>
             </div>
             <div class="col s2 input-field">
 
               <%= esq.label :olho_esquerdo, "Olho Esquerdo" %>
-              <%= esq.number_field :olho_esquerdo %>
+              <%= esq.number_field :olho_esquerdo, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
               <%= esq.label :mao_direita,"Mão Direita" %>
-              <%= esq.number_field :mao_direita %>
+              <%= esq.number_field :mao_direita, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
               <%= esq.label :mao_esqueda, "Mão Esquerda" %>
-              <%= esq.number_field :mao_esqueda %>
+              <%= esq.number_field :mao_esqueda, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
 
               <%= esq.label :pe_direito, "Pé Direito" %>
-              <%= esq.number_field :pe_direito %>
+              <%= esq.number_field :pe_direito, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
               <%= esq.label :pe_esquerdo,"Pé Esquerdo" %>
-              <%= esq.number_field :pe_esquerdo %>
+              <%= esq.number_field :pe_esquerdo, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
 
               <%= esq.label :maior_grau, "Maior Grau" %>
-              <%= esq.number_field :maior_grau %>
+              <%= esq.number_field :maior_grau, max: 2, min: 0, step: 1  %>
             </div>
             <div class="col s2 input-field">
               <%= esq.label :escore_omp,"Escore OMP" %>
-              <%= esq.number_field :escore_omp %>
+              <%= esq.number_field :escore_omp, max: 12, min: 0, step: 1  %>
             </div>
             <div class="col s2">
               <%= esq.label :data, "Data" %>
@@ -200,9 +474,53 @@
             </div>
           </div>
       <% end %>
+
+
     </div>
     <div class="card-action">
-      <%= f.link_to_add "Novo Classificação do Grau", :classificacao_graus %>
+
+      <%= f.link_to_add "Classificação do Grau de Incapacidade", :classificacao_graus %>
+      <br>
+      <span style="font-size: 10px"><b>Legenda:</b> 0 = Grau Zero, 1 = Grau Um, 2 = Grau Dois.</span> <br>
+      <span style="font-size: 10px"><b>Escore OMP - Olhos, mãos e pés</b> = Soma dos graus atribuídos aos olhos, mãos e pés, varia de 0 a 12.</span>
+      <br>
+      <div class="center-align">
+        <span style="font-size: 15px">PARÂMETRO PARA ATRIBUIÇÃO DO GRAU DE INCAPACIDADES FÍSICAS EM HANSENÍASE</span>
+        <table style="font-size: x-small">
+          <thead>
+          <tr>
+            <th>GRAU</th>
+            <th>CARACTERÍSTICAS</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td >0</td>
+            <td><b>Olhos:</b> Força muscular das pálpebras e sensibilidade da córnea preservadas e conta dedoa a 6 metros
+              ou acuidade visual >=0,1 ou 6:60.<br>
+              <b>Mãos:</b> Força muscular nas mãos preservada e sensibilidade palmas: sente o monofilamento 2g (lilás)
+              ou o toque da ponta de caneta esferográfica. <br>
+              <b>Pés: </b>Força muscular dos pés preservada e sensibilidade plantar: sente o monofilamento 2g (lilás) ou o toque da ponta de caneta esferográfica.</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><b>Olhos: </b>Diminuição da força muscular das pálpebras sem deficiências visíveis e/ou diminuição ou perda da sensibilidade da córnea:
+              resposta demorada ou ausente ao toque do fio dental ou diminuição/ausência do piscar. <br>
+              <b>Mãos: </b>Diminuição da força muscular das mãos sem deficiências visíveis e/ou alteração da sensibilidade palmas: não sente o monofilamento 2g (lilás) ou o toque da ponta de caneta esferográfica.
+              <br>
+              <b>Pés: </b>Diminuição da força muscular dos pés sem deficiências visíveis e/ou alteração da sensibilidade plantar: não sente o monofilamento 2g (lilás) ou o toque da ponta de caneta esferográfica.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><b>Olhos: </b>Deficiência(s) visível(eis) causadas pela hanseníase, como: lagoftalmo; ectrópio; triquíase; opacidade corneana central; iridociclite e/ou não conta dedos a 6 metros ou acuidade visual < 0,1 ou 6:60, excluídas outras causas.
+              <br>
+              <b>Mãos: </b>Deficiência(s) visível(eis) causadas pela hanseníase, como: garras, reabsorção óssea, atrofia muscular, mão caída, contratura, feridas.
+              <br>
+              <b>Pés: </b>Deficiência(s) visível(eis) causadas pela hanseníase, como: garras, reabsorção óssea, atrofia muscular, pé caído, contratura, feridas.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -211,3 +529,13 @@
     <%= f.submit "Salvar", class:"btn" %>
   </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $(".nedc").on("keydown", function(e)
+  {
+
+      if(e.keyCode != 8 && e.keyCode != 68 && e.keyCode != 37 && e.keyCode != 39 && e.keyCode != 78 && e.keyCode != 69&& e.keyCode != 67&& e.keyCode != 46 ) {
+          return false;
+      }
+  })
+</script>
