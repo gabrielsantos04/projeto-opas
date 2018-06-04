@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -23,8 +21,8 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="140" column="71" lean-forward="false" selection-start-line="140" selection-start-column="71" selection-end-line="140" selection-end-column="71" />
+            <state relative-caret-position="379">
+              <caret line="229" column="56" lean-forward="false" selection-start-line="229" selection-start-column="56" selection-end-line="229" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -394,12 +392,12 @@
       <workItem from="1524576075702" duration="35342000" />
       <workItem from="1524834149194" duration="4219000" />
       <workItem from="1525094915214" duration="151000" />
-      <workItem from="1528111987154" duration="476000" />
+      <workItem from="1528111987154" duration="559000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226470000" />
+    <option name="totallyTimeSpent" value="226553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1366" height="708" extended-state="6" />
@@ -790,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="140" column="71" lean-forward="false" selection-start-line="140" selection-start-column="71" selection-end-line="140" selection-end-column="71" />
+        <state relative-caret-position="379">
+          <caret line="229" column="56" lean-forward="false" selection-start-line="229" selection-start-column="56" selection-end-line="229" selection-end-column="56" />
           <folding />
         </state>
       </provider>

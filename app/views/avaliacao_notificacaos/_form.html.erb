@@ -220,12 +220,14 @@
             <div class="row">
               <div class="col s12 l4 input-field">Acuidade Visual</div>
               <div class="col s6 l3 input-field">
-                <%= esq.label :acuidade_visual_d, "D" %>
+
                 <%= esq.select :acuidade_visual_d,["0.1","0.15","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1.0"],{prompt: true} %>
+                <%= esq.label :acuidade_visual_d, "D" %>
               </div>
               <div class="col s6 l3 input-field">
-                <%= esq.label :acuidade_visual_e, "E" %>
+
                 <%= esq.select :acuidade_visual_e,["0.1","0.15","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1.0"],{prompt: true} %>
+                <%= esq.label :acuidade_visual_e, "E" %>
               </div>
             </div>
             <b>NARIZ</b><br>
