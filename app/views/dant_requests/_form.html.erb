@@ -1,0 +1,204 @@
+<%= form_for(dant_request) do |f| %>
+  <% if dant_request.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% dant_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :qtd_hipertensos %>
+    <%= f.number_field :qtd_hipertensos %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :atendimento_hipertensos %>
+    <%= f.number_field :atendimento_hipertensos %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_obitos_hipertensos %>
+    <%= f.number_field :qtd_obitos_hipertensos %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_diabeticos %>
+    <%= f.number_field :qtd_diabeticos %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :atendimento_diabeticos %>
+    <%= f.number_field :atendimento_diabeticos %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_obitos_diabeticos %>
+    <%= f.number_field :qtd_obitos_diabeticos %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_diabeticos_hipertencos %>
+    <%= f.number_field :qtd_diabeticos_hipertencos %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :atendimento_diabeticos_hipertensos %>
+    <%= f.number_field :atendimento_diabeticos_hipertensos %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_tratamento_hemodialise %>
+    <%= f.number_field :qtd_tratamento_hemodialise %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_nph %>
+    <%= f.number_field :qtd_nph %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_frascos_nph %>
+    <%= f.number_field :qtd_frascos_nph %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_regular %>
+    <%= f.number_field :qtd_regular %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_frascos_regular %>
+    <%= f.number_field :qtd_frascos_regular %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_analoga %>
+    <%= f.number_field :qtd_analoga %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_frascos_analoga %>
+    <%= f.number_field :qtd_frascos_analoga %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_tabagista %>
+    <%= f.number_field :qtd_tabagista %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_atendimento_tabagista %>
+    <%= f.number_field :qtd_atendimento_tabagista %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_etilista %>
+    <%= f.number_field :qtd_etilista %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_atendimento_etilista %>
+    <%= f.number_field :qtd_atendimento_etilista %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_obesos %>
+    <%= f.number_field :qtd_obesos %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_obesidade_1 %>
+    <%= f.number_field :qtd_obesidade_1 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_obesidate_2 %>
+    <%= f.number_field :qtd_obesidate_2 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_obesidade_3 %>
+    <%= f.number_field :qtd_obesidade_3 %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :mes %>
+    <%= f.number_field :mes %>
+    
+  </div>
+
+  <div class="input-field">
+    <%= f.collection_select :dant_responsavel_program_id, DantResponsavelProgram.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+  <div class="input-field">
+    <%= f.collection_select :cidade_id, Cidade.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

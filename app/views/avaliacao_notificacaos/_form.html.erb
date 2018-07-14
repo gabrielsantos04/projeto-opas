@@ -134,11 +134,11 @@
               <div class="col s12 l4 input-field">Fecha olhos sem força (mm)</div>
               <div class="col s6 l3 input-field">
                 <%= esq.label :olhos_sem_forca_d, "D" %>
-                <%= esq.number_field :olhos_sem_forca_d %>
+                <%= esq.number_field :olhos_sem_forca_d,{min: 0, max:20} %>
               </div>
               <div class="col s6 l3 input-field">
                 <%= esq.label :olhos_sem_forca_e, "E" %>
-                <%= esq.number_field :olhos_sem_forca_e %>
+                <%= esq.number_field :olhos_sem_forca_e,{min: 0, max:20} %>
               </div>
             </div>
             <div class="row">
@@ -220,12 +220,14 @@
             <div class="row">
               <div class="col s12 l4 input-field">Acuidade Visual</div>
               <div class="col s6 l3 input-field">
+
+                <%= esq.select :acuidade_visual_d,["0.1","0.15","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1.0"],{prompt: true} %>
                 <%= esq.label :acuidade_visual_d, "D" %>
-                <%= esq.number_field :acuidade_visual_d, step: :any %>
               </div>
               <div class="col s6 l3 input-field">
+
+                <%= esq.select :acuidade_visual_e,["0.1","0.15","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1.0"],{prompt: true} %>
                 <%= esq.label :acuidade_visual_e, "E" %>
-                <%= esq.number_field :acuidade_visual_e, step: :any %>
               </div>
             </div>
             <b>NARIZ</b><br>

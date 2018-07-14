@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425172602) do
+ActiveRecord::Schema.define(version: 20180714190503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -195,6 +195,95 @@ ActiveRecord::Schema.define(version: 20180425172602) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["notificacao_id"], name: "index_dados_clinicos_on_notificacao_id"
+  end
+
+  create_table "dant_cidade_regions", force: :cascade do |t|
+    t.bigint "dant_region_id"
+    t.bigint "cidade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cidade_id"], name: "index_dant_cidade_regions_on_cidade_id"
+    t.index ["dant_region_id"], name: "index_dant_cidade_regions_on_dant_region_id"
+  end
+
+  create_table "dant_pacients", force: :cascade do |t|
+    t.string "nome"
+    t.integer "sexo"
+    t.string "endereco"
+    t.string "rg"
+    t.string "cpf"
+    t.integer "idade"
+    t.string "frascos_diarios"
+    t.string "frascos_mensais"
+    t.string "tipo_insulina"
+    t.boolean "hipertenso"
+    t.boolean "diabetico"
+    t.boolean "tabagista"
+    t.boolean "etilista"
+    t.boolean "obeso"
+    t.integer "grau_obesidade"
+    t.bigint "cidade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cidade_id"], name: "index_dant_pacients_on_cidade_id"
+  end
+
+  create_table "dant_regions", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dant_request_pacients", force: :cascade do |t|
+    t.bigint "dant_request_id"
+    t.bigint "dant_pacient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dant_pacient_id"], name: "index_dant_request_pacients_on_dant_pacient_id"
+    t.index ["dant_request_id"], name: "index_dant_request_pacients_on_dant_request_id"
+  end
+
+  create_table "dant_requests", force: :cascade do |t|
+    t.integer "qtd_hipertensos"
+    t.integer "atendimento_hipertensos"
+    t.integer "qtd_obitos_hipertensos"
+    t.integer "qtd_diabeticos"
+    t.integer "atendimento_diabeticos"
+    t.integer "qtd_obitos_diabeticos"
+    t.integer "qtd_diabeticos_hipertencos"
+    t.integer "atendimento_diabeticos_hipertensos"
+    t.integer "qtd_tratamento_hemodialise"
+    t.integer "qtd_nph"
+    t.integer "qtd_frascos_nph"
+    t.integer "qtd_regular"
+    t.integer "qtd_frascos_regular"
+    t.integer "qtd_analoga"
+    t.integer "qtd_frascos_analoga"
+    t.integer "qtd_tabagista"
+    t.integer "qtd_atendimento_tabagista"
+    t.integer "qtd_etilista"
+    t.integer "qtd_atendimento_etilista"
+    t.integer "qtd_obesos"
+    t.integer "qtd_obesidade_1"
+    t.integer "qtd_obesidate_2"
+    t.integer "qtd_obesidade_3"
+    t.integer "mes"
+    t.bigint "dant_responsavel_program_id"
+    t.bigint "cidade_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cidade_id"], name: "index_dant_requests_on_cidade_id"
+    t.index ["dant_responsavel_program_id"], name: "index_dant_requests_on_dant_responsavel_program_id"
+  end
+
+  create_table "dant_responsavel_programs", force: :cascade do |t|
+    t.string "nome"
+    t.string "cargo"
+    t.bigint "cidade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cidade_id"], name: "index_dant_responsavel_programs_on_cidade_id"
   end
 
   create_table "dermatologicas", force: :cascade do |t|
@@ -449,6 +538,14 @@ ActiveRecord::Schema.define(version: 20180425172602) do
   add_foreign_key "conduta_recidivas", "recidivas"
   add_foreign_key "contato_avaliacaos", "notificacao_contatos"
   add_foreign_key "dados_clinicos", "notificacaos"
+  add_foreign_key "dant_cidade_regions", "cidades"
+  add_foreign_key "dant_cidade_regions", "dant_regions"
+  add_foreign_key "dant_pacients", "cidades"
+  add_foreign_key "dant_request_pacients", "dant_pacients"
+  add_foreign_key "dant_request_pacients", "dant_requests"
+  add_foreign_key "dant_requests", "cidades"
+  add_foreign_key "dant_requests", "dant_responsavel_programs"
+  add_foreign_key "dant_responsavel_programs", "cidades"
   add_foreign_key "dermatologico_recidivas", "dermatologicas"
   add_foreign_key "dermatologico_recidivas", "recidivas"
   add_foreign_key "diagnostico_recidivas", "diagnosticos"

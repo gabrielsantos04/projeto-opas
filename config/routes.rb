@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :dant_requests
+  resources :dant_responsavel_programs
+  resources :dant_regions
+  resources :dant_pacients
   devise_for :users
   resources :users
   resources :condutas

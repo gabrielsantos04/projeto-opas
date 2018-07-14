@@ -1,0 +1,167 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+      <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Qtd hipertensos</th>
+            <th>Atendimento hipertensos</th>
+            <th>Qtd obitos hipertensos</th>
+            <th>Qtd diabeticos</th>
+            <th>Atendimento diabeticos</th>
+            <th>Qtd obitos diabeticos</th>
+            <th>Qtd diabeticos hipertencos</th>
+            <th>Atendimento diabeticos hipertensos</th>
+            <th>Qtd tratamento hemodialise</th>
+            <th>Qtd nph</th>
+            <th>Qtd frascos nph</th>
+            <th>Qtd regular</th>
+            <th>Qtd frascos regular</th>
+            <th>Qtd analoga</th>
+            <th>Qtd frascos analoga</th>
+            <th>Qtd tabagista</th>
+            <th>Qtd atendimento tabagista</th>
+            <th>Qtd etilista</th>
+            <th>Qtd atendimento etilista</th>
+            <th>Qtd obesos</th>
+            <th>Qtd obesidade 1</th>
+            <th>Qtd obesidate 2</th>
+            <th>Qtd obesidade 3</th>
+            <th>Mes</th>
+            <th>Dant responsavel program</th>
+            <th>Cidade</th>
+            <th>Status</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @dant_requests.each do |dant_request| %>
+    <tr>
+              
+          <td><%= link_to dant_request.qtd_hipertensos,dant_request %></td>
+        
+              
+
+          <td><%= dant_request.atendimento_hipertensos %></td>
+        
+              
+
+          <td><%= dant_request.qtd_obitos_hipertensos %></td>
+        
+              
+
+          <td><%= dant_request.qtd_diabeticos %></td>
+        
+              
+
+          <td><%= dant_request.atendimento_diabeticos %></td>
+        
+              
+
+          <td><%= dant_request.qtd_obitos_diabeticos %></td>
+        
+              
+
+          <td><%= dant_request.qtd_diabeticos_hipertencos %></td>
+        
+              
+
+          <td><%= dant_request.atendimento_diabeticos_hipertensos %></td>
+        
+              
+
+          <td><%= dant_request.qtd_tratamento_hemodialise %></td>
+        
+              
+
+          <td><%= dant_request.qtd_nph %></td>
+        
+              
+
+          <td><%= dant_request.qtd_frascos_nph %></td>
+        
+              
+
+          <td><%= dant_request.qtd_regular %></td>
+        
+              
+
+          <td><%= dant_request.qtd_frascos_regular %></td>
+        
+              
+
+          <td><%= dant_request.qtd_analoga %></td>
+        
+              
+
+          <td><%= dant_request.qtd_frascos_analoga %></td>
+        
+              
+
+          <td><%= dant_request.qtd_tabagista %></td>
+        
+              
+
+          <td><%= dant_request.qtd_atendimento_tabagista %></td>
+        
+              
+
+          <td><%= dant_request.qtd_etilista %></td>
+        
+              
+
+          <td><%= dant_request.qtd_atendimento_etilista %></td>
+        
+              
+
+          <td><%= dant_request.qtd_obesos %></td>
+        
+              
+
+          <td><%= dant_request.qtd_obesidade_1 %></td>
+        
+              
+
+          <td><%= dant_request.qtd_obesidate_2 %></td>
+        
+              
+
+          <td><%= dant_request.qtd_obesidade_3 %></td>
+        
+              
+
+          <td><%= dant_request.mes %></td>
+        
+              
+
+          <td><%= dant_request.dant_responsavel_program %></td>
+        
+              
+
+          <td><%= dant_request.cidade %></td>
+        
+              
+
+          <td><%= dant_request.status %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@dant_requests)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_dant_request_path, class:"btn" %>

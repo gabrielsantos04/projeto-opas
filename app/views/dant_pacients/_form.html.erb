@@ -1,0 +1,129 @@
+<%= form_for(dant_pacient) do |f| %>
+  <% if dant_pacient.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% dant_pacient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :sexo %>
+    <%= f.number_field :sexo %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :endereco %>
+    <%= f.text_field :endereco %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :rg %>
+    <%= f.text_field :rg %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :cpf %>
+    <%= f.text_field :cpf %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :idade %>
+    <%= f.number_field :idade %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :frascos_diarios %>
+    <%= f.text_field :frascos_diarios %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :frascos_mensais %>
+    <%= f.text_field :frascos_mensais %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :tipo_insulina %>
+    <%= f.text_field :tipo_insulina %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :hipertenso %>
+    <%= f.check_box :hipertenso %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :diabetico %>
+    <%= f.check_box :diabetico %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :tabagista %>
+    <%= f.check_box :tabagista %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :etilista %>
+    <%= f.check_box :etilista %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :obeso %>
+    <%= f.check_box :obeso %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :grau_obesidade %>
+    <%= f.number_field :grau_obesidade %>
+    
+  </div>
+
+  <div class="input-field">
+    <%= f.collection_select :cidade_id, Cidade.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>
