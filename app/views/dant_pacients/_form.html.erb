@@ -1,0 +1,152 @@
+<%= form_for(dant_pacient) do |f| %>
+  <% if dant_pacient.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% dant_pacient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  <div class="row">
+    <div class="input-field col s10">
+
+      <%= f.label :nome %>
+      <%= f.text_field :nome %>
+
+    </div>
+
+    <div class="input-field col s2">
+
+
+      <%= f.select :sexo, DantPacient.sexo.options, prompt: true %>
+      <%= f.label :sexo %>
+
+    </div>
+  </div>
+
+  <div class="input">
+    <%= f.label :cidade_id, "Cidade" %>
+    <%= f.select :cidade_id, @cidades, {prompt: true}, {class:"browser-default select2"} %>
+
+  </div>
+  <div class="input-field">
+
+    <%= f.label :endereco %>
+    <%= f.text_field :endereco %>
+    
+  </div>
+
+  <div class="row">
+    <div class="input-field col l6 s12">
+
+      <%= f.label :rg %>
+      <%= f.text_field :rg %>
+
+    </div>
+
+    <div class="input-field  col l6 s12">
+
+      <%= f.label :cpf %>
+      <%= f.text_field :cpf %>
+
+    </div>
+  </div>
+  <div class="input-field">
+
+    <%= f.label :idade %>
+    <%= f.number_field :idade %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :frascos_diarios %>
+    <%= f.number_field :frascos_diarios, step: 1 %>
+    
+  </div>
+
+  <div class="input-field">
+
+
+    <%= f.select :tipo_insulina , DantPacient.tipo_insulina.options , prompt: true%>
+    <%= f.label :tipo_insulina %>
+    
+  </div>
+
+  <div class="row">
+    <div class="input-field col l3">
+
+
+      <%= f.check_box :hipertenso %>
+      <%= f.label :hipertenso %>
+
+    </div>
+
+    <div class="input-field  col l3">
+
+
+      <%= f.check_box :diabetico %>
+      <%= f.label :diabetico %>
+
+    </div>
+
+    <div class="input-field  col l3">
+
+
+      <%= f.check_box :tabagista %>
+      <%= f.label :tabagista %>
+
+    </div>
+
+    <div class="input-field  col l3">
+
+
+      <%= f.check_box :etilista %>
+      <%= f.label :etilista %>
+
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="input-field col l3">
+
+
+      <%= f.check_box :obeso %>
+      <%= f.label :obeso %>
+    </div>
+
+    <div class="input-field col l6">
+
+      <%= f.select :grau_obesidade, DantPacient.grau_obesidade.options, prompt: true  %>
+      <%= f.label :grau_obesidade %>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col l3">
+
+
+      <%= f.check_box :obito %>
+      <%= f.label :obito %>
+    </div>
+
+    <div class="input-field col l6">
+
+      <%= f.label :data_obito %>
+      <%= f.text_field :data_obito, class:"datepicker" %>
+
+
+    </div>
+  </div>
+
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

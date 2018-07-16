@@ -1,0 +1,23 @@
+<div class="card">
+  <h1 class="center-align">Região</h1>
+</div>
+<div class="card-panel">
+	
+<p>
+  <strong>Nome:</strong>
+  <%= @dant_region.nome %>
+</p>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title"> <b>Cidades</b>  </span>
+        <div class="row">
+          <% @dant_region.dant_cidade_regions.each do |c| %>
+            <div class="col s3"><%= c.cidade %></div>
+          <% end  %>
+        </div>
+    </div>
+  </div>
+
+</div>
+<%= link_to 'Voltar', dant_regions_path, class:"btn" %>

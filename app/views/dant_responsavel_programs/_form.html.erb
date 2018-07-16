@@ -1,0 +1,39 @@
+<%= form_for(dant_responsavel_program) do |f| %>
+  <% if dant_responsavel_program.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% dant_responsavel_program.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :cargo %>
+    <%= f.text_field :cargo %>
+    
+  </div>
+
+  <div class="input">
+    <%= f.label :cargo %>
+    <%= f.select :cidade_id, @cidades, {prompt: true}, {class:"browser-default select2"} %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

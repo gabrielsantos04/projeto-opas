@@ -1,0 +1,133 @@
+<div class="card">
+  <h1 class="center-align">Paciente</h1>
+</div>
+<div class="card-panel">
+
+  <div class="row">
+    <div class="col s12 l6">
+      <p>
+        <strong>Nome:</strong>
+        <%= @dant_pacient.nome %>
+      </p>
+    </div>
+    <div class="col s12 l2">
+      <p>
+        <strong>Sexo:</strong>
+        <%= @dant_pacient.sexo %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p>
+        <strong>Cidade:</strong>
+        <%= @dant_pacient.cidade %>
+      </p>
+    </div>
+    <div class="col">
+      <p>
+        <strong>Endereço:</strong>
+        <%= @dant_pacient.endereco %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 l3">
+      <p>
+        <strong>Idade:</strong>
+        <%= @dant_pacient.idade %>
+      </p>
+    </div>
+    <div class="col s12 l3">
+      <p>
+        <strong>RG:</strong>
+        <%= @dant_pacient.rg %>
+      </p>
+    </div>
+    <div class="col s12 l3">
+      <p>
+        <strong>CPF:</strong>
+        <%= @dant_pacient.cpf %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 l3">
+      <p>
+        <strong>Frascos diários:</strong>
+        <%= @dant_pacient.frascos_diarios %>
+      </p>
+    </div>
+    <div class="col s12 l3">
+      <p>
+        <strong>Frascos mensais:</strong>
+        <%= @dant_pacient.frascos_mensais %>
+      </p>
+    </div>
+  </div>
+
+  <p>
+    <strong>Tipo insulina:</strong>
+    <%= @dant_pacient.tipo_insulina %>
+  </p>
+  <div class="row">
+    <div class="col s12 l3">
+      <p>
+        <strong>Hipertenso:</strong>
+        <%= @dant_pacient.hipertenso == true ? "SIM" : "NÃO" %>
+      </p>
+    </div>
+    <div class="col s12 l3">
+      <p>
+        <strong>Diabetico:</strong>
+        <%= @dant_pacient.diabetico == true ? "SIM" : "NÃO" %>
+      </p>
+    </div>
+    <div class="col s12 l3">
+      <p>
+        <strong>Tabagista:</strong>
+        <%= @dant_pacient.tabagista == true ? "SIM" : "NÃO" %>
+      </p>
+    </div>
+    <div class="col s12 l3">
+      <p>
+        <strong>Etilista:</strong>
+        <%= @dant_pacient.etilista  == true ? "SIM" : "NÃO"%>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 l3">
+      <p>
+        <strong>Obeso:</strong>
+        <%= @dant_pacient.obeso  == true ? "SIM" : "NÃO"%>
+      </p>
+    </div>
+    <div class="col s12 l3">
+      <p>
+        <strong>Grau obesidade:</strong>
+        <%= @dant_pacient.grau_obesidade %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 l3">
+      <p>
+        <strong>Óbito:</strong>
+        <%= @dant_pacient.obito  == true ? "SIM" : "NÃO"%>
+      </p>
+    </div>
+    <div class="col s12 l3">
+      <p>
+        <strong>Data Óbito:</strong>
+        <%= @dant_pacient.data_obito %>
+      </p>
+    </div>
+  </div>
+
+
+</div>
+<%= link_to 'Voltar', dant_pacients_path, class:"btn" %>

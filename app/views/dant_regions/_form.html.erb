@@ -1,0 +1,48 @@
+<%= nested_form_for(dant_region) do |f| %>
+  <% if dant_region.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% dant_region.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+
+  
+  <div class="input-field">
+
+    <%= f.label :nome,"Nome" %>
+    <%= f.text_field :nome %>
+    
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Cidades</span>
+      <%= f.fields_for :dant_cidade_regions do |esq| %>
+          <div class="row">
+            <div class="col s8 input">
+              <%= esq.label :cidade_id, "Cidade" %>
+              <%= esq.select :cidade_id, @cidades, {prompt: true}, {class:"browser-default select2"} %>
+
+            </div>
+            <div class="col s4">
+              <%= esq.link_to_remove "Remover" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <div class="card-action">
+      <%= f.link_to_add "Inserir Cidade", :dant_cidade_regions %>
+    </div>
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

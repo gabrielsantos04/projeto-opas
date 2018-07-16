@@ -1,0 +1,50 @@
+<div class="card">
+  <h1 class="center-align">Pacientes</h1>
+</div>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+          <%= f.text_field :nome_cont, placeholder: "Pesquisar..." %>
+          <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>Cidade</th>
+    <th>Idade</th>
+    <th>Frascos diarios</th>
+    <th>Frascos mensais</th>
+    <th>Tipo insulina</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @dant_pacients.each do |dant_pacient| %>
+      <tr>
+
+        <td><%= link_to dant_pacient.nome,dant_pacient %></td>
+        <td><%= dant_pacient.cidade %></td>
+        <td><%= dant_pacient.idade %></td>
+        <td><%= dant_pacient.frascos_diarios %></td>
+        <td><%= dant_pacient.frascos_mensais %></td>
+        <td><%= dant_pacient.tipo_insulina %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@dant_pacients)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_dant_pacient_path, class:"btn" %>

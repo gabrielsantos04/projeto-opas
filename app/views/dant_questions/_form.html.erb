@@ -1,0 +1,33 @@
+<%= form_for(dant_question) do |f| %>
+  <% if dant_question.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% dant_question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :pergunta %>
+    <%= f.number_field :pergunta %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :texto %>
+    <%= f.text_field :texto %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

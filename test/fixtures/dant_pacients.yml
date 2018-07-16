@@ -1,0 +1,72 @@
+# == Schema Information
+#
+# Table name: dant_pacients
+#
+#  id              :integer          not null, primary key
+#  nome            :string
+#  sexo            :integer
+#  endereco        :string
+#  rg              :string
+#  cpf             :string
+#  idade           :integer
+#  tipo_insulina   :string
+#  hipertenso      :boolean
+#  diabetico       :boolean
+#  tabagista       :boolean
+#  etilista        :boolean
+#  obeso           :boolean
+#  grau_obesidade  :integer
+#  cidade_id       :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  frascos_diarios :integer
+#  frascos_mensais :integer
+#  obito           :boolean
+#  data_obito      :date
+#
+# Indexes
+#
+#  index_dant_pacients_on_cidade_id  (cidade_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (cidade_id => cidades.id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  sexo: 1
+  endereco: MyString
+  rg: MyString
+  cpf: MyString
+  idade: 1
+  frascos_diarios: MyString
+  frascos_mensais: MyString
+  tipo_insulina: MyString
+  hipertenso: false
+  diabetico: false
+  tabagista: false
+  etilista: false
+  obeso: false
+  grau_obesidade: 1
+  cidade: one
+
+two:
+  nome: MyString
+  sexo: 1
+  endereco: MyString
+  rg: MyString
+  cpf: MyString
+  idade: 1
+  frascos_diarios: MyString
+  frascos_mensais: MyString
+  tipo_insulina: MyString
+  hipertenso: false
+  diabetico: false
+  tabagista: false
+  etilista: false
+  obeso: false
+  grau_obesidade: 1
+  cidade: two

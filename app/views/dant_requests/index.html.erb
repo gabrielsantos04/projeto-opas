@@ -1,0 +1,48 @@
+<div class="card">
+  <h1 class="center-align">Solicitações</h1>
+</div>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+          <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+          <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+
+    <th>Mês</th>
+    <th>Ano</th>
+    <th>Responsável</th>
+    <th>Cidade</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @dant_requests.each do |dant_request| %>
+      <tr>
+        <td><%= dant_request.mes %></td>
+        <td><%= dant_request.ano %></td>
+        <td><%= dant_request.dant_responsavel_program %></td>
+        <td><%= dant_request.cidade %></td>
+        <td><%= dant_request.status %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@dant_requests)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_dant_request_path, class:"btn" %>
