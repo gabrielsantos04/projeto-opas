@@ -8,7 +8,6 @@
 #  endereco        :string
 #  rg              :string
 #  cpf             :string
-#  idade           :integer
 #  tipo_insulina   :string
 #  hipertenso      :boolean
 #  diabetico       :boolean
@@ -23,6 +22,7 @@
 #  frascos_mensais :integer
 #  obito           :boolean
 #  data_obito      :date
+#  data_nascimento :date
 #
 # Indexes
 #

@@ -20,4 +20,8 @@
 
 class DantResponsavelProgram < ApplicationRecord
   belongs_to :cidade
+
+  def to_s
+    self.nome
+  end
 end

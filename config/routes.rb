@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :dant_questions
-  resources :dant_requests
+  resources :dant_requests do
+    member do
+      get "enviar"
+    end
+  end
   resources :dant_responsavel_programs
   resources :dant_regions
   resources :dant_pacients

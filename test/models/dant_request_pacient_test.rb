@@ -9,6 +9,7 @@
 #  updated_at      :datetime         not null
 #  frascos_diarios :integer
 #  frascos_mensais :integer
+#  idade           :integer
 #
 # Indexes
 #

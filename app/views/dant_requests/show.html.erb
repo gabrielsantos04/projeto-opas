@@ -1,139 +1,218 @@
 <div class="card-panel">
-	
+
+  <p>
+    <strong>Mês:</strong>
+    <%= @dant_request.mes %>
+  </p>
+
+  <p>
+    <strong>Responsável pelo Programa:</strong>
+    <%= @dant_request.dant_responsavel_program %>
+  </p>
+
+  <p>
+    <strong>Cidade:</strong>
+    <%= @dant_request.cidade %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= @dant_request.status %>
+  </p>
+
+
 <p>
-  <strong>Qtd hipertensos:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(1) %>:</strong>
   <%= @dant_request.qtd_hipertensos %>
 </p>
 
 <p>
-  <strong>Atendimento hipertensos:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(2) %>:</strong>
   <%= @dant_request.atendimento_hipertensos %>
 </p>
 
 <p>
-  <strong>Qtd obitos hipertensos:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(3) %>:</strong>
   <%= @dant_request.qtd_obitos_hipertensos %>
 </p>
 
 <p>
-  <strong>Qtd diabeticos:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(4) %>:</strong>
   <%= @dant_request.qtd_diabeticos %>
 </p>
 
 <p>
-  <strong>Atendimento diabeticos:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(5) %>:</strong>
   <%= @dant_request.atendimento_diabeticos %>
 </p>
 
 <p>
-  <strong>Qtd obitos diabeticos:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(6) %>:</strong>
   <%= @dant_request.qtd_obitos_diabeticos %>
 </p>
 
 <p>
-  <strong>Qtd diabeticos hipertencos:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(7) %>:</strong>
   <%= @dant_request.qtd_diabeticos_hipertencos %>
 </p>
 
 <p>
-  <strong>Atendimento diabeticos hipertensos:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(8) %>:</strong>
   <%= @dant_request.atendimento_diabeticos_hipertensos %>
 </p>
 
 <p>
-  <strong>Qtd tratamento hemodialise:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(9) %>:</strong>
   <%= @dant_request.qtd_tratamento_hemodialise %>
 </p>
 
 <p>
-  <strong>Qtd nph:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(10) %>:</strong>
   <%= @dant_request.qtd_nph %>
 </p>
 
 <p>
-  <strong>Qtd frascos nph:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(11) %>:</strong>
   <%= @dant_request.qtd_frascos_nph %>
 </p>
 
 <p>
-  <strong>Qtd regular:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(12) %>:</strong>
   <%= @dant_request.qtd_regular %>
 </p>
 
 <p>
-  <strong>Qtd frascos regular:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(13) %>:</strong>
   <%= @dant_request.qtd_frascos_regular %>
 </p>
 
-<p>
+<!--<p>
   <strong>Qtd analoga:</strong>
-  <%= @dant_request.qtd_analoga %>
+  <%#= @dant_request.qtd_analoga %>
 </p>
 
 <p>
   <strong>Qtd frascos analoga:</strong>
-  <%= @dant_request.qtd_frascos_analoga %>
-</p>
+  <%#= @dant_request.qtd_frascos_analoga %>
+</p>-->
 
 <p>
-  <strong>Qtd tabagista:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(14) %>:</strong>
   <%= @dant_request.qtd_tabagista %>
 </p>
 
 <p>
-  <strong>Qtd atendimento tabagista:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(15) %>:</strong>
   <%= @dant_request.qtd_atendimento_tabagista %>
 </p>
 
 <p>
-  <strong>Qtd etilista:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(16) %>:</strong>
   <%= @dant_request.qtd_etilista %>
 </p>
 
 <p>
-  <strong>Qtd atendimento etilista:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(17) %>:</strong>
   <%= @dant_request.qtd_atendimento_etilista %>
 </p>
 
 <p>
-  <strong>Qtd obesos:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(18) %>:</strong>
   <%= @dant_request.qtd_obesos %>
 </p>
 
 <p>
-  <strong>Qtd obesidade 1:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(19) %>:</strong>
   <%= @dant_request.qtd_obesidade_1 %>
 </p>
 
 <p>
-  <strong>Qtd obesidate 2:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(20) %>:</strong>
   <%= @dant_request.qtd_obesidate_2 %>
 </p>
 
 <p>
-  <strong>Qtd obesidade 3:</strong>
+  <strong><%= DantQuestion.find_by_pergunta(21) %>:</strong>
   <%= @dant_request.qtd_obesidade_3 %>
 </p>
 
-<p>
-  <strong>Mes:</strong>
-  <%= @dant_request.mes %>
-</p>
+  <p>
+    <strong><%= DantQuestion.find_by_pergunta(22) %>:</strong>
+    <%= @dant_request.soma_participacoes %>
+  </p>
 
-<p>
-  <strong>Dant responsavel program:</strong>
-  <%= @dant_request.dant_responsavel_program %>
-</p>
+  <% if @dant_request.status != :cadastrado %>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Quantidade de frascos sugerido pelo sistemas</span>
+        <table>
+          <thead>
+          <th>Tipo </th>
+          <th>Quantidade</th>
+          </thead>
+          <tbody>
+              <tr>
+                <td>NPH</td>
+                <td><%= @dant_request.qtd_nph_calculada %></td>
+              </tr>
+              <tr>
+                <td>REGULAR</td>
+                <td><%= @dant_request.qtd_regular_calculada %></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
 
-<p>
-  <strong>Cidade:</strong>
-  <%= @dant_request.cidade %>
-</p>
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Pacientes - INSULINA NPH</span>
+        <table>
+          <thead>
+           <th>Nome</th>
+           <th>Idade</th>
+           <th>Frascos Diários</th>
+           <th>Frascos Mensais</th>
+          </thead>
+          <tbody>
+          <% @dant_request.dant_request_pacients.includes(:dant_pacient).where(dant_pacients: {tipo_insulina: "nph"}).each do |p| %>
+            <tr>
+              <td><%= p.dant_pacient %></td>
+              <td><%= p.idade %></td>
+              <td><%= p.frascos_diarios %></td>
+              <td><%= p.frascos_mensais %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @dant_request.status %>
-</p>
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Pacientes - INSULINA REGULAR</span>
+      <table>
+        <thead>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Frascos Diários</th>
+        <th>Frascos Mensais</th>
+        </thead>
+        <tbody>
+        <% @dant_request.dant_request_pacients.includes(:dant_pacient).where(dant_pacients: {tipo_insulina: "regular"}).each do |p| %>
+            <tr>
+              <td><%= p.dant_pacient %></td>
+              <td><%= p.idade %></td>
+              <td><%= p.frascos_diarios %></td>
+              <td><%= p.frascos_mensais %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 </div>
 <%= link_to 'Voltar', dant_requests_path, class:"btn" %>
+<%= link_to 'Enviar', enviar_dant_request_path(@dant_request), class:"btn green" if @dant_request.status == :cadastrado %>

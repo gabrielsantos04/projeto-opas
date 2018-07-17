@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180716154115) do
+ActiveRecord::Schema.define(version: 20180717142216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -212,7 +212,6 @@ ActiveRecord::Schema.define(version: 20180716154115) do
     t.string "endereco"
     t.string "rg"
     t.string "cpf"
-    t.integer "idade"
     t.string "tipo_insulina"
     t.boolean "hipertenso"
     t.boolean "diabetico"
@@ -227,6 +226,7 @@ ActiveRecord::Schema.define(version: 20180716154115) do
     t.integer "frascos_mensais"
     t.boolean "obito"
     t.date "data_obito"
+    t.date "data_nascimento"
     t.index ["cidade_id"], name: "index_dant_pacients_on_cidade_id"
   end
 
@@ -250,6 +250,7 @@ ActiveRecord::Schema.define(version: 20180716154115) do
     t.datetime "updated_at", null: false
     t.integer "frascos_diarios"
     t.integer "frascos_mensais"
+    t.integer "idade"
     t.index ["dant_pacient_id"], name: "index_dant_request_pacients_on_dant_pacient_id"
     t.index ["dant_request_id"], name: "index_dant_request_pacients_on_dant_request_id"
   end
@@ -286,6 +287,10 @@ ActiveRecord::Schema.define(version: 20180716154115) do
     t.datetime "updated_at", null: false
     t.integer "ano"
     t.integer "soma_participacoes"
+    t.datetime "data_envio"
+    t.integer "qtd_nph_calculada"
+    t.integer "qtd_regular_calculada"
+    t.integer "qtd_analoga_calculada"
     t.index ["cidade_id"], name: "index_dant_requests_on_cidade_id"
     t.index ["dant_responsavel_program_id"], name: "index_dant_requests_on_dant_responsavel_program_id"
   end

@@ -34,6 +34,10 @@
 #  updated_at                         :datetime         not null
 #  ano                                :integer
 #  soma_participacoes                 :integer
+#  data_envio                         :datetime
+#  qtd_nph_calculada                  :integer
+#  qtd_regular_calculada              :integer
+#  qtd_analoga_calculada              :integer
 #
 # Indexes
 #

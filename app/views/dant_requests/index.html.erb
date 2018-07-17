@@ -24,6 +24,7 @@
     <th>Responsável</th>
     <th>Cidade</th>
     <th>Status</th>
+    <th>Ações</th>
   </tr>
   </thead>
 
@@ -35,6 +36,7 @@
         <td><%= dant_request.dant_responsavel_program %></td>
         <td><%= dant_request.cidade %></td>
         <td><%= dant_request.status %></td>
+        <td><%= link_to "Visualizar", dant_request %></td>
 
       </tr>
   <% end %>

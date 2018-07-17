@@ -34,6 +34,10 @@
 #  updated_at                         :datetime         not null
 #  ano                                :integer
 #  soma_participacoes                 :integer
+#  data_envio                         :datetime
+#  qtd_nph_calculada                  :integer
+#  qtd_regular_calculada              :integer
+#  qtd_analoga_calculada              :integer
 #
 # Indexes
 #
@@ -50,16 +54,66 @@ class DantRequest < ApplicationRecord
   belongs_to :dant_responsavel_program
   belongs_to :cidade
   has_many :dant_request_pacients, dependent: :destroy
+  has_many :dant_pacients, through: :dant_request_pacients
 
   accepts_nested_attributes_for :dant_request_pacients, allow_destroy: true
 
   extend Enumerize
 
-  enumerize :status, in: [:solicitado, :deferido,:indeferido,:entregue], predicates: true
+  enumerize :status, in: [:cadastrada,:solicitado, :deferido,:indeferido,:entregue], predicates: true
 
   before_create :set_status
 
   def set_status
-    self.status = :solicitado
+    self.status = :cadastrada
+  end
+
+  def calcular_quantidades
+    if self.mes == 3#março
+      if self.data_envio.month <= 3
+        self.qtd_nph_calculada = self.qtd_frascos_nph * 3 #quantidade para 3 meses
+        self.qtd_regular_calculada = self.qtd_frascos_regular * 3 #quantidade para 3 meses
+        #self.qtd_analoga_calculada = self.qtd_frascos_analoga * 3 #quantidade para 3 meses
+      else
+        #utiliza 6 no calculo como referência ao mês de junho
+        self.qtd_nph_calculada = self.qtd_frascos_nph * (6 - self.data_envio.month)  #quantidade para meses restantes
+        self.qtd_regular_calculada = self.qtd_frascos_regular * (6 - self.data_envio.month) #quantidade para  meses restantes
+        #self.qtd_analoga_calculada = self.qtd_frascos_analoga * (6 - self.data_envio.month) #quantidade para meses restantes
+      end
+    elsif self.mes == 6#junho
+      if self.data_envio.month <= 6
+        self.qtd_nph_calculada = self.qtd_frascos_nph * 3 #quantidade para 3 meses
+        self.qtd_regular_calculada = self.qtd_frascos_regular * 3 #quantidade para 3 meses
+        #self.qtd_analoga_calculada = self.qtd_frascos_analoga * 3 #quantidade para 3 meses
+      else
+        #utiliza 9 no calculo como referência ao mês de setembro
+        self.qtd_nph_calculada = self.qtd_frascos_nph * (9 - self.data_envio.month)  #quantidade para meses restantes
+        self.qtd_regular_calculada = self.qtd_frascos_regular * (9 - self.data_envio.month) #quantidade para  meses restantes
+        #self.qtd_analoga_calculada = self.qtd_frascos_analoga * (9 - self.data_envio.month) #quantidade para meses restantes
+      end
+    elsif self.mes == 9 #setembro
+      if self.data_envio.month <= 9
+        self.qtd_nph_calculada = self.qtd_frascos_nph * 3 #quantidade para 3 meses
+        self.qtd_regular_calculada = self.qtd_frascos_regular * 3 #quantidade para 3 meses
+        #self.qtd_analoga_calculada = self.qtd_frascos_analoga * 3 #quantidade para 3 meses
+      else
+        #utiliza 12 no calculo como referência ao mês de dezembro
+        self.qtd_nph_calculada = self.qtd_frascos_nph * (12 - self.data_envio.month)  #quantidade para meses restantes
+        self.qtd_regular_calculada = self.qtd_frascos_regular * (12 - self.data_envio.month) #quantidade para  meses restantes
+        #self.qtd_analoga_calculada = self.qtd_frascos_analoga * (12 - self.data_envio.month) #quantidade para meses restantes
+      end
+    else #dezembro
+      if self.data_envio.month == 12
+        self.qtd_nph_calculada = self.qtd_frascos_nph * 3 #quantidade para 3 meses
+        self.qtd_regular_calculada = self.qtd_frascos_regular * 3 #quantidade para 3 meses
+        #self.qtd_analoga_calculada = self.qtd_frascos_analoga * 3 #quantidade para 3 meses
+      else
+        #utiliza 3 no calculo como referência ao mês de março
+        self.qtd_nph_calculada = self.qtd_frascos_nph * (3 - self.data_envio.month)  #quantidade para meses restantes
+        self.qtd_regular_calculada = self.qtd_frascos_regular * (3 - self.data_envio.month) #quantidade para  meses restantes
+        #self.qtd_analoga_calculada = self.qtd_frascos_analoga * (3 - self.data_envio.month) #quantidade para meses restantes
+      end
+    end
+
   end
 end

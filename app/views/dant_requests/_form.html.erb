@@ -16,7 +16,7 @@
 
 
         <%= f.select :mes, [["MARÇO" , 3],["JUNHO" , 6],["SETEMBRO" , 9],["DEZEMBRO" , 12]],prompt: true %>
-        <%= f.label :mes %>
+        <%= f.label :mes, "MÊS" %>
       </div>
 
       <div class="input">
@@ -106,7 +106,7 @@
       <div class="input-field">
 
         <%= f.label :qtd_frascos_nph, DantQuestion.find_by_pergunta(11) %>
-        <%= f.number_field :qtd_frascos_nph %>
+        <%= f.number_field :qtd_frascos_nph %> <!-- , {readonly: true} -->
 
       </div>
 
@@ -211,19 +211,31 @@
           <span class="card-title">Pacientes</span>
           <%= f.fields_for :dant_request_pacients do |esq| %>
               <div class="row">
-                <div class="col s8 input">
-                  <%= esq.label :dant_pacient_id, "Paciente" %>
-                  <%= esq.select :dant_pacient_id, @pacientes, {prompt: true}, {class:"browser-default select2"} %>
+                <div class="col s4 input">
+                  <%= esq.label :dant_pacient_id, "Paciente" %> <br>
+                  <% if esq.object.dant_pacient_id %>
+                    <strong><%= DantPacient.find(esq.object.dant_pacient_id) %></strong>
+                  <% end %>
+                  <%= esq.hidden_field :dant_pacient_id%>
+                  <%= esq.hidden_field :idade%>
 
                 </div>
+                <div class="col s2">
+                  <%= esq.label :frascos_diarios, "QTD Diária" %>
+                  <%= esq.number_field :frascos_diarios, step: 1 %>
+                </div>
+                <div class="col s2">
+                  <%= esq.label :frascos_mensais, "QTD Mensal" %>
+                  <%= esq.number_field :frascos_mensais, step: 1 %>
+                </div>
                 <div class="col s4">
-                  <%= esq.link_to_remove "Remover" %>
+                  <%#= esq.link_to_remove "Remover" %>
                 </div>
               </div>
           <% end %>
         </div>
         <div class="card-action">
-          <%= f.link_to_add "Inserir Paciente", :dant_request_pacients %>
+          <%#= f.link_to_add "Inserir Paciente", :dant_request_pacients %>
         </div>
       </div>
     </div>
