@@ -20,127 +20,133 @@
     <%= @dant_request.status.upcase %>
   </p>
 
+<table>
+  <thead>
+  <th>DADOS</th>
+  <th>Quantidade</th>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(1) %></td>
+    <td><%= @dant_request.qtd_hipertensos %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(1) %>:</strong>
-  <%= @dant_request.qtd_hipertensos %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(2) %></td>
+    <td><%= @dant_request.atendimento_hipertensos %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(2) %>:</strong>
-  <%= @dant_request.atendimento_hipertensos %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(3) %></td>
+    <td><%= @dant_request.qtd_obitos_hipertensos %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(3) %>:</strong>
-  <%= @dant_request.qtd_obitos_hipertensos %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(4) %></td>
+    <td><%= @dant_request.qtd_diabeticos %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(4) %>:</strong>
-  <%= @dant_request.qtd_diabeticos %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(5) %></td>
+    <td><%= @dant_request.atendimento_diabeticos %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(5) %>:</strong>
-  <%= @dant_request.atendimento_diabeticos %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(6) %></td>
+    <td><%= @dant_request.qtd_obitos_diabeticos %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(6) %>:</strong>
-  <%= @dant_request.qtd_obitos_diabeticos %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(7) %></td>
+    <td><%= @dant_request.qtd_diabeticos_hipertencos %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(7) %>:</strong>
-  <%= @dant_request.qtd_diabeticos_hipertencos %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(8) %></td>
+    <td><%= @dant_request.atendimento_diabeticos_hipertensos %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(8) %>:</strong>
-  <%= @dant_request.atendimento_diabeticos_hipertensos %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(9) %></td>
+    <td><%= @dant_request.qtd_tratamento_hemodialise %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(9) %>:</strong>
-  <%= @dant_request.qtd_tratamento_hemodialise %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(10) %></td>
+    <td><%= @dant_request.qtd_nph %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(10) %>:</strong>
-  <%= @dant_request.qtd_nph %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(11) %></td>
+    <td><%= @dant_request.qtd_frascos_nph %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(11) %>:</strong>
-  <%= @dant_request.qtd_frascos_nph %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(12) %></td>
+    <td><%= @dant_request.qtd_regular %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(12) %>:</strong>
-  <%= @dant_request.qtd_regular %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(13) %></td>
+    <td><%= @dant_request.qtd_frascos_regular %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(13) %>:</strong>
-  <%= @dant_request.qtd_frascos_regular %>
-</p>
-
-<!--<p>
-  <strong>Qtd analoga:</strong>
+  <!--<tr>
+  <td>Qtd analoga:</td>
   <%#= @dant_request.qtd_analoga %>
-</p>
+</tr>
 
-<p>
-  <strong>Qtd frascos analoga:</strong>
+<tr>
+  <td>Qtd frascos analoga:</td>
   <%#= @dant_request.qtd_frascos_analoga %>
-</p>-->
+</tr>-->
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(14) %>:</strong>
-  <%= @dant_request.qtd_tabagista %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(14) %></td>
+    <td><%= @dant_request.qtd_tabagista %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(15) %>:</strong>
-  <%= @dant_request.qtd_atendimento_tabagista %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(15) %></td>
+    <td><%= @dant_request.qtd_atendimento_tabagista %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(16) %>:</strong>
-  <%= @dant_request.qtd_etilista %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(16) %></td>
+    <td><%= @dant_request.qtd_etilista %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(17) %>:</strong>
-  <%= @dant_request.qtd_atendimento_etilista %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(17) %></td>
+    <td><%= @dant_request.qtd_atendimento_etilista %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(18) %>:</strong>
-  <%= @dant_request.qtd_obesos %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(18) %></td>
+    <td><%= @dant_request.qtd_obesos %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(19) %>:</strong>
-  <%= @dant_request.qtd_obesidade_1 %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(19) %></td>
+    <td><%= @dant_request.qtd_obesidade_1 %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(20) %>:</strong>
-  <%= @dant_request.qtd_obesidate_2 %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(20) %></td>
+    <td><%= @dant_request.qtd_obesidate_2 %></td>
+  </tr>
 
-<p>
-  <strong><%= DantQuestion.find_by_pergunta(21) %>:</strong>
-  <%= @dant_request.qtd_obesidade_3 %>
-</p>
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(21) %></td>
+    <td><%= @dant_request.qtd_obesidade_3 %></td>
+  </tr>
 
-  <p>
-    <strong><%= DantQuestion.find_by_pergunta(22) %>:</strong>
-    <%= @dant_request.soma_participacoes %>
-  </p>
-
+  <tr>
+    <td><%= DantQuestion.find_by_pergunta(22) %></td>
+    <td><%= @dant_request.soma_participacoes %></td>
+  </tr>
+  </tbody>
+</table>
   <% if @dant_request.status != :cadastrada %>
     <div class="card">
       <div class="card-content">

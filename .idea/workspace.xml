@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/dant_requests/faixa_etaria.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dant_request.rb" afterPath="$PROJECT_DIR$/app/models/dant_request.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dant_request_pacient.rb" afterPath="$PROJECT_DIR$/app/models/dant_request_pacient.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_requests/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_requests/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/dant_request_pacients.yml" afterPath="$PROJECT_DIR$/test/fixtures/dant_request_pacients.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/dant_request_pacient_test.rb" afterPath="$PROJECT_DIR$/test/models/dant_request_pacient_test.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -72,8 +61,8 @@
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/dant_requests/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            <state relative-caret-position="271">
+              <caret line="144" column="48" lean-forward="true" selection-start-line="144" selection-start-column="48" selection-end-line="144" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -472,12 +461,12 @@
       <workItem from="1528111987154" duration="1775000" />
       <workItem from="1528211015705" duration="49000" />
       <workItem from="1531745748607" duration="20941000" />
-      <workItem from="1531914602358" duration="6460000" />
+      <workItem from="1531914602358" duration="7324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255219000" />
+    <option name="totallyTimeSpent" value="256083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1366" height="708" extended-state="6" />
@@ -876,8 +865,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dant_requests/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        <state relative-caret-position="271">
+          <caret line="144" column="48" lean-forward="true" selection-start-line="144" selection-start-column="48" selection-end-line="144" selection-end-column="48" />
           <folding />
         </state>
       </provider>
