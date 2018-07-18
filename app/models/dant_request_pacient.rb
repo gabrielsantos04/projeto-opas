@@ -10,6 +10,12 @@
 #  frascos_diarios :integer
 #  frascos_mensais :integer
 #  idade           :integer
+#  hipertenso      :boolean
+#  diabetico       :boolean
+#  tabagista       :boolean
+#  obeso           :boolean
+#  etilista        :boolean
+#  sexo            :integer
 #
 # Indexes
 #

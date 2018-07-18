@@ -39,5 +39,5 @@ class User < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :role, in: [:administrador, :municipio,:referencia], predicates: true
+  enumerize :role, in: [:administrador, :municipio,:referencia, :admin_dant], predicates: true
 end

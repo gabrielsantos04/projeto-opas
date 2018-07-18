@@ -66,6 +66,16 @@ class DantRequest < ApplicationRecord
 
   def set_status
     self.status = :cadastrada
+    if self.mes == 12
+      if DateTime.now.month <= 2
+        self.ano = Date.today.year - 1
+      elsif Date.today.month == 12
+        self.ano = Date.today.year
+      end
+
+    else
+      self.ano = Date.today.year
+    end
   end
 
   def calcular_quantidades

@@ -1,10 +1,15 @@
 class DantRequestsController < ApplicationController
-  before_action :set_dant_request, only: [:show, :edit, :update, :destroy,:enviar]
+  before_action :set_dant_request, only: [:show, :edit, :update, :destroy,:enviar,:faixa_etaria,:alterar_status]
   before_action :set_combos, only: [:new, :edit, :create]
 
   # GET /dant_requests
   def index
-    @q = DantRequest.all.ransack(params[:q])
+    if current_user.administrador? || current_user.admin_dant
+      @q = DantRequest.all.ransack(params[:q])
+    else
+      @q = DantRequest.where(cidade: current_user.cidade).ransack(params[:q])
+    end
+
     @dant_requests = @q.result.page(params[:page])
   end
 
@@ -12,18 +17,27 @@ class DantRequestsController < ApplicationController
   def show
   end
 
+  def faixa_etaria
+    @pacientes = @dant_request.dant_request_pacients
+  end
+
+  def alterar_status
+    case params[:status]
+      when "deferido"
+        @dant_request.status = :deferido
+      when "indeferido"
+        @dant_request.status = :indeferido
+      when "entregue"
+        @dant_request.status = :entregue
+    end
+    @dant_request.save
+
+    redirect_to @dant_request, notice: "Solicitação #{params[:status].upcase}"
+  end
+
   def enviar
     @dant_request.status = :solicitado
-    if @dant_request.mes == 12
-      if DateTime.now.month <= 2
-        @dant_request.ano = Date.today.year - 1
-      elsif Date.today.month == 12
-        @dant_request.ano = Date.today.year
-      end
 
-    else
-      @dant_request.ano = Date.today.year
-    end
 
     @dant_request.data_envio = DateTime.now
     @dant_request.calcular_quantidades
@@ -61,7 +75,7 @@ class DantRequestsController < ApplicationController
       @dant_request.qtd_obesidate_2 = pacientes.where(grau_obesidade: 2).count
       @dant_request.qtd_obesidade_3 = pacientes.where(grau_obesidade: 3).count
       pacientes.each do |p|
-        @dant_request.dant_request_pacients.build(dant_pacient_id:p.id, frascos_diarios: p.frascos_diarios, frascos_mensais: p.frascos_mensais, idade: p.idade)
+        @dant_request.dant_request_pacients.build(dant_pacient_id:p.id, frascos_diarios: p.frascos_diarios, frascos_mensais: p.frascos_mensais, idade: p.idade, hipertenso: p.hipertenso, diabetico: p.diabetico, etilista: p.etilista, tabagista: p.tabagista, obeso: p.obeso,sexo: p.sexo_value)
       end
     end
     @dant_request.cidade_id = current_user.cidade_id
@@ -70,6 +84,9 @@ class DantRequestsController < ApplicationController
 
   # GET /dant_requests/1/edit
   def edit
+    if @dant_request.status != :cadastrada and ( !current_user.administrador? and !current_user.admin_dant?)
+      redirect_to dant_requests_path, notice: "Não é possível editar a solicitação nesta etapa!"
+    end
   end
 
   # POST /dant_requests
@@ -112,6 +129,6 @@ class DantRequestsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def dant_request_params
       params.require(:dant_request).permit(:qtd_hipertensos, :atendimento_hipertensos, :qtd_obitos_hipertensos, :qtd_diabeticos, :atendimento_diabeticos, :qtd_obitos_diabeticos, :qtd_diabeticos_hipertencos, :atendimento_diabeticos_hipertensos, :qtd_tratamento_hemodialise, :qtd_nph, :qtd_frascos_nph, :qtd_regular, :qtd_frascos_regular, :qtd_analoga, :qtd_frascos_analoga, :qtd_tabagista, :qtd_atendimento_tabagista, :qtd_etilista, :qtd_atendimento_etilista, :qtd_obesos, :qtd_obesidade_1, :qtd_obesidate_2, :qtd_obesidade_3, :mes, :dant_responsavel_program_id, :cidade_id, :status,
-      dant_request_pacients_attributes:[:id,:dant_request_id,:dant_pacient_id,:frascos_diarios,:frascos_mensais,:idade])
+      dant_request_pacients_attributes:[:sexo,:hipertenso,:diabetico,:obeso,:tabagista,:etilista,:id,:dant_request_id,:dant_pacient_id,:frascos_diarios,:frascos_mensais,:idade])
     end
 end

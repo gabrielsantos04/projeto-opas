@@ -2,7 +2,7 @@
 
   <p>
     <strong>Mês:</strong>
-    <%= @dant_request.mes %>
+    <%= @dant_request.mes %>/<%= @dant_request.ano %>
   </p>
 
   <p>
@@ -17,7 +17,7 @@
 
   <p>
     <strong>Status:</strong>
-    <%= @dant_request.status %>
+    <%= @dant_request.status.upcase %>
   </p>
 
 
@@ -141,7 +141,7 @@
     <%= @dant_request.soma_participacoes %>
   </p>
 
-  <% if @dant_request.status != :cadastrado %>
+  <% if @dant_request.status != :cadastrada %>
     <div class="card">
       <div class="card-content">
         <span class="card-title">Quantidade de frascos sugerido pelo sistemas</span>
@@ -164,6 +164,8 @@
       </div>
     </div>
   <% end %>
+
+  <%= link_to "Planilha por Faixa Etária", faixa_etaria_dant_request_path(@dant_request), class:"btn", target:"_self" %>
 
   <div class="card">
     <div class="card-content">
@@ -215,4 +217,9 @@
 
 </div>
 <%= link_to 'Voltar', dant_requests_path, class:"btn" %>
-<%= link_to 'Enviar', enviar_dant_request_path(@dant_request), class:"btn green" if @dant_request.status == :cadastrado %>
+<%= link_to 'Enviar', enviar_dant_request_path(@dant_request), class:"btn green" if @dant_request.status == :cadastrada %>
+<% if @dant_request.status != :cadastrada and ( current_user.administrador? || current_user.admin_dant?) %>
+  <%= link_to "Deferir", alterar_status_dant_request_path(@dant_request, status: "deferido"), class:"btn green", target:"_self"%>
+  <%= link_to "Indeferir", alterar_status_dant_request_path(@dant_request, status: "indeferido"), class:"btn red", target:"_self"%>
+  <%= link_to "Entregar", alterar_status_dant_request_path(@dant_request, status: "entregue"), class:"btn blue", target:"_self"%>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180717142216) do
+ActiveRecord::Schema.define(version: 20180718123524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -251,6 +251,12 @@ ActiveRecord::Schema.define(version: 20180717142216) do
     t.integer "frascos_diarios"
     t.integer "frascos_mensais"
     t.integer "idade"
+    t.boolean "hipertenso"
+    t.boolean "diabetico"
+    t.boolean "tabagista"
+    t.boolean "obeso"
+    t.boolean "etilista"
+    t.integer "sexo"
     t.index ["dant_pacient_id"], name: "index_dant_request_pacients_on_dant_pacient_id"
     t.index ["dant_request_id"], name: "index_dant_request_pacients_on_dant_request_id"
   end

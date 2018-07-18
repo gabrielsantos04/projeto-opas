@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :dant_requests do
     member do
       get "enviar"
+      get "faixa_etaria"
+      get "alterar_status"
     end
   end
   resources :dant_responsavel_programs

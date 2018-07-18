@@ -1,0 +1,347 @@
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">Dados da solicitação</span>
+    <br>
+    <strong>Município: </strong>
+    <%= @dant_request.cidade %>
+    <br>
+    <strong>Mês:</strong>
+    <%= "#{@dant_request.mes }/#{@dant_request.ano}"%>
+    <br>
+    <strong>Responsável pelo programa:</strong>
+    <%= @dant_request.dant_responsavel_program%>
+    <br>
+    <strong>Data Envio:</strong>
+    <%= @dant_request.data_envio %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-content">
+    <div class="card-panel">
+    <strong>Planilha por faixa etária e sexo para registro de hipertensos cadastrados</strong>
+    <table>
+      <thead>
+      <tr>
+        <th>Sexo</th>
+        <th> < 1</th>
+        <th>01 a 04</th>
+        <th>05 a 09</th>
+        <th>10 a 14</th>
+        <th>15 a 19</th>
+        <th>20 a 29</th>
+        <th>30 a 39</th>
+        <th>40 a 49</th>
+        <th>50 a 59</th>
+        <th>60 a 69</th>
+        <th>70 a 79</th>
+        <th>80+</th>
+        <th>TOTAL</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Masculino</td>
+        <td><%= @pacientes.where("idade < 1 and hipertenso = true and sexo = 1 ").count %></td>
+        <td><%= @pacientes.where(idade: 1..4, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 5..9, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 10..14, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 15..19, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 20..29, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 30..39, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 40..49, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 50..59, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 60..69, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 70..79, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 80..150, hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(hipertenso: true, sexo: 1).size %></td>
+      </tr>
+      <tr>
+        <td>Feminino</td>
+        <td><%= @pacientes.where("idade < 1 and hipertenso = true and sexo = 2 ").count %></td>
+        <td><%= @pacientes.where(idade: 1..4, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 5..9, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 10..14, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 15..19, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 20..29, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 30..39, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 40..49, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 50..59, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 60..69, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 70..79, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 80..150, hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(hipertenso: true, sexo: 2).size %></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card-panel">
+    <strong>Planilha por faixa etária e sexo para registro de diabéticos cadastrados</strong>
+    <table>
+      <thead>
+      <tr>
+        <th>Sexo</th>
+        <th> < 1</th>
+        <th>01 a 04</th>
+        <th>05 a 09</th>
+        <th>10 a 14</th>
+        <th>15 a 19</th>
+        <th>20 a 29</th>
+        <th>30 a 39</th>
+        <th>40 a 49</th>
+        <th>50 a 59</th>
+        <th>60 a 69</th>
+        <th>70 a 79</th>
+        <th>80+</th>
+        <th>TOTAL</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Masculino</td>
+        <td><%= @pacientes.where("idade < 1 and diabetico = true and sexo = 1 ").count %></td>
+        <td><%= @pacientes.where(idade: 1..4, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 5..9, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 10..14, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 15..19, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 20..29, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 30..39, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 40..49, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 50..59, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 60..69, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 70..79, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 80..150, diabetico: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(diabetico: true, sexo: 1).size %></td>
+      </tr>
+      <tr>
+        <td>Feminino</td>
+        <td><%= @pacientes.where("idade < 1 and diabetico = true and sexo = 2 ").count %></td>
+        <td><%= @pacientes.where(idade: 1..4, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 5..9, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 10..14, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 15..19, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 20..29, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 30..39, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 40..49, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 50..59, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 60..69, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 70..79, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 80..150, diabetico: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(diabetico: true, sexo: 2).size %></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card-panel">
+    <strong>Planilha por faixa etária e sexo para registro de diabéticos com hipertensão cadastrados</strong>
+    <table>
+      <thead>
+      <tr>
+        <th>Sexo</th>
+        <th> < 1</th>
+        <th>01 a 04</th>
+        <th>05 a 09</th>
+        <th>10 a 14</th>
+        <th>15 a 19</th>
+        <th>20 a 29</th>
+        <th>30 a 39</th>
+        <th>40 a 49</th>
+        <th>50 a 59</th>
+        <th>60 a 69</th>
+        <th>70 a 79</th>
+        <th>80+</th>
+        <th>TOTAL</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Masculino</td>
+        <td><%= @pacientes.where("idade < 1 and diabetico = true and hipertenso = true and sexo = 1 ").count %></td>
+        <td><%= @pacientes.where(idade: 1..4, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 5..9, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 10..14, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 15..19, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 20..29, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 30..39, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 40..49, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 50..59, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 60..69, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 70..79, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 80..150, diabetico: true,hipertenso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(diabetico: true,hipertenso: true, sexo: 1).size %></td>
+      </tr>
+      <tr>
+        <td>Feminino</td>
+        <td><%= @pacientes.where("idade < 1 and diabetico = true and hipertenso = true and sexo = 2 ").count %></td>
+        <td><%= @pacientes.where(idade: 1..4, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 5..9, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 10..14, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 15..19, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 20..29, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 30..39, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 40..49, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 50..59, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 60..69, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 70..79, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 80..150, diabetico: true,hipertenso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(diabetico: true,hipertenso: true, sexo: 2).size %></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card-panel">
+    <strong>Planilha por faixa etária e sexo para registro de obesos cadastrados</strong>
+    <table>
+      <thead>
+      <tr>
+        <th>Sexo</th>
+        <th> < 1</th>
+        <th>01 a 04</th>
+        <th>05 a 09</th>
+        <th>10 a 14</th>
+        <th>15 a 19</th>
+        <th>20 a 29</th>
+        <th>30 a 39</th>
+        <th>40 a 49</th>
+        <th>50 a 59</th>
+        <th>60 a 69</th>
+        <th>70 a 79</th>
+        <th>80+</th>
+        <th>TOTAL</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Masculino</td>
+        <td><%= @pacientes.where("idade < 1 and obeso = true and sexo = 1 ").count %></td>
+        <td><%= @pacientes.where(idade: 1..4, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 5..9, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 10..14, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 15..19, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 20..29, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 30..39, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 40..49, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 50..59, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 60..69, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 70..79, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 80..150, obeso: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(obeso: true, sexo: 1).size %></td>
+      </tr>
+      <tr>
+        <td>Feminino</td>
+        <td><%= @pacientes.where("idade < 1 and obeso = true and sexo = 2 ").count %></td>
+        <td><%= @pacientes.where(idade: 1..4, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 5..9, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 10..14, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 15..19, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 20..29, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 30..39, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 40..49, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 50..59, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 60..69, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 70..79, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 80..150, obeso: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(obeso: true, sexo: 2).size %></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card-panel">
+    <strong>Planilha por faixa etária e sexo para registro de tabagismo cadastrados</strong>
+    <table>
+      <thead>
+      <tr>
+        <th>Sexo</th>
+        <th>01 a 08</th>
+        <th>09 a 11</th>
+        <th>12 a 17</th>
+        <th>18 a 24</th>
+        <th>25 a 34</th>
+        <th>35 a 44</th>
+        <th>45 a 54</th>
+        <th>55 a 64 </th>
+        <th> >=65 </th>
+        <th>TOTAL</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Masculino</td>
+        <td><%= @pacientes.where(idade: 1..8, tabagista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 9..11, tabagista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 12..17, tabagista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 18..24, tabagista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 25..34, tabagista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 35..44, tabagista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 45..54, tabagista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 54..64, tabagista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 65..150, tabagista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(tabagista: true, sexo: 1).size %></td>
+      </tr>
+      <tr>
+        <td>Feminino</td>
+        <td><%= @pacientes.where(idade: 1..8, tabagista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 9..11, tabagista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 12..17, tabagista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 18..24, tabagista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 25..34, tabagista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 35..44, tabagista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 45..54, tabagista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 54..64, tabagista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 65..150, tabagista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(tabagista: true, sexo: 2).size %></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card-panel">
+    <strong>Planilha por faixa etária e sexo para registro de etilismo cadastrados</strong>
+    <table>
+      <thead>
+      <tr>
+        <th>Sexo</th>
+        <th>01 a 08</th>
+        <th>09 a 11</th>
+        <th>12 a 17</th>
+        <th>18 a 24</th>
+        <th>25 a 34</th>
+        <th>35 a 44</th>
+        <th>45 a 54</th>
+        <th>55 a 64 </th>
+        <th> >=65 </th>
+        <th>TOTAL</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Masculino</td>
+        <td><%= @pacientes.where(idade: 1..8, etilista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 9..11, etilista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 12..17, etilista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 18..24, etilista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 25..34, etilista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 35..44, etilista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 45..54, etilista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 54..64, etilista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(idade: 65..150, etilista: true, sexo: 1).size %></td>
+        <td><%= @pacientes.where(etilista: true, sexo: 1).size %></td>
+      </tr>
+      <tr>
+        <td>Feminino</td>
+        <td><%= @pacientes.where(idade: 1..8, etilista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 9..11, etilista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 12..17, etilista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 18..24, etilista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 25..34, etilista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 35..44, etilista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 45..54, etilista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 54..64, etilista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(idade: 65..150, etilista: true, sexo: 2).size %></td>
+        <td><%= @pacientes.where(etilista: true, sexo: 2).size %></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <%= link_to "Voltar", dant_request_path(@dant_request), class:"btn", target:"_self" %>
+  </div>
+</div>
