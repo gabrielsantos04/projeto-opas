@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180718123524) do
+ActiveRecord::Schema.define(version: 20180722160618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -341,6 +341,106 @@ ActiveRecord::Schema.define(version: 20180718123524) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dst_locals", force: :cascade do |t|
+    t.string "nome"
+    t.text "descricao"
+    t.bigint "cidade_id"
+    t.string "categoria"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cidade_id"], name: "index_dst_locals_on_cidade_id"
+  end
+
+  create_table "dst_lotes", force: :cascade do |t|
+    t.bigint "dst_produto_id"
+    t.string "nome"
+    t.text "descricao"
+    t.date "validade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dst_produto_id"], name: "index_dst_lotes_on_dst_produto_id"
+  end
+
+  create_table "dst_movimentacaos", force: :cascade do |t|
+    t.bigint "dst_produto_id"
+    t.string "tipo"
+    t.string "categoria"
+    t.decimal "quantidade"
+    t.bigint "dst_lote_id"
+    t.text "descricao"
+    t.bigint "dst_local_id"
+    t.bigint "dst_solicitacao_produto_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dst_local_id"], name: "index_dst_movimentacaos_on_dst_local_id"
+    t.index ["dst_lote_id"], name: "index_dst_movimentacaos_on_dst_lote_id"
+    t.index ["dst_produto_id"], name: "index_dst_movimentacaos_on_dst_produto_id"
+    t.index ["dst_solicitacao_produto_id"], name: "index_dst_movimentacaos_on_dst_solicitacao_produto_id"
+  end
+
+  create_table "dst_produtos", force: :cascade do |t|
+    t.string "nome"
+    t.text "descricao"
+    t.string "unidade_medida"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dst_questionarios", force: :cascade do |t|
+    t.string "titulo"
+    t.text "descricao"
+    t.boolean "ativo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dst_resposta", force: :cascade do |t|
+    t.bigint "dst_questionario_id"
+    t.bigint "dst_solicitacao_id"
+    t.string "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dst_questionario_id"], name: "index_dst_resposta_on_dst_questionario_id"
+    t.index ["dst_solicitacao_id"], name: "index_dst_resposta_on_dst_solicitacao_id"
+  end
+
+  create_table "dst_solicitacao_produtos", force: :cascade do |t|
+    t.bigint "dst_produto_id"
+    t.decimal "quantidade"
+    t.string "status"
+    t.bigint "dst_solicitacao_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "distribuido"
+    t.text "observacoes"
+    t.decimal "quantidade_aprovada"
+    t.bigint "user_id"
+    t.index ["dst_produto_id"], name: "index_dst_solicitacao_produtos_on_dst_produto_id"
+    t.index ["dst_solicitacao_id"], name: "index_dst_solicitacao_produtos_on_dst_solicitacao_id"
+    t.index ["user_id"], name: "index_dst_solicitacao_produtos_on_user_id"
+  end
+
+  create_table "dst_solicitacaos", force: :cascade do |t|
+    t.bigint "dst_local_id"
+    t.text "observacoes"
+    t.bigint "user_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "token"
+    t.index ["dst_local_id"], name: "index_dst_solicitacaos_on_dst_local_id"
+    t.index ["user_id"], name: "index_dst_solicitacaos_on_user_id"
+  end
+
+  create_table "dst_user_locals", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "dst_local_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dst_local_id"], name: "index_dst_user_locals_on_dst_local_id"
+    t.index ["user_id"], name: "index_dst_user_locals_on_user_id"
+  end
+
   create_table "epidosios_reacionais_recidivas", force: :cascade do |t|
     t.string "tipo"
     t.string "conduta_mendicamentosa"
@@ -574,6 +674,21 @@ ActiveRecord::Schema.define(version: 20180718123524) do
   add_foreign_key "dermatologico_recidivas", "recidivas"
   add_foreign_key "diagnostico_recidivas", "diagnosticos"
   add_foreign_key "diagnostico_recidivas", "recidivas"
+  add_foreign_key "dst_locals", "cidades"
+  add_foreign_key "dst_lotes", "dst_produtos"
+  add_foreign_key "dst_movimentacaos", "dst_locals"
+  add_foreign_key "dst_movimentacaos", "dst_lotes"
+  add_foreign_key "dst_movimentacaos", "dst_produtos"
+  add_foreign_key "dst_movimentacaos", "dst_solicitacao_produtos"
+  add_foreign_key "dst_resposta", "dst_questionarios"
+  add_foreign_key "dst_resposta", "dst_solicitacaos"
+  add_foreign_key "dst_solicitacao_produtos", "dst_produtos"
+  add_foreign_key "dst_solicitacao_produtos", "dst_solicitacaos"
+  add_foreign_key "dst_solicitacao_produtos", "users"
+  add_foreign_key "dst_solicitacaos", "dst_locals"
+  add_foreign_key "dst_solicitacaos", "users"
+  add_foreign_key "dst_user_locals", "dst_locals"
+  add_foreign_key "dst_user_locals", "users"
   add_foreign_key "epidosios_reacionais_recidivas", "recidivas"
   add_foreign_key "episodio_reacionals", "notificacaos"
   add_foreign_key "esquema_substitutivos", "medicamentos"

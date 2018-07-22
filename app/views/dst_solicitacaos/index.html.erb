@@ -1,0 +1,60 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+          <%= f.text_field :user_nome_or_status_or_dst_local_nome_cont, placeholder: "Pesquisar..." %>
+          <div class="row">
+            <div class="col s12 m5">
+              <%= f.date_field :created_at_gteq %>
+            </div>
+            <div class="col s12 m2"> até </div>
+            <div class="col s12 m5">
+              <%= f.date_field :created_at_lteq %>
+            </div>
+          </div>
+          <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Solicitado Para</th>
+            <th>Solicitante</th>
+            <th>Status</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @dst_solicitacaos.each do |dst_solicitacao| %>
+    <tr>
+              
+          <td><%= link_to dst_solicitacao.dst_local,dst_solicitacao %></td>
+        
+              
+
+          <td><%= dst_solicitacao.observacoes %></td>
+        
+              
+
+          <td><%= dst_solicitacao.user %></td>
+        
+              
+
+          <td><%= dst_solicitacao.status %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@dst_solicitacaos)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_dst_solicitacao_path, class:"btn" %>

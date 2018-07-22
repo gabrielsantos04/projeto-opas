@@ -1,0 +1,47 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+      <%= f.text_field :titulo_or_descricao_cont, placeholder: "Pesquisar..." %>
+      <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Titulo</th>
+            <th>Descricao</th>
+            <th>Ativo</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @dst_questionarios.each do |dst_questionario| %>
+    <tr>
+              
+          <td><%= link_to dst_questionario.titulo,dst_questionario %></td>
+        
+              
+
+          <td><%= dst_questionario.descricao %></td>
+        
+              
+
+          <td><%= dst_questionario.ativo %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@dst_questionarios)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_dst_questionario_path, class:"btn" %>

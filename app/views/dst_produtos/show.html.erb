@@ -1,0 +1,37 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Nome:</strong>
+  <%= @dst_produto.nome %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @dst_produto.descricao %>
+</p>
+
+<p>
+  <strong>Unidade medida:</strong>
+  <%= @dst_produto.unidade_medida %>
+</p>
+
+</div>
+<div class="card-panel">
+  <h4 class="header2">Estoque</h4>
+  <table class="striped">
+    <thead>
+    <th>Local</th>
+    <th>Quantidade</th>
+    </thead>
+
+    <tbody>
+    <% @dst_locals.each do |p| %>
+        <tr>
+          <td><%= p[0] %></td>
+          <td><%= p[1] %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to 'Voltar', dst_produtos_path, class:"btn" %>

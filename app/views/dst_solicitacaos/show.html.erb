@@ -1,0 +1,71 @@
+<div class="card-panel">
+  <h4 class="center"><%= @dst_solicitacao %></h4>
+
+  <p>
+    <strong>Solicitado Para:</strong>
+    <%= link_to @dst_solicitacao.dst_local, @dst_solicitacao.dst_local %>
+  </p>
+
+  <p>
+    <strong>Solicitante:</strong>
+    <%= @dst_solicitacao.user %>
+  </p>
+
+  <p>
+    <strong>Código de Autorização:</strong>
+    <%= @dst_solicitacao.token %>
+  </p>
+
+</div>
+
+<div class="card-panel">
+  <h4 class="header2">Observações</h4>
+  <p>
+    <%= @dst_solicitacao.observacoes %>
+  </p>
+</div>
+
+<div class="card-panel">
+  <h4 class="header2">Produtos Solicitados</h4>
+  <table class="table striped">
+    <thead>
+        <th>Nº Controle</th>
+        <th>Produto</th>
+        <th>Solicitado</th>
+        <th>Autorizado</th>
+        <th>Atendido</th>
+    </thead>
+    <tbody>
+      <% @dst_solicitacao.dst_solicitacao_produtos.each do |sp| %>
+        <tr>
+          <td><%= link_to sp.id, sp %></td>
+          <td><%= sp.dst_produto %></td>
+          <td><%= sp.quantidade %></td>
+          <td>
+            <%= sp.quantidade_aprovada || 0.0 %>
+            <%= link_to sp do %>
+                <i class="material-icons tiny">edit</i>
+            <% end %>
+          </td>
+          <td>
+            <%= sp.quantidade_atendido %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="card-panel">
+  <h4 class="header2">Questionário</h4>
+  <table class="table striped">
+    <% @dst_solicitacao.dst_resposta.each do |r| %>
+        <tr>
+          <td><%= r.dst_questionario %></td>
+          <td><%= r.valor %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Voltar', dst_solicitacaos_path, class:"btn" %>

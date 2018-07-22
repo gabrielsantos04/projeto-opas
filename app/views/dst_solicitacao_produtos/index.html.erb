@@ -1,0 +1,63 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+          <%= f.text_field :dst_produto_nome_or_status_or_dst_solicitacao_dst_local_nome_cont, placeholder: "Pesquisar..." %>
+          <div class="row">
+            <div class="col s12 m5">
+              <%= f.date_field :created_at_gteq %>
+            </div>
+            <div class="col s12 m2"> até </div>
+            <div class="col s12 m5">
+              <%= f.date_field :created_at_lteq %>
+            </div>
+          </div>
+          <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Dst produto</th>
+            <th>Quantidade</th>
+            <th>Status</th>
+            <th>Local</th>
+            <th>Solicitacao</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @dst_solicitacao_produtos.each do |dst_solicitacao_produto| %>
+    <tr>
+              
+          <td><%= link_to dst_solicitacao_produto.dst_produto,dst_solicitacao_produto %></td>
+        
+              
+
+          <td><%= dst_solicitacao_produto.quantidade %></td>
+        
+              
+
+          <td><%= dst_solicitacao_produto.status %></td>
+          <td><%= dst_solicitacao_produto.dst_solicitacao.dst_local %></td>
+
+              
+
+          <td><%= link_to dst_solicitacao_produto.dst_solicitacao, dst_solicitacao_produto.dst_solicitacao %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@dst_solicitacao_produtos)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_dst_solicitacao_produto_path, class:"btn" %>

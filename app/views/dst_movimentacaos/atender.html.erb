@@ -1,0 +1,58 @@
+
+<% if @solicitacao_produto.blank? %>
+    <%= form_tag(atender_dst_movimentacaos_path, method: :get) do %>
+        <div class="card-panel">
+          <% if params[:controle].present? %>
+              <h5 class="center red-text">Não foi encontrada solicitação autorizada para esses parâmetros</h5>
+          <% end %>
+          <% if params[:sucesso].present? %>
+              <h5 class="center green-text">Movimentações Realizadas Com Sucesso</h5>
+          <% end %>
+          <h4 class="header2">Insira os Parâmetros da Solicitação</h4>
+          <div>
+            <b>Código de Autorização</b>
+            <%= text_field_tag :codigo , params[:codigo] %>
+          </div>
+          <div>
+            <b>Controle</b>
+            <%= text_field_tag :controle , params[:controle] %>
+          </div>
+          <%= submit_tag "Avançar", class: :btn %>
+        </div>
+    <% end %>
+<% else %>
+    <%= form_tag(finalizar_atendimento_dst_movimentacaos_path, method: :get, remote: true) do %>
+        <div class="card-panel">
+          <h4 class="header2">Atender <%= @solicitacao %></h4>
+          <p>
+            <b>Produto:</b>
+            <%= @solicitacao_produto.dst_produto %>
+          </p>
+          <p>
+            <b>Local:</b>
+            <%= @solicitacao.dst_local %>
+          </p>
+          <p>
+            <b>Atender no Máx:</b>
+            <%= @solicitacao_produto.max_atender %>
+          </p>
+          <p>
+            <b>Estoque de Origem:</b>
+            <%= select_tag :origem, options_from_collection_for_select(current_user.dst_locals, "id", "nome") %>
+          </p>
+          <p>
+            <b>Lote:</b>
+            <%= select_tag :lote, options_from_collection_for_select(@solicitacao_produto.dst_produto.dst_lotes, "id", "nome") %>
+          </p>
+          <p>
+            <b>Quantidade</b>
+            <%= number_field_tag :quantidade , nil %>
+          </p>
+          <%= hidden_field_tag :solicitacao_produto_id, @solicitacao.id %>
+
+          <%= submit_tag "Finalizar", class: :btn %>
+
+        </div>
+    <% end %>
+<% end %>
+

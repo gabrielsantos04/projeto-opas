@@ -1,0 +1,59 @@
+<%= nested_form_for(dst_solicitacao) do |f| %>
+    <% if dst_solicitacao.errors.any? %>
+        <div id="error_explanation" class="card-panel red white-text">
+          <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+          <ul>
+            <% dst_solicitacao.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="card-panel">
+
+      <div class="input-field">
+        <%= f.select :dst_local_id, @locals %>
+
+      </div>
+
+      <div>
+        <%= f.label :observacoes %>
+        <%= f.text_area :observacoes %>
+      </div>
+
+    </div>
+    <div class="card-panel">
+      <%= f.fields_for :dst_solicitacao_produtos do |p| %>
+          <div class="card-panel">
+            <div>
+              <%= p.label :produto %>
+              <%= p.collection_select :dst_produto_id, DstProduto.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select", id: :produto}  %>
+            </div>
+            <div>
+              <%= p.label :quantidade, "Quantidade Solicitada" %>
+              <%= p.number_field :quantidade %>
+            </div>
+            <%= p.link_to_remove "Apagar", class: "btn red" %>
+          </div>
+      <% end %>
+      <%= f.link_to_add "Inserir Novo Produto",:dst_solicitacao_produtos, class: :btn  %>
+    </div>
+
+
+
+
+    <%= f.fields_for :dst_resposta do |r| %>
+        <div class="card-panel">
+          <h4 class="header2"><%= r.object.dst_questionario.titulo %></h4>
+          <p><%= r.object.dst_questionario.descricao %></p>
+          <%= r.text_field :valor %>
+          <%= r.hidden_field :dst_questionario_id %>
+        </div>
+    <% end %>
+
+
+    <div class="actions">
+      <%= f.submit "Salvar", class:"btn" %>
+    </div>
+<% end %>

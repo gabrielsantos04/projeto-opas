@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: dst_questionarios
+#
+#  id         :integer          not null, primary key
+#  titulo     :string
+#  descricao  :text
+#  ativo      :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  descricao: MyText
+  ativo: false
+
+two:
+  titulo: MyString
+  descricao: MyText
+  ativo: false

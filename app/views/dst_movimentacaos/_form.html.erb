@@ -1,0 +1,71 @@
+<%= form_for(dst_movimentacao) do |f| %>
+    <% if dst_movimentacao.errors.any? %>
+        <div id="error_explanation" class="card-panel red white-text">
+          <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+          <ul>
+            <% dst_movimentacao.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="card-panel">
+      <div class="input-field">
+        <%= f.select :dst_local_id, @locals %>
+      </div>
+
+      <div>
+        <%= f.label :produto %>
+        <%= f.collection_select :dst_produto_id, DstProduto.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select", id: :produto}  %>
+      </div>
+
+      <div>
+        <%= f.label :lote %>
+        <%= f.select :dst_lote_id,@lotes , {prompt: true},  {class:"browser-default chosen-select", id: :lote} %>
+      </div>
+
+      <div>
+        <%= f.label :tipo %>
+        <%= f.select :tipo, DstMovimentacao.tipo.options %>
+      </div>
+
+      <div>
+        <%= f.label :categoria %>
+        <%= f.select :categoria, DstMovimentacao.categoria.options %>
+      </div>
+
+      <div>
+        <%= f.label :quantidade %>
+        <%= f.text_field :quantidade %>
+      </div>
+
+      <div>
+        <%= f.label :descricao %>
+        <%= f.text_area :descricao %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Salvar", class:"btn" %>
+    </div>
+<% end %>
+
+<%= content_for :scripts do  %>
+    <script type="text/javascript" charset="utf-8">
+        $("#produto").change(function(){
+            $("#lote").empty();
+            $.ajax({
+                url: "/dst/dst_produtos/"+$("#produto").val()+"/lotes_ajax",
+                dataType: "json",
+            }).done(function( data ) {
+                $.each( $.map( data, function( item ) {
+                    $('#lote').append('<option value="'+item.id+'">' + item.nome + '</option>');
+                }));
+
+                $("#lote").trigger("chosen:updated");
+                $("#lote").trigger("liszt:updated");
+
+            });
+        });
+    </script>
+<% end %>

@@ -55,6 +55,25 @@ Rails.application.routes.draw do
   resources :ocupacaos
   resources :cidades
 
+  scope  "/dst" do
+    resources :dst_questionarios
+    resources :dst_movimentacaos do
+      collection do
+        get "atender"
+        get "finalizar_atendimento"
+      end
+    end
+    resources :dst_solicitacao_produtos
+    resources :dst_solicitacaos
+    resources :dst_lotes
+    resources :dst_locals
+    resources :dst_produtos do
+      member do
+        get "lotes_ajax"
+      end
+    end
+  end
+
   root "pacientes#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
