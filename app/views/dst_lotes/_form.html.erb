@@ -1,0 +1,45 @@
+<%= form_for(dst_lote) do |f| %>
+  <% if dst_lote.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% dst_lote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+    <%= f.collection_select :dst_produto_id, DstProduto.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select"}  %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :descricao %>
+    <%= f.text_area :descricao %>
+    
+  </div>
+
+  <div class="  ">
+
+    <%= f.label :validade %>
+    <%= f.date_field :validade %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Produto:</strong>
+  <%= @dst_movimentacao.dst_produto %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @dst_movimentacao.tipo %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @dst_movimentacao.categoria %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @dst_movimentacao.quantidade %>
+</p>
+
+<p>
+  <strong>Lote:</strong>
+  <%= @dst_movimentacao.dst_lote %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @dst_movimentacao.descricao %>
+</p>
+
+<p>
+  <strong>Local de Movimentação:</strong>
+  <%= @dst_movimentacao.dst_local %>
+</p>
+
+<p>
+  <strong>Solicitacao:</strong>
+  <%= @dst_movimentacao.dst_solicitacao_produto || "Não cadastrada" %>
+</p>
+
+</div>
+<%= link_to 'Voltar', dst_movimentacaos_path, class:"btn" %>

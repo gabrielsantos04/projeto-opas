@@ -1,0 +1,54 @@
+<%= nested_form_for(dst_local) do |f| %>
+    <% if dst_local.errors.any? %>
+        <div id="error_explanation" class="card-panel red white-text">
+          <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+          <ul>
+            <% dst_local.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="card-panel">
+      <div class="">
+        <%= f.label :nome %>
+        <%= f.text_field :nome %>
+      </div>
+
+      <div class="">
+        <%= f.label :descricao %>
+        <%= f.text_area :descricao %>
+      </div>
+
+      <div class="">
+        <%= f.label :cidade %>
+        <%= f.collection_select :cidade_id, Cidade.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select"}  %>
+      </div>
+
+      <div class="">
+        <%= f.label :categoria %>
+        <%= f.select :categoria, DstLocal.categoria.options %>
+      </div>
+
+    </div>
+    <div class="card-panel" style="overflow: visible">
+      <h4 class="header2">Responsáveis</h4>
+      <%= f.fields_for :dst_user_locals do |ul| %>
+          <div class="card row" style="overflow: visible">
+            <div class="col s12 m10">
+              <%= ul.collection_select :user_id, User.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select"}  %>
+            </div>
+            <div class="col s12 m2">
+              <%= ul.link_to_remove do %>
+                <i class="material-icons red-text">delete</i>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+      <%= f.link_to_add "Novo Responsável", :dst_user_locals, class:"btn" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Salvar", class:"btn" %>
+    </div>
+<% end %>

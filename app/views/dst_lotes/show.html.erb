@@ -1,0 +1,24 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Dst produto:</strong>
+  <%= @dst_lote.dst_produto %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @dst_lote.nome %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @dst_lote.descricao %>
+</p>
+
+<p>
+  <strong>Validade:</strong>
+  <%= @dst_lote.validade %>
+</p>
+
+</div>
+<%= link_to 'Voltar', dst_lotes_path, class:"btn" %>

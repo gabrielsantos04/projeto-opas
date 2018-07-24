@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
-  resources :dant_questions
-  resources :dant_requests do
-    member do
-      get "enviar"
-      get "faixa_etaria"
-      get "alterar_status"
-    end
-  end
-  resources :dant_responsavel_programs
-  resources :dant_regions
-  resources :dant_pacients
+
   devise_for :users
   resources :users
   resources :condutas
@@ -54,6 +44,39 @@ Rails.application.routes.draw do
   resources :monofilamentos
   resources :ocupacaos
   resources :cidades
+
+  scope "/dant" do
+    resources :dant_questions
+    resources :dant_requests do
+      member do
+        get "enviar"
+        get "faixa_etaria"
+        get "alterar_status"
+      end
+    end
+    resources :dant_responsavel_programs
+    resources :dant_regions
+    resources :dant_pacients
+  end
+
+  scope  "/dst" do
+    resources :dst_questionarios
+    resources :dst_movimentacaos do
+      collection do
+        get "atender"
+        get "finalizar_atendimento"
+      end
+    end
+    resources :dst_solicitacao_produtos
+    resources :dst_solicitacaos
+    resources :dst_lotes
+    resources :dst_locals
+    resources :dst_produtos do
+      member do
+        get "lotes_ajax"
+      end
+    end
+  end
 
   root "pacientes#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

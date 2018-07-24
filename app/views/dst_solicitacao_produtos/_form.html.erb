@@ -1,0 +1,61 @@
+<%= form_for(dst_solicitacao_produto) do |f| %>
+  <% if dst_solicitacao_produto.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% dst_solicitacao_produto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div>
+    <%= f.label :status, "Resposta" %>
+    <%= f.select :status, [['Autorizar', 'autorizado'], ['Recusar', 'recusado']] , {}, {id: "status"}%>
+  </div>
+  <div id="box_qdd">
+    <%= f.label :quantidade %>
+    <%= f.number_field :quantidade_aprovada, id:"qdd_field", min: 0.0, max: @dst_solicitacao_produto.quantidade, required: true %>
+  </div>
+  <div>
+    <%= f.label :observacoes, "Observações" %>
+    <%= f.text_area :observacoes, required: true %>
+  </div>
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $( "#qdd_field" ).change(function() {
+            var max = parseInt($(this).attr('max'));
+            var min = parseInt($(this).attr('min'));
+            if ($(this).val() > max)
+            {
+                swal("Valor Superior ao Solicitado", "Você inseriu um valor superior ao solicitado. Ajustamos o valor ao máximo permitido", "error");
+                $(this).val(max);
+            }
+            else if ($(this).val() < min)
+            {
+                $(this).val(min);
+            }
+        });
+    });
+
+    $(function () {
+        $( "#status" ).change(function() {
+            if ($(this).val() == 'recusado')
+            {
+                $('#box_qdd').hide();
+                $('#qdd_field').val(0);
+
+            }else{
+                $('#box_qdd').show();
+            }
+        });
+    });
+</script>

@@ -16,7 +16,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="description" content="Junte seus pontos">
   <meta name="keywords" content="programa de pontos, fidelidade, ">
-  <title>Hanseníase</title>
+  <title>Vigilância Sanitária | <%=  @namespace  %></title>
   <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/js/idletimer/dist/idle-timer.min.js"></script>
@@ -266,7 +266,7 @@
 
     <!-- START LEFT SIDEBAR NAV-->
     <% if user_signed_in? %>
-        <%= render 'layouts/left_sidebar'  if params[:appframe].blank?%>
+        <%= render "layouts/left_sidebar_#{ @namespace || 'default'}"  if params[:appframe].blank?%>
     <% end %>
     <!-- END LEFT SIDEBAR NAV-->
 

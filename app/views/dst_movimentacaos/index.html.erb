@@ -1,0 +1,73 @@
+<div class="card">
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+          <%= f.text_field :dst_produto_nome_or_tipo_or_categoria_or_dst_lote_nome_or_dst_local_nome_cont, placeholder: "Pesquisar..." %>
+          <div class="row">
+            <div class="col s12 m5">
+              <%= f.date_field :created_at_gteq %>
+            </div>
+            <div class="col s12 m2"> até </div>
+            <div class="col s12 m5">
+              <%= f.date_field :created_at_lteq %>
+            </div>
+          </div>
+          <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Data</th>
+    <th>Produto</th>
+    <th>Tipo</th>
+    <th>Categoria</th>
+    <th>Quantidade</th>
+    <th>Lote</th>
+    <th>Local</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @dst_movimentacaos.each do |dst_movimentacao| %>
+      <tr>
+
+        <td><%= link_to dst_movimentacao.created_at,dst_movimentacao %></td>
+        <td><%= link_to dst_movimentacao.dst_produto,dst_movimentacao %></td>
+
+
+
+        <td><%= dst_movimentacao.tipo %></td>
+
+
+
+        <td><%= dst_movimentacao.categoria %></td>
+
+
+
+        <td><%= dst_movimentacao.quantidade %></td>
+
+
+
+        <td><%= dst_movimentacao.dst_lote %></td>
+
+
+        <td><%= dst_movimentacao.dst_local %></td>
+
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@dst_movimentacaos)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_dst_movimentacao_path, class:"btn" %>

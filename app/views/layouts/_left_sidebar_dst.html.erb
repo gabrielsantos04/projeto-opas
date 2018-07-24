@@ -1,0 +1,68 @@
+<aside id="left-sidebar-nav" class="no-print">
+  <ul id="slide-out" class="side-nav fixed leftside-navigation">
+    <% if user_signed_in? %>
+
+        <li class="user-details red darken-4">
+          <div class="row">
+            <div class="col col s4 m4 l4">
+              <img src="/images/user.png" alt="" class="circle responsive-img valign profile-image">
+            </div>
+            <div class="col col s8 m8 l8">
+              <ul id="profile-dropdown" class="dropdown-content">
+                <li><a href="<%= destroy_user_session_path  %>" data-method="delete"><i class="mdi-hardware-keyboard-tab"></i> Sair</a>
+                </li>
+              </ul>
+              <a class="btn-flat dropdown-button waves-effect waves-light profile-btn white-text" href="#" data-activates="profile-dropdown"><%= current_user.nome %><i class="mdi-navigation-arrow-drop-down right"></i></a>
+              <p class="user-roal"><%= current_user.role.titleize %></p>
+            </div>
+          </div>
+        </li>
+        <li class="bold">
+          <a href="/" class="waves-effect waves-cyan">
+            <i class="material-icons">home</i> Início
+          </a>
+        </li>
+        <li class="bold">
+          <a href="/dst/dst_locals" class="waves-effect waves-cyan">
+            <i class="material-icons">dashboard</i> Estoque
+          </a>
+        </li>
+        <li class="bold">
+          <a href="/dst/dst_movimentacaos" class="waves-effect waves-cyan">
+            <i class="material-icons">compare_arrows</i> Movimentação
+          </a>
+        </li>
+        <li class="bold">
+          <a href="/dst/dst_solicitacaos" class="waves-effect waves-cyan">
+            <i class="material-icons">assignment</i> Solicitação
+          </a>
+        </li>
+        <% if !current_user.admin_dst? %>
+          <li class="bold">
+            <a href="/dst/dst_produtos" class="waves-effect waves-cyan">
+              <i class="material-icons">shopping_basket</i> Produtos
+            </a>
+          <li class="bold">
+            <a href="/dst/dst_lotes" class="waves-effect waves-cyan">
+              <i class="material-icons">style</i> Lotes
+            </a>
+          </li>
+          <li class="bold">
+            <a href="/dst/dst_questionarios" class="waves-effect waves-cyan">
+              <i class="material-icons">question_answer</i> Questionário
+            </a>
+          </li>
+
+            <li class="bold">
+              <a href="/dst/dst_solicitacao_produtos" class="waves-effect waves-cyan">
+                <i class="material-icons">assignment_turned_in</i> Analises
+              </a>
+            </li>
+        <% end %>
+    <% end %>
+
+  </ul>
+  <% if user_signed_in? %>
+      <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only teal"><i class="mdi-navigation-menu"></i></a>
+  <% end %>
+</aside>

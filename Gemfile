@@ -43,6 +43,7 @@ gem "kaminari", github: "amatsuda/kaminari", branch: '0-17-stable'
 gem 'nested_form'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave-base64'
+gem 'ryanb-uniquify'
 
 #gem 'paper_trail'
 

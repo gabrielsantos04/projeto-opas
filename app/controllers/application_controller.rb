@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   skip_before_action :verify_authenticity_token
+  before_action :set_namespace
 
   protected
 
@@ -12,5 +13,9 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to "/403.html", alert: "Você não tem autorização para realizar essa ação!"
+  end
+
+  def set_namespace
+    @namespace = MenuControl.get_namespace(request.fullpath)
   end
 end

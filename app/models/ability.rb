@@ -30,6 +30,14 @@ class Ability
       can [:show,:edit,:update,:destroy], AvaliacaoSensitiva do |p|
         p.paciente.cidade == user.cidade
       end
+    elsif user.admin_dst?
+      can :manage, DstLocal
+      can :manage, DstSolicitacaoProduto
+      can :manage, DstProduto
+      can :manage, DstLote
+    elsif user.dst_produtos?
+      can :manage, DstProduto
+      can :manage, DstLote
     else
       can :create, Paciente
       can :manage, Paciente do |p|
@@ -41,6 +49,13 @@ class Ability
 
       can :show, :all
     end
+
+    #Permissões para Módulo DST
+    can :read, DstLocal
+    can :read, DstMovimentacao
+    can :create, DstMovimentacao
+    can :read, DstSolicitacao
+    can :create, DstSolicitacao
 
 
   end
