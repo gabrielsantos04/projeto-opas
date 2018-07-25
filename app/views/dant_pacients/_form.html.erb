@@ -15,22 +15,22 @@
     <div class="input-field col s10">
 
       <%= f.label :nome %>
-      <%= f.text_field :nome %>
+      <%= f.text_field :nome, required: true %>
 
     </div>
 
-    <div class="input-field col s2">
+    <div class="input col s2">
 
-
-      <%= f.select :sexo, DantPacient.sexo.options, prompt: true %>
       <%= f.label :sexo %>
+      <%= f.select :sexo, DantPacient.sexo.options, {prompt: true},{required: true, class: "browser-default"} %>
+
 
     </div>
   </div>
 
   <div class="input">
     <%= f.label :cidade_id, "Cidade" %>
-    <%= f.select :cidade_id, @cidades, {prompt: true}, {class:"browser-default select2"} %>
+    <%= f.select :cidade_id, @cidades, {prompt: true}, {required: true, class:"browser-default select2"} %>
 
   </div>
   <div class="input-field">
@@ -58,7 +58,7 @@
   <div class="input">
 
     <%= f.label :data_nascimento %>
-    <%= f.date_field :data_nascimento %>
+    <%= f.date_field :data_nascimento , required: true%>
 
     
   </div>
@@ -66,15 +66,15 @@
   <div class="input-field">
 
     <%= f.label :frascos_diarios %>
-    <%= f.number_field :frascos_diarios, step: 1 %>
+    <%= f.number_field :frascos_diarios, step: 1, required: true %>
     
   </div>
 
-  <div class="input-field">
+  <div class="input">
 
-
-    <%= f.select :tipo_insulina , DantPacient.tipo_insulina.options , prompt: true%>
     <%= f.label :tipo_insulina %>
+    <%= f.select :tipo_insulina , DantPacient.tipo_insulina.options , {prompt: true},{required: true, class:'browser-default'}%>
+
     
   </div>
 

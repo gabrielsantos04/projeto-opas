@@ -181,7 +181,7 @@ DantCidadeRegion.create!([
   {dant_region_id: 1, cidade_id: 1}
 ])
 DantPacient.create!([
-  {nome: "Paciente teste", sexo: "masculino", endereco: "teste", rg: "123213", cpf: "12312312", idade: 34, tipo_insulina: "nph", hipertenso: true, diabetico: false, tabagista: false, etilista: false, obeso: false, grau_obesidade: nil, cidade_id: 139, frascos_diarios: 34, frascos_mensais: 2, obito: false, data_obito: nil}
+  {nome: "Paciente teste", sexo: "masculino", endereco: "teste", rg: "123213", cpf: "12312312", tipo_insulina: "nph", hipertenso: true, diabetico: false, tabagista: false, etilista: false, obeso: false, grau_obesidade: nil, cidade_id: 139, frascos_diarios: 34, frascos_mensais: 2, obito: false, data_obito: nil}
 ])
 DantQuestion.create!([
   {pergunta: 1, texto: "Número de Hipertensos cadastrados no E-SUS e/ou Município"},
