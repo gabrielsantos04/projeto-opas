@@ -8,7 +8,7 @@
     </span>
     <div id="pesquisa" class="not-show">
       <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
-          <%= f.text_field :nome_cont, placeholder: "Pesquisar..." %>
+          <%= f.text_field :nome_cont, placeholder: "Nome do paciente..." %>
           <%= f.submit "Filtrar", class:"btn" %>
       <% end %>
     </div>
@@ -34,7 +34,7 @@
 
         <td><%= link_to dant_pacient.nome,dant_pacient %></td>
         <td><%= dant_pacient.cidade %></td>
-        <td><%=  %></td>
+        <td><%= dant_pacient.idade %></td>
         <td><%= dant_pacient.frascos_diarios %></td>
         <td><%= dant_pacient.frascos_mensais %></td>
         <td><%= dant_pacient.tipo_insulina %></td>

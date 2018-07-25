@@ -4,7 +4,12 @@ class DantPacientsController < ApplicationController
 
   # GET /dant_pacients
   def index
-    @q = DantPacient.all.ransack(params[:q])
+    if current_user.administrador? || current_user.admin_dant?
+      @q = DantPacient.all.ransack(params[:q])
+    else
+      @q = DantPacient.where(cidade: current_user.cidade).ransack(params[:q])
+    end
+
     @dant_pacients = @q.result.page(params[:page])
   end
 

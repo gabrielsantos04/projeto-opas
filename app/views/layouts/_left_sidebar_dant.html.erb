@@ -32,22 +32,28 @@
             <i class="material-icons">assignment</i> Solicitações
           </a>
         </li>
-
-        <li class="bold">
-          <a href="/dant/dant_regions" class="waves-effect waves-cyan">
-            <i class="material-icons">place</i> Regiões
-          </a>
-        </li>
         <li class="bold">
           <a href="/dant/dant_responsavel_programs" class="waves-effect waves-cyan">
             <i class="material-icons">supervised_user_circle</i> Responsáveis
           </a>
         </li>
-        <li class="bold">
-          <a href="/users" class="waves-effect waves-cyan">
-            <i class="material-icons">supervisor_account</i> Usuários
-          </a>
-        </li>
+        <% if current_user.administrador? || current_user.admin_dant? %>
+            <li class="bold">
+              <a href="/dant/dant_regions" class="waves-effect waves-cyan">
+                <i class="material-icons">place</i> Regiões
+              </a>
+            </li>
+          <li class="bold">
+            <a href="/dant/dant_questions" class="waves-effect waves-cyan">
+              <i class="material-icons">contact_support</i> Perguntas
+            </a>
+          </li>
+          <li class="bold">
+            <a href="/users" class="waves-effect waves-cyan">
+              <i class="material-icons">supervisor_account</i> Usuários
+            </a>
+          </li>
+        <% end %>
     <% end %>
 
   </ul>
