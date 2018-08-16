@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180722160618) do
+ActiveRecord::Schema.define(version: 20180816140044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -464,6 +464,56 @@ ActiveRecord::Schema.define(version: 20180722160618) do
     t.index ["notificacao_id"], name: "index_episodio_reacionals_on_notificacao_id"
   end
 
+  create_table "escala_parts", force: :cascade do |t|
+    t.string "questao_1"
+    t.integer "questao_1_valor"
+    t.string "questao_2"
+    t.integer "questao_2_valor"
+    t.string "questao_3"
+    t.integer "questao_3_valor"
+    t.string "questao_4"
+    t.integer "questao_4_valor"
+    t.string "questao_5"
+    t.integer "questao_5_valor"
+    t.string "questao_6"
+    t.integer "questao_6_valor"
+    t.string "questao_7"
+    t.integer "questao_7_valor"
+    t.string "questao_8"
+    t.integer "questao_8_valor"
+    t.string "questao_9"
+    t.integer "questao_9_valor"
+    t.string "questao_10"
+    t.integer "questao_10_valor"
+    t.string "questao_11"
+    t.integer "questao_11_valor"
+    t.string "questao_12"
+    t.integer "questao_12_valor"
+    t.string "questao_13"
+    t.integer "questao_13_valor"
+    t.string "questao_14"
+    t.integer "questao_14_valor"
+    t.string "questao_15"
+    t.integer "questao_15_valor"
+    t.string "questao_16"
+    t.integer "questao_16_valor"
+    t.string "questao_17"
+    t.integer "questao_17_valor"
+    t.string "questao_18"
+    t.integer "questao_18_valor"
+    t.date "data_entrevista"
+    t.string "entrevistador"
+    t.string "total"
+    t.string "grau_restricao"
+    t.text "comentario"
+    t.bigint "paciente_id"
+    t.bigint "notificacao_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notificacao_id"], name: "index_escala_parts_on_notificacao_id"
+    t.index ["paciente_id"], name: "index_escala_parts_on_paciente_id"
+  end
+
   create_table "esquema_substitutivos", force: :cascade do |t|
     t.decimal "miligramas"
     t.bigint "medicamento_id"
@@ -497,6 +547,36 @@ ActiveRecord::Schema.define(version: 20180722160618) do
     t.string "interpretacao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "monthly_reports", force: :cascade do |t|
+    t.string "nome_grupo"
+    t.string "coordenador"
+    t.string "monitor"
+    t.string "lider"
+    t.date "data_reuniao"
+    t.time "inicio"
+    t.time "termino"
+    t.string "local"
+    t.text "temas"
+    t.text "atividades_desenvolvidas"
+    t.datetime "data_proximo"
+    t.boolean "intercorrencia"
+    t.integer "outros_agravos"
+    t.integer "agravo_diabetes"
+    t.integer "agravo_hipertensao"
+    t.integer "agravo_avc"
+    t.integer "analfabetos"
+    t.integer "qtd_psicologo"
+    t.integer "qtd_assistente_social"
+    t.integer "oficina_sapataria"
+    t.integer "qtd_hanseniase"
+    t.integer "qtd_sem_hanseniase"
+    t.integer "qtd_profissionais"
+    t.bigint "cidade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cidade_id"], name: "index_monthly_reports_on_cidade_id"
   end
 
   create_table "nervos_recidivas", force: :cascade do |t|
@@ -691,9 +771,12 @@ ActiveRecord::Schema.define(version: 20180722160618) do
   add_foreign_key "dst_user_locals", "users"
   add_foreign_key "epidosios_reacionais_recidivas", "recidivas"
   add_foreign_key "episodio_reacionals", "notificacaos"
+  add_foreign_key "escala_parts", "notificacaos"
+  add_foreign_key "escala_parts", "pacientes"
   add_foreign_key "esquema_substitutivos", "medicamentos"
   add_foreign_key "esquema_substitutivos", "notificacaos"
   add_foreign_key "marcacaos", "avaliacao_sensitivas"
+  add_foreign_key "monthly_reports", "cidades"
   add_foreign_key "nervos_recidivas", "recidivas"
   add_foreign_key "notificacao_contatos", "notificacaos"
   add_foreign_key "notificacaos", "avaliacao_notificacaos"

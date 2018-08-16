@@ -1,0 +1,40 @@
+<h1 class="center-align">Relatórios Mensais Grupo de Autocuidado</h1>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+          <%= f.text_field :nome_grupo_or_cidade_nome_cont, placeholder: "Pesquisar..." %>
+          <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Nome grupo</th>
+    <th>Data reuniao</th>
+    <th>Cidade</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @monthly_reports.each do |monthly_report| %>
+      <tr>
+        <td><%= link_to monthly_report.nome_grupo,monthly_report, target:"_self" %></td>
+        <td><%= monthly_report.data_reuniao %></td>
+        <td><%= monthly_report.cidade %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@monthly_reports)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_monthly_report_path, class:"btn white-text", target:"_self" %>

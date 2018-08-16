@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :escala_parts
+  resources :monthly_reports
   devise_for :users
   resources :users
   resources :condutas

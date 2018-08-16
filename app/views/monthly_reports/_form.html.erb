@@ -1,0 +1,200 @@
+<%= form_for(monthly_report) do |f| %>
+  <% if monthly_report.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% monthly_report.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :nome_grupo %>
+    <%= f.text_field :nome_grupo %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :coordenador %>
+    <%= f.text_field :coordenador %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :monitor %>
+    <%= f.text_field :monitor %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :lider, "Líder" %>
+    <%= f.text_field :lider %>
+    
+  </div>
+
+  <div class="input">
+
+    <%= f.label :data_reuniao, "Data da Reunião" %>
+    <%= f.date_field :data_reuniao %>
+    
+  </div>
+
+  <div class="input">
+
+    <%= f.label :inicio, "Início" %>
+    <%= f.time_field :inicio %>
+    
+  </div>
+
+  <div class="input">
+
+    <%= f.label :termino, "Término" %>
+    <%= f.time_field :termino %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :local %>
+    <%= f.text_field :local %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :temas %>
+    <%= f.text_area :temas, class:"materialize-textarea" %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :atividades_desenvolvidas %>
+    <%= f.text_area :atividades_desenvolvidas, class:"materialize-textarea" %>
+    
+  </div>
+
+
+
+  <div class="input-field">
+
+
+    <%= f.check_box :intercorrencia %>
+    <%= f.label :intercorrencia, "Intercorrências" %>
+    
+  </div>
+  <br>
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Grupo possui pacientes atingidos por outros agravos? Se SIM informe as quantidades!</span>
+      <div class="input-field">
+
+        <%= f.label :agravo_diabetes, "Diabetes" %>
+        <%= f.number_field :agravo_diabetes %>
+
+      </div>
+
+      <div class="input-field">
+
+        <%= f.label :agravo_hipertensao, "Hipertensão" %>
+        <%= f.number_field :agravo_hipertensao %>
+
+      </div>
+      <div class="input-field">
+
+        <%= f.label :agravo_avc, "AVC" %>
+        <%= f.number_field :agravo_avc %>
+
+      </div>
+      <div class="input-field">
+
+        <%= f.label :outros_agravos, "Outros" %>
+        <%= f.number_field :outros_agravos %>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="input-field">
+
+    <%= f.label :analfabetos, "No grupo possui algum participante que não tenha sido alfabetizado?" %>
+    <%= f.number_field :analfabetos %>
+    
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">O município tem algum profissional: (informe a quantidade )</span>
+      <div class="input-field">
+
+        <%= f.label :qtd_psicologo, "Psicólogo" %>
+        <%= f.number_field :qtd_psicologo %>
+
+      </div>
+
+      <div class="input-field">
+
+        <%= f.label :qtd_assistente_social, "Assistente Social" %>
+        <%= f.number_field :qtd_assistente_social %>
+
+      </div>
+    </div>
+  </div>
+  <div class="input-field">
+
+    <%= f.label :oficina_sapataria, "Quantos participantes foram atendidos pela oficina sapataria ultimamente?" %>
+    <%= f.number_field :oficina_sapataria %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_hanseniase, "Quantidade de pessoas atingidas pela Hanseníase presentes?" %>
+    <%= f.number_field :qtd_hanseniase %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_sem_hanseniase, "Quantidade de pessoas não atingidas pela Hanseníase presentes?" %>
+    <%= f.number_field :qtd_sem_hanseniase %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :qtd_profissionais, "Quantidade de Profissionais presentes?" %>
+    <%= f.number_field :qtd_profissionais %>
+    
+  </div>
+
+  <div class="input">
+
+    <%= f.label :data_proximo %>
+    <%= f.datetime_field :data_proximo %>
+
+  </div>
+
+  <!--<div class="input">
+    <%= f.label :cidade_id, "Cidade" %>
+    <%= f.select :cidade_id, @cidades,{ prompt: true},{class:"browser-default chosen-select"}  %>
+
+  </div>-->
+  <%= f.hidden_field :cidade_id %>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>
