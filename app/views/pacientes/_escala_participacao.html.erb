@@ -14,7 +14,7 @@
   <tbody>
   <% escala_parts.each do |escala_part| %>
       <tr>
-        <td><%= escala_part.paciente %></td>
+        <td><%= link_to escala_part.paciente, escala_part, target:"_self" %></td>
         <td><%= escala_part.notificacao %></td>
         <td><%= escala_part.data_entrevista %></td>
         <td><%= escala_part.entrevistador %></td>

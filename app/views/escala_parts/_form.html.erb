@@ -320,6 +320,31 @@
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function(){
       $(".valor").attr("style", "pointer-events: none;");
+      for(i = 1; i <= 18; i++)
+      {
+
+          if($("#escala_part_questao_"+i).val() == "Sim")
+          {
+              $('#escala_part_questao_'+i+'_valor option:eq(0)').prop('selected', true)
+              $("#escala_part_questao_"+i+"_valor").attr("style", "pointer-events: none;");
+          }
+          else
+          {
+              $("#escala_part_questao_"+i+"_valor").removeAttr('style');
+          }
+      }
+  });
+  $(document).on('click', 'form input[type=submit]', function(e)
+  {
+    for(i = 1; i <= 18; i++)
+    {
+
+        if($("#escala_part_questao_"+i).val() != "Sim" && $("#escala_part_questao_"+i+"_valor").val() == 0)
+        {
+            swal("Erro","Informe os dados da Questão "+i,"error");
+            e.preventDefault(); //prevent the default action
+        }
+    }
   });
     function change(o)
     {

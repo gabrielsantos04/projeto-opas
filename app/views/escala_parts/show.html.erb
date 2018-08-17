@@ -1,6 +1,47 @@
 <h1 class="center-align">Escala de Participação</h1>
 <div class="card-panel">
-	
+	<div class="row">
+    <div class="col s12 l8">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title"></span>
+          <p>
+            <strong>Paciente:</strong>
+            <%= @escala_part.paciente %>
+          </p>
+          <p>
+            <strong>Notificação:</strong>
+            <%= @escala_part.notificacao %>
+          </p>
+          <p>
+            <strong>Data Entrevista:</strong>
+            <%= @escala_part.data_entrevista %>
+          </p>
+          <p>
+            <strong>Entrevistador:</strong>
+            <%= @escala_part.entrevistador %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 l4">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            Grau de Restrição
+          </span>
+          <p>
+            <strong>Total:</strong>
+            <%= @escala_part.total %>
+          </p>
+          <p>
+            <strong>Entrevistador:</strong>
+            <%= @escala_part.grau_restricao %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 <p>
   <strong>Questao 1:</strong>
   <%= @escala_part.questao_1 %>
