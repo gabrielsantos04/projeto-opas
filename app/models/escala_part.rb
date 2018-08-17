@@ -41,13 +41,13 @@
 #  questao_18_valor :integer
 #  data_entrevista  :date
 #  entrevistador    :string
-#  total            :string
 #  grau_restricao   :string
 #  comentario       :text
 #  paciente_id      :integer
 #  notificacao_id   :integer
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  total            :integer
 #
 # Indexes
 #
@@ -63,4 +63,26 @@
 class EscalaPart < ApplicationRecord
   belongs_to :paciente
   belongs_to :notificacao
+
+  extend Enumerize
+
+  enumerize :grau_restricao, in: [:sem_restricao_significativa, :leve_restricao, :restricao_moderada, :restricao_grave,:restricao_extrema], predicates: true
+
+  before_save :calcular_total
+
+  def calcular_total
+    self.total = (self.questao_1_valor + self.questao_2_valor + self.questao_3_valor + self.questao_4_valor + self.questao_5_valor+self.questao_6_valor+self.questao_7_valor+self.questao_8_valor+self.questao_9_valor+self.questao_10_valor+self.questao_11_valor+self.questao_12_valor+self.questao_13_valor+self.questao_14_valor+self.questao_15_valor+self.questao_16_valor+self.questao_17_valor+self.questao_18_valor)
+    if self.total <= 12
+      self.grau_restricao = :sem_restricao_significativa
+    elsif self.total.between? 13, 22
+      self.grau_restricao = :leve_restricao
+    elsif self.total.between? 23, 32
+      self.grau_restricao = :restricao_moderada
+    elsif self.total.between? 33,52
+      self.grau_restricao = :restricao_grave
+    elsif self.total >= 53
+      self.grau_restricao = :restricao_extrema
+    end
+
+  end
 end

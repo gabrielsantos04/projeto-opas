@@ -16,11 +16,12 @@ class EscalaPartsController < ApplicationController
     @escala_part = EscalaPart.new
     paciente = Paciente.find(params[:paciente])
     @escala_part.paciente = paciente
-    @notificacoes = paciente.notificacaos
+    @notificacoes = paciente.notificacaos.map{|a| [a.numero,a.id]}
   end
 
   # GET /escala_parts/1/edit
   def edit
+    @notificacoes = @escala_part.paciente.notificacaos.map{|a| [a.numero,a.id]}
   end
 
   # POST /escala_parts

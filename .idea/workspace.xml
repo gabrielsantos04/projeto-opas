@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pacientes/_escala_participacao.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ability.rb" afterPath="$PROJECT_DIR$/app/models/ability.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/paciente.rb" afterPath="$PROJECT_DIR$/app/models/paciente.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_left_sidebar_default.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_left_sidebar_default.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pacientes/show.html.erb" afterPath="$PROJECT_DIR$/app/views/pacientes/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/escala_parts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/escala_parts_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/escala_part.rb" afterPath="$PROJECT_DIR$/app/models/escala_part.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/escala_parts/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/escala_parts/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/escala_parts.yml" afterPath="$PROJECT_DIR$/test/fixtures/escala_parts.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/escala_part_test.rb" afterPath="$PROJECT_DIR$/test/models/escala_part_test.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -27,14 +23,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/escala_parts/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="270" column="116" lean-forward="false" selection-start-line="270" selection-start-column="116" selection-end-line="270" selection-end-column="116" />
+            <state relative-caret-position="360">
+              <caret line="329" column="70" lean-forward="false" selection-start-line="329" selection-start-column="70" selection-end-line="329" selection-end-column="70" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="escala_part.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/escala_part.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,18 +58,18 @@
       <file leaf-file-name="escala_parts_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/escala_parts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state relative-caret-position="414">
+              <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paciente.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/paciente.rb">
+      <file leaf-file-name="notificacao.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/notificacao.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,7 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Material+</find>
       <find>conduta_index_path</find>
       <find>condutum</find>
       <find>radio_button</find>
@@ -103,12 +108,14 @@
       <find>trata</find>
       <find>penden</find>
       <find>text_field</find>
+      <find>browser-default</find>
     </findStrings>
     <replaceStrings>
       <replace>conduta</replace>
       <replace>&lt;div&gt;</replace>
       <replace>&lt;/div&gt;</replace>
       <replace>avaliacao_notificacao</replace>
+      <replace>browser-default valor</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -123,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/models/dant_region.rb" />
         <option value="$PROJECT_DIR$/app/controllers/dant_regions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/dant_regions/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/dant_regions/show.html.erb" />
@@ -172,8 +178,9 @@
         <option value="$PROJECT_DIR$/app/views/pacientes/_escala_participacao.html.erb" />
         <option value="$PROJECT_DIR$/app/models/paciente.rb" />
         <option value="$PROJECT_DIR$/app/views/pacientes/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/escala_parts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/escala_parts/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/escala_parts_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/escala_part.rb" />
       </list>
     </option>
   </component>
@@ -458,12 +465,12 @@
       <workItem from="1532517185133" duration="2492000" />
       <workItem from="1532528737282" duration="4659000" />
       <workItem from="1532699775215" duration="15000" />
-      <workItem from="1534419651231" duration="7709000" />
+      <workItem from="1534419651231" duration="17560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275111000" />
+    <option name="totallyTimeSpent" value="284962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1366" height="708" extended-state="6" />
@@ -500,55 +507,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/dant_requests/faixa_etaria.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6192">
-          <caret line="344" column="86" lean-forward="false" selection-start-line="344" selection-start-column="86" selection-end-line="344" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="58" column="28" lean-forward="false" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/menu_control.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dant_requests/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="150" column="8" lean-forward="false" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/dant_request.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="77" column="7" lean-forward="true" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dant_regions/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dant_questions/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -801,26 +759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/escala_part.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-719">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/escala_parts/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="40" column="8" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="40" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pacientes/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="111" column="31" lean-forward="true" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -837,14 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/escala_parts_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -875,13 +809,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pacientes/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="111" column="31" lean-forward="true" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/medicamento.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/esquema_substitutivo.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/monofilamento.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/diagnostico.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_notificacao.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="52" column="92" lean-forward="true" selection-start-line="50" selection-start-column="2" selection-end-line="52" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_neurologica.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-701">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/notificacao.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/escala_parts/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="270" column="116" lean-forward="false" selection-start-line="270" selection-start-column="116" selection-end-line="270" selection-end-column="116" />
+        <state relative-caret-position="360">
+          <caret line="329" column="70" lean-forward="false" selection-start-line="329" selection-start-column="70" selection-end-line="329" selection-end-column="70" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/escala_parts_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/escala_part.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

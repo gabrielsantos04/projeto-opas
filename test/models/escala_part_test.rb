@@ -41,13 +41,13 @@
 #  questao_18_valor :integer
 #  data_entrevista  :date
 #  entrevistador    :string
-#  total            :string
 #  grau_restricao   :string
 #  comentario       :text
 #  paciente_id      :integer
 #  notificacao_id   :integer
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  total            :integer
 #
 # Indexes
 #

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180816140044) do
+ActiveRecord::Schema.define(version: 20180817135230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -503,13 +503,13 @@ ActiveRecord::Schema.define(version: 20180816140044) do
     t.integer "questao_18_valor"
     t.date "data_entrevista"
     t.string "entrevistador"
-    t.string "total"
     t.string "grau_restricao"
     t.text "comentario"
     t.bigint "paciente_id"
     t.bigint "notificacao_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total"
     t.index ["notificacao_id"], name: "index_escala_parts_on_notificacao_id"
     t.index ["paciente_id"], name: "index_escala_parts_on_paciente_id"
   end
