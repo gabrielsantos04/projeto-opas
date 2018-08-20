@@ -3,7 +3,12 @@ class EscalaPartsController < ApplicationController
 
   # GET /escala_parts
   def index
-    @q = EscalaPart.all.ransack(params[:q])
+    if current_user.administrador? || current_user.admin_hans?
+      @q = EscalaPart.all.ransack(params[:q])
+    else
+      @q = EscalaPart.includes(:paciente).where(pacientes:{cidade_id: current_user.cidade.id}).ransack(params[:q])
+    end
+
     @escala_parts = @q.result.page(params[:page])
   end
 

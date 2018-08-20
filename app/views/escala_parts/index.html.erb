@@ -29,12 +29,12 @@
   <tbody>
   <% @escala_parts.each do |escala_part| %>
       <tr>
-        <td><%= escala_part.paciente %></td>
+        <td><%= link_to escala_part.paciente, escala_part %></td>
         <td><%= escala_part.notificacao %></td>
         <td><%= escala_part.data_entrevista %></td>
         <td><%= escala_part.entrevistador %></td>
         <td><%= escala_part.total %></td>
-        <td><%= escala_part.grau_restricao %></td>
+        <td><%= grau(escala_part.grau_restricao) %></td>
       </tr>
   <% end %>
   </tbody>
@@ -44,4 +44,4 @@
   <%= paginate(@escala_parts)  %>
 </div>
 
-<%= link_to '+ Cadastrar', new_escala_part_path, class:"btn white-text", target:"_self" %>
+<%#= link_to '+ Cadastrar', new_escala_part_path, class:"btn white-text", target:"_self" %>

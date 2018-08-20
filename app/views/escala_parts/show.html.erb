@@ -36,226 +36,203 @@
           </p>
           <p>
             <strong>Entrevistador:</strong>
-            <%= @escala_part.grau_restricao %>
+            <%= grau(@escala_part.grau_restricao) %>
           </p>
         </div>
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><b>Comentário</b></span> <br>
+          <%= @escala_part.comentario %>
+      </div>
+    </div>
+  </div>
+
 <p>
-  <strong>Questao 1:</strong>
+  <strong>1 - Você tem a mesma oportunidade que os seus pares para encontrar trabalho?:</strong>
   <%= @escala_part.questao_1 %>
 </p>
 
 <p>
-  <strong>Questao 1 valor:</strong>
-  <%= @escala_part.questao_1_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_1_valor) %>
 </p>
 
 <p>
-  <strong>Questao 2:</strong>
+  <strong>2 - Você trabalha tanto quanto os seus pares (mesmo número de horas, mesmo tipo de trabalho, etc.)?:</strong>
   <%= @escala_part.questao_2 %>
 </p>
 
 <p>
-  <strong>Questao 2 valor:</strong>
-  <%= @escala_part.questao_2_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_2_valor) %>
 </p>
 
 <p>
-  <strong>Questao 3:</strong>
+  <strong>3 - Você contribui financeiramente com o orçamento doméstico de maneira semelhante à de seus pares?:</strong>
   <%= @escala_part.questao_3 %>
 </p>
 
 <p>
-  <strong>Questao 3 valor:</strong>
-  <%= @escala_part.questao_3_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_3_valor) %>
 </p>
 
 <p>
-  <strong>Questao 4:</strong>
+  <strong>4 - Você faz visitas (viagens) para fora de sua cdade com a mesma frequência que os seus pares (exceto para tratamento), p.Ex: feoras, encontros, festas em cidades próximas?:</strong>
   <%= @escala_part.questao_4 %>
 </p>
 
 <p>
-  <strong>Questao 4 valor:</strong>
-  <%= @escala_part.questao_4_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_4_valor) %>
 </p>
 
 <p>
-  <strong>Questao 5:</strong>
+  <strong>5 - Você ajuda outras pessoas (vizinhos, amigos ou parentes)?:</strong>
   <%= @escala_part.questao_5 %>
 </p>
 
 <p>
-  <strong>Questao 5 valor:</strong>
-  <%= @escala_part.questao_5_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_5_valor) %>
 </p>
 
 <p>
-  <strong>Questao 6:</strong>
+  <strong>6 - Você participa de atividades recreativas/sociais com a mesma frequência que os seus pares(ex: esporte, conversas, reuniões)?:</strong>
   <%= @escala_part.questao_6 %>
 </p>
 
 <p>
-  <strong>Questao 6 valor:</strong>
-  <%= @escala_part.questao_6_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_6_valor) %>
 </p>
 
 <p>
-  <strong>Questao 7:</strong>
+  <strong>7 - Você é tão ativo socialmente quanto os seus pares (ex: em atividades religiosas/comunitárias)?:</strong>
   <%= @escala_part.questao_7 %>
 </p>
 
 <p>
-  <strong>Questao 7 valor:</strong>
-  <%= @escala_part.questao_7_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_7_valor) %>
 </p>
 
 <p>
-  <strong>Questao 8:</strong>
+  <strong>8 - Você visita outras pessoas na comunidade com a mesma frequência que seus pares?:</strong>
   <%= @escala_part.questao_8 %>
 </p>
 
 <p>
-  <strong>Questao 8 valor:</strong>
-  <%= @escala_part.questao_8_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_8_valor) %>
 </p>
 
 <p>
-  <strong>Questao 9:</strong>
+  <strong>9 - Você se sente à vontade quando encontra pessoas novas?:</strong>
   <%= @escala_part.questao_9 %>
 </p>
 
 <p>
-  <strong>Questao 9 valor:</strong>
-  <%= @escala_part.questao_9_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_9_valor) %>
 </p>
 
 <p>
-  <strong>Questao 10:</strong>
+  <strong>10 - Você recebe o mesmo respeito na comunidade quanto os seus pares?:</strong>
   <%= @escala_part.questao_10 %>
 </p>
 
 <p>
-  <strong>Questao 10 valor:</strong>
-  <%= @escala_part.questao_10_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_10_valor) %>
 </p>
 
 <p>
-  <strong>Questao 11:</strong>
+  <strong>11 - Você se movimenta dentro e fora de casa e pla vizinhança/cidade da mesma maneira que os seus pares?:</strong>
   <%= @escala_part.questao_11 %>
 </p>
 
 <p>
-  <strong>Questao 11 valor:</strong>
-  <%= @escala_part.questao_11_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_11_valor) %>
 </p>
 
 <p>
-  <strong>Questao 12:</strong>
+  <strong>12 - Em sua cidade, você frequenta todos os locais públicos (incluindo escolas, lojas, escritórios, mercados, bares e restaurantes) ?:</strong>
   <%= @escala_part.questao_12 %>
 </p>
 
 <p>
-  <strong>Questao 12 valor:</strong>
-  <%= @escala_part.questao_12_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_12_valor) %>
 </p>
 
 <p>
-  <strong>Questao 13:</strong>
+  <strong>13 - Você tem oportunidade que os seus pares de se cuidar (quanto à aparência, nutrição, saúde, etc.)?:</strong>
   <%= @escala_part.questao_13 %>
 </p>
 
 <p>
-  <strong>Questao 13 valor:</strong>
-  <%= @escala_part.questao_13_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_13_valor) %>
 </p>
 
 <p>
-  <strong>Questao 14:</strong>
+  <strong>14 - Em sua casa, você faz o serviço de casa?:</strong>
   <%= @escala_part.questao_14 %>
 </p>
 
 <p>
-  <strong>Questao 14 valor:</strong>
-  <%= @escala_part.questao_14_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_14_valor) %>
 </p>
 
 <p>
-  <strong>Questao 15:</strong>
+  <strong>15 - Nas discussões familiares, a sua opinião conta/é importante?:</strong>
   <%= @escala_part.questao_15 %>
 </p>
 
 <p>
-  <strong>Questao 15 valor:</strong>
-  <%= @escala_part.questao_15_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_15_valor) %>
 </p>
 
 <p>
-  <strong>Questao 16:</strong>
+  <strong>16 - Em sua casa, você como junto com as outras pessoas, inclusive usando os mesmos utensílios, etc.?:</strong>
   <%= @escala_part.questao_16 %>
 </p>
 
 <p>
-  <strong>Questao 16 valor:</strong>
-  <%= @escala_part.questao_16_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_16_valor) %>
 </p>
 
 <p>
-  <strong>Questao 17:</strong>
+  <strong>17 - Você participa das principais festas e rituais religiosos tanto quanto os seus pares? (ex: casamentos, batizados, velórios, festas religiosas) ?:</strong>
   <%= @escala_part.questao_17 %>
 </p>
 
 <p>
-  <strong>Questao 17 valor:</strong>
-  <%= @escala_part.questao_17_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_17_valor) %>
 </p>
 
 <p>
-  <strong>Questao 18:</strong>
+  <strong>18 - Você se sente confiante para tentar aprender coisas novas?:</strong>
   <%= @escala_part.questao_18 %>
 </p>
 
 <p>
-  <strong>Questao 18 valor:</strong>
-  <%= @escala_part.questao_18_valor %>
+  <strong>[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?:</strong>
+  <%= irrelevante(@escala_part.questao_18_valor) %>
 </p>
 
-<p>
-  <strong>Data entrevista:</strong>
-  <%= @escala_part.data_entrevista %>
-</p>
 
-<p>
-  <strong>Entrevistador:</strong>
-  <%= @escala_part.entrevistador %>
-</p>
 
-<p>
-  <strong>Total:</strong>
-  <%= @escala_part.total %>
-</p>
-
-<p>
-  <strong>Grau restricao:</strong>
-  <%= @escala_part.grau_restricao %>
-</p>
-
-<p>
-  <strong>Comentario:</strong>
-  <%= @escala_part.comentario %>
-</p>
-
-<p>
-  <strong>Paciente:</strong>
-  <%= @escala_part.paciente %>
-</p>
-
-<p>
-  <strong>Notificacao:</strong>
-  <%= @escala_part.notificacao %>
-</p>
 
 </div>
-<%= link_to 'Voltar', escala_parts_path, class:"btn" %>
+<%= link_to 'Voltar', paciente_path(@escala_part.paciente), class:"btn white-text", target:"_self" %>
