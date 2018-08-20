@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :escala_salsas
   resources :escala_parts
   resources :monthly_reports
   devise_for :users

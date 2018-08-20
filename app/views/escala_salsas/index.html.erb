@@ -1,0 +1,47 @@
+<h1 class="center-align">Escala Salsa</h1>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+          <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+          <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Paciente</th>
+    <th>Notificacao</th>
+    <th>Data entrevista</th>
+    <th>Entrevistador</th>
+    <th>Escore salsa</th>
+    <th>Escore risco</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @escala_salsas.each do |escala_salsa| %>
+      <tr>
+        <td><%= link_to escala_salsa.paciente,escala_salsa %></td>
+        <td><%= escala_salsa.notificacao %></td>
+        <td><%= escala_salsa.data_entrevista %></td>
+        <td><%= escala_salsa.entrevistador %></td>
+        <td><%= escala_salsa.escore_salsa %></td>
+        <td><%= escala_salsa.escore_risco %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@escala_salsas)  %>
+</div>
+
+<%#= link_to '+ Cadastrar', new_escala_salsa_path, class:"btn" %>

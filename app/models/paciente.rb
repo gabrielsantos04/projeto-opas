@@ -36,6 +36,7 @@ class Paciente < ApplicationRecord
   has_many :avaliacao_notificacaos
   has_many :recidivas
   has_many :escala_parts
+  has_many :escala_salsas
 
 
   def to_s

@@ -1,0 +1,129 @@
+# == Schema Information
+#
+# Table name: escala_salsas
+#
+#  id                   :integer          not null, primary key
+#  paciente_id          :integer
+#  notificacao_id       :integer
+#  data_entrevista      :date
+#  entrevistador        :string
+#  questao_1            :integer
+#  questao_2            :integer
+#  questao_3            :integer
+#  questao_4            :integer
+#  questao_5            :integer
+#  questao_6            :integer
+#  questao_7            :integer
+#  questao_8            :integer
+#  questao_9            :integer
+#  questao_10           :integer
+#  questao_11           :integer
+#  questao_12           :integer
+#  questao_13           :integer
+#  questao_14           :integer
+#  questao_15           :integer
+#  questao_16           :integer
+#  questao_17           :integer
+#  questao_18           :integer
+#  questao_19           :integer
+#  questao_20           :integer
+#  escore_facil         :integer
+#  escore_pouco_dificil :integer
+#  escore_muito_dificil :integer
+#  escore_nao_preciso   :integer
+#  escore_fisicamente   :integer
+#  escore_evito         :integer
+#  escore_salsa         :integer
+#  escore_risco         :integer
+#  condicoes_medicas    :text
+#  adaptacoes           :text
+#  responsavel          :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+# Indexes
+#
+#  index_escala_salsas_on_notificacao_id  (notificacao_id)
+#  index_escala_salsas_on_paciente_id     (paciente_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (notificacao_id => notificacaos.id)
+#  fk_rails_...  (paciente_id => pacientes.id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  paciente: one
+  notificacao: one
+  data_entrevista: 2018-08-20
+  entrevistador: MyString
+  questao_1: 1
+  questao_2: 1
+  questao_3: 1
+  questao_4: 1
+  questao_5: 1
+  questao_6: 1
+  questao_7: 1
+  questao_8: 1
+  questao_9: 1
+  questao_10: 1
+  questao_11: 1
+  questao_12: 1
+  questao_13: 1
+  questao_14: 1
+  questao_15: 1
+  questao_16: 1
+  questao_17: 1
+  questao_18: 1
+  questao_19: 1
+  questao_20: 1
+  escore_facil: 1
+  escore_pouco_dificil: 1
+  escore_muito_dificil: 1
+  escore_nao_preciso: 1
+  escore_fisicamente: 1
+  escore_evito: 1
+  escore_salsa: 1
+  escore_risco: 1
+  condicoes_medicas: MyText
+  adaptacoes: MyText
+  responsavel: MyString
+
+two:
+  paciente: two
+  notificacao: two
+  data_entrevista: 2018-08-20
+  entrevistador: MyString
+  questao_1: 1
+  questao_2: 1
+  questao_3: 1
+  questao_4: 1
+  questao_5: 1
+  questao_6: 1
+  questao_7: 1
+  questao_8: 1
+  questao_9: 1
+  questao_10: 1
+  questao_11: 1
+  questao_12: 1
+  questao_13: 1
+  questao_14: 1
+  questao_15: 1
+  questao_16: 1
+  questao_17: 1
+  questao_18: 1
+  questao_19: 1
+  questao_20: 1
+  escore_facil: 1
+  escore_pouco_dificil: 1
+  escore_muito_dificil: 1
+  escore_nao_preciso: 1
+  escore_fisicamente: 1
+  escore_evito: 1
+  escore_salsa: 1
+  escore_risco: 1
+  condicoes_medicas: MyText
+  adaptacoes: MyText
+  responsavel: MyString

@@ -1,0 +1,234 @@
+<%= form_for(escala_salsa) do |f| %>
+    <% if escala_salsa.errors.any? %>
+        <div id="error_explanation" class="card-panel red white-text">
+          <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+          <ul>
+            <% escala_salsa.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+
+      <%= f.hidden_field :paciente_id %>
+      <div class="card" style="overflow: visible;">
+        <div class="card-content">
+          <div class="row">
+
+            <div class="input-field col s12 l12">
+              <%= f.select :notificacao_id, @notificacoes, {prompt: true, required: true}  %>
+              <%= f.label :notificacao_id %>
+
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :data_entrevista %>
+              <%= f.date_field :data_entrevista %>
+
+            </div>
+
+            <div class="input-field  col s12 l6">
+
+              <%= f.label :entrevistador %>
+              <%= f.text_field :entrevistador %>
+
+            </div>
+          </div>
+          <div class="input-field">
+
+            <%= f.select :questao_1, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",0]], {prompt: true} %>
+            <%= f.label :questao_1, "1 - Você consegue enxergar? (o suficiente para realizar suas atividades diarias?)" %>
+
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_2, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}  %>
+            <%= f.label :questao_2,"2 - Você se senta ou agacha no chão?" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_3, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]],{prompt: true}  %>
+            <%= f.label :questao_3,"3 - Você anda descalço? (a maior parte do tempo?)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_4, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_4,"4 - Você anda sobre o chão irregular?" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_5, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_5,"5 - Você anda distâncias mais longas? (mais que 30 minutos? )" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_6, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_6, "6 - Você lava seu corpo todo? (usando sabão, esponja, jarra de pé ou sentado)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_7, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_7,"7 - Você corta as unha das mãos ou dos pés? (usando tesoura ou cortador)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_8, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_8,"8 - Você segura um copo/tigela com conteúdo quente? (por exemplo: bebida, comida?)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_9, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_9,"9 - Você trabalha com ferramentas? (ferramentas que você segura com as mãos para ajudar a trabalhar)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_10, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_10,"10 - Você carrega objetos ou sacolas pesadas? (por ex: compras, comidas, água, lenha)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_11, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_11,"11 - Você levanta objetos acima de sua cabeça? (po ex: para colocar em uma prateleira, em cima de sua cabeça. para estender roupa para secar?)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_12, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_12,"12 - Você cozinha? (preparar comida quente ou fria?)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_13, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_13,"13 - Você despeja/serve líquidos quentes?" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_14 , [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}  %>
+            <%= f.label :questao_14, "14 - Você abre/fecha garrafas com tampa de rosca? (por ex: óleo, água, refrigerante?)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_15, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_15,"15 - Você abre/fecha vidros com tampa de rosca? (por ex: maionese)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_16, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_16,"16 - Você mexe/manipula objetos pequenos? (por ex: moedas, pregos, parafusos pequenos, grãos, sementes?)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_17, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_17,"17 - Você usa botões? (por ex: botões de roupa, bolsas?)" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_18 , [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}  %>
+            <%= f.label :questao_18,"18 - Você coloca linha na agulha? (passa a linha pelo buraco da agulha/ 'enfia a linha na agulha'?" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_19, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_19, "19 - Você consegue apanhar pedaços de papel, mexe com papel/coloca papel em ordem?" %>
+          </div>
+
+          <div class="input-field">
+
+
+            <%= f.select :questao_20, [["SIM - Fácil",1],["SIM - Um pouco difícil",2],["SIM - Muito difícil",3],["NÃO - Eu não preciso fazer isso",0],["NÃO - Eu fisicamente não consigo",4],["NÃO - Eu evito por causa do risco",5]], {prompt: true}   %>
+            <%= f.label :questao_20,"20 - Você consegue apanhar coisas do chão?" %>
+
+          </div>
+
+          <div class="input-field">
+
+            <%= f.label :condicoes_medicas, "Condições médicas que afetam as atividades diárias:" %>
+            <%= f.text_area :condicoes_medicas, class:"materialize-textarea" %>
+
+          </div>
+
+          <div class="input-field">
+
+            <%= f.label :adaptacoes, "Anote qualquer adaptação/órtese usado pelo entrevistado:" %>
+            <%= f.text_area :adaptacoes, class:"materialize-textarea" %>
+
+          </div>
+
+          <div class="input-field">
+
+            <%= f.label :responsavel, "Profissional responsável pelo preenchimento:" %>
+            <%= f.text_field :responsavel %>
+
+          </div>
+        </div>
+      </div>
+
+
+    <div class="actions">
+      <%= f.submit "Salvar", class:"btn" %>
+    </div>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).on('click', 'form input[type=submit]', function(e)
+    {
+        for(i = 1; i <= 20; i++)
+        {
+
+            if($("#escala_salsa_questao_"+i).val() == "" )
+            {
+                swal("Erro","Informe os dados da Questão "+i,"error");
+                e.preventDefault(); //prevent the default action
+            }
+        }
+        if($("#escala_salsa_notificacao_id").val() == "" )
+        {
+            swal("Erro","Informe a Notificação","error");
+            e.preventDefault(); //prevent the default action
+        }
+        if($("#escala_salsa_data_entrevista").val() == "" )
+        {
+            swal("Erro","Informe a Notificação","error");
+            e.preventDefault(); //prevent the default action
+        }
+    });
+</script>
