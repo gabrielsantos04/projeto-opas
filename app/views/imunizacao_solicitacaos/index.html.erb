@@ -1,0 +1,132 @@
+<div class="card">  
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+      <%= f.submit "Filtrar", class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="card striped responsive-table">
+  <thead>
+    <tr>
+            <th>Nome paciente</th>
+            <th>Data nascimento</th>
+            <th>Sexo</th>
+            <th>Nome mae</th>
+            <th>Endereco</th>
+            <th>Bairro</th>
+            <th>Municipio</th>
+            <th>Motivo solicitacao</th>
+            <th>Nome requisitante</th>
+            <th>Tipo requisitante</th>
+            <th>Crm coren</th>
+            <th>Telefone requisitante</th>
+            <th>Instituicao requisitante</th>
+            <th>Municipio requisitante</th>
+            <th>Anexo</th>
+            <th>Solicitante</th>
+            <th>Observacoes</th>
+            <th>Data atendimento</th>
+            <th>Municipio atual</th>
+            <th>Status</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    <% @imunizacao_solicitacaos.each do |imunizacao_solicitacao| %>
+    <tr>
+              
+          <td><%= link_to imunizacao_solicitacao.nome_paciente,imunizacao_solicitacao %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.data_nascimento %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.sexo %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.nome_mae %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.endereco %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.bairro %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.municipio_id %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.motivo_solicitacao %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.nome_requisitante %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.tipo_requisitante %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.crm_coren %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.telefone_requisitante %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.instituicao_requisitante %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.municipio_requisitante_id %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.anexo %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.solicitante %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.observacoes %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.data_atendimento %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.municipio_atual_id %></td>
+        
+              
+
+          <td><%= imunizacao_solicitacao.status %></td>
+        
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card-panel">
+  <%= paginate(@imunizacao_solicitacaos)  %>
+</div>
+
+<%= link_to '+ Cadastrar', new_imunizacao_solicitacao_path, class:"btn" %>

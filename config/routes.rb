@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :imunizacao_encerramentos
+  resources :imunizacao_esquemas
+  resources :imunizacao_imunobiologicos
+  resources :imunizacao_vacinas
+  resources :imunizacao_solicitacaos
   resources :dant_questions
   resources :dant_requests do
     member do

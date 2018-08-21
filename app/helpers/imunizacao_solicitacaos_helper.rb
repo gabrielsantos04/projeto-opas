@@ -1,0 +1,2 @@
+module ImunizacaoSolicitacaosHelper
+end

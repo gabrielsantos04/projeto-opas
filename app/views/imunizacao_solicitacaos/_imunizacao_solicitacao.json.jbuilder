@@ -1,0 +1,2 @@
+json.extract! imunizacao_solicitacao, :id, :nome_paciente, :data_nascimento, :sexo, :nome_mae, :endereco, :bairro, :municipio_id, :motivo_solicitacao, :nome_requisitante, :tipo_requisitante, :crm_coren, :telefone_requisitante, :instituicao_requisitante, :municipio_requisitante_id, :anexo, :solicitante, :observacoes, :data_atendimento, :municipio_atual_id, :status, :created_at, :updated_at
+json.url imunizacao_solicitacao_url(imunizacao_solicitacao, format: :json)

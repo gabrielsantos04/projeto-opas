@@ -1,0 +1,159 @@
+<%= form_for(imunizacao_solicitacao) do |f| %>
+  <% if imunizacao_solicitacao.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% imunizacao_solicitacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+
+    <%= f.label :nome_paciente %>
+    <%= f.text_field :nome_paciente %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :data_nascimento %>
+    <%= f.text_field :data_nascimento %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :sexo %>
+    <%= f.text_field :sexo %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :nome_mae %>
+    <%= f.text_field :nome_mae %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :endereco %>
+    <%= f.text_area :endereco %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :bairro %>
+    <%= f.text_field :bairro %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :municipio_id %>
+    <%= f.number_field :municipio_id %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :motivo_solicitacao %>
+    <%= f.text_area :motivo_solicitacao %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :nome_requisitante %>
+    <%= f.text_field :nome_requisitante %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :tipo_requisitante %>
+    <%= f.text_field :tipo_requisitante %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :crm_coren %>
+    <%= f.text_field :crm_coren %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :telefone_requisitante %>
+    <%= f.text_field :telefone_requisitante %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :instituicao_requisitante %>
+    <%= f.text_field :instituicao_requisitante %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :municipio_requisitante_id %>
+    <%= f.number_field :municipio_requisitante_id %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :anexo %>
+    <%= f.text_area :anexo %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :solicitante %>
+    <%= f.text_field :solicitante %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :observacoes %>
+    <%= f.text_area :observacoes %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :data_atendimento %>
+    <%= f.date_select :data_atendimento %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :municipio_atual_id %>
+    <%= f.number_field :municipio_atual_id %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

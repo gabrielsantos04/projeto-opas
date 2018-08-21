@@ -1,0 +1,52 @@
+<%= form_for(imunizacao_esquema) do |f| %>
+  <% if imunizacao_esquema.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% imunizacao_esquema.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+    <%= f.collection_select :imunizacao_imunobiologicos_id, ImunizacaoImunobiologicos.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :dose %>
+    <%= f.text_field :dose %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :esquema %>
+    <%= f.text_field :esquema %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :justificativa %>
+    <%= f.text_field :justificativa %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

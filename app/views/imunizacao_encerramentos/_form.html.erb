@@ -1,0 +1,80 @@
+<%= form_for(imunizacao_encerramento) do |f| %>
+  <% if imunizacao_encerramento.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+      <% imunizacao_encerramento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-panel">
+  
+  <div class="input-field">
+    <%= f.collection_select :imunizacao_esquema_id, ImunizacaoEsquema.all, :id, :name, prompt: true  %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :data_administracao %>
+    <%= f.date_select :data_administracao %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :lote %>
+    <%= f.text_field :lote %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :validade %>
+    <%= f.date_select :validade %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :laboratorio %>
+    <%= f.text_field :laboratorio %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :unidade_administracao %>
+    <%= f.text_field :unidade_administracao %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :via_administracao %>
+    <%= f.text_field :via_administracao %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :profissional %>
+    <%= f.text_field :profissional %>
+    
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :observacoes %>
+    <%= f.text_area :observacoes %>
+    
+  </div>
+
+</div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>
