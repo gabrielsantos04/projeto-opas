@@ -2,7 +2,7 @@ class CreateImunizacaoSolicitacaos < ActiveRecord::Migration[5.1]
   def change
     create_table :imunizacao_solicitacaos do |t|
       t.string :nome_paciente
-      t.string :data_nascimento
+      t.date :data_nascimento
       t.string :sexo
       t.string :nome_mae
       t.text :endereco

@@ -50,66 +50,7 @@
     
   </div>
   <br>
-  <strong>Tratamentos Propostos</strong>
-  <br>
-  <div class="row">
-    <div class="input-field col s4">
 
-
-      <%= f.check_box :atividades_orientadas %>
-      <%= f.label :atividades_orientadas, "Atividades Orientadas" %>
-
-    </div>
-    <div class="input-field col s4">
-
-
-      <%= f.check_box :atividades_realizadas_ubs %>
-      <%= f.label :atividades_realizadas_ubs, "Atividades realizadas na UBS" %>
-
-    </div>
-
-    <div class="input-field col s4">
-
-
-      <%= f.check_box :grupo_autocuidado %>
-      <%= f.label :grupo_autocuidado, "Participação em grupo de autocuidadeo" %>
-
-    </div>
-
-
-  </div>
-
-  <br>
-  <div class="row input-field">
-
-    <%= f.label :encaminhamentos, "Encaminhamentos" %>
-    <%= f.text_field :encaminhamentos %>
-    
-  </div>
-
-  <div class="row">
-
-    <div class="input-field col s6">
-
-      <%= f.label :imobilizacoes, "Imobilizações" %>
-      <%= f.text_field :imobilizacoes %>
-
-    </div>
-
-    <div class="input-field col s6">
-
-      <%= f.label :adaptacoes, "Adaptações" %>
-      <%= f.text_field :adaptacoes %>
-
-    </div>
-  </div>
-
-  <div class="input-field">
-
-    <%= f.label :observacoes, "Observações" %>
-    <%= f.text_area :observacoes,class:"materialize-textarea" %>
-    
-  </div>
 
 
   <%= f.hidden_field :notificacao_id %>
@@ -145,11 +86,11 @@
               <div class="col s12 l4 input-field">Fecha olhos com força (mm)</div>
               <div class="col s6 l3 input-field">
                 <%= esq.label :olhos_com_forca_d, "D" %>
-                <%= esq.number_field :olhos_com_forca_d %>
+                <%= esq.number_field :olhos_com_forca_d,{min: 0, max:20} %>
               </div>
               <div class="col s6 l3 input-field">
                 <%= esq.label :olhos_com_forca_e, "E" %>
-                <%= esq.number_field :olhos_com_forca_e %>
+                <%= esq.number_field :olhos_com_forca_e,{min: 0, max:20} %>
               </div>
             </div>
             <div class="row">
@@ -524,6 +465,67 @@
         </table>
       </div>
     </div>
+  </div>
+
+  <strong>Tratamentos Propostos</strong>
+  <br>
+  <div class="row">
+    <div class="input-field col s4">
+
+
+      <%= f.check_box :atividades_orientadas %>
+      <%= f.label :atividades_orientadas, "Atividades Orientadas" %>
+
+    </div>
+    <div class="input-field col s4">
+
+
+      <%= f.check_box :atividades_realizadas_ubs %>
+      <%= f.label :atividades_realizadas_ubs, "Atividades realizadas na UBS" %>
+
+    </div>
+
+    <div class="input-field col s4">
+
+
+      <%= f.check_box :grupo_autocuidado %>
+      <%= f.label :grupo_autocuidado, "Participação em grupo de autocuidadeo" %>
+
+    </div>
+
+
+  </div>
+
+  <br>
+  <div class="row input-field">
+
+    <%= f.label :encaminhamentos, "Encaminhamentos" %>
+    <%= f.text_field :encaminhamentos %>
+
+  </div>
+
+  <div class="row">
+
+    <div class="input-field col s6">
+
+      <%= f.label :imobilizacoes, "Imobilizações" %>
+      <%= f.text_field :imobilizacoes %>
+
+    </div>
+
+    <div class="input-field col s6">
+
+      <%= f.label :adaptacoes, "Adaptações" %>
+      <%= f.text_field :adaptacoes %>
+
+    </div>
+  </div>
+
+  <div class="input-field">
+
+    <%= f.label :observacoes, "Observações" %>
+    <%= f.text_area :observacoes,class:"materialize-textarea" %>
+
   </div>
 
 </div>

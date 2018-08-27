@@ -4,7 +4,7 @@
 #
 #  id                        :integer          not null, primary key
 #  nome_paciente             :string
-#  data_nascimento           :string
+#  data_nascimento           :date
 #  sexo                      :string
 #  nome_mae                  :string
 #  endereco                  :text

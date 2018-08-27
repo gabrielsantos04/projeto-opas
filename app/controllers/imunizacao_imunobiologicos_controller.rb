@@ -1,4 +1,6 @@
 class ImunizacaoImunobiologicosController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_imunizacao_imunobiologico, only: [:show, :edit, :update, :destroy]
 
   # GET /imunizacao_imunobiologicos

@@ -4,6 +4,7 @@ class DantRequestsController < ApplicationController
 
   # GET /dant_requests
   def index
+    @cidades = Cidade.all.order(:nome).map{|a| [a.nome,a.id]}
     if current_user.administrador? || current_user.admin_dant
       @q = DantRequest.all.ransack(params[:q])
     else

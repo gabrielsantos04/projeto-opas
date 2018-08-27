@@ -1,0 +1,144 @@
+<h1 class="center-align">Relatório Mensal - Grupo de Autocuidado</h1>
+<div class="card-panel">
+	
+<p>
+  <strong>Nome do grupo:</strong>
+  <%= @monthly_report.nome_grupo %>
+</p>
+
+<p>
+  <strong>Coordenador:</strong>
+  <%= @monthly_report.coordenador %>
+</p>
+
+<p>
+  <strong>Monitor:</strong>
+  <%= @monthly_report.monitor %>
+</p>
+
+<p>
+  <strong>Líder:</strong>
+  <%= @monthly_report.lider %>
+</p>
+
+<p>
+  <strong>Data da reunião:</strong>
+  <%= @monthly_report.data_reuniao %>
+</p>
+
+<p>
+  <strong>Início:</strong>
+  <%= @monthly_report.inicio %>
+</p>
+
+<p>
+  <strong>Término:</strong>
+  <%= @monthly_report.termino %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @monthly_report.local %>
+</p>
+
+<p>
+  <strong>Temas:</strong>
+  <%= @monthly_report.temas %>
+</p>
+
+  <p>
+    <strong>Atividades desenvolvidas:</strong>
+    <%= @monthly_report.atividades_desenvolvidas %>
+  </p>
+
+
+<p>
+  <strong>Intercorrências:</strong>
+  <%= @monthly_report.intercorrencia == true ? "SIM" : "NÃO" %>
+</p>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Grupo possui pacientes atingidos por outros agravos? Se SIM informe as quantidades!</span>
+
+      <p>
+        <strong>Diabetes:</strong>
+        <%= @monthly_report.agravo_diabetes %>
+      </p>
+
+      <p>
+        <strong>Hipertensão:</strong>
+        <%= @monthly_report.agravo_hipertensao %>
+      </p>
+
+      <p>
+        <strong>AVC:</strong>
+        <%= @monthly_report.agravo_avc %>
+      </p>
+
+      <p>
+        <strong>Outros:</strong>
+        <%= @monthly_report.outros_agravos %>
+      </p>
+
+    </div>
+  </div>
+
+
+
+<p>
+  <strong>O grupo possui algum participante que não tenha sido alfabetizado?:</strong>
+  <%= @monthly_report.analfabetos %>
+</p>
+
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">O município tem algum profissional</span>
+      <p>
+        <strong>Psicólogos</strong>
+        <%= @monthly_report.qtd_psicologo %>
+      </p>
+
+      <p>
+        <strong>Assistentes Sociais</strong>
+        <%= @monthly_report.qtd_assistente_social %>
+      </p>
+    </div>
+  </div>
+
+
+<p>
+  <strong>Participantes atendidos pela sapataria</strong>
+  <%= @monthly_report.oficina_sapataria %>
+</p>
+
+<p>
+  <strong>Quantidade de pessoas atingidas pela Hanseníase presentes:</strong>
+  <%= @monthly_report.qtd_hanseniase %>
+</p>
+
+<p>
+  <strong>Quantidade de pessoas não atingidas pela Hanseníase presentes:</strong>
+  <%= @monthly_report.qtd_sem_hanseniase %>
+</p>
+
+<p>
+  <strong>Quantidade de Profissionais presentes:</strong>
+  <%= @monthly_report.qtd_profissionais %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @monthly_report.cidade %>
+</p>
+
+
+  <p>
+    <strong>Data do próximo encontro:</strong>
+    <%= @monthly_report.data_proximo %>
+  </p>
+
+
+</div>
+<%= link_to 'Voltar', monthly_reports_path, class:"btn" %>

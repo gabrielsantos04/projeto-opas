@@ -1,0 +1,2 @@
+json.extract! monthly_report, :id, :nome_grupo, :coordenador, :monitor, :lider, :data_reuniao, :inicio, :termino, :local, :temas, :atividades_desenvolvidas, :data_proximo, :intercorrencia, :outros_agravos, :agravo_diabetes, :agravo_hipertensao, :agravo_avc, :analfabetos, :qtd_psicologo, :qtd_assistente_social, :oficina_sapataria, :qtd_hanseniase, :qtd_sem_hanseniase, :qtd_profissionais, :cidade_id, :created_at, :updated_at
+json.url monthly_report_url(monthly_report, format: :json)

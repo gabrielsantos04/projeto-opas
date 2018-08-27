@@ -26,4 +26,7 @@
 
 class ImunizacaoEncerramento < ApplicationRecord
   belongs_to :imunizacao_esquema
+
+  extend Enumerize
+  enumerize :via_administracao, in: [:vo, :sc, :im, :id, :ev], predicates: true
 end

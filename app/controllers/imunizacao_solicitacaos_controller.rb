@@ -1,4 +1,6 @@
 class ImunizacaoSolicitacaosController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_imunizacao_solicitacao, only: [:show, :edit, :update, :destroy]
 
   # GET /imunizacao_solicitacaos
@@ -54,6 +56,39 @@ class ImunizacaoSolicitacaosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def imunizacao_solicitacao_params
-      params.require(:imunizacao_solicitacao).permit(:nome_paciente, :data_nascimento, :sexo, :nome_mae, :endereco, :bairro, :municipio_id, :motivo_solicitacao, :nome_requisitante, :tipo_requisitante, :crm_coren, :telefone_requisitante, :instituicao_requisitante, :municipio_requisitante_id, :anexo, :solicitante, :observacoes, :data_atendimento, :municipio_atual_id, :status)
+      params.require(:imunizacao_solicitacao).permit(
+          :nome_paciente, :data_nascimento, :sexo, :nome_mae, :endereco,
+          :bairro, :municipio_id, :motivo_solicitacao, :nome_requisitante,
+          :tipo_requisitante, :crm_coren, :telefone_requisitante,
+          :instituicao_requisitante, :municipio_requisitante_id, :anexo,
+          :solicitante, :observacoes, :data_atendimento, :municipio_atual_id,
+          :status,
+          imunobiologicos_attributes:[
+              :id, :_destroy, :tipo, :nome_vacina, :imunizacao_vacina_id,
+              :imunizacao_solicitacao_id, :status, :justificativa_indeferimento,
+              imunizacao_esquemas_attributes:[
+                  :id, :_destroy, :imunizacao_imunobiologicos_id, :dose, :esquema,
+                  :status, :justificativa,
+                  imunizacao_encerramentos_attributes: [
+                      :id, :_destroy, :imunizacao_esquema_id, :data_administracao,
+                      :lote, :validade, :laboratorio, :unidade_administracao,
+                      :via_administracao, :profissional, :observacoes
+                  ]
+              ]
+          ],
+          outros_imunobiologicos_attributes:[
+              :id, :_destroy, :tipo, :nome_vacina, :imunizacao_vacina_id,
+              :imunizacao_solicitacao_id, :status, :justificativa_indeferimento,
+              imunizacao_esquemas_attributes:[
+                  :id, :_destroy, :imunizacao_imunobiologicos_id, :dose, :esquema,
+                  :status, :justificativa,
+                  imunizacao_encerramentos_attributes: [
+                      :id, :_destroy, :imunizacao_esquema_id, :data_administracao,
+                      :lote, :validade, :laboratorio, :unidade_administracao,
+                      :via_administracao, :profissional, :observacoes
+                  ]
+              ]
+          ]
+      )
     end
 end

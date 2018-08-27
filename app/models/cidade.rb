@@ -16,7 +16,13 @@ class Cidade < ApplicationRecord
   has_many :pacientes
   has_many :users
 
+  default_scope -> {order(nome: :asc)}
+
   def to_s
     self.nome
+  end
+
+  def self.to_select
+    all.map{|a| ["#{a}", a.id]}
   end
 end

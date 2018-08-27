@@ -10,4 +10,12 @@
 #
 
 class ImunizacaoVacina < ApplicationRecord
+  def to_s
+    self.nome
+  end
+
+  def self.to_select
+    all.map{|a| ["#{a}", a.id]}
+  end
+
 end

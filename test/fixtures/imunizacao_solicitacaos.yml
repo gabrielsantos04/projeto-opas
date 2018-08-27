@@ -4,7 +4,7 @@
 #
 #  id                        :integer          not null, primary key
 #  nome_paciente             :string
-#  data_nascimento           :string
+#  data_nascimento           :date
 #  sexo                      :string
 #  nome_mae                  :string
 #  endereco                  :text
@@ -31,7 +31,7 @@
 
 one:
   nome_paciente: MyString
-  data_nascimento: MyString
+  data_nascimento: 2018-08-21
   sexo: MyString
   nome_mae: MyString
   endereco: MyText
@@ -53,7 +53,7 @@ one:
 
 two:
   nome_paciente: MyString
-  data_nascimento: MyString
+  data_nascimento: 2018-08-21
   sexo: MyString
   nome_mae: MyString
   endereco: MyText

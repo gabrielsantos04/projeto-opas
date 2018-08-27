@@ -38,6 +38,8 @@ class DantPacient < ApplicationRecord
 
   extend Enumerize
 
+  validates :nome, :data_nascimento, :cidade_id,:sexo, :frascos_diarios,:tipo_insulina, presence: true
+
   enumerize :grau_obesidade, in: {:grau_1 => 1, :grau_2 => 2, :grau_3 => 3}, predicates: true
   enumerize :sexo, in: {:masculino => 1, :feminino => 2}, predicates: true
   enumerize :tipo_insulina, in: [:nph, :regular,:analoga], predicates: true

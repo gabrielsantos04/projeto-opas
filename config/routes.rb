@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  resources :imunizacao_encerramentos
-  resources :imunizacao_esquemas
-  resources :imunizacao_imunobiologicos
-  resources :imunizacao_vacinas
-  resources :imunizacao_solicitacaos
   resources :dant_questions
   resources :dant_requests do
     member do
@@ -15,6 +10,9 @@ Rails.application.routes.draw do
   resources :dant_responsavel_programs
   resources :dant_regions
   resources :dant_pacients
+  resources :escala_parts
+  resources :monthly_reports
+
   devise_for :users
   resources :users
   resources :condutas
@@ -59,6 +57,28 @@ Rails.application.routes.draw do
   resources :monofilamentos
   resources :ocupacaos
   resources :cidades
+
+  scope "/dant" do
+    resources :dant_questions
+    resources :dant_requests do
+      member do
+        get "enviar"
+        get "faixa_etaria"
+        get "alterar_status"
+      end
+    end
+    resources :dant_responsavel_programs
+    resources :dant_regions
+    resources :dant_pacients
+  end
+
+  scope "/imunizacao" do
+    resources :imunizacao_encerramentos
+    resources :imunizacao_esquemas
+    resources :imunizacao_imunobiologicos
+    resources :imunizacao_vacinas
+    resources :imunizacao_solicitacaos
+  end
 
   scope  "/dst" do
     resources :dst_questionarios

@@ -1,0 +1,363 @@
+<%= form_for(escala_part) do |f| %>
+    <% if escala_part.errors.any? %>
+        <div id="error_explanation" class="card-panel red white-text">
+          <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+          <ul>
+            <% escala_part.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="card" style="overflow: visible;">
+      <div class="card-content">
+
+        <div class="row">
+          <div class="input-field col s12 l6">
+            <%= f.select :notificacao_id, @notificacoes, prompt: true ,required: true %>
+            <%= f.label :notificacao_id %>
+
+          </div>
+          <div class="input-field col s12 l6">
+
+            <%= f.label :entrevistador %>
+            <%= f.text_field :entrevistador %>
+
+          </div>
+          <div class="input col s12 l12">
+
+            <%= f.label :data_entrevista %>
+            <%= f.date_field :data_entrevista, required: true %>
+
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+              <%= f.select :questao_1, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_1, "Você tem a mesma oportunidade que os seus pares para encontrar trabalho?" %>
+            </div>
+            <div class="input col s12 l6">
+              <%= f.label :questao_1_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_1_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor", disable: true} %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+              <%= f.select :questao_2, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_2 , "Você trabalha tanto quanto os seus pares (mesmo número de horas, mesmo tipo de trabalho, etc.)?"%>
+            </div>
+
+            <div class="input col s12 l6">
+              <%= f.label :questao_2_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_2_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+              <%= f.select :questao_3, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_3, "Você contribui financeiramente com o orçamento doméstico de maneira semelhante à de seus pares?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_3_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_3_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_4, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_4 , "Você faz visitas (viagens) para fora de sua cdade com a mesma frequência que os seus pares (exceto para tratamento), p.Ex: feoras, encontros, festas em cidades próximas?"%>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_4_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_4_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_5, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_5 , "Você ajuda outras pessoas (vizinhos, amigos ou parentes)?"%>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_5_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_5_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"} %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_6, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_6 , "Você participa de atividades recreativas/sociais com a mesma frequência que os seus pares(ex: esporte, conversas, reuniões)?"%>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_6_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_6_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_7 , ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"}%>
+              <%= f.label :questao_7 , "Você é tão ativo socialmente quanto os seus pares (ex: em atividades religiosas/comunitárias)?"%>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_7_valor , "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?"%>
+              <%= f.select :questao_7_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_8, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_8, "Você visita outras pessoas na comunidade com a mesma frequência que seus pares?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_8_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_8_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_9, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_9, "Você se sente à vontade quando encontra pessoas novas?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_9_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_9_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_10, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_10, "Você recebe o mesmo respeito na comunidade quanto os seus pares?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_10_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_10_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_11 , ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"}%>
+              <%= f.label :questao_11, "Você se movimenta dentro e fora de casa e pla vizinhança/cidade da mesma maneira que os seus pares?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_11_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_11_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"} %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_12 , ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"}%>
+              <%= f.label :questao_12, "Em sua cidade, você frequenta todos os locais públicos (incluindo escolas, lojas, escritórios, mercados, bares e restaurantes) ?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_12_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_12_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_13 , ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"}%>
+              <%= f.label :questao_13, "Você tem oportunidade que os seus pares de se cuidar (quanto à aparência, nutrição, saúde, etc.)?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_13_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_13_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_14, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_14, "Em sua casa, você faz o serviço de casa?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_14_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_14_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_15, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_15, "Nas discussões familiares, a sua opinião conta/é importante?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_15_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_15_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_16, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_16, "Em sua casa, você como junto com as outras pessoas, inclusive usando os mesmos utensílios, etc.?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_16_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_16_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_17, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_17, "Você participa das principais festas e rituais religiosos tanto quanto os seus pares? (ex: casamentos, batizados, velórios, festas religiosas) ?" %>
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_17_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_17_valor, [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"}  %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 l6">
+
+
+              <%= f.select :questao_18, ["Sim","Às Vezes","Não", "Irrelevante"], {prompt: true},{:onchange => "change(this)"} %>
+              <%= f.label :questao_18 , "Você se sente confiante para tentar aprender coisas novas?"%>
+
+            </div>
+
+            <div class="input col s12 l6">
+
+              <%= f.label :questao_18_valor, "[Se às vezes, não ou irrelevante] Até que ponto isso representa um problema para você?" %>
+              <%= f.select :questao_18_valor , [["Selecione",0],["Não é problema",1],["Pequeno",2],["Médio",3], ["Grande",5]],{},{class:"browser-default valor"} %>
+
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+        <div class="input-field">
+
+          <%= f.label :comentario, "Comentário" %>
+          <%= f.text_area :comentario, class:"materialize-textarea" %>
+
+        </div>
+
+
+        <%= f.hidden_field :paciente_id  %>
+
+
+
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Salvar", class:"btn" %>
+    </div>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+      $(".valor").attr("style", "pointer-events: none;");
+      for(i = 1; i <= 18; i++)
+      {
+
+          if($("#escala_part_questao_"+i).val() == "Sim")
+          {
+              $('#escala_part_questao_'+i+'_valor option:eq(0)').prop('selected', true)
+              $("#escala_part_questao_"+i+"_valor").attr("style", "pointer-events: none;");
+          }
+          else
+          {
+              $("#escala_part_questao_"+i+"_valor").removeAttr('style');
+          }
+      }
+  });
+  $(document).on('click', 'form input[type=submit]', function(e)
+  {
+    for(i = 1; i <= 18; i++)
+    {
+
+        if($("#escala_part_questao_"+i).val() != "Sim" && $("#escala_part_questao_"+i+"_valor").val() == 0)
+        {
+            swal("Erro","Informe os dados da Questão "+i,"error");
+            e.preventDefault(); //prevent the default action
+        }
+    }
+  });
+    function change(o)
+    {
+
+      if(o.value == "Sim")
+      {
+          $('#'+o.id+'_valor option:eq(0)').prop('selected', true)
+          $("#"+o.id+"_valor").attr("style", "pointer-events: none;");
+      }
+      else
+      {
+          $("#"+o.id+"_valor").removeAttr('style');
+      }
+
+    }
+</script>

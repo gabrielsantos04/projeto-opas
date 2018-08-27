@@ -24,6 +24,18 @@
 #
 
 class ImunizacaoImunobiologico < ApplicationRecord
-  belongs_to :imunizacao_vacina
+  belongs_to :imunizacao_vacina, optional: true
   belongs_to :imunizacao_solicitacao
+  has_many :imunizacao_esquemas
+
+  accepts_nested_attributes_for :imunizacao_esquemas, allow_destroy: true
+
+
+  def to_s
+    if self.imunizacao_vacina.present?
+      self.imunizacao_vacina
+    else
+      self.nome_vacina
+    end
+  end
 end

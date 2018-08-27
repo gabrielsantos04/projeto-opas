@@ -35,9 +35,9 @@
     <% @pacientes.each do |paciente| %>
     <tr>
               
-          <td><%= link_to paciente.nome,paciente %></td>
+          <td><%= link_to paciente.nome.upcase,paciente %></td>
 
-          <td><%= paciente.nome_mae %></td>
+          <td><%= paciente.nome_mae.upcase %></td>
 
           <td><%= paciente.idade %></td>
 

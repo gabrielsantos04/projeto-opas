@@ -1,0 +1,94 @@
+# == Schema Information
+#
+# Table name: monthly_reports
+#
+#  id                       :integer          not null, primary key
+#  nome_grupo               :string
+#  coordenador              :string
+#  monitor                  :string
+#  lider                    :string
+#  data_reuniao             :date
+#  inicio                   :time
+#  termino                  :time
+#  local                    :string
+#  temas                    :text
+#  atividades_desenvolvidas :text
+#  data_proximo             :datetime
+#  intercorrencia           :boolean
+#  outros_agravos           :integer
+#  agravo_diabetes          :integer
+#  agravo_hipertensao       :integer
+#  agravo_avc               :integer
+#  analfabetos              :integer
+#  qtd_psicologo            :integer
+#  qtd_assistente_social    :integer
+#  oficina_sapataria        :integer
+#  qtd_hanseniase           :integer
+#  qtd_sem_hanseniase       :integer
+#  qtd_profissionais        :integer
+#  cidade_id                :integer
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#
+# Indexes
+#
+#  index_monthly_reports_on_cidade_id  (cidade_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (cidade_id => cidades.id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome_grupo: MyString
+  coordenador: MyString
+  monitor: MyString
+  lider: MyString
+  data_reuniao: 2018-08-16
+  inicio: 2018-08-16 09:13:27
+  termino: 2018-08-16 09:13:27
+  local: MyString
+  temas: MyText
+  atividades_desenvolvidas: MyText
+  data_proximo: 2018-08-16 09:13:27
+  intercorrencia: false
+  outros_agravos: 1
+  agravo_diabetes: 1
+  agravo_hipertensao: 1
+  agravo_avc: 1
+  analfabetos: 1
+  qtd_psicologo: 1
+  qtd_assistente_social: 1
+  oficina_sapataria: 1
+  qtd_hanseniase: 1
+  qtd_sem_hanseniase: 1
+  qtd_profissionais: 1
+  cidade: one
+
+two:
+  nome_grupo: MyString
+  coordenador: MyString
+  monitor: MyString
+  lider: MyString
+  data_reuniao: 2018-08-16
+  inicio: 2018-08-16 09:13:27
+  termino: 2018-08-16 09:13:27
+  local: MyString
+  temas: MyText
+  atividades_desenvolvidas: MyText
+  data_proximo: 2018-08-16 09:13:27
+  intercorrencia: false
+  outros_agravos: 1
+  agravo_diabetes: 1
+  agravo_hipertensao: 1
+  agravo_avc: 1
+  analfabetos: 1
+  qtd_psicologo: 1
+  qtd_assistente_social: 1
+  oficina_sapataria: 1
+  qtd_hanseniase: 1
+  qtd_sem_hanseniase: 1
+  qtd_profissionais: 1
+  cidade: two

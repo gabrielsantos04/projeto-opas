@@ -5,7 +5,7 @@
     </span>
     <div id="pesquisa" class="not-show">
       <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
-      <%# f.text_field :name_cont, placeholder: "Pesquisar..." %>
+      <%= f.text_field :nome_cont, placeholder: "Pesquisar..." %>
       <%= f.submit "Filtrar", class:"btn" %>
       <% end %>
     </div>

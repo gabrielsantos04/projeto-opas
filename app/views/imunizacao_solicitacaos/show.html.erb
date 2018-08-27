@@ -1,104 +1,214 @@
+<h4 class="center">Requisição de Imunobiológicos Especiais Nº <%= @imunizacao_solicitacao.id %></h4>
+    <div class="card-panel">
+      <h4 class="header2">Identidade do Usuário</h4>
+      <div class="input-field">
+
+        <b>Nome do Paciente:</b><br>
+        <%= @imunizacao_solicitacao.nome_paciente %>
+
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="">
+
+            <b>Data de Nascimento:</b><br>
+            <%= @imunizacao_solicitacao.data_nascimento %>
+
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="">
+            <b>Sexo:</b><br>
+            <%= @imunizacao_solicitacao.sexo %>
+          </div>
+        </div>
+      </div>
+      <div class="input-field">
+        <b>Nome da Mãe:</b><br>
+        <%= @imunizacao_solicitacao.nome_mae %>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="input-field">
+
+            <b>Endereço:</b><br>
+            <%= @imunizacao_solicitacao.endereco %>
+
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="input-field">
+
+            <b>Bairro:</b><br>
+            <%= @imunizacao_solicitacao.bairro %>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="">
+        <b>Cidade:</b><br>
+        <%= @imunizacao_solicitacao.municipio %>
+      </div>
+    </div>
+    <div class="card-panel">
+      <h4 class="header2">
+        Identidade do Requisitante
+      </h4>
+      <div class="input-field">
+
+        <b>Nome:</b><br>
+        <%= @imunizacao_solicitacao.nome_requisitante %>
+
+      </div>
+
+      <div class="row">
+        <div class="col s12 m4">
+          <b>Tipo de Requisitante:</b><br>
+          <%= @imunizacao_solicitacao.tipo_requisitante %>
+        </div>
+        <div class="col s12 m4">
+          <b>CRM/COREN:</b><br>
+          <%= @imunizacao_solicitacao.crm_coren %>
+        </div>
+        <div class="col s12 m4">
+          <b>Telefone:</b><br>
+          <%= @imunizacao_solicitacao.telefone_requisitante %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m8">
+          <b>Instituição:</b><br>
+          <%= @imunizacao_solicitacao.instituicao_requisitante %>
+        </div>
+        <div class="col s12 m4">
+          <b>Município:</b><br>
+          <%= @imunizacao_solicitacao.municipio_requisitante %>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-panel">
+      <h4 class="header2">Motivo da Solicitação</h4>
+      <%= @imunizacao_solicitacao.motivo_solicitacao %> <br>
+      <div class="input-field">
+
+        <b>Solicitante:</b><br>
+        <%= @imunizacao_solicitacao.solicitante %>
+
+      </div>
+    </div>
 <div class="card-panel">
-	
-<p>
-  <strong>Nome paciente:</strong>
-  <%= @imunizacao_solicitacao.nome_paciente %>
-</p>
+  <h4 class="header2">Imunobiológicos Fornecidos pelo Estado</h4>
+  <% @imunizacao_solicitacao.imunobiologicos.each do |imunobiologico| %>
+      <div class="card-panel">
+        <h4 class="header2"><%= imunobiologico %></h4>
+        <p><b>Doses:</b></p>
+        <% imunobiologico.imunizacao_esquemas.each do |esquema| %>
+            <div class="card-panel">
+              <div class="row">
+                <div class="col s12 m4">
+                  <b>Dose:</b><br>
+                  <%= esquema.dose %>
+                </div>
+                <div class="col s12 m4">
+                  <b>Esquema:</b><br>
+                  <%= esquema.esquema %>
+                </div>
+                <div class="col s12 m4">
+                  <b>Status:</b><br>
+                  <%= esquema.status %>
+                </div>
+              </div>
+              <p><b>Encerramentos:</b></p>
+              <% esquema.imunizacao_encerramentos.each do |encerramento| %>
+                  <div class="card-panel">
+                    <div>
+                      <b>Data de Administração:</b><br>
+                      <%= encerramento.data_administracao %>
+                    </div>
+                    <div>
+                      <b>Lote:</b><br>
+                      <%= encerramento.lote %>
+                    </div>
+                    <div>
+                      <b>Validade:</b><br>
+                      <%= encerramento.validade%>
+                    </div>
+                    <div>
+                      <b>Laboratório:</b><br>
+                      <%= encerramento.laboratorio %>
+                    </div>
+                    <div>
+                      <b>Unidade de Administração:</b><br>
+                      <%= encerramento.unidade_administracao %>
+                    </div>
+                    <div>
+                      <b>Via de Administração:</b><br>
+                      <%= encerramento.via_administracao %>
+                    </div>
+                    <div>
+                      <b>Profissional:</b><br>
+                      <%= encerramento.profissional %>
+                    </div>
+                    <div>
+                      <b>Observações:</b><br>
+                      <%= encerramento.observacoes %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
+</div>
 
-<p>
-  <strong>Data nascimento:</strong>
-  <%= @imunizacao_solicitacao.data_nascimento %>
-</p>
+<div class="card-panel">
+  <h4 class="header2">Outros Imunobiológicos</h4>
+  <table class="table striped">
+  <% @imunizacao_solicitacao.outros_imunobiologicos.each do |outros| %>
+      <tr>
+        <td><%= outros %></td>
+      </tr>
+  <% end %>
+  </table>
+</div>
+<div class="card-panel">
 
-<p>
-  <strong>Sexo:</strong>
-  <%= @imunizacao_solicitacao.sexo %>
-</p>
 
-<p>
-  <strong>Nome mae:</strong>
-  <%= @imunizacao_solicitacao.nome_mae %>
-</p>
+  <div class="input-field">
 
-<p>
-  <strong>Endereco:</strong>
-  <%= @imunizacao_solicitacao.endereco %>
-</p>
+    <b>Data de Atendimento:</b><br>
+    <%= @imunizacao_solicitacao.data_atendimento%>
 
-<p>
-  <strong>Bairro:</strong>
-  <%= @imunizacao_solicitacao.bairro %>
-</p>
+  </div>
 
-<p>
-  <strong>Municipio:</strong>
-  <%= @imunizacao_solicitacao.municipio_id %>
-</p>
+  <div >
 
-<p>
-  <strong>Motivo solicitacao:</strong>
-  <%= @imunizacao_solicitacao.motivo_solicitacao %>
-</p>
+    <b>Municipio Atual:</b><br>
+    <%= @imunizacao_solicitacao.municipio_atual %>
 
-<p>
-  <strong>Nome requisitante:</strong>
-  <%= @imunizacao_solicitacao.nome_requisitante %>
-</p>
+  </div>
 
-<p>
-  <strong>Tipo requisitante:</strong>
-  <%= @imunizacao_solicitacao.tipo_requisitante %>
-</p>
+  <div class="">
 
-<p>
-  <strong>Crm coren:</strong>
-  <%= @imunizacao_solicitacao.crm_coren %>
-</p>
+    <b>Status:</b><br>
+    <%= @imunizacao_solicitacao.status %>
 
-<p>
-  <strong>Telefone requisitante:</strong>
-  <%= @imunizacao_solicitacao.telefone_requisitante %>
-</p>
 
-<p>
-  <strong>Instituicao requisitante:</strong>
-  <%= @imunizacao_solicitacao.instituicao_requisitante %>
-</p>
-
-<p>
-  <strong>Municipio requisitante:</strong>
-  <%= @imunizacao_solicitacao.municipio_requisitante_id %>
-</p>
-
-<p>
-  <strong>Anexo:</strong>
-  <%= @imunizacao_solicitacao.anexo %>
-</p>
-
-<p>
-  <strong>Solicitante:</strong>
-  <%= @imunizacao_solicitacao.solicitante %>
-</p>
-
-<p>
-  <strong>Observacoes:</strong>
-  <%= @imunizacao_solicitacao.observacoes %>
-</p>
-
-<p>
-  <strong>Data atendimento:</strong>
-  <%= @imunizacao_solicitacao.data_atendimento %>
-</p>
-
-<p>
-  <strong>Municipio atual:</strong>
-  <%= @imunizacao_solicitacao.municipio_atual_id %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @imunizacao_solicitacao.status %>
-</p>
+  </div>
 
 </div>
-<%= link_to 'Voltar', imunizacao_solicitacaos_path, class:"btn" %>
+
+<div class="card-panel">
+  <div class="input-field">
+
+    <b>Observações:</b><br>
+    <%= @imunizacao_solicitacao.observacoes %>
+
+  </div>
+</div>
+

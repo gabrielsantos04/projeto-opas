@@ -3,12 +3,12 @@
     <div class="col s12 l6">
       <p>
         <strong>Nome:</strong>
-        <%= @paciente.nome %>
+        <%= @paciente.nome.upcase %>
       </p>
 
       <p>
         <strong>Nome mae:</strong>
-        <%= @paciente.nome_mae %>
+        <%= @paciente.nome_mae.upcase %>
       </p>
 
       <p>
@@ -99,6 +99,20 @@
           <a href="/recidivas/new?paciente=<%= @paciente.id %>">Recidiva</a>
         </div>
       <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Escalas de Participação</span>
+        <%= render partial: "escala_participacao", locals: {escala_parts: @paciente.escala_parts} %>
+      </div>
+
+      <div class="card-action">
+        <a href="/escala_parts/new?paciente=<%= @paciente.id %>">Nova Entrevista</a>
+      </div>
+
     </div>
   </div>
 

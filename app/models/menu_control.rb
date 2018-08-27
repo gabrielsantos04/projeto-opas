@@ -8,6 +8,6 @@ class MenuControl
   end
 
   def self.menu
-    ['dst']
+    ['dst','dant', 'imunizacao']
   end
 end
