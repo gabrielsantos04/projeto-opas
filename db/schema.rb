@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180820142950) do
+ActiveRecord::Schema.define(version: 20180830143117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -566,6 +566,79 @@ ActiveRecord::Schema.define(version: 20180820142950) do
     t.index ["notificacao_id"], name: "index_esquema_substitutivos_on_notificacao_id"
   end
 
+  create_table "imunizacao_encerramentos", force: :cascade do |t|
+    t.bigint "imunizacao_esquema_id"
+    t.date "data_administracao"
+    t.string "lote"
+    t.date "validade"
+    t.string "laboratorio"
+    t.string "unidade_administracao"
+    t.string "via_administracao"
+    t.string "profissional"
+    t.text "observacoes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imunizacao_esquema_id"], name: "index_imunizacao_encerramentos_on_imunizacao_esquema_id"
+  end
+
+  create_table "imunizacao_esquemas", force: :cascade do |t|
+    t.string "dose"
+    t.string "esquema"
+    t.string "status"
+    t.string "justificativa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "imunizacao_imunobiologico_id"
+    t.index ["imunizacao_imunobiologico_id"], name: "index_imunizacao_esquemas_on_imunizacao_imunobiologico_id"
+  end
+
+  create_table "imunizacao_imunobiologicos", force: :cascade do |t|
+    t.string "tipo"
+    t.string "nome_vacina"
+    t.bigint "imunizacao_vacina_id"
+    t.bigint "imunizacao_solicitacao_id"
+    t.string "status"
+    t.text "justificativa_indeferimento"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imunizacao_solicitacao_id"], name: "index_imunizacao_imunobiologicos_on_imunizacao_solicitacao_id"
+    t.index ["imunizacao_vacina_id"], name: "index_imunizacao_imunobiologicos_on_imunizacao_vacina_id"
+  end
+
+  create_table "imunizacao_solicitacaos", force: :cascade do |t|
+    t.string "nome_paciente"
+    t.date "data_nascimento"
+    t.string "sexo"
+    t.string "nome_mae"
+    t.text "endereco"
+    t.string "bairro"
+    t.integer "municipio_id"
+    t.text "motivo_solicitacao"
+    t.string "nome_requisitante"
+    t.string "tipo_requisitante"
+    t.string "crm_coren"
+    t.string "telefone_requisitante"
+    t.string "instituicao_requisitante"
+    t.integer "municipio_requisitante_id"
+    t.text "anexo"
+    t.string "solicitante"
+    t.text "observacoes"
+    t.date "data_atendimento"
+    t.integer "municipio_atual_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "telefone_paciente"
+    t.integer "idade"
+  end
+
+  create_table "imunizacao_vacinas", force: :cascade do |t|
+    t.string "nome"
+    t.text "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "marcacaos", force: :cascade do |t|
     t.bigint "avaliacao_sensitiva_id"
     t.string "imagem"
@@ -819,6 +892,10 @@ ActiveRecord::Schema.define(version: 20180820142950) do
   add_foreign_key "escala_salsas", "pacientes"
   add_foreign_key "esquema_substitutivos", "medicamentos"
   add_foreign_key "esquema_substitutivos", "notificacaos"
+  add_foreign_key "imunizacao_encerramentos", "imunizacao_esquemas"
+  add_foreign_key "imunizacao_esquemas", "imunizacao_imunobiologicos"
+  add_foreign_key "imunizacao_imunobiologicos", "imunizacao_solicitacaos"
+  add_foreign_key "imunizacao_imunobiologicos", "imunizacao_vacinas"
   add_foreign_key "marcacaos", "avaliacao_sensitivas"
   add_foreign_key "monthly_reports", "cidades"
   add_foreign_key "nervos_recidivas", "recidivas"

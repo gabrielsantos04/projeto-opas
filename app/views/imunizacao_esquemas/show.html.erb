@@ -1,0 +1,29 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Imunizacao imunobiologicos:</strong>
+  <%= @imunizacao_esquema.imunizacao_imunobiologicos %>
+</p>
+
+<p>
+  <strong>Dose:</strong>
+  <%= @imunizacao_esquema.dose %>
+</p>
+
+<p>
+  <strong>Esquema:</strong>
+  <%= @imunizacao_esquema.esquema %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @imunizacao_esquema.status %>
+</p>
+
+<p>
+  <strong>Justificativa:</strong>
+  <%= @imunizacao_esquema.justificativa %>
+</p>
+
+</div>
+<%= link_to 'Voltar', imunizacao_esquemas_path, class:"btn" %>

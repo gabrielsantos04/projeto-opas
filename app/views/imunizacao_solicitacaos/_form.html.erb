@@ -1,0 +1,226 @@
+<h4 class="center">Requisição de Imunobiológicos Especiais</h4>
+<%= nested_form_for(imunizacao_solicitacao) do |f| %>
+    <% if imunizacao_solicitacao.errors.any? %>
+        <div id="error_explanation" class="card-panel red white-text">
+          <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+          <ul>
+            <% imunizacao_solicitacao.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="card-panel">
+      <h4 class="header2">Identidade do Usuário</h4>
+      <div class="input-field">
+
+        <%= f.label :nome_paciente, "Nome" %>
+        <%= f.text_field :nome_paciente %>
+
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="">
+
+            <%= f.label :data_nascimento %>
+            <%= f.date_field :data_nascimento %>
+
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="">
+            <%= f.label :sexo %>
+            <%= f.select :sexo, ImunizacaoSolicitacao.sexo.options %>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="">
+            <%= f.label :telefone_paciente, "Telefone" %>
+            <%= f.text_field :telefone_paciente %>
+          </div>
+        </div>
+      </div>
+      <div class="input-field">
+        <%= f.label :nome_mae %>
+        <%= f.text_field :nome_mae %>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="input-field">
+
+            <%= f.label :endereco %>
+            <%= f.text_area :endereco %>
+
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="input-field">
+
+            <%= f.label :bairro %>
+            <%= f.text_field :bairro %>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="">
+        <%= f.label :municipio_id %>
+        <%= f.select :municipio_id, Cidade.to_select,{ prompt: true},{class:"browser-default chosen-select"}  %>
+      </div>
+    </div>
+    <div class="card-panel">
+      <h4 class="header2">
+        Identidade do Requisitante
+      </h4>
+      <div class="input-field">
+
+        <%= f.label :nome %>
+        <%= f.text_field :nome_requisitante %>
+
+      </div>
+
+      <div class="row">
+        <div class="col s12 m4">
+          <%= f.label :tipo %>
+          <%= f.select :tipo_requisitante, ImunizacaoSolicitacao.tipo_requisitante.options %>
+        </div>
+        <div class="col s12 m4">
+          <%= f.label :crm_coren, "CRM/COREN" %>
+          <%= f.text_field :crm_coren %>
+        </div>
+        <div class="col s12 m4">
+          <%= f.label :telefone %>
+          <%= f.text_field :telefone_requisitante %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m8">
+          <%= f.label :instituicao_requisitante, "Instituição" %>
+          <%= f.text_field :instituicao_requisitante %>
+        </div>
+        <div class="col s12 m4">
+          <%= f.label :municipio %>
+          <%= f.select :municipio_requisitante_id, Cidade.to_select,{ prompt: true},{class:"browser-default chosen-select"}  %>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <%= f.file_field :anexo %>
+      </div>
+    </div>
+
+    <div class="card-panel">
+      <h4 class="header2">Motivo da Solicitação</h4>
+      <%= f.text_area :motivo_solicitacao %>
+      <div class="input-field">
+
+        <%= f.label :solicitante %>
+        <%= f.text_field :solicitante %>
+
+      </div>
+    </div>
+
+    <div class="card-panel">
+      <h4 class="header2">Imunobiológicos Fornecidos pelo Estado</h4>
+      <%= f.fields_for :imunobiologicos do |i| %>
+          <%= i.hidden_field :imunizacao_solicitacao_id %>
+        <div class="card-panel">
+          <%= i.select :imunizacao_vacina_id, ImunizacaoVacina.to_select %>
+          <!--<p><b>Doses:</b></p>
+          <%= i.fields_for :imunizacao_esquemas do |e| %>
+            <div class="card-panel">
+              <div class="row">
+                <div class="col s12 m4">
+                  <%= e.label :dose %>
+                  <%= e.select :dose, ImunizacaoEsquema.dose.options %>
+                </div>
+                <div class="col s12 m4">
+                  <%= e.label :esquema %>
+                  <%= e.text_field :esquema %>
+                </div>
+                <div class="col s12 m4">
+                  <%= e.label :status %>
+                  <%= e.select :status, ImunizacaoEsquema.status.options %>
+                </div>
+              </div>
+              <p><b>Encerramentos:</b></p>
+              <%= e.fields_for :imunizacao_encerramentos do |ie| %>
+                <div class="card-panel">
+                  <div>
+                    <%= ie.label "Data de Administação" %>
+                    <%= ie.date_field :data_administracao %>
+                  </div>
+                  <div>
+                    <%= ie.label :lote %>
+                    <%= ie.text_field :lote %>
+                  </div>
+                  <div>
+                    <%= ie.label :validade %>
+                    <%= ie.date_field :validade%>
+                  </div>
+                  <div>
+                    <%= ie.label :laboratorio %>
+                    <%= ie.text_field :laboratorio %>
+                  </div>
+                  <div>
+                    <%= ie.label :unidade_administracao %>
+                    <%= ie.text_field :unidade_administracao %>
+                  </div>
+                  <div>
+                    <%= ie.label :via_administracao %>
+                    <%= ie.select :via_administracao, ImunizacaoEncerramento.via_administracao.options%>
+                  </div>
+                  <div>
+                    <%= ie.label :profissional %>
+                    <%= ie.text_field :profissional %>
+                  </div>
+                  <div>
+                    <%= ie.label :observacoes %>
+                    <%= ie.text_field :observacoes %>
+                  </div>
+                </div>
+              <% end %>
+              <%= e.link_to_add "Novo Encerramento", :imunizacao_encerramentos, class: "btn" %>
+            </div>
+          <% end %>
+          <%= i.link_to_add "Nova Dose", :imunizacao_esquemas, class: "btn" %>
+           -->
+          <%= i.link_to_remove "Apagar", class: "btn red" %>
+        </div>
+      <% end %>
+      <%= f.link_to_add "Inserir", :imunobiologicos, class: :btn %>
+
+    </div>
+
+    <div class="card-panel">
+      <h4 class="header2">Outros Imunobiológicos</h4>
+      <%= f.fields_for :outros_imunobiologicos do |i| %>
+          <%= i.hidden_field :imunizacao_solicitacao_id %>
+          <div class="card-panel">
+            <%= i.text_field :nome_vacina %>
+            <%= i.link_to_remove "Apagar", class: "btn red" %>
+
+          </div>
+      <% end %>
+      <%= f.link_to_add "Inserir", :outros_imunobiologicos, class: :btn %>
+    </div>
+
+    <%= f.hidden_field :municipio_atual_id%>
+
+    <div class="card-panel">
+      <div class="input-field">
+
+        <%= f.label :observacoes %>
+        <%= f.text_area :observacoes %>
+
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Salvar", class:"btn" %>
+    </div>
+<% end %>

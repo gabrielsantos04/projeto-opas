@@ -1,0 +1,395 @@
+
+<h4 class="center">Requisição de Imunobiológicos Especiais Nº <%= @imunizacao_solicitacao.id %></h4>
+<div class="card-panel">
+  <h4 class="header2">Identidade do Usuário</h4>
+  <div class="input-field">
+
+    <b>Nome:</b><br>
+    <%= @imunizacao_solicitacao.nome_paciente %>
+
+  </div>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="">
+
+        <b>Data de Nascimento:</b><br>
+        <%= @imunizacao_solicitacao.data_nascimento %>
+
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="">
+
+        <b>Idade:</b><br>
+        <%= @imunizacao_solicitacao.idade %>
+
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="">
+        <b>Sexo:</b><br>
+        <%= @imunizacao_solicitacao.sexo %>
+      </div>
+    </div>
+  </div>
+  <div class="input-field">
+    <b>Nome da Mãe:</b><br>
+    <%= @imunizacao_solicitacao.nome_mae %>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="input-field">
+
+        <b>Endereço:</b><br>
+        <%= @imunizacao_solicitacao.endereco %>
+
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="input-field">
+
+        <b>Bairro:</b><br>
+        <%= @imunizacao_solicitacao.bairro %>
+
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="input-field">
+
+        <b>Telefone:</b><br>
+        <%= @imunizacao_solicitacao.telefone_paciente %>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="">
+    <b>Cidade:</b><br>
+    <%= @imunizacao_solicitacao.municipio %>
+  </div>
+</div>
+<div class="card-panel">
+  <h4 class="header2">
+    Identidade do Requisitante
+  </h4>
+  <div class="input-field">
+
+    <b>Nome:</b><br>
+    <%= @imunizacao_solicitacao.nome_requisitante %>
+
+  </div>
+
+  <div class="row">
+    <div class="col s12 m4">
+      <b>Tipo de Requisitante:</b><br>
+      <%= @imunizacao_solicitacao.tipo_requisitante %>
+    </div>
+    <div class="col s12 m4">
+      <b>CRM/COREN:</b><br>
+      <%= @imunizacao_solicitacao.crm_coren %>
+    </div>
+    <div class="col s12 m4">
+      <b>Telefone:</b><br>
+      <%= @imunizacao_solicitacao.telefone_requisitante %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m8">
+      <b>Instituição:</b><br>
+      <%= @imunizacao_solicitacao.instituicao_requisitante %>
+    </div>
+    <div class="col s12 m4">
+      <b>Município:</b><br>
+      <%= @imunizacao_solicitacao.municipio_requisitante %>
+    </div>
+  </div>
+</div>
+
+<div class="card-panel">
+  <h4 class="header2">Motivo da Solicitação</h4>
+  <%= @imunizacao_solicitacao.motivo_solicitacao %> <br>
+  <div class="input-field">
+
+    <b>Solicitante:</b><br>
+    <%= @imunizacao_solicitacao.solicitante %>
+
+  </div>
+</div>
+<div class="card-panel" style="overflow: visible;">
+  <h4 class="header2">Imunobiológicos Fornecidos pelo Estado</h4>
+  <% @imunizacao_solicitacao.imunobiologicos.each do |imunobiologico| %>
+      <div class="card-panel" style="overflow: visible;">
+        <h4 class="header2"><%= imunobiologico %></h4>
+        <div class="row">
+          <div class="col s12 l6">
+            <b>Status:</b>
+            <%= imunobiologico.status %>
+          </div>
+          <% if imunobiologico.status == :indeferido %>
+              <div class="col s12">
+                <b>Justificativa Indeferimento:</b>
+                <%= imunobiologico.justificativa_indeferimento %>
+              </div>
+          <% end %>
+        </div>
+        <p><b>Doses:</b></p>
+        <% imunobiologico.imunizacao_esquemas.each do |esquema| %>
+            <div class="card-panel">
+              <div class="row">
+                <div class="col s12 m4">
+                  <b>Dose:</b><br>
+                  <%= esquema.dose %>
+                </div>
+                <div class="col s12 m4">
+                  <b>Esquema:</b><br>
+                  <%= esquema.esquema %>
+                </div>
+                <div class="col s12 m4">
+                  <b>Status:</b><br>
+                  <%= esquema.status == :concluido ? "Concluído" : "Não Aplicado" if esquema.status != nil %>
+                </div>
+                <% if esquema.status == :nao_aplicado %>
+                    <div class="col s12 m4">
+                      <b>Justificativa:</b><br>
+                      <%= esquema.justificativa %>
+                    </div>
+                <% end %>
+              </div>
+              <p><b>Encerramentos:</b></p>
+              <% esquema.imunizacao_encerramentos.each do |encerramento| %>
+                  <div class="card-panel">
+                    <div>
+                      <b>Data de Administração:</b><br>
+                      <%= encerramento.data_administracao %>
+                    </div>
+                    <div>
+                      <b>Lote:</b><br>
+                      <%= encerramento.lote %>
+                    </div>
+                    <div>
+                      <b>Validade:</b><br>
+                      <%= encerramento.validade%>
+                    </div>
+                    <div>
+                      <b>Laboratório:</b><br>
+                      <%= encerramento.laboratorio %>
+                    </div>
+                    <div>
+                      <b>Unidade de Administração:</b><br>
+                      <%= encerramento.unidade_administracao %>
+                    </div>
+                    <div>
+                      <b>Via de Administração:</b><br>
+                      <%= encerramento.via_administracao %>
+                    </div>
+                    <div>
+                      <b>Profissional:</b><br>
+                      <%= encerramento.profissional %>
+                    </div>
+                    <div>
+                      <b>Observações:</b><br>
+                      <%= encerramento.observacoes %>
+                    </div>
+                  </div>
+              <% end %>
+              <% if esquema.status == nil %>
+                  <a class="waves-effect waves-light btn modal-trigger" href="#modal_encerramento_<%= esquema.id %>">Encerramento</a>
+              <% end %>
+              <% if esquema.status != :nao_aplicado and esquema.status != :concluido %>
+                  <a class="waves-effect waves-light btn modal-trigger" href="#modal_aplicado_<%= esquema.id %>">Não Aplicado</a>
+              <% end %>
+
+              <div id="modal_encerramento_<%= esquema.id %>" class="modal">
+                <div class="modal-content">
+                  <%= form_tag(novo_encerramento_imunizacao_esquema_path(esquema), method: :get) do %>
+                      <h4>Encerramento</h4>
+                      <div class="row">
+                        <div>
+                          <%= label_tag :data_administracao, "Data de Administação" %>
+                          <%= date_field_tag :data_administracao,nil, required: true %>
+                        </div>
+                        <div>
+                          <%= label_tag :lote %>
+                          <%= text_field_tag :lote,nil, required: true %>
+                        </div>
+                        <div>
+                          <%= label_tag :validade %>
+                          <%= date_field_tag :validade,nil, required: true%>
+                        </div>
+                        <div>
+                          <%= label_tag :laboratorio, "Laboratório" %>
+                          <%= text_field_tag :laboratorio,nil, required: true %>
+                        </div>
+                        <div>
+                          <%= label_tag :unidade_administracao, "Unidade de Administração" %>
+                          <%= text_field_tag :unidade_administracao,nil, required: true %>
+                        </div>
+                        <div>
+                          <%= label_tag :via_administracao, "Via de Administração" %>
+                          <%= select_tag :via_administracao, options_for_select(ImunizacaoEncerramento.via_administracao.options)%>
+                        </div>
+                        <div>
+                          <%= label_tag :profissional %>
+                          <%= text_field_tag :profissional,nil, required: true %>
+                        </div>
+                        <div>
+                          <%= label_tag :observacoes, "Observações" %>
+                          <%= text_field_tag :observacoes %>
+                        </div>
+                      </div>
+                      <%= submit_tag "Salvar", class:"btn" %>
+                  <% end %>
+                </div>
+              </div>
+              <div id="modal_aplicado_<%= esquema.id %>" class="modal">
+                <div class="modal-content">
+                  <%= form_tag(nao_aplicado_imunizacao_esquema_path(esquema), method: :get) do %>
+                      <h4>Justificativa</h4>
+                      <div class="row">
+                        <div>
+                          <%= label_tag :motivo, "Informe o Motivo" %>
+                          <%= text_area_tag :motivo,nil, required: true %>
+                        </div>
+                      </div>
+                      <%= submit_tag "Salvar", class:"btn" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+        <% if current_user.administrador? || current_user.admin_imuni? %>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal_dose_<%= imunobiologico.id %>">Nova Dose</a>
+            <% if imunobiologico.status != :indeferido %>
+                <a class="waves-effect waves-light btn red modal-trigger" href="#modal_indeferimento_<%= imunobiologico.id %>">Indeferir</a>
+            <% end %>
+        <% end %>
+        <div id="modal_dose_<%= imunobiologico.id %>" class="modal">
+          <div class="modal-content">
+            <%= form_tag(nova_dose_imunizacao_imunobiologico_path(imunobiologico), method: :get) do %>
+                <h4>Dose</h4>
+                <div class="row">
+                  <div class="col s12 m4">
+                    <%= label_tag :dose %>
+                    <%= select_tag :dose, options_for_select(ImunizacaoEsquema.dose.options) %>
+                  </div>
+                  <div class="col s12 m4">
+                    <%= label_tag :esquema %>
+                    <%= text_field_tag :esquema %>
+                  </div>
+                </div>
+                <%= submit_tag "Salvar", class:"btn" %>
+            <% end %>
+          </div>
+        </div>
+
+        <div id="modal_indeferimento_<%= imunobiologico.id %>" class="modal">
+          <div class="modal-content">
+            <%= form_tag(indeferir_imunizacao_imunobiologico_path(imunobiologico), method: :get) do %>
+                <h4>Indeferimento</h4>
+                <div class="row">
+                  <div class="col s12 m4">
+                    <%= label_tag :motivo, "Informe a justificativa" %>
+                    <%= text_area_tag :motivo,nil,required: true %>
+                  </div>
+                </div>
+                <%= submit_tag "Salvar", class:"btn" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+<div class="card-panel">
+  <h4 class="header2">Outros Imunobiológicos</h4>
+  <table class="table striped">
+    <% @imunizacao_solicitacao.outros_imunobiologicos.each do |outros| %>
+        <tr>
+          <td><%= outros %></td>
+          <td>
+            <% if outros.justificativa_indeferimento == nil %>
+                <a class="waves-effect waves-light btn red modal-trigger" href="#modal_resposta_<%= outros.id %>">Resposta</a>
+            <% else %>
+                <%= outros.justificativa_indeferimento %>
+            <% end %>
+          </td>
+        </tr>
+        <div id="modal_resposta_<%= outros.id %>" class="modal">
+          <div class="modal-content">
+            <%= form_tag(indeferir_imunizacao_imunobiologico_path(outros), method: :get) do %>
+                <h4>Resposta</h4>
+                <div class="row">
+                  <div class="col s12 m4">
+                    <%= label_tag :motivo, "Informe a Resposta" %>
+                    <%= text_area_tag :motivo,nil,required: true %>
+                  </div>
+                </div>
+                <%= submit_tag "Salvar", class:"btn" %>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+  </table>
+</div>
+
+<div class="card-panel">
+  <div class="input-field">
+
+    <b>Observações:</b><br>
+    <%= @imunizacao_solicitacao.observacoes %>
+
+  </div>
+</div>
+
+
+<div class="card-panel">
+
+
+  <div class="input-field">
+
+    <b>Data de Atendimento:</b><br>
+    <%= @imunizacao_solicitacao.data_atendimento%>
+
+  </div>
+
+  <div >
+
+    <b>Municipio Atual:</b><br>
+    <%= @imunizacao_solicitacao.municipio_atual %>
+
+  </div>
+
+  <div class="">
+
+    <b>Status:</b><br>
+    <%= status(@imunizacao_solicitacao.status) %>
+
+
+  </div>
+
+  <%= form_for(@imunizacao_solicitacao) do |f| %>
+      <div class="card-panel">
+        <div class="input-field">
+
+          <%= f.select :status, ImunizacaoSolicitacao.status.options %>
+          <%= f.label :status %>
+        </div>
+        <div class="input">
+          <%= f.label :municipio_atual %>
+          <%= f.select :municipio_atual, Cidade.all.map{|a| [a.nome,a.id]},{ prompt: true},{class:"browser-default chosen-select"} %>
+
+        </div>
+        <%= f.submit "Salvar", class:"btn white-text", target:"_self" %>
+      </div>
+  <% end %>
+</div>
+
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+        $('.modal').modal();
+    });
+</script>
