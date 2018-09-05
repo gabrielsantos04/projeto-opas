@@ -27,6 +27,7 @@
 #  updated_at                :datetime         not null
 #  telefone_paciente         :string
 #  idade                     :integer
+#  deferimento               :text
 #
 
 class ImunizacaoSolicitacao < ApplicationRecord
@@ -39,7 +40,7 @@ class ImunizacaoSolicitacao < ApplicationRecord
   extend Enumerize
   enumerize :sexo, in: [:masculino, :feminino], predicates: true
   enumerize :tipo_requisitante, in: [:medico, :enfermeiro], predicates: true
-  enumerize :status, in: [:solicitado, :de_acordo, :em_desacordo, :dados_insuficientes], predicates: true, default: :solicitado
+  enumerize :status, in: [:solicitado, :autorizado, :nao_autorizado, :em_analise,:pendente], predicates: true, default: :solicitado
 
   accepts_nested_attributes_for :imunobiologicos, allow_destroy: true
   accepts_nested_attributes_for :outros_imunobiologicos, allow_destroy: true

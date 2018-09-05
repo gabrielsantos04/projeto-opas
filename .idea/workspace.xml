@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pacientes/_escala_salsa.html.erb" afterPath="$PROJECT_DIR$/app/views/pacientes/_escala_salsa.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/pt-BR.yml" afterPath="$PROJECT_DIR$/config/locales/pt-BR.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/imunizacao_solicitacaos.yml" afterPath="$PROJECT_DIR$/test/fixtures/imunizacao_solicitacaos.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/imunizacao_solicitacao_test.rb" afterPath="$PROJECT_DIR$/test/models/imunizacao_solicitacao_test.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -21,20 +30,8 @@
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="141" column="74" lean-forward="false" selection-start-line="141" selection-start-column="74" selection-end-line="141" selection-end-column="74" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/imunizacao_solicitacaos/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+            <state relative-caret-position="329">
+              <caret line="381" column="40" lean-forward="false" selection-start-line="381" selection-start-column="40" selection-end-line="381" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -44,7 +41,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Log in</find>
       <find>characters minimum</find>
       <find>conduta</find>
       <find>relacionais</find>
@@ -74,6 +70,7 @@
       <find>{prompt: true},{required: true}</find>
       <find>,required: true</find>
       <find>[&quot;NÃO - Eu evito por causa do risco&quot;,4]</find>
+      <find>grau_incapacidade</find>
     </findStrings>
     <replaceStrings>
       <replace>conduta</replace>
@@ -98,7 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/dant_requests/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/dant_responsavel_programs_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/dant_responsavel_programs/index.html.erb" />
@@ -128,7 +124,6 @@
         <option value="$PROJECT_DIR$/app/controllers/escala_parts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/escala_salsas/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/escala_salsas/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/pacientes/_escala_salsa.html.erb" />
         <option value="$PROJECT_DIR$/app/views/pacientes/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/paciente.rb" />
         <option value="$PROJECT_DIR$/app/controllers/escala_salsas_controller.rb" />
@@ -137,18 +132,20 @@
         <option value="$PROJECT_DIR$/app/helpers/escala_salsas_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/escala_salsas/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/imunizacao_esquemas_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/imunizacao/imunizacao_imunobiologico.rb" />
         <option value="$PROJECT_DIR$/app/models/imunizacao/imunizacao_esquema.rb" />
         <option value="$PROJECT_DIR$/app/controllers/imunizacao_imunobiologicos_controller.rb" />
         <option value="$PROJECT_DIR$/app/helpers/imunizacao_solicitacaos_helper.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/imunizacao_vacinas/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" />
         <option value="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pacientes/_escala_salsa.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/locales/pt-BR.yml" />
+        <option value="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" />
         <option value="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" />
       </list>
     </option>
   </component>
@@ -195,6 +192,25 @@
               <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
               <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="imunizacao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -207,14 +223,25 @@
             <path>
               <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
               <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pacientes" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
               <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="initializers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
@@ -434,12 +461,12 @@
       <workItem from="1534954036512" duration="246000" />
       <workItem from="1535454423785" duration="1036000" />
       <workItem from="1535627980878" duration="12514000" />
-      <workItem from="1536159420186" duration="204000" />
+      <workItem from="1536159420186" duration="4223000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312979000" />
+    <option name="totallyTimeSpent" value="316998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1366" height="708" extended-state="6" />
@@ -476,48 +503,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/pacientes/_notificacoes.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/medicamento.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/esquema_substitutivo.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/monofilamento.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/diagnostico.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/avaliacao_notificacao.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="52" column="92" lean-forward="true" selection-start-line="50" selection-start-column="2" selection-end-line="52" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/avaliacao_neurologica.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-701">
@@ -536,34 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="77" column="66" lean-forward="false" selection-start-line="77" selection-start-column="62" selection-end-line="77" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/rails.pt-BR.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3253">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/devise.en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-125">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/pt-BR.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3509">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -613,20 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="40" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pacientes/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="126" column="31" lean-forward="false" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pacientes/_escala_salsa.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -723,14 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/imunizacao/imunizacao_esquema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -777,6 +712,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -811,37 +747,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb">
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="68" column="52" lean-forward="false" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="52" />
+        <state relative-caret-position="-810">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb">
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/devise.en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pacientes/_escala_salsa.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="47" lean-forward="false" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pacientes/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="126" column="31" lean-forward="false" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/classificacao_graus/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_sensitiva.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-31">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="20" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/_avaliacao_neurologica.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/avaliacao_notificacaos/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/notificacaos/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/rails.pt-BR.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2767">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/pt-BR.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="340" column="86" lean-forward="false" selection-start-line="335" selection-start-column="2" selection-end-line="340" selection-end-column="86" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/imunizacao_solicitacaos/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+        <state relative-caret-position="486">
+          <caret line="33" column="50" lean-forward="false" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="35" column="59" lean-forward="false" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="53" lean-forward="false" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="141" column="74" lean-forward="false" selection-start-line="141" selection-start-column="74" selection-end-line="141" selection-end-column="74" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="329">
+          <caret line="381" column="40" lean-forward="false" selection-start-line="381" selection-start-column="40" selection-end-line="381" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
