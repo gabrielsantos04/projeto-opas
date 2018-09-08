@@ -44,8 +44,8 @@ class User < ApplicationRecord
   extend Enumerize
 
   enumerize :role, in: [
-      :administrador, :municipio,:referencia, :admin_dant,
-      :admin_dst, :dst_produtos
+      :administrador, :municipio_hans,:municipio_dant,:municipio_dst,:municipio_imuni,:municipio,:referencia, :admin_dant,:admin_hans,
+      :admin_dst, :dst_produtos, :admin_imuni
   ], predicates: true
 
   def to_s

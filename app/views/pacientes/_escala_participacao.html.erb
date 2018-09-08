@@ -1,0 +1,26 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Paciente</th>
+    <th>Notificação</th>
+    <th>Data entrevista</th>
+    <th>Entrevistador</th>
+    <th>Total</th>
+    <th>Grau restrição</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% escala_parts.each do |escala_part| %>
+      <tr>
+        <td><%= link_to escala_part.paciente, escala_part, target:"_self" %></td>
+        <td><%= escala_part.notificacao %></td>
+        <td><%= escala_part.data_entrevista %></td>
+        <td><%= escala_part.entrevistador %></td>
+        <td><%= escala_part.total %></td>
+        <td><%= grau(escala_part.grau_restricao) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

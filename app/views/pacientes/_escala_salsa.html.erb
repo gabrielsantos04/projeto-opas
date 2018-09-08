@@ -1,0 +1,26 @@
+<table class="card striped responsive-table">
+  <thead>
+  <tr>
+    <th>Paciente</th>
+    <th>Notificacao</th>
+    <th>Data entrevista</th>
+    <th>Entrevistador</th>
+    <th>Escore salsa</th>
+    <th>Escore risco</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% escala_salsas.each do |escala_salsa| %>
+      <tr>
+        <td><%= link_to escala_salsa.paciente,escala_salsa %></td>
+        <td><%= escala_salsa.notificacao %></td>
+        <td><%= escala_salsa.data_entrevista %></td>
+        <td><%= escala_salsa.entrevistador %></td>
+        <td><%= escala_salsa.escore_salsa %></td>
+        <td><%= escala_salsa.escore_risco %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

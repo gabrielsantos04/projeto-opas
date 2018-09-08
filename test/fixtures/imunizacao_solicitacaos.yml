@@ -1,0 +1,76 @@
+# == Schema Information
+#
+# Table name: imunizacao_solicitacaos
+#
+#  id                        :integer          not null, primary key
+#  nome_paciente             :string
+#  data_nascimento           :date
+#  sexo                      :string
+#  nome_mae                  :string
+#  endereco                  :text
+#  bairro                    :string
+#  municipio_id              :integer
+#  motivo_solicitacao        :text
+#  nome_requisitante         :string
+#  tipo_requisitante         :string
+#  crm_coren                 :string
+#  telefone_requisitante     :string
+#  instituicao_requisitante  :string
+#  municipio_requisitante_id :integer
+#  anexo                     :text
+#  solicitante               :string
+#  observacoes               :text
+#  data_atendimento          :date
+#  municipio_atual_id        :integer
+#  status                    :string
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
+#  telefone_paciente         :string
+#  idade                     :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome_paciente: MyString
+  data_nascimento: 2018-08-21
+  sexo: MyString
+  nome_mae: MyString
+  endereco: MyText
+  bairro: MyString
+  municipio_id: 1
+  motivo_solicitacao: MyText
+  nome_requisitante: MyString
+  tipo_requisitante: MyString
+  crm_coren: MyString
+  telefone_requisitante: MyString
+  instituicao_requisitante: MyString
+  municipio_requisitante_id: 1
+  anexo: MyText
+  solicitante: MyString
+  observacoes: MyText
+  data_atendimento: 2018-08-21
+  municipio_atual_id: 1
+  status: MyString
+
+two:
+  nome_paciente: MyString
+  data_nascimento: 2018-08-21
+  sexo: MyString
+  nome_mae: MyString
+  endereco: MyText
+  bairro: MyString
+  municipio_id: 1
+  motivo_solicitacao: MyText
+  nome_requisitante: MyString
+  tipo_requisitante: MyString
+  crm_coren: MyString
+  telefone_requisitante: MyString
+  instituicao_requisitante: MyString
+  municipio_requisitante_id: 1
+  anexo: MyText
+  solicitante: MyString
+  observacoes: MyText
+  data_atendimento: 2018-08-21
+  municipio_atual_id: 1
+  status: MyString

@@ -1,0 +1,34 @@
+<div class="card-panel">
+	
+<p>
+  <strong>Tipo:</strong>
+  <%= @imunizacao_imunobiologico.tipo %>
+</p>
+
+<p>
+  <strong>Nome vacina:</strong>
+  <%= @imunizacao_imunobiologico.nome_vacina %>
+</p>
+
+<p>
+  <strong>Imunizacao vacina:</strong>
+  <%= @imunizacao_imunobiologico.imunizacao_vacina %>
+</p>
+
+<p>
+  <strong>Imunizacao solicitacao:</strong>
+  <%= @imunizacao_imunobiologico.imunizacao_solicitacao %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @imunizacao_imunobiologico.status %>
+</p>
+
+<p>
+  <strong>Justificativa indeferimento:</strong>
+  <%= @imunizacao_imunobiologico.justificativa_indeferimento %>
+</p>
+
+</div>
+<%= link_to 'Voltar', imunizacao_imunobiologicos_path, class:"btn" %>

@@ -1,0 +1,37 @@
+# == Schema Information
+#
+# Table name: imunizacao_esquemas
+#
+#  id                           :integer          not null, primary key
+#  dose                         :string
+#  esquema                      :string
+#  status                       :string
+#  justificativa                :string
+#  created_at                   :datetime         not null
+#  updated_at                   :datetime         not null
+#  imunizacao_imunobiologico_id :integer
+#
+# Indexes
+#
+#  index_imunizacao_esquemas_on_imunizacao_imunobiologico_id  (imunizacao_imunobiologico_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (imunizacao_imunobiologico_id => imunizacao_imunobiologicos.id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imunizacao_imunobiologicos: one
+  dose: MyString
+  esquema: MyString
+  status: MyString
+  justificativa: MyString
+
+two:
+  imunizacao_imunobiologicos: two
+  dose: MyString
+  esquema: MyString
+  status: MyString
+  justificativa: MyString

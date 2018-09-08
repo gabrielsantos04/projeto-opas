@@ -102,6 +102,34 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Escalas de Participação</span>
+        <%= render partial: "escala_participacao", locals: {escala_parts: @paciente.escala_parts} %>
+      </div>
+
+      <div class="card-action">
+        <a href="/escala_parts/new?paciente=<%= @paciente.id %>">Nova Entrevista</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Escalas de Salsa</span>
+        <%= render partial: "escala_salsa", locals: {escala_salsas: @paciente.escala_salsas} %>
+      </div>
+
+      <div class="card-action">
+        <a href="/escala_salsas/new?paciente=<%= @paciente.id %>">Nova Entrevista</a>
+      </div>
+
+    </div>
+  </div>
+
 
 
 </div>

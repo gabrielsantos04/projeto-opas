@@ -1,0 +1,194 @@
+<h1 class="center-align">Escala Salsa</h1>
+<div class="card-panel">
+  <div class="row">
+    <div class="col s12 l4">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title"></span>
+          <p>
+            <strong>Paciente:</strong>
+            <%= @escala_salsa.paciente %>
+          </p>
+          <p>
+            <strong>Notificação:</strong>
+            <%= @escala_salsa.notificacao %>
+          </p>
+          <p>
+            <strong>Data Entrevista:</strong>
+            <%= @escala_salsa.data_entrevista %>
+          </p>
+          <p>
+            <strong>Entrevistador:</strong>
+            <%= @escala_salsa.entrevistador %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 l8">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            Escores
+          </span>
+          <div class="row">
+            <div class="col s2">
+              <b>S1</b> <br>
+              <%= @escala_salsa.escore_facil %>
+            </div>
+            <div class="col s2">
+              <b>S2</b> <br>
+              <%= @escala_salsa.escore_pouco_dificil %>
+            </div>
+            <div class="col s2">
+              <b>S3</b> <br>
+              <%= @escala_salsa.escore_muito_dificil %>
+            </div>
+            <div class="col s2">
+              <b>S4</b> <br>
+              <%= @escala_salsa.escore_nao_preciso %>
+            </div>
+            <div class="col s2">
+              <b>S5</b> <br>
+              <%= @escala_salsa.escore_fisicamente %>
+            </div>
+            <div class="col s2">
+              <b>S6</b> <br>
+              <%= @escala_salsa.escore_evito %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 l6">
+            <b>Escore Salsa</b> <br>
+            <%= @escala_salsa.escore_salsa %> - <%= escore_salsa_text(@escala_salsa.escore_salsa) %>
+            </div>
+            <div class="col s12 l6">
+              <b>Escore de Consciência de Risco</b> <br>
+              <%= @escala_salsa.escore_risco %>
+            </div>
+          </div>
+          <div class="row">
+            <i>Legenda Escore SALSA: <b>SM - Sem Limitação</b>, <b>LL - Leve Limitação</b>, <b>ML - Moderada Limitação</b>, <b>SL - Severa Limitação</b>, <b>MSL - Muito Severa Limitação</b></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<p>
+  <strong>1 - Você consegue enxergar? (o suficiente para realizar suas atividades diarias?):</strong>
+  <%= resposta_text(@escala_salsa.questao_1) %>
+</p>
+
+<p>
+  <strong>2 - Você se senta ou agacha no chão?:</strong>
+  <%= resposta_text(@escala_salsa.questao_2) %>
+</p>
+
+<p>
+  <strong>3 - Você anda descalço? (a maior parte do tempo?):</strong>
+  <%= resposta_text(@escala_salsa.questao_3) %>
+</p>
+
+<p>
+  <strong>4 - Você anda sobre o chão irregular?:</strong>
+  <%= resposta_text(@escala_salsa.questao_4) %>
+</p>
+
+<p>
+  <strong>5 - Você anda distâncias mais longas? (mais que 30 minutos? ):</strong>
+  <%= resposta_text(@escala_salsa.questao_5) %>
+</p>
+
+<p>
+  <strong>6 - Você lava seu corpo todo? (usando sabão, esponja, jarra de pé ou sentado):</strong>
+  <%= resposta_text(@escala_salsa.questao_6) %>
+</p>
+
+<p>
+  <strong>7 - Você corta as unha das mãos ou dos pés? (usando tesoura ou cortador):</strong>
+  <%= resposta_text(@escala_salsa.questao_7) %>
+</p>
+
+<p>
+  <strong>8 - Você segura um copo/tigela com conteúdo quente? (por exemplo: bebida, comida?):</strong>
+  <%= resposta_text(@escala_salsa.questao_8) %>
+</p>
+
+<p>
+  <strong>9 - Você trabalha com ferramentas? (ferramentas que você segura com as mãos para ajudar a trabalhar):</strong>
+  <%= resposta_text(@escala_salsa.questao_9) %>
+</p>
+
+<p>
+  <strong>10 - Você carrega objetos ou sacolas pesadas? (por ex: compras, comidas, água, lenha):</strong>
+  <%= resposta_text(@escala_salsa.questao_10) %>
+</p>
+
+<p>
+  <strong>11 - Você levanta objetos acima de sua cabeça? (po ex: para colocar em uma prateleira, em cima de sua cabeça. para estender roupa para secar?):</strong>
+  <%= resposta_text(@escala_salsa.questao_11) %>
+</p>
+
+<p>
+  <strong>12 - Você cozinha? (preparar comida quente ou fria?):</strong>
+  <%= resposta_text(@escala_salsa.questao_12) %>
+</p>
+
+<p>
+  <strong>13 - Você despeja/serve líquidos quentes?:</strong>
+  <%= resposta_text(@escala_salsa.questao_13) %>
+</p>
+
+<p>
+  <strong>14 - Você abre/fecha garrafas com tampa de rosca? (por ex: óleo, água, refrigerante?):</strong>
+  <%= resposta_text(@escala_salsa.questao_14) %>
+</p>
+
+<p>
+  <strong>15 - Você abre/fecha vidros com tampa de rosca? (por ex: maionese):</strong>
+  <%= resposta_text(@escala_salsa.questao_15) %>
+</p>
+
+<p>
+  <strong>16 - Você mexe/manipula objetos pequenos? (por ex: moedas, pregos, parafusos pequenos, grãos, sementes?):</strong>
+  <%= resposta_text(@escala_salsa.questao_16) %>
+</p>
+
+<p>
+  <strong>17 - Você usa botões? (por ex: botões de roupa, bolsas?):</strong>
+  <%= resposta_text(@escala_salsa.questao_17) %>
+</p>
+
+<p>
+  <strong>18 - Você coloca linha na agulha? (passa a linha pelo buraco da agulha/ 'enfia a linha na agulha'?:</strong>
+  <%= resposta_text(@escala_salsa.questao_18) %>
+</p>
+
+<p>
+  <strong>19 - Você consegue apanhar pedaços de papel, mexe com papel/coloca papel em ordem?:</strong>
+  <%= resposta_text( @escala_salsa.questao_19) %>
+</p>
+
+<p>
+  <strong>20 - Você consegue apanhar coisas do chão?:</strong>
+  <%= resposta_text(@escala_salsa.questao_20) %>
+</p>
+
+<p>
+  <strong>Condições médicas que afetam as atividades diárias:</strong>
+  <%= @escala_salsa.condicoes_medicas %>
+</p>
+
+<p>
+  <strong>Anote qualquer adaptação/órtese usado pelo entrevistado:</strong>
+  <%= @escala_salsa.adaptacoes %>
+</p>
+
+<p>
+  <strong>Profissional responsável pelo preenchimento:</strong>
+  <%= @escala_salsa.responsavel %>
+</p>
+
+</div>
+<%= link_to 'Voltar', paciente_path(@escala_salsa.paciente), class:"btn" %>

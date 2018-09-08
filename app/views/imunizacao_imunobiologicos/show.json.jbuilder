@@ -1,0 +1,1 @@
+json.partial! "imunizacao_imunobiologicos/imunizacao_imunobiologico", imunizacao_imunobiologico: @imunizacao_imunobiologico

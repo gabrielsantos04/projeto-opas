@@ -5,7 +5,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.administrador?
       can :manage, :all
-    elsif user.municipio?
+    elsif user.municipio_hans?
       can :create, Paciente
       can :manage, Paciente do |p|
         p.cidade == user.cidade
@@ -38,6 +38,13 @@ class Ability
     elsif user.dst_produtos?
       can :manage, DstProduto
       can :manage, DstLote
+    elsif user.admin_dant?
+      can :manage, DantPacient
+      can :manage, DantQuestion
+      can :manage, DantResponsavelProgram
+      can :manage, DantCidadeRegion
+      can :manage, DantRegion
+      can :manage, DantRequest
     else
       can :create, Paciente
       can :manage, Paciente do |p|

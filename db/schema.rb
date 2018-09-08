@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180722160618) do
+ActiveRecord::Schema.define(version: 20180830143117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -464,6 +464,98 @@ ActiveRecord::Schema.define(version: 20180722160618) do
     t.index ["notificacao_id"], name: "index_episodio_reacionals_on_notificacao_id"
   end
 
+  create_table "escala_parts", force: :cascade do |t|
+    t.string "questao_1"
+    t.integer "questao_1_valor"
+    t.string "questao_2"
+    t.integer "questao_2_valor"
+    t.string "questao_3"
+    t.integer "questao_3_valor"
+    t.string "questao_4"
+    t.integer "questao_4_valor"
+    t.string "questao_5"
+    t.integer "questao_5_valor"
+    t.string "questao_6"
+    t.integer "questao_6_valor"
+    t.string "questao_7"
+    t.integer "questao_7_valor"
+    t.string "questao_8"
+    t.integer "questao_8_valor"
+    t.string "questao_9"
+    t.integer "questao_9_valor"
+    t.string "questao_10"
+    t.integer "questao_10_valor"
+    t.string "questao_11"
+    t.integer "questao_11_valor"
+    t.string "questao_12"
+    t.integer "questao_12_valor"
+    t.string "questao_13"
+    t.integer "questao_13_valor"
+    t.string "questao_14"
+    t.integer "questao_14_valor"
+    t.string "questao_15"
+    t.integer "questao_15_valor"
+    t.string "questao_16"
+    t.integer "questao_16_valor"
+    t.string "questao_17"
+    t.integer "questao_17_valor"
+    t.string "questao_18"
+    t.integer "questao_18_valor"
+    t.date "data_entrevista"
+    t.string "entrevistador"
+    t.string "grau_restricao"
+    t.text "comentario"
+    t.bigint "paciente_id"
+    t.bigint "notificacao_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "total"
+    t.index ["notificacao_id"], name: "index_escala_parts_on_notificacao_id"
+    t.index ["paciente_id"], name: "index_escala_parts_on_paciente_id"
+  end
+
+  create_table "escala_salsas", force: :cascade do |t|
+    t.bigint "paciente_id"
+    t.bigint "notificacao_id"
+    t.date "data_entrevista"
+    t.string "entrevistador"
+    t.integer "questao_1"
+    t.integer "questao_2"
+    t.integer "questao_3"
+    t.integer "questao_4"
+    t.integer "questao_5"
+    t.integer "questao_6"
+    t.integer "questao_7"
+    t.integer "questao_8"
+    t.integer "questao_9"
+    t.integer "questao_10"
+    t.integer "questao_11"
+    t.integer "questao_12"
+    t.integer "questao_13"
+    t.integer "questao_14"
+    t.integer "questao_15"
+    t.integer "questao_16"
+    t.integer "questao_17"
+    t.integer "questao_18"
+    t.integer "questao_19"
+    t.integer "questao_20"
+    t.integer "escore_facil"
+    t.integer "escore_pouco_dificil"
+    t.integer "escore_muito_dificil"
+    t.integer "escore_nao_preciso"
+    t.integer "escore_fisicamente"
+    t.integer "escore_evito"
+    t.integer "escore_salsa"
+    t.integer "escore_risco"
+    t.text "condicoes_medicas"
+    t.text "adaptacoes"
+    t.string "responsavel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notificacao_id"], name: "index_escala_salsas_on_notificacao_id"
+    t.index ["paciente_id"], name: "index_escala_salsas_on_paciente_id"
+  end
+
   create_table "esquema_substitutivos", force: :cascade do |t|
     t.decimal "miligramas"
     t.bigint "medicamento_id"
@@ -472,6 +564,79 @@ ActiveRecord::Schema.define(version: 20180722160618) do
     t.datetime "updated_at", null: false
     t.index ["medicamento_id"], name: "index_esquema_substitutivos_on_medicamento_id"
     t.index ["notificacao_id"], name: "index_esquema_substitutivos_on_notificacao_id"
+  end
+
+  create_table "imunizacao_encerramentos", force: :cascade do |t|
+    t.bigint "imunizacao_esquema_id"
+    t.date "data_administracao"
+    t.string "lote"
+    t.date "validade"
+    t.string "laboratorio"
+    t.string "unidade_administracao"
+    t.string "via_administracao"
+    t.string "profissional"
+    t.text "observacoes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imunizacao_esquema_id"], name: "index_imunizacao_encerramentos_on_imunizacao_esquema_id"
+  end
+
+  create_table "imunizacao_esquemas", force: :cascade do |t|
+    t.string "dose"
+    t.string "esquema"
+    t.string "status"
+    t.string "justificativa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "imunizacao_imunobiologico_id"
+    t.index ["imunizacao_imunobiologico_id"], name: "index_imunizacao_esquemas_on_imunizacao_imunobiologico_id"
+  end
+
+  create_table "imunizacao_imunobiologicos", force: :cascade do |t|
+    t.string "tipo"
+    t.string "nome_vacina"
+    t.bigint "imunizacao_vacina_id"
+    t.bigint "imunizacao_solicitacao_id"
+    t.string "status"
+    t.text "justificativa_indeferimento"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imunizacao_solicitacao_id"], name: "index_imunizacao_imunobiologicos_on_imunizacao_solicitacao_id"
+    t.index ["imunizacao_vacina_id"], name: "index_imunizacao_imunobiologicos_on_imunizacao_vacina_id"
+  end
+
+  create_table "imunizacao_solicitacaos", force: :cascade do |t|
+    t.string "nome_paciente"
+    t.date "data_nascimento"
+    t.string "sexo"
+    t.string "nome_mae"
+    t.text "endereco"
+    t.string "bairro"
+    t.integer "municipio_id"
+    t.text "motivo_solicitacao"
+    t.string "nome_requisitante"
+    t.string "tipo_requisitante"
+    t.string "crm_coren"
+    t.string "telefone_requisitante"
+    t.string "instituicao_requisitante"
+    t.integer "municipio_requisitante_id"
+    t.text "anexo"
+    t.string "solicitante"
+    t.text "observacoes"
+    t.date "data_atendimento"
+    t.integer "municipio_atual_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "telefone_paciente"
+    t.integer "idade"
+  end
+
+  create_table "imunizacao_vacinas", force: :cascade do |t|
+    t.string "nome"
+    t.text "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "marcacaos", force: :cascade do |t|
@@ -497,6 +662,36 @@ ActiveRecord::Schema.define(version: 20180722160618) do
     t.string "interpretacao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "monthly_reports", force: :cascade do |t|
+    t.string "nome_grupo"
+    t.string "coordenador"
+    t.string "monitor"
+    t.string "lider"
+    t.date "data_reuniao"
+    t.time "inicio"
+    t.time "termino"
+    t.string "local"
+    t.text "temas"
+    t.text "atividades_desenvolvidas"
+    t.datetime "data_proximo"
+    t.boolean "intercorrencia"
+    t.integer "outros_agravos"
+    t.integer "agravo_diabetes"
+    t.integer "agravo_hipertensao"
+    t.integer "agravo_avc"
+    t.integer "analfabetos"
+    t.integer "qtd_psicologo"
+    t.integer "qtd_assistente_social"
+    t.integer "oficina_sapataria"
+    t.integer "qtd_hanseniase"
+    t.integer "qtd_sem_hanseniase"
+    t.integer "qtd_profissionais"
+    t.bigint "cidade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cidade_id"], name: "index_monthly_reports_on_cidade_id"
   end
 
   create_table "nervos_recidivas", force: :cascade do |t|
@@ -691,9 +886,18 @@ ActiveRecord::Schema.define(version: 20180722160618) do
   add_foreign_key "dst_user_locals", "users"
   add_foreign_key "epidosios_reacionais_recidivas", "recidivas"
   add_foreign_key "episodio_reacionals", "notificacaos"
+  add_foreign_key "escala_parts", "notificacaos"
+  add_foreign_key "escala_parts", "pacientes"
+  add_foreign_key "escala_salsas", "notificacaos"
+  add_foreign_key "escala_salsas", "pacientes"
   add_foreign_key "esquema_substitutivos", "medicamentos"
   add_foreign_key "esquema_substitutivos", "notificacaos"
+  add_foreign_key "imunizacao_encerramentos", "imunizacao_esquemas"
+  add_foreign_key "imunizacao_esquemas", "imunizacao_imunobiologicos"
+  add_foreign_key "imunizacao_imunobiologicos", "imunizacao_solicitacaos"
+  add_foreign_key "imunizacao_imunobiologicos", "imunizacao_vacinas"
   add_foreign_key "marcacaos", "avaliacao_sensitivas"
+  add_foreign_key "monthly_reports", "cidades"
   add_foreign_key "nervos_recidivas", "recidivas"
   add_foreign_key "notificacao_contatos", "notificacaos"
   add_foreign_key "notificacaos", "avaliacao_notificacaos"

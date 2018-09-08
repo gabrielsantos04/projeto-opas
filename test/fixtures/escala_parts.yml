@@ -1,0 +1,153 @@
+# == Schema Information
+#
+# Table name: escala_parts
+#
+#  id               :integer          not null, primary key
+#  questao_1        :string
+#  questao_1_valor  :integer
+#  questao_2        :string
+#  questao_2_valor  :integer
+#  questao_3        :string
+#  questao_3_valor  :integer
+#  questao_4        :string
+#  questao_4_valor  :integer
+#  questao_5        :string
+#  questao_5_valor  :integer
+#  questao_6        :string
+#  questao_6_valor  :integer
+#  questao_7        :string
+#  questao_7_valor  :integer
+#  questao_8        :string
+#  questao_8_valor  :integer
+#  questao_9        :string
+#  questao_9_valor  :integer
+#  questao_10       :string
+#  questao_10_valor :integer
+#  questao_11       :string
+#  questao_11_valor :integer
+#  questao_12       :string
+#  questao_12_valor :integer
+#  questao_13       :string
+#  questao_13_valor :integer
+#  questao_14       :string
+#  questao_14_valor :integer
+#  questao_15       :string
+#  questao_15_valor :integer
+#  questao_16       :string
+#  questao_16_valor :integer
+#  questao_17       :string
+#  questao_17_valor :integer
+#  questao_18       :string
+#  questao_18_valor :integer
+#  data_entrevista  :date
+#  entrevistador    :string
+#  grau_restricao   :string
+#  comentario       :text
+#  paciente_id      :integer
+#  notificacao_id   :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  total            :integer
+#
+# Indexes
+#
+#  index_escala_parts_on_notificacao_id  (notificacao_id)
+#  index_escala_parts_on_paciente_id     (paciente_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (notificacao_id => notificacaos.id)
+#  fk_rails_...  (paciente_id => pacientes.id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  questao_1: MyString
+  questao_1_valor: 1
+  questao_2: MyString
+  questao_2_valor: 1
+  questao_3: MyString
+  questao_3_valor: 1
+  questao_4: MyString
+  questao_4_valor: 1
+  questao_5: MyString
+  questao_5_valor: 1
+  questao_6: MyString
+  questao_6_valor: 1
+  questao_7: MyString
+  questao_7_valor: 1
+  questao_8: MyString
+  questao_8_valor: 1
+  questao_9: MyString
+  questao_9_valor: 1
+  questao_10: MyString
+  questao_10_valor: 1
+  questao_11: MyString
+  questao_11_valor: 1
+  questao_12: MyString
+  questao_12_valor: 1
+  questao_13: MyString
+  questao_13_valor: 1
+  questao_14: MyString
+  questao_14_valor: 1
+  questao_15: MyString
+  questao_15_valor: 1
+  questao_16: MyString
+  questao_16_valor: 1
+  questao_17: MyString
+  questao_17_valor: 1
+  questao_18: MyString
+  questao_18_valor: 1
+  data_entrevista: 2018-08-16
+  entrevistador: MyString
+  total: MyString
+  grau_restricao: MyString
+  comentario: MyText
+  paciente: one
+  notificacao: one
+
+two:
+  questao_1: MyString
+  questao_1_valor: 1
+  questao_2: MyString
+  questao_2_valor: 1
+  questao_3: MyString
+  questao_3_valor: 1
+  questao_4: MyString
+  questao_4_valor: 1
+  questao_5: MyString
+  questao_5_valor: 1
+  questao_6: MyString
+  questao_6_valor: 1
+  questao_7: MyString
+  questao_7_valor: 1
+  questao_8: MyString
+  questao_8_valor: 1
+  questao_9: MyString
+  questao_9_valor: 1
+  questao_10: MyString
+  questao_10_valor: 1
+  questao_11: MyString
+  questao_11_valor: 1
+  questao_12: MyString
+  questao_12_valor: 1
+  questao_13: MyString
+  questao_13_valor: 1
+  questao_14: MyString
+  questao_14_valor: 1
+  questao_15: MyString
+  questao_15_valor: 1
+  questao_16: MyString
+  questao_16_valor: 1
+  questao_17: MyString
+  questao_17_valor: 1
+  questao_18: MyString
+  questao_18_valor: 1
+  data_entrevista: 2018-08-16
+  entrevistador: MyString
+  total: MyString
+  grau_restricao: MyString
+  comentario: MyText
+  paciente: two
+  notificacao: two
