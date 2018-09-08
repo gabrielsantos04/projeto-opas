@@ -1,6 +1,7 @@
+#Disponibiliza métodos para serem usados nas views
 module ImunizacaoSolicitacaosHelper
 
-
+  #Retorna o status em formado de texto
   def status(op)
     case op
       when "solicitado"

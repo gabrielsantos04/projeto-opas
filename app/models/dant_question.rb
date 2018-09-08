@@ -10,6 +10,7 @@
 #
 
 class DantQuestion < ApplicationRecord
+  #Método que retorna o nome do objeto
   def to_s
     self.texto
   end

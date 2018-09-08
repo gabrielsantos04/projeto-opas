@@ -27,6 +27,7 @@
 #  updated_at                :datetime         not null
 #  telefone_paciente         :string
 #  idade                     :integer
+#  deferimento               :text
 #
 
 require 'test_helper'

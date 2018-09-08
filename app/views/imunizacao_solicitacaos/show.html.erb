@@ -139,9 +139,9 @@
         <% imunobiologico.imunizacao_esquemas.each do |esquema| %>
             <div class="card-panel">
               <div class="row">
-                <div class="col s12 m4">
+                <div class="col s12 m4 " >
                   <b>Dose:</b><br>
-                  <%= esquema.dose %>
+                  <div style="text-transform: uppercase"><%= esquema.dose %></div>
                 </div>
                 <div class="col s12 m4">
                   <b>Esquema:</b><br>
@@ -183,7 +183,7 @@
                     </div>
                     <div>
                       <b>Via de Administração:</b><br>
-                      <%= encerramento.via_administracao %>
+                      <div style="text-transform: uppercase"><%= encerramento.via_administracao %></div>
                     </div>
                     <div>
                       <b>Profissional:</b><br>
@@ -384,6 +384,11 @@
 
           <%= f.select :status, ImunizacaoSolicitacao.status.options %>
           <%= f.label :status %>
+        </div>
+        <div class="input-field">
+          <%= f.label :deferimento %>
+          <%= f.text_area :deferimento, {style:"width:100%", rows:3}%>
+
         </div>
         <div class="input">
           <%= f.label :municipio_atual %>

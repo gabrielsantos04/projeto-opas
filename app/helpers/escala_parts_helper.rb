@@ -1,5 +1,7 @@
+#Disponibiliza métodos para serem usados nas views
 module EscalaPartsHelper
 
+  #Retorna os textos para irrelevante
   def irrelevante(valor)
     case valor
       when 1
@@ -15,6 +17,7 @@ module EscalaPartsHelper
     end
   end
 
+  #retorna os textos para grau
   def grau(valor)
     case valor
       when "sem_restricao_significativa"

@@ -1,6 +1,8 @@
+#Classe responsável por controlar as permissões dos usuários
 class Ability
   include CanCan::Ability
 
+  #Método que verifica as permissões
   def initialize(user)
     user ||= User.new # guest user (not logged in)
     if user.administrador?

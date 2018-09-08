@@ -11,6 +11,7 @@
 class CategoriaQueixa < ApplicationRecord
   has_many :queixas
 
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end

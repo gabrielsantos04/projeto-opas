@@ -1,3 +1,4 @@
+#Classe que controla as açoes da DstQuestionarios
 class DstQuestionariosController < ApplicationController
   before_action :set_dst_questionario, only: [:show, :edit, :update, :destroy]
 

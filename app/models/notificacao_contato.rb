@@ -32,6 +32,7 @@ class NotificacaoContato < ApplicationRecord
   extend Enumerize
   enumerize :tipo_contato, in: [:domiciliar, :vizinhanca,:social], predicates: true
 
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end

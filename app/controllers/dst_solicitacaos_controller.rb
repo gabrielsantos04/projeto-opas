@@ -1,3 +1,4 @@
+#Classe que controla as açoes da DstSolicitacao
 class DstSolicitacaosController < ApplicationController
   before_action :set_dst_solicitacao, only: [:show, :edit, :update, :destroy]
   before_action :set_combos, only: [:new, :edit, :create, :update]
@@ -75,6 +76,7 @@ class DstSolicitacaosController < ApplicationController
       )
     end
 
+    #Método utilizado para setar os locais utilizados no formulário
     def set_combos
       @locals = current_user.dst_locals.map{|a| [a.nome, a.id]}
     end

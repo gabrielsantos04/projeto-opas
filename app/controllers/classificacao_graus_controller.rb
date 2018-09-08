@@ -1,3 +1,4 @@
+#Classe que controla as açoes da classificacao_grau
 class ClassificacaoGrausController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource

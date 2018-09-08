@@ -1,3 +1,4 @@
+#Classe que controla as açoes da ImunizacaoImunobiologico
 class ImunizacaoImunobiologicosController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -14,6 +15,7 @@ class ImunizacaoImunobiologicosController < ApplicationController
   end
 
 
+  #Método que cria uma nova dose para o imunobiologico da solicitação
   def nova_dose
     dose = ImunizacaoEsquema.new
     dose.dose = params[:dose]
@@ -26,6 +28,7 @@ class ImunizacaoImunobiologicosController < ApplicationController
     redirect_to @imunizacao_imunobiologico.imunizacao_solicitacao
   end
 
+  #Método que altera o status do imunobiológico para indenferido
   def indeferir
     @imunizacao_imunobiologico.status = :indeferido
     @imunizacao_imunobiologico.justificativa_indeferimento = params[:motivo]

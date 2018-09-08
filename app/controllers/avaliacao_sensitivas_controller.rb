@@ -1,3 +1,4 @@
+#Classe que controla as açoes da avaliação sensitiva
 class AvaliacaoSensitivasController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -14,11 +15,13 @@ class AvaliacaoSensitivasController < ApplicationController
   def show
   end
 
+  #Método que insere a marcação do canvas
   def inserir_marcacao
     marcacao = Marcacao.create(avaliacao_sensitiva_id: @avaliacao_sensitiva.id,imagem: params[:imagem],posicaox: params[:posicaox],posicaoy: params[:posicaoy],membro: params[:membro] )
     render json: {msg:"ok", marcacao: marcacao.to_json}
   end
 
+  #Método que remove a marcação do canvas
   def remover_marcacao
 
     marcacao = Marcacao.find(params[:marca])

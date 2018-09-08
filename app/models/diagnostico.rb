@@ -10,7 +10,7 @@
 
 class Diagnostico < ApplicationRecord
   has_many :diagnostico_recidivas
-
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end

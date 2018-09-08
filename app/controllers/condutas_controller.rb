@@ -1,3 +1,4 @@
+#Classe que controla as açoes da conduta
 class CondutasController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource

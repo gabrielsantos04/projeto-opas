@@ -1,3 +1,4 @@
+#Classe que controla as açoes da DstProdutos
 class DstProdutosController < ApplicationController
   before_action :set_dst_produto, only: [:show, :edit, :update, :destroy, :lotes_ajax]
 
@@ -48,6 +49,7 @@ class DstProdutosController < ApplicationController
     redirect_to dst_produtos_url, notice: 'Dst produto was successfully destroyed.'
   end
 
+  #Método utilizado para atualizar os lotes
   def lotes_ajax
     render json: @dst_produto.dst_lotes
   end

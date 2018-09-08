@@ -10,10 +10,12 @@
 #
 
 class ImunizacaoVacina < ApplicationRecord
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end
 
+  #Método que retorna um array para ser utilizado nos combos
   def self.to_select
     all.map{|a| ["#{a}", a.id]}
   end

@@ -63,7 +63,7 @@ class Notificacao < ApplicationRecord
   validates_presence_of Notificacao.attribute_names - %w(id created_at updated_at observacoes recidiva_id avaliacao_notificacao_id)
   validates_presence_of :dados_clinicos,:notificacao_contatoes#,:avaliacao_notificacaos
 
-
+  #Método que retorna o nome do objeto
   def to_s
     self.numero
   end

@@ -1,3 +1,4 @@
+#Classe que controla as açoes da DantQuestions
 class DantQuestionsController < ApplicationController
   before_action :set_dant_question, only: [:show, :edit, :update, :destroy]
 

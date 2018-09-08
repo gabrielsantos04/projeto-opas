@@ -58,6 +58,7 @@ class EscalaSalsa < ApplicationRecord
 
   before_save :calcula_escores_parciais,:calcula_escore_risco,:calcula_escore_salsa
 
+  #Método que calcul os escores parciais
   def calcula_escores_parciais
     self.escore_facil = 0
     self.escore_pouco_dificil = 0
@@ -86,6 +87,7 @@ class EscalaSalsa < ApplicationRecord
     end
   end
 
+  #Método que calcula o escore de risco
   def calcula_escore_risco
     self.escore_risco = 0
     if self.questao_3 == 4 || self.questao_3 == 5
@@ -123,6 +125,7 @@ class EscalaSalsa < ApplicationRecord
     end
   end
 
+  #Método que calcula o escore salsa
   def calcula_escore_salsa
     self.escore_salsa = self.escore_facil + self.escore_pouco_dificil + self.escore_muito_dificil + self.escore_nao_preciso + self.escore_fisicamente + self.escore_evito = 0
   end

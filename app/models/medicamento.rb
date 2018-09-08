@@ -10,7 +10,7 @@
 
 class Medicamento < ApplicationRecord
   has_many :esquema_substitutivos
-
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end

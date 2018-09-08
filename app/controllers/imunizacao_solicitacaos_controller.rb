@@ -1,3 +1,4 @@
+#Classe que controla as açoes da ImunizacaoSolicitacao
 class ImunizacaoSolicitacaosController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -6,9 +7,9 @@ class ImunizacaoSolicitacaosController < ApplicationController
   # GET /imunizacao_solicitacaos
   def index
     if current_user.administrador? || current_user.admin_imuni?
-      @q = ImunizacaoSolicitacao.all.ransack(params[:q])
+      @q = ImunizacaoSolicitacao.all.order(created_at: :desc).ransack(params[:q])
     else
-      @q = ImunizacaoSolicitacao.where(municipio_atual_id: current_user.cidade.id).ransack(params[:q])
+      @q = ImunizacaoSolicitacao.where(municipio_atual_id: current_user.cidade.id).order(created_at: :desc).ransack(params[:q])
     end
 
     @imunizacao_solicitacaos = @q.result.page(params[:page])
@@ -70,7 +71,7 @@ class ImunizacaoSolicitacaosController < ApplicationController
           :bairro, :municipio_id, :motivo_solicitacao, :nome_requisitante,
           :tipo_requisitante, :crm_coren, :telefone_requisitante,
           :instituicao_requisitante, :municipio_requisitante_id, :anexo,
-          :solicitante, :observacoes, :data_atendimento, :municipio_atual_id,
+          :solicitante, :observacoes,:deferimento, :data_atendimento, :municipio_atual_id,
           :status,
           imunobiologicos_attributes:[
               :id, :_destroy, :tipo, :nome_vacina, :imunizacao_vacina_id,

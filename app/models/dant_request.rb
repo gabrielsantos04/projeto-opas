@@ -64,6 +64,7 @@ class DantRequest < ApplicationRecord
 
   before_create :set_status
 
+  #Método que seta o status da solicitação
   def set_status
     self.status = :cadastrada
     if self.mes == 12
@@ -78,6 +79,7 @@ class DantRequest < ApplicationRecord
     end
   end
 
+  #Método que calcula a quantidade de frascos a serem fornecidos
   def calcular_quantidades
     if self.mes == 3#março
       if self.data_envio.month <= 3

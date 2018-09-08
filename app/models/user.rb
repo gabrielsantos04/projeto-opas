@@ -48,6 +48,7 @@ class User < ApplicationRecord
       :admin_dst, :dst_produtos, :admin_imuni
   ], predicates: true
 
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end

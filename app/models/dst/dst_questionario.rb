@@ -11,6 +11,8 @@
 #
 
 class DstQuestionario < ApplicationRecord
+
+  #Método que retorna o nome do objeto
   def to_s
     self.titulo
   end

@@ -1,3 +1,4 @@
+#Classe que controla as açoes da ImunizacaoEsquema
 class ImunizacaoEsquemasController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -13,6 +14,7 @@ class ImunizacaoEsquemasController < ApplicationController
   def show
   end
 
+  #Método que cria um encerramento para o esquema
   def novo_encerramento
     encerramento = ImunizacaoEncerramento.new
     encerramento.data_administracao = params[:data_administracao]
@@ -31,6 +33,7 @@ class ImunizacaoEsquemasController < ApplicationController
     redirect_to @imunizacao_esquema.imunizacao_solicitacao
   end
 
+  #Método que altera o status do esquema para nao_aplicado
   def nao_aplicado
     @imunizacao_esquema.justificativa = params[:motivo]
     @imunizacao_esquema.status = :nao_aplicado

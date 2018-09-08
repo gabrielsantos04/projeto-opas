@@ -1,3 +1,4 @@
+#Classe que controla as açoes da DantRequest
 class DantRequestsController < ApplicationController
   before_action :set_dant_request, only: [:show, :edit, :update, :destroy,:enviar,:faixa_etaria,:alterar_status]
   before_action :set_combos, only: [:new, :edit, :create]
@@ -18,10 +19,12 @@ class DantRequestsController < ApplicationController
   def show
   end
 
+  #Método que retorna os pacientes para o relatório de faixa etária
   def faixa_etaria
     @pacientes = @dant_request.dant_request_pacients
   end
 
+  #Método que altera o status da solicitacão
   def alterar_status
     case params[:status]
       when "deferido"
@@ -36,6 +39,7 @@ class DantRequestsController < ApplicationController
     redirect_to @dant_request, notice: "Solicitação #{params[:status].upcase}"
   end
 
+  #Método que envia a solicitação
   def enviar
     @dant_request.status = :solicitado
 
@@ -117,6 +121,7 @@ class DantRequestsController < ApplicationController
   end
 
   private
+  #Método que seta os objetos utilizados nos formulários
   def set_combos
     @responsaveis = DantResponsavelProgram.all.order(:nome).map{|a| [a.nome,a.id]}
     @cidades = Cidade.all.order(:nome).map{|a| [a.nome,a.id]}
