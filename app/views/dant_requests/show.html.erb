@@ -20,6 +20,13 @@
     <%= @dant_request.status.upcase %>
   </p>
 
+  <% if @dant_request.status == "indeferido" %>
+    <p>
+      <strong>Indeferimento:</strong>
+      <%= @dant_request.justificativa %>
+    </p>
+  <% end %>
+
   <div class="card-panel">
 <table>
   <thead>

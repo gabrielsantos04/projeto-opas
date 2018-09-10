@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   resources :monthly_reports
 
   devise_for :users
-  resources :users
+  resources :users do
+    collection do
+      get "home"
+    end
+  end
   resources :condutas
   resources :diagnosticos
   resources :sinais_sintomas
@@ -110,6 +114,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root "pacientes#index"
+  root "users#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

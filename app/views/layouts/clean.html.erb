@@ -13,9 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="msapplication-tap-highlight" content="no">
-  <meta name="description" content="Veeg - Todos os Planos de Internet estão aqui">
-  <meta name="keywords" content="planos de internet, banda larga, pesquisa de plano, internet, telefonia, veeg">
-  <title>Veeg</title>
+  <title>Projeto OPAS</title>
   <!-- CORE CSS-->    
   <link href="/materialize/css/materialize.css" type="text/css" rel="stylesheet" >
   <link href="/materialize/css/style.css" type="text/css" rel="stylesheet" >
@@ -171,40 +169,7 @@
 		<!-- START WRAPPER -->
 		<div class="wrapper">
 
-			<!-- START LEFT SIDEBAR NAV-->
-      <% if user_signed_in? %>
-			    <%= render 'layouts/left_sidebar' %>
-      <% else %>
-        <aside id="left-sidebar-nav" class="no-print">
-        <ul id="slide-out" class="side-nav fixed leftside-navigation">
-          <li class="user-details cyan darken-2">
-            <div class="row">
-              <div class="col col s4 m4 l4">
-                <img src="/user_default.jpg" alt="" class="circle responsive-img valign profile-image">
-              </div>
-              <div class="col col s8 m8 l8">
-                <a class="btn-flat waves-effect waves-light white-text profile-btn" href="<%= plan_requests_path %>" data-activates="profile-dropdown">Minha Veeg</a>
-                <p class="user-roal"><%= link_to "Entrar", plan_requests_path, class:"white-text", style:"padding:0px" %></p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <%= link_to new_plan_query_path do  %>
-                <i class="fa fa-search"></i> Nova Pesquisa
-            <% end %>
-          </li>
-          <% if (yield :filters).blank? %>
-            <li>
-              <%= link_to plan_requests_path do  %>
-                  <i class="fa fa-shopping-basket"></i> Minhas Solicitações
-              <% end %>
-            </li>
-          <% end %>
-          <%= yield :filters %>
-        </ul>
-          <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only pink darken-3"><i class="mdi-navigation-menu"></i></a>
-        </aside>
-      <% end %>
+
       <!-- END LEFT SIDEBAR NAV-->
 
       <!-- //////////////////////////////////////////////////////////////////////////// -->
@@ -216,7 +181,7 @@
 				<div class="container">
 					<%= yield  %>
         </div>
-				</section>
+      </section>
 				<!-- END CONTENT -->
 
         <div class="fixed-action-btn no-print" style="bottom: 60px; right: 30px;">
@@ -252,8 +217,7 @@
     <footer class="page-footer grey lighten-1" style="padding-left: 0px">
      <div class="footer-copyright">
       <div class="container center">
-        Copyright © <%= Date.today.year %> | <a class="white-text" href="http://veeg.com.br" target="_blank">Veeg</a> em parceria com
-        <a class="white-text" href="http://novostek.com" target="_blank">Novostek LLC</a>
+
      </div>
    </div>
  </footer>
