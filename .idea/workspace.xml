@@ -1,144 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20180905155912_add_deferimento_to_imunizacao_solicitacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/channels/application_cable/channel.rb" afterPath="$PROJECT_DIR$/app/channels/application_cable/channel.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/channels/application_cable/connection.rb" afterPath="$PROJECT_DIR$/app/channels/application_cable/connection.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/avaliacao_neurologicas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/avaliacao_neurologicas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/avaliacao_sensitivas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/categoria_queixas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/categoria_queixas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/cidades_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/cidades_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/classificacao_graus_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/classificacao_graus_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/condutas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/condutas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/contato_avaliacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/contato_avaliacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dados_clinicos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dados_clinicos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_questions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_questions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_regions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_regions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_responsavel_programs_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_responsavel_programs_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dermatologicas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dermatologicas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/diagnosticos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/diagnosticos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dst_locals_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dst_locals_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dst_lotes_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dst_lotes_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dst_movimentacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dst_movimentacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dst_produtos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dst_produtos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dst_questionarios_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dst_questionarios_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dst_solicitacao_produtos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dst_solicitacao_produtos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dst_solicitacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dst_solicitacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/episodio_reacionals_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/episodio_reacionals_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/escala_parts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/escala_parts_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/escala_salsas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/escala_salsas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/esquema_substitutivos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/esquema_substitutivos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/imunizacao_encerramentos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_encerramentos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/imunizacao_esquemas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_esquemas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/imunizacao_imunobiologicos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_imunobiologicos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/medicamentos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/medicamentos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/monofilamentos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/monofilamentos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/monthly_reports_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/monthly_reports_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/notificacao_contatos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/notificacao_contatos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/notificacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/notificacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ocupacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/ocupacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/pacientes_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/pacientes_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/queixas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/queixas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/recidivas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/recidivas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sinais_sintomas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sinais_sintomas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/avaliacao_neurologicas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/avaliacao_neurologicas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/avaliacao_notificacaos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/avaliacao_notificacaos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/avaliacao_sensitivas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/avaliacao_sensitivas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/bcgs_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/bcgs_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/categoria_queixas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/categoria_queixas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/cidades_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/cidades_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/classificacao_graus_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/classificacao_graus_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/condutas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/condutas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/contato_avaliacaos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/contato_avaliacaos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dados_clinicos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dados_clinicos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dant_pacients_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dant_pacients_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dant_questions_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dant_questions_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dant_regions_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dant_regions_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dant_requests_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dant_requests_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dant_responsavel_programs_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dant_responsavel_programs_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dermatologicas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dermatologicas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/diagnosticos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/diagnosticos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dst_locals_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dst_locals_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dst_lotes_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dst_lotes_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dst_movimentacaos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dst_movimentacaos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dst_produtos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dst_produtos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dst_questionarios_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dst_questionarios_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dst_solicitacao_produtos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dst_solicitacao_produtos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/dst_solicitacaos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/dst_solicitacaos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/episodio_reacionals_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/episodio_reacionals_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/escala_parts_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/escala_parts_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/escala_salsas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/escala_salsas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/esquema_substitutivos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/esquema_substitutivos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/imunizacao_encerramentos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/imunizacao_encerramentos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/imunizacao_esquemas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/imunizacao_esquemas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/imunizacao_imunobiologicos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/imunizacao_imunobiologicos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/imunizacao_solicitacaos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/imunizacao_solicitacaos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/imunizacao_vacinas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/imunizacao_vacinas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/medicamentos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/medicamentos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/monofilamentos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/monofilamentos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/monthly_reports_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/monthly_reports_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/notificacao_contatos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/notificacao_contatos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/notificacaos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/notificacaos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/ocupacaos_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/ocupacaos_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/pacientes_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/pacientes_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/queixas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/queixas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/recidivas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/recidivas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/sinais_sintomas_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/sinais_sintomas_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/users_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/users_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/jobs/application_job.rb" afterPath="$PROJECT_DIR$/app/jobs/application_job.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/application_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ability.rb" afterPath="$PROJECT_DIR$/app/models/ability.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/application_record.rb" afterPath="$PROJECT_DIR$/app/models/application_record.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/categoria_queixa.rb" afterPath="$PROJECT_DIR$/app/models/categoria_queixa.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/cidade.rb" afterPath="$PROJECT_DIR$/app/models/cidade.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/conduta.rb" afterPath="$PROJECT_DIR$/app/models/conduta.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dant_pacient.rb" afterPath="$PROJECT_DIR$/app/models/dant_pacient.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dant_question.rb" afterPath="$PROJECT_DIR$/app/models/dant_question.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dant_request.rb" afterPath="$PROJECT_DIR$/app/models/dant_request.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dant_responsavel_program.rb" afterPath="$PROJECT_DIR$/app/models/dant_responsavel_program.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dermatologica.rb" afterPath="$PROJECT_DIR$/app/models/dermatologica.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/diagnostico.rb" afterPath="$PROJECT_DIR$/app/models/diagnostico.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dst/dst_local.rb" afterPath="$PROJECT_DIR$/app/models/dst/dst_local.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dst/dst_lote.rb" afterPath="$PROJECT_DIR$/app/models/dst/dst_lote.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dst/dst_movimentacao.rb" afterPath="$PROJECT_DIR$/app/models/dst/dst_movimentacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dst/dst_produto.rb" afterPath="$PROJECT_DIR$/app/models/dst/dst_produto.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dst/dst_questionario.rb" afterPath="$PROJECT_DIR$/app/models/dst/dst_questionario.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dst/dst_respostum.rb" afterPath="$PROJECT_DIR$/app/models/dst/dst_respostum.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dst/dst_solicitacao.rb" afterPath="$PROJECT_DIR$/app/models/dst/dst_solicitacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dst/dst_solicitacao_produto.rb" afterPath="$PROJECT_DIR$/app/models/dst/dst_solicitacao_produto.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/escala_part.rb" afterPath="$PROJECT_DIR$/app/models/escala_part.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/escala_salsa.rb" afterPath="$PROJECT_DIR$/app/models/escala_salsa.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_imunobiologico.rb" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_imunobiologico.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_vacina.rb" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_vacina.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/medicamento.rb" afterPath="$PROJECT_DIR$/app/models/medicamento.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/menu_control.rb" afterPath="$PROJECT_DIR$/app/models/menu_control.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/notificacao.rb" afterPath="$PROJECT_DIR$/app/models/notificacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/notificacao_contato.rb" afterPath="$PROJECT_DIR$/app/models/notificacao_contato.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ocupacao.rb" afterPath="$PROJECT_DIR$/app/models/ocupacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/paciente.rb" afterPath="$PROJECT_DIR$/app/models/paciente.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/sinais_sintoma.rb" afterPath="$PROJECT_DIR$/app/models/sinais_sintoma.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/uploaders/image_uploader.rb" afterPath="$PROJECT_DIR$/app/uploaders/image_uploader.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pacientes/_escala_salsa.html.erb" afterPath="$PROJECT_DIR$/app/views/pacientes/_escala_salsa.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/pt-BR.yml" afterPath="$PROJECT_DIR$/config/locales/pt-BR.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/imunizacao_solicitacaos.yml" afterPath="$PROJECT_DIR$/test/fixtures/imunizacao_solicitacaos.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/imunizacao_solicitacao_test.rb" afterPath="$PROJECT_DIR$/test/models/imunizacao_solicitacao_test.rb" />
-    </list>
+    <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -246,8 +109,8 @@
       <file leaf-file-name="image_uploader.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-202">
-              <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+            <state relative-caret-position="368">
+              <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -622,12 +485,12 @@
       <workItem from="1536015604800" duration="1396000" />
       <workItem from="1536160629345" duration="611000" />
       <workItem from="1536429001060" duration="39000" />
-      <workItem from="1536429286086" duration="2970000" />
+      <workItem from="1536429286086" duration="3227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270447000" />
+    <option name="totallyTimeSpent" value="270704000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="725" extended-state="6" />
@@ -1066,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
-          <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+        <state relative-caret-position="368">
+          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
           <folding />
         </state>
       </provider>
