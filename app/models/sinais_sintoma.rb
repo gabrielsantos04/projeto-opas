@@ -11,6 +11,7 @@
 class SinaisSintoma < ApplicationRecord
   has_many :sintomas_recidivas
 
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end

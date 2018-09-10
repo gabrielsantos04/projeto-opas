@@ -1,3 +1,4 @@
+#Classe que controla as açoes da Queixas
 class QueixasController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -53,6 +54,7 @@ class QueixasController < ApplicationController
 
   private
 
+  #Método utilizado para setar os objetos utilizados no formulário
   def set_combos
     @categorias = CategoriaQueixa.all.map{|a| [a.nome,a.id]}
   end

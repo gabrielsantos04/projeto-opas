@@ -1,3 +1,4 @@
+#Classe que controla as açoes da EscalaSalsa
 class EscalaSalsasController < ApplicationController
   before_action :set_escala_salsa, only: [:show, :edit, :update, :destroy]
 

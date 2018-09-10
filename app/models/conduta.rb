@@ -12,6 +12,7 @@ class Conduta < ApplicationRecord
   self.table_name = "condutas"
   has_many :conduta_recidivas
 
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end

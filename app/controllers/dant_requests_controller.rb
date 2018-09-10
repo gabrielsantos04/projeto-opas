@@ -1,3 +1,4 @@
+#Classe que controla as açoes da DantRequest
 class DantRequestsController < ApplicationController
   before_action :set_dant_request, only: [:show, :edit, :update, :destroy,:enviar,:faixa_etaria,:alterar_status]
   before_action :set_combos, only: [:new, :edit, :create]
@@ -18,10 +19,12 @@ class DantRequestsController < ApplicationController
   def show
   end
 
+  #Método que retorna os pacientes para o relatório de faixa etária
   def faixa_etaria
     @pacientes = @dant_request.dant_request_pacients
   end
 
+  #Método que altera o status da solicitacão
   def alterar_status
     case params[:status]
       when "deferido"
@@ -36,6 +39,7 @@ class DantRequestsController < ApplicationController
     redirect_to @dant_request, notice: "Solicitação #{params[:status].upcase}"
   end
 
+  #Método que envia a solicitação
   def enviar
     @dant_request.status = :solicitado
 
@@ -117,6 +121,7 @@ class DantRequestsController < ApplicationController
   end
 
   private
+  #Método que seta os objetos utilizados nos formulários
   def set_combos
     @responsaveis = DantResponsavelProgram.all.order(:nome).map{|a| [a.nome,a.id]}
     @cidades = Cidade.all.order(:nome).map{|a| [a.nome,a.id]}
@@ -129,7 +134,7 @@ class DantRequestsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def dant_request_params
-      params.require(:dant_request).permit(:qtd_hipertensos, :atendimento_hipertensos, :qtd_obitos_hipertensos, :qtd_diabeticos, :atendimento_diabeticos, :qtd_obitos_diabeticos, :qtd_diabeticos_hipertencos, :atendimento_diabeticos_hipertensos, :qtd_tratamento_hemodialise, :qtd_nph, :qtd_frascos_nph, :qtd_regular, :qtd_frascos_regular, :qtd_analoga, :qtd_frascos_analoga, :qtd_tabagista, :qtd_atendimento_tabagista, :qtd_etilista, :qtd_atendimento_etilista, :qtd_obesos, :qtd_obesidade_1, :qtd_obesidate_2, :qtd_obesidade_3, :mes, :dant_responsavel_program_id, :cidade_id, :status,
+      params.require(:dant_request).permit(:justificativa,:qtd_hipertensos, :atendimento_hipertensos, :qtd_obitos_hipertensos, :qtd_diabeticos, :atendimento_diabeticos, :qtd_obitos_diabeticos, :qtd_diabeticos_hipertencos, :atendimento_diabeticos_hipertensos, :qtd_tratamento_hemodialise, :qtd_nph, :qtd_frascos_nph, :qtd_regular, :qtd_frascos_regular, :qtd_analoga, :qtd_frascos_analoga, :qtd_tabagista, :qtd_atendimento_tabagista, :qtd_etilista, :qtd_atendimento_etilista, :qtd_obesos, :qtd_obesidade_1, :qtd_obesidate_2, :qtd_obesidade_3, :mes, :dant_responsavel_program_id, :cidade_id, :status,
       dant_request_pacients_attributes:[:sexo,:hipertenso,:diabetico,:obeso,:tabagista,:etilista,:id,:dant_request_id,:dant_pacient_id,:frascos_diarios,:frascos_mensais,:idade])
     end
 end

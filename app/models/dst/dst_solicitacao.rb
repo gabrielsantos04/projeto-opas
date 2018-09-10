@@ -33,6 +33,7 @@ class DstSolicitacao < ApplicationRecord
   accepts_nested_attributes_for :dst_solicitacao_produtos, allow_destroy: true
   uniquify :token, length: 7, chars: 0..9
 
+  #Método que retorna o nome do objeto
   def to_s
     "Solicitação Nº#{self.id}"
   end

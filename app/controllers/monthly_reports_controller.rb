@@ -1,3 +1,4 @@
+#Classe que controla as açoes da MonthlyReport
 class MonthlyReportsController < ApplicationController
   before_action :set_monthly_report, only: [:show, :edit, :update, :destroy]
   before_action :set_combos, only: [:new, :create, :edit]
@@ -53,6 +54,7 @@ class MonthlyReportsController < ApplicationController
   end
 
   private
+  #Método que seta os objetos utilizados no formulário
   def set_combos
     @cidades = Cidade.all.sort_by{|a| a.nome}.map{|a| [a.nome,a.id]}
 

@@ -1,3 +1,4 @@
+#Classe que controla as açoes da DstSolicitacaoProduto
 class DstSolicitacaoProdutosController < ApplicationController
   before_action :set_dst_solicitacao_produto, only: [:show, :edit, :update, :destroy]
 

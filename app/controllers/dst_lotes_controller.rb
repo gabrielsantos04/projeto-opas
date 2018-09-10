@@ -1,3 +1,4 @@
+#Classe que controla as açoes da DstLotes
 class DstLotesController < ApplicationController
   before_action :set_dst_lote, only: [:show, :edit, :update, :destroy]
 

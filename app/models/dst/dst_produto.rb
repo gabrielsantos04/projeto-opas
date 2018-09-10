@@ -13,6 +13,7 @@
 class DstProduto < ApplicationRecord
   has_many :dst_lotes
   has_many :dst_movimentacaos
+  #Método que retorna o nome do Objeto
   def to_s
     self.nome
   end

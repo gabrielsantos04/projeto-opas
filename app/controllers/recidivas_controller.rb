@@ -1,3 +1,4 @@
+#Classe que controla as açoes da Recidiva
 class RecidivasController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -53,6 +54,7 @@ class RecidivasController < ApplicationController
   end
 
   private
+    #Método utilizado para setar os objetos utilizados no formulário
     def set_combos
       @graus_incapacidade = Notificacao.grau_incapacidade.options
       @modos_entrada = Notificacao.modo_entrada.options

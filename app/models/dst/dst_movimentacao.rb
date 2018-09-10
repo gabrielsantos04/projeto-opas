@@ -46,10 +46,12 @@ class DstMovimentacao < ApplicationRecord
   validate :check_balance
   before_validation :check_value
 
+  #Método que retorna o nome do objeto
   def to_s
     "Movimentação Nº#{self.id}"
   end
 
+  #Método que verfica os vaores de entrada
   def check_value
     if entrada? and self.quantidade < 0
       self.quantidade = self.quantidade * -1
@@ -60,6 +62,7 @@ class DstMovimentacao < ApplicationRecord
     end
   end
 
+  #Método que verifica a saída dos medicamentos
   def check_balance
     if saida?
       balance = DstMovimentacao
@@ -71,6 +74,7 @@ class DstMovimentacao < ApplicationRecord
     end
   end
 
+  #Método utilizado para realizar o atendimento da solicitação
   def self.atender(params)
     solicitacao_produto = DstSolicitacaoProduto.find(params[:solicitacao_produto_id])
     solicitacao = solicitacao_produto.dst_solicitacao

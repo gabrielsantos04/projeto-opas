@@ -18,10 +18,12 @@ class Cidade < ApplicationRecord
 
   default_scope -> {order(nome: :asc)}
 
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end
 
+  #Método que retorna um array para o combo
   def self.to_select
     all.map{|a| ["#{a}", a.id]}
   end

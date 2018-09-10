@@ -24,6 +24,7 @@ class DstRespostum < ApplicationRecord
   belongs_to :dst_questionario
   belongs_to :dst_solicitacao
 
+  #Metodo que retorna o nome do objeto
   def to_s
     self.valor
   end

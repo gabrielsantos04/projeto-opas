@@ -267,17 +267,20 @@
             <% end %>
         <% end %>
         <div id="modal_dose_<%= imunobiologico.id %>" class="modal">
-          <div class="modal-content">
+          <div class="modal-content" style="overflow: visible;">
             <%= form_tag(nova_dose_imunizacao_imunobiologico_path(imunobiologico), method: :get) do %>
                 <h4>Dose</h4>
-                <div class="row">
-                  <div class="col s12 m4">
-                    <%= label_tag :dose %>
-                    <%= select_tag :dose, options_for_select(ImunizacaoEsquema.dose.options) %>
-                  </div>
-                  <div class="col s12 m4">
-                    <%= label_tag :esquema %>
-                    <%= text_field_tag :esquema %>
+
+                  <div class="card-panel" style="overflow: visible;">
+                    <div class="row">
+                    <div class="col s12 m4">
+                      <%= label_tag :dose %>
+                      <%= select_tag :dose, options_for_select(ImunizacaoEsquema.dose.options) %>
+                    </div>
+                    <div class="col s12 m4">
+                      <%= label_tag :esquema %>
+                      <%= text_field_tag :esquema %>
+                    </div>
                   </div>
                 </div>
                 <%= submit_tag "Salvar", class:"btn" %>
@@ -348,12 +351,12 @@
 <div class="card-panel">
 
 
-  <div class="input-field">
+  <!--<div class="input-field">
 
     <b>Data de Atendimento:</b><br>
     <%= @imunizacao_solicitacao.data_atendimento%>
 
-  </div>
+  </div>-->
 
   <div >
 
@@ -372,6 +375,11 @@
 
   <%= form_for(@imunizacao_solicitacao) do |f| %>
       <div class="card-panel">
+        <div class="input">
+          <%= f.label :data_atendimento %>
+          <%= f.date_field :data_atendimento %>
+
+        </div>
         <div class="input-field">
 
           <%= f.select :status, ImunizacaoSolicitacao.status.options %>

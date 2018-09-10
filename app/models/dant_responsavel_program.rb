@@ -21,6 +21,7 @@
 class DantResponsavelProgram < ApplicationRecord
   belongs_to :cidade
 
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end

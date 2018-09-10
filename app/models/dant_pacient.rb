@@ -48,14 +48,17 @@ class DantPacient < ApplicationRecord
   before_save :set_frascos
 
 
+  #Método que retorna a idade do paciente
   def idade
     Date.today.year - self.data_nascimento.year
   end
 
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end
 
+  #Método que seta a quantidade de frascos mensais
   def set_frascos 
     case self.frascos_diarios
       when 1..33

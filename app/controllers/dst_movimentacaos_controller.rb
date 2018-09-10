@@ -1,3 +1,4 @@
+#Classe que controla as açoes da DstMovimentacaos
 class DstMovimentacaosController < ApplicationController
   before_action :set_dst_movimentacao, only: [:show, :edit, :update, :destroy]
   before_action :set_combos, only: [:new, :edit, :create, :update]
@@ -48,6 +49,7 @@ class DstMovimentacaosController < ApplicationController
     redirect_to dst_movimentacaos_url, notice: 'Dst movimentacao was successfully destroyed.'
   end
 
+  #Método utilizado para atender a solicitação
   def atender
     begin
       @solicitacao = DstSolicitacao.find_by_token(params[:codigo])
@@ -60,6 +62,7 @@ class DstMovimentacaosController < ApplicationController
     end
   end
 
+  #Método utilizado para finalizar a solicitação
   def finalizar_atendimento
     #begin
       render js: DstMovimentacao.atender(params)
@@ -79,10 +82,12 @@ class DstMovimentacaosController < ApplicationController
       params.require(:dst_movimentacao).permit(:dst_produto_id, :tipo, :categoria, :quantidade, :dst_lote_id, :descricao, :dst_local_id, :dst_solicitacao_produto_id)
     end
 
+    #Método utilizado para setar os objetos utilizados nos formulários
     def set_combos
       @locals = current_user.dst_locals.map{|a| [a.nome, a.id]}
     end
 
+    #Método utilizado para setar os lotes utilizados nos formulários
     def set_lotes
       @lotes = DstLote.all.map{|a| [a.nome, a.id]}
     end

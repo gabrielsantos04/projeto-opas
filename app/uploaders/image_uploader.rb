@@ -1,3 +1,4 @@
+#Classe que controla o upload de arquivos
 class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

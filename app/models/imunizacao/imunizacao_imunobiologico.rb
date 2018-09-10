@@ -33,6 +33,7 @@ class ImunizacaoImunobiologico < ApplicationRecord
   enumerize :status, in: [:deferido, :indeferido], predicates: true
 
 
+  #Método que retorna o nome do objeto
   def to_s
     if self.imunizacao_vacina.present?
       self.imunizacao_vacina

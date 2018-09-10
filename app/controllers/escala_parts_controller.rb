@@ -1,3 +1,4 @@
+#Classe que controla as açoes da EscalaParts
 class EscalaPartsController < ApplicationController
   before_action :set_escala_part, only: [:show, :edit, :update, :destroy]
 

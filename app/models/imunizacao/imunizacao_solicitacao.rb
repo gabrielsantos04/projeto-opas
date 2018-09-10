@@ -47,6 +47,7 @@ class ImunizacaoSolicitacao < ApplicationRecord
 
   before_create :set_idade
 
+  #Método que seta a idade do paciente
   def set_idade
     self.idade = Date.today.year - self.data_nascimento.year
   end

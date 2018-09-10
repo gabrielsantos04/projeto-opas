@@ -1,3 +1,4 @@
+#Classe que controla as açoes da Notificacao
 class NotificacaosController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -15,6 +16,7 @@ class NotificacaosController < ApplicationController
     @notificacaos = @q.result.page(params[:page])
   end
 
+  #Método que apresenta a home
   def home
     @pacientes = Paciente.all
     @notificacoes = Notificacao.all
@@ -32,6 +34,7 @@ class NotificacaosController < ApplicationController
     end
   end
 
+  #Método que retorna as notificações com avaliações pendentes
   def avaliacao_pendente
     if current_user.administrador?
       notificacoes = Notificacao.includes(:paciente,:avaliacao_notificacaos).all
@@ -84,6 +87,7 @@ class NotificacaosController < ApplicationController
     end
   end
 
+  #Método utilizado para criar uma recidiva ou abrir a existente
   def recidiva
     recidiva = @notificacao.recidivas.first
     if recidiva
@@ -111,6 +115,7 @@ class NotificacaosController < ApplicationController
 
   private
 
+  #Método utilizado para setar os objetos utilizados no formulário
   def set_combos
     @graus_incapacidade = Notificacao.grau_incapacidade.options
     @modos_entrada = Notificacao.modo_entrada.options

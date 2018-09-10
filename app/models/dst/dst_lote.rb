@@ -21,6 +21,7 @@
 
 class DstLote < ApplicationRecord
   belongs_to :dst_produto
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end

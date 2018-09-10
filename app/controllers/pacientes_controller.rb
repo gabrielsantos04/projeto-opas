@@ -1,3 +1,4 @@
+#Classe que controla as açoes da Paciente
 class PacientesController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -19,6 +20,7 @@ class PacientesController < ApplicationController
   def show
   end
 
+  #Método que retorna o mapa dos pacientes
   def mapa
 
     @pacientes = Paciente.all
@@ -62,6 +64,7 @@ class PacientesController < ApplicationController
 
   private
 
+  #Método utilizado para setar os objetos utilizados no formulário
   def set_combos
     @cidades = Cidade.all.sort_by{|a| a.nome}.map{|a| [a.nome,a.id]}
     @ocupacoes = Ocupacao.all.sort_by{|a| a.nome}.map{|a| [a.nome,a.id]}

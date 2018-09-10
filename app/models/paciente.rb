@@ -38,7 +38,7 @@ class Paciente < ApplicationRecord
   has_many :escala_parts
   has_many :escala_salsas
 
-
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end

@@ -31,6 +31,7 @@ class DstLocal < ApplicationRecord
   enumerize :categoria, in: [:interno, :externo], predicates: true
   accepts_nested_attributes_for :dst_user_locals, allow_destroy: true
 
+  #Método que retorna o nome do objeto
   def to_s
     self.nome
   end
