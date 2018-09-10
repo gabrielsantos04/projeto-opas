@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DstMovimentacao</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="DstMovimentacao">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: dst_movimentacaos  id                         :integer          not null, primary key dst_produto_id             :integer tipo                       :string categoria  .">
+    <meta property="og:description" content="Schema Information  Table name: dst_movimentacaos  id                         :integer          not null, primary key dst_produto_id             :integer tipo                       :string categoria  .">
+  
+
+    <meta name="keywords" content="DstMovimentacao class">
+  
+    <meta name="keywords" content="to_s, check_value, check_balance, atender">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            DstMovimentacao
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/dst/dst_movimentacao_rb.html">app/models/dst/dst_movimentacao.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-DstMovimentacao-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: dst_movimentacaos</p>
+
+<pre><code>id                         :integer          not null, primary key
+dst_produto_id             :integer
+tipo                       :string
+categoria                  :string
+quantidade                 :decimal(, )
+dst_lote_id                :integer
+descricao                  :text
+dst_local_id               :integer
+dst_solicitacao_produto_id :integer
+created_at                 :datetime         not null
+updated_at                 :datetime         not null
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_dst_movimentacaos_on_dst_local_id                (dst_local_id)
+index_dst_movimentacaos_on_dst_lote_id                 (dst_lote_id)
+index_dst_movimentacaos_on_dst_produto_id              (dst_produto_id)
+index_dst_movimentacaos_on_dst_solicitacao_produto_id  (dst_solicitacao_produto_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (dst_local_id =&gt; dst_locals.id)
+fk_rails_...  (dst_lote_id =&gt; dst_lotes.id)
+fk_rails_...  (dst_produto_id =&gt; dst_produtos.id)
+fk_rails_...  (dst_solicitacao_produto_id =&gt; dst_solicitacao_produtos.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-atender">atender</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-check_balance">check_balance</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-check_value">check_value</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-atender">
+            
+              <b>atender</b>(params)
+            
+            <a href="../classes/DstMovimentacao.html#method-c-atender" name="method-c-atender" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método utilizado para realizar o atendimento da solicitação</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-c-atender_source')" id="l_method-c-atender_source">show</a>
+                
+              </p>
+              <div id="method-c-atender_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dst/dst_movimentacao.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">atender</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">solicitacao_produto</span> = <span class="ruby-constant">DstSolicitacaoProduto</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:solicitacao_produto_id</span>])
+  <span class="ruby-identifier">solicitacao</span> = <span class="ruby-identifier">solicitacao_produto</span>.<span class="ruby-identifier">dst_solicitacao</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:quantidade</span>].<span class="ruby-identifier">to_f</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">solicitacao_produto</span>.<span class="ruby-identifier">max_atender</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;swal(&#39;O valor máximo aprovado é de #{solicitacao_produto.max_atender}&#39;)&quot;</span>
+  <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">saida</span> = <span class="ruby-constant">DstMovimentacao</span>.<span class="ruby-identifier">new</span>(
+      <span class="ruby-value">dst_produto:</span> <span class="ruby-identifier">solicitacao_produto</span>.<span class="ruby-identifier">dst_produto</span>,
+      <span class="ruby-value">tipo:</span> <span class="ruby-value">:saida</span>,
+      <span class="ruby-value">categoria:</span> <span class="ruby-value">:distribuicao_municipio</span>,
+      <span class="ruby-value">quantidade:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:quantidade</span>],
+      <span class="ruby-value">dst_lote_id:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:lote</span>],
+      <span class="ruby-value">dst_solicitacao_produto:</span> <span class="ruby-identifier">solicitacao_produto</span>,
+      <span class="ruby-value">dst_local_id:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:origem</span>]
+    )
+
+    <span class="ruby-identifier">entrada</span> = <span class="ruby-constant">DstMovimentacao</span>.<span class="ruby-identifier">new</span>(
+        <span class="ruby-value">dst_produto:</span> <span class="ruby-identifier">solicitacao_produto</span>.<span class="ruby-identifier">dst_produto</span>,
+        <span class="ruby-value">tipo:</span> <span class="ruby-value">:entrada</span>,
+        <span class="ruby-value">categoria:</span> <span class="ruby-value">:distribuicao_municipio</span>,
+        <span class="ruby-value">quantidade:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:quantidade</span>],
+        <span class="ruby-value">dst_lote_id:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:lote</span>],
+        <span class="ruby-value">dst_solicitacao_produto:</span> <span class="ruby-identifier">solicitacao_produto</span>,
+        <span class="ruby-value">dst_local_id:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:origem</span>]
+    )
+
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">saida</span>.<span class="ruby-identifier">save</span> <span class="ruby-keyword">or</span> <span class="ruby-operator">!</span><span class="ruby-identifier">entrada</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">saida</span>.<span class="ruby-identifier">delete</span>
+      <span class="ruby-identifier">entrada</span>.<span class="ruby-identifier">delete</span>
+
+      <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;swal(&#39;Saída: #{saida.errors.full_messages.to_sentence} Entrada: #{entrada.errors.full_messages.to_sentence}&#39;)&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-string">&quot;window.location = &#39;/dst/dst_movimentacaos/atender?sucesso=true&#39;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-check_balance">
+            
+              <b>check_balance</b>()
+            
+            <a href="../classes/DstMovimentacao.html#method-i-check_balance" name="method-i-check_balance" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que verifica a saída dos medicamentos</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-check_balance_source')" id="l_method-i-check_balance_source">show</a>
+                
+              </p>
+              <div id="method-i-check_balance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dst/dst_movimentacao.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">check_balance</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">saida?</span>
+    <span class="ruby-identifier">balance</span> = <span class="ruby-constant">DstMovimentacao</span>
+                  .<span class="ruby-identifier">where</span>(<span class="ruby-value">dst_local:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dst_local</span>, <span class="ruby-value">dst_produto_id:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dst_produto_id</span>, <span class="ruby-value">dst_lote_id:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dst_lote_id</span>)
+                  .<span class="ruby-identifier">sum</span>(<span class="ruby-value">:quantidade</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">balance</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">quantidade</span>) <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:quantidade</span>, <span class="ruby-string">&#39;de saída é maior que a entrada de produtos nesse lote&#39;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-check_value">
+            
+              <b>check_value</b>()
+            
+            <a href="../classes/DstMovimentacao.html#method-i-check_value" name="method-i-check_value" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que verfica os vaores de entrada</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-check_value_source')" id="l_method-i-check_value_source">show</a>
+                
+              </p>
+              <div id="method-i-check_value_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dst/dst_movimentacao.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">check_value</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">entrada?</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">quantidade</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">quantidade</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">quantidade</span> <span class="ruby-operator">*</span> <span class="ruby-value">-1</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">saida?</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">quantidade</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">quantidade</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">quantidade</span> <span class="ruby-operator">*</span> <span class="ruby-value">-1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../classes/DstMovimentacao.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que retorna o nome do objeto</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dst/dst_movimentacao.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-node">&quot;Movimentação Nº#{self.id}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

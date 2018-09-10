@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DantRequest</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="DantRequest">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: dant_requests  id                                 :integer          not null, primary key qtd_hipertensos                    :integer atendimento_hipertensos           .">
+    <meta property="og:description" content="Schema Information  Table name: dant_requests  id                                 :integer          not null, primary key qtd_hipertensos                    :integer atendimento_hipertensos           .">
+  
+
+    <meta name="keywords" content="DantRequest class">
+  
+    <meta name="keywords" content="set_status, calcular_quantidades">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            DantRequest
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/dant_request_rb.html">app/models/dant_request.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-DantRequest-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: dant_requests</p>
+
+<pre><code>id                                 :integer          not null, primary key
+qtd_hipertensos                    :integer
+atendimento_hipertensos            :integer
+qtd_obitos_hipertensos             :integer
+qtd_diabeticos                     :integer
+atendimento_diabeticos             :integer
+qtd_obitos_diabeticos              :integer
+qtd_diabeticos_hipertencos         :integer
+atendimento_diabeticos_hipertensos :integer
+qtd_tratamento_hemodialise         :integer
+qtd_nph                            :integer
+qtd_frascos_nph                    :integer
+qtd_regular                        :integer
+qtd_frascos_regular                :integer
+qtd_analoga                        :integer
+qtd_frascos_analoga                :integer
+qtd_tabagista                      :integer
+qtd_atendimento_tabagista          :integer
+qtd_etilista                       :integer
+qtd_atendimento_etilista           :integer
+qtd_obesos                         :integer
+qtd_obesidade_1                    :integer
+qtd_obesidate_2                    :integer
+qtd_obesidade_3                    :integer
+mes                                :integer
+dant_responsavel_program_id        :integer
+cidade_id                          :integer
+status                             :string
+created_at                         :datetime         not null
+updated_at                         :datetime         not null
+ano                                :integer
+soma_participacoes                 :integer
+data_envio                         :datetime
+qtd_nph_calculada                  :integer
+qtd_regular_calculada              :integer
+qtd_analoga_calculada              :integer
+justificativa                      :text
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_dant_requests_on_cidade_id                    (cidade_id)
+index_dant_requests_on_dant_responsavel_program_id  (dant_responsavel_program_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (cidade_id =&gt; cidades.id)
+fk_rails_...  (dant_responsavel_program_id =&gt; dant_responsavel_programs.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-calcular_quantidades">calcular_quantidades</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set_status">set_status</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-calcular_quantidades">
+            
+              <b>calcular_quantidades</b>()
+            
+            <a href="../classes/DantRequest.html#method-i-calcular_quantidades" name="method-i-calcular_quantidades" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que calcula a quantidade de frascos a serem fornecidos</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-calcular_quantidades_source')" id="l_method-i-calcular_quantidades_source">show</a>
+                
+              </p>
+              <div id="method-i-calcular_quantidades_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dant_request.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calcular_quantidades</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mes</span> <span class="ruby-operator">==</span> <span class="ruby-value">3</span><span class="ruby-comment">#março</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">3</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_nph_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_nph</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span> <span class="ruby-comment">#quantidade para 3 meses</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_regular_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_regular</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span> <span class="ruby-comment">#quantidade para 3 meses</span>
+      <span class="ruby-comment">#self.qtd_analoga_calculada = self.qtd_frascos_analoga * 3 #quantidade para 3 meses</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment">#utiliza 6 no calculo como referência ao mês de junho</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_nph_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_nph</span> <span class="ruby-operator">*</span> (<span class="ruby-value">6</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span>)  <span class="ruby-comment">#quantidade para meses restantes</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_regular_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_regular</span> <span class="ruby-operator">*</span> (<span class="ruby-value">6</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span>) <span class="ruby-comment">#quantidade para  meses restantes</span>
+      <span class="ruby-comment">#self.qtd_analoga_calculada = self.qtd_frascos_analoga * (6 - self.data_envio.month) #quantidade para meses restantes</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mes</span> <span class="ruby-operator">==</span> <span class="ruby-value">6</span><span class="ruby-comment">#junho</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">6</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_nph_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_nph</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span> <span class="ruby-comment">#quantidade para 3 meses</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_regular_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_regular</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span> <span class="ruby-comment">#quantidade para 3 meses</span>
+      <span class="ruby-comment">#self.qtd_analoga_calculada = self.qtd_frascos_analoga * 3 #quantidade para 3 meses</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment">#utiliza 9 no calculo como referência ao mês de setembro</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_nph_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_nph</span> <span class="ruby-operator">*</span> (<span class="ruby-value">9</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span>)  <span class="ruby-comment">#quantidade para meses restantes</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_regular_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_regular</span> <span class="ruby-operator">*</span> (<span class="ruby-value">9</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span>) <span class="ruby-comment">#quantidade para  meses restantes</span>
+      <span class="ruby-comment">#self.qtd_analoga_calculada = self.qtd_frascos_analoga * (9 - self.data_envio.month) #quantidade para meses restantes</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mes</span> <span class="ruby-operator">==</span> <span class="ruby-value">9</span> <span class="ruby-comment">#setembro</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">9</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_nph_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_nph</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span> <span class="ruby-comment">#quantidade para 3 meses</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_regular_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_regular</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span> <span class="ruby-comment">#quantidade para 3 meses</span>
+      <span class="ruby-comment">#self.qtd_analoga_calculada = self.qtd_frascos_analoga * 3 #quantidade para 3 meses</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment">#utiliza 12 no calculo como referência ao mês de dezembro</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_nph_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_nph</span> <span class="ruby-operator">*</span> (<span class="ruby-value">12</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span>)  <span class="ruby-comment">#quantidade para meses restantes</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_regular_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_regular</span> <span class="ruby-operator">*</span> (<span class="ruby-value">12</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span>) <span class="ruby-comment">#quantidade para  meses restantes</span>
+      <span class="ruby-comment">#self.qtd_analoga_calculada = self.qtd_frascos_analoga * (12 - self.data_envio.month) #quantidade para meses restantes</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span> <span class="ruby-comment">#dezembro</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span> <span class="ruby-operator">==</span> <span class="ruby-value">12</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_nph_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_nph</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span> <span class="ruby-comment">#quantidade para 3 meses</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_regular_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_regular</span> <span class="ruby-operator">*</span> <span class="ruby-value">3</span> <span class="ruby-comment">#quantidade para 3 meses</span>
+      <span class="ruby-comment">#self.qtd_analoga_calculada = self.qtd_frascos_analoga * 3 #quantidade para 3 meses</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment">#utiliza 3 no calculo como referência ao mês de março</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_nph_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_nph</span> <span class="ruby-operator">*</span> (<span class="ruby-value">3</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span>)  <span class="ruby-comment">#quantidade para meses restantes</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_regular_calculada</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">qtd_frascos_regular</span> <span class="ruby-operator">*</span> (<span class="ruby-value">3</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_envio</span>.<span class="ruby-identifier">month</span>) <span class="ruby-comment">#quantidade para  meses restantes</span>
+      <span class="ruby-comment">#self.qtd_analoga_calculada = self.qtd_frascos_analoga * (3 - self.data_envio.month) #quantidade para meses restantes</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_status">
+            
+              <b>set_status</b>()
+            
+            <a href="../classes/DantRequest.html#method-i-set_status" name="method-i-set_status" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que seta o status da solicitação</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-set_status_source')" id="l_method-i-set_status_source">show</a>
+                
+              </p>
+              <div id="method-i-set_status_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dant_request.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_status</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">:cadastrada</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mes</span> <span class="ruby-operator">==</span> <span class="ruby-value">12</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">month</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">2</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ano</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">year</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">month</span> <span class="ruby-operator">==</span> <span class="ruby-value">12</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ano</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">year</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ano</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">year</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

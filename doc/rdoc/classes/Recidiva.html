@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recidiva</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="Recidiva">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: recidivas  id                                 :integer          not null, primary key unidade_saude                      :string prontuario                         :str.">
+    <meta property="og:description" content="Schema Information  Table name: recidivas  id                                 :integer          not null, primary key unidade_saude                      :string prontuario                         :str.">
+  
+
+    <meta name="keywords" content="Recidiva class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            Recidiva
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/recidiva_rb.html">app/models/recidiva.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-Recidiva-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: recidivas</p>
+
+<pre><code>id                                 :integer          not null, primary key
+unidade_saude                      :string
+prontuario                         :string
+data_diagnostico                   :date
+classificacao_operacional          :string
+forma_clinica                      :string
+baciloscopia                       :string
+baciloscopia_lb                    :string
+grau_incapacidade                  :string
+inicio_tratamento                  :date
+esquema_terapeutico                :string
+tempo_tratamento                   :integer
+doses                              :integer
+regularidade                       :boolean
+tratamento_observacoes             :string
+tempo_alta_cura                    :integer
+data_primeiros_sintomas            :date
+grau_incapacidade_alta             :string
+classificacao_operacional_alta     :string
+created_at                         :datetime         not null
+updated_at                         :datetime         not null
+termino_tratamento                 :date
+forma_clinica_alta                 :string
+baciloscopia_suspeita              :string
+baciloscopia_lb_suspeita           :string
+grau_incapacidade_suspeita         :string
+classificacao_operacional_suspeita :string
+forma_clinica_suspeita             :string
+paciente_id                        :integer
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_recidivas_on_paciente_id  (paciente_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (paciente_id =&gt; pacientes.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

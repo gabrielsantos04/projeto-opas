@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DstSolicitacaoProduto</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="DstSolicitacaoProduto">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: dst_solicitacao_produtos  id                  :integer          not null, primary key dst_produto_id      :integer quantidade          :decimal(, ) status              .">
+    <meta property="og:description" content="Schema Information  Table name: dst_solicitacao_produtos  id                  :integer          not null, primary key dst_produto_id      :integer quantidade          :decimal(, ) status              .">
+  
+
+    <meta name="keywords" content="DstSolicitacaoProduto class">
+  
+    <meta name="keywords" content="to_s, quantidade_atendido, max_atender">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            DstSolicitacaoProduto
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/dst/dst_solicitacao_produto_rb.html">app/models/dst/dst_solicitacao_produto.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-DstSolicitacaoProduto-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: dst_solicitacao_produtos</p>
+
+<pre><code>id                  :integer          not null, primary key
+dst_produto_id      :integer
+quantidade          :decimal(, )
+status              :string
+dst_solicitacao_id  :integer
+created_at          :datetime         not null
+updated_at          :datetime         not null
+distribuido         :decimal(, )
+observacoes         :text
+quantidade_aprovada :decimal(, )
+user_id             :integer
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_dst_solicitacao_produtos_on_dst_produto_id      (dst_produto_id)
+index_dst_solicitacao_produtos_on_dst_solicitacao_id  (dst_solicitacao_id)
+index_dst_solicitacao_produtos_on_user_id             (user_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (dst_produto_id =&gt; dst_produtos.id)
+fk_rails_...  (dst_solicitacao_id =&gt; dst_solicitacaos.id)
+fk_rails_...  (user_id =&gt; users.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-max_atender">max_atender</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>Q</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-quantidade_atendido">quantidade_atendido</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-max_atender">
+            
+              <b>max_atender</b>()
+            
+            <a href="../classes/DstSolicitacaoProduto.html#method-i-max_atender" name="method-i-max_atender" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que retorna a quantidade máxima permitida</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-max_atender_source')" id="l_method-i-max_atender_source">show</a>
+                
+              </p>
+              <div id="method-i-max_atender_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dst/dst_solicitacao_produto.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">max_atender</span>
+ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">quantidade_aprovada</span> <span class="ruby-operator">-</span>  <span class="ruby-identifier">quantidade_atendido</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quantidade_atendido">
+            
+              <b>quantidade_atendido</b>()
+            
+            <a href="../classes/DstSolicitacaoProduto.html#method-i-quantidade_atendido" name="method-i-quantidade_atendido" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que retorna a quantidade atendida</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-quantidade_atendido_source')" id="l_method-i-quantidade_atendido_source">show</a>
+                
+              </p>
+              <div id="method-i-quantidade_atendido_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dst/dst_solicitacao_produto.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">quantidade_atendido</span>
+  <span class="ruby-identifier">dst_movimentacaos</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">tipo:</span> <span class="ruby-string">&#39;entrada&#39;</span>).<span class="ruby-identifier">sum</span>(<span class="ruby-value">:quantidade</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../classes/DstSolicitacaoProduto.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que retorna o nome do objeto</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dst/dst_solicitacao_produto.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-node">&quot;Solicitação de Produto Nº#{self.id}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

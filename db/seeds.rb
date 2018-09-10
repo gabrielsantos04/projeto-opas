@@ -1,20 +1,7 @@
 User.create!([
   {nome: "Gabriel Lacerda dos Santos", cpf: "", email: "gabrielvash@gmail.com", cidade_id: 139, role: "administrador", encrypted_password: "$2a$11$3gasb7gmluAIwT/l3xyfquzzuWJcmg2IXBd.AzQQZpVc7VRn1Dooe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-06-04 11:39:02", last_sign_in_at: "2018-03-12 12:14:47", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
 ])
-AvaliacaoNeurologica.create!([
-  {avaliacao_notificacao_id: 4, data: "2018-04-25", olhos_sem_forca_d: "1.0", olhos_sem_forca_e: "1.0", olhos_com_forca_d: "1.0", olhos_com_forca_e: "1.0", triquiase_d: "S", triquiase_e: "S", ectropio_d: "S", ectropio_e: "S", catarata_d: "S", catarata_e: "S", sensibilidade_cornea_d: "S", sensibilidade_cornea_e: "S", opacidade_corneana_d: "N", acuidade_visual_d: "1.0", acuidade_visual_e: "1.0", ressecamento_d: "N", ressecamento_e: "S", feridas_d: "S", feridas_e: "S", perfuracao_septo_d: "N", nervo_radial_d: "d", nervo_radial_e: "d", nervo_ulnar_d: "d", nervo_mediano_d: "d", nervo_mediano_e: "d", abducao_5_dedo_d: 0, abducao_5_dedo_e: 1, abducao_polegar_d: 0, abducao_polegar_e: 0, extensores_punho_d: 1, extensores_punho_e: 1, nervo_fibular_d: "d", nervo_fibular_e: "d", nervo_tibial_d: "d", nervo_tibial_e: "d", extensao_halux_d: 1, extensao_halux_e: 1, dorsiflexao_pe_d: 1, dorsiflexao_pe_e: 1, opacidade_corneana_e: "N", perfuracao_septo_e: "N", nervo_ulnar_e: "d"},
-  {avaliacao_notificacao_id: 7, data: "2018-04-25", olhos_sem_forca_d: "1.0", olhos_sem_forca_e: "1.0", olhos_com_forca_d: "1.0", olhos_com_forca_e: "1.0", triquiase_d: "S", triquiase_e: "S", ectropio_d: "N", ectropio_e: "S", catarata_d: "S", catarata_e: "N", sensibilidade_cornea_d: "N", sensibilidade_cornea_e: "N", opacidade_corneana_d: "S", acuidade_visual_d: "1.0", acuidade_visual_e: "1.0", ressecamento_d: "N", ressecamento_e: "S", feridas_d: "N", feridas_e: "S", perfuracao_septo_d: "S", nervo_radial_d: "d", nervo_radial_e: "nedc", nervo_ulnar_d: "d", nervo_mediano_d: "d", nervo_mediano_e: "d", abducao_5_dedo_d: 1, abducao_5_dedo_e: 1, abducao_polegar_d: 0, abducao_polegar_e: 1, extensores_punho_d: 1, extensores_punho_e: 1, nervo_fibular_d: "d", nervo_fibular_e: "d", nervo_tibial_d: "d", nervo_tibial_e: "d", extensao_halux_d: 1, extensao_halux_e: 2, dorsiflexao_pe_d: 1, dorsiflexao_pe_e: 2, opacidade_corneana_e: "N", perfuracao_septo_e: "N", nervo_ulnar_e: "d"},
-  {avaliacao_notificacao_id: 6, data: "2018-04-25", olhos_sem_forca_d: "1.0", olhos_sem_forca_e: "1.0", olhos_com_forca_d: "1.0", olhos_com_forca_e: "1.0", triquiase_d: "S", triquiase_e: "S", ectropio_d: "S", ectropio_e: "S", catarata_d: "S", catarata_e: "N", sensibilidade_cornea_d: "S", sensibilidade_cornea_e: "N", opacidade_corneana_d: "S", acuidade_visual_d: "1.0", acuidade_visual_e: "1.0", ressecamento_d: "S", ressecamento_e: "S", feridas_d: "S", feridas_e: "S", perfuracao_septo_d: "N", nervo_radial_d: "d", nervo_radial_e: "nedc", nervo_ulnar_d: "d", nervo_mediano_d: "d", nervo_mediano_e: "d", abducao_5_dedo_d: 1, abducao_5_dedo_e: 1, abducao_polegar_d: 0, abducao_polegar_e: 1, extensores_punho_d: 1, extensores_punho_e: 1, nervo_fibular_d: "d", nervo_fibular_e: "d", nervo_tibial_d: "d", nervo_tibial_e: "d", extensao_halux_d: 1, extensao_halux_e: 1, dorsiflexao_pe_d: 1, dorsiflexao_pe_e: 1, opacidade_corneana_e: "S", perfuracao_septo_e: "S", nervo_ulnar_e: "d"}
-])
-AvaliacaoNotificacao.create!([
-  {classificacao_operacional: "multibacilar", inicio_pqt: "2018-02-02", alta_pqt: "2014-02-02", profissao: "teste", unidade_saude: "teste", atividades_realizadas_ubs: true, grupo_autocuidado: true, encaminhamentos: "", imobilizacoes: "", adaptacoes: "", observacoes: "", notificacao_id: nil, atividades_orientadas: nil, paciente_id: 1, inicial: true},
-  {classificacao_operacional: "multibacilar", inicio_pqt: "2014-02-02", alta_pqt: "2014-02-01", profissao: "teste", unidade_saude: "teste", atividades_realizadas_ubs: true, grupo_autocuidado: true, encaminhamentos: "", imobilizacoes: "", adaptacoes: "", observacoes: "", notificacao_id: 4, atividades_orientadas: nil, paciente_id: 1, inicial: nil},
-  {classificacao_operacional: "paucibacilar", inicio_pqt: "2015-02-02", alta_pqt: "2015-02-02", profissao: "teste", unidade_saude: "teste", atividades_realizadas_ubs: false, grupo_autocuidado: false, encaminhamentos: "", imobilizacoes: "", adaptacoes: "", observacoes: "", notificacao_id: 4, atividades_orientadas: nil, paciente_id: 1, inicial: nil}
-])
-AvaliacaoSensitiva.create!([
-  {avaliacao_notificacao_id: 4, data: "2014-02-02", dedao_direito: 1, indicador_d_ponta: 1, indicador_d: 1, mindinho_d_ponta: 1, mindinho_d: 1, mao_direita: 1, mao_d_costa: 1, dedao_esquerdo: 2, indicador_e_ponta: 2, indicador_e: 2, mindinho_e_ponta: 2, mindinho_e: 2, mao_esquerda: 2, mao_e_costa: 2, pe_direito: 3, pe_d_1_ponta: 4, pe_d_3_ponta: 4, pe_d_5_ponta: 4, pe_d_1: 4, pe_d_3: 4, pe_d_5: 4, pe_d_e1: 4, pe_d_calcanhar: 4, pe_esquerdo: 5, pe_e_1_ponta: 5, pe_e_3_ponta: 5, pe_e_5_ponta: 5, pe_e_1: 5, pe_e_3: 5, pe_e_5: 5, pe_e_e1: 5, pe_e_e2: 5, pe_e_calcanhar: 5, pe_d_e2: 4},
-  {avaliacao_notificacao_id: 6, data: "2015-02-02", dedao_direito: 2, indicador_d_ponta: 2, indicador_d: 2, mindinho_d_ponta: 2, mindinho_d: 2, mao_direita: 2, mao_d_costa: 2, dedao_esquerdo: 1, indicador_e_ponta: 1, indicador_e: 1, mindinho_e_ponta: 1, mindinho_e: 1, mao_esquerda: 1, mao_e_costa: 1, pe_direito: 1, pe_d_1_ponta: 5, pe_d_3_ponta: 1, pe_d_5_ponta: 1, pe_d_1: 7, pe_d_3: 2, pe_d_5: 1, pe_d_e1: 1, pe_d_calcanhar: 1, pe_esquerdo: 7, pe_e_1_ponta: 7, pe_e_3_ponta: 4, pe_e_5_ponta: 2, pe_e_1: 6, pe_e_3: 3, pe_e_5: 4, pe_e_e1: 5, pe_e_e2: 4, pe_e_calcanhar: 3, pe_d_e2: 3}
-])
+
 CategoriaQueixa.create!([
   {nome: "Olhos"},
   {nome: "Nariz"},
@@ -162,27 +149,14 @@ Cidade.create!([
   {nome: "NATIVIDADE", uf: "TO", latitude: "-11,71", longitude: "-47,72", pacientes_count: 1},
   {nome: "PALMAS", uf: "TO", latitude: "-10,16", longitude: "-48,33", pacientes_count: 2}
 ])
-ClassificacaoGrau.create!([
-  {avaliacao_notificacao_id: 4, data: "2018-04-25", olho_direito: 1, olho_esquerdo: 1, mao_direita: 1, mao_esqueda: 1, pe_direito: 1, pe_esquerdo: 1, maior_grau: 1, escore_omp: 1},
-  {avaliacao_notificacao_id: 6, data: "2018-04-25", olho_direito: 1, olho_esquerdo: 1, mao_direita: 1, mao_esqueda: 1, pe_direito: 1, pe_esquerdo: 1, maior_grau: 1, escore_omp: 1},
-  {avaliacao_notificacao_id: 7, data: "2018-04-25", olho_direito: 1, olho_esquerdo: 1, mao_direita: 1, mao_esqueda: 1, pe_direito: 1, pe_esquerdo: 1, maior_grau: 1, escore_omp: 1}
-])
+
 Conduta.create!([
   {nome: "Introduzida medicação antirreacional"},
   {nome: "Introduzida PQT/PB"},
   {nome: "Introduzida PQT/MB"},
   {nome: "Iniciada investigação para resistência medicamentosa"}
 ])
-DadosClinico.create!([
-  {lesoes_cultaneas: 1, forma_clinica: "i", classificacao_operacional: "multibacilar", nervos_afetados: 1, notificacao_id: 4}
-])
-DantCidadeRegion.create!([
-  {dant_region_id: 1, cidade_id: 139},
-  {dant_region_id: 1, cidade_id: 1}
-])
-DantPacient.create!([
-  {nome: "Paciente teste", sexo: "masculino", endereco: "teste", rg: "123213", cpf: "12312312", tipo_insulina: "nph", hipertenso: true, diabetico: false, tabagista: false, etilista: false, obeso: false, grau_obesidade: nil, cidade_id: 139, frascos_diarios: 34, frascos_mensais: 2, obito: false, data_obito: nil}
-])
+
 DantQuestion.create!([
   {pergunta: 1, texto: "Número de Hipertensos cadastrados no E-SUS e/ou Município"},
   {pergunta: 2, texto: "Soma dos atendimentos aos Hipertensos nos últimos três meses pelo médico ou pelo enfermeiro na(s) UBS"},
@@ -207,23 +181,14 @@ DantQuestion.create!([
   {pergunta: 21, texto: "Grau de Obesidade III, quantos?"},
   {pergunta: 22, texto: "Somar as participações (número de vezes) em que os usuários do SUS praticaram atividades físicas nos últimos 3 meses anteriores ao mês de referência do relatório"}
 ])
-DantRegion.create!([
-  {nome: "Região 1"}
-])
-DantResponsavelProgram.create!([
-  {nome: "Responsavel 1", cargo: "Cargo 1", cidade_id: 9}
-])
+
 Dermatologica.create!([
   {nome: "Manchas"},
   {nome: "Placas"},
   {nome: "Nódulos"},
   {nome: "Inflitrações"}
 ])
-DermatologicoRecidiva.create!([
-  {dermatologica_id: 1, momento: "historia_anterior", recidiva_id: 1},
-  {dermatologica_id: 2, momento: "alta_cura", recidiva_id: 1},
-  {dermatologica_id: 1, momento: "suspeita_recidiva", recidiva_id: 1}
-])
+
 Diagnostico.create!([
   {nome: "Estado reacional de hanseníase"},
   {nome: "Classificação operacional inicial errônea"},
@@ -231,19 +196,7 @@ Diagnostico.create!([
   {nome: "Recidiva e estado reacional de hanseníase"},
   {nome: "Suspeita de resistência medicamentosa"}
 ])
-DiagnosticoRecidiva.create!([
-  {recidiva_id: 1, diagnostico_id: 4}
-])
-EpidosiosReacionaisRecidiva.create!([
-  {tipo: "tipo_2", conduta_mendicamentosa: "teste", momento: "historia_anterior", recidiva_id: 1, numero_episodios: 1},
-  {tipo: "tipo_1", conduta_mendicamentosa: "teste", momento: "alta_cura", recidiva_id: 1, numero_episodios: 1}
-])
-EpisodioReacional.create!([
-  {notificacao_id: 4, tipo: "tipo_1", numero_episodios: 1, conduta_mendicamentosa: "teste", data_inicio: "2014-02-02", data_termino: "2014-02-02"}
-])
-EsquemaSubstitutivo.create!([
-  {miligramas: "12.0", medicamento_id: 2, notificacao_id: 4}
-])
+
 Medicamento.create!([
   {nome: "Clofazimina 50 mg"},
   {nome: "Clofazimina 100 mg"},
@@ -266,17 +219,7 @@ Monofilamento.create!([
   {nome: "Rosa", cor: "#ff1ab3", interpretacao: "Sensibilidade à pressão profunda, podendo ainda sentir dor."},
   {nome: "Preto", cor: "#000000", interpretacao: "Perda de sensibilidade à pressão profunda, normalmente podendo sentir dor."}
 ])
-NervosRecidiva.create!([
-  {nervo: "radial", recidiva_id: 1, momento: "historia_anterior"},
-  {nervo: "ulnar", recidiva_id: 1, momento: "alta_cura"},
-  {nervo: "radial", recidiva_id: 1, momento: "suspeita_recidiva"}
-])
-Notificacao.create!([
-  {numero: "123456", data: "2018-01-02", grau_incapacidade: "grau_0", modo_entrada: "caso_novo", modo_deteccao: "encaminhamento", observacoes: "teste", baciloscopia: "positivo", data_inicio: "2017-04-28", esquema_terapeutico: "pb_adulto", paciente_id: 1, recidiva_id: nil, avaliacao_notificacao_id: 4}
-])
-NotificacaoContato.create!([
-  {nome: "teste", tipo_contato: "domiciliar", suspeito: false, confirmado: false, notificacao_id: 4, bcg_primeira: "2014-02-02", bcg_segunda: "2014-02-02", bcg_cicatriz: false}
-])
+
 Ocupacao.create!([
   {nome: "LEGISLADORES", codigo: "1111"},
   {nome: "DIRIGENTES GERAIS DA ADMINISTRAÇÃO PÚBLICA", codigo: "1112"},
@@ -790,10 +733,7 @@ Ocupacao.create!([
   {nome: "CABOS E SOLDADOS DO CORPO DE BOMBEIROS", codigo: "0513"},
   {nome: "OCUPAÇÕES MAL ESPECIFICADAS", codigo: "0"}
 ])
-Paciente.create!([
-  {nome: "Paciente 1", nome_mae: "mae", idade: 12, peso: "12.0", endereco: "Q. 804 Sul Alameda 2, 60 - Plano Diretor Sul, Palmas - TO, Brasil", latitude: "-10.2344724", longitude: "-48.32916879999999", sexo: 1, telefone: "123123", cidade_id: 139, ocupacao_id: 71},
-  {nome: "Paciente 2", nome_mae: "teste", idade: 12, peso: "123.0", endereco: "Q. 804 Sul Alameda 2, 60 - Plano Diretor Sul, Palmas - TO, Brasil", latitude: "-10.2344724", longitude: "-48.32916879999999", sexo: 1, telefone: "", cidade_id: 139, ocupacao_id: 317}
-])
+
 Queixa.create!([
   {nome: "Fecha olhos sem força (mm)", categoria: "olhos", categoria_queixa_id: 1},
   {nome: "Fecha olhos com força (mm)", categoria: "olhos", categoria_queixa_id: 1},
@@ -817,19 +757,7 @@ Queixa.create!([
   {nome: "Extensão Hálux", categoria: "membros_inferiores", categoria_queixa_id: 4},
   {nome: "Dorsiflexão do pé", categoria: "membros_inferiores", categoria_queixa_id: 4}
 ])
-Recidiva.create!([
-  {unidade_saude: "teste", prontuario: "123", data_diagnostico: "2018-03-15", classificacao_operacional: "multibacilar", forma_clinica: "i", baciloscopia: "positivo", baciloscopia_lb: "12", grau_incapacidade: "grau_0", inicio_tratamento: "2018-03-12", esquema_terapeutico: "pb_infantil", tempo_tratamento: 1, doses: 2, regularidade: true, tratamento_observacoes: "teste", tempo_alta_cura: 1, data_primeiros_sintomas: "2018-03-15", grau_incapacidade_alta: "grau_0", classificacao_operacional_alta: "multibacilar", termino_tratamento: "2018-03-30", forma_clinica_alta: "i", baciloscopia_suspeita: "positivo", baciloscopia_lb_suspeita: "12", grau_incapacidade_suspeita: "grau_1", classificacao_operacional_suspeita: "multibacilar", forma_clinica_suspeita: "d", paciente_id: 1}
-])
-SensitivaImage.create!([
-  {imagem: "imagem.png", avaliacao_sensitiva_id: 4, opcao: "mao_direita"},
-  {imagem: "imagem.png", avaliacao_sensitiva_id: 4, opcao: "mao_esquerda"},
-  {imagem: "imagem.png", avaliacao_sensitiva_id: 4, opcao: "pe_direito"},
-  {imagem: "imagem.png", avaliacao_sensitiva_id: 4, opcao: "pe_esquerdo"},
-  {imagem: "imagem.png", avaliacao_sensitiva_id: 5, opcao: "mao_direita"},
-  {imagem: "imagem.png", avaliacao_sensitiva_id: 5, opcao: "mao_esquerda"},
-  {imagem: "imagem.png", avaliacao_sensitiva_id: 5, opcao: "pe_direito"},
-  {imagem: "imagem.png", avaliacao_sensitiva_id: 5, opcao: "pe_esquerdo"}
-])
+
 SinaisSintoma.create!([
   {nome: "Súbito e inesperado"},
   {nome: "Acompanhados de febre e mal estar"},
@@ -844,6 +772,4 @@ SinaisSintoma.create!([
   {nome: "Nenhuma ou algum nervo envolvido"},
   {nome: "Resposta não pronunciada aos esteróides"}
 ])
-SintomasRecidiva.create!([
-  {sinais_sintoma_id: 1, recidiva_id: 1}
-])
+

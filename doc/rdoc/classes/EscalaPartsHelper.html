@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EscalaPartsHelper</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="EscalaPartsHelper">
+
+  
+    
+    <meta name="description" content="Disponibiliza métodos para serem usados nas views.">
+    <meta property="og:description" content="Disponibiliza métodos para serem usados nas views.">
+  
+
+    <meta name="keywords" content="EscalaPartsHelper class">
+  
+    <meta name="keywords" content="irrelevante, grau">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span>
+            EscalaPartsHelper
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/helpers/escala_parts_helper_rb.html">app/helpers/escala_parts_helper.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Disponibiliza métodos para serem usados nas views</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-grau">grau</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-irrelevante">irrelevante</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-grau">
+            
+              <b>grau</b>(valor)
+            
+            <a href="../classes/EscalaPartsHelper.html#method-i-grau" name="method-i-grau" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>retorna os textos para grau</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-grau_source')" id="l_method-i-grau_source">show</a>
+                
+              </p>
+              <div id="method-i-grau_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/helpers/escala_parts_helper.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">grau</span>(<span class="ruby-identifier">valor</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">valor</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;sem_restricao_significativa&quot;</span>
+      <span class="ruby-string">&quot;Sem restrição significativa&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;leve_restricao&quot;</span>
+      <span class="ruby-string">&quot;Leve Restrição&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;restricao_moderada&quot;</span>
+      <span class="ruby-string">&quot;Restrição Moderada&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;restricao_grave&quot;</span>
+      <span class="ruby-string">&quot;Restrição Grave&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;restricao_extrema&quot;</span>
+      <span class="ruby-string">&quot;Restrição Extrema&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-irrelevante">
+            
+              <b>irrelevante</b>(valor)
+            
+            <a href="../classes/EscalaPartsHelper.html#method-i-irrelevante" name="method-i-irrelevante" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Retorna os textos para irrelevante</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-irrelevante_source')" id="l_method-i-irrelevante_source">show</a>
+                
+              </p>
+              <div id="method-i-irrelevante_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/helpers/escala_parts_helper.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">irrelevante</span>(<span class="ruby-identifier">valor</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">valor</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">1</span>
+      <span class="ruby-string">&quot;Não é problema&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+      <span class="ruby-string">&quot;Pequeno&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+      <span class="ruby-string">&quot;Médio&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">5</span>
+      <span class="ruby-string">&quot;Grande&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

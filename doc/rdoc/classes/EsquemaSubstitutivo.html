@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EsquemaSubstitutivo</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="EsquemaSubstitutivo">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: esquema_substitutivos  id             :integer          not null, primary key miligramas     :decimal(, ) medicamento_id :integer notificacao_id :integer created_at    .">
+    <meta property="og:description" content="Schema Information  Table name: esquema_substitutivos  id             :integer          not null, primary key miligramas     :decimal(, ) medicamento_id :integer notificacao_id :integer created_at    .">
+  
+
+    <meta name="keywords" content="EsquemaSubstitutivo class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            EsquemaSubstitutivo
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/esquema_substitutivo_rb.html">app/models/esquema_substitutivo.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-EsquemaSubstitutivo-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: esquema_substitutivos</p>
+
+<pre><code>id             :integer          not null, primary key
+miligramas     :decimal(, )
+medicamento_id :integer
+notificacao_id :integer
+created_at     :datetime         not null
+updated_at     :datetime         not null
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_esquema_substitutivos_on_medicamento_id  (medicamento_id)
+index_esquema_substitutivos_on_notificacao_id  (notificacao_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (medicamento_id =&gt; medicamentos.id)
+fk_rails_...  (notificacao_id =&gt; notificacaos.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

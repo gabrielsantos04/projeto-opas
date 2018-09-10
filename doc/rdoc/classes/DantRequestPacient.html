@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DantRequestPacient</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="DantRequestPacient">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: dant_request_pacients  id              :integer          not null, primary key dant_request_id :integer dant_pacient_id :integer created_at      :datetime         not n.">
+    <meta property="og:description" content="Schema Information  Table name: dant_request_pacients  id              :integer          not null, primary key dant_request_id :integer dant_pacient_id :integer created_at      :datetime         not n.">
+  
+
+    <meta name="keywords" content="DantRequestPacient class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            DantRequestPacient
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/dant_request_pacient_rb.html">app/models/dant_request_pacient.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-DantRequestPacient-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: dant_request_pacients</p>
+
+<pre><code>id              :integer          not null, primary key
+dant_request_id :integer
+dant_pacient_id :integer
+created_at      :datetime         not null
+updated_at      :datetime         not null
+frascos_diarios :integer
+frascos_mensais :integer
+idade           :integer
+hipertenso      :boolean
+diabetico       :boolean
+tabagista       :boolean
+obeso           :boolean
+etilista        :boolean
+sexo            :integer
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_dant_request_pacients_on_dant_pacient_id  (dant_pacient_id)
+index_dant_request_pacients_on_dant_request_id  (dant_request_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (dant_pacient_id =&gt; dant_pacients.id)
+fk_rails_...  (dant_request_id =&gt; dant_requests.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

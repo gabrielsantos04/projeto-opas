@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DadosClinico</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="DadosClinico">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: dados_clinicos  id                        :integer          not null, primary key lesoes_cultaneas          :integer forma_clinica             :string classificacao_ope.">
+    <meta property="og:description" content="Schema Information  Table name: dados_clinicos  id                        :integer          not null, primary key lesoes_cultaneas          :integer forma_clinica             :string classificacao_ope.">
+  
+
+    <meta name="keywords" content="DadosClinico class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            DadosClinico
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/dados_clinico_rb.html">app/models/dados_clinico.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-DadosClinico-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: dados_clinicos</p>
+
+<pre><code>id                        :integer          not null, primary key
+lesoes_cultaneas          :integer
+forma_clinica             :string
+classificacao_operacional :string
+nervos_afetados           :integer
+notificacao_id            :integer
+created_at                :datetime         not null
+updated_at                :datetime         not null
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_dados_clinicos_on_notificacao_id  (notificacao_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (notificacao_id =&gt; notificacaos.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>escala_part.rb</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            escala_part.rb
+        </h1>
+        <ul class="files">
+            
+            <li>
+                app/models/escala_part.rb
+                
+            </li>
+            <li>Last modified: 10/09/2018 08:24</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="label-Schema+Information">Schema Information</h2>
+
+<p>Table name: escala_parts</p>
+
+<pre><code>id               :integer          not null, primary key
+questao_1        :string
+questao_1_valor  :integer
+questao_2        :string
+questao_2_valor  :integer
+questao_3        :string
+questao_3_valor  :integer
+questao_4        :string
+questao_4_valor  :integer
+questao_5        :string
+questao_5_valor  :integer
+questao_6        :string
+questao_6_valor  :integer
+questao_7        :string
+questao_7_valor  :integer
+questao_8        :string
+questao_8_valor  :integer
+questao_9        :string
+questao_9_valor  :integer
+questao_10       :string
+questao_10_valor :integer
+questao_11       :string
+questao_11_valor :integer
+questao_12       :string
+questao_12_valor :integer
+questao_13       :string
+questao_13_valor :integer
+questao_14       :string
+questao_14_valor :integer
+questao_15       :string
+questao_15_valor :integer
+questao_16       :string
+questao_16_valor :integer
+questao_17       :string
+questao_17_valor :integer
+questao_18       :string
+questao_18_valor :integer
+data_entrevista  :date
+entrevistador    :string
+grau_restricao   :string
+comentario       :text
+paciente_id      :integer
+notificacao_id   :integer
+created_at       :datetime         not null
+updated_at       :datetime         not null
+total            :integer
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_escala_parts_on_notificacao_id  (notificacao_id)
+index_escala_parts_on_paciente_id     (paciente_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (notificacao_id =&gt; notificacaos.id)
+fk_rails_...  (paciente_id =&gt; pacientes.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="../../../classes/EscalaPart.html">EscalaPart</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

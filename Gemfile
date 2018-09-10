@@ -44,6 +44,8 @@ gem 'nested_form'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave-base64'
 gem 'ryanb-uniquify'
+gem 'sdoc'
+gem 'rdoc'
 
 #gem 'paper_trail'
 

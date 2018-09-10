@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ImunizacaoEncerramento</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="ImunizacaoEncerramento">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: imunizacao_encerramentos  id                    :integer          not null, primary key imunizacao_esquema_id :integer data_administracao    :date lote                 .">
+    <meta property="og:description" content="Schema Information  Table name: imunizacao_encerramentos  id                    :integer          not null, primary key imunizacao_esquema_id :integer data_administracao    :date lote                 .">
+  
+
+    <meta name="keywords" content="ImunizacaoEncerramento class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            ImunizacaoEncerramento
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/imunizacao/imunizacao_encerramento_rb.html">app/models/imunizacao/imunizacao_encerramento.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ImunizacaoEncerramento-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: imunizacao_encerramentos</p>
+
+<pre><code>id                    :integer          not null, primary key
+imunizacao_esquema_id :integer
+data_administracao    :date
+lote                  :string
+validade              :date
+laboratorio           :string
+unidade_administracao :string
+via_administracao     :string
+profissional          :string
+observacoes           :text
+created_at            :datetime         not null
+updated_at            :datetime         not null
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_imunizacao_encerramentos_on_imunizacao_esquema_id  (imunizacao_esquema_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (imunizacao_esquema_id =&gt; imunizacao_esquemas.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

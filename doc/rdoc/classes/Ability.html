@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ability</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="Ability">
+
+  
+    
+    <meta name="description" content="Classe responsável por controlar as permissões dos usuários.">
+    <meta property="og:description" content="Classe responsável por controlar as permissões dos usuários.">
+  
+
+    <meta name="keywords" content="Ability class">
+  
+    <meta name="keywords" content="new">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            Ability
+            
+                <span class="parent">&lt;
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/ability_rb.html">app/models/ability.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Classe responsável por controlar as permissões dos usuários</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            CanCan::Ability
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(user)
+            
+            <a href="../classes/Ability.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que verifica as permissões</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/ability.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">user</span>)
+  <span class="ruby-identifier">user</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment"># guest user (not logged in)</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">administrador?</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-value">:all</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">municipio_hans?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">municipio?</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:create</span>, <span class="ruby-constant">Paciente</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">Paciente</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">p</span>.<span class="ruby-identifier">cidade</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">cidade</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">can</span> [<span class="ruby-value">:create</span>,<span class="ruby-value">:recidiva</span>], <span class="ruby-constant">Notificacao</span>
+    <span class="ruby-identifier">can</span> [<span class="ruby-value">:index</span>,<span class="ruby-value">:show</span>,<span class="ruby-value">:edit</span>,<span class="ruby-value">:update</span>,<span class="ruby-value">:destroy</span>], <span class="ruby-constant">Notificacao</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">p</span>.<span class="ruby-identifier">paciente</span>.<span class="ruby-identifier">cidade</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">cidade</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:create</span>, <span class="ruby-constant">AvaliacaoNotificacao</span>
+    <span class="ruby-identifier">can</span> [<span class="ruby-value">:show</span>,<span class="ruby-value">:edit</span>,<span class="ruby-value">:update</span>,<span class="ruby-value">:destroy</span>], <span class="ruby-constant">AvaliacaoNotificacao</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">p</span>.<span class="ruby-identifier">paciente</span>.<span class="ruby-identifier">cidade</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">cidade</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:create</span>, <span class="ruby-constant">Recidiva</span>
+    <span class="ruby-identifier">can</span> [<span class="ruby-value">:show</span>,<span class="ruby-value">:edit</span>,<span class="ruby-value">:update</span>,<span class="ruby-value">:destroy</span>], <span class="ruby-constant">Recidiva</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">p</span>.<span class="ruby-identifier">paciente</span>.<span class="ruby-identifier">cidade</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">cidade</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">can</span> [<span class="ruby-value">:create</span>,<span class="ruby-value">:inserir_marcacao</span>,<span class="ruby-value">:remover_marcacao</span>], <span class="ruby-constant">AvaliacaoSensitiva</span>
+    <span class="ruby-identifier">can</span> [<span class="ruby-value">:show</span>,<span class="ruby-value">:edit</span>,<span class="ruby-value">:update</span>,<span class="ruby-value">:destroy</span>], <span class="ruby-constant">AvaliacaoSensitiva</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">p</span>.<span class="ruby-identifier">paciente</span>.<span class="ruby-identifier">cidade</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">cidade</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin_dst?</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DstLocal</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DstSolicitacaoProduto</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DstProduto</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DstLote</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">dst_produtos?</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DstProduto</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DstLote</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin_dant?</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DantPacient</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DantQuestion</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DantResponsavelProgram</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DantCidadeRegion</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DantRegion</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">DantRequest</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:create</span>, <span class="ruby-constant">Paciente</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">Paciente</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">p</span>.<span class="ruby-identifier">cidade</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">cidade</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:create</span>, <span class="ruby-constant">Recidiva</span>
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:manage</span>, <span class="ruby-constant">Recidiva</span>
+
+    <span class="ruby-identifier">can</span> <span class="ruby-value">:show</span>, <span class="ruby-value">:all</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment">#Permissões para Módulo DST</span>
+  <span class="ruby-identifier">can</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">DstLocal</span>
+  <span class="ruby-identifier">can</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">DstMovimentacao</span>
+  <span class="ruby-identifier">can</span> <span class="ruby-value">:create</span>, <span class="ruby-constant">DstMovimentacao</span>
+  <span class="ruby-identifier">can</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">DstSolicitacao</span>
+  <span class="ruby-identifier">can</span> <span class="ruby-value">:create</span>, <span class="ruby-constant">DstSolicitacao</span>
+
+
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

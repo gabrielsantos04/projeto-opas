@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AvaliacaoSensitiva</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="AvaliacaoSensitiva">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: avaliacao_sensitivas  id                       :integer          not null, primary key avaliacao_notificacao_id :integer data                     :date dedao_direito   .">
+    <meta property="og:description" content="Schema Information  Table name: avaliacao_sensitivas  id                       :integer          not null, primary key avaliacao_notificacao_id :integer data                     :date dedao_direito   .">
+  
+
+    <meta name="keywords" content="AvaliacaoSensitiva class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            AvaliacaoSensitiva
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/avaliacao_sensitiva_rb.html">app/models/avaliacao_sensitiva.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-AvaliacaoSensitiva-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: avaliacao_sensitivas</p>
+
+<pre><code>id                       :integer          not null, primary key
+avaliacao_notificacao_id :integer
+data                     :date
+dedao_direito            :integer
+indicador_d_ponta        :integer
+indicador_d              :integer
+mindinho_d_ponta         :integer
+mindinho_d               :integer
+mao_direita              :integer
+mao_d_costa              :integer
+dedao_esquerdo           :integer
+indicador_e_ponta        :integer
+indicador_e              :integer
+mindinho_e_ponta         :integer
+mindinho_e               :integer
+mao_esquerda             :integer
+mao_e_costa              :integer
+pe_direito               :integer
+pe_d_1_ponta             :integer
+pe_d_3_ponta             :integer
+pe_d_5_ponta             :integer
+pe_d_1                   :integer
+pe_d_3                   :integer
+pe_d_5                   :integer
+pe_d_e1                  :integer
+pe_d_calcanhar           :integer
+pe_esquerdo              :integer
+pe_e_1_ponta             :integer
+pe_e_3_ponta             :integer
+pe_e_5_ponta             :integer
+pe_e_1                   :integer
+pe_e_3                   :integer
+pe_e_5                   :integer
+pe_e_e1                  :integer
+pe_e_e2                  :integer
+pe_e_calcanhar           :integer
+created_at               :datetime         not null
+updated_at               :datetime         not null
+pe_d_e2                  :integer
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_avaliacao_sensitivas_on_avaliacao_notificacao_id  (avaliacao_notificacao_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (avaliacao_notificacao_id =&gt; avaliacao_notificacaos.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>
