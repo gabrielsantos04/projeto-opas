@@ -20,6 +20,13 @@
     <%= @dant_request.status.upcase %>
   </p>
 
+  <% if @dant_request.status == "indeferido" %>
+    <p>
+      <strong>Indeferimento:</strong>
+      <%= @dant_request.justificativa %>
+    </p>
+  <% end %>
+
   <div class="card-panel">
 <table>
   <thead>
@@ -228,6 +235,28 @@
 <%= link_to 'Enviar', enviar_dant_request_path(@dant_request), class:"btn green" if @dant_request.status == :cadastrada %>
 <% if @dant_request.status != :cadastrada and ( current_user.administrador? || current_user.admin_dant?) %>
   <%= link_to "Deferir", alterar_status_dant_request_path(@dant_request, status: "deferido"), class:"btn green", target:"_self"%>
-  <%= link_to "Indeferir", alterar_status_dant_request_path(@dant_request, status: "indeferido"), class:"btn red", target:"_self"%>
+  <%#= link_to "Indeferir", alterar_status_dant_request_path(@dant_request, status: "indeferido"), class:"btn red", target:"_self"%>
+    <a class="btn red modal-trigger" href="#modal_justificativa">Indeferir</a>
   <%= link_to "Entregar", alterar_status_dant_request_path(@dant_request, status: "entregue"), class:"btn blue", target:"_self"%>
 <% end %>
+
+<div id="modal_justificativa" class="modal">
+  <div class="modal-content">
+    <h4>Informe o motivo do indeferimento</h4>
+    <%= form_for(@dant_request) do |f| %>
+      <div class="input-field">
+        <%= f.label :justificativa %>
+        <%= f.text_area :justificativa,{class:"materialize-textarea"} %>
+      </div>
+        <%= f.hidden_field :status, value: "indeferido" %>
+        <%= f.submit "Salvar", class:"btn", target:"_self" %>
+    <% end %>
+  </div>
+
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+        $('.modal').modal();
+    });
+</script>

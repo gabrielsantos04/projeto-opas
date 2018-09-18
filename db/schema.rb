@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180905155912) do
+ActiveRecord::Schema.define(version: 20180910113139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -297,6 +297,7 @@ ActiveRecord::Schema.define(version: 20180905155912) do
     t.integer "qtd_nph_calculada"
     t.integer "qtd_regular_calculada"
     t.integer "qtd_analoga_calculada"
+    t.text "justificativa"
     t.index ["cidade_id"], name: "index_dant_requests_on_cidade_id"
     t.index ["dant_responsavel_program_id"], name: "index_dant_requests_on_dant_responsavel_program_id"
   end

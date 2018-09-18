@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AvaliacaoSensitivasController</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="AvaliacaoSensitivasController">
+
+  
+    
+    <meta name="description" content="Classe que controla as açoes da avaliação sensitiva.">
+    <meta property="og:description" content="Classe que controla as açoes da avaliação sensitiva.">
+  
+
+    <meta name="keywords" content="AvaliacaoSensitivasController class">
+  
+    <meta name="keywords" content="index, show, inserir_marcacao, remover_marcacao, new, edit, create, update, destroy">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            AvaliacaoSensitivasController
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationController.html">ApplicationController</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/controllers/avaliacao_sensitivas_controller_rb.html">app/controllers/avaliacao_sensitivas_controller.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Classe que controla as açoes da avaliação sensitiva</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-create">create</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-destroy">destroy</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-edit">edit</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-index">index</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-inserir_marcacao">inserir_marcacao</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-remover_marcacao">remover_marcacao</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-show">show</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update">update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-create">
+            
+              <b>create</b>()
+            
+            <a href="../classes/AvaliacaoSensitivasController.html#method-i-create" name="method-i-create" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>POST /avaliacao_sensitivas</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-create_source')" id="l_method-i-create_source">show</a>
+                
+              </p>
+              <div id="method-i-create_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/avaliacao_sensitivas_controller.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
+  <span class="ruby-ivar">@avaliacao_sensitiva</span> = <span class="ruby-constant">AvaliacaoSensitiva</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">avaliacao_sensitiva_params</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">avaliacao_notificacao</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Avaliação Sensitiva criada com sucesso.&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:new</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-destroy">
+            
+              <b>destroy</b>()
+            
+            <a href="../classes/AvaliacaoSensitivasController.html#method-i-destroy" name="method-i-destroy" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>DELETE /avaliacao_sensitivas/1</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-destroy_source')" id="l_method-i-destroy_source">show</a>
+                
+              </p>
+              <div id="method-i-destroy_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/avaliacao_sensitivas_controller.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destroy</span>
+  <span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">avaliacao_notificacao</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Avaliação Sensitiva removida com sucesso.&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-edit">
+            
+              <b>edit</b>()
+            
+            <a href="../classes/AvaliacaoSensitivasController.html#method-i-edit" name="method-i-edit" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>GET /avaliacao_sensitivas/1/edit</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-edit_source')" id="l_method-i-edit_source">show</a>
+                
+              </p>
+              <div id="method-i-edit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/avaliacao_sensitivas_controller.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-index">
+            
+              <b>index</b>()
+            
+            <a href="../classes/AvaliacaoSensitivasController.html#method-i-index" name="method-i-index" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>GET /avaliacao_sensitivas</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-index_source')" id="l_method-i-index_source">show</a>
+                
+              </p>
+              <div id="method-i-index_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/avaliacao_sensitivas_controller.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
+  <span class="ruby-ivar">@q</span> = <span class="ruby-constant">AvaliacaoSensitiva</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">ransack</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:q</span>])
+  <span class="ruby-ivar">@avaliacao_sensitivas</span> = <span class="ruby-ivar">@q</span>.<span class="ruby-identifier">result</span>.<span class="ruby-identifier">page</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inserir_marcacao">
+            
+              <b>inserir_marcacao</b>()
+            
+            <a href="../classes/AvaliacaoSensitivasController.html#method-i-inserir_marcacao" name="method-i-inserir_marcacao" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que insere a marcação do canvas</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-inserir_marcacao_source')" id="l_method-i-inserir_marcacao_source">show</a>
+                
+              </p>
+              <div id="method-i-inserir_marcacao_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/avaliacao_sensitivas_controller.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inserir_marcacao</span>
+  <span class="ruby-identifier">marcacao</span> = <span class="ruby-constant">Marcacao</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">avaliacao_sensitiva_id:</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">id</span>,<span class="ruby-value">imagem:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:imagem</span>],<span class="ruby-value">posicaox:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:posicaox</span>],<span class="ruby-value">posicaoy:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:posicaoy</span>],<span class="ruby-value">membro:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:membro</span>] )
+  <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> {<span class="ruby-value">msg:</span><span class="ruby-string">&quot;ok&quot;</span>, <span class="ruby-value">marcacao:</span> <span class="ruby-identifier">marcacao</span>.<span class="ruby-identifier">to_json</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-new">
+            
+              <b>new</b>()
+            
+            <a href="../classes/AvaliacaoSensitivasController.html#method-i-new" name="method-i-new" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>GET /avaliacao_sensitivas/new</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-new_source')" id="l_method-i-new_source">show</a>
+                
+              </p>
+              <div id="method-i-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/avaliacao_sensitivas_controller.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
+  <span class="ruby-ivar">@avaliacao_sensitiva</span> = <span class="ruby-constant">AvaliacaoSensitiva</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">avaliacao_notificacao_id:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:avaliacao</span>])
+  <span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-constant">SensitivaImage</span>.<span class="ruby-identifier">create!</span>(<span class="ruby-value">avaliacao_sensitiva:</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>,<span class="ruby-value">opcao:</span> <span class="ruby-string">&#39;mao_direita&#39;</span>)
+  <span class="ruby-constant">SensitivaImage</span>.<span class="ruby-identifier">create!</span>(<span class="ruby-value">avaliacao_sensitiva:</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>,<span class="ruby-value">opcao:</span> <span class="ruby-string">&#39;mao_esquerda&#39;</span>)
+  <span class="ruby-constant">SensitivaImage</span>.<span class="ruby-identifier">create!</span>(<span class="ruby-value">avaliacao_sensitiva:</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>,<span class="ruby-value">opcao:</span> <span class="ruby-string">&#39;pe_direito&#39;</span>)
+  <span class="ruby-constant">SensitivaImage</span>.<span class="ruby-identifier">create!</span>(<span class="ruby-value">avaliacao_sensitiva:</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>,<span class="ruby-value">opcao:</span> <span class="ruby-string">&#39;pe_esquerdo&#39;</span>)
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">edit_avaliacao_sensitiva_path</span>(<span class="ruby-ivar">@avaliacao_sensitiva</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remover_marcacao">
+            
+              <b>remover_marcacao</b>()
+            
+            <a href="../classes/AvaliacaoSensitivasController.html#method-i-remover_marcacao" name="method-i-remover_marcacao" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que remove a marcação do canvas</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-remover_marcacao_source')" id="l_method-i-remover_marcacao_source">show</a>
+                
+              </p>
+              <div id="method-i-remover_marcacao_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/avaliacao_sensitivas_controller.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remover_marcacao</span>
+
+  <span class="ruby-identifier">marcacao</span> = <span class="ruby-constant">Marcacao</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:marca</span>])
+  <span class="ruby-identifier">marcacao</span>.<span class="ruby-identifier">destroy</span>
+
+  <span class="ruby-identifier">avaliacao</span> = <span class="ruby-identifier">marcacao</span>.<span class="ruby-identifier">avaliacao_sensitiva</span>
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">dedao_direito</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:dedao_direito</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">indicador_d_ponta</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:indicador_d_ponta</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">indicador_d</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:indicador_d</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">mindinho_d_ponta</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:mindinho_d_ponta</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">mindinho_d</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:mindinho_d</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">mao_direita</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:mao_direita</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">mao_d_costa</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:mao_d_costa</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">dedao_esquerdo</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:dedao_esquerdo</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">indicador_e_ponta</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:indicador_e_ponta</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">indicador_e</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:indicador_e</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">mindinho_e_ponta</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:mindinho_e_ponta</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">mindinho_e</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:mindinho_e</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">mao_esquerda</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:mao_esquerda</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">mao_e_costa</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:mao_e_costa</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_direito</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_direito</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_d_1_ponta</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_d_1_ponta</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_d_3_ponta</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_d_3_ponta</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_d_5_ponta</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_d_5_ponta</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_d_1</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_d_1</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_d_3</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_d_3</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_d_5</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_d_5</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_d_e1</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_d_e1</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_d_calcanhar</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_d_calcanhar</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_esquerdo</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_esquerdo</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_e_1_ponta</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_e_1_ponta</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_e_3_ponta</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_e_3_ponta</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_e_5_ponta</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_e_5_ponta</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_e_1</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_e_1</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_e_3</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_e_3</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_e_5</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_e_5</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_e_e1</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_e_e1</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_e_e2</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_e_e2</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_e_calcanhar</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_e_calcanhar</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">pe_d_e2</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:pe_d_e2</span>]
+  <span class="ruby-identifier">avaliacao</span>.<span class="ruby-identifier">save</span>(<span class="ruby-value">validate:</span> <span class="ruby-keyword">false</span>)
+
+  <span class="ruby-comment">#redirect_to edit_avaliacao_sensitiva_path(marcacao.avaliacao_sensitiva)</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> {<span class="ruby-value">msg:</span><span class="ruby-string">&quot;ok&quot;</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-show">
+            
+              <b>show</b>()
+            
+            <a href="../classes/AvaliacaoSensitivasController.html#method-i-show" name="method-i-show" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>GET /avaliacao_sensitivas/1</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-show_source')" id="l_method-i-show_source">show</a>
+                
+              </p>
+              <div id="method-i-show_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/avaliacao_sensitivas_controller.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">show</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update">
+            
+              <b>update</b>()
+            
+            <a href="../classes/AvaliacaoSensitivasController.html#method-i-update" name="method-i-update" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>PATCH/PUT /avaliacao_sensitivas/1</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-update_source')" id="l_method-i-update_source">show</a>
+                
+              </p>
+              <div id="method-i-update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/avaliacao_sensitivas_controller.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">avaliacao_sensitiva_params</span>)
+    <span class="ruby-comment">#salva as imagens da avaliacao sensitiva</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_mao_direita</span>].<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">data</span> =  <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_mao_direita</span>]
+      <span class="ruby-identifier">img</span> = <span class="ruby-constant">SensitivaImage</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;avaliacao_sensitiva_id = ? and opcao = ?&quot;</span>,<span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">id</span>,<span class="ruby-string">&#39;mao_direita&#39;</span>).<span class="ruby-identifier">first_or_create</span>(<span class="ruby-value">avaliacao_sensitiva:</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>, <span class="ruby-value">opcao:</span> <span class="ruby-string">&#39;mao_direita&#39;</span>)
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">imagem</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_mao_direita</span>]
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">imagem</span>.<span class="ruby-identifier">recreate_versions!</span>
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_mao_esquerda</span>].<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">data</span> =  <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_mao_esquerda</span>]
+      <span class="ruby-identifier">img</span> = <span class="ruby-constant">SensitivaImage</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;avaliacao_sensitiva_id = ? and opcao = ?&quot;</span>,<span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">id</span>,<span class="ruby-string">&#39;mao_esquerda&#39;</span>).<span class="ruby-identifier">first_or_create</span>(<span class="ruby-value">avaliacao_sensitiva:</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>, <span class="ruby-value">opcao:</span> <span class="ruby-string">&#39;mao_esquerda&#39;</span>)
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">imagem</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_mao_esquerda</span>]
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">imagem</span>.<span class="ruby-identifier">recreate_versions!</span>
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_pe_direito</span>].<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">data</span> =  <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_pe_direito</span>]
+      <span class="ruby-identifier">img</span> = <span class="ruby-constant">SensitivaImage</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;avaliacao_sensitiva_id = ? and opcao = ?&quot;</span>,<span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">id</span>,<span class="ruby-string">&#39;pe_direito&#39;</span>).<span class="ruby-identifier">first_or_create</span>(<span class="ruby-value">avaliacao_sensitiva:</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>, <span class="ruby-value">opcao:</span> <span class="ruby-string">&#39;pe_direito&#39;</span>)
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">imagem</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_pe_direito</span>]
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">imagem</span>.<span class="ruby-identifier">recreate_versions!</span>
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_pe_esquerdo</span>].<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">data</span> =  <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_pe_esquerdo</span>]
+      <span class="ruby-identifier">img</span> = <span class="ruby-constant">SensitivaImage</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;avaliacao_sensitiva_id = ? and opcao = ?&quot;</span>,<span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">id</span>,<span class="ruby-string">&#39;pe_esquerdo&#39;</span>).<span class="ruby-identifier">first_or_create</span>(<span class="ruby-value">avaliacao_sensitiva:</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>, <span class="ruby-value">opcao:</span> <span class="ruby-string">&#39;pe_esquerdo&#39;</span>)
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">imagem</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:base64_pe_esquerdo</span>]
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">imagem</span>.<span class="ruby-identifier">recreate_versions!</span>
+      <span class="ruby-identifier">img</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@avaliacao_sensitiva</span>.<span class="ruby-identifier">avaliacao_notificacao</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Avaliação Sensitiva atualizada com sucesso.&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:edit</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

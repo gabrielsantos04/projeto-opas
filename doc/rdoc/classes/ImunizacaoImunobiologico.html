@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ImunizacaoImunobiologico</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="ImunizacaoImunobiologico">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: imunizacao_imunobiologicos  id                          :integer          not null, primary key tipo                        :string nome_vacina                 :string .">
+    <meta property="og:description" content="Schema Information  Table name: imunizacao_imunobiologicos  id                          :integer          not null, primary key tipo                        :string nome_vacina                 :string .">
+  
+
+    <meta name="keywords" content="ImunizacaoImunobiologico class">
+  
+    <meta name="keywords" content="to_s">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            ImunizacaoImunobiologico
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/imunizacao/imunizacao_imunobiologico_rb.html">app/models/imunizacao/imunizacao_imunobiologico.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ImunizacaoImunobiologico-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: imunizacao_imunobiologicos</p>
+
+<pre><code>id                          :integer          not null, primary key
+tipo                        :string
+nome_vacina                 :string
+imunizacao_vacina_id        :integer
+imunizacao_solicitacao_id   :integer
+status                      :string
+justificativa_indeferimento :text
+created_at                  :datetime         not null
+updated_at                  :datetime         not null
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_imunizacao_imunobiologicos_on_imunizacao_solicitacao_id  (imunizacao_solicitacao_id)
+index_imunizacao_imunobiologicos_on_imunizacao_vacina_id       (imunizacao_vacina_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (imunizacao_solicitacao_id =&gt; imunizacao_solicitacaos.id)
+fk_rails_...  (imunizacao_vacina_id =&gt; imunizacao_vacinas.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../classes/ImunizacaoImunobiologico.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que retorna o nome do objeto</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/imunizacao/imunizacao_imunobiologico.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">imunizacao_vacina</span>.<span class="ruby-identifier">present?</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">imunizacao_vacina</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nome_vacina</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

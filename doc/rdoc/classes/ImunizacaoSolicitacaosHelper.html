@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ImunizacaoSolicitacaosHelper</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="ImunizacaoSolicitacaosHelper">
+
+  
+    
+    <meta name="description" content="Disponibiliza métodos para serem usados nas views.">
+    <meta property="og:description" content="Disponibiliza métodos para serem usados nas views.">
+  
+
+    <meta name="keywords" content="ImunizacaoSolicitacaosHelper class">
+  
+    <meta name="keywords" content="status">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span>
+            ImunizacaoSolicitacaosHelper
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/helpers/imunizacao_solicitacaos_helper_rb.html">app/helpers/imunizacao_solicitacaos_helper.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Disponibiliza métodos para serem usados nas views</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-status">status</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-status">
+            
+              <b>status</b>(op)
+            
+            <a href="../classes/ImunizacaoSolicitacaosHelper.html#method-i-status" name="method-i-status" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Retorna o status em formado de texto</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-status_source')" id="l_method-i-status_source">show</a>
+                
+              </p>
+              <div id="method-i-status_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/helpers/imunizacao_solicitacaos_helper.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">status</span>(<span class="ruby-identifier">op</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">op</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;solicitado&quot;</span>
+      <span class="ruby-string">&quot;Solicitado&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;de_acordo&quot;</span>
+      <span class="ruby-string">&quot;Está de acordo com os critérios do centro de referência para imunobiológicos especiais - CRIE&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;em_desacordo&quot;</span>
+      <span class="ruby-string">&quot;Não está de acordo com os critérios do centro de referência para imunobiológicos especiais - CRIE&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;dados_insuficientes&quot;</span>
+      <span class="ruby-string">&quot;Dados insuficientes (idade, contatos telefônicos, laudos de exames, etc)&quot;</span>
+
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

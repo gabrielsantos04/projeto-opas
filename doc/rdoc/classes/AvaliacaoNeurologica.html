@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AvaliacaoNeurologica</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="AvaliacaoNeurologica">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: avaliacao_neurologicas  id                       :integer          not null, primary key avaliacao_notificacao_id :integer data                     :date created_at    .">
+    <meta property="og:description" content="Schema Information  Table name: avaliacao_neurologicas  id                       :integer          not null, primary key avaliacao_notificacao_id :integer data                     :date created_at    .">
+  
+
+    <meta name="keywords" content="AvaliacaoNeurologica class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            AvaliacaoNeurologica
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/avaliacao_neurologica_rb.html">app/models/avaliacao_neurologica.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-AvaliacaoNeurologica-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: avaliacao_neurologicas</p>
+
+<pre><code>id                       :integer          not null, primary key
+avaliacao_notificacao_id :integer
+data                     :date
+created_at               :datetime         not null
+updated_at               :datetime         not null
+olhos_sem_forca_d        :decimal(, )
+olhos_sem_forca_e        :decimal(, )
+olhos_com_forca_d        :decimal(, )
+olhos_com_forca_e        :decimal(, )
+triquiase_d              :string
+triquiase_e              :string
+ectropio_d               :string
+ectropio_e               :string
+catarata_d               :string
+catarata_e               :string
+sensibilidade_cornea_d   :string
+sensibilidade_cornea_e   :string
+opacidade_corneana_d     :string
+acuidade_visual_d        :decimal(, )
+acuidade_visual_e        :decimal(, )
+ressecamento_d           :string
+ressecamento_e           :string
+feridas_d                :string
+feridas_e                :string
+perfuracao_septo_d       :string
+nervo_radial_d           :string
+nervo_radial_e           :string
+nervo_ulnar_d            :string
+nervo_mediano_d          :string
+nervo_mediano_e          :string
+abducao_5_dedo_d         :integer
+abducao_5_dedo_e         :integer
+abducao_polegar_d        :integer
+abducao_polegar_e        :integer
+extensores_punho_d       :integer
+extensores_punho_e       :integer
+nervo_fibular_d          :string
+nervo_fibular_e          :string
+nervo_tibial_d           :string
+nervo_tibial_e           :string
+extensao_halux_d         :integer
+extensao_halux_e         :integer
+dorsiflexao_pe_d         :integer
+dorsiflexao_pe_e         :integer
+opacidade_corneana_e     :string
+perfuracao_septo_e       :string
+nervo_ulnar_e            :string
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_avaliacao_neurologicas_on_avaliacao_notificacao_id  (avaliacao_notificacao_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (avaliacao_notificacao_id =&gt; avaliacao_notificacaos.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

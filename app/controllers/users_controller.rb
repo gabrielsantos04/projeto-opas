@@ -14,6 +14,11 @@ class UsersController < ApplicationController
   def show
   end
 
+  #Método que retorna a página home do sistema
+  def home
+    render layout: "clean"
+  end
+
   # GET /users/new
   def new
     @user = User.new

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ContatoAvaliacao</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="ContatoAvaliacao">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: contato_avaliacaos  id                     :integer          not null, primary key data                   :date suspeito               :boolean confirmado             :.">
+    <meta property="og:description" content="Schema Information  Table name: contato_avaliacaos  id                     :integer          not null, primary key data                   :date suspeito               :boolean confirmado             :.">
+  
+
+    <meta name="keywords" content="ContatoAvaliacao class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            ContatoAvaliacao
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/contato_avaliacao_rb.html">app/models/contato_avaliacao.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ContatoAvaliacao-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: contato_avaliacaos</p>
+
+<pre><code>id                     :integer          not null, primary key
+data                   :date
+suspeito               :boolean
+confirmado             :boolean
+notificacao_contato_id :integer
+created_at             :datetime         not null
+updated_at             :datetime         not null
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_contato_avaliacaos_on_notificacao_contato_id  (notificacao_contato_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (notificacao_contato_id =&gt; notificacao_contatos.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

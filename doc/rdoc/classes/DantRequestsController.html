@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DantRequestsController</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="DantRequestsController">
+
+  
+    
+    <meta name="description" content="Classe que controla as açoes da DantRequest.">
+    <meta property="og:description" content="Classe que controla as açoes da DantRequest.">
+  
+
+    <meta name="keywords" content="DantRequestsController class">
+  
+    <meta name="keywords" content="index, show, faixa_etaria, alterar_status, enviar, new, edit, create, update, destroy">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            DantRequestsController
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationController.html">ApplicationController</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/controllers/dant_requests_controller_rb.html">app/controllers/dant_requests_controller.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Classe que controla as açoes da <a href="DantRequest.html">DantRequest</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-alterar_status">alterar_status</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-create">create</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-destroy">destroy</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-edit">edit</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-enviar">enviar</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-faixa_etaria">faixa_etaria</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-index">index</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-show">show</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update">update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-alterar_status">
+            
+              <b>alterar_status</b>()
+            
+            <a href="../classes/DantRequestsController.html#method-i-alterar_status" name="method-i-alterar_status" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que altera o status da solicitacão</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-alterar_status_source')" id="l_method-i-alterar_status_source">show</a>
+                
+              </p>
+              <div id="method-i-alterar_status_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/dant_requests_controller.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">alterar_status</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:status</span>]
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;deferido&quot;</span>
+      <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">:deferido</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;indeferido&quot;</span>
+      <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">:indeferido</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;entregue&quot;</span>
+      <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">:entregue</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">save</span>
+
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@dant_request</span>, <span class="ruby-value">notice:</span> <span class="ruby-node">&quot;Solicitação #{params[:status].upcase}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-create">
+            
+              <b>create</b>()
+            
+            <a href="../classes/DantRequestsController.html#method-i-create" name="method-i-create" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>POST /dant_requests</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-create_source')" id="l_method-i-create_source">show</a>
+                
+              </p>
+              <div id="method-i-create_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/dant_requests_controller.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
+  <span class="ruby-ivar">@dant_request</span> = <span class="ruby-constant">DantRequest</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">dant_request_params</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@dant_request</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Dant request was successfully created.&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:new</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-destroy">
+            
+              <b>destroy</b>()
+            
+            <a href="../classes/DantRequestsController.html#method-i-destroy" name="method-i-destroy" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>DELETE /dant_requests/1</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-destroy_source')" id="l_method-i-destroy_source">show</a>
+                
+              </p>
+              <div id="method-i-destroy_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/dant_requests_controller.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destroy</span>
+  <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">dant_requests_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Dant request was successfully destroyed.&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-edit">
+            
+              <b>edit</b>()
+            
+            <a href="../classes/DantRequestsController.html#method-i-edit" name="method-i-edit" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>GET /dant_requests/1/edit</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-edit_source')" id="l_method-i-edit_source">show</a>
+                
+              </p>
+              <div id="method-i-edit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/dant_requests_controller.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:cadastrada</span> <span class="ruby-keyword">and</span> ( <span class="ruby-operator">!</span><span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">administrador?</span> <span class="ruby-keyword">and</span> <span class="ruby-operator">!</span><span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">admin_dant?</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">dant_requests_path</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&quot;Não é possível editar a solicitação nesta etapa!&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-enviar">
+            
+              <b>enviar</b>()
+            
+            <a href="../classes/DantRequestsController.html#method-i-enviar" name="method-i-enviar" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que envia a solicitação</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-enviar_source')" id="l_method-i-enviar_source">show</a>
+                
+              </p>
+              <div id="method-i-enviar_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/dant_requests_controller.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">enviar</span>
+  <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">:solicitado</span>
+
+
+  <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">data_envio</span> = <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">calcular_quantidades</span>
+  <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">save</span>
+
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">dant_requests_path</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-faixa_etaria">
+            
+              <b>faixa_etaria</b>()
+            
+            <a href="../classes/DantRequestsController.html#method-i-faixa_etaria" name="method-i-faixa_etaria" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que retorna os pacientes para o relatório de faixa etária</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-faixa_etaria_source')" id="l_method-i-faixa_etaria_source">show</a>
+                
+              </p>
+              <div id="method-i-faixa_etaria_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/dant_requests_controller.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">faixa_etaria</span>
+  <span class="ruby-ivar">@pacientes</span> = <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">dant_request_pacients</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-index">
+            
+              <b>index</b>()
+            
+            <a href="../classes/DantRequestsController.html#method-i-index" name="method-i-index" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>GET /dant_requests</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-index_source')" id="l_method-i-index_source">show</a>
+                
+              </p>
+              <div id="method-i-index_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/dant_requests_controller.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
+  <span class="ruby-ivar">@cidades</span> = <span class="ruby-constant">Cidade</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">order</span>(<span class="ruby-value">:nome</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">a</span>.<span class="ruby-identifier">nome</span>,<span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span>]}
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">administrador?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">admin_dant</span>
+    <span class="ruby-ivar">@q</span> = <span class="ruby-constant">DantRequest</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">ransack</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:q</span>])
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@q</span> = <span class="ruby-constant">DantRequest</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">cidade:</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">cidade</span>).<span class="ruby-identifier">ransack</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:q</span>])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@dant_requests</span> = <span class="ruby-ivar">@q</span>.<span class="ruby-identifier">result</span>.<span class="ruby-identifier">page</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-new">
+            
+              <b>new</b>()
+            
+            <a href="../classes/DantRequestsController.html#method-i-new" name="method-i-new" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>GET /dant_requests/new</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-new_source')" id="l_method-i-new_source">show</a>
+                
+              </p>
+              <div id="method-i-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/dant_requests_controller.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
+  <span class="ruby-ivar">@dant_request</span> = <span class="ruby-constant">DantRequest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">administrador?</span>
+    <span class="ruby-identifier">pacientes</span> = <span class="ruby-constant">DantPacient</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">cidade_id:</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">cidade_id</span>).<span class="ruby-identifier">where</span>.<span class="ruby-identifier">not</span>(<span class="ruby-value">obito:</span> <span class="ruby-keyword">true</span>)
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_hipertensos</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">hipertenso:</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">atendimento_hipertensos</span> = <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_obitos_hipertensos</span> = <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_diabeticos</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">diabetico:</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">atendimento_diabeticos</span> = <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_obitos_diabeticos</span> = <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_diabeticos_hipertencos</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">hipertenso:</span> <span class="ruby-keyword">true</span>, <span class="ruby-value">diabetico:</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">atendimento_diabeticos_hipertensos</span> = <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_tratamento_hemodialise</span> = <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_nph</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">tipo_insulina:</span> <span class="ruby-string">&quot;nph&quot;</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_frascos_nph</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">tipo_insulina:</span> <span class="ruby-string">&quot;nph&quot;</span>).<span class="ruby-identifier">sum</span>(<span class="ruby-value">:frascos_mensais</span>)
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_regular</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">tipo_insulina:</span> <span class="ruby-string">&quot;regular&quot;</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_frascos_regular</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">tipo_insulina:</span> <span class="ruby-string">&quot;regular&quot;</span>).<span class="ruby-identifier">sum</span>(<span class="ruby-value">:frascos_mensais</span>)
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_analoga</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">tipo_insulina:</span> <span class="ruby-string">&quot;analoga&quot;</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_frascos_analoga</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">tipo_insulina:</span> <span class="ruby-string">&quot;analoga&quot;</span>).<span class="ruby-identifier">sum</span>(<span class="ruby-value">:frascos_mensais</span>)
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_tabagista</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">tabagista:</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_atendimento_tabagista</span> = <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_etilista</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">etilista:</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_atendimento_etilista</span> = <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_obesos</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">obeso:</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_obesidade_1</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">grau_obesidade:</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_obesidate_2</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">grau_obesidade:</span> <span class="ruby-value">2</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">qtd_obesidade_3</span> = <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">grau_obesidade:</span> <span class="ruby-value">3</span>).<span class="ruby-identifier">count</span>
+    <span class="ruby-identifier">pacientes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">dant_request_pacients</span>.<span class="ruby-identifier">build</span>(<span class="ruby-value">dant_pacient_id:</span><span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span>, <span class="ruby-value">frascos_diarios:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">frascos_diarios</span>, <span class="ruby-value">frascos_mensais:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">frascos_mensais</span>, <span class="ruby-value">idade:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">idade</span>, <span class="ruby-value">hipertenso:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">hipertenso</span>, <span class="ruby-value">diabetico:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">diabetico</span>, <span class="ruby-value">etilista:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">etilista</span>, <span class="ruby-value">tabagista:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">tabagista</span>, <span class="ruby-value">obeso:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">obeso</span>,<span class="ruby-value">sexo:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">sexo_value</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">cidade_id</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">cidade_id</span>
+
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-show">
+            
+              <b>show</b>()
+            
+            <a href="../classes/DantRequestsController.html#method-i-show" name="method-i-show" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>GET /dant_requests/1</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-show_source')" id="l_method-i-show_source">show</a>
+                
+              </p>
+              <div id="method-i-show_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/dant_requests_controller.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">show</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update">
+            
+              <b>update</b>()
+            
+            <a href="../classes/DantRequestsController.html#method-i-update" name="method-i-update" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>PATCH/PUT /dant_requests/1</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-update_source')" id="l_method-i-update_source">show</a>
+                
+              </p>
+              <div id="method-i-update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/controllers/dant_requests_controller.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@dant_request</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">dant_request_params</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@dant_request</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Dant request was successfully updated.&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:edit</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

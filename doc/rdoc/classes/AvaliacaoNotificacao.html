@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AvaliacaoNotificacao</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="AvaliacaoNotificacao">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: avaliacao_notificacaos  id                        :integer          not null, primary key classificacao_operacional :string inicio_pqt                :date alta_pqt    .">
+    <meta property="og:description" content="Schema Information  Table name: avaliacao_notificacaos  id                        :integer          not null, primary key classificacao_operacional :string inicio_pqt                :date alta_pqt    .">
+  
+
+    <meta name="keywords" content="AvaliacaoNotificacao class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            AvaliacaoNotificacao
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/avaliacao_notificacao_rb.html">app/models/avaliacao_notificacao.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-AvaliacaoNotificacao-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: avaliacao_notificacaos</p>
+
+<pre><code>id                        :integer          not null, primary key
+classificacao_operacional :string
+inicio_pqt                :date
+alta_pqt                  :date
+profissao                 :string
+unidade_saude             :string
+atividades_realizadas_ubs :boolean
+grupo_autocuidado         :boolean
+encaminhamentos           :string
+imobilizacoes             :string
+adaptacoes                :string
+observacoes               :string
+notificacao_id            :integer
+created_at                :datetime         not null
+updated_at                :datetime         not null
+atividades_orientadas     :boolean
+paciente_id               :integer
+inicial                   :boolean
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_avaliacao_notificacaos_on_notificacao_id  (notificacao_id)
+index_avaliacao_notificacaos_on_paciente_id     (paciente_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (notificacao_id =&gt; notificacaos.id)
+fk_rails_...  (paciente_id =&gt; pacientes.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

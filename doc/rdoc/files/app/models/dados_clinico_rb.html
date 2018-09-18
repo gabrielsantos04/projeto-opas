@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>dados_clinico.rb</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            dados_clinico.rb
+        </h1>
+        <ul class="files">
+            
+            <li>
+                app/models/dados_clinico.rb
+                
+            </li>
+            <li>Last modified: 22/02/2018 16:29</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="label-Schema+Information">Schema Information</h2>
+
+<p>Table name: dados_clinicos</p>
+
+<pre><code>id                        :integer          not null, primary key
+lesoes_cultaneas          :integer
+forma_clinica             :string
+classificacao_operacional :string
+nervos_afetados           :integer
+notificacao_id            :integer
+created_at                :datetime         not null
+updated_at                :datetime         not null
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_dados_clinicos_on_notificacao_id  (notificacao_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (notificacao_id =&gt; notificacaos.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="../../../classes/DadosClinico.html">DadosClinico</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

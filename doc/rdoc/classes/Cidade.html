@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cidade</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="Cidade">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: cidades  id              :integer          not null, primary key nome            :string uf              :string latitude        :string longitude       :string created.">
+    <meta property="og:description" content="Schema Information  Table name: cidades  id              :integer          not null, primary key nome            :string uf              :string latitude        :string longitude       :string created.">
+  
+
+    <meta name="keywords" content="Cidade class">
+  
+    <meta name="keywords" content="to_s, to_select">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            Cidade
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/cidade_rb.html">app/models/cidade.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-Cidade-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: cidades</p>
+
+<pre><code>id              :integer          not null, primary key
+nome            :string
+uf              :string
+latitude        :string
+longitude       :string
+created_at      :datetime         not null
+updated_at      :datetime         not null
+pacientes_count :integer          default(0)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-to_select">to_select</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-to_select">
+            
+              <b>to_select</b>()
+            
+            <a href="../classes/Cidade.html#method-c-to_select" name="method-c-to_select" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que retorna um array para o combo</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-c-to_select_source')" id="l_method-c-to_select_source">show</a>
+                
+              </p>
+              <div id="method-c-to_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/cidade.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">to_select</span>
+  <span class="ruby-identifier">all</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> [<span class="ruby-node">&quot;#{a}&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span>]}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../classes/Cidade.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que retorna o nome do objeto</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/cidade.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nome</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

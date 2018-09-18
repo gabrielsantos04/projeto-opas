@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EscalaPart</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="EscalaPart">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: escala_parts  id               :integer          not null, primary key questao_1        :string questao_1_valor  :integer questao_2        :string questao_2_valor  :int.">
+    <meta property="og:description" content="Schema Information  Table name: escala_parts  id               :integer          not null, primary key questao_1        :string questao_1_valor  :integer questao_2        :string questao_2_valor  :int.">
+  
+
+    <meta name="keywords" content="EscalaPart class">
+  
+    <meta name="keywords" content="calcular_total">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            EscalaPart
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/escala_part_rb.html">app/models/escala_part.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-EscalaPart-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: escala_parts</p>
+
+<pre><code>id               :integer          not null, primary key
+questao_1        :string
+questao_1_valor  :integer
+questao_2        :string
+questao_2_valor  :integer
+questao_3        :string
+questao_3_valor  :integer
+questao_4        :string
+questao_4_valor  :integer
+questao_5        :string
+questao_5_valor  :integer
+questao_6        :string
+questao_6_valor  :integer
+questao_7        :string
+questao_7_valor  :integer
+questao_8        :string
+questao_8_valor  :integer
+questao_9        :string
+questao_9_valor  :integer
+questao_10       :string
+questao_10_valor :integer
+questao_11       :string
+questao_11_valor :integer
+questao_12       :string
+questao_12_valor :integer
+questao_13       :string
+questao_13_valor :integer
+questao_14       :string
+questao_14_valor :integer
+questao_15       :string
+questao_15_valor :integer
+questao_16       :string
+questao_16_valor :integer
+questao_17       :string
+questao_17_valor :integer
+questao_18       :string
+questao_18_valor :integer
+data_entrevista  :date
+entrevistador    :string
+grau_restricao   :string
+comentario       :text
+paciente_id      :integer
+notificacao_id   :integer
+created_at       :datetime         not null
+updated_at       :datetime         not null
+total            :integer
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_escala_parts_on_notificacao_id  (notificacao_id)
+index_escala_parts_on_paciente_id     (paciente_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (notificacao_id =&gt; notificacaos.id)
+fk_rails_...  (paciente_id =&gt; pacientes.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-calcular_total">calcular_total</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-calcular_total">
+            
+              <b>calcular_total</b>()
+            
+            <a href="../classes/EscalaPart.html#method-i-calcular_total" name="method-i-calcular_total" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que calcula o grau de restrição</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-calcular_total_source')" id="l_method-i-calcular_total_source">show</a>
+                
+              </p>
+              <div id="method-i-calcular_total_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/escala_part.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">calcular_total</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">total</span> = (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_1_valor</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_2_valor</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_3_valor</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_4_valor</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_5_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_6_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_7_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_8_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_9_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_10_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_11_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_12_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_13_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_14_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_15_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_16_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_17_valor</span><span class="ruby-operator">+</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">questao_18_valor</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">total</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">12</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">grau_restricao</span> = <span class="ruby-value">:sem_restricao_significativa</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">total</span>.<span class="ruby-identifier">between?</span> <span class="ruby-value">13</span>, <span class="ruby-value">22</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">grau_restricao</span> = <span class="ruby-value">:leve_restricao</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">total</span>.<span class="ruby-identifier">between?</span> <span class="ruby-value">23</span>, <span class="ruby-value">32</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">grau_restricao</span> = <span class="ruby-value">:restricao_moderada</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">total</span>.<span class="ruby-identifier">between?</span> <span class="ruby-value">33</span>,<span class="ruby-value">52</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">grau_restricao</span> = <span class="ruby-value">:restricao_grave</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">total</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">53</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">grau_restricao</span> = <span class="ruby-value">:restricao_extrema</span>
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

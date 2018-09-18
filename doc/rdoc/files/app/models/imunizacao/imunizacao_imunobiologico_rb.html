@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>imunizacao_imunobiologico.rb</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            imunizacao_imunobiologico.rb
+        </h1>
+        <ul class="files">
+            
+            <li>
+                app/models/imunizacao/imunizacao_imunobiologico.rb
+                
+            </li>
+            <li>Last modified: 10/09/2018 08:24</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="label-Schema+Information">Schema Information</h2>
+
+<p>Table name: imunizacao_imunobiologicos</p>
+
+<pre><code>id                          :integer          not null, primary key
+tipo                        :string
+nome_vacina                 :string
+imunizacao_vacina_id        :integer
+imunizacao_solicitacao_id   :integer
+status                      :string
+justificativa_indeferimento :text
+created_at                  :datetime         not null
+updated_at                  :datetime         not null
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_imunizacao_imunobiologicos_on_imunizacao_solicitacao_id  (imunizacao_solicitacao_id)
+index_imunizacao_imunobiologicos_on_imunizacao_vacina_id       (imunizacao_vacina_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (imunizacao_solicitacao_id =&gt; imunizacao_solicitacaos.id)
+fk_rails_...  (imunizacao_vacina_id =&gt; imunizacao_vacinas.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="../../../../classes/ImunizacaoImunobiologico.html">ImunizacaoImunobiologico</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

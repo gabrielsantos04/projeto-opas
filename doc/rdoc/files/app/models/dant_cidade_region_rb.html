@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>dant_cidade_region.rb</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            dant_cidade_region.rb
+        </h1>
+        <ul class="files">
+            
+            <li>
+                app/models/dant_cidade_region.rb
+                
+            </li>
+            <li>Last modified: 16/07/2018 09:52</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="label-Schema+Information">Schema Information</h2>
+
+<p>Table name: dant_cidade_regions</p>
+
+<pre><code>id             :integer          not null, primary key
+dant_region_id :integer
+cidade_id      :integer
+created_at     :datetime         not null
+updated_at     :datetime         not null
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_dant_cidade_regions_on_cidade_id       (cidade_id)
+index_dant_cidade_regions_on_dant_region_id  (dant_region_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (cidade_id =&gt; cidades.id)
+fk_rails_...  (dant_region_id =&gt; dant_regions.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="../../../classes/DantCidadeRegion.html">DantCidadeRegion</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

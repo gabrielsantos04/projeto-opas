@@ -38,6 +38,7 @@
 #  qtd_nph_calculada                  :integer
 #  qtd_regular_calculada              :integer
 #  qtd_analoga_calculada              :integer
+#  justificativa                      :text
 #
 # Indexes
 #

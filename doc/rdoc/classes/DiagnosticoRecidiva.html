@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DiagnosticoRecidiva</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="DiagnosticoRecidiva">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: diagnostico_recidivas  id             :integer          not null, primary key recidiva_id    :integer diagnostico_id :integer created_at     :datetime         not null .">
+    <meta property="og:description" content="Schema Information  Table name: diagnostico_recidivas  id             :integer          not null, primary key recidiva_id    :integer diagnostico_id :integer created_at     :datetime         not null .">
+  
+
+    <meta name="keywords" content="DiagnosticoRecidiva class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            DiagnosticoRecidiva
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/diagnostico_recidiva_rb.html">app/models/diagnostico_recidiva.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-DiagnosticoRecidiva-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: diagnostico_recidivas</p>
+
+<pre><code>id             :integer          not null, primary key
+recidiva_id    :integer
+diagnostico_id :integer
+created_at     :datetime         not null
+updated_at     :datetime         not null
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_diagnostico_recidivas_on_diagnostico_id  (diagnostico_id)
+index_diagnostico_recidivas_on_recidiva_id     (recidiva_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (diagnostico_id =&gt; diagnosticos.id)
+fk_rails_...  (recidiva_id =&gt; recidivas.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

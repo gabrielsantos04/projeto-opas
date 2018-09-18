@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DantPacient</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="DantPacient">
+
+  
+    
+    <meta name="description" content="Schema Information  Table name: dant_pacients  id              :integer          not null, primary key nome            :string sexo            :integer endereco        :string rg              :string .">
+    <meta property="og:description" content="Schema Information  Table name: dant_pacients  id              :integer          not null, primary key nome            :string sexo            :integer endereco        :string rg              :string .">
+  
+
+    <meta name="keywords" content="DantPacient class">
+  
+    <meta name="keywords" content="idade, to_s, set_frascos">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            DantPacient
+            
+                <span class="parent">&lt;
+                    
+                    <a href="ApplicationRecord.html">ApplicationRecord</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/models/dant_pacient_rb.html">app/models/dant_pacient.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-DantPacient-label-Schema+Information">Schema Information</h2>
+
+<p>Table name: dant_pacients</p>
+
+<pre><code>id              :integer          not null, primary key
+nome            :string
+sexo            :integer
+endereco        :string
+rg              :string
+cpf             :string
+tipo_insulina   :string
+hipertenso      :boolean
+diabetico       :boolean
+tabagista       :boolean
+etilista        :boolean
+obeso           :boolean
+grau_obesidade  :integer
+cidade_id       :integer
+created_at      :datetime         not null
+updated_at      :datetime         not null
+frascos_diarios :integer
+frascos_mensais :integer
+obito           :boolean
+data_obito      :date
+data_nascimento :date
+</code></pre>
+
+<p>Indexes</p>
+
+<pre><code>index_dant_pacients_on_cidade_id  (cidade_id)
+</code></pre>
+
+<p>Foreign Keys</p>
+
+<pre><code>fk_rails_...  (cidade_id =&gt; cidades.id)
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-idade">idade</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set_frascos">set_frascos</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-idade">
+            
+              <b>idade</b>()
+            
+            <a href="../classes/DantPacient.html#method-i-idade" name="method-i-idade" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que retorna a idade do paciente</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-idade_source')" id="l_method-i-idade_source">show</a>
+                
+              </p>
+              <div id="method-i-idade_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dant_pacient.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">idade</span>
+  <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">year</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_nascimento</span>.<span class="ruby-identifier">year</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_frascos">
+            
+              <b>set_frascos</b>()
+            
+            <a href="../classes/DantPacient.html#method-i-set_frascos" name="method-i-set_frascos" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que seta a quantidade de frascos mensais</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-set_frascos_source')" id="l_method-i-set_frascos_source">show</a>
+                
+              </p>
+              <div id="method-i-set_frascos_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dant_pacient.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_frascos</span> 
+  <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frascos_diarios</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">33</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frascos_mensais</span> = <span class="ruby-value">1</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">34</span><span class="ruby-operator">..</span><span class="ruby-value">66</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frascos_mensais</span> = <span class="ruby-value">2</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">67</span><span class="ruby-operator">..</span><span class="ruby-value">99</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frascos_mensais</span> = <span class="ruby-value">3</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">100</span><span class="ruby-operator">..</span><span class="ruby-value">132</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frascos_mensais</span> = <span class="ruby-value">4</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../classes/DantPacient.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Método que retorna o nome do objeto</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/dant_pacient.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nome</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>
