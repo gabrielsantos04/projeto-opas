@@ -32,7 +32,7 @@
 class DstMovimentacao < ApplicationRecord
   belongs_to :dst_produto
   belongs_to :dst_lote
-  belongs_to :dst_local
+  belongs_to :dst_local, optional: true
   belongs_to :dst_solicitacao_produto, optional: true
 
   extend Enumerize

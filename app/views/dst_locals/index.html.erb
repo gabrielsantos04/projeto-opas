@@ -48,4 +48,4 @@
   <%= paginate(@dst_locals)  %>
 </div>
 
-<%= link_to '+ Cadastrar', new_dst_local_path, class:"btn" if current_user.admin_dst?%>
+<%= link_to '+ Cadastrar', new_dst_local_path, class:"btn" if current_user.admin_dst? || current_user.administrador? %>

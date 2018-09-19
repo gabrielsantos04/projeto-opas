@@ -28,9 +28,9 @@
 #
 
 class DstSolicitacaoProduto < ApplicationRecord
-  belongs_to :dst_produto
-  belongs_to :dst_solicitacao
-  belongs_to :user
+  belongs_to :dst_produto, optional: true
+  belongs_to :dst_solicitacao, optional: true
+  belongs_to :user, optional: true
   has_many :dst_movimentacaos
 
   extend Enumerize

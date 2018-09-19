@@ -24,8 +24,8 @@
 
 class DstSolicitacao < ApplicationRecord
   require 'uniquify'
-  belongs_to :dst_local
-  belongs_to :user
+  belongs_to :dst_local, optional: true
+  belongs_to :user, optional: true
   has_many :dst_solicitacao_produtos
   has_many :dst_resposta
 
