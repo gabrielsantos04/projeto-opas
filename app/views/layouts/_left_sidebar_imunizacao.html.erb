@@ -22,16 +22,25 @@
             <i class="material-icons">home</i> Início
           </a>
         </li>
-        <li class="bold">
-          <a href="/imunizacao/imunizacao_vacinas" class="waves-effect waves-cyan">
-            <i class="material-icons">colorize</i> Vacinas
-          </a>
-        </li>
+
         <li class="bold">
           <a href="/imunizacao/imunizacao_solicitacaos" class="waves-effect waves-cyan">
             <i class="material-icons">format_list_bulleted</i> Solicitações
           </a>
         </li>
+        <% if current_user.administrador? || current_user.admin_dst? %>
+            <li class="bold">
+              <a href="/imunizacao/imunizacao_vacinas" class="waves-effect waves-cyan">
+                <i class="material-icons">colorize</i> Imunobiológicos
+              </a>
+            </li>
+            <li class="bold">
+              <a href="/usuario/users" class="waves-effect waves-cyan">
+                <i class="material-icons">supervisor_account</i> Usuários
+              </a>
+            </li>
+        <% end %>
+
     <% end %>
 
   </ul>

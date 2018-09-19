@@ -2,10 +2,12 @@ Rails.application.routes.draw do
 
 
   devise_for :users
+  scope "/usuario" do
   resources :users do
     collection do
       get "home"
     end
+  end
   end
   resources :condutas
   resources :diagnosticos

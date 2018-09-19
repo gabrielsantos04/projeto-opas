@@ -11,6 +11,6 @@ class MenuControl
 
   #Método que seta os menus
   def self.menu
-    ['dst','dant', 'imunizacao']
+    ['dst','dant', 'imunizacao','usuario']
   end
 end
