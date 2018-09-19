@@ -47,6 +47,12 @@ class Ability
       can :manage, DantCidadeRegion
       can :manage, DantRegion
       can :manage, DantRequest
+    elsif user.admin_imuni?
+      can :manage, ImunizacaoEncerramento
+      can :manage, ImunizacaoEsquema
+      can :manage, ImunizacaoImunobiologico
+      can :manage, ImunizacaoSolicitacao
+      can :manage, ImunizacaoVacina
     else
       can :create, Paciente
       can :manage, Paciente do |p|
