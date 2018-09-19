@@ -22,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/dant_requests/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+              <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -416,12 +416,12 @@
       <workItem from="1536160629345" duration="611000" />
       <workItem from="1536429001060" duration="39000" />
       <workItem from="1536429286086" duration="3227000" />
-      <workItem from="1537308973079" duration="4015000" />
+      <workItem from="1537308973079" duration="4157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274742000" />
+    <option name="totallyTimeSpent" value="274884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="725" extended-state="6" />
@@ -850,7 +850,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/dant_requests/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
           <folding />
         </state>
       </provider>
