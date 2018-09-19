@@ -1,5 +1,11 @@
 <div class="card-panel">
 
+  <% if @dant_request.status == "deferido" %>
+      <h3 class="center-align">O Relatório Trimestral foi DEFERIDO.</h3> <br>
+          <h3 class="center-aligng">Leve a Guia de Requisição na DANT/ANEXO I para a liberação de insulinas.</h3>
+      
+  <% end %>
+
   <p>
     <strong>Mês:</strong>
     <%= @dant_request.mes %>/<%= @dant_request.ano %>
@@ -20,13 +26,7 @@
     <%= @dant_request.status.upcase %>
   </p>
 
-  <% if @dant_request.status == "deferido" %>
-      <p>
-        <strong>O Relatório Trimestral foi DEFERIDO. <br>
-          Leve a Guia de Requisição na DANT/ANEXO I para a liberação de insulinas.
-        </strong>
-      </p>
-  <% end %>
+
 
   <% if @dant_request.status == "indeferido" %>
     <p>
