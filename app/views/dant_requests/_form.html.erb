@@ -36,7 +36,7 @@
       <div class="input-field">
 
         <%= f.label :qtd_hipertensos, DantQuestion.find_by_pergunta(1) %>
-        <%= f.number_field :qtd_hipertensos %>
+        <%= f.number_field :qtd_hipertensos , readonly: true%>
 
       </div>
 
@@ -50,14 +50,14 @@
       <div class="input-field">
 
         <%= f.label :qtd_obitos_hipertensos, DantQuestion.find_by_pergunta(3) %>
-        <%= f.number_field :qtd_obitos_hipertensos %>
+        <%= f.number_field :qtd_obitos_hipertensos , readonly: true%>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_diabeticos , DantQuestion.find_by_pergunta(4)%>
-        <%= f.number_field :qtd_diabeticos %>
+        <%= f.number_field :qtd_diabeticos , readonly: true%>
 
       </div>
 
@@ -71,14 +71,14 @@
       <div class="input-field">
 
         <%= f.label :qtd_obitos_diabeticos, DantQuestion.find_by_pergunta(6) %>
-        <%= f.number_field :qtd_obitos_diabeticos %>
+        <%= f.number_field :qtd_obitos_diabeticos , readonly: true%>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_diabeticos_hipertencos, DantQuestion.find_by_pergunta(7) %>
-        <%= f.number_field :qtd_diabeticos_hipertencos %>
+        <%= f.number_field :qtd_diabeticos_hipertencos , readonly: true%>
 
       </div>
 
@@ -88,7 +88,7 @@
         <%= f.number_field :atendimento_diabeticos_hipertensos %>
 
       </div>
-
+      <br>
       <div class="input-field">
 
         <%= f.label :qtd_tratamento_hemodialise, DantQuestion.find_by_pergunta(9) %>
@@ -99,28 +99,28 @@
       <div class="input-field">
 
         <%= f.label :qtd_nph, DantQuestion.find_by_pergunta(10) %>
-        <%= f.number_field :qtd_nph %>
+        <%= f.number_field :qtd_nph, readonly: true %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_frascos_nph, DantQuestion.find_by_pergunta(11) %>
-        <%= f.number_field :qtd_frascos_nph %> <!-- , {readonly: true} -->
+        <%= f.number_field :qtd_frascos_nph , readonly: true%>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_regular, DantQuestion.find_by_pergunta(12) %>
-        <%= f.number_field :qtd_regular %>
+        <%= f.number_field :qtd_regular, readonly: true %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_frascos_regular, DantQuestion.find_by_pergunta(13) %>
-        <%= f.number_field :qtd_frascos_regular %>
+        <%= f.number_field :qtd_frascos_regular , readonly: true%>
 
       </div>
 
@@ -141,7 +141,7 @@
       <div class="input-field">
 
         <%= f.label :qtd_tabagista , DantQuestion.find_by_pergunta(14)%>
-        <%= f.number_field :qtd_tabagista %>
+        <%= f.number_field :qtd_tabagista, readonly: true %>
 
       </div>
 
@@ -155,7 +155,7 @@
       <div class="input-field">
 
         <%= f.label :qtd_etilista, DantQuestion.find_by_pergunta(16) %>
-        <%= f.number_field :qtd_etilista %>
+        <%= f.number_field :qtd_etilista, readonly: true %>
 
       </div>
 
@@ -169,28 +169,28 @@
       <div class="input-field">
 
         <%= f.label :qtd_obesos , DantQuestion.find_by_pergunta(18)%>
-        <%= f.number_field :qtd_obesos %>
+        <%= f.number_field :qtd_obesos , readonly: true%>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_obesidade_1, DantQuestion.find_by_pergunta(19) %>
-        <%= f.number_field :qtd_obesidade_1 %>
+        <%= f.number_field :qtd_obesidade_1 , readonly: true%>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_obesidate_2, DantQuestion.find_by_pergunta(20) %>
-        <%= f.number_field :qtd_obesidate_2 %>
+        <%= f.number_field :qtd_obesidate_2 , readonly: true%>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_obesidade_3, DantQuestion.find_by_pergunta(21) %>
-        <%= f.number_field :qtd_obesidade_3 %>
+        <%= f.number_field :qtd_obesidade_3, readonly: true %>
 
       </div>
 
@@ -228,11 +228,11 @@
                 </div>
                 <div class="col s2">
                   <%= esq.label :frascos_diarios, "QTD Diária" %>
-                  <%= esq.number_field :frascos_diarios, step: 1 %>
+                  <%= esq.number_field :frascos_diarios, step: 1, readonly: true %>
                 </div>
                 <div class="col s2">
                   <%= esq.label :frascos_mensais, "QTD Mensal" %>
-                  <%= esq.number_field :frascos_mensais, step: 1 %>
+                  <%= esq.number_field :frascos_mensais, step: 1, readonly: true %>
                 </div>
                 <div class="col s4">
                   <%#= esq.link_to_remove "Remover" %>
