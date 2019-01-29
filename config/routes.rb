@@ -86,7 +86,11 @@ Rails.application.routes.draw do
         get "indeferir"
       end
     end
-    resources :imunizacao_vacinas
+    resources :imunizacao_vacinas do
+      member do
+        get "retornarIndicacoes"
+      end
+    end
     resources :imunizacao_solicitacaos
   end
 

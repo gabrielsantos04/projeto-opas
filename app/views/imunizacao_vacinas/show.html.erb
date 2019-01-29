@@ -10,5 +10,14 @@
   <%= @imunizacao_vacina.descricao %>
 </p>
 
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Indicações</span>
+      <% @imunizacao_vacina.imunizacao_indications.each  do |i| %>
+        <p><%= i.descricao %></p>
+      <% end %>
+    </div>
+  </div>
+
 </div>
 <%= link_to 'Voltar', imunizacao_vacinas_path, class:"btn" %>

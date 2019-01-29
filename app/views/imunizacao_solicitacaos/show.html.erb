@@ -109,7 +109,7 @@
 </div>
 
 <div class="card-panel">
-  <h4 class="header2">Motivo da Solicitação</h4>
+  <h4 class="header2"><b>Motivo da Solicitação</b></h4>
   <%= @imunizacao_solicitacao.motivo_solicitacao %> <br>
   <div class="input-field">
 
@@ -117,6 +117,10 @@
     <%= @imunizacao_solicitacao.solicitante %>
 
   </div>
+  <p><b>Anexos</b></p>
+  <% @imunizacao_solicitacao.anexos.each do |a| %>
+    <%= link_to a.url.split("/").last, a.url  %> <br>
+  <% end %>
 </div>
 <div class="card-panel" style="overflow: visible;">
   <h4 class="header2">Imunobiológicos Fornecidos pelo Estado</h4>
@@ -124,6 +128,10 @@
       <div class="card-panel" style="overflow: visible;">
         <h4 class="header2"><%= imunobiologico %></h4>
         <div class="row">
+          <div class="col s12 l6">
+            <b>Indicação:</b>
+            <%= imunobiologico.imunizacao_indication %>
+          </div>
           <div class="col s12 l6">
             <b>Status:</b>
             <%= imunobiologico.status %>
@@ -279,7 +287,7 @@
                     </div>
                     <div class="col s12 m4">
                       <%= label_tag :esquema %>
-                      <%= text_field_tag :esquema %>
+                      <%= text_area_tag :esquema %>
                     </div>
                   </div>
                 </div>

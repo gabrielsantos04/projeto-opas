@@ -28,6 +28,7 @@
 #  telefone_paciente         :string
 #  idade                     :integer
 #  deferimento               :text
+#  anexos                    :json
 #
 
 require 'test_helper'

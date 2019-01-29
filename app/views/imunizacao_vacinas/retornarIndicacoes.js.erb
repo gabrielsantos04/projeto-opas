@@ -1,0 +1,1 @@
+$("#indicacao_<%= @combo %>").empty().append('<%= escape_javascript(render partial:"indicacoes", locals:{items:@indicacoes})%>');
