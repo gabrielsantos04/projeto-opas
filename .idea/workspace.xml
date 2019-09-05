@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/cidade.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cidade.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dant_pacient.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_pacient.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dant_request.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_request.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dant_pacients/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_pacients/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dant_pacients/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_pacients/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dant_requests/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_requests/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dant_requests/faixa_etaria.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_requests/faixa_etaria.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dant_requests/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_requests/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dant_pacients/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_pacients/index.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +218,7 @@
       <workItem from="1548765169733" duration="9536000" />
       <workItem from="1548868470533" duration="10000" />
       <workItem from="1567529736797" duration="8575000" />
-      <workItem from="1567688081172" duration="3391000" />
+      <workItem from="1567688081172" duration="4100000" />
     </task>
     <servers />
   </component>
