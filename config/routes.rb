@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :dant_faixa_etaria
   devise_for :users
   scope "/usuario" do
   resources :users do

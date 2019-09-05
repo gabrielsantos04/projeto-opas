@@ -20,9 +20,14 @@
               <%= f.select :ano_eq, DantRequest.distinct.pluck(:ano),prompt: true %>
 
             </div>
-            <div class="col l6 s12">
+            <div class="col l3 s12">
               <%= f.label "Município" %>
               <%= f.select :cidade_id_eq, @cidades,{prompt: true},{class:"browser-default chosen-select"} %>
+
+            </div>
+            <div class="col l3 s12">
+              <%= f.label "Região" %>
+              <%= f.select :dant_region_id_eq, @regioes,{prompt: true},{class:"browser-default chosen-select"} %>
 
             </div>
           </div>

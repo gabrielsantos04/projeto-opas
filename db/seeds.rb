@@ -1,6 +1,6 @@
-User.create!([
-  {nome: "Gabriel Lacerda dos Santos", cpf: "", email: "gabrielvash@gmail.com", cidade_id: 139, role: "administrador", encrypted_password: "$2a$11$3gasb7gmluAIwT/l3xyfquzzuWJcmg2IXBd.AzQQZpVc7VRn1Dooe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-06-04 11:39:02", last_sign_in_at: "2018-03-12 12:14:47", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
-])
+# User.create!([
+#   {nome: "Gabriel Lacerda dos Santos", cpf: "", email: "gabrielvash@gmail.com", cidade_id: 139, role: "administrador", encrypted_password: "$2a$11$3gasb7gmluAIwT/l3xyfquzzuWJcmg2IXBd.AzQQZpVc7VRn1Dooe", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-06-04 11:39:02", last_sign_in_at: "2018-03-12 12:14:47", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
+# ])
 
 CategoriaQueixa.create!([
   {nome: "Olhos"},

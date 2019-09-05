@@ -56,8 +56,11 @@ class DantRequest < ApplicationRecord
   belongs_to :cidade
   has_many :dant_request_pacients, dependent: :destroy
   has_many :dant_pacients, through: :dant_request_pacients
+  has_many :dant_faixa_etarias, class_name: "DantFaixaEtarium"
+  has_one :dant_region, through: :cidade
 
   accepts_nested_attributes_for :dant_request_pacients, allow_destroy: true
+  accepts_nested_attributes_for :dant_faixa_etarias, allow_destroy: true
 
   extend Enumerize
 

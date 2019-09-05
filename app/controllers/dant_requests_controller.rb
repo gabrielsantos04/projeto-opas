@@ -6,6 +6,7 @@ class DantRequestsController < ApplicationController
   # GET /dant_requests
   def index
     @cidades = Cidade.all.order(:nome).map{|a| [a.nome,a.id]}
+    @regioes = DantRegion.all.order(:nome).map{|a| [a.nome,a.id]}
     if current_user.administrador? || current_user.admin_dant
       @q = DantRequest.all.ransack(params[:q])
     else
@@ -54,15 +55,16 @@ class DantRequestsController < ApplicationController
   # GET /dant_requests/new
   def new
     @dant_request = DantRequest.new
+    @dant_request.dant_faixa_etarias.build
     if current_user.administrador?
       pacientes = DantPacient.where(cidade_id: current_user.cidade_id).where.not(obito: true)
-      @dant_request.qtd_hipertensos = pacientes.where(hipertenso: true).count
+      #@dant_request.qtd_hipertensos = pacientes.where(hipertenso: true).count #refatorar
       @dant_request.atendimento_hipertensos = 0
       @dant_request.qtd_obitos_hipertensos = 0
-      @dant_request.qtd_diabeticos = pacientes.where(diabetico: true).count
+      #@dant_request.qtd_diabeticos = pacientes.where(diabetico: true).count #refatorar
       @dant_request.atendimento_diabeticos = 0
       @dant_request.qtd_obitos_diabeticos = 0
-      @dant_request.qtd_diabeticos_hipertencos = pacientes.where(hipertenso: true, diabetico: true).count
+      #@dant_request.qtd_diabeticos_hipertencos = pacientes.where(hipertenso: true, diabetico: true).count #refatorar
       @dant_request.atendimento_diabeticos_hipertensos = 0
       @dant_request.qtd_tratamento_hemodialise = 0
       @dant_request.qtd_nph = pacientes.where(tipo_insulina: "nph").count
@@ -71,11 +73,11 @@ class DantRequestsController < ApplicationController
       @dant_request.qtd_frascos_regular = pacientes.where(tipo_insulina: "regular").sum(:frascos_mensais)
       @dant_request.qtd_analoga = pacientes.where(tipo_insulina: "analoga").count
       @dant_request.qtd_frascos_analoga = pacientes.where(tipo_insulina: "analoga").sum(:frascos_mensais)
-      @dant_request.qtd_tabagista = pacientes.where(tabagista: true).count
+      #@dant_request.qtd_tabagista = pacientes.where(tabagista: true).count #refatorar
       @dant_request.qtd_atendimento_tabagista = 0
-      @dant_request.qtd_etilista = pacientes.where(etilista: true).count
+     # @dant_request.qtd_etilista = pacientes.where(etilista: true).count #refatorar
       @dant_request.qtd_atendimento_etilista = 0
-      @dant_request.qtd_obesos = pacientes.where(obeso: true).count
+     # @dant_request.qtd_obesos = pacientes.where(obeso: true).count #refatorar
       @dant_request.qtd_obesidade_1 = pacientes.where(grau_obesidade: 1).count
       @dant_request.qtd_obesidate_2 = pacientes.where(grau_obesidade: 2).count
       @dant_request.qtd_obesidade_3 = pacientes.where(grau_obesidade: 3).count
@@ -126,6 +128,7 @@ class DantRequestsController < ApplicationController
     @responsaveis = DantResponsavelProgram.all.order(:nome).map{|a| [a.nome,a.id]}
     @cidades = Cidade.all.order(:nome).map{|a| [a.nome,a.id]}
     @pacientes = current_user.administrador? ? DantPacient.all.order(:nome).map{|a| [a.nome,a.id]} : DantPacient.where(cidade_id: current_user.cidade_id).order(:nome).map{|a| [a.nome,a.id]}
+
   end
     # Use callbacks to share common setup or constraints between actions.
     def set_dant_request
@@ -135,6 +138,7 @@ class DantRequestsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def dant_request_params
       params.require(:dant_request).permit(:justificativa,:qtd_hipertensos, :atendimento_hipertensos, :qtd_obitos_hipertensos, :qtd_diabeticos, :atendimento_diabeticos, :qtd_obitos_diabeticos, :qtd_diabeticos_hipertencos, :atendimento_diabeticos_hipertensos, :qtd_tratamento_hemodialise, :qtd_nph, :qtd_frascos_nph, :qtd_regular, :qtd_frascos_regular, :qtd_analoga, :qtd_frascos_analoga, :qtd_tabagista, :qtd_atendimento_tabagista, :qtd_etilista, :qtd_atendimento_etilista, :qtd_obesos, :qtd_obesidade_1, :qtd_obesidate_2, :qtd_obesidade_3, :mes, :dant_responsavel_program_id, :cidade_id, :status,
-      dant_request_pacients_attributes:[:sexo,:hipertenso,:diabetico,:obeso,:tabagista,:etilista,:id,:dant_request_id,:dant_pacient_id,:frascos_diarios,:frascos_mensais,:idade])
+      dant_request_pacients_attributes:[:sexo,:hipertenso,:diabetico,:obeso,:tabagista,:etilista,:id,:dant_request_id,:dant_pacient_id,:frascos_diarios,:frascos_mensais,:idade],
+                                           dant_faixa_etarias_attributes:[:hipertenso_m_1 ,:hipertenso_m_1_4 ,:hipertenso_m_5_9 ,:hipertenso_m_10_14 ,:hipertenso_m_15_19 ,:hipertenso_m_20_29 ,:hipertenso_m_30_39 ,:hipertenso_m_40_49 ,:hipertenso_m_50_59 ,:hipertenso_m_60_69 ,:hipertenso_m_70_79 ,:hipertenso_m_80 ,:hipertenso_f_1 ,:hipertenso_f_1_4 ,:hipertenso_f_5_9 ,:hipertenso_f_10_14 ,:hipertenso_f_15_19 ,:hipertenso_f_20_29 ,:hipertenso_f_30_39 ,:hipertenso_f_40_49 ,:hipertenso_f_50_59 ,:hipertenso_f_60_69 ,:hipertenso_f_70_79 ,:hipertenso_f_80 ,:diabetico_m_1 ,:diabetico_m_1_4 ,:diabetico_m_5_9 ,:diabetico_m_10_14 ,:diabetico_m_15_19 ,:diabetico_m_20_29 ,:diabetico_m_30_39 ,:diabetico_m_40_49 ,:diabetico_m_50_59 ,:diabetico_m_60_69 ,:diabetico_m_70_79 ,:diabetico_m_90 ,:diabetico_f_1 ,:diabetico_f_1_4 ,:diabetico_f_5_9 ,:diabetico_f_10_14 ,:diabetico_f_15_19 ,:diabetico_f_20_29 ,:diabetico_f_30_39 ,:diabetico_f_40_49 ,:diabetico_f_50_59 ,:diabetico_f_60_69 ,:diabetico_f_70_79 ,:diabetico_f_80 ,:diabetico_hipertenso_m_1 ,:diabetico_hipertenso_m_1_4 ,:diabetico_hipertenso_m_5_9 ,:diabetico_hipertenso_m_10_14 ,:diabetico_hipertenso_m_15_19 ,:diabetico_hipertenso_m_20_29 ,:diabetico_hipertenso_m_30_39 ,:diabetico_hipertenso_m_40_49 ,:diabetico_hipertenso_m_50_59 ,:diabetico_hipertenso_m_60_69 ,:diabetico_hipertenso_m_70_79 ,:diabetico_hipertenso_m_80 ,:diabetico_hipertenso_f_1 ,:diabetico_hipertenso_f_1_4 ,:diabetico_hipertenso_f_5_9 ,:diabetico_hipertenso_f_10_14 ,:diabetico_hipertenso_f_15_19 ,:diabetico_hipertenso_f_20_29 ,:diabetico_hipertenso_f_30_39 ,:diabetico_hipertenso_f_40_49 ,:diabetico_hipertenso_f_50_59 ,:diabetico_hipertenso_f_60_69 ,:diabetico_hipertenso_f_70_79 ,:diabetico_hipertenso_f_80 ,:obeso_m_1 ,:obeso_m_1_4 ,:obeso_m_5_9 ,:obeso_m_10_14 ,:obeso_m_15_19 ,:obeso_m_20_29 ,:obeso_m_30_39 ,:obeso_m_40_49 ,:obeso_m_50_59 ,:obeso_m_60_69 ,:obeso_m_70_79 ,:obeso_m_80 ,:obeso_f_1 ,:obeso_f_1_4 ,:obeso_f_5_9 ,:obeso_f_10_14 ,:obeso_f_15_19 ,:obeso_f_20_29 ,:obeso_f_30_39 ,:obeso_f_40_49 ,:obeso_f_50_59 ,:obeso_f_60_69 ,:obeso_f_70_79 ,:obeso_f_80 ,:tabagismo_m_1_8 ,:tabagismo_m_9_11 ,:tabagismo_m_12_17 ,:tabagismo_m_18_24 ,:tabagismo_m_25_34 ,:tabagismo_m_35_44 ,:tabagismo_m_45_54 ,:tabagismo_m_55_64 ,:tabagismo_m_65 ,:tabagismo_f_1_8 ,:tabagismo_f_9_11 ,:tabagismo_f_12_17 ,:tabagismo_f_18_24 ,:tabagismo_f_25_34 ,:tabagismo_f_35_44 ,:tabagismo_f_45_54 ,:tabagismo_f_55_64 ,:tabagismo_f_65 ,:etilismo_m_1_8 ,:etilismo_m_9_11 ,:etilismo_m_12_17 ,:etilismo_m_18_24 ,:etilismo_m_25_34 ,:etilismo_m_35_44 ,:etilismo_m_45_54 ,:etilismo_m_55_64 ,:etilismo_m_65 ,:etilismo_f_1_8 ,:etilismo_f_9_11 ,:etilismo_f_12_17 ,:etilismo_f_18_24 ,:etilismo_f_25_34 ,:etilismo_f_35_44 ,:etilismo_f_45_54 ,:etilismo_f_55_64 ,:etilismo_f_65])
     end
 end
