@@ -44,7 +44,7 @@ class DantPacient < ApplicationRecord
 
   enumerize :grau_obesidade, in: {:grau_1 => 1, :grau_2 => 2, :grau_3 => 3}, predicates: true
   enumerize :sexo, in: {:masculino => 1, :feminino => 2}, predicates: true
-  enumerize :tipo_insulina, in: [:nph, :regular,:nph_de_caneta], predicates: true
+  enumerize :tipo_insulina, in: [:nph_frascos, :regular_frascos,:nph_de_caneta, :regular_de_caneta], predicates: true
   
   
   before_save :set_frascos

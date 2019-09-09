@@ -26,19 +26,24 @@ class DantDose < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :tipo_insulina, in: [:nph, :regular,:nph_de_caneta], predicates: true
+  enumerize :tipo_insulina, in: [:nph_frascos, :regular_frascos,:nph_de_caneta, :regular_de_caneta], predicates: true
 
   #Método que seta a quantidade de frascos mensais
   def set_frascos
-    case self.dose_diaria
-    when 1..33
-      self.frascos_mensais = 1
-    when 34..66
-      self.frascos_mensais = 2
-    when 67..99
-      self.frascos_mensais = 3
-    when 100..132
-      self.frascos_mensais = 4
+    if self.tipo_insulina == "nph_frascos" || self.tipo_insulina == "regular_frascos"
+      case self.dose_diaria
+      when 1..33
+        self.frascos_mensais = 1
+      when 34..66
+        self.frascos_mensais = 2
+      when 67..99
+        self.frascos_mensais = 3
+      when 100..132
+        self.frascos_mensais = 4
+      end
+    else
+      self.frascos_mensais = self.dose_diaria / 10
     end
+
   end
 end
