@@ -28,6 +28,7 @@
 #  telefone_paciente         :string
 #  idade                     :integer
 #  deferimento               :text
+#  anexos                    :json
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -110,7 +110,7 @@
       </div>
 
       <div class="input-field">
-        <%= f.file_field :anexo %>
+        <%= f.file_field :anexos, multiple: true %>
       </div>
     </div>
 
@@ -130,7 +130,20 @@
       <%= f.fields_for :imunobiologicos do |i| %>
           <%= i.hidden_field :imunizacao_solicitacao_id %>
         <div class="card-panel">
-          <%= i.select :imunizacao_vacina_id, ImunizacaoVacina.to_select %>
+          <div class="row">
+            <div class="col s12 l6">
+              <%= i.label :imunizacao_vacina_id, "Imunobiológico" %>
+              <%= i.select :imunizacao_vacina_id, ImunizacaoVacina.to_select, {prompt: true}, {id: "combo_#{i.index}" , class:"vacina", onchange: "indicacoes('combo_#{i.index}');"} %>
+            </div>
+            <div class="col s12 l6">
+              <%= i.label :imunizacao_indication_id, "Indicação" %>
+              <% if i.object.new_record? %>
+                <%= i.select :imunizacao_indication_id, [], {prompt: true}, {id: "indicacao_combo_#{i.index}", class:"browser-default" } %>
+              <% else %>
+                <%= i.select :imunizacao_indication_id, i.object.imunizacao_vacina.imunizacao_indications, {prompt: true} %>
+              <% end %>
+            </div>
+          </div>
           <!--<p><b>Doses:</b></p>
           <%= i.fields_for :imunizacao_esquemas do |e| %>
             <div class="card-panel">
@@ -215,7 +228,7 @@
     <div class="card-panel">
       <div class="input-field">
 
-        <%= f.label :observacoes %>
+        <%= f.label :observacoes, "Observações" %>
         <%= f.text_area :observacoes %>
 
       </div>
@@ -224,3 +237,11 @@
       <%= f.submit "Salvar", class:"btn" %>
     </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+    function indicacoes(combo)
+    {
+        console.log($('#'+combo).val());
+        $.get('/imunizacao/imunizacao_vacinas/'+ $('#'+combo).val()+'/retornarIndicacoes?combo='+combo );
+    }
+</script>

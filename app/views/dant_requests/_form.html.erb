@@ -33,6 +33,342 @@
           </div>
       <% end %>
       <br>
+
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Planilha por Faixa Etária</span>
+          <%= f.fields_for :dant_faixa_etarias do |esq| %>
+            <div class="row">
+
+              <div class="card-panel">
+                <strong>Planilha por faixa etária e sexo para registro de hipertensos cadastrados</strong>
+                <table>
+                  <thead>
+                  <tr>
+                    <th>Sexo</th>
+                    <th> < 1</th>
+                    <th>01 a 04</th>
+                    <th>05 a 09</th>
+                    <th>10 a 14</th>
+                    <th>15 a 19</th>
+                    <th>20 a 29</th>
+                    <th>30 a 39</th>
+                    <th>40 a 49</th>
+                    <th>50 a 59</th>
+                    <th>60 a 69</th>
+                    <th>70 a 79</th>
+                    <th>80+</th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Masculino</td>
+                    <td><%= esq.number_field :hipertenso_m_1, required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_1_4 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_5_9 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_10_14 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_15_19 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_20_29 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_30_39 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_40_49 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_50_59 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_60_69 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_70_79 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_80 ,required: true %></td>
+
+                  </tr>
+                  <tr>
+                    <td>Feminino</td>
+                    <td><%= esq.number_field :hipertenso_f_1 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_1_4 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_5_9 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_10_14 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_15_19 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_20_29 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_30_39 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_40_49 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_50_59 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_60_69 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_70_79 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_80 ,required: true %></td>
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-panel">
+                <strong>Planilha por faixa etária e sexo para registro de diabéticos cadastrados</strong>
+                <table>
+                  <thead>
+                  <tr>
+                    <th>Sexo</th>
+                    <th> < 1</th>
+                    <th>01 a 04</th>
+                    <th>05 a 09</th>
+                    <th>10 a 14</th>
+                    <th>15 a 19</th>
+                    <th>20 a 29</th>
+                    <th>30 a 39</th>
+                    <th>40 a 49</th>
+                    <th>50 a 59</th>
+                    <th>60 a 69</th>
+                    <th>70 a 79</th>
+                    <th>80+</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Masculino</td>
+                    <td><%= esq.number_field :diabetico_m_1 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_1_4 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_5_9 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_10_14 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_15_19 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_20_29 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_30_39 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_40_49 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_50_59 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_60_69 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_70_79 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_90 ,required: true %></td>
+                  </tr>
+                  <tr>
+                    <td>Feminino</td>
+                    <td><%= esq.number_field :diabetico_f_1 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_1_4 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_5_9 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_10_14 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_15_19 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_20_29 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_30_39 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_40_49 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_50_59 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_60_69 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_70_79 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_80 ,required: true %></td>
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-panel">
+                <strong>Planilha por faixa etária e sexo para registro de diabéticos com hipertensão cadastrados</strong>
+                <table>
+                  <thead>
+                  <tr>
+                    <th>Sexo</th>
+                    <th> < 1</th>
+                    <th>01 a 04</th>
+                    <th>05 a 09</th>
+                    <th>10 a 14</th>
+                    <th>15 a 19</th>
+                    <th>20 a 29</th>
+                    <th>30 a 39</th>
+                    <th>40 a 49</th>
+                    <th>50 a 59</th>
+                    <th>60 a 69</th>
+                    <th>70 a 79</th>
+                    <th>80+</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Masculino</td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_1 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_1_4 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_5_9 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_10_14 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_15_19 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_20_29 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_30_39 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_40_49 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_50_59 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_60_69 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_70_79 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_80 ,required: true %></td>
+                  </tr>
+                  <tr>
+                    <td>Feminino</td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_1 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_1_4 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_5_9 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_10_14 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_15_19 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_20_29 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_30_39 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_40_49 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_50_59 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_60_69 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_70_79 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_80 ,required: true %></td>
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-panel">
+                <strong>Planilha por faixa etária e sexo para registro de obesos cadastrados</strong>
+                <table>
+                  <thead>
+                  <tr>
+                    <th>Sexo</th>
+                    <th> < 1</th>
+                    <th>01 a 04</th>
+                    <th>05 a 09</th>
+                    <th>10 a 14</th>
+                    <th>15 a 19</th>
+                    <th>20 a 29</th>
+                    <th>30 a 39</th>
+                    <th>40 a 49</th>
+                    <th>50 a 59</th>
+                    <th>60 a 69</th>
+                    <th>70 a 79</th>
+                    <th>80+</th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Masculino</td>
+                    <td><%= esq.number_field :obeso_m_1 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_1_4 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_5_9 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_10_14 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_15_19 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_20_29 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_30_39 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_40_49 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_50_59 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_60_69 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_70_79 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_80 ,required: true %></td>
+
+                  </tr>
+                  <tr>
+                    <td>Feminino</td>
+                    <td><%= esq.number_field :obeso_f_1 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_1_4 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_5_9 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_10_14 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_15_19 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_20_29 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_30_39 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_40_49 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_50_59 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_60_69 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_70_79 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_80 ,required: true %></td>
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-panel">
+                <strong>Planilha por faixa etária e sexo para registro de tabagismo cadastrados</strong>
+                <table>
+                  <thead>
+                  <tr>
+                    <th>Sexo</th>
+                    <th>01 a 08</th>
+                    <th>09 a 11</th>
+                    <th>12 a 17</th>
+                    <th>18 a 24</th>
+                    <th>25 a 34</th>
+                    <th>35 a 44</th>
+                    <th>45 a 54</th>
+                    <th>55 a 64 </th>
+                    <th> >=65 </th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Masculino</td>
+                    <td><%= esq.number_field :tabagismo_m_1_8 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_m_9_11 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_m_12_17 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_m_18_24 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_m_25_34 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_m_35_44 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_m_45_54 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_m_55_64 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_m_65 ,required: true %></td>
+
+                  </tr>
+                  <tr>
+                    <td>Feminino</td>
+                    <td><%= esq.number_field :tabagismo_f_1_8 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_f_9_11 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_f_12_17 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_f_18_24 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_f_25_34 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_f_35_44 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_f_45_54 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_f_55_64 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_f_65 ,required: true %></td>
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-panel">
+                <strong>Planilha por faixa etária e sexo para registro de etilismo cadastrados</strong>
+                <table>
+                  <thead>
+                  <tr>
+                    <th>Sexo</th>
+                    <th>01 a 08</th>
+                    <th>09 a 11</th>
+                    <th>12 a 17</th>
+                    <th>18 a 24</th>
+                    <th>25 a 34</th>
+                    <th>35 a 44</th>
+                    <th>45 a 54</th>
+                    <th>55 a 64 </th>
+                    <th> >=65 </th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Masculino</td>
+                    <td><%= esq.number_field :etilismo_m_1_8 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_m_9_11 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_m_12_17 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_m_18_24 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_m_25_34 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_m_35_44 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_m_45_54 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_m_55_64 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_m_65 ,required: true %></td>
+
+                  </tr>
+                  <tr>
+                    <td>Feminino</td>
+                    <td><%= esq.number_field :etilismo_f_1_8 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_f_9_11 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_f_12_17 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_f_18_24 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_f_25_34 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_f_35_44 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_f_45_54 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_f_55_64 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_f_65 ,required: true %></td>
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="card-action">
+          <%#= esq.link_to_add "Inserir Paciente", :dant_request_pacients %>
+        </div>
+      </div>
+
+
       <div class="input-field">
 
         <%= f.label :qtd_hipertensos, DantQuestion.find_by_pergunta(1) %>
@@ -50,7 +386,7 @@
       <div class="input-field">
 
         <%= f.label :qtd_obitos_hipertensos, DantQuestion.find_by_pergunta(3) %>
-        <%= f.number_field :qtd_obitos_hipertensos , readonly: true%>
+        <%= f.number_field :qtd_obitos_hipertensos%>
 
       </div>
 
@@ -71,7 +407,7 @@
       <div class="input-field">
 
         <%= f.label :qtd_obitos_diabeticos, DantQuestion.find_by_pergunta(6) %>
-        <%= f.number_field :qtd_obitos_diabeticos , readonly: true%>
+        <%= f.number_field :qtd_obitos_diabeticos %>
 
       </div>
 
@@ -99,28 +435,54 @@
       <div class="input-field">
 
         <%= f.label :qtd_nph, DantQuestion.find_by_pergunta(10) %>
-        <%= f.number_field :qtd_nph, readonly: true %>
+        <%= f.number_field :qtd_nph %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_frascos_nph, DantQuestion.find_by_pergunta(11) %>
-        <%= f.number_field :qtd_frascos_nph , readonly: true%>
+        <%= f.number_field :qtd_frascos_nph %>
+
+      </div>
+      <div class="input-field">
+
+        <%= f.label :qtd_nph_caneta, DantQuestion.find_by_pergunta(23) %>
+        <%= f.number_field :qtd_nph_caneta %>
+
+      </div>
+
+      <div class="input-field">
+
+        <%= f.label :qtd_frascos_nph_caneta, DantQuestion.find_by_pergunta(24) %>
+        <%= f.number_field :qtd_frascos_nph_caneta %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_regular, DantQuestion.find_by_pergunta(12) %>
-        <%= f.number_field :qtd_regular, readonly: true %>
+        <%= f.number_field :qtd_regular %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_frascos_regular, DantQuestion.find_by_pergunta(13) %>
-        <%= f.number_field :qtd_frascos_regular , readonly: true%>
+        <%= f.number_field :qtd_frascos_regular %>
+
+      </div>
+      <div class="input-field">
+
+        <%= f.label :qtd_regular_caneta, DantQuestion.find_by_pergunta(25) %>
+        <%= f.number_field :qtd_regular_caneta %>
+
+      </div>
+
+      <div class="input-field">
+
+        <%= f.label :qtd_frascos_regular_caneta, DantQuestion.find_by_pergunta(26) %>
+        <%= f.number_field :qtd_frascos_regular_caneta %>
 
       </div>
 
@@ -176,21 +538,21 @@
       <div class="input-field">
 
         <%= f.label :qtd_obesidade_1, DantQuestion.find_by_pergunta(19) %>
-        <%= f.number_field :qtd_obesidade_1 , readonly: true%>
+        <%= f.number_field :qtd_obesidade_1 %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_obesidate_2, DantQuestion.find_by_pergunta(20) %>
-        <%= f.number_field :qtd_obesidate_2 , readonly: true%>
+        <%= f.number_field :qtd_obesidate_2 %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_obesidade_3, DantQuestion.find_by_pergunta(21) %>
-        <%= f.number_field :qtd_obesidade_3, readonly: true %>
+        <%= f.number_field :qtd_obesidade_3 %>
 
       </div>
 

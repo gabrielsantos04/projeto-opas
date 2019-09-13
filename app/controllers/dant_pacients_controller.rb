@@ -64,6 +64,7 @@ class DantPacientsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def dant_pacient_params
-      params.require(:dant_pacient).permit(:nome, :sexo, :endereco, :rg, :cpf, :frascos_diarios, :frascos_mensais, :tipo_insulina, :hipertenso, :diabetico, :tabagista, :etilista, :obeso, :grau_obesidade, :cidade_id, :obito, :data_obito,:data_nascimento)
+      params.require(:dant_pacient).permit(:nome, :sexo, :endereco, :rg, :cpf, :frascos_diarios, :frascos_mensais, :tipo_insulina, :hipertenso, :diabetico, :tabagista, :etilista, :obeso, :grau_obesidade, :cidade_id, :obito, :data_obito,:data_nascimento,
+                                           dant_doses_attributes:[:tipo_insulina,:dose_diaria, :frascos_mensais,:dant_pacient_id,:_destroy])
     end
 end

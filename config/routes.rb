@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :dant_faixa_etaria
   devise_for :users
   scope "/usuario" do
   resources :users do
@@ -86,7 +87,11 @@ Rails.application.routes.draw do
         get "indeferir"
       end
     end
-    resources :imunizacao_vacinas
+    resources :imunizacao_vacinas do
+      member do
+        get "retornarIndicacoes"
+      end
+    end
     resources :imunizacao_solicitacaos
   end
 

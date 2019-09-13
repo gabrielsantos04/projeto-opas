@@ -15,6 +15,8 @@
 class Cidade < ApplicationRecord
   has_many :pacientes
   has_many :users
+  has_many :dant_cidade_regions
+  has_one :dant_region, through: :dant_cidade_regions
 
   default_scope -> {order(nome: :asc)}
 

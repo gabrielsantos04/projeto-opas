@@ -1,4 +1,4 @@
-<%= form_for(imunizacao_vacina) do |f| %>
+<%= nested_form_for(imunizacao_vacina) do |f| %>
   <% if imunizacao_vacina.errors.any? %>
     <div id="error_explanation" class="card-panel red white-text">
       <h5>Resolva os problemas a seguir antes de Salvar:</h5>
@@ -24,6 +24,19 @@
     <%= f.label :descricao %>
     <%= f.text_area :descricao %>
     
+  </div>
+
+  <div class="card-panel">
+    <h4 class="header2">Indicações</h4>
+    <%= f.fields_for :imunizacao_indications do |i| %>
+      <div class="card-panel">
+        <%= i.label :descricao, "Descrição" %>
+        <%= i.text_field :descricao %>
+        <%= i.link_to_remove "Apagar", class: "btn red" %>
+
+      </div>
+    <% end %>
+    <%= f.link_to_add "Inserir", :imunizacao_indications, class: :btn %>
   </div>
 
 </div>

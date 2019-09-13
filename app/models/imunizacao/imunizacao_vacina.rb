@@ -10,6 +10,11 @@
 #
 
 class ImunizacaoVacina < ApplicationRecord
+  has_many :imunizacao_indications
+
+  accepts_nested_attributes_for :imunizacao_indications, allow_destroy: true
+
+
   #Método que retorna o nome do objeto
   def to_s
     self.nome

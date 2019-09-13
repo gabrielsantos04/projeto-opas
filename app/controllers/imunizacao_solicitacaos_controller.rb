@@ -70,11 +70,11 @@ class ImunizacaoSolicitacaosController < ApplicationController
           :nome_paciente, :idade,:telefone_paciente,:data_nascimento, :sexo, :nome_mae, :endereco,
           :bairro, :municipio_id, :motivo_solicitacao, :nome_requisitante,
           :tipo_requisitante, :crm_coren, :telefone_requisitante,
-          :instituicao_requisitante, :municipio_requisitante_id, :anexo,
+          :instituicao_requisitante, :municipio_requisitante_id, {anexos:[] },
           :solicitante, :observacoes,:deferimento, :data_atendimento, :municipio_atual_id,
           :status,
           imunobiologicos_attributes:[
-              :id, :_destroy, :tipo, :nome_vacina, :imunizacao_vacina_id,
+              :id, :_destroy, :tipo, :nome_vacina, :imunizacao_vacina_id,:imunizacao_indication_id,
               :imunizacao_solicitacao_id, :status, :justificativa_indeferimento,
               imunizacao_esquemas_attributes:[
                   :id, :_destroy, :imunizacao_imunobiologicos_id, :dose, :esquema,

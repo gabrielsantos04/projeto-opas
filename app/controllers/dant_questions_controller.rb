@@ -5,7 +5,7 @@ class DantQuestionsController < ApplicationController
   # GET /dant_questions
   def index
     @q = DantQuestion.all.ransack(params[:q])
-    @dant_questions = @q.result.page(params[:page])
+    @dant_questions = @q.result.page(params[:page]).per(30)
   end
 
   # GET /dant_questions/1

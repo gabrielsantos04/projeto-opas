@@ -1,4 +1,4 @@
-<%= form_for(dant_pacient) do |f| %>
+<%= nested_form_for(dant_pacient) do |f| %>
   <% if dant_pacient.errors.any? %>
     <div id="error_explanation" class="card-panel red white-text">
       <h5>Resolva os problemas a seguir antes de Salvar:</h5>
@@ -63,7 +63,7 @@
     
   </div>
 
-  <div class="input-field">
+ <!-- <div class="input-field">
 
     <%= f.label :frascos_diarios, "Dose Diária" %>
     <%= f.number_field :frascos_diarios, step: 1, required: true %>
@@ -76,9 +76,34 @@
     <%= f.select :tipo_insulina , DantPacient.tipo_insulina.options , {prompt: true},{required: true, class:'browser-default'}%>
 
     
+  </div> -->
+
+  <div class="card" style="overflow: visible;">
+    <div class="card-content">
+      <span class="card-title">Insulinas</span>
+      <%= f.fields_for :dant_doses do |esq| %>
+        <div class="row">
+          <div class="col s3">
+            <%= esq.label :tipo_insulina, "Tipo" %>
+            <%= esq.select :tipo_insulina , DantDose.tipo_insulina.options , {prompt: true},{required: true}%>
+          </div>
+          <div class="col s2">
+            <%= esq.label :dose_diaria, "Dose Diária" %>
+            <%= esq.number_field :dose_diaria, step: 1, required: true %>
+          </div>
+
+          <div class="col s4">
+            <%= esq.link_to_remove "Remover" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="card-action">
+      <%= f.link_to_add "Inserir Insulina", :dant_doses %>
+    </div>
   </div>
 
-  <div class="row">
+ <!-- <div class="row">
     <div class="input-field col l3">
 
 
@@ -143,7 +168,7 @@
 
 
     </div>
-  </div>
+  </div> -->
 
 
 </div>

@@ -10,6 +10,9 @@
 #
 
 class DantQuestion < ApplicationRecord
+
+  default_scope -> {order(id: :asc)}
+
   #Método que retorna o nome do objeto
   def to_s
     self.texto

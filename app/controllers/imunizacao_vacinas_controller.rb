@@ -2,7 +2,7 @@
 class ImunizacaoVacinasController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
-  before_action :set_imunizacao_vacina, only: [:show, :edit, :update, :destroy]
+  before_action :set_imunizacao_vacina, only: [:show, :edit, :update, :destroy,:retornarIndicacoes]
 
   # GET /imunizacao_vacinas
   def index
@@ -21,6 +21,12 @@ class ImunizacaoVacinasController < ApplicationController
 
   # GET /imunizacao_vacinas/1/edit
   def edit
+  end
+
+  #Método que retorna as indicacoes da vacina
+  def retornarIndicacoes
+    @combo = params[:combo]
+    @indicacoes = @imunizacao_vacina.imunizacao_indications
   end
 
   # POST /imunizacao_vacinas
@@ -57,6 +63,6 @@ class ImunizacaoVacinasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def imunizacao_vacina_params
-      params.require(:imunizacao_vacina).permit(:nome, :descricao)
+      params.require(:imunizacao_vacina).permit(:nome, :descricao, imunizacao_indications_attributes:[:id,:descricao,:imunizacao_vacina_id, :_destroy])
     end
 end

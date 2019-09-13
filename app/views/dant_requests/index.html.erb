@@ -9,14 +9,25 @@
     <div id="pesquisa" class="not-show">
       <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
           <div class="row">
-            <div class="col l6 s12">
+            <div class="col l3 s12">
               <%= f.label "Mês" %>
               <%= f.select :mes_eq, [["MARÇO" , 3],["JUNHO" , 6],["SETEMBRO" , 9],["DEZEMBRO" , 12]],prompt: true %>
 
             </div>
-            <div class="col l6 s12">
+
+            <div class="col l3 s12">
+              <%= f.label "Ano" %>
+              <%= f.select :ano_eq, DantRequest.distinct.pluck(:ano),prompt: true %>
+
+            </div>
+            <div class="col l3 s12">
               <%= f.label "Município" %>
               <%= f.select :cidade_id_eq, @cidades,{prompt: true},{class:"browser-default chosen-select"} %>
+
+            </div>
+            <div class="col l3 s12">
+              <%= f.label "Região" %>
+              <%= f.select :dant_region_id_eq, @regioes,{prompt: true},{class:"browser-default chosen-select"} %>
 
             </div>
           </div>

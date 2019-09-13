@@ -72,6 +72,7 @@ class Ability
     can :read, DstSolicitacao
     can :create, DstSolicitacao
 
+    can :home, User
 
   end
 end

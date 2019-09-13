@@ -28,6 +28,7 @@
 #  telefone_paciente         :string
 #  idade                     :integer
 #  deferimento               :text
+#  anexos                    :json
 #
 
 class ImunizacaoSolicitacao < ApplicationRecord
@@ -37,6 +38,7 @@ class ImunizacaoSolicitacao < ApplicationRecord
   has_many :imunobiologicos, -> { where tipo: 'fornecidas'  }, class_name: "ImunizacaoImunobiologico"
   has_many :outros_imunobiologicos, -> { where tipo: 'outros'  }, class_name: "ImunizacaoImunobiologico"
 
+
   extend Enumerize
   enumerize :sexo, in: [:masculino, :feminino], predicates: true
   enumerize :tipo_requisitante, in: [:medico, :enfermeiro], predicates: true
@@ -45,11 +47,29 @@ class ImunizacaoSolicitacao < ApplicationRecord
   accepts_nested_attributes_for :imunobiologicos, allow_destroy: true
   accepts_nested_attributes_for :outros_imunobiologicos, allow_destroy: true
 
+
   before_create :set_idade
+  before_save :remover_caracteres
+
+  mount_uploaders :anexos, ImageUploader
 
   #Método que seta a idade do paciente
   def set_idade
     self.idade = Date.today.year - self.data_nascimento.year
+  end
+
+  #Método que remove os caractéres especiais e realiza o uppercase
+  def remover_caracteres
+    self.nome_paciente = I18n.transliterate(self.nome_paciente).upcase
+    self.nome_mae = I18n.transliterate(self.nome_mae).upcase
+    self.endereco = I18n.transliterate(self.endereco).upcase
+    self.bairro = I18n.transliterate(self.bairro).upcase
+    self.motivo_solicitacao = I18n.transliterate(self.motivo_solicitacao).upcase
+    self.nome_requisitante = I18n.transliterate(self.nome_requisitante).upcase
+    self.instituicao_requisitante = I18n.transliterate(self.instituicao_requisitante).upcase
+    self.solicitante = I18n.transliterate(self.solicitante).upcase
+    self.observacoes = I18n.transliterate(self.observacoes).upcase
+    self.deferimento = I18n.transliterate(self.deferimento || "").upcase
   end
 
 

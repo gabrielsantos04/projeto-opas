@@ -46,6 +46,7 @@ gem 'carrierwave-base64'
 gem 'ryanb-uniquify'
 gem 'sdoc'
 gem 'rdoc'
+gem 'jquery-rails'
 
 #gem 'paper_trail'
 
