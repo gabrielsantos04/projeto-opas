@@ -3,8 +3,21 @@ class DantRequestsController < ApplicationController
   before_action :set_dant_request, only: [:show, :edit, :update, :destroy,:enviar,:faixa_etaria,:alterar_status]
   before_action :set_combos, only: [:new, :edit, :create]
 
+  def dashboard
+    @cidades = Cidade.all.order(:nome).map{|a| [a.nome,a.id]}
+    @regioes = DantRegion.all.order(:nome).map{|a| [a.nome,a.id]}
+    if current_user.administrador? || current_user.admin_dant
+      @q = DantRequest.all.ransack(params[:q])
+    else
+      @q = DantRequest.where(cidade: current_user.cidade).ransack(params[:q])
+    end
+
+    @dant_requests = @q.result
+  end
+
   # GET /dant_requests
   def index
+
     @cidades = Cidade.all.order(:nome).map{|a| [a.nome,a.id]}
     @regioes = DantRegion.all.order(:nome).map{|a| [a.nome,a.id]}
     if current_user.administrador? || current_user.admin_dant
@@ -14,6 +27,7 @@ class DantRequestsController < ApplicationController
     end
 
     @dant_requests = @q.result.page(params[:page])
+
   end
 
   # GET /dant_requests/1

@@ -2,114 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/screen/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/screen/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/screen/3.1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/screen/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/screen/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/screen/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/screen/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/imunizacao_solicitacao/anexo/1/maxresdefault.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/imunizacao_solicitacao/anexo/1/midia_espontanea__3_.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/imunizacao_solicitacao/anexos/1/doe-5260-18122018.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/imunizacao_solicitacao/anexos/1/requisicoes_sefaz_dezembro.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/dant_faixa_etaria.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dant_faixa_etaria.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/dant_faixa_etaria_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/dant_faixa_etaria_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/dant_dose.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/dant_faixa_etarium.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/imunizacao_indication.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/dant_faixa_etaria/_dant_faixa_etarium.json.jbuilder" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/dant_faixa_etaria/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/dant_faixa_etaria/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/dant_faixa_etaria/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/dant_faixa_etaria/index.json.jbuilder" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/dant_faixa_etaria/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/dant_faixa_etaria/show.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/dant_faixa_etaria/show.json.jbuilder" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/imunizacao_vacinas/_indicacoes.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/imunizacao_vacinas/retornarIndicacoes.js.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190129133318_add_anexos_to_imunizacao_solicitacao.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190129180304_create_imunizacao_indications.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190129180756_add_imunizacao_indication_to_imunizacao_imunobiologico.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190903171627_create_dant_faixa_etaria.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190905140445_create_dant_doses.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/MIT-LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/build/jquery.datetimepicker.full.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/build/jquery.datetimepicker.full.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/build/jquery.datetimepicker.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/build/jquery.datetimepicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/datetimepicker.jquery.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/doc.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/jquery.datetimepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/jquery.datetimepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/karma.conf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/package-lock.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/tests/app.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/tests/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/tests/input_in_container_fixed_to_bottom_of_viewport.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/tests/input_in_container_fixed_to_top_of_viewport.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/tests/tests/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/tests/tests/destroy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/tests/tests/events.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/tests/tests/init.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/tests/tests/methods.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/datetimepicker-master/tests/tests/options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/controllers/dant_faixa_etaria_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/dant_doses.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/dant_faixa_etaria.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/imunizacao_indications.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/dant_dose_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/dant_faixa_etarium_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/imunizacao_indication_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/system/dant_faixa_etaria_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/dant_requests/dashboard.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_questions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_questions_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ability.rb" afterPath="$PROJECT_DIR$/app/models/ability.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/cidade.rb" afterPath="$PROJECT_DIR$/app/models/cidade.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dant_pacient.rb" afterPath="$PROJECT_DIR$/app/models/dant_pacient.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dant_question.rb" afterPath="$PROJECT_DIR$/app/models/dant_question.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dant_request.rb" afterPath="$PROJECT_DIR$/app/models/dant_request.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_imunobiologico.rb" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_imunobiologico.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_vacina.rb" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_vacina.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_pacients/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_pacients/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_pacients/index.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_pacients/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_pacients/show.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_pacients/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_requests/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_requests/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_requests/faixa_etaria.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_requests/faixa_etaria.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_requests/index.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_requests/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/imunizacao_vacinas/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/imunizacao_vacinas/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/imunizacao_vacinas/show.html.erb" afterPath="$PROJECT_DIR$/app/views/imunizacao_vacinas/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_left_sidebar_dant.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_left_sidebar_dant.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/dant_requests.yml" afterPath="$PROJECT_DIR$/test/fixtures/dant_requests.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/imunizacao_imunobiologicos.yml" afterPath="$PROJECT_DIR$/test/fixtures/imunizacao_imunobiologicos.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/imunizacao_solicitacaos.yml" afterPath="$PROJECT_DIR$/test/fixtures/imunizacao_solicitacaos.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/dant_request_test.rb" afterPath="$PROJECT_DIR$/test/models/dant_request_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/imunizacao_imunobiologico_test.rb" afterPath="$PROJECT_DIR$/test/models/imunizacao_imunobiologico_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/imunizacao_solicitacao_test.rb" afterPath="$PROJECT_DIR$/test/models/imunizacao_solicitacao_test.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -124,42 +22,52 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/dant_requests/_form.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="561" column="46" lean-forward="false" selection-start-line="561" selection-start-column="28" selection-end-line="561" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="dant_requests_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/dant_requests_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="144" column="63" lean-forward="false" selection-start-line="144" selection-start-column="63" selection-end-line="144" selection-end-column="63" />
+            <state relative-caret-position="210">
+              <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/dant_requests/show.html.erb">
+      <file leaf-file-name="dashboard.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/dant_requests/dashboard.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="126" column="44" lean-forward="false" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
+            <state relative-caret-position="528">
+              <caret line="78" column="17" lean-forward="false" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="seeds.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <file leaf-file-name="_left_sidebar_dant.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_left_sidebar_dant.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="185" column="78" lean-forward="false" selection-start-line="185" selection-start-column="78" selection-end-line="185" selection-end-column="78" />
+            <state relative-caret-position="267">
+              <caret line="42" column="51" lean-forward="false" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/dant_requests/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -168,18 +76,18 @@
       <file leaf-file-name="dant_request.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/dant_request.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="63" column="40" lean-forward="true" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+            <state relative-caret-position="-247">
+              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dant_dose.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/dant_dose.rb">
+      <file leaf-file-name="dant_faixa_etarium.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/dant_faixa_etarium.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="135">
+              <caret line="267" column="32" lean-forward="false" selection-start-line="267" selection-start-column="22" selection-end-line="267" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -239,8 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/jobs/application_job.rb" />
-        <option value="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
         <option value="$PROJECT_DIR$/app/models/dst/dst_local.rb" />
         <option value="$PROJECT_DIR$/app/models/dst/dst_lote.rb" />
         <option value="$PROJECT_DIR$/app/models/dst/dst_produto.rb" />
@@ -277,8 +183,6 @@
         <option value="$PROJECT_DIR$/app/views/dant_pacients/index.html.erb" />
         <option value="$PROJECT_DIR$/app/models/menu_control.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_left_sidebar_usuario.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_left_sidebar_dant.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_left_sidebar_default.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_left_sidebar_dst.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_left_sidebar_imunizacao.html.erb" />
@@ -287,9 +191,13 @@
         <option value="$PROJECT_DIR$/app/views/dant_pacients/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/dant_questions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/dant_requests/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/dant_requests/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/dant_requests/dashboard.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_left_sidebar_dant.html.erb" />
       </list>
     </option>
   </component>
@@ -299,7 +207,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="725" />
@@ -320,17 +228,7 @@
     </navigator>
     <panes>
       <pane id="RailsProjectView" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="hanseniase" type="cbb8eebc:String" user="hanseniase" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -366,14 +264,12 @@
               <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="dant_pacients" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
               <item name="hanseniase" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="dant_requests" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hanseniase" type="b2602c69:ProjectViewProjectNode" />
@@ -384,7 +280,17 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="hanseniase" type="cbb8eebc:String" user="hanseniase" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -576,44 +482,35 @@
       <workItem from="1536429001060" duration="39000" />
       <workItem from="1536429286086" duration="3227000" />
       <workItem from="1537308973079" duration="4247000" />
+      <workItem from="1568568081856" duration="2174000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277727000" />
+    <option name="totallyTimeSpent" value="279963000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="722" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="725" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,45 +530,18 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/models/dant_region.rb</url>
+          <line>13</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/escala_part.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="72" column="41" lean-forward="false" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/escala_salsa.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="127" column="36" lean-forward="false" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/esquema_substitutivo.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/marcacao.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/medicamento.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/monofilamento.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -854,13 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_left_sidebar_dant.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="54" column="15" lean-forward="true" selection-start-line="50" selection-start-column="10" selection-end-line="54" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_left_sidebar_dst.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -879,14 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
           <caret line="33" column="70" lean-forward="false" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
           <caret line="170" column="12" lean-forward="false" selection-start-line="170" selection-start-column="12" selection-end-line="170" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,7 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
           <caret line="156" column="12" lean-forward="false" selection-start-line="156" selection-start-column="12" selection-end-line="156" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="58" lean-forward="false" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -953,54 +805,109 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-135">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/dant_request.rb">
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="63" column="40" lean-forward="true" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/dant_dose.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dant_requests/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="561" column="46" lean-forward="false" selection-start-line="561" selection-start-column="28" selection-end-line="561" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/dant_requests_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="144" column="63" lean-forward="false" selection-start-line="144" selection-start-column="63" selection-end-line="144" selection-end-column="63" />
+        <state relative-caret-position="164">
+          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="186" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dant_requests/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
+        <state relative-caret-position="15">
           <caret line="126" column="44" lean-forward="false" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/dant_requests/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="185" column="78" lean-forward="false" selection-start-line="185" selection-start-column="78" selection-end-line="185" selection-end-column="78" />
+        <state relative-caret-position="0">
+          <caret line="561" column="46" lean-forward="false" selection-start-line="561" selection-start-column="28" selection-end-line="561" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/dant_region.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/dant_dose.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-171">
+          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/dant_cidade_region.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/dant_requests_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dant_requests/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/dant_request.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/dant_faixa_etarium.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="267" column="32" lean-forward="false" selection-start-line="267" selection-start-column="22" selection-end-line="267" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dant_requests/dashboard.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="78" column="17" lean-forward="false" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_left_sidebar_dant.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="42" column="51" lean-forward="false" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
           <folding />
         </state>
       </provider>

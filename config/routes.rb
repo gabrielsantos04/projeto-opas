@@ -65,6 +65,9 @@ Rails.application.routes.draw do
         get "faixa_etaria"
         get "alterar_status"
       end
+      collection do
+        get "dashboard"
+      end
     end
     resources :dant_responsavel_programs
     resources :dant_regions
