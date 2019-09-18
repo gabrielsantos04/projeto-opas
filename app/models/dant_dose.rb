@@ -42,8 +42,11 @@ class DantDose < ApplicationRecord
         self.frascos_mensais = 4
       end
     else
-      self.frascos_mensais = self.dose_diaria / 10
-      
+      quantidade = self.dose_diaria / 10
+      if self.dose_diaria % 10 != 0
+        quantidade = quantidade + 1
+      end
+      self.frascos_mensais = quantidade
     end
 
   end
