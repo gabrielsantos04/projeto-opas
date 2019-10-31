@@ -22,31 +22,31 @@
             <i class="material-icons">home</i> Início
           </a>
         </li>
-        <li class="bold">
-          <a href="/dst/dst_locals" class="waves-effect waves-cyan">
-            <i class="material-icons">dashboard</i> Estoque
-          </a>
-        </li>
-        <li class="bold">
-          <a href="/dst/dst_movimentacaos" class="waves-effect waves-cyan">
-            <i class="material-icons">compare_arrows</i> Movimentação
-          </a>
-        </li>
+<!--        <li class="bold">-->
+<!--          <a href="/dst/dst_locals" class="waves-effect waves-cyan">-->
+<!--            <i class="material-icons">dashboard</i> Estoque-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li class="bold">-->
+<!--          <a href="/dst/dst_movimentacaos" class="waves-effect waves-cyan">-->
+<!--            <i class="material-icons">compare_arrows</i> Movimentação-->
+<!--          </a>-->
+<!--        </li>-->
         <li class="bold">
           <a href="/dst/dst_solicitacaos" class="waves-effect waves-cyan">
             <i class="material-icons">assignment</i> Solicitação
           </a>
         </li>
-        <% if !current_user.admin_dst?  %>
+        <% if current_user.admin_dst? || current_user.administrador? %>
           <li class="bold">
             <a href="/dst/dst_produtos" class="waves-effect waves-cyan">
               <i class="material-icons">shopping_basket</i> Produtos
             </a>
-          <li class="bold">
-            <a href="/dst/dst_lotes" class="waves-effect waves-cyan">
-              <i class="material-icons">style</i> Lotes
-            </a>
-          </li>
+<!--          <li class="bold">-->
+<!--            <a href="/dst/dst_lotes" class="waves-effect waves-cyan">-->
+<!--              <i class="material-icons">style</i> Lotes-->
+<!--            </a>-->
+<!--          </li>-->
           <li class="bold">
             <a href="/dst/dst_questionarios" class="waves-effect waves-cyan">
               <i class="material-icons">question_answer</i> Questionário

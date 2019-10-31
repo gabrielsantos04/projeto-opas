@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190905140445) do
+ActiveRecord::Schema.define(version: 20191031123743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -447,6 +447,10 @@ ActiveRecord::Schema.define(version: 20190905140445) do
     t.integer "qtd_regular_calculada"
     t.integer "qtd_analoga_calculada"
     t.text "justificativa"
+    t.integer "qtd_nph_caneta"
+    t.integer "qtd_frascos_nph_caneta"
+    t.integer "qtd_regular_caneta"
+    t.integer "qtd_frascos_regular_caneta"
     t.index ["cidade_id"], name: "index_dant_requests_on_cidade_id"
     t.index ["dant_responsavel_program_id"], name: "index_dant_requests_on_dant_responsavel_program_id"
   end
@@ -565,6 +569,11 @@ ActiveRecord::Schema.define(version: 20190905140445) do
     t.text "observacoes"
     t.decimal "quantidade_aprovada"
     t.bigint "user_id"
+    t.integer "saldo_anterior"
+    t.integer "entradas_ms"
+    t.integer "qtd_remanejado"
+    t.integer "qtd_perdas"
+    t.integer "saldo_final"
     t.index ["dst_produto_id"], name: "index_dst_solicitacao_produtos_on_dst_produto_id"
     t.index ["dst_solicitacao_id"], name: "index_dst_solicitacao_produtos_on_dst_solicitacao_id"
     t.index ["user_id"], name: "index_dst_solicitacao_produtos_on_user_id"
@@ -578,6 +587,11 @@ ActiveRecord::Schema.define(version: 20190905140445) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "token"
+    t.string "responsavel"
+    t.string "cargo_funcao"
+    t.string "contato"
+    t.bigint "cidade_id"
+    t.index ["cidade_id"], name: "index_dst_solicitacaos_on_cidade_id"
     t.index ["dst_local_id"], name: "index_dst_solicitacaos_on_dst_local_id"
     t.index ["user_id"], name: "index_dst_solicitacaos_on_user_id"
   end
@@ -1044,6 +1058,7 @@ ActiveRecord::Schema.define(version: 20190905140445) do
   add_foreign_key "dst_solicitacao_produtos", "dst_produtos"
   add_foreign_key "dst_solicitacao_produtos", "dst_solicitacaos"
   add_foreign_key "dst_solicitacao_produtos", "users"
+  add_foreign_key "dst_solicitacaos", "cidades"
   add_foreign_key "dst_solicitacaos", "dst_locals"
   add_foreign_key "dst_solicitacaos", "users"
   add_foreign_key "dst_user_locals", "dst_locals"

@@ -386,7 +386,7 @@
       <div class="input-field">
 
         <%= f.label :qtd_obitos_hipertensos, DantQuestion.find_by_pergunta(3) %>
-        <%= f.number_field :qtd_obitos_hipertensos , readonly: true%>
+        <%= f.number_field :qtd_obitos_hipertensos%>
 
       </div>
 
@@ -407,7 +407,7 @@
       <div class="input-field">
 
         <%= f.label :qtd_obitos_diabeticos, DantQuestion.find_by_pergunta(6) %>
-        <%= f.number_field :qtd_obitos_diabeticos , readonly: true%>
+        <%= f.number_field :qtd_obitos_diabeticos %>
 
       </div>
 
@@ -435,28 +435,54 @@
       <div class="input-field">
 
         <%= f.label :qtd_nph, DantQuestion.find_by_pergunta(10) %>
-        <%= f.number_field :qtd_nph, readonly: true %>
+        <%= f.number_field :qtd_nph %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_frascos_nph, DantQuestion.find_by_pergunta(11) %>
-        <%= f.number_field :qtd_frascos_nph , readonly: true%>
+        <%= f.number_field :qtd_frascos_nph %>
+
+      </div>
+      <div class="input-field">
+
+        <%= f.label :qtd_nph_caneta, DantQuestion.find_by_pergunta(23) %>
+        <%= f.number_field :qtd_nph_caneta %>
+
+      </div>
+
+      <div class="input-field">
+
+        <%= f.label :qtd_frascos_nph_caneta, DantQuestion.find_by_pergunta(24) %>
+        <%= f.number_field :qtd_frascos_nph_caneta %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_regular, DantQuestion.find_by_pergunta(12) %>
-        <%= f.number_field :qtd_regular, readonly: true %>
+        <%= f.number_field :qtd_regular %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_frascos_regular, DantQuestion.find_by_pergunta(13) %>
-        <%= f.number_field :qtd_frascos_regular , readonly: true%>
+        <%= f.number_field :qtd_frascos_regular %>
+
+      </div>
+      <div class="input-field">
+
+        <%= f.label :qtd_regular_caneta, DantQuestion.find_by_pergunta(25) %>
+        <%= f.number_field :qtd_regular_caneta %>
+
+      </div>
+
+      <div class="input-field">
+
+        <%= f.label :qtd_frascos_regular_caneta, DantQuestion.find_by_pergunta(26) %>
+        <%= f.number_field :qtd_frascos_regular_caneta %>
 
       </div>
 
@@ -512,21 +538,21 @@
       <div class="input-field">
 
         <%= f.label :qtd_obesidade_1, DantQuestion.find_by_pergunta(19) %>
-        <%= f.number_field :qtd_obesidade_1 , readonly: true%>
+        <%= f.number_field :qtd_obesidade_1 %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_obesidate_2, DantQuestion.find_by_pergunta(20) %>
-        <%= f.number_field :qtd_obesidate_2 , readonly: true%>
+        <%= f.number_field :qtd_obesidate_2 %>
 
       </div>
 
       <div class="input-field">
 
         <%= f.label :qtd_obesidade_3, DantQuestion.find_by_pergunta(21) %>
-        <%= f.number_field :qtd_obesidade_3, readonly: true %>
+        <%= f.number_field :qtd_obesidade_3 %>
 
       </div>
 

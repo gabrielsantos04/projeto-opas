@@ -65,6 +65,9 @@ Rails.application.routes.draw do
         get "faixa_etaria"
         get "alterar_status"
       end
+      collection do
+        get "dashboard"
+      end
     end
     resources :dant_responsavel_programs
     resources :dant_regions
@@ -104,7 +107,12 @@ Rails.application.routes.draw do
       end
     end
     resources :dst_solicitacao_produtos
-    resources :dst_solicitacaos
+    resources :dst_solicitacaos do
+      member do
+        get "autorizar"
+        get "recusar"
+      end
+    end
     resources :dst_lotes
     resources :dst_locals
     resources :dst_produtos do

@@ -179,7 +179,11 @@ DantQuestion.create!([
   {pergunta: 19, texto: "Grau de Obesidade I, quantos?"},
   {pergunta: 20, texto: "Grau de Obesidade II, quantos?"},
   {pergunta: 21, texto: "Grau de Obesidade III, quantos?"},
-  {pergunta: 22, texto: "Somar as participações (número de vezes) em que os usuários do SUS praticaram atividades físicas nos últimos 3 meses anteriores ao mês de referência do relatório"}
+  {pergunta: 22, texto: "Somar as participações (número de vezes) em que os usuários do SUS praticaram atividades físicas nos últimos 3 meses anteriores ao mês de referência do relatório"},
+  {pergunta: 23, texto: "Número de Pacientes que utilizam insulina NPH de Caneta"},
+{pergunta: 24, texto: "Quantidade de frascos de insulina NPH de Caneta utilizados mensalmente"},
+    {pergunta: 25, texto: "Número de pacientes que utilizam insulina REGULAR de Caneta"},
+    {pergunta: 26, texto: "Quantidade de frascos de insulina REGULAR de Caneta utilizados mensalmente"}
 ])
 
 Dermatologica.create!([

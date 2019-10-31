@@ -34,7 +34,7 @@ class User < ApplicationRecord
   has_many :dst_user_locals
   has_many :dst_locals, through: :dst_user_locals
   has_many :dst_movimentacaos, through: :dst_locals
-  has_many :dst_solicitacaos, through: :dst_locals
+  has_many :dst_solicitacaos
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

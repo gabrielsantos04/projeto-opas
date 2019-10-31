@@ -39,6 +39,10 @@
 #  qtd_regular_calculada              :integer
 #  qtd_analoga_calculada              :integer
 #  justificativa                      :text
+#  qtd_nph_caneta                     :integer
+#  qtd_frascos_nph_caneta             :integer
+#  qtd_regular_caneta                 :integer
+#  qtd_frascos_regular_caneta         :integer
 #
 # Indexes
 #

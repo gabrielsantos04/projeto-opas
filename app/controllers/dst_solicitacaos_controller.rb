@@ -1,6 +1,6 @@
 #Classe que controla as açoes da DstSolicitacao
 class DstSolicitacaosController < ApplicationController
-  before_action :set_dst_solicitacao, only: [:show, :edit, :update, :destroy]
+  before_action :set_dst_solicitacao, only: [:show, :edit, :update, :destroy,:autorizar,:recusar]
   before_action :set_combos, only: [:new, :edit, :create, :update]
 
   # GET /dst_solicitacaos
@@ -20,13 +20,29 @@ class DstSolicitacaosController < ApplicationController
   # GET /dst_solicitacaos/new
   def new
     @dst_solicitacao = DstSolicitacao.new
+    @dst_solicitacao.cidade = current_user.cidade
     DstQuestionario.where(ativo: true).map do |q|
       @dst_solicitacao.dst_resposta.build(dst_questionario: q)
+    end
+    DstProduto.all.map do |p|
+      @dst_solicitacao.dst_solicitacao_produtos.build(dst_produto_id: p.id, quantidade: 0, distribuido: 0, saldo_anterior: 0, entradas_ms: 0,qtd_remanejado: 0,qtd_perdas: 0)
     end
   end
 
   # GET /dst_solicitacaos/1/edit
   def edit
+  end
+
+  def autorizar
+    @dst_solicitacao.status = :autorizado
+    @dst_solicitacao.save
+    redirect_to @dst_solicitacao
+  end
+  def recusar
+    @dst_solicitacao.status = :recusado
+    @dst_solicitacao.save
+    @dst_solicitacao.dst_solicitacao_produtos.update_all(quantidade_aprovada: 0, status: :recusado)
+    redirect_to @dst_solicitacao
   end
 
   # POST /dst_solicitacaos
@@ -66,9 +82,9 @@ class DstSolicitacaosController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def dst_solicitacao_params
       params.require(:dst_solicitacao).permit(
-          :dst_local_id, :observacoes, :user_id, :status,
+          :dst_local_id, :observacoes, :user_id, :status,:responsavel,:cargo_funcao,:contato,:cidade_id,
           dst_solicitacao_produtos_attributes:[
-              :id, :dst_produto_id, :quantidade, :distribuido, :_destroy
+              :id, :dst_produto_id,:saldo_anterior,:entradas_ms,:qtd_remanejado,:qtd_perdas,:saldo_final, :quantidade, :distribuido, :_destroy
           ],
           dst_resposta_attributes:[
               :id, :dst_questionario_id, :valor

@@ -24,7 +24,8 @@
 <table class="card striped responsive-table">
   <thead>
     <tr>
-            <th>Solicitado Para</th>
+            <th>Solicitação Nº</th>
+            <th>Município</th>
             <th>Solicitante</th>
             <th>Status</th>
           </tr>
@@ -34,11 +35,11 @@
     <% @dst_solicitacaos.each do |dst_solicitacao| %>
     <tr>
               
-          <td><%= link_to dst_solicitacao.dst_local,dst_solicitacao %></td>
+          <td><%= link_to dst_solicitacao.id ,dst_solicitacao %></td>
         
               
 
-          <td><%= dst_solicitacao.observacoes %></td>
+          <td><%= dst_solicitacao.cidade %></td>
         
               
 

@@ -16,6 +16,11 @@
     <%= f.label :status, "Resposta" %>
     <%= f.select :status, [['Autorizar', 'autorizado'], ['Recusar', 'recusado']] , {}, {id: "status"}%>
   </div>
+  <div>
+    <%= f.label :quantidade, "Quantidade Solicitada: " %>
+    <b><%= @dst_solicitacao_produto.quantidade %></b>
+  </div>
+  <br>
   <div id="box_qdd">
     <%= f.label :quantidade %>
     <%= f.number_field :quantidade_aprovada, id:"qdd_field", min: 0.0, max: @dst_solicitacao_produto.quantidade, required: true %>
