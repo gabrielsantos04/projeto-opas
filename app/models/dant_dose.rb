@@ -43,7 +43,7 @@ class DantDose < ApplicationRecord
       end
     else
       self.frascos_mensais = self.dose_diaria / 10
-      
+
     end
 
   end

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/dant_dose.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_dose.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -218,7 +219,8 @@
       <workItem from="1548868470533" duration="10000" />
       <workItem from="1567529736797" duration="8575000" />
       <workItem from="1567688081172" duration="4703000" />
-      <workItem from="1568057806496" duration="1595000" />
+      <workItem from="1568057806496" duration="1927000" />
+      <workItem from="1571852391760" duration="13000" />
     </task>
     <servers />
   </component>
