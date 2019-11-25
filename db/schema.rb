@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191031123743) do
+ActiveRecord::Schema.define(version: 20191125112349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -574,6 +574,7 @@ ActiveRecord::Schema.define(version: 20191031123743) do
     t.integer "qtd_remanejado"
     t.integer "qtd_perdas"
     t.integer "saldo_final"
+    t.integer "quantidade_atendido"
     t.index ["dst_produto_id"], name: "index_dst_solicitacao_produtos_on_dst_produto_id"
     t.index ["dst_solicitacao_id"], name: "index_dst_solicitacao_produtos_on_dst_solicitacao_id"
     t.index ["user_id"], name: "index_dst_solicitacao_produtos_on_user_id"

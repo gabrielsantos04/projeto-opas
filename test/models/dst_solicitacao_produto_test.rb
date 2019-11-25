@@ -18,6 +18,7 @@
 #  qtd_remanejado      :integer
 #  qtd_perdas          :integer
 #  saldo_final         :integer
+#  quantidade_atendido :integer
 #
 # Indexes
 #

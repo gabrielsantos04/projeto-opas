@@ -1,11 +1,6 @@
 <div class="card-panel">
   <h4 class="center"><%= @dst_solicitacao %></h4>
 
-<!--  <p>-->
-<!--    <strong>Solicitado Para:</strong>-->
-    <%#= link_to @dst_solicitacao.dst_local, @dst_solicitacao.dst_local %>
-<!--  </p>-->
-
   <p>
     <strong>Município:</strong>
     <%= @dst_solicitacao.cidade %>
@@ -55,7 +50,7 @@
         <th>Saldo Anterior</th>
         <th>MS</th>
         <th>Remanejado</th>
-        <th>Distribuido</th>
+        <th>Distribuído</th>
         <th>Perdas</th>
         <th>Solicitado</th>
         <th>Autorizado</th>
@@ -66,18 +61,18 @@
         <tr>
           <td><%= link_to sp.id, sp %></td>
           <td><%= sp.dst_produto %></td>
-          <td><%= sp.saldo_anterior %></td>
-          <td><%= sp.entradas_ms %></td>
-          <td><%= sp.qtd_remanejado %></td>
-          <td><%= sp.distribuido %></td>
-          <td><%= sp.qtd_perdas %></td>
+          <td><%= sp.saldo_anterior.to_i %></td>
+          <td><%= sp.entradas_ms.to_i %></td>
+          <td><%= sp.qtd_remanejado.to_i %></td>
+          <td><%= sp.distribuido.to_i %></td>
+          <td><%= sp.qtd_perdas.to_i %></td>
 
-          <td><%= sp.quantidade %></td>
+          <td><%= sp.quantidade.to_i %></td>
           <td>
-            <%= sp.quantidade_aprovada || 0.0 %>
+            <%= sp.quantidade_aprovada.to_i || 0 %>
             <%= link_to sp do %>
                 <i class="material-icons tiny">edit</i>
-            <% end if current_user.administrador? || current_user.admin_dst? %>
+            <% end if current_user.administrador? || current_user.admin_dst? || current_user.dst_produtos? %>
           </td>
           <td>
             <%= sp.status %>

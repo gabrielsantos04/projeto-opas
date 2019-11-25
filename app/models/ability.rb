@@ -38,6 +38,7 @@ class Ability
       can :manage, DstProduto
       can :manage, DstLote
     elsif user.dst_produtos?
+      can :manage, DstSolicitacaoProduto
       can :manage, DstProduto
       can :manage, DstLote
     elsif user.admin_dant?

@@ -7,8 +7,8 @@
   </p>
 
   <p>
-    <strong>Quantidade:</strong>
-    <%= @dst_solicitacao_produto.quantidade %>
+    <strong>Quantidade Solicitada:</strong>
+    <%= @dst_solicitacao_produto.quantidade.to_i %>
   </p>
 
   <p>
@@ -17,7 +17,7 @@
   </p>
 
   <p>
-    <strong>Formulário de Solicitacao:</strong>
+    <strong>Formulário de Solicitação:</strong>
     <%= link_to @dst_solicitacao_produto.dst_solicitacao ,  @dst_solicitacao_produto.dst_solicitacao %>
   </p>
 
@@ -25,19 +25,19 @@
 <div class="row">
   <div class="col s12 m4">
     <div class="card-panel center teal white-text">
-      <h4><%= @dst_solicitacao_produto.quantidade %></h4>
+      <h4><%= @dst_solicitacao_produto.quantidade.to_i %></h4>
       <p>Quantidade Solicitada</p>
     </div>
   </div>
   <div class="col s12 m4">
     <div class="card-panel center teal white-text">
-      <h4><%= @dst_solicitacao_produto.quantidade_aprovada || 0.0 %></h4>
+      <h4><%= @dst_solicitacao_produto.quantidade_aprovada.to_i || 0 %></h4>
       <p>Quantidade Autorizada</p>
     </div>
   </div>
   <div class="col s12 m4">
     <div class="card-panel center teal white-text">
-      <h4><%= @dst_solicitacao_produto.quantidade_atendido %></h4>
+      <h4><%= @dst_solicitacao_produto.quantidade_atendido.to_i %></h4>
       <p>Quantidade Atendida</p>
     </div>
   </div>
@@ -50,29 +50,5 @@
       </p>
     </div>
 <% end %>
-<div class="card-panel">
-  <h4 class="header2">
-    Movimentaçoẽs de Estoque
-  </h4>
-  <table>
-    <thead>
-      <th>Data</th>
-      <th>Local</th>
-      <th>Tipo</th>
-      <th>Lote</th>
-      <th>Quantidade</th>
-    </thead>
-    <tbody>
-      <% @dst_solicitacao_produto.dst_movimentacaos.each do |m| %>
-        <tr>
-          <td><%= m.created_at %></td>
-          <td><%= m.dst_local %></td>
-          <td><%= m.tipo %></td>
-          <td><%= m.dst_lote %></td>
-          <td><%= m.quantidade %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+
 <%= link_to 'Voltar', dst_solicitacao_produtos_path, class:"btn" %>

@@ -18,13 +18,21 @@
   </div>
   <div>
     <%= f.label :quantidade, "Quantidade Solicitada: " %>
-    <b><%= @dst_solicitacao_produto.quantidade %></b>
+    <b><%= @dst_solicitacao_produto.quantidade.to_i %></b>
   </div>
   <br>
-  <div id="box_qdd">
-    <%= f.label :quantidade %>
-    <%= f.number_field :quantidade_aprovada, id:"qdd_field", min: 0.0, max: @dst_solicitacao_produto.quantidade, required: true %>
-  </div>
+  <% if current_user.admin_dst? || current_user.administrador? %>
+    <div id="box_qdd">
+      <%= f.label :quantidade_aprovada, "Quantidade Autorizada" %>
+      <%= f.number_field :quantidade_aprovada, id:"qdd_field",step: 1, min: 0, max: @dst_solicitacao_produto.quantidade, required: true %>
+    </div>
+  <% end %>
+  <% if current_user.dst_produtos? %>
+    <div id="box_qdd">
+      <%= f.label :quantidade_atendido, "Quantidade Entregue" %>
+      <%= f.number_field :quantidade_atendido, id:"qdd_field",step:1, min: 0, max: @dst_solicitacao_produto.quantidade, required: true %>
+    </div>
+  <% end %>
   <div>
     <%= f.label :observacoes, "Observações" %>
     <%= f.text_area :observacoes, required: true %>

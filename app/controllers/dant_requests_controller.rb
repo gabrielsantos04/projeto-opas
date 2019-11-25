@@ -6,7 +6,7 @@ class DantRequestsController < ApplicationController
   def dashboard
     @cidades = Cidade.all.order(:nome).map{|a| [a.nome,a.id]}
     @regioes = DantRegion.all.order(:nome).map{|a| [a.nome,a.id]}
-    if current_user.administrador? || current_user.admin_dant
+    if current_user.administrador? || current_user.admin_dant?
       @q = DantRequest.all.ransack(params[:q])
     else
       @q = DantRequest.where(cidade: current_user.cidade).ransack(params[:q])
@@ -20,7 +20,7 @@ class DantRequestsController < ApplicationController
 
     @cidades = Cidade.all.order(:nome).map{|a| [a.nome,a.id]}
     @regioes = DantRegion.all.order(:nome).map{|a| [a.nome,a.id]}
-    if current_user.administrador? || current_user.admin_dant
+    if current_user.administrador? || current_user.admin_dant?
       @q = DantRequest.all.ransack(params[:q])
     else
       @q = DantRequest.where(cidade: current_user.cidade).ransack(params[:q])
