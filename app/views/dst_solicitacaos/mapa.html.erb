@@ -12,8 +12,8 @@
           <%= f.select :id_eq, Cidade.where(status: true).map{|a| [a.nome,a.id]},{prompt: "Todo o Estado"},{class:"browser-default select2"} %>
         </div>
         <div class="input">
-          <%= f.label :ano, "Ano" %>
-          <%= f.select :ano, 2019..Date.today.year+10  %>
+          <%= f.label :dst_solicitacaos_ano_eq, "Ano" %>
+          <%= f.select :dst_solicitacaos_ano_eq, 2019..Date.today.year+10  %>
         </div>
         <br>
         <%= f.submit "Filtrar", class:"btn" %> | <%= link_to "Limpar", mapa_dst_solicitacaos_path, class:"btn" %>

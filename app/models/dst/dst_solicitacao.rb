@@ -50,4 +50,8 @@ class DstSolicitacao < ApplicationRecord
     "Solicitação Nº#{self.id}"
   end
 
+  ransacker :ano do
+    Arel.sql('extract(year from dst_solicitacaos.created_at)')
+  end
+
 end

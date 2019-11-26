@@ -32,7 +32,5 @@ class Cidade < ApplicationRecord
     all.map{|a| ["#{a}", a.id]}
   end
 
-  ransacker :ano do
-    Arel.sql('extract(year from created_at)')
-  end
+
 end
