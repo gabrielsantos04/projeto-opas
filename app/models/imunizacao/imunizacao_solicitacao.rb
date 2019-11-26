@@ -37,6 +37,7 @@ class ImunizacaoSolicitacao < ApplicationRecord
   belongs_to :municipio_atual, class_name: 'Cidade', optional: true
   has_many :imunobiologicos, -> { where tipo: 'fornecidas'  }, class_name: "ImunizacaoImunobiologico"
   has_many :outros_imunobiologicos, -> { where tipo: 'outros'  }, class_name: "ImunizacaoImunobiologico"
+  has_many :imunizacao_files
 
 
   extend Enumerize
@@ -46,6 +47,7 @@ class ImunizacaoSolicitacao < ApplicationRecord
 
   accepts_nested_attributes_for :imunobiologicos, allow_destroy: true
   accepts_nested_attributes_for :outros_imunobiologicos, allow_destroy: true
+  accepts_nested_attributes_for :imunizacao_files, allow_destroy: true
 
 
   before_create :set_idade

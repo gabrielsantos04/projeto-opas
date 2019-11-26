@@ -233,6 +233,28 @@
 
       </div>
     </div>
+
+  <div class="card-panel">
+    <h4 class="header2">Anexos</h4>
+    <%= f.fields_for :imunizacao_files do |i| %>
+      <div class="card-panel">
+        <div class="row">
+          <div class="input-field col s12 l6">
+            <%= i.label :descricao, "Descrição" %>
+            <%= i.text_field :descricao %>
+          </div>
+          <div class="input-field col s12 l4">
+            <%= i.file_field :anexo %>
+          </div>
+          <div class="col s12 l2">
+            <%= i.link_to_remove "Apagar", class: "btn red" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= f.link_to_add "Inserir", :imunizacao_files, class: :btn %>
+  </div>
+
     <div class="actions">
       <%= f.submit "Salvar", class:"btn" %>
     </div>

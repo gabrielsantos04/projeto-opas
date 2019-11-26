@@ -89,7 +89,8 @@ class ImunizacaoSolicitacaosController < ApplicationController
           outros_imunobiologicos_attributes:[
               :id, :_destroy, :tipo, :nome_vacina,
               :imunizacao_solicitacao_id, :status, :justificativa_indeferimento
-          ]
+          ],
+          imunizacao_files_attributes:[:id,:descricao,:anexo,:imunizacao_solicitacao_id,:_destroy]
       )
     end
 end

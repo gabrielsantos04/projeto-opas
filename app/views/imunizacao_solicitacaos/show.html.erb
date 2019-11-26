@@ -347,6 +347,24 @@
 </div>
 
 <div class="card-panel">
+  <h4 class="header2">Anexos</h4>
+  <table class="table striped">
+    <tr>
+      <th>Descrição</th>
+      <th>Link</th>
+    </tr>
+    <% @imunizacao_solicitacao.imunizacao_files.each do |file| %>
+      <tr>
+        <td><%= file.descricao %></td>
+        <td>
+          <%= link_to "Baixar", file.anexo.url, target:"_blank" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="card-panel">
   <div class="input-field">
 
     <b>Observações:</b><br>

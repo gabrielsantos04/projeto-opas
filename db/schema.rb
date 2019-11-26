@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191126130303) do
+ActiveRecord::Schema.define(version: 20191126192349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -761,6 +761,15 @@ ActiveRecord::Schema.define(version: 20191126130303) do
     t.index ["imunizacao_imunobiologico_id"], name: "index_imunizacao_esquemas_on_imunizacao_imunobiologico_id"
   end
 
+  create_table "imunizacao_files", force: :cascade do |t|
+    t.string "descricao"
+    t.string "anexo"
+    t.bigint "imunizacao_solicitacao_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imunizacao_solicitacao_id"], name: "index_imunizacao_files_on_imunizacao_solicitacao_id"
+  end
+
   create_table "imunizacao_imunobiologicos", force: :cascade do |t|
     t.string "tipo"
     t.string "nome_vacina"
@@ -1078,6 +1087,7 @@ ActiveRecord::Schema.define(version: 20191126130303) do
   add_foreign_key "esquema_substitutivos", "notificacaos"
   add_foreign_key "imunizacao_encerramentos", "imunizacao_esquemas"
   add_foreign_key "imunizacao_esquemas", "imunizacao_imunobiologicos"
+  add_foreign_key "imunizacao_files", "imunizacao_solicitacaos"
   add_foreign_key "imunizacao_imunobiologicos", "imunizacao_indications"
   add_foreign_key "imunizacao_imunobiologicos", "imunizacao_solicitacaos"
   add_foreign_key "imunizacao_imunobiologicos", "imunizacao_vacinas"

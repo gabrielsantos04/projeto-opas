@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/config/locales/devise.pt-BR.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/cidade.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cidade.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -227,7 +225,7 @@
       <workItem from="1567688081172" duration="4703000" />
       <workItem from="1568057806496" duration="1927000" />
       <workItem from="1571852391760" duration="13000" />
-      <workItem from="1574766326992" duration="15058000" />
+      <workItem from="1574766326992" duration="17452000" />
     </task>
     <servers />
   </component>
