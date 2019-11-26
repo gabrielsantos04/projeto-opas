@@ -112,6 +112,9 @@ Rails.application.routes.draw do
         get "autorizar"
         get "recusar"
       end
+      collection do
+        get "mapa"
+      end
     end
     resources :dst_lotes
     resources :dst_locals

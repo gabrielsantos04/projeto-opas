@@ -23,6 +23,7 @@
 #  obito           :boolean
 #  data_obito      :date
 #  data_nascimento :date
+#  cartao_sus      :string
 #
 # Indexes
 #
@@ -45,10 +46,16 @@ class DantPacient < ApplicationRecord
   enumerize :grau_obesidade, in: {:grau_1 => 1, :grau_2 => 2, :grau_3 => 3}, predicates: true
   enumerize :sexo, in: {:masculino => 1, :feminino => 2}, predicates: true
   enumerize :tipo_insulina, in: [:nph_frascos, :regular_frascos,:nph_de_caneta, :regular_de_caneta], predicates: true
-  
+
+  validate :verifica_documentos
   
   before_save :set_frascos
 
+  #Método que verifica a presença de pelo menos um dos documentos rg, cpf ou cartão sus
+  def verifica_documentos
+    errors.add(:base, "Informe RG, CPF ou Cartão SUS!") if self.rg.blank? and self.cpf.blank? and self.cartao_sus.blank?
+    errors.blank?
+  end
 
   #Método que retorna a idade do paciente
   def idade

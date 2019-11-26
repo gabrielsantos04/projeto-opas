@@ -41,17 +41,24 @@
   </div>
 
   <div class="row">
-    <div class="input-field col l6 s12">
+    <div class="input-field col l4 s12">
 
       <%= f.label :rg %>
       <%= f.text_field :rg %>
 
     </div>
 
-    <div class="input-field  col l6 s12">
+    <div class="input-field  col l4 s12">
 
       <%= f.label :cpf %>
       <%= f.text_field :cpf %>
+
+    </div>
+
+    <div class="input-field  col l4 s12">
+
+      <%= f.label :cartao_sus, "Cartão SUS" %>
+      <%= f.text_field :cartao_sus %>
 
     </div>
   </div>
@@ -65,15 +72,15 @@
 
  <!-- <div class="input-field">
 
-    <%= f.label :frascos_diarios, "Dose Diária" %>
-    <%= f.number_field :frascos_diarios, step: 1, required: true %>
+    <%#= f.label :frascos_diarios, "Dose Diária" %>
+    <%#= f.number_field :frascos_diarios, step: 1, required: true %>
     
   </div>
 
   <div class="input">
 
-    <%= f.label :tipo_insulina %>
-    <%= f.select :tipo_insulina , DantPacient.tipo_insulina.options , {prompt: true},{required: true, class:'browser-default'}%>
+    <%#= f.label :tipo_insulina %>
+    <%#= f.select :tipo_insulina , DantPacient.tipo_insulina.options , {prompt: true},{required: true, class:'browser-default'}%>
 
     
   </div> -->
@@ -83,9 +90,10 @@
       <span class="card-title">Insulinas</span>
       <%= f.fields_for :dant_doses do |esq| %>
         <div class="row">
-          <div class="col s3">
-            <%= esq.label :tipo_insulina, "Tipo" %>
+          <div class="input-field col s3">
+
             <%= esq.select :tipo_insulina , DantDose.tipo_insulina.options , {prompt: true},{required: true}%>
+            <%= esq.label :tipo_insulina, "Tipo" %>
           </div>
           <div class="col s2">
             <%= esq.label :dose_diaria, "Dose Diária" %>

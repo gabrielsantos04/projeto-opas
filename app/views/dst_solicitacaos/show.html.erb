@@ -54,6 +54,8 @@
         <th>Perdas</th>
         <th>Solicitado</th>
         <th>Autorizado</th>
+        <th>Atendido</th>
+        <th>Saldo Final</th>
         <th>Status</th>
     </thead>
     <tbody>
@@ -73,6 +75,12 @@
             <%= link_to sp do %>
                 <i class="material-icons tiny">edit</i>
             <% end if current_user.administrador? || current_user.admin_dst? || current_user.dst_produtos? %>
+          </td>
+          <td>
+            <%= sp.quantidade_atendido %>
+          </td>
+          <td>
+            <%= sp.saldo_final %>
           </td>
           <td>
             <%= sp.status %>

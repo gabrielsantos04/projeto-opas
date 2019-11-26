@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191125120810) do
+ActiveRecord::Schema.define(version: 20191126130303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 20191125120810) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "pacientes_count", default: 0
+    t.boolean "status"
   end
 
   create_table "classificacao_graus", force: :cascade do |t|
@@ -376,6 +377,7 @@ ActiveRecord::Schema.define(version: 20191125120810) do
     t.boolean "obito"
     t.date "data_obito"
     t.date "data_nascimento"
+    t.string "cartao_sus"
     t.index ["cidade_id"], name: "index_dant_pacients_on_cidade_id"
   end
 
@@ -593,6 +595,7 @@ ActiveRecord::Schema.define(version: 20191125120810) do
     t.string "cargo_funcao"
     t.string "contato"
     t.bigint "cidade_id"
+    t.string "mes"
     t.index ["cidade_id"], name: "index_dst_solicitacaos_on_cidade_id"
     t.index ["dst_local_id"], name: "index_dst_solicitacaos_on_dst_local_id"
     t.index ["user_id"], name: "index_dst_solicitacaos_on_user_id"

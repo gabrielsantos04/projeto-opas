@@ -36,12 +36,19 @@
 class DstSolicitacaoProduto < ApplicationRecord
   belongs_to :dst_produto, optional: true
   belongs_to :dst_solicitacao, optional: true
+  has_one :cidade, through: :dst_solicitacao
   belongs_to :user, optional: true
   has_many :dst_movimentacaos
 
   extend Enumerize
 
   enumerize :status, in: [:solicitado, :autorizado, :recusado, :atendido, :atendido_parcialmente], default: :solicitado,  predicates: true
+
+  before_save :atualiza_saldo_final
+
+  def atualiza_saldo_final
+    self.saldo_final = saldo_anterior + entradas_ms - (distribuido + qtd_remanejado + qtd_perdas) + (quantidade_atendido || 0)
+  end
 
   #Método que retorna o nome do objeto
   def to_s

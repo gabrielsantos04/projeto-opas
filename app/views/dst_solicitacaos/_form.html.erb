@@ -13,9 +13,13 @@
     <div class="card-panel">
 
       <div class="input-field">
+        <%= f.select :mes, [["Janeiro","janeiro"],["Fevereiro","fevereiro"],["Março","março"],["Abril","abril"],["Maio","maio"],["Junho","junho"],["Julho","julho"],["Agosto","agosto"],["Setembro","setembro"],["Outubro","outubro"],["Novembro","novembro"],["Dezembro","dezembro"]] %>
+        <%= f.label :mes, "Mês" %>
+      </div>
+
+      <div class="input-field">
         <%= f.label :responsavel, "Responsável" %>
         <%= f.text_field :responsavel %>
-
       </div>
       <div class="input-field">
         <%= f.label :cargo_funcao , "Cargo/Função"%>

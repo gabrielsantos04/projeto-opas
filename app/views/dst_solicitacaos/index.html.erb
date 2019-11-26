@@ -25,6 +25,7 @@
   <thead>
     <tr>
             <th>Solicitação Nº</th>
+      <th>Mês</th>
             <th>Município</th>
             <th>Solicitante</th>
             <th>Status</th>
@@ -36,9 +37,9 @@
     <tr>
               
           <td><%= link_to dst_solicitacao.id ,dst_solicitacao %></td>
-        
-              
 
+
+      <td><%= dst_solicitacao.mes %></td>
           <td><%= dst_solicitacao.cidade %></td>
         
               

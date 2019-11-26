@@ -1,0 +1,69 @@
+<h1 class="center-align">Mapa de Controle de Distribuição de Preservativos</h1>
+
+<div class="card" style="overflow: visible;">
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+        <div class="input">
+          <%= f.label :id_eq, "Município" %>
+          <%= f.select :id_eq, Cidade.where(status: true).map{|a| [a.nome,a.id]},{prompt: "Todo o Estado"},{class:"browser-default select2"} %>
+        </div>
+        <div class="input">
+          <%= f.label :ano, "Ano" %>
+          <%= f.select :ano, 2019..Date.today.year+10  %>
+        </div>
+        <br>
+        <%= f.submit "Filtrar", class:"btn" %> | <%= link_to "Limpar", mapa_dst_solicitacaos_path, class:"btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-content">
+    <table class="striped responsive-table">
+      <thead>
+      <tr>
+        <th>Município</th>
+        <th>Janeiro</th>
+        <th>Fevereiro</th>
+        <th>Março</th>
+        <th>Abril</th>
+        <th>Maio</th>
+        <th>Junho</th>
+        <th>Julho</th>
+        <th>Agosto</th>
+        <th>Setembro</th>
+        <th>Outubro</th>
+        <th>Novembro</th>
+        <th>Dezembro</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @cidades.each do |cidade| %>
+        <tr>
+
+          <td><%= cidade %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "janeiro").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "fevereiro").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "março").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "abril").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "maio").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "junho").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "julho").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "agosto").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "setembro").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "outubro").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "novembro").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+          <td><%= raw cidade.dst_solicitacaos.where(mes: "dezembro").present? == true ? "<span class='green-text'>Entregue</span>" : "<span class='red-text'>Pendente</span>" %></td>
+
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

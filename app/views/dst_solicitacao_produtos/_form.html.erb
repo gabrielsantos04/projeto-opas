@@ -20,6 +20,12 @@
     <%= f.label :quantidade, "Quantidade Solicitada: " %>
     <b><%= @dst_solicitacao_produto.quantidade.to_i %></b>
   </div>
+  <% if current_user.dst_produtos? %>
+    <div>
+      <%= f.label :quantidade_aprovada, "Quantidade Aprovada: " %>
+      <b><%= @dst_solicitacao_produto.quantidade_aprovada.to_i %></b>
+    </div>
+  <% end %>Cidade.includes(:dst_solicitacaos).where(status: true)
   <br>
   <% if current_user.admin_dst? || current_user.administrador? %>
     <div id="box_qdd">

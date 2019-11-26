@@ -17,6 +17,12 @@ class DstSolicitacaosController < ApplicationController
   def show
   end
 
+  #Método que renderiza o mapa de controle de distribuição
+  def mapa
+    @q = Cidade.includes(:dst_solicitacaos).where(status: true).ransack(params[:q])
+    @cidades = @q.result
+  end
+
   # GET /dst_solicitacaos/new
   def new
     @dst_solicitacao = DstSolicitacao.new
@@ -25,7 +31,13 @@ class DstSolicitacaosController < ApplicationController
       @dst_solicitacao.dst_resposta.build(dst_questionario: q)
     end
     DstProduto.all.map do |p|
-      @dst_solicitacao.dst_solicitacao_produtos.build(dst_produto_id: p.id, quantidade: 0, distribuido: 0, saldo_anterior: 0, entradas_ms: 0,qtd_remanejado: 0,qtd_perdas: 0)
+      solicitacao_anterior = DstSolicitacaoProduto.includes(:cidade).where(cidades: {id: current_user.cidade}).where(dst_produto_id: p.id).last
+      if solicitacao_anterior.present?
+        @dst_solicitacao.dst_solicitacao_produtos.build(dst_produto_id: p.id, quantidade: 0, distribuido: 0, saldo_anterior: solicitacao_anterior.saldo_final, entradas_ms: 0,qtd_remanejado: 0,qtd_perdas: 0)
+      else
+        @dst_solicitacao.dst_solicitacao_produtos.build(dst_produto_id: p.id, quantidade: 0, distribuido: 0, saldo_anterior: 0, entradas_ms: 0,qtd_remanejado: 0,qtd_perdas: 0)
+      end
+
     end
   end
 
@@ -52,7 +64,7 @@ class DstSolicitacaosController < ApplicationController
     @dst_solicitacao.status = :solicitado
 
     if @dst_solicitacao.save
-      redirect_to @dst_solicitacao, notice: 'Dst solicitacao was successfully created.'
+      redirect_to @dst_solicitacao, notice: 'Solicitação cadastrada com sucesso.'
     else
       render :new
     end
@@ -61,7 +73,7 @@ class DstSolicitacaosController < ApplicationController
   # PATCH/PUT /dst_solicitacaos/1
   def update
     if @dst_solicitacao.update(dst_solicitacao_params)
-      redirect_to @dst_solicitacao, notice: 'Dst solicitacao was successfully updated.'
+      redirect_to @dst_solicitacao, notice: 'Solicitação atualizada com sucesso.'
     else
       render :edit
     end
@@ -70,7 +82,7 @@ class DstSolicitacaosController < ApplicationController
   # DELETE /dst_solicitacaos/1
   def destroy
     @dst_solicitacao.destroy
-    redirect_to dst_solicitacaos_url, notice: 'Dst solicitacao was successfully destroyed.'
+    redirect_to dst_solicitacaos_url, notice: 'Solicitacao excluída com sucesso.'
   end
 
   private
@@ -82,7 +94,7 @@ class DstSolicitacaosController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def dst_solicitacao_params
       params.require(:dst_solicitacao).permit(
-          :dst_local_id, :observacoes, :user_id, :status,:responsavel,:cargo_funcao,:contato,:cidade_id,
+          :dst_local_id, :observacoes, :user_id, :status,:responsavel,:cargo_funcao,:contato,:cidade_id,:mes,
           dst_solicitacao_produtos_attributes:[
               :id, :dst_produto_id,:saldo_anterior,:entradas_ms,:qtd_remanejado,:qtd_perdas,:saldo_final, :quantidade, :distribuido, :_destroy
           ],

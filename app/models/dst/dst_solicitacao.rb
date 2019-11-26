@@ -14,6 +14,7 @@
 #  cargo_funcao :string
 #  contato      :string
 #  cidade_id    :integer
+#  mes          :string
 #
 # Indexes
 #

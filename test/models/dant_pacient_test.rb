@@ -23,6 +23,7 @@
 #  obito           :boolean
 #  data_obito      :date
 #  data_nascimento :date
+#  cartao_sus      :string
 #
 # Indexes
 #
