@@ -8,8 +8,8 @@
     </span>
     <div id="pesquisa" class="not-show">
       <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
-      <%= f.text_field :nome_cont, placeholder: "Pesquisar..." %>
-      <%= f.submit "Filtrar", class:"btn" %>
+        <%= f.text_field :nome_cont, placeholder: "Pesquisar..." %>
+        <%= f.submit "Filtrar", class:"btn" %>
       <% end %>
     </div>
   </div>
@@ -17,44 +17,66 @@
 
 <table class="card striped responsive-table">
   <thead>
-    <tr>
-            <th>Nome</th>
-            <th>Cpf</th>
-            <th>Email</th>
-            <th>Cidade</th>
-            <th>Role</th>
-          </tr>
+  <tr>
+    <th>Nome</th>
+    <th>Cpf</th>
+    <th>Email</th>
+    <th>Cidade</th>
+    <th>Perfil</th>
+    <th>Ações</th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+  <% @users.each do |user| %>
     <tr>
-              
-          <td><%= link_to user.nome,user %></td>
-        
-              
 
-          <td><%= user.cpf %></td>
-        
-              
+      <td><%= link_to user.nome,user %></td>
+      <td><%= user.cpf %></td>
+      <td><%= user.email %></td>
+      <td><%= user.cidade %></td>
+      <td><%= user.role %></td>
+      <td><a class=" modal-trigger" href="#modal" onclick="set_id(<%= user.id %>,'<%= user.nome %>')">Alterar Senha</a></td>
 
-          <td><%= user.email %></td>
-        
-              
+    </tr>
 
-          <td><%= user.cidade %></td>
-        
-              
 
-          <td><%= user.role %></td>
-        
-          </tr>
-    <% end %>
+<% end %>
   </tbody>
 </table>
+
+<div id="modal" class="modal">
+  <%= form_tag(alterar_senha_users_path, method: :get) do  %>
+    <div class="modal-content">
+      <h4>Alterar Senha</h4>
+      <b>Usuário: </b><span id="nome_usuario"></span>
+      <%= hidden_field_tag :usuario, nil, {id:"usuario_selecionado"} %>
+      <div class="input-field">
+        <%= label_tag :password, "Nova Senha" %>
+        <%= password_field_tag :password %>
+      </div>
+      <div class="input-field">
+        <%= label_tag :password_confirmation, "Confirme a Senha" %>
+        <%= password_field_tag :password_confirmation %>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= submit_tag "Salvar", class:" waves-effect waves-green btn-flat" %>
+
+    </div>
+  <% end %>
+</div>
 
 <div class="card-panel">
   <%= paginate(@users)  %>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+  function set_id(id,nome)
+  {
+    $("#usuario_selecionado").val(id);
+    $("#nome_usuario").html(nome);
+  }
+</script>
 
 <%#= link_to '+ Cadastrar', new_user_path, class:"btn" %>

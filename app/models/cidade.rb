@@ -29,7 +29,7 @@ class Cidade < ApplicationRecord
 
   #Método que retorna um array para o combo
   def self.to_select
-    all.map{|a| ["#{a}", a.id]}
+    where(status: true).map{|a| ["#{a}", a.id]}
   end
 
 

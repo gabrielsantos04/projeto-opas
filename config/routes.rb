@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get "home"
+      get "alterar_senha"
     end
   end
   end

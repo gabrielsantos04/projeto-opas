@@ -33,16 +33,17 @@
     
   </div>
 
-  <div class="input-field">
-    <%= f.collection_select :cidade_id, Cidade.all, :id, :nome, prompt: true  %>
-    
+  <div class="input">
+    <%= f.label :cidade_id, "Município" %>
+    <%= f.select :cidade_id, Cidade.to_select, {prompt: true},{class:"browser-default select2"}  %>
+
   </div>
 
   <div class="input-field">
 
 
     <%= f.select :role, User.role.options,{prompt:true} %>
-    <%= f.label :role %>
+    <%= f.label :role, "Perfil" %>
   </div>
 
 </div>
