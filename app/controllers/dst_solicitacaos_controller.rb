@@ -5,7 +5,7 @@ class DstSolicitacaosController < ApplicationController
 
   # GET /dst_solicitacaos
   def index
-    if current_user.admin_dst?
+    if current_user.admin_dst? || current_user.administrador?
       @q = DstSolicitacao.all.ransack(params[:q])
     else
       @q = current_user.dst_solicitacaos.ransack(params[:q])

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_solicitacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_solicitacaos_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/dant_cidade_region.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_cidade_region.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/dant_pacient.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_pacient.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/dant_request.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_request.rb" afterDir="false" />
@@ -230,7 +231,8 @@
       <workItem from="1568057806496" duration="1927000" />
       <workItem from="1571852391760" duration="13000" />
       <workItem from="1574766326992" duration="18130000" />
-      <workItem from="1574856884650" duration="708000" />
+      <workItem from="1574856884650" duration="1253000" />
+      <workItem from="1574858390324" duration="64000" />
     </task>
     <servers />
   </component>

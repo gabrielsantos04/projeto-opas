@@ -21,5 +21,5 @@
 
 class DantCidadeRegion < ApplicationRecord
   belongs_to :dant_region
-  belongs_to :cidade , dependent: :nullify
+  belongs_to :cidade , dependent: :destroy
 end
