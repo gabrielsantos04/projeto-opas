@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dst_solicitacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_solicitacaos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dant_cidade_region.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_cidade_region.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dant_pacient.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_pacient.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dant_request.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_request.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dant_responsavel_program.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_responsavel_program.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dst/dst_local.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dst/dst_local.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dst/dst_solicitacao.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dst/dst_solicitacao.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/monthly_report.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/monthly_report.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/paciente.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/paciente.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -232,7 +224,8 @@
       <workItem from="1571852391760" duration="13000" />
       <workItem from="1574766326992" duration="18130000" />
       <workItem from="1574856884650" duration="1253000" />
-      <workItem from="1574858390324" duration="64000" />
+      <workItem from="1574858390324" duration="319000" />
+      <workItem from="1574877329657" duration="137000" />
     </task>
     <servers />
   </component>
