@@ -35,7 +35,7 @@
 #
 
 class DantPacient < ApplicationRecord
-  belongs_to :cidade , dependent: :destroy
+  belongs_to :cidade , dependent: :nullify
   has_many :dant_doses
   accepts_nested_attributes_for :dant_doses, allow_destroy: true
 

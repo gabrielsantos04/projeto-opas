@@ -35,7 +35,7 @@ class DstSolicitacao < ApplicationRecord
   belongs_to :user, optional: true
   has_many :dst_solicitacao_produtos
   has_many :dst_resposta
-  belongs_to :cidade, optional: true, dependent: :destroy
+  belongs_to :cidade, optional: true, dependent: :nullify
 
   accepts_nested_attributes_for :dst_resposta, allow_destroy: true
   accepts_nested_attributes_for :dst_solicitacao_produtos, allow_destroy: true

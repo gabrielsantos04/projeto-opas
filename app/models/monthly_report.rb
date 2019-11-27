@@ -40,5 +40,5 @@
 #
 
 class MonthlyReport < ApplicationRecord
-  belongs_to :cidade , dependent: :destroy
+  belongs_to :cidade , dependent: :nullify
 end
