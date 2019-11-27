@@ -57,7 +57,7 @@
 
 class DantRequest < ApplicationRecord
   belongs_to :dant_responsavel_program
-  belongs_to :cidade
+  belongs_to :cidade, dependent: :destroy
   has_many :dant_request_pacients, dependent: :destroy
   has_many :dant_pacients, through: :dant_request_pacients
   has_many :dant_faixa_etarias, class_name: "DantFaixaEtarium"

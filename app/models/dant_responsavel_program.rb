@@ -19,7 +19,7 @@
 #
 
 class DantResponsavelProgram < ApplicationRecord
-  belongs_to :cidade
+  belongs_to :cidade , dependent: :destroy
 
   #Método que retorna o nome do objeto
   def to_s
