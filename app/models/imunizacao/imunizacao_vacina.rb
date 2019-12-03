@@ -22,7 +22,7 @@ class ImunizacaoVacina < ApplicationRecord
 
   #Método que retorna um array para ser utilizado nos combos
   def self.to_select
-    all.map{|a| ["#{a}", a.id]}
+    all.order(:nome).map{|a| ["#{a}", a.id]}
   end
 
 end

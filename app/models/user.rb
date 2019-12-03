@@ -19,6 +19,7 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
 #  last_sign_in_ip        :inet
+#  ativo                  :boolean
 #
 # Indexes
 #
@@ -51,5 +52,10 @@ class User < ApplicationRecord
   #Método que retorna o nome do objeto
   def to_s
     self.nome
+  end
+
+  #Verifica se o usuário tem permissão para logar
+  def active_for_authentication?
+    super and self.ativo
   end
 end

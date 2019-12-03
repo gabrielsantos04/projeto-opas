@@ -26,7 +26,7 @@ class ImunizacaoVacinasController < ApplicationController
   #Método que retorna as indicacoes da vacina
   def retornarIndicacoes
     @combo = params[:combo]
-    @indicacoes = @imunizacao_vacina.imunizacao_indications
+    @indicacoes = @imunizacao_vacina.imunizacao_indications.order(:descricao)
   end
 
   # POST /imunizacao_vacinas

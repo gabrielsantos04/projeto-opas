@@ -23,6 +23,7 @@
     <th>Email</th>
     <th>Cidade</th>
     <th>Perfil</th>
+    <th>Ativo</th>
     <th>Ações</th>
   </tr>
   </thead>
@@ -36,6 +37,7 @@
       <td><%= user.email %></td>
       <td><%= user.cidade %></td>
       <td><%= user.role %></td>
+      <td><%= user.ativo == true ? "SIM" : "NÃO" %></td>
       <td><a class=" modal-trigger" href="#modal" onclick="set_id(<%= user.id %>,'<%= user.nome %>')">Alterar Senha</a></td>
 
     </tr>

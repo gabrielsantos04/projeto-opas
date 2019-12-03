@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    binding.pry
+    #binding.pry
     if @user.update(user_params)
       redirect_to @user, notice: 'User was successfully updated.'
     else
@@ -75,6 +75,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:nome, :cpf, :email, :cidade_id, :role, :password, :password_confirmation)
+      params.require(:user).permit(:nome, :cpf, :email, :cidade_id, :role, :password, :password_confirmation,:ativo)
     end
 end

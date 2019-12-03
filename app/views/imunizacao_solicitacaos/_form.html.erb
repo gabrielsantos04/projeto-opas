@@ -115,8 +115,8 @@
     </div>
 
     <div class="card-panel">
-      <h4 class="header2">Motivo da Solicitação</h4>
-      <%= f.text_area :motivo_solicitacao %>
+      <h4 class="header2">Solicitante</h4>
+      <%#= f.text_area :motivo_solicitacao %>
       <div class="input-field">
 
         <%= f.label :solicitante %>
@@ -129,7 +129,7 @@
       <h4 class="header2">Imunobiológicos Fornecidos pelo Estado</h4>
       <%= f.fields_for :imunobiologicos do |i| %>
           <%= i.hidden_field :imunizacao_solicitacao_id %>
-        <div class="card-panel">
+        <div class="card-panel" style="overflow: visible;">
           <div class="row">
             <div class="col s12 l6">
               <%= i.label :imunizacao_vacina_id, "Imunobiológico" %>
@@ -140,7 +140,7 @@
               <% if i.object.new_record? %>
                 <%= i.select :imunizacao_indication_id, [], {prompt: true}, {id: "indicacao_combo_#{i.index}", class:"browser-default" } %>
               <% else %>
-                <%= i.select :imunizacao_indication_id, i.object.imunizacao_vacina.imunizacao_indications, {prompt: true} %>
+                <%= i.select :imunizacao_indication_id, i.object.imunizacao_vacina.imunizacao_indications.to_select, {prompt: true} %>
               <% end %>
             </div>
           </div>
@@ -210,18 +210,18 @@
 
     </div>
 
-    <div class="card-panel">
-      <h4 class="header2">Outros Imunobiológicos</h4>
-      <%= f.fields_for :outros_imunobiologicos do |i| %>
-          <%= i.hidden_field :imunizacao_solicitacao_id %>
-          <div class="card-panel">
-            <%= i.text_field :nome_vacina %>
-            <%= i.link_to_remove "Apagar", class: "btn red" %>
+<!--    <div class="card-panel">-->
+<!--      <h4 class="header2">Outros Imunobiológicos</h4>-->
+      <%#= f.fields_for :outros_imunobiologicos do |i| %>
+          <%#= i.hidden_field :imunizacao_solicitacao_id %>
+<!--          <div class="card-panel">-->
+            <%#= i.text_field :nome_vacina %>
+            <%#= i.link_to_remove "Apagar", class: "btn red" %>
 
-          </div>
-      <% end %>
-      <%= f.link_to_add "Inserir", :outros_imunobiologicos, class: :btn %>
-    </div>
+<!--          </div>-->
+      <%# end %>
+      <%#= f.link_to_add "Inserir", :outros_imunobiologicos, class: :btn %>
+<!--    </div>-->
 
     <%= f.hidden_field :municipio_atual_id%>
 

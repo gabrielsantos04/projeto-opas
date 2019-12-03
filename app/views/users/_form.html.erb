@@ -40,10 +40,13 @@
   </div>
 
   <div class="input-field">
-
-
     <%= f.select :role, User.role.options,{prompt:true} %>
     <%= f.label :role, "Perfil" %>
+  </div>
+
+  <div class="input-field">
+    <%= f.select :ativo, [["SIM", true],["NÃO",false]] %>
+    <%= f.label :ativo, "Ativo" %>
   </div>
 
 </div>

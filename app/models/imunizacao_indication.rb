@@ -24,4 +24,9 @@ class ImunizacaoIndication < ApplicationRecord
   def to_s
     self.descricao
   end
+
+  #Método que retorna um array para ser utilizado nos combos
+  def self.to_select
+    all.order(:descricao).map{|a| ["#{a}", a.id]}
+  end
 end

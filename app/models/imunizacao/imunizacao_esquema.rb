@@ -10,6 +10,7 @@
 #  created_at                   :datetime         not null
 #  updated_at                   :datetime         not null
 #  imunizacao_imunobiologico_id :integer
+#  lote                         :string
 #
 # Indexes
 #
@@ -30,5 +31,5 @@ class ImunizacaoEsquema < ApplicationRecord
 
   extend Enumerize
   enumerize :status, in: [:concluido, :nao_aplicado], predicates: true
-  enumerize :dose, in: [:d1, :d2, :d3, :ref1, :ref2, :du], predicates: true
+  enumerize :dose, in: [:d1, :d2, :d3,:d4, :ref1, :ref2, :du], predicates: true
 end
