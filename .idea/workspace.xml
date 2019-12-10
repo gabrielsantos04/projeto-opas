@@ -3,24 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_imunobiologicos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_imunobiologicos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_esquema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_esquema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_vacina.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_vacina.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/imunizacao_indication.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/imunizacao_indication.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dst_solicitacaos/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_solicitacaos/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/imunizacao_esquemas.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/imunizacao_esquemas.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/users.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/imunizacao_esquema_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/imunizacao_esquema_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/user_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/user_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +230,8 @@
       <workItem from="1574856884650" duration="1253000" />
       <workItem from="1574858390324" duration="319000" />
       <workItem from="1574877329657" duration="687000" />
-      <workItem from="1575375670202" duration="1775000" />
+      <workItem from="1575375670202" duration="2317000" />
+      <workItem from="1575985042660" duration="758000" />
     </task>
     <servers />
   </component>

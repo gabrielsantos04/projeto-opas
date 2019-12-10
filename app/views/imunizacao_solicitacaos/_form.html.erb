@@ -133,12 +133,12 @@
           <div class="row">
             <div class="col s12 l6">
               <%= i.label :imunizacao_vacina_id, "Imunobiológico" %>
-              <%= i.select :imunizacao_vacina_id, ImunizacaoVacina.to_select, {prompt: true}, {id: "combo_#{i.index}" , class:"vacina", onchange: "indicacoes('combo_#{i.index}');"} %>
+              <%= i.select :imunizacao_vacina_id, ImunizacaoVacina.to_select, {prompt: true}, {id: "combo_#{i.index}" , class:"vacina browser-default select2", onchange: "indicacoes('combo_#{i.index}');"} %>
             </div>
             <div class="col s12 l6">
               <%= i.label :imunizacao_indication_id, "Indicação" %>
               <% if i.object.new_record? %>
-                <%= i.select :imunizacao_indication_id, [], {prompt: true}, {id: "indicacao_combo_#{i.index}", class:"browser-default" } %>
+                <%= i.select :imunizacao_indication_id, [], {prompt: true}, {id: "indicacao_combo_#{i.index}", class:"browser-default select2" } %>
               <% else %>
                 <%= i.select :imunizacao_indication_id, i.object.imunizacao_vacina.imunizacao_indications.to_select, {prompt: true} %>
               <% end %>
@@ -203,6 +203,7 @@
           <% end %>
           <%= i.link_to_add "Nova Dose", :imunizacao_esquemas, class: "btn" %>
            -->
+          <br>
           <%= i.link_to_remove "Apagar", class: "btn red" %>
         </div>
       <% end %>

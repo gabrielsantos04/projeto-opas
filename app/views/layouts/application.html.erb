@@ -202,36 +202,7 @@
 
     }
   </style>
-  <script type="text/javascript">
-    $(document).on('nested:fieldAdded', function(event){
-      // this field was just inserted into your form
-      var field = event.field;
-      // it's a jQuery object already! Now you can find date input
-      var dateField = field.find('.datetimepicker');
-      var chosenField = field.find('.chosen-select');
-      // and activate datepicker on it
-      dateField.datetimepicker();
-      chosenField.chosen();
-      $('select').material_select();
-      $('.select2').select2();
-      $('.datepicker').pickadate({
-            selectMonths: true, // Creates a dropdown to control month
-            selectYears: 100, // Creates a dropdown of 15 years to control year,
-            today: 'Hoje',
-            clear: 'Limpar',
-            close: 'Ok',
-            closeOnSelect: true // Close upon selecting a date,
-        });
-        $(".nedc").on("keydown", function(e)
-        {
 
-            if(e.keyCode != 8 && e.keyCode != 68 && e.keyCode != 37 && e.keyCode != 39 && e.keyCode != 78 && e.keyCode != 69&& e.keyCode != 67&& e.keyCode != 46 ) {
-                return false;
-            }
-        })
-    });
-
-  </script>
   <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
 
@@ -325,7 +296,8 @@ Scripts
 <!-- jQuery Library -->
 <!--materialize js-->
 
-<script type="text/javascript" src="/materialize/dist/js/materialize.js"></script>
+<!--<script type="text/javascript" src="/materialize/dist/js/materialize.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!--scrollbar-->
 <script type="text/javascript" src="/materialize/dist/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <!--prism-->
@@ -351,7 +323,7 @@ Scripts
 
 
 <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-<script type="text/javascript" src="/materialize/dist/js/plugins.js"></script>
+<!--<script type="text/javascript" src="/materialize/dist/js/plugins.js"></script>-->
 <script type="text/javascript" src="/chosen/chosen.jquery.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js"></script>
 <script src="/imagefill/js/jquery-imagefill.js"></script>
@@ -381,8 +353,9 @@ Scripts
     </script>
 <% end %>
 <script type="text/javascript">
-  $(".chosen-select").chosen();
+
   $(document).ready(function(){
+      $(".chosen-select").chosen();
       $('.select2').select2();
       $('.modal').modal();
   });
@@ -405,6 +378,36 @@ Scripts
       }
   });
   $.datetimepicker.setLocale('pt-BR');
+
+</script>
+<script type="text/javascript">
+    $(document).on('nested:fieldAdded', function(event){
+        // this field was just inserted into your form
+        var field = event.field;
+        // it's a jQuery object already! Now you can find date input
+        var dateField = field.find('.datetimepicker');
+        var chosenField = field.find('.chosen-select');
+        // and activate datepicker on it
+        dateField.datetimepicker();
+        chosenField.chosen();
+        $('select').formSelect();
+        $('.select2').select2();
+        // $('.datepicker').pickadate({
+        //     selectMonths: true, // Creates a dropdown to control month
+        //     selectYears: 100, // Creates a dropdown of 15 years to control year,
+        //     today: 'Hoje',
+        //     clear: 'Limpar',
+        //     close: 'Ok',
+        //     closeOnSelect: true // Close upon selecting a date,
+        // });
+        $(".nedc").on("keydown", function(e)
+        {
+
+            if(e.keyCode != 8 && e.keyCode != 68 && e.keyCode != 37 && e.keyCode != 39 && e.keyCode != 78 && e.keyCode != 69&& e.keyCode != 67&& e.keyCode != 46 ) {
+                return false;
+            }
+        })
+    });
 
 </script>
 <!--End of Tawk.to Script-->
