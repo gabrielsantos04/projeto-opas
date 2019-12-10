@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +229,7 @@
       <workItem from="1574858390324" duration="319000" />
       <workItem from="1574877329657" duration="687000" />
       <workItem from="1575375670202" duration="2317000" />
-      <workItem from="1575985042660" duration="1163000" />
+      <workItem from="1575985042660" duration="1244000" />
     </task>
     <servers />
   </component>
