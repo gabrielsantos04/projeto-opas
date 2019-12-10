@@ -66,7 +66,7 @@ class ImunizacaoSolicitacao < ApplicationRecord
     self.nome_mae = I18n.transliterate(self.nome_mae).upcase
     self.endereco = I18n.transliterate(self.endereco).upcase
     self.bairro = I18n.transliterate(self.bairro).upcase
-    self.motivo_solicitacao = I18n.transliterate(self.motivo_solicitacao).upcase
+    #self.motivo_solicitacao = I18n.transliterate(self.motivo_solicitacao).upcase
     self.nome_requisitante = I18n.transliterate(self.nome_requisitante).upcase
     self.instituicao_requisitante = I18n.transliterate(self.instituicao_requisitante).upcase
     self.solicitante = I18n.transliterate(self.solicitante).upcase
