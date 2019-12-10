@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" afterDir="false" />
-    </list>
+    <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,7 +228,7 @@
       <workItem from="1574877329657" duration="687000" />
       <workItem from="1575375670202" duration="2317000" />
       <workItem from="1575985042660" duration="1667000" />
-      <workItem from="1575999979747" duration="128000" />
+      <workItem from="1575999979747" duration="266000" />
     </task>
     <servers />
   </component>

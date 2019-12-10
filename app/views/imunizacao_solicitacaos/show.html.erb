@@ -287,8 +287,8 @@
                   <div class="card-panel" style="overflow: visible;">
                     <div class="row">
                       <div class="col s12 l4">
-                        <%= label_tag :dose %>
-                        <%= select_tag :dose, options_for_select(ImunizacaoEsquema.dose.options) %>
+                        <%= label_tag :dose %> <br>
+                        <%= select_tag :dose, options_for_select(ImunizacaoEsquema.dose.options), {class:'browser-default select2'} %>
                       </div>
                       <div class="col s12 l8">
                         <%= label_tag :esquema %>
