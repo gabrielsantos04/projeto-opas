@@ -32,7 +32,7 @@
         <div class="col s12 m6">
           <div class="">
             <%= f.label :sexo %>
-            <%= f.select :sexo, ImunizacaoSolicitacao.sexo.options %>
+            <%= f.select :sexo, ImunizacaoSolicitacao.sexo.options, class:"browser-default" %>
           </div>
         </div>
         <div class="col s12 m6">
@@ -69,7 +69,7 @@
 
       <div class="">
         <%= f.label :municipio_id %>
-        <%= f.select :municipio_id, Cidade.to_select,{ prompt: true},{class:"browser-default chosen-select"}  %>
+        <%= f.select :municipio_id, Cidade.to_select,{ prompt: true},{class:"browser-default select2"}  %>
       </div>
     </div>
     <div class="card-panel">
@@ -86,7 +86,7 @@
       <div class="row">
         <div class="col s12 m4">
           <%= f.label :tipo %>
-          <%= f.select :tipo_requisitante, ImunizacaoSolicitacao.tipo_requisitante.options %>
+          <%= f.select :tipo_requisitante, ImunizacaoSolicitacao.tipo_requisitante.options,{},{class:"browser-default select2"} %>
         </div>
         <div class="col s12 m4">
           <%= f.label :crm_coren, "CRM/COREN" %>
@@ -105,7 +105,7 @@
         </div>
         <div class="col s12 m4">
           <%= f.label :municipio %>
-          <%= f.select :municipio_requisitante_id, Cidade.to_select,{ prompt: true},{class:"browser-default chosen-select"}  %>
+          <%= f.select :municipio_requisitante_id, Cidade.to_select,{ prompt: true},{class:"browser-default select2"}  %>
         </div>
       </div>
 
@@ -140,7 +140,7 @@
               <% if i.object.new_record? %>
                 <%= i.select :imunizacao_indication_id, [], {prompt: true}, {id: "indicacao_combo_#{i.index}", class:"browser-default select2" } %>
               <% else %>
-                <%= i.select :imunizacao_indication_id, i.object.imunizacao_vacina.imunizacao_indications.to_select, {prompt: true} %>
+                <%= i.select :imunizacao_indication_id, i.object.imunizacao_vacina.imunizacao_indications.to_select, {prompt: true}, {id: "indicacao_combo_#{i.index}", class:"browser-default select2" } %>
               <% end %>
             </div>
           </div>
