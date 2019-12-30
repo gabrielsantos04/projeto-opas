@@ -10,9 +10,10 @@
 #
 
 class ImunizacaoVacina < ApplicationRecord
-  has_many :imunizacao_indications
-
-  accepts_nested_attributes_for :imunizacao_indications, allow_destroy: true
+  has_many :imunizacao_vacina_indications
+  has_many :imunizacao_indications, through: :imunizacao_vacina_indications
+  #
+  #accepts_nested_attributes_for :imunizacao_indications, allow_destroy: true
 
 
   #Método que retorna o nome do objeto

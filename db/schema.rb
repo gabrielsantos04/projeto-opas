@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191203124627) do
+ActiveRecord::Schema.define(version: 20191230122748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -788,10 +788,8 @@ ActiveRecord::Schema.define(version: 20191203124627) do
 
   create_table "imunizacao_indications", force: :cascade do |t|
     t.string "descricao"
-    t.bigint "imunizacao_vacina_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["imunizacao_vacina_id"], name: "index_imunizacao_indications_on_imunizacao_vacina_id"
   end
 
   create_table "imunizacao_solicitacaos", force: :cascade do |t|
@@ -821,6 +819,15 @@ ActiveRecord::Schema.define(version: 20191203124627) do
     t.integer "idade"
     t.text "deferimento"
     t.json "anexos"
+  end
+
+  create_table "imunizacao_vacina_indications", force: :cascade do |t|
+    t.bigint "imunizacao_vacina_id"
+    t.bigint "imunizacao_indication_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imunizacao_indication_id"], name: "index_imunizacao_vacina_indications_on_imunizacao_indication_id"
+    t.index ["imunizacao_vacina_id"], name: "index_imunizacao_vacina_indications_on_imunizacao_vacina_id"
   end
 
   create_table "imunizacao_vacinas", force: :cascade do |t|
@@ -1093,7 +1100,8 @@ ActiveRecord::Schema.define(version: 20191203124627) do
   add_foreign_key "imunizacao_imunobiologicos", "imunizacao_indications"
   add_foreign_key "imunizacao_imunobiologicos", "imunizacao_solicitacaos"
   add_foreign_key "imunizacao_imunobiologicos", "imunizacao_vacinas"
-  add_foreign_key "imunizacao_indications", "imunizacao_vacinas"
+  add_foreign_key "imunizacao_vacina_indications", "imunizacao_indications"
+  add_foreign_key "imunizacao_vacina_indications", "imunizacao_vacinas"
   add_foreign_key "marcacaos", "avaliacao_sensitivas"
   add_foreign_key "monthly_reports", "cidades"
   add_foreign_key "nervos_recidivas", "recidivas"

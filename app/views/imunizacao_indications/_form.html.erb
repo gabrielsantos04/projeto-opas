@@ -1,0 +1,47 @@
+<%= nested_form_for(imunizacao_indication) do |f| %>
+  <% if imunizacao_indication.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
+
+      <ul>
+        <% imunizacao_indication.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="card-panel">
+
+    <div class="input-field">
+
+      <%= f.label :descricao, "Indicação" %>
+      <%= f.text_area :descricao %>
+
+    </div>
+
+    <div class="card-panel">
+      <h4 class="header2">Imunobiológicos</h4>
+      <%= f.fields_for :imunizacao_vacina_indications do |i| %>
+        <div class="card-panel">
+          <div class="row">
+            <div class="col s10 input">
+              <%= i.label :imunizacao_vacina_id, "Imunobiológico" %>
+              <%= i.select :imunizacao_vacina_id, @vacinas, {prompt:true},{class:"select2 browser-default"} %>
+
+            </div>
+            <div class="col s2">
+              <%= i.link_to_remove "Excluir", class: "btn red" %>
+            </div>
+
+
+          </div>
+        </div>
+      <% end %>
+      <%= f.link_to_add "Inserir", :imunizacao_vacina_indications, class: :btn %>
+    </div>
+
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar", class:"btn" %>
+  </div>
+<% end %>

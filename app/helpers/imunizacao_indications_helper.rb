@@ -1,0 +1,2 @@
+module ImunizacaoIndicationsHelper
+end

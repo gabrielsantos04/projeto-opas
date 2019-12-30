@@ -97,6 +97,11 @@ Rails.application.routes.draw do
       end
     end
     resources :imunizacao_solicitacaos
+    resources :imunizacao_indications do
+      member do
+        get "retornar_vacinas"
+      end
+    end
   end
 
   scope  "/dst" do

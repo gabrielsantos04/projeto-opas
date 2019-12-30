@@ -1,0 +1,23 @@
+<div class="card-panel center-align">
+  <h4>Indicação</h4>
+</div>
+<div class="card-panel">
+
+  <p>
+    <strong>Descrição:</strong>
+    <%= @imunizacao_indication.descricao %>
+  </p>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title"><b>Imunobiológicos</b></span>
+      <% @imunizacao_indication.imunizacao_vacinas.each  do |i| %>
+        <p><%= i %></p>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+<%= link_to 'Voltar', imunizacao_indications_path, class:"btn" %>

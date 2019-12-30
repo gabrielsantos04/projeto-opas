@@ -133,77 +133,19 @@
         <div class="card-panel" style="overflow: visible;">
           <div class="row">
             <div class="col s12 l6">
-              <%= i.label :imunizacao_vacina_id, "Imunobiológico" %>
-              <%= i.select :imunizacao_vacina_id, ImunizacaoVacina.to_select, {prompt: true}, {id: "combo_#{i.index}" , class:"vacina browser-default select2", onchange: "indicacoes('combo_#{i.index}');"} %>
+              <%= i.label :imunizacao_indication_id, "Indicação" %>
+              <%= i.select :imunizacao_indication_id, ImunizacaoIndication.to_select, {prompt: true}, {id: "combo_#{i.index}" , class:"vacina browser-default select2", onchange: "indicacoes('combo_#{i.index}');"} %>
             </div>
             <div class="col s12 l6">
-              <%= i.label :imunizacao_indication_id, "Indicação" %>
+              <%= i.label :imunizacao_vacina_id, "Imunobiológico" %>
               <% if i.object.new_record? %>
-                <%= i.select :imunizacao_indication_id, [], {prompt: true}, {id: "indicacao_combo_#{i.index}", class:"browser-default select2" } %>
+                <%= i.select :imunizacao_vacina_id, [], {prompt: true}, {id: "indicacao_combo_#{i.index}", class:"browser-default select2" } %>
               <% else %>
-                <%= i.select :imunizacao_indication_id, i.object.imunizacao_vacina.imunizacao_indications.to_select, {prompt: true}, {id: "indicacao_combo_#{i.index}", class:"browser-default select2" } %>
+                <%= i.select :imunizacao_vacina_id, i.object.imunizacao_indication.imunizacao_vacinas.to_select, {prompt: true}, {id: "indicacao_combo_#{i.index}", class:"browser-default select2" } %>
               <% end %>
             </div>
           </div>
-          <!--<p><b>Doses:</b></p>
-          <%= i.fields_for :imunizacao_esquemas do |e| %>
-            <div class="card-panel">
-              <div class="row">
-                <div class="col s12 m4">
-                  <%= e.label :dose %>
-                  <%= e.select :dose, ImunizacaoEsquema.dose.options %>
-                </div>
-                <div class="col s12 m4">
-                  <%= e.label :esquema %>
-                  <%= e.text_field :esquema %>
-                </div>
-                <div class="col s12 m4">
-                  <%= e.label :status %>
-                  <%= e.select :status, ImunizacaoEsquema.status.options %>
-                </div>
-              </div>
-              <p><b>Encerramentos:</b></p>
-              <%= e.fields_for :imunizacao_encerramentos do |ie| %>
-                <div class="card-panel">
-                  <div>
-                    <%= ie.label "Data de Administação" %>
-                    <%= ie.date_field :data_administracao %>
-                  </div>
-                  <div>
-                    <%= ie.label :lote %>
-                    <%= ie.text_field :lote %>
-                  </div>
-                  <div>
-                    <%= ie.label :validade %>
-                    <%= ie.date_field :validade%>
-                  </div>
-                  <div>
-                    <%= ie.label :laboratorio %>
-                    <%= ie.text_field :laboratorio %>
-                  </div>
-                  <div>
-                    <%= ie.label :unidade_administracao %>
-                    <%= ie.text_field :unidade_administracao %>
-                  </div>
-                  <div>
-                    <%= ie.label :via_administracao %>
-                    <%= ie.select :via_administracao, ImunizacaoEncerramento.via_administracao.options%>
-                  </div>
-                  <div>
-                    <%= ie.label :profissional %>
-                    <%= ie.text_field :profissional %>
-                  </div>
-                  <div>
-                    <%= ie.label :observacoes %>
-                    <%= ie.text_field :observacoes %>
-                  </div>
-                </div>
-              <% end %>
-              <%= e.link_to_add "Novo Encerramento", :imunizacao_encerramentos, class: "btn" %>
-            </div>
-          <% end %>
-          <%= i.link_to_add "Nova Dose", :imunizacao_esquemas, class: "btn" %>
-           -->
+
           <br>
           <%= i.link_to_remove "Apagar", class: "btn red" %>
         </div>
@@ -266,6 +208,6 @@
     function indicacoes(combo)
     {
         console.log($('#'+combo).val());
-        $.get('/imunizacao/imunizacao_vacinas/'+ $('#'+combo).val()+'/retornarIndicacoes?combo='+combo );
+        $.get('/imunizacao/imunizacao_indications/'+ $('#'+combo).val()+'/retornar_vacinas?combo='+combo );
     }
 </script>
