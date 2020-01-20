@@ -56,6 +56,8 @@ class Ability
       can :manage, ImunizacaoVacina
     elsif user.municipio_imuni?
       can :manage, ImunizacaoSolicitacao
+      can :manage, ImunizacaoEncerramento
+      can :manage, ImunizacaoEsquema
     else
 
 

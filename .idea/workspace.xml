@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_indications_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_indications_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/ability.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ability.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +236,7 @@
       <workItem from="1576594965724" duration="679000" />
       <workItem from="1577707736839" duration="4766000" />
       <workItem from="1577969917846" duration="10000" />
-      <workItem from="1579519654482" duration="1156000" />
+      <workItem from="1579519654482" duration="1312000" />
     </task>
     <servers />
   </component>
