@@ -399,7 +399,7 @@
 
   <div >
 
-    <b>Municipio Atual:</b><br>
+    <b>Município Atual:</b><br>
     <%= @imunizacao_solicitacao.municipio_atual %>
 
   </div>
@@ -430,8 +430,8 @@
 
         </div>
         <div class="input">
-          <%= f.label :municipio_atual %>
-          <%= f.select :municipio_atual, Cidade.all.map{|a| [a.nome,a.id]},{ prompt: true},{class:"browser-default chosen-select"} %>
+          <%= f.label :municipio_atual, "Município Atual" %>
+          <%= f.select :municipio_atual_id, Cidade.all.map{|a| [a.nome,a.id]},{ prompt: true},{class:"browser-default chosen-select"} %>
 
         </div>
         <%= f.submit "Salvar", class:"btn white-text", target:"_self" %>
