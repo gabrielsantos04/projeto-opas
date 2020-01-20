@@ -21,7 +21,7 @@
       <div class="">
 
         <b>Idade:</b><br>
-        <%= @imunizacao_solicitacao.idade %>
+        <%= distance_of_time_in_words(@imunizacao_solicitacao.data_nascimento, Time.now, only: [:years,:months,:days]) %>
 
       </div>
     </div>

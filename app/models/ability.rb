@@ -54,7 +54,12 @@ class Ability
       can :manage, ImunizacaoImunobiologico
       can :manage, ImunizacaoSolicitacao
       can :manage, ImunizacaoVacina
+    elsif user.municipio_imuni?
+      can :manage, ImunizacaoSolicitacao
     else
+
+
+
       can :create, Paciente
       can :manage, Paciente do |p|
         p.cidade == user.cidade

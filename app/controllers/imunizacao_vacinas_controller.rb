@@ -6,7 +6,7 @@ class ImunizacaoVacinasController < ApplicationController
 
   # GET /imunizacao_vacinas
   def index
-    @q = ImunizacaoVacina.all.ransack(params[:q])
+    @q = ImunizacaoVacina.all.order(nome: :asc).ransack(params[:q])
     @imunizacao_vacinas = @q.result.page(params[:page])
   end
 

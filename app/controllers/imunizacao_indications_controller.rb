@@ -4,7 +4,7 @@ class ImunizacaoIndicationsController < ApplicationController
 
   # GET /imunizacao_indications
   def index
-    @q = ImunizacaoIndication.all.ransack(params[:q])
+    @q = ImunizacaoIndication.all.order(descricao: :asc).ransack(params[:q])
     @imunizacao_indications = @q.result.page(params[:page])
   end
 

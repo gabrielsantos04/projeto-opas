@@ -48,6 +48,9 @@ gem 'sdoc'
 gem 'rdoc'
 gem 'jquery-rails'
 
+#https://github.com/radar/distance_of_time_in_words
+gem 'dotiw'
+
 #gem 'paper_trail'
 
 group :development, :test do
