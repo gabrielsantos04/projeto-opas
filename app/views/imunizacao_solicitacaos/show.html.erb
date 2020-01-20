@@ -436,6 +436,6 @@
         </div>
         <%= f.submit "Salvar", class:"btn white-text", target:"_self" %>
       </div>
-  <% end %>
+  <% end if current_user.administrador? || current_user.admin_imuni? %>
 </div>
 
