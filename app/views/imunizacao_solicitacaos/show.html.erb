@@ -84,7 +84,7 @@
   <div class="row">
     <div class="col s12 m4">
       <b>Tipo de Requisitante:</b><br>
-      <%= @imunizacao_solicitacao.tipo_requisitante %>
+      <%= @imunizacao_solicitacao.tipo_requisitante_text %>
     </div>
     <div class="col s12 m4">
       <b>CRM/COREN:</b><br>
@@ -109,15 +109,37 @@
 </div>
 
 <div class="card-panel">
-  <h4 class="header2"><b>Solicitante</b></h4>
+  <h4 class="header2">Identificação so Solicitante</h4>
   <%#= @imunizacao_solicitacao.motivo_solicitacao %>
   <div class="input-field">
+    <b>Nome:</b><br>
     <%= @imunizacao_solicitacao.solicitante %>
   </div>
-<!--  <p><b>Anexos</b></p>-->
-  <%# @imunizacao_solicitacao.anexos.each do |a| %>
-<!--    <%#= link_to a.url.split("/").last, a.url  %> <br>-->
-  <%# end %>
+  <div class="row">
+    <div class="col s12 m4">
+      <b>Tipo de Solicitante:</b><br>
+      <%= @imunizacao_solicitacao.solicitante_tipo_text %>
+    </div>
+    <div class="col s12 m4">
+      <b>CRM/COREN:</b><br>
+      <%= @imunizacao_solicitacao.solicitante_crm_corem %>
+    </div>
+    <div class="col s12 m4">
+      <b>Telefone:</b><br>
+      <%= @imunizacao_solicitacao.solicitante_telefone %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m8">
+      <b>Instituição:</b><br>
+      <%= @imunizacao_solicitacao.solicitante_instituicao%>
+    </div>
+    <div class="col s12 m4">
+      <b>Município:</b><br>
+      <%= @imunizacao_solicitacao.solicitante_municipio %>
+    </div>
+  </div>
 </div>
 <div class="card-panel" style="overflow: visible;">
   <h4 class="header2">Imunobiológicos Fornecidos pelo Estado</h4>

@@ -225,6 +225,13 @@ pt-BR:
           other: "%{count} erros"
   enumerize:
     defaults:
+      tipo_requisitante:
+        medico: "Médico"
+        enfermeiro: "Enfermeiro"
+      solicitante_tipo:
+        medico: "Médico"
+        enfermeiro: "Enfermeiro"
+        tecnico: "Técnico de enfermagem"
       grau_incapacidade:
         grau_1: "Grau 1"
         grau_2: "Grau 2"

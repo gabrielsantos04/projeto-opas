@@ -29,6 +29,11 @@
 #  idade                     :integer
 #  deferimento               :text
 #  anexos                    :json
+#  solicitante_tipo          :string
+#  solicitante_crm_corem     :string
+#  solicitante_telefone      :string
+#  solicitante_instituicao   :string
+#  solicitante_municipio     :integer
 #
 
 require 'test_helper'

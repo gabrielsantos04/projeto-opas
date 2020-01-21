@@ -69,7 +69,7 @@ class ImunizacaoSolicitacaosController < ApplicationController
       params.require(:imunizacao_solicitacao).permit(
           :nome_paciente, :idade,:telefone_paciente,:data_nascimento, :sexo, :nome_mae, :endereco,
           :bairro, :municipio_id, :motivo_solicitacao, :nome_requisitante,
-          :tipo_requisitante, :crm_coren, :telefone_requisitante,
+          :tipo_requisitante, :crm_coren, :telefone_requisitante, :solicitante_tipo, :solicitante_crm_corem, :solicitante_telefone, :solicitante_instituicao, :solicitante_municipio,
           :instituicao_requisitante, :municipio_requisitante_id, {anexos:[] },
           :solicitante, :observacoes,:deferimento, :data_atendimento, :municipio_atual_id,
           :status,

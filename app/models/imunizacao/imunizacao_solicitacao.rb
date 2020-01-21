@@ -29,11 +29,17 @@
 #  idade                     :integer
 #  deferimento               :text
 #  anexos                    :json
+#  solicitante_tipo          :string
+#  solicitante_crm_corem     :string
+#  solicitante_telefone      :string
+#  solicitante_instituicao   :string
+#  solicitante_municipio     :integer
 #
 
 class ImunizacaoSolicitacao < ApplicationRecord
   belongs_to :municipio, class_name: 'Cidade'
   belongs_to :municipio_requisitante, class_name: 'Cidade'
+  #belongs_to :solicitante_municipio, class_name: 'Cidade'
   belongs_to :municipio_atual, class_name: 'Cidade', optional: true
   has_many :imunobiologicos, -> { where tipo: 'fornecidas'  }, class_name: "ImunizacaoImunobiologico"
   has_many :outros_imunobiologicos, -> { where tipo: 'outros'  }, class_name: "ImunizacaoImunobiologico"
@@ -43,6 +49,7 @@ class ImunizacaoSolicitacao < ApplicationRecord
   extend Enumerize
   enumerize :sexo, in: [:masculino, :feminino], predicates: true
   enumerize :tipo_requisitante, in: [:medico, :enfermeiro], predicates: true
+  enumerize :solicitante_tipo, in: [:medico, :enfermeiro, :tecnico], predicates: true
   enumerize :status, in: [:solicitado, :autorizado, :nao_autorizado, :em_analise,:pendente], predicates: true, default: :solicitado
 
   accepts_nested_attributes_for :imunobiologicos, allow_destroy: true

@@ -116,13 +116,39 @@
     </div>
 
     <div class="card-panel">
-      <h4 class="header2">Solicitante</h4>
+      <h4 class="header2">Identificação do Solicitante <span style="font-size: 0.8rem; color: #9e9e9e "> (em caso de transcrição de prescrição médica)</span></h4>
       <%#= f.text_area :motivo_solicitacao %>
       <div class="input-field">
 
         <%= f.label :solicitante %>
         <%= f.text_field :solicitante %>
 
+      </div>
+
+      <div class="row">
+        <div class="col s12 m4">
+          <%= f.label :solicitante_tipo, "Tipo" %>
+          <%= f.select :solicitante_tipo, ImunizacaoSolicitacao.solicitante_tipo.options,{},{class:"browser-default select2"} %>
+        </div>
+        <div class="col s12 m4">
+          <%= f.label :solicitante_crm_corem, "CRM/COREN" %>
+          <%= f.text_field :solicitante_crm_corem %>
+        </div>
+        <div class="col s12 m4">
+          <%= f.label :solicitante_telefone, "Telefone" %>
+          <%= f.text_field :solicitante_telefone %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m8">
+          <%= f.label :solicitante_instituicao, "Instituição" %>
+          <%= f.text_field :solicitante_instituicao %>
+        </div>
+        <div class="col s12 m4">
+          <%= f.label :solicitante_municipio, "Município" %>
+          <%= f.select :solicitante_municipio, Cidade.to_select,{ prompt: true},{class:"browser-default select2"}  %>
+        </div>
       </div>
     </div>
 
@@ -170,16 +196,16 @@
     <%= f.hidden_field :municipio_atual_id%>
 
     <div class="card-panel">
+      <h4 class="header2">Observações aicionais sobre o paciente</h4>
       <div class="input-field">
-
+        <%= f.text_area :observacoes, {class:"materialize-textarea"} %>
         <%= f.label :observacoes, "Observações" %>
-        <%= f.text_area :observacoes %>
-
       </div>
     </div>
 
   <div class="card-panel">
-    <h4 class="header2">Anexos</h4>
+    <h4 class="header2">Anexos<span style="font-size: 0.8rem; color: #9e9e9e "> (Cartão de vacinas, documento pessoal, prescrição médica, relatório médico, relatório de alta)</span></h4>
+
     <%= f.fields_for :imunizacao_files do |i| %>
       <div class="card-panel">
         <div class="row">

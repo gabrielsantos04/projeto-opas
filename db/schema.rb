@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191230122748) do
+ActiveRecord::Schema.define(version: 20200121123441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -819,6 +819,11 @@ ActiveRecord::Schema.define(version: 20191230122748) do
     t.integer "idade"
     t.text "deferimento"
     t.json "anexos"
+    t.string "solicitante_tipo"
+    t.string "solicitante_crm_corem"
+    t.string "solicitante_telefone"
+    t.string "solicitante_instituicao"
+    t.integer "solicitante_municipio"
   end
 
   create_table "imunizacao_vacina_indications", force: :cascade do |t|
