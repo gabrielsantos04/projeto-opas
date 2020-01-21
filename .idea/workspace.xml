@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/locales/pt-BR.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/pt-BR.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/imunizacao_solicitacaos.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/imunizacao_solicitacaos.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/imunizacao_solicitacao_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/imunizacao_solicitacao_test.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +239,8 @@
       <workItem from="1577969917846" duration="10000" />
       <workItem from="1579519654482" duration="1917000" />
       <workItem from="1579531602277" duration="2950000" />
-      <workItem from="1579609900907" duration="1801000" />
+      <workItem from="1579609900907" duration="2412000" />
+      <workItem from="1579620503853" duration="16000" />
     </task>
     <servers />
   </component>
