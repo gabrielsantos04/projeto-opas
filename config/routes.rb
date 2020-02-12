@@ -95,6 +95,9 @@ Rails.application.routes.draw do
       member do
         get "retornarIndicacoes"
       end
+      collection do
+        get "relatorio"
+      end
     end
     resources :imunizacao_solicitacaos
     resources :imunizacao_indications do

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/views/imunizacao_vacinas/relatorio.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/imunizacao_solicitacaos/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/imunizacao/imunizacao_solicitacao.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +245,8 @@
       <workItem from="1579609900907" duration="2412000" />
       <workItem from="1579620503853" duration="616000" />
       <workItem from="1579867303895" duration="667000" />
-      <workItem from="1580122973108" duration="587000" />
+      <workItem from="1580122973108" duration="1187000" />
+      <workItem from="1581515149990" duration="3313000" />
     </task>
     <servers />
   </component>

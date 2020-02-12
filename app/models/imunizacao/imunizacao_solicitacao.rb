@@ -44,6 +44,8 @@ class ImunizacaoSolicitacao < ApplicationRecord
   has_many :imunobiologicos, -> { where tipo: 'fornecidas'  }, class_name: "ImunizacaoImunobiologico"
   has_many :outros_imunobiologicos, -> { where tipo: 'outros'  }, class_name: "ImunizacaoImunobiologico"
   has_many :imunizacao_files
+  has_many :imunizacao_esquemas, through: :imunobiologicos
+  has_many :imunizacao_encerramentos, through: :imunizacao_esquemas
 
 
   extend Enumerize

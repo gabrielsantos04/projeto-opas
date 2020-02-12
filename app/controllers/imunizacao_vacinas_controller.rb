@@ -23,6 +23,14 @@ class ImunizacaoVacinasController < ApplicationController
   def edit
   end
 
+
+  def relatorio
+    @q = ImunizacaoSolicitacao.includes(:imunobiologicos,:imunizacao_esquemas,:imunizacao_encerramentos).all.order(created_at: :desc).ransack(params[:q])
+
+
+    @imunizacao_solicitacaos = @q.result.page(params[:page])
+  end
+
   #Método que retorna as indicacoes da vacina
   def retornarIndicacoes
     @combo = params[:combo]
