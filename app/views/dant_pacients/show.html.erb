@@ -57,6 +57,12 @@
         <%= @dant_pacient.cpf %>
       </p>
     </div>
+    <div class="col s12 l3">
+      <p>
+        <strong>Cartão SUS:</strong>
+        <%= @dant_pacient.cartao_sus %>
+      </p>
+    </div>
   </div>
 
   <div class="row">
@@ -84,7 +90,7 @@
             <tbody>
               <% @dant_pacient.dant_doses.each do |dose| %>
                 <tr>
-                  <td><%= dose.tipo_insulina.upcase %></td>
+                  <td><%= dose.tipo_insulina_text.upcase %></td>
                   <td><%= dose.dose_diaria %></td>
                   <td><%= dose.frascos_mensais %></td>
                 </tr>

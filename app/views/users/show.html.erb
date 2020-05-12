@@ -1,3 +1,4 @@
+<h1 class="center-align">Usuário</h1>
 <div class="card-panel">
 	
 <p>
@@ -21,9 +22,14 @@
 </p>
 
 <p>
-  <strong>Role:</strong>
+  <strong>Perfil:</strong>
   <%= @user.role %>
 </p>
+
+  <p>
+    <strong>Ativo:</strong>
+    <%= @user.ativo == true ? "SIM" : "NÃO" %>
+  </p>
 
 </div>
 <%= link_to 'Voltar', users_path, class:"btn" %>

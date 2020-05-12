@@ -29,7 +29,7 @@
 #
 
 class Paciente < ApplicationRecord
-  belongs_to :cidade, counter_cache: true
+  belongs_to :cidade, counter_cache: true, dependent: :destroy
   belongs_to :ocupacao
 
   has_many :notificacaos

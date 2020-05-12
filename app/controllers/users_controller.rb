@@ -28,6 +28,18 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def alterar_senha
+    user = User.find(params[:usuario])
+    user.password = params[:password]
+    user.password_confirmation = params[:password_confirmation]
+    if user.save
+      redirect_to users_path, notice: 'Senha alterada com sucesso'
+    else
+      redirect_to users_path, alert: user.errors.full_messages.to_sentence
+    end
+  end
+
+
   # POST /users
   def create
     @user = User.new(user_params)
@@ -41,6 +53,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
+    #binding.pry
     if @user.update(user_params)
       redirect_to @user, notice: 'User was successfully updated.'
     else
@@ -62,6 +75,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:nome, :cpf, :email, :cidade_id, :role)
+      params.require(:user).permit(:nome, :cpf, :email, :cidade_id, :role, :password, :password_confirmation,:ativo)
     end
 end

@@ -19,6 +19,7 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
 #  last_sign_in_ip        :inet
+#  ativo                  :boolean
 #
 # Indexes
 #
@@ -34,12 +35,12 @@ class User < ApplicationRecord
   has_many :dst_user_locals
   has_many :dst_locals, through: :dst_user_locals
   has_many :dst_movimentacaos, through: :dst_locals
-  has_many :dst_solicitacaos, through: :dst_locals
+  has_many :dst_solicitacaos
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  belongs_to :cidade
+  belongs_to :cidade, dependent: :destroy
 
   extend Enumerize
 
@@ -51,5 +52,10 @@ class User < ApplicationRecord
   #Método que retorna o nome do objeto
   def to_s
     self.nome
+  end
+
+  #Verifica se o usuário tem permissão para logar
+  def active_for_authentication?
+    super and self.ativo
   end
 end

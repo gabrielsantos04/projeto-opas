@@ -13,31 +13,71 @@
     <div class="card-panel">
 
       <div class="input-field">
-        <%= f.select :dst_local_id, @locals %>
+        <%= f.select :mes, [["Janeiro","janeiro"],["Fevereiro","fevereiro"],["Março","março"],["Abril","abril"],["Maio","maio"],["Junho","junho"],["Julho","julho"],["Agosto","agosto"],["Setembro","setembro"],["Outubro","outubro"],["Novembro","novembro"],["Dezembro","dezembro"]] %>
+        <%= f.label :mes, "Mês" %>
+      </div>
+
+      <div class="input-field">
+        <%= f.label :responsavel, "Responsável" %>
+        <%= f.text_field :responsavel %>
+      </div>
+      <div class="input-field">
+        <%= f.label :cargo_funcao , "Cargo/Função"%>
+        <%= f.text_field :cargo_funcao %>
+
+      </div>
+      <div class="input-field">
+        <%= f.label :contato %>
+        <%= f.text_field :contato %>
 
       </div>
 
       <div>
-        <%= f.label :observacoes %>
+        <%= f.label :observacoes, "Observações" %>
         <%= f.text_area :observacoes %>
       </div>
-
+      <%= f.hidden_field :cidade_id %>
     </div>
     <div class="card-panel">
       <%= f.fields_for :dst_solicitacao_produtos do |p| %>
           <div class="card-panel">
             <div>
-              <%= p.label :produto %>
-              <%= p.collection_select :dst_produto_id, DstProduto.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select", id: :produto}  %>
+              <%= p.label :produto %>:
+              <%#= p.collection_select :dst_produto_id, DstProduto.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default", id: :produto, readonly: true}  %>
+              <b><%= DstProduto.find(p.object.dst_produto_id)%></b>
+              <%= p.hidden_field :dst_produto_id %>
             </div>
-            <div>
-              <%= p.label :quantidade, "Quantidade Solicitada" %>
-              <%= p.number_field :quantidade %>
+            <div class="row">
+              <div class="col s2">
+                <%= p.label :saldo_anterior, "Saldo Anterior" %>
+                <%= p.number_field :saldo_anterior %>
+              </div>
+              <div class="col s2">
+                <%= p.label :entradas_ms, "MS" %>
+                <%= p.number_field :entradas_ms %>
+              </div>
+
+              <div class="col s2">
+                <%= p.label :distribuido, "Distribuído" %>
+                <%= p.number_field :distribuido %>
+              </div>
+              <div class="col s2">
+                <%= p.label :qtd_remanejado, "Remanejado" %>
+                <%= p.number_field :qtd_remanejado %>
+              </div>
+              <div class="col s2">
+                <%= p.label :qtd_perdas, "Perdas" %>
+                <%= p.number_field :qtd_perdas %>
+              </div>
+              <div class="col s2">
+                <%= p.label :quantidade, "Quantidade Solicitada" %>
+                <%= p.number_field :quantidade %>
+              </div>
             </div>
-            <%= p.link_to_remove "Apagar", class: "btn red" %>
+            <%#= p.link_to_remove "Apagar", class: "btn red" %>
           </div>
       <% end %>
-      <%= f.link_to_add "Inserir Novo Produto",:dst_solicitacao_produtos, class: :btn  %>
+      <%#= f.link_to_add "Inserir Novo Produto",:dst_solicitacao_produtos, class: :btn  %>
     </div>
 
 

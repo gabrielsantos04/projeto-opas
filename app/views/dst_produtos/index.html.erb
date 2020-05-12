@@ -16,8 +16,10 @@
   <thead>
   <tr>
     <th>Nome</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
     <th>Unidade medida</th>
+    <th>Ativo</th>
+    <th>Ações</th>
   </tr>
   </thead>
 
@@ -34,7 +36,8 @@
 
 
         <td><%= dst_produto.unidade_medida %></td>
-
+        <td><%= dst_produto.status == true ? "SIM" : "NÃO"  %></td>
+         <td><td><%= link_to 'Excluir', dst_produto, method: :delete, data: { confirm: 'Deseja realmente excluir?' } if dst_produto.dst_solicitacao_produtos.count == 0 %></td></td> 
       </tr>
   <% end %>
   </tbody>

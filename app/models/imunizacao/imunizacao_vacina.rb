@@ -10,9 +10,10 @@
 #
 
 class ImunizacaoVacina < ApplicationRecord
-  has_many :imunizacao_indications
-
-  accepts_nested_attributes_for :imunizacao_indications, allow_destroy: true
+  has_many :imunizacao_vacina_indications
+  has_many :imunizacao_indications, through: :imunizacao_vacina_indications
+  #
+  #accepts_nested_attributes_for :imunizacao_indications, allow_destroy: true
 
 
   #Método que retorna o nome do objeto
@@ -22,7 +23,7 @@ class ImunizacaoVacina < ApplicationRecord
 
   #Método que retorna um array para ser utilizado nos combos
   def self.to_select
-    all.map{|a| ["#{a}", a.id]}
+    all.order(:nome).map{|a| ["#{a}", a.id]}
   end
 
 end

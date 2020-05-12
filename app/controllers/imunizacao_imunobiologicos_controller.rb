@@ -20,6 +20,7 @@ class ImunizacaoImunobiologicosController < ApplicationController
     dose = ImunizacaoEsquema.new
     dose.dose = params[:dose]
     dose.esquema = params[:esquema]
+    dose.lote = params[:lote]
     dose.imunizacao_imunobiologico = @imunizacao_imunobiologico
     dose.save
     @imunizacao_imunobiologico.status = :deferido

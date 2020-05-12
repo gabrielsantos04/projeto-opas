@@ -57,7 +57,7 @@
 
 class DantRequest < ApplicationRecord
   belongs_to :dant_responsavel_program
-  belongs_to :cidade
+  belongs_to :cidade, dependent: :destroy
   has_many :dant_request_pacients, dependent: :destroy
   has_many :dant_pacients, through: :dant_request_pacients
   has_many :dant_faixa_etarias, class_name: "DantFaixaEtarium"
@@ -71,6 +71,16 @@ class DantRequest < ApplicationRecord
   enumerize :status, in: [:cadastrada,:solicitado, :deferido,:indeferido,:entregue], predicates: true
 
   before_create :set_status
+  after_create :set_pacientes
+
+  def set_pacientes
+    pacientes = DantPacient.where(cidade_id: self.cidade_id).where.not(obito: true)
+    pacientes.each do |p|
+      pac = DantRequestPacient.new(dant_request_id: self.id,dant_pacient_id:p.id, idade: p.idade, hipertenso: p.hipertenso, diabetico: p.diabetico,sexo: p.sexo_value)
+      pac.save
+    end
+  end
+
 
   #Método que seta o status da solicitação
   def set_status

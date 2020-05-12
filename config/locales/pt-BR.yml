@@ -225,6 +225,18 @@ pt-BR:
           other: "%{count} erros"
   enumerize:
     defaults:
+      tipo_insulina:
+        nph_frascos: "NPH FRASCOS"
+        regular_frascos: "REGULAR FRASCOS"
+        nph_de_caneta: "NPH DE CANETA"
+        regular_de_caneta: "REGULAR DE CANETA"
+      tipo_requisitante:
+        medico: "Médico"
+        enfermeiro: "Enfermeiro"
+      solicitante_tipo:
+        medico: "Médico"
+        enfermeiro: "Enfermeiro"
+        tecnico: "Técnico de enfermagem"
       grau_incapacidade:
         grau_1: "Grau 1"
         grau_2: "Grau 2"

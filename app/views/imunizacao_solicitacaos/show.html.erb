@@ -21,7 +21,7 @@
       <div class="">
 
         <b>Idade:</b><br>
-        <%= @imunizacao_solicitacao.idade %>
+        <%= distance_of_time_in_words(@imunizacao_solicitacao.data_nascimento, Time.now, only: [:years,:months,:days]) %>
 
       </div>
     </div>
@@ -84,7 +84,7 @@
   <div class="row">
     <div class="col s12 m4">
       <b>Tipo de Requisitante:</b><br>
-      <%= @imunizacao_solicitacao.tipo_requisitante %>
+      <%= @imunizacao_solicitacao.tipo_requisitante_text %>
     </div>
     <div class="col s12 m4">
       <b>CRM/COREN:</b><br>
@@ -109,18 +109,37 @@
 </div>
 
 <div class="card-panel">
-  <h4 class="header2"><b>Motivo da Solicitação</b></h4>
-  <%= @imunizacao_solicitacao.motivo_solicitacao %> <br>
+  <h4 class="header2">Identificação so Solicitante</h4>
+  <%#= @imunizacao_solicitacao.motivo_solicitacao %>
   <div class="input-field">
-
-    <b>Solicitante:</b><br>
+    <b>Nome:</b><br>
     <%= @imunizacao_solicitacao.solicitante %>
-
   </div>
-  <p><b>Anexos</b></p>
-  <% @imunizacao_solicitacao.anexos.each do |a| %>
-    <%= link_to a.url.split("/").last, a.url  %> <br>
-  <% end %>
+  <div class="row">
+    <div class="col s12 m4">
+      <b>Tipo de Solicitante:</b><br>
+      <%= @imunizacao_solicitacao.solicitante_tipo_text %>
+    </div>
+    <div class="col s12 m4">
+      <b>CRM/COREN:</b><br>
+      <%= @imunizacao_solicitacao.solicitante_crm_corem %>
+    </div>
+    <div class="col s12 m4">
+      <b>Telefone:</b><br>
+      <%= @imunizacao_solicitacao.solicitante_telefone %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m8">
+      <b>Instituição:</b><br>
+      <%= @imunizacao_solicitacao.solicitante_instituicao%>
+    </div>
+    <div class="col s12 m4">
+      <b>Município:</b><br>
+      <%= @imunizacao_solicitacao.solicitante_municipio %>
+    </div>
+  </div>
 </div>
 <div class="card-panel" style="overflow: visible;">
   <h4 class="header2">Imunobiológicos Fornecidos pelo Estado</h4>
@@ -166,6 +185,14 @@
                     </div>
                 <% end %>
               </div>
+              <% if current_user.admin_imuni? || current_user.administrador? %>
+                <div class="row">
+                  <div class="col s12">
+                    <b>Lote distribuído:</b><br>
+                    <%= esquema.lote %>
+                  </div>
+                </div>
+              <% end %>
               <p><b>Encerramentos:</b></p>
               <% esquema.imunizacao_encerramentos.each do |encerramento| %>
                   <div class="card-panel">
@@ -281,15 +308,23 @@
 
                   <div class="card-panel" style="overflow: visible;">
                     <div class="row">
-                    <div class="col s12 m4">
-                      <%= label_tag :dose %>
-                      <%= select_tag :dose, options_for_select(ImunizacaoEsquema.dose.options) %>
-                    </div>
-                    <div class="col s12 m4">
-                      <%= label_tag :esquema %>
-                      <%= text_area_tag :esquema %>
-                    </div>
+                      <div class="col s12 l4">
+                        <%= label_tag :dose %> <br>
+                        <%= select_tag :dose, options_for_select(ImunizacaoEsquema.dose.options), {class:'browser-default select2'} %>
+                      </div>
+                      <div class="col s12 l8">
+                        <%= label_tag :esquema %>
+                        <%= text_area_tag :esquema%>
+                      </div>
                   </div>
+                    <% if current_user.admin_imuni? || current_user.administrador? %>
+                      <div class="row">
+                        <div class="col s12 m4">
+                          <%= label_tag :lote %>
+                          <%= text_field_tag :lote %>
+                        </div>
+                      </div>
+                    <% end %>
                 </div>
                 <%= submit_tag "Salvar", class:"btn" %>
             <% end %>
@@ -314,34 +349,52 @@
   <% end %>
 </div>
 
+<!--<div class="card-panel">-->
+<!--  <h4 class="header2">Outros Imunobiológicos</h4>-->
+<!--  <table class="table striped">-->
+    <%# @imunizacao_solicitacao.outros_imunobiologicos.each do |outros| %>
+<!--        <tr>-->
+<!--          <td><%#= outros %></td>-->
+<!--          <td>-->
+            <%# if outros.justificativa_indeferimento == nil %>
+<!--                <a class="waves-effect waves-light btn red modal-trigger" href="#modal_resposta_<%#= outros.id %>">Resposta</a>-->
+            <%# else %>
+                <%#= outros.justificativa_indeferimento %>
+            <%# end %>
+<!--          </td>-->
+<!--        </tr>-->
+<!--        <div id="modal_resposta_<%#= outros.id %>" class="modal">-->
+<!--          <div class="modal-content">-->
+            <%#= form_tag(indeferir_imunizacao_imunobiologico_path(outros), method: :get) do %>
+<!--                <h4>Resposta</h4>-->
+<!--                <div class="row">-->
+<!--                  <div class="col s12 m4">-->
+                    <%#= label_tag :motivo, "Informe a Resposta" %>
+                    <%#= text_area_tag :motivo,nil,required: true %>
+<!--                  </div>-->
+<!--                </div>-->
+                <%#= submit_tag "Salvar", class:"btn" %>
+            <%# end %>
+<!--          </div>-->
+<!--        </div>-->
+    <%# end %>
+<!--  </table>-->
+<!--</div>-->
+
 <div class="card-panel">
-  <h4 class="header2">Outros Imunobiológicos</h4>
+  <h4 class="header2">Anexos</h4>
   <table class="table striped">
-    <% @imunizacao_solicitacao.outros_imunobiologicos.each do |outros| %>
-        <tr>
-          <td><%= outros %></td>
-          <td>
-            <% if outros.justificativa_indeferimento == nil %>
-                <a class="waves-effect waves-light btn red modal-trigger" href="#modal_resposta_<%= outros.id %>">Resposta</a>
-            <% else %>
-                <%= outros.justificativa_indeferimento %>
-            <% end %>
-          </td>
-        </tr>
-        <div id="modal_resposta_<%= outros.id %>" class="modal">
-          <div class="modal-content">
-            <%= form_tag(indeferir_imunizacao_imunobiologico_path(outros), method: :get) do %>
-                <h4>Resposta</h4>
-                <div class="row">
-                  <div class="col s12 m4">
-                    <%= label_tag :motivo, "Informe a Resposta" %>
-                    <%= text_area_tag :motivo,nil,required: true %>
-                  </div>
-                </div>
-                <%= submit_tag "Salvar", class:"btn" %>
-            <% end %>
-          </div>
-        </div>
+    <tr>
+      <th>Descrição</th>
+      <th>Link</th>
+    </tr>
+    <% @imunizacao_solicitacao.imunizacao_files.each do |file| %>
+      <tr>
+        <td><%= file.descricao %></td>
+        <td>
+          <%= link_to "Baixar", file.anexo.url, target:"_blank" %>
+        </td>
+      </tr>
     <% end %>
   </table>
 </div>
@@ -368,7 +421,7 @@
 
   <div >
 
-    <b>Municipio Atual:</b><br>
+    <b>Município Atual:</b><br>
     <%= @imunizacao_solicitacao.municipio_atual %>
 
   </div>
@@ -399,18 +452,12 @@
 
         </div>
         <div class="input">
-          <%= f.label :municipio_atual %>
-          <%= f.select :municipio_atual, Cidade.all.map{|a| [a.nome,a.id]},{ prompt: true},{class:"browser-default chosen-select"} %>
+          <%= f.label :municipio_atual, "Município Atual" %>
+          <%= f.select :municipio_atual_id, Cidade.all.map{|a| [a.nome,a.id]},{ prompt: true},{class:"browser-default chosen-select"} %>
 
         </div>
         <%= f.submit "Salvar", class:"btn white-text", target:"_self" %>
       </div>
-  <% end %>
+  <% end if current_user.administrador? || current_user.admin_imuni? %>
 </div>
 
-
-<script type="text/javascript" charset="utf-8">
-    $(document).ready(function(){
-        $('.modal').modal();
-    });
-</script>

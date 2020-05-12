@@ -31,4 +31,5 @@
 class DantRequestPacient < ApplicationRecord
   belongs_to :dant_request
   belongs_to :dant_pacient
+  has_many :dant_doses, through: :dant_pacient
 end

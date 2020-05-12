@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190913174920) do
+ActiveRecord::Schema.define(version: 20200121123441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 20190913174920) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "pacientes_count", default: 0
+    t.boolean "status"
   end
 
   create_table "classificacao_graus", force: :cascade do |t|
@@ -376,6 +377,7 @@ ActiveRecord::Schema.define(version: 20190913174920) do
     t.boolean "obito"
     t.date "data_obito"
     t.date "data_nascimento"
+    t.string "cartao_sus"
     t.index ["cidade_id"], name: "index_dant_pacients_on_cidade_id"
   end
 
@@ -538,6 +540,7 @@ ActiveRecord::Schema.define(version: 20190913174920) do
     t.string "unidade_medida"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status"
   end
 
   create_table "dst_questionarios", force: :cascade do |t|
@@ -569,6 +572,12 @@ ActiveRecord::Schema.define(version: 20190913174920) do
     t.text "observacoes"
     t.decimal "quantidade_aprovada"
     t.bigint "user_id"
+    t.integer "saldo_anterior"
+    t.integer "entradas_ms"
+    t.integer "qtd_remanejado"
+    t.integer "qtd_perdas"
+    t.integer "saldo_final"
+    t.integer "quantidade_atendido"
     t.index ["dst_produto_id"], name: "index_dst_solicitacao_produtos_on_dst_produto_id"
     t.index ["dst_solicitacao_id"], name: "index_dst_solicitacao_produtos_on_dst_solicitacao_id"
     t.index ["user_id"], name: "index_dst_solicitacao_produtos_on_user_id"
@@ -582,6 +591,12 @@ ActiveRecord::Schema.define(version: 20190913174920) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "token"
+    t.string "responsavel"
+    t.string "cargo_funcao"
+    t.string "contato"
+    t.bigint "cidade_id"
+    t.string "mes"
+    t.index ["cidade_id"], name: "index_dst_solicitacaos_on_cidade_id"
     t.index ["dst_local_id"], name: "index_dst_solicitacaos_on_dst_local_id"
     t.index ["user_id"], name: "index_dst_solicitacaos_on_user_id"
   end
@@ -743,7 +758,17 @@ ActiveRecord::Schema.define(version: 20190913174920) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "imunizacao_imunobiologico_id"
+    t.string "lote"
     t.index ["imunizacao_imunobiologico_id"], name: "index_imunizacao_esquemas_on_imunizacao_imunobiologico_id"
+  end
+
+  create_table "imunizacao_files", force: :cascade do |t|
+    t.string "descricao"
+    t.string "anexo"
+    t.bigint "imunizacao_solicitacao_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imunizacao_solicitacao_id"], name: "index_imunizacao_files_on_imunizacao_solicitacao_id"
   end
 
   create_table "imunizacao_imunobiologicos", force: :cascade do |t|
@@ -763,10 +788,8 @@ ActiveRecord::Schema.define(version: 20190913174920) do
 
   create_table "imunizacao_indications", force: :cascade do |t|
     t.string "descricao"
-    t.bigint "imunizacao_vacina_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["imunizacao_vacina_id"], name: "index_imunizacao_indications_on_imunizacao_vacina_id"
   end
 
   create_table "imunizacao_solicitacaos", force: :cascade do |t|
@@ -796,6 +819,20 @@ ActiveRecord::Schema.define(version: 20190913174920) do
     t.integer "idade"
     t.text "deferimento"
     t.json "anexos"
+    t.string "solicitante_tipo"
+    t.string "solicitante_crm_corem"
+    t.string "solicitante_telefone"
+    t.string "solicitante_instituicao"
+    t.integer "solicitante_municipio"
+  end
+
+  create_table "imunizacao_vacina_indications", force: :cascade do |t|
+    t.bigint "imunizacao_vacina_id"
+    t.bigint "imunizacao_indication_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imunizacao_indication_id"], name: "index_imunizacao_vacina_indications_on_imunizacao_indication_id"
+    t.index ["imunizacao_vacina_id"], name: "index_imunizacao_vacina_indications_on_imunizacao_vacina_id"
   end
 
   create_table "imunizacao_vacinas", force: :cascade do |t|
@@ -1010,6 +1047,7 @@ ActiveRecord::Schema.define(version: 20190913174920) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.boolean "ativo"
     t.index ["cidade_id"], name: "index_users_on_cidade_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -1048,6 +1086,7 @@ ActiveRecord::Schema.define(version: 20190913174920) do
   add_foreign_key "dst_solicitacao_produtos", "dst_produtos"
   add_foreign_key "dst_solicitacao_produtos", "dst_solicitacaos"
   add_foreign_key "dst_solicitacao_produtos", "users"
+  add_foreign_key "dst_solicitacaos", "cidades"
   add_foreign_key "dst_solicitacaos", "dst_locals"
   add_foreign_key "dst_solicitacaos", "users"
   add_foreign_key "dst_user_locals", "dst_locals"
@@ -1062,10 +1101,12 @@ ActiveRecord::Schema.define(version: 20190913174920) do
   add_foreign_key "esquema_substitutivos", "notificacaos"
   add_foreign_key "imunizacao_encerramentos", "imunizacao_esquemas"
   add_foreign_key "imunizacao_esquemas", "imunizacao_imunobiologicos"
+  add_foreign_key "imunizacao_files", "imunizacao_solicitacaos"
   add_foreign_key "imunizacao_imunobiologicos", "imunizacao_indications"
   add_foreign_key "imunizacao_imunobiologicos", "imunizacao_solicitacaos"
   add_foreign_key "imunizacao_imunobiologicos", "imunizacao_vacinas"
-  add_foreign_key "imunizacao_indications", "imunizacao_vacinas"
+  add_foreign_key "imunizacao_vacina_indications", "imunizacao_indications"
+  add_foreign_key "imunizacao_vacina_indications", "imunizacao_vacinas"
   add_foreign_key "marcacaos", "avaliacao_sensitivas"
   add_foreign_key "monthly_reports", "cidades"
   add_foreign_key "nervos_recidivas", "recidivas"

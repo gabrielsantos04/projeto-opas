@@ -10,6 +10,7 @@
 #  created_at                   :datetime         not null
 #  updated_at                   :datetime         not null
 #  imunizacao_imunobiologico_id :integer
+#  lote                         :string
 #
 # Indexes
 #

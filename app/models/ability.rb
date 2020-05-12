@@ -38,6 +38,7 @@ class Ability
       can :manage, DstProduto
       can :manage, DstLote
     elsif user.dst_produtos?
+      can :manage, DstSolicitacaoProduto
       can :manage, DstProduto
       can :manage, DstLote
     elsif user.admin_dant?
@@ -53,7 +54,14 @@ class Ability
       can :manage, ImunizacaoImunobiologico
       can :manage, ImunizacaoSolicitacao
       can :manage, ImunizacaoVacina
+    elsif user.municipio_imuni?
+      can :manage, ImunizacaoSolicitacao
+      can :manage, ImunizacaoEncerramento
+      can :manage, ImunizacaoEsquema
     else
+
+
+
       can :create, Paciente
       can :manage, Paciente do |p|
         p.cidade == user.cidade

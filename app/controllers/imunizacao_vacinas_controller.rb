@@ -6,7 +6,7 @@ class ImunizacaoVacinasController < ApplicationController
 
   # GET /imunizacao_vacinas
   def index
-    @q = ImunizacaoVacina.all.ransack(params[:q])
+    @q = ImunizacaoVacina.all.order(nome: :asc).ransack(params[:q])
     @imunizacao_vacinas = @q.result.page(params[:page])
   end
 
@@ -23,10 +23,18 @@ class ImunizacaoVacinasController < ApplicationController
   def edit
   end
 
+
+  def relatorio
+    @q = ImunizacaoSolicitacao.includes(:imunobiologicos,:imunizacao_esquemas,:imunizacao_encerramentos).all.order(created_at: :desc).ransack(params[:q])
+
+
+    @imunizacao_solicitacaos = @q.result.page(params[:page])
+  end
+
   #Método que retorna as indicacoes da vacina
   def retornarIndicacoes
     @combo = params[:combo]
-    @indicacoes = @imunizacao_vacina.imunizacao_indications
+    @indicacoes = @imunizacao_vacina.imunizacao_indications.order(:descricao)
   end
 
   # POST /imunizacao_vacinas

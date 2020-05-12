@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get "home"
+      get "alterar_senha"
     end
   end
   end
@@ -67,6 +68,7 @@ Rails.application.routes.draw do
       end
       collection do
         get "dashboard"
+        get "cidade_change"
       end
     end
     resources :dant_responsavel_programs
@@ -94,8 +96,16 @@ Rails.application.routes.draw do
       member do
         get "retornarIndicacoes"
       end
+      collection do
+        get "relatorio"
+      end
     end
     resources :imunizacao_solicitacaos
+    resources :imunizacao_indications do
+      member do
+        get "retornar_vacinas"
+      end
+    end
   end
 
   scope  "/dst" do
@@ -107,7 +117,15 @@ Rails.application.routes.draw do
       end
     end
     resources :dst_solicitacao_produtos
-    resources :dst_solicitacaos
+    resources :dst_solicitacaos do
+      member do
+        get "autorizar"
+        get "recusar"
+      end
+      collection do
+        get "mapa"
+      end
+    end
     resources :dst_lotes
     resources :dst_locals
     resources :dst_produtos do

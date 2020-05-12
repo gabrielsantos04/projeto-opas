@@ -26,18 +26,18 @@
     
   </div>
 
-  <div class="card-panel">
-    <h4 class="header2">Indicações</h4>
-    <%= f.fields_for :imunizacao_indications do |i| %>
-      <div class="card-panel">
-        <%= i.label :descricao, "Descrição" %>
-        <%= i.text_field :descricao %>
-        <%= i.link_to_remove "Apagar", class: "btn red" %>
+<!--  <div class="card-panel">-->
+<!--    <h4 class="header2">Indicações</h4>-->
+    <%#= f.fields_for :imunizacao_indications do |i| %>
+<!--      <div class="card-panel">-->
+        <%#= i.label :descricao, "Descrição" %>
+        <%#= i.text_field :descricao %>
+        <%#= i.link_to_remove "Apagar", class: "btn red" %>
 
-      </div>
-    <% end %>
-    <%= f.link_to_add "Inserir", :imunizacao_indications, class: :btn %>
-  </div>
+<!--      </div>-->
+    <%# end %>
+    <%#= f.link_to_add "Inserir", :imunizacao_indications, class: :btn %>
+<!--  </div>-->
 
 </div>
   <div class="actions">

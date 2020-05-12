@@ -8,11 +8,13 @@
 #  unidade_medida :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  status         :boolean
 #
 
 class DstProduto < ApplicationRecord
   has_many :dst_lotes
   has_many :dst_movimentacaos
+  has_many :dst_solicitacao_produtos
   #Método que retorna o nome do Objeto
   def to_s
     self.nome

@@ -109,6 +109,9 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
+    dotiw (4.0.1)
+      actionpack (>= 4)
+      i18n
     enumerize (2.2.1)
       activesupport (>= 3.2)
     erubi (1.7.0)
@@ -288,6 +291,7 @@ DEPENDENCIES
   carrierwave-base64
   coffee-rails (~> 4.2)
   devise
+  dotiw
   enumerize
   jbuilder (~> 2.5)
   jquery-rails

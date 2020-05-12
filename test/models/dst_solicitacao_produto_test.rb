@@ -13,6 +13,12 @@
 #  observacoes         :text
 #  quantidade_aprovada :decimal(, )
 #  user_id             :integer
+#  saldo_anterior      :integer
+#  entradas_ms         :integer
+#  qtd_remanejado      :integer
+#  qtd_perdas          :integer
+#  saldo_final         :integer
+#  quantidade_atendido :integer
 #
 # Indexes
 #

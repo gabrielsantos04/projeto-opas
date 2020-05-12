@@ -11,23 +11,23 @@
           <div class="row">
             <div class="col l3 s12">
               <%= f.label "Mês" %>
-              <%= f.select :mes_eq, [["MARÇO" , 3],["JUNHO" , 6],["SETEMBRO" , 9],["DEZEMBRO" , 12]],prompt: true %>
+              <%= f.select :mes_eq, [["MARÇO" , 3],["JUNHO" , 6],["SETEMBRO" , 9],["DEZEMBRO" , 12]],{prompt: "Todos os Meses"} %>
 
             </div>
 
             <div class="col l3 s12">
               <%= f.label "Ano" %>
-              <%= f.select :ano_eq, DantRequest.distinct.pluck(:ano),prompt: true %>
+              <%= f.select :ano_eq, DantRequest.distinct.pluck(:ano),{prompt: "Todos os Anos"} %>
 
             </div>
             <div class="col l3 s12">
               <%= f.label "Município" %>
-              <%= f.select :cidade_id_eq, @cidades,{prompt: true},{class:"browser-default chosen-select"} %>
+              <%= f.select :cidade_id_eq, @cidades,{prompt: "Todo o Estado",include_blank: true},{class:"browser-default chosen-select"} %>
 
             </div>
             <div class="col l3 s12">
               <%= f.label "Região" %>
-              <%= f.select :dant_region_id_eq, @regioes,{prompt: true},{class:"browser-default chosen-select"} %>
+              <%= f.select :dant_region_id_eq, @regioes,{prompt: "Todas as Regiões",include_blank: true},{class:"browser-default chosen-select"} %>
 
             </div>
           </div>

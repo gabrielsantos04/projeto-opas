@@ -1,0 +1,103 @@
+<h1 class="center-align">Relatório de vacinas aplicadas e vacinas a aplicar</h1>
+<div class="card" style="overflow: visible;">
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
+      Pesquisa
+    </span>
+    <div id="pesquisa" class="not-show row">
+      <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
+        <%= f.text_field :nome_paciente_or_nome_mae_or_status_or_municipio_atual_nome_cont, placeholder: "Paciente..." %>
+        <div class="col s12 l6">
+          <%= f.label :created_at_gteq, "Data da Solicitação (Início)" %>
+          <%= f.text_field :created_at_gteq, class:"datetimepicker" %>
+        </div>
+        <div class="col s12 l6">
+          <%= f.label :created_at_lteq, "Data da Solicitação (Término)" %>
+          <%= f.text_field :created_at_lteq, class:"datetimepicker"%>
+        </div>
+        <div class="col s12">
+          <%= f.label :municipio_id_eq, "Município" %>
+          <%= f.select :municipio_id_eq, Cidade.to_select, {prompt: true}  %>
+        </div>
+        <%= f.submit "Filtrar", class:"btn" %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<% @imunizacao_solicitacaos.each do |s| %>
+  <div class="card-panel">
+  <div class="row">
+    <div class="col 12 l4">
+      <label for="">Paciente:</label>
+      <%= s.nome_paciente %>
+    </div>
+    <div class="col 12 l4">
+      <label for="">Município</label>
+      <%= s.municipio %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 l6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Vacinas aplicadas</span>
+          <table>
+            <thead>
+            <tr>
+              <th>Vacina</th>
+              <th>Dose</th>
+              <th>Dt aplicação</th>
+              <th>Lote dist.</th>
+              <th>Lote aplic.</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% s.imunizacao_esquemas.where(status: :concluido).each do |dose| %>
+            <tr>
+              <td><%= dose.imunizacao_imunobiologico %></td>
+              <td><%= dose.dose %></td>
+              <td><%= dose.imunizacao_encerramentos.last.data_administracao if dose.imunizacao_encerramentos.last.present?   %></td>
+              <td><%= dose.lote   %></td>
+              <td><%= dose.imunizacao_encerramentos.last.lote if dose.imunizacao_encerramentos.last.present?   %></td>
+            </tr>
+
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 l6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Vacinas a aplicar</span>
+          <table>
+            <thead>
+            <tr>
+              <th>Vacina</th>
+              <th>Dose</th>
+              <th>Esquema</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <% s.imunizacao_esquemas.where(status: nil).each do |dose| %>
+              <tr>
+                <td><%= dose.imunizacao_imunobiologico %></td>
+                <td><%= dose.dose %></td>
+                <td><%= dose.esquema  %></td>
+
+              </tr>
+
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<% end %>

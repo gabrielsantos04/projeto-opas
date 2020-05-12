@@ -17,6 +17,7 @@ class DstProdutosController < ApplicationController
   # GET /dst_produtos/new
   def new
     @dst_produto = DstProduto.new
+    @dst_produto.status = true
   end
 
   # GET /dst_produtos/1/edit
@@ -62,6 +63,6 @@ class DstProdutosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def dst_produto_params
-      params.require(:dst_produto).permit(:nome, :descricao, :unidade_medida)
+      params.require(:dst_produto).permit(:nome, :descricao, :unidade_medida, :status)
     end
 end
