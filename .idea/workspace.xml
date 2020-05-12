@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" />
-    </list>
+    <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -466,12 +464,12 @@
       <workItem from="1537308973079" duration="4247000" />
       <workItem from="1568568081856" duration="2174000" />
       <workItem from="1568829493079" duration="114000" />
-      <workItem from="1568831928724" duration="600000" />
+      <workItem from="1568831928724" duration="688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280677000" />
+    <option name="totallyTimeSpent" value="280765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="725" extended-state="6" />
