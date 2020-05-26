@@ -25,7 +25,7 @@
 
 
       </div>
-      <% if current_user.administrador? %>
+      <% if current_user.administrador? || current_user.admin_dant? %>
           <div class="input">
             <%= f.label :cidade_id, "Cidade" %>
             <%= f.select :cidade_id, @cidades, {prompt: true}, {class:"browser-default select2", onchange:"cidade_change()"}   %>

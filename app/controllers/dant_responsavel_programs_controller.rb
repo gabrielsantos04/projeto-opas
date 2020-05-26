@@ -6,7 +6,7 @@ class DantResponsavelProgramsController < ApplicationController
   # GET /dant_responsavel_programs
   def index
     @cidades = Cidade.all.order(:nome).map{|a| [a.nome,a.id]}
-    if current_user.administrador? || current_user.admin_dant
+    if current_user.administrador? || current_user.admin_dant?
       @q = DantResponsavelProgram.all.ransack(params[:q])
     else
       @q = DantResponsavelProgram.where(cidade: current_user.cidade).ransack(params[:q])
