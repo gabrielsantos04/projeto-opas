@@ -31,7 +31,9 @@
             <%= f.select :cidade_id, @cidades, {prompt: true}, {class:"browser-default select2", onchange:"cidade_change()"}   %>
 
           </div>
-      <% end %>
+      <% else %>
+      <%= f.hidden_field :cidade_id %>
+      <% end  %>
       <br>
 
       <div class="card">
