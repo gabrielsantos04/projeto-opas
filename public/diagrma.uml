@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>RailsDependency</ID>
+  <OriginalElement>DstLote</OriginalElement>
+  <nodes>
+    <node x="488.0" y="2005.3574142743228">ImunizacaoEsquema</node>
+    <node x="599.5" y="438.1298444976087">EpisodioReacional</node>
+    <node x="1740.0" y="2454.9407476076562">DstLocal</node>
+    <node x="1108.0" y="1658.3401515151515">AvaliacaoNotificacao</node>
+    <node x="2169.5" y="2934.451732456141">DantRegion</node>
+    <node x="1754.5" y="2287.6999401913868">MonthlyReport</node>
+    <node x="1194.0" y="2620.1999401913868">DstUserLocal</node>
+    <node x="24.0" y="550.7081718500804">ContatoAvaliacao</node>
+    <node x="531.0" y="1502.3401515151515">AvaliacaoSensitiva</node>
+    <node x="1034.0" y="956.3923225677848">EpidosiosReacionaisRecidiva</node>
+    <node x="1059.5" y="1218.392322567785">DermatologicoRecidiva</node>
+    <node x="457.0" y="1015.7081718500806">Recidiva</node>
+    <node x="2153.0" y="0.0">SinaisSintoma</node>
+    <node x="2158.5" y="701.61014553429">Medicamento</node>
+    <node x="1070.0" y="1819.4499401913868">DantRequest</node>
+    <node x="594.0" y="2787.5442583732047">DstLote</node>
+    <node x="541.0" y="628.1298444976087">NotificacaoContato</node>
+    <node x="2151.5" y="1273.392322567785">Dermatologica</node>
+    <node x="2136.5" y="2378.9407476076562">DstQuestionario</node>
+    <node x="531.0" y="1740.3401515151515">AvaliacaoNeurologica</node>
+    <node x="2215.5" y="95.0">DantQuestion</node>
+    <node x="1616.0" y="1831.4499401913868">DantResponsavelProgram</node>
+    <node x="1171.0" y="2749.5442583732047">DstProduto</node>
+    <node x="599.5" y="866.1298444976087">EscalaPart</node>
+    <node x="531.0" y="1645.3401515151515">ClassificacaoGrau</node>
+    <node x="2149.5" y="2191.4499401913868">Cidade</node>
+    <node x="1683.5" y="185.0">Queixa</node>
+    <node x="2719.0" y="0.0">MenuControl</node>
+    <node x="1733.0" y="1366.392322567785">Paciente</node>
+    <node x="30.5" y="1478.8401515151515">Marcacao</node>
+    <node x="2135.5" y="166.0">CategoriaQueixa</node>
+    <node x="561.5" y="2381.1582735247202">DstRespostum</node>
+    <node x="583.5" y="747.1298444976087">EsquemaSubstitutivo</node>
+    <node x="2515.0" y="1702.0901515151515">ApplicationRecord</node>
+    <node x="1713.0" y="1943.4499401913868">DantPacient</node>
+    <node x="0.0" y="2667.451732456141">DstMovimentacao</node>
+    <node x="2126.0" y="2098.4499401913868">ImunizacaoVacina</node>
+    <node x="599.5" y="533.1298444976087">DadosClinico</node>
+    <node x="1754.5" y="2573.9407476076562">User</node>
+    <node x="1611.0" y="2043.4499401913868">ImunizacaoImunobiologico</node>
+    <node x="2170.5" y="3029.451732456141">Diagnostico</node>
+    <node x="1077.5" y="2117.4634748803837">ImunizacaoSolicitacao</node>
+    <node x="1113.5" y="1075.392322567785">NervosRecidiva</node>
+    <node x="517.0" y="2588.107414274323">DstSolicitacaoProduto</node>
+    <node x="2194.5" y="261.0">Conduta</node>
+    <node x="102.5" y="371.80135366826244">CondutaRecidiva</node>
+    <node x="2887.0" y="0.0">Ability</node>
+    <node x="30.5" y="1659.4384748803836">SensitivaImage</node>
+    <node x="61.0" y="210.55448564593235">SintomasRecidiva</node>
+    <node x="1717.5" y="2890.0442583732047">DantCidadeRegion</node>
+    <node x="16.5" y="1901.2422627591716">ImunizacaoEncerramento</node>
+    <node x="78.5" y="2846.3631758373203">DiagnosticoRecidiva</node>
+    <node x="2185.0" y="1392.2256559011182">Ocupacao</node>
+    <node x="1176.5" y="802.1536862041482">Notificacao</node>
+    <node x="2211.0" y="356.0">Monofilamento</node>
+    <node x="1154.5" y="2442.9407476076562">DstSolicitacao</node>
+    <node x="599.5" y="1393.6416666666669">EscalaSalsa</node>
+    <node x="586.5" y="1835.3828728070175">DantRequestPacient</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Queixa" target="CategoriaQueixa">
+      <point x="145.0" y="-13.75" />
+      <point x="2046.0" y="198.75" />
+      <point x="-145.0" y="-0.0" />
+    </edge>
+    <edge source="MonthlyReport" target="ApplicationRecord">
+      <point x="74.0" y="13.75" />
+      <point x="2435.0" y="2328.9499401913868" />
+      <point x="-79.5" y="7.327272727272657" />
+    </edge>
+    <edge source="User" target="ApplicationRecord">
+      <point x="74.0" y="19.75" />
+      <point x="2435.0" y="2633.1907476076562" />
+      <point x="-79.5" y="10.14545454545464" />
+    </edge>
+    <edge source="ImunizacaoVacina" target="ApplicationRecord">
+      <point x="154.5" y="-0.0" />
+      <point x="-79.5" y="5.63636363636374" />
+    </edge>
+    <edge source="EpidosiosReacionaisRecidiva" target="ApplicationRecord">
+      <point x="248.5" y="-0.0" />
+      <point x="2435.0" y="995.8923225677848" />
+      <point x="-79.5" y="-6.2000000000000455" />
+    </edge>
+    <edge source="DstMovimentacao" target="ApplicationRecord">
+      <point x="188.5" y="-0.0" />
+      <point x="457.0" y="2739.0442583732047" />
+      <point x="2435.0" y="2739.0442583732047" />
+      <point x="-79.5" y="11.836363636363558" />
+    </edge>
+    <edge source="DadosClinico" target="Notificacao">
+      <point x="106.0" y="13.75" />
+      <point x="954.0" y="574.3798444976087" />
+      <point x="1034.0" y="819.0822576327197" />
+      <point x="-106.0" y="-22.571428571428555" />
+    </edge>
+    <edge source="DstSolicitacao" target="User">
+      <point x="128.0" y="34.333333333333485" />
+      <point x="1531.0" y="2528.7740809409897" />
+      <point x="1611.0" y="2587.1074142743228" />
+      <point x="-74.0" y="-26.333333333333485" />
+    </edge>
+    <edge source="SintomasRecidiva" target="ApplicationRecord">
+      <point x="127.5" y="-0.0" />
+      <point x="2435.0" y="250.5" />
+      <point x="-79.5" y="-12.963636363636397" />
+    </edge>
+    <edge source="DadosClinico" target="ApplicationRecord">
+      <point x="106.0" y="-13.75" />
+      <point x="2435.0" y="546.8798444976087" />
+      <point x="-79.5" y="-9.581818181818107" />
+    </edge>
+    <edge source="SintomasRecidiva" target="Recidiva">
+      <point x="127.5" y="26.333333333333314" />
+      <point x="377.0" y="276.3878189792656" />
+      <point x="-248.5" y="-98.33333333333326" />
+    </edge>
+    <edge source="ImunizacaoSolicitacao" target="ImunizacaoImunobiologico">
+      <point x="205.0" y="-72.91666666666652" />
+      <point x="1531.0" y="2132.046808213717" />
+      <point x="-217.5" y="-0.0" />
+    </edge>
+    <edge source="Marcacao" target="ApplicationRecord">
+      <point x="158.0" y="-13.75" />
+      <point x="377.0" y="1492.5901515151515" />
+      <point x="457.0" y="1488.2151515151515" />
+      <point x="2435.0" y="1488.2151515151515" />
+      <point x="-79.5" y="-1.6909090909091447" />
+    </edge>
+    <edge source="Recidiva" target="DermatologicoRecidiva">
+      <point x="248.5" y="26.818181818181756" />
+      <point x="1034.0" y="1239.5589892344515" />
+      <point x="-223.0" y="-42.33333333333326" />
+    </edge>
+    <edge source="DstMovimentacao" target="DstLote">
+      <point x="188.5" y="50.80000000000018" />
+      <point x="457.0" y="2827.0442583732047" />
+      <point x="-111.5" y="-0.0" />
+    </edge>
+    <edge source="DstUserLocal" target="ApplicationRecord">
+      <point x="88.5" y="26.333333333333485" />
+      <point x="1531.0" y="2686.0332735247202" />
+      <point x="1611.0" y="2676.325596092505" />
+      <point x="2435.0" y="2676.325596092505" />
+      <point x="-79.5" y="10.709090909090946" />
+    </edge>
+    <edge source="AvaliacaoSensitiva" target="ApplicationRecord">
+      <point x="174.5" y="-0.0" />
+      <point x="2435.0" y="1553.8401515151515" />
+      <point x="-79.5" y="-1.127272727272839" />
+    </edge>
+    <edge source="Paciente" target="Cidade">
+      <point x="95.5" y="34.33333333333326" />
+      <point x="2046.0" y="1452.225655901118" />
+      <point x="2126.0" y="2197.2226674641142" />
+      <point x="-131.0" y="-57.72727272727252" />
+    </edge>
+    <edge source="Monofilamento" target="ApplicationRecord">
+      <point x="69.5" y="-0.0" />
+      <point x="2435.0" y="371.5" />
+      <point x="-79.5" y="-11.836363636363558" />
+    </edge>
+    <edge source="NervosRecidiva" target="ApplicationRecord">
+      <point x="169.0" y="-0.0" />
+      <point x="2435.0" y="1126.892322567785" />
+      <point x="-79.5" y="-5.63636363636374" />
+    </edge>
+    <edge source="DantCidadeRegion" target="ApplicationRecord">
+      <point x="111.0" y="-0.0" />
+      <point x="2046.0" y="2929.5442583732047" />
+      <point x="2126.0" y="2923.951732456141" />
+      <point x="2435.0" y="2923.951732456141" />
+      <point x="-79.5" y="14.090909090909008" />
+    </edge>
+    <edge source="DantRequest" target="ApplicationRecord">
+      <point x="212.5" y="-34.33333333333326" />
+      <point x="1531.0" y="1836.6166068580537" />
+      <point x="1611.0" y="1815.2317583732051" />
+      <point x="2435.0" y="1815.2317583732051" />
+      <point x="-79.5" y="2.818181818181756" />
+    </edge>
+    <edge source="ClassificacaoGrau" target="AvaliacaoNotificacao">
+      <point x="174.5" y="13.75" />
+      <point x="954.0" y="1686.5901515151515" />
+      <point x="1034.0" y="1697.8401515151515" />
+      <point x="-174.5" y="-0.0" />
+    </edge>
+    <edge source="AvaliacaoNotificacao" target="Paciente">
+      <point x="174.5" y="-19.75" />
+      <point x="1531.0" y="1678.0901515151515" />
+      <point x="1611.0" y="1460.8089892344515" />
+      <point x="-95.5" y="42.91666666666674" />
+    </edge>
+    <edge source="EscalaSalsa" target="Paciente">
+      <point x="106.0" y="-0.0" />
+      <point x="954.0" y="1433.1416666666669" />
+      <point x="1034.0" y="1425.3824740829364" />
+      <point x="-95.5" y="8.583333333333258" />
+    </edge>
+    <edge source="ClassificacaoGrau" target="ApplicationRecord">
+      <point x="174.5" y="-13.75" />
+      <point x="954.0" y="1659.0901515151515" />
+      <point x="1034.0" y="1647.8401515151515" />
+      <point x="2435.0" y="1647.8401515151515" />
+      <point x="-79.5" y="-0.5636363636363058" />
+    </edge>
+    <edge source="ImunizacaoImunobiologico" target="ImunizacaoVacina">
+      <point x="217.5" y="31.75" />
+      <point x="-154.5" y="-0.0" />
+    </edge>
+    <edge source="ImunizacaoEncerramento" target="ImunizacaoEsquema">
+      <point x="172.0" y="13.75" />
+      <point x="377.0" y="1942.4922627591716" />
+      <point x="457.0" y="2056.8574142743228" />
+      <point x="-217.5" y="-0.0" />
+    </edge>
+    <edge source="DstMovimentacao" target="DstSolicitacaoProduto">
+      <point x="188.5" y="-25.40000000000009" />
+      <point x="457.0" y="2651.607414274323" />
+      <point x="-188.5" y="-0.0" />
+    </edge>
+    <edge source="DstLocal" target="ApplicationRecord">
+      <point x="88.5" y="19.75" />
+      <point x="2435.0" y="2514.1907476076562" />
+      <point x="-79.5" y="9.581818181818107" />
+    </edge>
+    <edge source="DermatologicoRecidiva" target="ApplicationRecord">
+      <point x="223.0" y="-31.75" />
+      <point x="1531.0" y="1250.142322567785" />
+      <point x="1611.0" y="1262.892322567785" />
+      <point x="2435.0" y="1262.892322567785" />
+      <point x="-79.5" y="-5.072727272727207" />
+    </edge>
+    <edge source="AvaliacaoSensitiva" target="Paciente">
+      <point x="174.5" y="-34.33333333333326" />
+      <point x="954.0" y="1519.5068181818183" />
+      <point x="1034.0" y="1446.3083333333334" />
+      <point x="1531.0" y="1446.3083333333334" />
+      <point x="1611.0" y="1443.642322567785" />
+      <point x="-95.5" y="25.75" />
+    </edge>
+    <edge source="ImunizacaoEsquema" target="ApplicationRecord">
+      <point x="217.5" y="-34.33333333333326" />
+      <point x="954.0" y="2022.5240809409897" />
+      <point x="1034.0" y="1932.9499401913868" />
+      <point x="2435.0" y="1932.9499401913868" />
+      <point x="-79.5" y="3.945454545454595" />
+    </edge>
+    <edge source="AvaliacaoSensitiva" target="AvaliacaoNotificacao">
+      <point x="174.5" y="34.33333333333326" />
+      <point x="954.0" y="1588.1734848484848" />
+      <point x="1034.0" y="1671.5068181818183" />
+      <point x="-174.5" y="-26.333333333333258" />
+    </edge>
+    <edge source="AvaliacaoNeurologica" target="ApplicationRecord">
+      <point x="174.5" y="13.75" />
+      <point x="2435.0" y="1781.5901515151515" />
+      <point x="-79.5" y="0.5636363636363058" />
+    </edge>
+    <edge source="Paciente" target="Ocupacao">
+      <point x="95.5" y="-0.0" />
+      <point x="2046.0" y="1417.892322567785" />
+      <point x="-95.5" y="-0.0" />
+    </edge>
+    <edge source="EsquemaSubstitutivo" target="ApplicationRecord">
+      <point x="122.0" y="-0.0" />
+      <point x="954.0" y="786.6298444976087" />
+      <point x="1034.0" y="782.1536862041482" />
+      <point x="2435.0" y="782.1536862041482" />
+      <point x="-79.5" y="-7.89090909090919" />
+    </edge>
+    <edge source="SensitivaImage" target="ApplicationRecord">
+      <point x="158.0" y="13.75" />
+      <point x="377.0" y="1700.6884748803836" />
+      <point x="457.0" y="1805.8401515151515" />
+      <point x="2435.0" y="1805.8401515151515" />
+      <point x="-79.5" y="1.1272727272726115" />
+    </edge>
+    <edge source="DiagnosticoRecidiva" target="Recidiva">
+      <point x="110.0" y="-26.333333333333485" />
+      <point x="377.0" y="2859.529842503987" />
+      <point x="-248.5" y="98.33333333333326" />
+    </edge>
+    <edge source="Recidiva" target="Paciente">
+      <point x="248.5" y="134.090909090909" />
+      <point x="1034.0" y="1414.3824740829364" />
+      <point x="1531.0" y="1414.3824740829364" />
+      <point x="1611.0" y="1409.3089892344515" />
+      <point x="-95.5" y="-8.583333333333258" />
+    </edge>
+    <edge source="SinaisSintoma" target="ApplicationRecord">
+      <point x="127.5" y="-0.0" />
+      <point x="2435.0" y="27.5" />
+      <point x="-79.5" y="-15.218181818181847" />
+    </edge>
+    <edge source="DantCidadeRegion" target="DantRegion">
+      <point x="111.0" y="26.333333333333485" />
+      <point x="2046.0" y="2955.8775917065386" />
+      <point x="2126.0" y="2961.951732456141" />
+      <point x="-111.0" y="-0.0" />
+    </edge>
+    <edge source="Notificacao" target="Paciente">
+      <point x="106.0" y="19.75" />
+      <point x="1531.0" y="861.4036862041482" />
+      <point x="1611.0" y="1374.975655901118" />
+      <point x="-95.5" y="-42.91666666666674" />
+    </edge>
+    <edge source="DermatologicoRecidiva" target="Dermatologica">
+      <point x="223.0" y="31.75" />
+      <point x="1531.0" y="1313.642322567785" />
+      <point x="1611.0" y="1300.892322567785" />
+      <point x="-129.0" y="-0.0" />
+    </edge>
+    <edge source="ImunizacaoEsquema" target="ImunizacaoSolicitacao">
+      <point x="217.5" y="34.333333333333485" />
+      <point x="954.0" y="2091.1907476076562" />
+      <point x="1034.0" y="2204.9634748803837" />
+      <point x="-205.0" y="-0.0" />
+    </edge>
+    <edge source="CondutaRecidiva" target="ApplicationRecord">
+      <point x="86.0" y="-0.0" />
+      <point x="377.0" y="411.30135366826244" />
+      <point x="457.0" y="397.5" />
+      <point x="2435.0" y="397.5" />
+      <point x="-79.5" y="-11.272727272727252" />
+    </edge>
+    <edge source="ImunizacaoSolicitacao" target="ApplicationRecord">
+      <point x="205.0" y="-14.583333333333485" />
+      <point x="1531.0" y="2190.3801415470502" />
+      <point x="1611.0" y="2180.9499401913868" />
+      <point x="2435.0" y="2180.9499401913868" />
+      <point x="-79.5" y="6.2000000000000455" />
+    </edge>
+    <edge source="EsquemaSubstitutivo" target="Medicamento">
+      <point x="122.0" y="-26.33333333333337" />
+      <point x="954.0" y="760.2965111642753" />
+      <point x="1034.0" y="729.11014553429" />
+      <point x="-122.0" y="-0.0" />
+    </edge>
+    <edge source="EscalaPart" target="Paciente">
+      <point x="106.0" y="26.33333333333337" />
+      <point x="954.0" y="931.9631778309421" />
+      <point x="1034.0" y="924.6298444976089" />
+      <point x="1531.0" y="924.6298444976089" />
+      <point x="1611.0" y="1392.142322567785" />
+      <point x="-95.5" y="-25.75" />
+    </edge>
+    <edge source="Recidiva" target="NervosRecidiva">
+      <point x="248.5" y="-53.63636363636351" />
+      <point x="1034.0" y="1092.5589892344515" />
+      <point x="-169.0" y="-34.33333333333326" />
+    </edge>
+    <edge source="DstProduto" target="ApplicationRecord">
+      <point x="111.5" y="-0.0" />
+      <point x="2435.0" y="2777.0442583732047" />
+      <point x="-79.5" y="12.400000000000091" />
+    </edge>
+    <edge source="DstMovimentacao" target="DstProduto">
+      <point x="188.5" y="25.40000000000009" />
+      <point x="457.0" y="2777.0442583732047" />
+      <point x="-111.5" y="-0.0" />
+    </edge>
+    <edge source="AvaliacaoNotificacao" target="ApplicationRecord">
+      <point x="174.5" y="19.75" />
+      <point x="-79.5" y="-0.0" />
+    </edge>
+    <edge source="EscalaSalsa" target="ApplicationRecord">
+      <point x="106.0" y="26.333333333333258" />
+      <point x="954.0" y="1459.475" />
+      <point x="1034.0" y="1479.892322567785" />
+      <point x="2435.0" y="1479.892322567785" />
+      <point x="-79.5" y="-2.2545454545454504" />
+    </edge>
+    <edge source="DstRespostum" target="DstQuestionario">
+      <point x="144.0" y="-0.0" />
+      <point x="954.0" y="2420.6582735247202" />
+      <point x="1034.0" y="2406.4407476076562" />
+      <point x="-144.0" y="-0.0" />
+    </edge>
+    <edge source="Recidiva" target="ApplicationRecord">
+      <point x="248.5" y="107.27272727272725" />
+      <point x="1034.0" y="1355.892322567785" />
+      <point x="2435.0" y="1355.892322567785" />
+      <point x="-79.5" y="-3.945454545454595" />
+    </edge>
+    <edge source="MonthlyReport" target="Cidade">
+      <point x="74.0" y="-13.75" />
+      <point x="2046.0" y="2301.4499401913868" />
+      <point x="2126.0" y="2278.0408492822958" />
+      <point x="-131.0" y="23.09090909090901" />
+    </edge>
+    <edge source="DstLote" target="ApplicationRecord">
+      <point x="111.5" y="19.75" />
+      <point x="2435.0" y="2846.7942583732047" />
+      <point x="-79.5" y="12.963636363636397" />
+    </edge>
+    <edge source="EscalaSalsa" target="Notificacao">
+      <point x="106.0" y="-26.333333333333258" />
+      <point x="954.0" y="1406.8083333333334" />
+      <point x="1034.0" y="875.5108290612911" />
+      <point x="-106.0" y="33.85714285714289" />
+    </edge>
+    <edge source="DstRespostum" target="ApplicationRecord">
+      <point x="144.0" y="-26.333333333333485" />
+      <point x="954.0" y="2394.3249401913863" />
+      <point x="1034.0" y="2353.1999401913868" />
+      <point x="2435.0" y="2353.1999401913868" />
+      <point x="-79.5" y="7.89090909090919" />
+    </edge>
+    <edge source="Marcacao" target="AvaliacaoSensitiva">
+      <point x="158.0" y="13.75" />
+      <point x="377.0" y="1520.0901515151515" />
+      <point x="457.0" y="1528.0901515151515" />
+      <point x="-174.5" y="-25.75" />
+    </edge>
+    <edge source="Notificacao" target="ApplicationRecord">
+      <point x="106.0" y="-19.75" />
+      <point x="2435.0" y="821.9036862041482" />
+      <point x="-79.5" y="-7.327272727272657" />
+    </edge>
+    <edge source="DstSolicitacaoProduto" target="DstProduto">
+      <point x="188.5" y="47.625" />
+      <point x="954.0" y="2699.232414274323" />
+      <point x="1034.0" y="2758.7109250398717" />
+      <point x="-111.5" y="-18.333333333333485" />
+    </edge>
+    <edge source="DstSolicitacaoProduto" target="DstSolicitacao">
+      <point x="188.5" y="-47.625" />
+      <point x="954.0" y="2603.982414274323" />
+      <point x="1034.0" y="2520.1907476076562" />
+      <point x="-128.0" y="25.75" />
+    </edge>
+    <edge source="Cidade" target="ApplicationRecord">
+      <point x="131.0" y="-0.0" />
+      <point x="2435.0" y="2254.9499401913868" />
+      <point x="-79.5" y="6.763636363636351" />
+    </edge>
+    <edge source="DantQuestion" target="ApplicationRecord">
+      <point x="65.0" y="-0.0" />
+      <point x="2435.0" y="110.5" />
+      <point x="-79.5" y="-14.654545454545541" />
+    </edge>
+    <edge source="NotificacaoContato" target="Notificacao">
+      <point x="164.5" y="19.75" />
+      <point x="954.0" y="687.3798444976087" />
+      <point x="1034.0" y="830.367971918434" />
+      <point x="-106.0" y="-11.28571428571422" />
+    </edge>
+    <edge source="User" target="Cidade">
+      <point x="74.0" y="-19.75" />
+      <point x="2046.0" y="2593.6907476076562" />
+      <point x="2126.0" y="2301.131758373205" />
+      <point x="-131.0" y="46.18181818181802" />
+    </edge>
+    <edge source="DstSolicitacaoProduto" target="ApplicationRecord">
+      <point x="188.5" y="15.875" />
+      <point x="954.0" y="2667.482414274323" />
+      <point x="1034.0" y="2709.6999401913868" />
+      <point x="2435.0" y="2709.6999401913868" />
+      <point x="-79.5" y="11.272727272727252" />
+    </edge>
+    <edge source="DstLote" target="DstProduto">
+      <point x="111.5" y="-19.75" />
+      <point x="954.0" y="2807.2942583732047" />
+      <point x="1034.0" y="2795.3775917065386" />
+      <point x="-111.5" y="18.333333333333485" />
+    </edge>
+    <edge source="Dermatologica" target="ApplicationRecord">
+      <point x="129.0" y="-0.0" />
+      <point x="2435.0" y="1300.892322567785" />
+      <point x="-79.5" y="-4.509090909090901" />
+    </edge>
+    <edge source="Ocupacao" target="ApplicationRecord">
+      <point x="95.5" y="-0.0" />
+      <point x="2435.0" y="1419.7256559011182" />
+      <point x="-79.5" y="-2.818181818181756" />
+    </edge>
+    <edge source="Queixa" target="ApplicationRecord">
+      <point x="145.0" y="13.75" />
+      <point x="2046.0" y="226.25" />
+      <point x="2126.0" y="231.5" />
+      <point x="2435.0" y="231.5" />
+      <point x="-79.5" y="-13.527272727272702" />
+    </edge>
+    <edge source="DiagnosticoRecidiva" target="ApplicationRecord">
+      <point x="110.0" y="-0.0" />
+      <point x="377.0" y="2885.8631758373203" />
+      <point x="457.0" y="2879.5442583732047" />
+      <point x="2435.0" y="2879.5442583732047" />
+      <point x="-79.5" y="13.527272727272702" />
+    </edge>
+    <edge source="ContatoAvaliacao" target="ApplicationRecord">
+      <point x="164.5" y="-13.75" />
+      <point x="377.0" y="564.4581718500804" />
+      <point x="457.0" y="427.6298444976087" />
+      <point x="2435.0" y="427.6298444976087" />
+      <point x="-79.5" y="-10.709090909090946" />
+    </edge>
+    <edge source="DstSolicitacao" target="ApplicationRecord">
+      <point x="128.0" y="-34.333333333333485" />
+      <point x="1531.0" y="2460.1074142743228" />
+      <point x="1611.0" y="2444.4407476076562" />
+      <point x="2435.0" y="2444.4407476076562" />
+      <point x="-79.5" y="9.018181818181802" />
+    </edge>
+    <edge source="DantRequestPacient" target="DantPacient">
+      <point x="119.0" y="26.333333333333258" />
+      <point x="954.0" y="1901.2162061403506" />
+      <point x="1034.0" y="1982.9499401913868" />
+      <point x="-115.5" y="-0.0" />
+    </edge>
+    <edge source="DstSolicitacao" target="DstLocal">
+      <point x="128.0" y="-0.0" />
+      <point x="-88.5" y="-0.0" />
+    </edge>
+    <edge source="DantPacient" target="Cidade">
+      <point x="115.5" y="19.75" />
+      <point x="2046.0" y="2002.6999401913868" />
+      <point x="2126.0" y="2220.3135765550232" />
+      <point x="-131.0" y="-34.63636363636351" />
+    </edge>
+    <edge source="Medicamento" target="ApplicationRecord">
+      <point x="122.0" y="-0.0" />
+      <point x="2435.0" y="729.11014553429" />
+      <point x="-79.5" y="-8.454545454545496" />
+    </edge>
+    <edge source="Recidiva" target="Notificacao">
+      <point x="248.5" y="-134.090909090909" />
+      <point x="1034.0" y="864.2251147755768" />
+      <point x="-106.0" y="22.571428571428555" />
+    </edge>
+    <edge source="DantRegion" target="ApplicationRecord">
+      <point x="111.0" y="-0.0" />
+      <point x="2435.0" y="2961.951732456141" />
+      <point x="-79.5" y="14.654545454545541" />
+    </edge>
+    <edge source="DstUserLocal" target="DstLocal">
+      <point x="88.5" y="-26.333333333333485" />
+      <point x="1531.0" y="2633.3666068580533" />
+      <point x="1611.0" y="2520.7740809409897" />
+      <point x="-88.5" y="26.333333333333485" />
+    </edge>
+    <edge source="NotificacaoContato" target="ApplicationRecord">
+      <point x="164.5" y="-19.75" />
+      <point x="2435.0" y="647.8798444976087" />
+      <point x="-79.5" y="-9.018181818181802" />
+    </edge>
+    <edge source="ContatoAvaliacao" target="NotificacaoContato">
+      <point x="164.5" y="13.75" />
+      <point x="377.0" y="591.9581718500804" />
+      <point x="457.0" y="667.6298444976087" />
+      <point x="-164.5" y="-0.0" />
+    </edge>
+    <edge source="DantRequestPacient" target="DantRequest">
+      <point x="119.0" y="-0.0" />
+      <point x="954.0" y="1874.8828728070175" />
+      <point x="1034.0" y="1870.9499401913868" />
+      <point x="-212.5" y="-0.0" />
+    </edge>
+    <edge source="CondutaRecidiva" target="Conduta">
+      <point x="86.0" y="-26.333333333333258" />
+      <point x="377.0" y="384.9680203349292" />
+      <point x="457.0" y="288.5" />
+      <point x="-86.0" y="-0.0" />
+    </edge>
+    <edge source="DstRespostum" target="DstSolicitacao">
+      <point x="144.0" y="26.333333333333485" />
+      <point x="954.0" y="2446.9916068580533" />
+      <point x="1034.0" y="2468.6907476076562" />
+      <point x="-128.0" y="-25.75" />
+    </edge>
+    <edge source="ImunizacaoEsquema" target="ImunizacaoImunobiologico">
+      <point x="217.5" y="-0.0" />
+      <point x="1531.0" y="2056.8574142743228" />
+      <point x="-217.5" y="-42.333333333333485" />
+    </edge>
+    <edge source="EscalaPart" target="ApplicationRecord">
+      <point x="106.0" y="-0.0" />
+      <point x="954.0" y="905.6298444976087" />
+      <point x="1034.0" y="913.2965111642754" />
+      <point x="2435.0" y="913.2965111642754" />
+      <point x="-79.5" y="-6.763636363636351" />
+    </edge>
+    <edge source="DantResponsavelProgram" target="ApplicationRecord">
+      <point x="212.5" y="-19.75" />
+      <point x="2435.0" y="1851.1999401913868" />
+      <point x="-79.5" y="3.381818181818062" />
+    </edge>
+    <edge source="ImunizacaoSolicitacao" target="Cidade">
+      <point x="205.0" y="72.91666666666652" />
+      <point x="1531.0" y="2277.8801415470502" />
+      <point x="1611.0" y="2271.3022129186593" />
+      <point x="2046.0" y="2271.3022129186593" />
+      <point x="2126.0" y="2266.4953947368413" />
+      <point x="-131.0" y="11.545454545454504" />
+    </edge>
+    <edge source="Recidiva" target="EpidosiosReacionaisRecidiva">
+      <point x="248.5" y="-107.27272727272725" />
+      <point x="-248.5" y="-19.75" />
+    </edge>
+    <edge source="EpisodioReacional" target="Notificacao">
+      <point x="106.0" y="13.75" />
+      <point x="954.0" y="479.3798444976087" />
+      <point x="1034.0" y="807.7965433470054" />
+      <point x="-106.0" y="-33.85714285714289" />
+    </edge>
+    <edge source="EpisodioReacional" target="ApplicationRecord">
+      <point x="106.0" y="-13.75" />
+      <point x="2435.0" y="451.8798444976087" />
+      <point x="-79.5" y="-10.14545454545464" />
+    </edge>
+    <edge source="DantRequest" target="Cidade">
+      <point x="212.5" y="34.33333333333326" />
+      <point x="1531.0" y="1905.2832735247202" />
+      <point x="1611.0" y="2032.9499401913868" />
+      <point x="2046.0" y="2032.9499401913868" />
+      <point x="2126.0" y="2231.8590311004778" />
+      <point x="-131.0" y="-23.09090909090901" />
+    </edge>
+    <edge source="DstMovimentacao" target="DstLocal">
+      <point x="188.5" y="-50.80000000000018" />
+      <point x="457.0" y="2370.6582735247202" />
+      <point x="1531.0" y="2370.6582735247202" />
+      <point x="1611.0" y="2468.1074142743228" />
+      <point x="-88.5" y="-26.333333333333485" />
+    </edge>
+    <edge source="DstUserLocal" target="User">
+      <point x="88.5" y="-0.0" />
+      <point x="1531.0" y="2659.6999401913868" />
+      <point x="1611.0" y="2639.7740809409897" />
+      <point x="-74.0" y="26.333333333333485" />
+    </edge>
+    <edge source="SintomasRecidiva" target="SinaisSintoma">
+      <point x="127.5" y="-26.333333333333258" />
+      <point x="377.0" y="223.7211523125991" />
+      <point x="457.0" y="27.5" />
+      <point x="-127.5" y="-0.0" />
+    </edge>
+    <edge source="DiagnosticoRecidiva" target="Diagnostico">
+      <point x="110.0" y="26.333333333333485" />
+      <point x="377.0" y="2912.196509170654" />
+      <point x="457.0" y="3056.951732456141" />
+      <point x="-110.0" y="-0.0" />
+    </edge>
+    <edge source="DstQuestionario" target="ApplicationRecord">
+      <point x="144.0" y="-0.0" />
+      <point x="-79.5" y="8.454545454545496" />
+    </edge>
+    <edge source="EscalaPart" target="Notificacao">
+      <point x="106.0" y="-26.33333333333337" />
+      <point x="954.0" y="879.2965111642753" />
+      <point x="1034.0" y="852.9394004898626" />
+      <point x="-106.0" y="11.285714285714334" />
+    </edge>
+    <edge source="DstLocal" target="Cidade">
+      <point x="88.5" y="-19.75" />
+      <point x="2046.0" y="2474.6907476076562" />
+      <point x="2126.0" y="2289.5863038277503" />
+      <point x="-131.0" y="34.63636363636351" />
+    </edge>
+    <edge source="CategoriaQueixa" target="ApplicationRecord">
+      <point x="145.0" y="-0.0" />
+      <point x="-79.5" y="-14.090909090909008" />
+    </edge>
+    <edge source="AvaliacaoNeurologica" target="AvaliacaoNotificacao">
+      <point x="174.5" y="-13.75" />
+      <point x="954.0" y="1754.0901515151515" />
+      <point x="1034.0" y="1724.1734848484848" />
+      <point x="-174.5" y="26.333333333333258" />
+    </edge>
+    <edge source="DstSolicitacaoProduto" target="User">
+      <point x="188.5" y="-15.875" />
+      <point x="954.0" y="2635.732414274323" />
+      <point x="1034.0" y="2609.6999401913868" />
+      <point x="1531.0" y="2609.6999401913868" />
+      <point x="1611.0" y="2613.4407476076562" />
+      <point x="-74.0" y="-0.0" />
+    </edge>
+    <edge source="Conduta" target="ApplicationRecord">
+      <point x="86.0" y="-0.0" />
+      <point x="2435.0" y="288.5" />
+      <point x="-79.5" y="-12.400000000000091" />
+    </edge>
+    <edge source="DantRequestPacient" target="ApplicationRecord">
+      <point x="119.0" y="-26.333333333333258" />
+      <point x="954.0" y="1848.549539473684" />
+      <point x="1034.0" y="1808.9499401913868" />
+      <point x="2435.0" y="1808.9499401913868" />
+      <point x="-79.5" y="2.2545454545454504" />
+    </edge>
+    <edge source="SensitivaImage" target="AvaliacaoSensitiva">
+      <point x="158.0" y="-13.75" />
+      <point x="377.0" y="1673.1884748803836" />
+      <point x="457.0" y="1579.5901515151515" />
+      <point x="-174.5" y="25.75" />
+    </edge>
+    <edge source="DantRequest" target="DantResponsavelProgram">
+      <point x="212.5" y="-0.0" />
+      <point x="-212.5" y="-0.0" />
+    </edge>
+    <edge source="DantCidadeRegion" target="Cidade">
+      <point x="111.0" y="-26.333333333333485" />
+      <point x="2046.0" y="2903.2109250398717" />
+      <point x="2126.0" y="2312.6772129186593" />
+      <point x="-131.0" y="57.72727272727252" />
+    </edge>
+    <edge source="DantPacient" target="ApplicationRecord">
+      <point x="115.5" y="-19.75" />
+      <point x="2435.0" y="1963.1999401913868" />
+      <point x="-79.5" y="4.509090909090901" />
+    </edge>
+    <edge source="ImunizacaoEncerramento" target="ApplicationRecord">
+      <point x="172.0" y="-13.75" />
+      <point x="377.0" y="1914.9922627591716" />
+      <point x="457.0" y="1806.403787878788" />
+      <point x="2435.0" y="1806.403787878788" />
+      <point x="-79.5" y="1.6909090909091447" />
+    </edge>
+    <edge source="Paciente" target="ApplicationRecord">
+      <point x="95.5" y="-34.33333333333326" />
+      <point x="2046.0" y="1383.5589892344515" />
+      <point x="2126.0" y="1370.1566566985655" />
+      <point x="2435.0" y="1370.1566566985655" />
+      <point x="-79.5" y="-3.3818181818182893" />
+    </edge>
+    <edge source="Diagnostico" target="ApplicationRecord">
+      <point x="110.0" y="-0.0" />
+      <point x="2435.0" y="3056.951732456141" />
+      <point x="-79.5" y="15.218181818181847" />
+    </edge>
+    <edge source="ImunizacaoImunobiologico" target="ApplicationRecord">
+      <point x="217.5" y="-31.75" />
+      <point x="2126.0" y="2087.9499401913868" />
+      <point x="2435.0" y="2087.9499401913868" />
+      <point x="-79.5" y="5.072727272727207" />
+    </edge>
+    <edge source="CondutaRecidiva" target="Recidiva">
+      <point x="86.0" y="26.333333333333314" />
+      <point x="377.0" y="437.6346870015957" />
+      <point x="-248.5" y="-0.0" />
+    </edge>
+    <edge source="DantResponsavelProgram" target="Cidade">
+      <point x="212.5" y="19.75" />
+      <point x="2126.0" y="2208.7681220095687" />
+      <point x="-131.0" y="-46.18181818181802" />
+    </edge>
+    <edge source="EsquemaSubstitutivo" target="Notificacao">
+      <point x="122.0" y="26.33333333333337" />
+      <point x="954.0" y="812.9631778309421" />
+      <point x="1034.0" y="841.6536862041482" />
+      <point x="-106.0" y="-0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.11851851851851852" x="1481.5" y="2415.78125" />
+  <SelectedNodes>
+    <node>DstLote</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Association fields</Category>
+    <Category>Migration fields</Category>
+  </Categories>
+</Diagram>
+

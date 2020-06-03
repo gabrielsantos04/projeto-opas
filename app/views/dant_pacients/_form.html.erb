@@ -90,10 +90,10 @@
       <span class="card-title">Insulinas</span>
       <%= f.fields_for :dant_doses do |esq| %>
         <div class="row">
-          <div class="input-field col s3">
-
-            <%= esq.select :tipo_insulina , DantDose.tipo_insulina.options , {prompt: true},{required: true}%>
+          <div class="input col s3">
             <%= esq.label :tipo_insulina, "Tipo" %>
+            <%= esq.select :tipo_insulina , DantDose.tipo_insulina.options , {prompt: true},{required: true, class:"browser-default chosen-select"}%>
+
           </div>
           <div class="col s2">
             <%= esq.label :dose_diaria, "Dose Diária" %>
@@ -159,25 +159,25 @@
       <%= f.label :grau_obesidade %>
 
     </div>
-  </div>
-
+  </div> -->
+<% if !@dant_pacient.new_record? %>
   <div class="row">
     <div class="input-field col l3">
 
 
       <%= f.check_box :obito %>
-      <%= f.label :obito %>
+      <%= f.label :obito, "Óbito" %>
     </div>
 
     <div class="input-field col l6">
 
-      <%= f.label :data_obito %>
+      <%= f.label :data_obito, "Data do óbito" %>
       <%= f.text_field :data_obito, class:"datepicker" %>
 
 
     </div>
-  </div> -->
-
+  </div>
+<% end %>
 
 </div>
   <div class="actions">

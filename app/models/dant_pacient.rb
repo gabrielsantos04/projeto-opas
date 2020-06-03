@@ -36,6 +36,7 @@
 
 class DantPacient < ApplicationRecord
   belongs_to :cidade , dependent: :destroy
+  has_one :dant_region, through: :cidade
   has_many :dant_doses
   accepts_nested_attributes_for :dant_doses, allow_destroy: true
 
@@ -48,8 +49,14 @@ class DantPacient < ApplicationRecord
   enumerize :tipo_insulina, in: [:nph_frascos, :regular_frascos,:nph_de_caneta, :regular_de_caneta], predicates: true
 
   validate :verifica_documentos
+  before_create :set_obito
   
   before_save :set_frascos
+
+
+  def set_obito
+    self.obito = false
+  end
 
   #Método que verifica a presença de pelo menos um dos documentos rg, cpf ou cartão sus
   def verifica_documentos

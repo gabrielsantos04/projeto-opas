@@ -25,13 +25,15 @@
 
 
       </div>
-      <% if current_user.administrador? %>
+      <% if current_user.administrador? || current_user.admin_dant? %>
           <div class="input">
             <%= f.label :cidade_id, "Cidade" %>
-            <%= f.select :cidade_id, @cidades, {prompt: true}, {class:"browser-default select2"}   %>
+            <%= f.select :cidade_id, @cidades, {prompt: true}, {class:"browser-default select2", onchange:"cidade_change()"}   %>
 
           </div>
-      <% end %>
+      <% else %>
+      <%= f.hidden_field :cidade_id %>
+      <% end  %>
       <br>
 
       <div class="card">
@@ -64,34 +66,34 @@
                   <tbody>
                   <tr>
                     <td>Masculino</td>
-                    <td><%= esq.number_field :hipertenso_m_1, required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_1_4 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_5_9 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_10_14 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_15_19 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_20_29 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_30_39 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_40_49 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_50_59 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_60_69 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_70_79 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_m_80 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_m_1, required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_m_1_4 ,required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_m_5_9 ,required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_m_10_14 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_m_15_19 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_m_20_29 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_m_30_39 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_m_40_49 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_m_50_59 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_m_60_69 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_m_70_79 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_m_80 ,required: true , class:"hipertenso"%></td>
 
                   </tr>
                   <tr>
                     <td>Feminino</td>
-                    <td><%= esq.number_field :hipertenso_f_1 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_1_4 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_5_9 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_10_14 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_15_19 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_20_29 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_30_39 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_40_49 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_50_59 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_60_69 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_70_79 ,required: true %></td>
-                    <td><%= esq.number_field :hipertenso_f_80 ,required: true %></td>
+                    <td><%= esq.number_field :hipertenso_f_1 ,required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_f_1_4 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_f_5_9 ,required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_f_10_14 ,required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_f_15_19 ,required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_f_20_29 ,required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_f_30_39 ,required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_f_40_49 ,required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_f_50_59 ,required: true, class:"hipertenso" %></td>
+                    <td><%= esq.number_field :hipertenso_f_60_69 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_f_70_79 ,required: true , class:"hipertenso"%></td>
+                    <td><%= esq.number_field :hipertenso_f_80 ,required: true, class:"hipertenso" %></td>
 
                   </tr>
                   </tbody>
@@ -120,33 +122,33 @@
                   <tbody>
                   <tr>
                     <td>Masculino</td>
-                    <td><%= esq.number_field :diabetico_m_1 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_1_4 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_5_9 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_10_14 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_15_19 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_20_29 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_30_39 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_40_49 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_50_59 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_60_69 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_70_79 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_m_90 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_m_1 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_1_4 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_5_9 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_10_14 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_15_19 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_20_29 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_30_39 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_40_49 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_50_59 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_60_69 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_70_79 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_m_90 ,required: true , class:"diabeticos"%></td>
                   </tr>
                   <tr>
                     <td>Feminino</td>
-                    <td><%= esq.number_field :diabetico_f_1 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_1_4 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_5_9 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_10_14 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_15_19 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_20_29 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_30_39 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_40_49 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_50_59 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_60_69 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_70_79 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_f_80 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_f_1 ,required: true , class:"diabeticos"%></td>
+                    <td><%= esq.number_field :diabetico_f_1_4 ,required: true , class:"diabeticos"%></td>
+                    <td><%= esq.number_field :diabetico_f_5_9 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_f_10_14 ,required: true , class:"diabeticos"%></td>
+                    <td><%= esq.number_field :diabetico_f_15_19 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_f_20_29 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_f_30_39 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_f_40_49 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_f_50_59 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_f_60_69 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_f_70_79 ,required: true, class:"diabeticos" %></td>
+                    <td><%= esq.number_field :diabetico_f_80 ,required: true , class:"diabeticos"%></td>
 
                   </tr>
                   </tbody>
@@ -175,33 +177,33 @@
                   <tbody>
                   <tr>
                     <td>Masculino</td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_1 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_1_4 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_5_9 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_10_14 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_15_19 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_20_29 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_30_39 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_40_49 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_50_59 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_60_69 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_70_79 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_m_80 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_1 ,required: true, class:"diab_hip" %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_1_4 ,required: true, class:"diab_hip" %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_5_9 ,required: true, class:"diab_hip" %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_10_14 ,required: true, class:"diab_hip" %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_15_19 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_20_29 ,required: true, class:"diab_hip" %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_30_39 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_40_49 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_50_59 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_60_69 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_70_79 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_m_80 ,required: true, class:"diab_hip" %></td>
                   </tr>
                   <tr>
                     <td>Feminino</td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_1 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_1_4 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_5_9 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_10_14 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_15_19 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_20_29 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_30_39 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_40_49 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_50_59 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_60_69 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_70_79 ,required: true %></td>
-                    <td><%= esq.number_field :diabetico_hipertenso_f_80 ,required: true %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_1 ,required: true, class:"diab_hip" %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_1_4 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_5_9 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_10_14 ,required: true, class:"diab_hip" %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_15_19 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_20_29 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_30_39 ,required: true, class:"diab_hip" %></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_40_49 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_50_59 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_60_69 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_70_79 ,required: true , class:"diab_hip"%></td>
+                    <td><%= esq.number_field :diabetico_hipertenso_f_80 ,required: true, class:"diab_hip" %></td>
 
                   </tr>
                   </tbody>
@@ -231,34 +233,34 @@
                   <tbody>
                   <tr>
                     <td>Masculino</td>
-                    <td><%= esq.number_field :obeso_m_1 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_1_4 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_5_9 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_10_14 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_15_19 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_20_29 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_30_39 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_40_49 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_50_59 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_60_69 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_70_79 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_m_80 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_m_1 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_m_1_4 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_m_5_9 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_m_10_14 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_m_15_19 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_m_20_29 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_m_30_39 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_m_40_49 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_m_50_59 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_m_60_69 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_m_70_79 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_m_80 ,required: true, class:"obesos" %></td>
 
                   </tr>
                   <tr>
                     <td>Feminino</td>
-                    <td><%= esq.number_field :obeso_f_1 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_1_4 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_5_9 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_10_14 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_15_19 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_20_29 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_30_39 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_40_49 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_50_59 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_60_69 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_70_79 ,required: true %></td>
-                    <td><%= esq.number_field :obeso_f_80 ,required: true %></td>
+                    <td><%= esq.number_field :obeso_f_1 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_f_1_4 ,required: true, class:"obesos" %></td>
+                    <td><%= esq.number_field :obeso_f_5_9 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_f_10_14 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_f_15_19 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_f_20_29 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_f_30_39 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_f_40_49 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_f_50_59 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_f_60_69 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_f_70_79 ,required: true , class:"obesos"%></td>
+                    <td><%= esq.number_field :obeso_f_80 ,required: true , class:"obesos"%></td>
 
                   </tr>
                   </tbody>
@@ -285,28 +287,28 @@
                   <tbody>
                   <tr>
                     <td>Masculino</td>
-                    <td><%= esq.number_field :tabagismo_m_1_8 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_m_9_11 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_m_12_17 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_m_18_24 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_m_25_34 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_m_35_44 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_m_45_54 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_m_55_64 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_m_65 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_m_1_8 ,required: true, class:"tabagistas" %></td>
+                    <td><%= esq.number_field :tabagismo_m_9_11 ,required: true, class:"tabagistas" %></td>
+                    <td><%= esq.number_field :tabagismo_m_12_17 ,required: true, class:"tabagistas" %></td>
+                    <td><%= esq.number_field :tabagismo_m_18_24 ,required: true, class:"tabagistas" %></td>
+                    <td><%= esq.number_field :tabagismo_m_25_34 ,required: true, class:"tabagistas" %></td>
+                    <td><%= esq.number_field :tabagismo_m_35_44 ,required: true, class:"tabagistas" %></td>
+                    <td><%= esq.number_field :tabagismo_m_45_54 ,required: true, class:"tabagistas" %></td>
+                    <td><%= esq.number_field :tabagismo_m_55_64 ,required: true, class:"tabagistas" %></td>
+                    <td><%= esq.number_field :tabagismo_m_65 ,required: true, class:"tabagistas" %></td>
 
                   </tr>
                   <tr>
                     <td>Feminino</td>
-                    <td><%= esq.number_field :tabagismo_f_1_8 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_f_9_11 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_f_12_17 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_f_18_24 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_f_25_34 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_f_35_44 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_f_45_54 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_f_55_64 ,required: true %></td>
-                    <td><%= esq.number_field :tabagismo_f_65 ,required: true %></td>
+                    <td><%= esq.number_field :tabagismo_f_1_8 ,required: true , class:"tabagistas"%></td>
+                    <td><%= esq.number_field :tabagismo_f_9_11 ,required: true, class:"tabagistas" %></td>
+                    <td><%= esq.number_field :tabagismo_f_12_17 ,required: true , class:"tabagistas"%></td>
+                    <td><%= esq.number_field :tabagismo_f_18_24 ,required: true , class:"tabagistas"%></td>
+                    <td><%= esq.number_field :tabagismo_f_25_34 ,required: true , class:"tabagistas"%></td>
+                    <td><%= esq.number_field :tabagismo_f_35_44 ,required: true , class:"tabagistas"%></td>
+                    <td><%= esq.number_field :tabagismo_f_45_54 ,required: true , class:"tabagistas"%></td>
+                    <td><%= esq.number_field :tabagismo_f_55_64 ,required: true , class:"tabagistas"%></td>
+                    <td><%= esq.number_field :tabagismo_f_65 ,required: true , class:"tabagistas"%></td>
 
                   </tr>
                   </tbody>
@@ -333,28 +335,28 @@
                   <tbody>
                   <tr>
                     <td>Masculino</td>
-                    <td><%= esq.number_field :etilismo_m_1_8 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_m_9_11 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_m_12_17 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_m_18_24 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_m_25_34 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_m_35_44 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_m_45_54 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_m_55_64 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_m_65 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_m_1_8 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_m_9_11 ,required: true, class:"etilistas" %></td>
+                    <td><%= esq.number_field :etilismo_m_12_17 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_m_18_24 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_m_25_34 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_m_35_44 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_m_45_54 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_m_55_64 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_m_65 ,required: true, class:"etilistas" %></td>
 
                   </tr>
                   <tr>
                     <td>Feminino</td>
-                    <td><%= esq.number_field :etilismo_f_1_8 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_f_9_11 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_f_12_17 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_f_18_24 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_f_25_34 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_f_35_44 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_f_45_54 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_f_55_64 ,required: true %></td>
-                    <td><%= esq.number_field :etilismo_f_65 ,required: true %></td>
+                    <td><%= esq.number_field :etilismo_f_1_8 ,required: true, class:"etilistas" %></td>
+                    <td><%= esq.number_field :etilismo_f_9_11 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_f_12_17 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_f_18_24 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_f_25_34 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_f_35_44 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_f_45_54 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_f_55_64 ,required: true , class:"etilistas"%></td>
+                    <td><%= esq.number_field :etilismo_f_65 ,required: true , class:"etilistas"%></td>
 
                   </tr>
                   </tbody>
@@ -371,7 +373,7 @@
 
       <div class="input-field">
 
-        <%= f.label :qtd_hipertensos, DantQuestion.find_by_pergunta(1) %>
+        <%= f.label :qtd_hipertensos, DantQuestion.find_by_pergunta(1), {id: "dant_request_qtd_hipertensos_lbl"} %>
         <%= f.number_field :qtd_hipertensos , readonly: true%>
 
       </div>
@@ -392,7 +394,7 @@
 
       <div class="input-field">
 
-        <%= f.label :qtd_diabeticos , DantQuestion.find_by_pergunta(4)%>
+        <%= f.label :qtd_diabeticos , DantQuestion.find_by_pergunta(4), {id:"dant_request_qtd_diabeticos_lbl"}%>
         <%= f.number_field :qtd_diabeticos , readonly: true%>
 
       </div>
@@ -413,7 +415,7 @@
 
       <div class="input-field">
 
-        <%= f.label :qtd_diabeticos_hipertencos, DantQuestion.find_by_pergunta(7) %>
+        <%= f.label :qtd_diabeticos_hipertencos, DantQuestion.find_by_pergunta(7), {id: "dant_request_qtd_diabeticos_hipertencos_lbl"} %>
         <%= f.number_field :qtd_diabeticos_hipertencos , readonly: true%>
 
       </div>
@@ -502,7 +504,7 @@
 
       <div class="input-field">
 
-        <%= f.label :qtd_tabagista , DantQuestion.find_by_pergunta(14)%>
+        <%= f.label :qtd_tabagista , DantQuestion.find_by_pergunta(14), {id:"dant_request_qtd_tabagista_lbl"}%>
         <%= f.number_field :qtd_tabagista, readonly: true %>
 
       </div>
@@ -516,7 +518,7 @@
 
       <div class="input-field">
 
-        <%= f.label :qtd_etilista, DantQuestion.find_by_pergunta(16) %>
+        <%= f.label :qtd_etilista, DantQuestion.find_by_pergunta(16), {id:"dant_request_qtd_etilista_lbl"} %>
         <%= f.number_field :qtd_etilista, readonly: true %>
 
       </div>
@@ -530,7 +532,7 @@
 
       <div class="input-field">
 
-        <%= f.label :qtd_obesos , DantQuestion.find_by_pergunta(18)%>
+        <%= f.label :qtd_obesos , DantQuestion.find_by_pergunta(18), {id:"dant_request_qtd_obesos_lbl"}%>
         <%= f.number_field :qtd_obesos , readonly: true%>
 
       </div>
@@ -568,46 +570,164 @@
 
 
 
-      <div class="card">
-        <div class="card-content">
-          <span class="card-title">Pacientes</span>
-          <%= f.fields_for :dant_request_pacients do |esq| %>
-              <div class="row">
-                <div class="col s4 input">
-                  <%= esq.label :dant_pacient_id, "Paciente" %> <br>
-                  <% if esq.object.dant_pacient_id %>
-                    <strong><%= DantPacient.find(esq.object.dant_pacient_id) %></strong>
-                  <% end %>
-                  <%= esq.hidden_field :dant_pacient_id%>
-                  <%= esq.hidden_field :idade%>
-                  <%= esq.hidden_field :hipertenso%>
-                  <%= esq.hidden_field :diabetico%>
-                  <%= esq.hidden_field :tabagista%>
-                  <%= esq.hidden_field :etilista%>
-                  <%= esq.hidden_field :obeso%>
-                  <%= esq.hidden_field :sexo%>
+      <!--<div class="card">-->
+        <!--<div class="card-content">-->
+          <!--<span class="card-title">Pacientes</span>-->
+          <!--<%#= f.fields_for :dant_request_pacients do |esq| %>-->
+              <!--<div class="row">-->
+                <!--<div class="col s4 input">-->
+                  <%#= esq.label :dant_pacient_id, "Paciente" %> <br>
+                  <!--<%# if esq.object.dant_pacient_id %>-->
+                    <!--<strong><%#= DantPacient.find(esq.object.dant_pacient_id) %></strong>-->
+                  <!--<%# end %>-->
+                  <!--<%#= esq.hidden_field :dant_pacient_id%>-->
+                  <!--<%#= esq.hidden_field :idade%>-->
+                  <!--<%#= esq.hidden_field :hipertenso%>-->
+                  <!--<%#= esq.hidden_field :diabetico%>-->
+                  <!--<%#= esq.hidden_field :tabagista%>-->
+                  <!--<%#= esq.hidden_field :etilista%>-->
+                  <!--<%#= esq.hidden_field :obeso%>-->
+                  <!--<%#= esq.hidden_field :sexo%>-->
 
-                </div>
-                <div class="col s2">
-                  <%= esq.label :frascos_diarios, "QTD Diária" %>
-                  <%= esq.number_field :frascos_diarios, step: 1, readonly: true %>
-                </div>
-                <div class="col s2">
-                  <%= esq.label :frascos_mensais, "QTD Mensal" %>
-                  <%= esq.number_field :frascos_mensais, step: 1, readonly: true %>
-                </div>
-                <div class="col s4">
-                  <%#= esq.link_to_remove "Remover" %>
-                </div>
-              </div>
-          <% end %>
-        </div>
-        <div class="card-action">
-          <%#= f.link_to_add "Inserir Paciente", :dant_request_pacients %>
-        </div>
-      </div>
+                <!--</div>-->
+                <!--<div class="col s2">-->
+                  <!--<%#= esq.label :frascos_diarios, "QTD Diária" %>-->
+                  <!--<%#= esq.number_field :frascos_diarios, step: 1, readonly: true %>-->
+                <!--</div>-->
+                <!--<div class="col s2">-->
+                  <!--<%#= esq.label :frascos_mensais, "QTD Mensal" %>-->
+                  <!--<%#= esq.number_field :frascos_mensais, step: 1, readonly: true %>-->
+                <!--</div>-->
+                <!--<div class="col s4">-->
+                  <!--<%#= esq.link_to_remove "Remover" %>-->
+                <!--</div>-->
+              <!--</div>-->
+          <!--<%# end %>-->
+        <!--</div>-->
+        <!--<div class="card-action">-->
+          <!--<%#= f.link_to_add "Inserir Paciente", :dant_request_pacients %>-->
+        <!--</div>-->
+      <!--</div>-->
     </div>
     <div class="actions">
       <%= f.submit "Salvar", class:"btn" %>
     </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+    function cidade_change()
+    {
+        $.get('/dant/dant_requests/cidade_change?cidade='+ $('#dant_request_cidade_id').val() );
+    }
+
+    $(document).ready(function(){
+        calcula_hipertenso();
+    });
+
+    function calcula_hipertenso()
+    {
+        var sum = 0;
+        $('.hipertenso').each(function(){
+            console.log("value - ", this.value);
+            val = parseInt(this.value)
+            sum += !isNaN( val ) ? val : 0;  // Or this.innerHTML, this.innerText
+        });
+
+        $("#dant_request_qtd_hipertensos").val(sum);
+        $("#dant_request_qtd_hipertensos_lbl").addClass("active");
+    }
+
+    $(".hipertenso").on("blur",function(){
+       calcula_hipertenso();
+        calcula_diabeticos();
+        calcula_diab_hip();
+        calcula_obesos();
+        calcula_tabagistas();
+        calcula_etilistas();
+    });
+
+    function calcula_diabeticos()
+    {
+        var sum = 0;
+        $('.diabeticos').each(function(){
+
+            val = parseInt(this.value)
+            sum += !isNaN( val ) ? val : 0;  // Or this.innerHTML, this.innerText
+        });
+
+        $("#dant_request_qtd_diabeticos").val(sum);
+        $("#dant_request_qtd_diabeticos_lbl").addClass("active");
+    }
+
+    $(".diabeticos").on("blur",function(){
+       calcula_diabeticos();
+    });
+
+    function calcula_diab_hip()
+    {
+        var sum = 0;
+        $('.diab_hip').each(function(){
+
+            val = parseInt(this.value)
+            sum += !isNaN( val ) ? val : 0;  // Or this.innerHTML, this.innerText
+        });
+
+        $("#dant_request_qtd_diabeticos_hipertencos").val(sum);
+        $("#dant_request_qtd_diabeticos_hipertencos_lbl").addClass("active");
+    }
+
+    $(".diab_hip").on("blur",function(){
+        calcula_diab_hip();
+    });
+
+    function calcula_obesos(){
+        var sum = 0;
+        $('.obesos').each(function(){
+
+            val = parseInt(this.value)
+            sum += !isNaN( val ) ? val : 0;  // Or this.innerHTML, this.innerText
+        });
+
+        $("#dant_request_qtd_obesos").val(sum);
+        $("#dant_request_qtd_obesos_lbl").addClass("active");
+    }
+
+    $(".obesos").on("blur",function(){
+        calcula_obesos();
+    });
+
+    function calcula_tabagistas()
+    {
+        var sum = 0;
+        $('.tabagistas').each(function(){
+
+            val = parseInt(this.value)
+            sum += !isNaN( val ) ? val : 0;  // Or this.innerHTML, this.innerText
+        });
+
+        $("#dant_request_qtd_tabagista").val(sum);
+        $("#dant_request_qtd_tabagista_lbl").addClass("active");
+    }
+
+    $(".tabagistas").on("blur",function(){
+        calcula_tabagistas();
+
+    });
+
+    function calcula_etilistas()
+    {
+        var sum = 0;
+        $('.etilistas').each(function(){
+
+            val = parseInt(this.value)
+            sum += !isNaN( val ) ? val : 0;  // Or this.innerHTML, this.innerText
+        });
+
+        $("#dant_request_qtd_etilista").val(sum);
+        $("#dant_request_qtd_etilista_lbl").addClass("active");
+    }
+
+    $(".etilistas").on("blur",function(){
+        calcula_etilistas();
+    });
+</script>

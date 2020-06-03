@@ -68,6 +68,7 @@ Rails.application.routes.draw do
       end
       collection do
         get "dashboard"
+        get "cidade_change"
       end
     end
     resources :dant_responsavel_programs

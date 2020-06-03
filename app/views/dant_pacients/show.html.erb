@@ -90,7 +90,7 @@
             <tbody>
               <% @dant_pacient.dant_doses.each do |dose| %>
                 <tr>
-                  <td><%= dose.tipo_insulina.upcase %></td>
+                  <td><%= dose.tipo_insulina_text.upcase %></td>
                   <td><%= dose.dose_diaria %></td>
                   <td><%= dose.frascos_mensais %></td>
                 </tr>

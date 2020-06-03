@@ -66,20 +66,39 @@ class DantRequestsController < ApplicationController
     redirect_to dant_requests_path
   end
 
+  def cidade_change
+    pacientes = DantPacient.where(cidade_id: params[:cidade]).where.not(obito: true)
+    insulinas = DantDose.where(dant_pacient_id: pacientes.pluck(:id))
+    @qtd_nph = insulinas.where(tipo_insulina: "nph_frascos").count
+    @qtd_frascos_nph = insulinas.where(tipo_insulina: "nph_frascos").sum(:frascos_mensais)
+    @qtd_regular = insulinas.where(tipo_insulina: "regular_frascos").count
+    @qtd_frascos_regular = insulinas.where(tipo_insulina: "regular_frascos").sum(:frascos_mensais)
+    @qtd_nph_caneta = insulinas.where(tipo_insulina: "nph_de_caneta").count
+    @qtd_frascos_nph_caneta = insulinas.where(tipo_insulina: "nph_de_caneta").sum(:frascos_mensais)
+    @qtd_regular_caneta = insulinas.where(tipo_insulina: "regular_de_caneta").count
+    @qtd_frascos_regular_caneta = insulinas.where(tipo_insulina: "regular_de_caneta").sum(:frascos_mensais)
+
+  end
+
   # GET /dant_requests/new
   def new
-    @dant_request = DantRequest.new
-    @dant_request.dant_faixa_etarias.build
-    if current_user.administrador?
+    if params[:dup].present?
+      ultima = DantRequest.where(cidade_id: current_user.cidade_id).last
+      @dant_request = ultima.dup
+      @dant_request.dant_faixa_etarias = ultima.dant_faixa_etarias.dup
+      @dant_request.mes = nil
+    else
+      @dant_request = DantRequest.new
+      @dant_request.dant_faixa_etarias.build
       pacientes = DantPacient.where(cidade_id: current_user.cidade_id).where.not(obito: true)
-      insulinas = DantDose.all
-      #@dant_request.qtd_hipertensos = pacientes.where(hipertenso: true).count #refatorar
+      insulinas = DantDose.where(dant_pacient_id: pacientes.pluck(:id))
+
       @dant_request.atendimento_hipertensos = 0
       @dant_request.qtd_obitos_hipertensos = 0
-      #@dant_request.qtd_diabeticos = pacientes.where(diabetico: true).count #refatorar
+
       @dant_request.atendimento_diabeticos = 0
       @dant_request.qtd_obitos_diabeticos = 0
-      #@dant_request.qtd_diabeticos_hipertencos = pacientes.where(hipertenso: true, diabetico: true).count #refatorar
+
       @dant_request.atendimento_diabeticos_hipertensos = 0
       @dant_request.qtd_tratamento_hemodialise = 0
       @dant_request.qtd_nph = insulinas.where(tipo_insulina: "nph_frascos").count
@@ -90,20 +109,18 @@ class DantRequestsController < ApplicationController
       @dant_request.qtd_frascos_nph_caneta = insulinas.where(tipo_insulina: "nph_de_caneta").sum(:frascos_mensais)
       @dant_request.qtd_regular_caneta = insulinas.where(tipo_insulina: "regular_de_caneta").count
       @dant_request.qtd_frascos_regular_caneta = insulinas.where(tipo_insulina: "regular_de_caneta").sum(:frascos_mensais)
-     # @dant_request.qtd_analoga = pacientes.where(tipo_insulina: "analoga").count
-     # @dant_request.qtd_frascos_analoga = pacientes.where(tipo_insulina: "analoga").sum(:frascos_mensais)
-      #@dant_request.qtd_tabagista = pacientes.where(tabagista: true).count #refatorar
+
       @dant_request.qtd_atendimento_tabagista = 0
-     # @dant_request.qtd_etilista = pacientes.where(etilista: true).count #refatorar
+
       @dant_request.qtd_atendimento_etilista = 0
-     # @dant_request.qtd_obesos = pacientes.where(obeso: true).count #refatorar
+
       @dant_request.qtd_obesidade_1 = 0#pacientes.where(grau_obesidade: 1).count
       @dant_request.qtd_obesidate_2 = 0#pacientes.where(grau_obesidade: 2).count
       @dant_request.qtd_obesidade_3 = 0#pacientes.where(grau_obesidade: 3).count
-      pacientes.each do |p|
-        @dant_request.dant_request_pacients.build(dant_pacient_id:p.id, frascos_diarios: p.dant_doses.sum(:dose_diaria), frascos_mensais: p.dant_doses.sum(:frascos_mensais), idade: p.idade, hipertenso: p.hipertenso, diabetico: p.diabetico,sexo: p.sexo_value)
-      end
+
     end
+
+
     @dant_request.cidade_id = current_user.cidade_id
 
   end

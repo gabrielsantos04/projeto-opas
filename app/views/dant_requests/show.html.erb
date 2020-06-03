@@ -3,7 +3,7 @@
   <% if @dant_request.status == "deferido" %>
       <div class="card-panel small white-text green">
       <h3 class="center-align">O Relatório Trimestral foi DEFERIDO.</h3>
-          <h3 class="center-align">Leve a Guia de Requisição na DANT/ANEXO I para a liberação de insulinas.</h3>
+          <h3 class="center-align">Leve a Posição de Estoque e a Guia de Requisição na DANT/ANEXO I para a liberação de insulinas</h3>
       </div>
   <% end %>
 
@@ -222,16 +222,40 @@
            <th>Frascos Mensais</th>
           </thead>
           <tbody>
-          <% @dant_request.dant_request_pacients.includes(:dant_pacient).where(dant_pacients: {tipo_insulina: "nph"}).each do |p| %>
+          <% @dant_request.dant_request_pacients.includes(:dant_doses).where(dant_doses: {tipo_insulina: "nph_frascos"}).each do |p| %>
             <tr>
               <td><%= p.dant_pacient %></td>
               <td><%= p.idade %></td>
-              <td><%= p.frascos_diarios %></td>
-              <td><%= p.frascos_mensais %></td>
+              <td><%= p.dant_pacient.dant_doses.where(tipo_insulina: "nph_frascos").sum(:dose_diaria) %></td>
+              <td><%= p.dant_pacient.dant_doses.where(tipo_insulina: "nph_frascos").sum(:frascos_mensais) %></td>
             </tr>
           <% end %>
           </tbody>
         </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Pacientes - INSULINA NPH DE CANETA</span>
+      <table>
+        <thead>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Doses Diários</th>
+        <th>Frascos Mensais</th>
+        </thead>
+        <tbody>
+        <% @dant_request.dant_request_pacients.includes(:dant_doses).where(dant_doses: {tipo_insulina: "nph_de_caneta"}).each do |p| %>
+            <tr>
+              <td><%= p.dant_pacient %></td>
+              <td><%= p.idade %></td>
+              <td><%= p.dant_pacient.dant_doses.where(tipo_insulina: "nph_de_caneta").sum(:dose_diaria) %></td>
+              <td><%= p.dant_pacient.dant_doses.where(tipo_insulina: "nph_de_caneta").sum(:frascos_mensais) %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -246,12 +270,36 @@
         <th>Frascos Mensais</th>
         </thead>
         <tbody>
-        <% @dant_request.dant_request_pacients.includes(:dant_pacient).where(dant_pacients: {tipo_insulina: "regular"}).each do |p| %>
+        <% @dant_request.dant_request_pacients.includes(:dant_doses).where(dant_doses: {tipo_insulina: "regular_frascos"}).each do |p| %>
             <tr>
               <td><%= p.dant_pacient %></td>
               <td><%= p.idade %></td>
-              <td><%= p.frascos_diarios %></td>
-              <td><%= p.frascos_mensais %></td>
+              <td><%= p.dant_pacient.dant_doses.where(tipo_insulina: "regular_frascos").sum(:dose_diaria) %></td>
+              <td><%= p.dant_pacient.dant_doses.where(tipo_insulina: "regular_frascos").sum(:frascos_mensais) %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Pacientes - INSULINA REGULAR DE CANETA</span>
+      <table>
+        <thead>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Frascos Diários</th>
+        <th>Frascos Mensais</th>
+        </thead>
+        <tbody>
+        <% @dant_request.dant_request_pacients.includes(:dant_doses).where(dant_doses: {tipo_insulina: "regular_de_caneta"}).each do |p| %>
+            <tr>
+              <td><%= p.dant_pacient %></td>
+              <td><%= p.idade %></td>
+              <td><%= p.dant_pacient.dant_doses.where(tipo_insulina: "regular_de_caneta").sum(:dose_diaria) %></td>
+              <td><%= p.dant_pacient.dant_doses.where(tipo_insulina: "regular_de_caneta").sum(:frascos_mensais) %></td>
             </tr>
         <% end %>
         </tbody>
