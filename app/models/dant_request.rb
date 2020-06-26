@@ -70,8 +70,16 @@ class DantRequest < ApplicationRecord
 
   enumerize :status, in: [:cadastrada,:solicitado, :deferido,:indeferido,:entregue], predicates: true
 
+  validate :total_obesos
+  validates :mes,:dant_responsavel_program_id, :cidade_id, presence: true
+
   before_create :set_status
   after_create :set_pacientes
+
+  #Método que verifica se o total dos ovesos por graus está igual a tabela de faixa etária
+  def total_obesos
+    errors.add(:base, "Verifique os quantitativos de Graus de Obesidade. Total dos Graus: #{self.qtd_obesidade_1 + self.qtd_obesidate_2 + self.qtd_obesidade_3}. Valor esperado: #{self.qtd_obesos}") if (self.qtd_obesidade_1 + self.qtd_obesidate_2 + self.qtd_obesidade_3) != self.qtd_obesos
+  end
 
   def set_pacientes
     pacientes = DantPacient.where(cidade_id: self.cidade_id).where.not(obito: true)

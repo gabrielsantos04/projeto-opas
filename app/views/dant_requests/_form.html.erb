@@ -620,7 +620,12 @@
         $.get('/dant/dant_requests/cidade_change?cidade='+ $('#dant_request_cidade_id').val() );
     }
 
-    $(".hipertenso").on("blur",function(){
+    $(document).ready(function(){
+        calcula_hipertenso();
+    });
+
+    function calcula_hipertenso()
+    {
         var sum = 0;
         $('.hipertenso').each(function(){
             console.log("value - ", this.value);
@@ -630,9 +635,19 @@
 
         $("#dant_request_qtd_hipertensos").val(sum);
         $("#dant_request_qtd_hipertensos_lbl").addClass("active");
+    }
+
+    $(".hipertenso").on("blur",function(){
+       calcula_hipertenso();
+        calcula_diabeticos();
+        calcula_diab_hip();
+        calcula_obesos();
+        calcula_tabagistas();
+        calcula_etilistas();
     });
 
-    $(".diabeticos").on("blur",function(){
+    function calcula_diabeticos()
+    {
         var sum = 0;
         $('.diabeticos').each(function(){
 
@@ -642,9 +657,14 @@
 
         $("#dant_request_qtd_diabeticos").val(sum);
         $("#dant_request_qtd_diabeticos_lbl").addClass("active");
+    }
+
+    $(".diabeticos").on("blur",function(){
+       calcula_diabeticos();
     });
 
-    $(".diab_hip").on("blur",function(){
+    function calcula_diab_hip()
+    {
         var sum = 0;
         $('.diab_hip').each(function(){
 
@@ -654,9 +674,13 @@
 
         $("#dant_request_qtd_diabeticos_hipertencos").val(sum);
         $("#dant_request_qtd_diabeticos_hipertencos_lbl").addClass("active");
+    }
+
+    $(".diab_hip").on("blur",function(){
+        calcula_diab_hip();
     });
 
-    $(".obesos").on("blur",function(){
+    function calcula_obesos(){
         var sum = 0;
         $('.obesos').each(function(){
 
@@ -666,9 +690,14 @@
 
         $("#dant_request_qtd_obesos").val(sum);
         $("#dant_request_qtd_obesos_lbl").addClass("active");
+    }
+
+    $(".obesos").on("blur",function(){
+        calcula_obesos();
     });
 
-    $(".tabagistas").on("blur",function(){
+    function calcula_tabagistas()
+    {
         var sum = 0;
         $('.tabagistas').each(function(){
 
@@ -678,10 +707,15 @@
 
         $("#dant_request_qtd_tabagista").val(sum);
         $("#dant_request_qtd_tabagista_lbl").addClass("active");
+    }
+
+    $(".tabagistas").on("blur",function(){
+        calcula_tabagistas();
 
     });
 
-    $(".etilistas").on("blur",function(){
+    function calcula_etilistas()
+    {
         var sum = 0;
         $('.etilistas').each(function(){
 
@@ -691,5 +725,9 @@
 
         $("#dant_request_qtd_etilista").val(sum);
         $("#dant_request_qtd_etilista_lbl").addClass("active");
+    }
+
+    $(".etilistas").on("blur",function(){
+        calcula_etilistas();
     });
 </script>

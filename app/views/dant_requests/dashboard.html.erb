@@ -159,6 +159,39 @@
   <div class="col s12 l3">
     <div class="card blue darken-1">
       <div class="card-content white-text">
+        <span class="card-title">Obesos Grau 1</span>
+
+        <h1><%= @dant_requests.sum(:qtd_obesidade_1) %></h1>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col s12 l3">
+    <div class="card blue darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Obesos Grau 2</span>
+
+        <h1><%= @dant_requests.sum(:qtd_obesidade_2) %></h1>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col s12 l3">
+    <div class="card blue darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Obesos Grau 3</span>
+
+        <h1><%= @dant_requests.sum(:qtd_obesidade_3) %></h1>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col s12 l3">
+    <div class="card blue darken-1">
+      <div class="card-content white-text">
         <span class="card-title">Atividade Físicas</span>
 
         <h1><%= @dant_requests.sum(:soma_participacoes) %></h1>
