@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_requests/dashboard.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_requests/dashboard.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/dant_request.rb" afterPath="$PROJECT_DIR$/app/models/dant_request.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_requests/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_requests/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dant_requests/index.html.erb" afterPath="$PROJECT_DIR$/app/views/dant_requests/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -447,16 +442,15 @@
       <workItem from="1590516761441" duration="306000" />
       <workItem from="1590599181859" duration="773000" />
       <workItem from="1593195497668" duration="307000" />
-      <workItem from="1593571258934" duration="44000" />
+      <workItem from="1593571258934" duration="494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295347000" />
+    <option name="totallyTimeSpent" value="295797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="734" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.228125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -743,6 +737,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="70" column="26" lean-forward="false" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -820,6 +815,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
