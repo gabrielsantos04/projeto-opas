@@ -146,7 +146,7 @@ class DantRequestsController < ApplicationController
   # PATCH/PUT /dant_requests/1
   def update
     if @dant_request.update(dant_request_params)
-      redirect_to @dant_request, notice: 'Dant request was successfully updated.'
+      redirect_to @dant_request, notice: 'Solicitação criada com sucesso.'
     else
       render :edit
     end
@@ -155,7 +155,7 @@ class DantRequestsController < ApplicationController
   # DELETE /dant_requests/1
   def destroy
     @dant_request.destroy
-    redirect_to dant_requests_url, notice: 'Dant request was successfully destroyed.'
+    redirect_to dant_requests_url, notice: 'Solicitação atualizada com sucesso.'
   end
 
   private

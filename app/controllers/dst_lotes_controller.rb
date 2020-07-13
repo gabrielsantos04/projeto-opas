@@ -26,7 +26,7 @@ class DstLotesController < ApplicationController
     @dst_lote = DstLote.new(dst_lote_params)
 
     if @dst_lote.save
-      redirect_to @dst_lote, notice: 'Dst lote was successfully created.'
+      redirect_to @dst_lote, notice: 'Lote criado com sucesso.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class DstLotesController < ApplicationController
   # PATCH/PUT /dst_lotes/1
   def update
     if @dst_lote.update(dst_lote_params)
-      redirect_to @dst_lote, notice: 'Dst lote was successfully updated.'
+      redirect_to @dst_lote, notice: 'Lote atualizado com sucesso.'
     else
       render :edit
     end
@@ -44,7 +44,7 @@ class DstLotesController < ApplicationController
   # DELETE /dst_lotes/1
   def destroy
     @dst_lote.destroy
-    redirect_to dst_lotes_url, notice: 'Dst lote was successfully destroyed.'
+    redirect_to dst_lotes_url, notice: 'Lote excluído com sucesso.'
   end
 
   private

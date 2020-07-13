@@ -28,7 +28,7 @@ class AvaliacaoNeurologicasController < ApplicationController
     @avaliacao_neurologica = AvaliacaoNeurologica.new(avaliacao_neurologica_params)
 
     if @avaliacao_neurologica.save
-      redirect_to @avaliacao_neurologica, notice: 'Avaliacao neurologica was successfully created.'
+      redirect_to @avaliacao_neurologica, notice: 'Avaliação Neurológica criada com suceso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class AvaliacaoNeurologicasController < ApplicationController
   # PATCH/PUT /avaliacao_neurologicas/1
   def update
     if @avaliacao_neurologica.update(avaliacao_neurologica_params)
-      redirect_to @avaliacao_neurologica, notice: 'Avaliacao neurologica was successfully updated.'
+      redirect_to @avaliacao_neurologica, notice: 'Avaliação Neurológica atualizada com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class AvaliacaoNeurologicasController < ApplicationController
   # DELETE /avaliacao_neurologicas/1
   def destroy
     @avaliacao_neurologica.destroy
-    redirect_to avaliacao_neurologicas_url, notice: 'Avaliacao neurologica was successfully destroyed.'
+    redirect_to avaliacao_neurologicas_url, notice: 'Avaliação Neurológica excluída com sucesso.'
   end
 
   private

@@ -28,7 +28,7 @@ class NotificacaoContatosController < ApplicationController
     @notificacao_contato = NotificacaoContato.new(notificacao_contato_params)
 
     if @notificacao_contato.save
-      redirect_to @notificacao_contato, notice: 'Notificacao contato was successfully created.'
+      redirect_to @notificacao_contato, notice: 'Notificação contato criada com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class NotificacaoContatosController < ApplicationController
   # PATCH/PUT /notificacao_contatos/1
   def update
     if @notificacao_contato.update(notificacao_contato_params)
-      redirect_to @notificacao_contato, notice: 'Notificacao contato was successfully updated.'
+      redirect_to @notificacao_contato, notice: 'Notificação contato atualizada com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class NotificacaoContatosController < ApplicationController
   # DELETE /notificacao_contatos/1
   def destroy
     @notificacao_contato.destroy
-    redirect_to notificacao_contatos_url, notice: 'Notificacao contato was successfully destroyed.'
+    redirect_to notificacao_contatos_url, notice: 'Notificação contato excluída com sucesso.'
   end
 
   private

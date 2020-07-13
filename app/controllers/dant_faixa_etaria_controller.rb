@@ -25,7 +25,7 @@ class DantFaixaEtariaController < ApplicationController
     @dant_faixa_etarium = DantFaixaEtarium.new(dant_faixa_etarium_params)
 
     if @dant_faixa_etarium.save
-      redirect_to @dant_faixa_etarium, notice: 'Dant faixa etarium was successfully created.'
+      redirect_to @dant_faixa_etarium, notice: 'Faixa Etária criada com sucesso.'
     else
       render :new
     end
@@ -34,7 +34,7 @@ class DantFaixaEtariaController < ApplicationController
   # PATCH/PUT /dant_faixa_etaria/1
   def update
     if @dant_faixa_etarium.update(dant_faixa_etarium_params)
-      redirect_to @dant_faixa_etarium, notice: 'Dant faixa etarium was successfully updated.'
+      redirect_to @dant_faixa_etarium, notice: 'Faixa Etária atualizada com sucesso.'
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class DantFaixaEtariaController < ApplicationController
   # DELETE /dant_faixa_etaria/1
   def destroy
     @dant_faixa_etarium.destroy
-    redirect_to dant_faixa_etaria_url, notice: 'Dant faixa etarium was successfully destroyed.'
+    redirect_to dant_faixa_etaria_url, notice: 'Faixa Etária excluída com sucesso.'
   end
 
   private

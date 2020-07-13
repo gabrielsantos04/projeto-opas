@@ -26,7 +26,7 @@ class DantQuestionsController < ApplicationController
     @dant_question = DantQuestion.new(dant_question_params)
 
     if @dant_question.save
-      redirect_to @dant_question, notice: 'Dant question was successfully created.'
+      redirect_to @dant_question, notice: 'Questão criada com sucesso.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class DantQuestionsController < ApplicationController
   # PATCH/PUT /dant_questions/1
   def update
     if @dant_question.update(dant_question_params)
-      redirect_to @dant_question, notice: 'Dant question was successfully updated.'
+      redirect_to @dant_question, notice: 'Questão atualizada com sucesso.'
     else
       render :edit
     end
@@ -44,7 +44,7 @@ class DantQuestionsController < ApplicationController
   # DELETE /dant_questions/1
   def destroy
     @dant_question.destroy
-    redirect_to dant_questions_url, notice: 'Dant question was successfully destroyed.'
+    redirect_to dant_questions_url, notice: 'Questão excluída com sucesso.'
   end
 
   private

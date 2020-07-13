@@ -42,7 +42,7 @@ class ImunizacaoVacinasController < ApplicationController
     @imunizacao_vacina = ImunizacaoVacina.new(imunizacao_vacina_params)
 
     if @imunizacao_vacina.save
-      redirect_to @imunizacao_vacina, notice: 'Imunizacao vacina was successfully created.'
+      redirect_to @imunizacao_vacina, notice: 'Imunobiológico criado com sucesso.'
     else
       render :new
     end
@@ -51,7 +51,7 @@ class ImunizacaoVacinasController < ApplicationController
   # PATCH/PUT /imunizacao_vacinas/1
   def update
     if @imunizacao_vacina.update(imunizacao_vacina_params)
-      redirect_to @imunizacao_vacina, notice: 'Imunizacao vacina was successfully updated.'
+      redirect_to @imunizacao_vacina, notice: 'Imunobiológico atualizado com sucesso.'
     else
       render :edit
     end
@@ -60,7 +60,7 @@ class ImunizacaoVacinasController < ApplicationController
   # DELETE /imunizacao_vacinas/1
   def destroy
     @imunizacao_vacina.destroy
-    redirect_to imunizacao_vacinas_url, notice: 'Imunizacao vacina was successfully destroyed.'
+    redirect_to imunizacao_vacinas_url, notice: 'Imunobiológico excluído com sucesso.'
   end
 
   private

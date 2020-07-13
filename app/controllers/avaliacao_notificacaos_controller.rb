@@ -46,7 +46,7 @@ class AvaliacaoNotificacaosController < ApplicationController
   # PATCH/PUT /avaliacao_notificacaos/1
   def update
     if @avaliacao_notificacao.update(avaliacao_notificacao_params)
-      redirect_to @avaliacao_notificacao, notice: 'Avaliacao notificacao was successfully updated.'
+      redirect_to @avaliacao_notificacao, notice: 'Avaliação Notificação atualizada com sucesso.'
     else
       render :edit
     end
@@ -55,7 +55,7 @@ class AvaliacaoNotificacaosController < ApplicationController
   # DELETE /avaliacao_notificacaos/1
   def destroy
     @avaliacao_notificacao.destroy
-    redirect_to avaliacao_notificacaos_url, notice: 'Avaliacao notificacao was successfully destroyed.'
+    redirect_to avaliacao_notificacaos_url, notice: 'Avaliação Notificação excluída com sucesso.'
   end
 
   private

@@ -28,7 +28,7 @@ class DstMovimentacaosController < ApplicationController
   def create
     @dst_movimentacao = DstMovimentacao.new(dst_movimentacao_params)
     if @dst_movimentacao.save
-      redirect_to @dst_movimentacao, notice: 'Dst movimentacao was successfully created.'
+      redirect_to @dst_movimentacao, notice: 'Movimentação criado com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class DstMovimentacaosController < ApplicationController
   # PATCH/PUT /dst_movimentacaos/1
   def update
     if @dst_movimentacao.update(dst_movimentacao_params)
-      redirect_to @dst_movimentacao, notice: 'Dst movimentacao was successfully updated.'
+      redirect_to @dst_movimentacao, notice: 'Movimentação atualizada com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class DstMovimentacaosController < ApplicationController
   # DELETE /dst_movimentacaos/1
   def destroy
     @dst_movimentacao.destroy
-    redirect_to dst_movimentacaos_url, notice: 'Dst movimentacao was successfully destroyed.'
+    redirect_to dst_movimentacaos_url, notice: 'Atualização excluída com sucesso.'
   end
 
   #Método utilizado para atender a solicitação

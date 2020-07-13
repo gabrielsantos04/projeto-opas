@@ -28,7 +28,7 @@ class DermatologicasController < ApplicationController
     @dermatologica = Dermatologica.new(dermatologica_params)
 
     if @dermatologica.save
-      redirect_to dermatologicas_path, notice: 'Dermatologica was successfully created.'
+      redirect_to dermatologicas_path, notice: 'Dermatológica criada com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class DermatologicasController < ApplicationController
   # PATCH/PUT /dermatologicas/1
   def update
     if @dermatologica.update(dermatologica_params)
-      redirect_to dermatologicas_path, notice: 'Dermatologica was successfully updated.'
+      redirect_to dermatologicas_path, notice: 'Dermatológica atualizada com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class DermatologicasController < ApplicationController
   # DELETE /dermatologicas/1
   def destroy
     @dermatologica.destroy
-    redirect_to dermatologicas_url, notice: 'Dermatologica was successfully destroyed.'
+    redirect_to dermatologicas_url, notice: 'Dermatológica excluída com sucesso.'
   end
 
   private

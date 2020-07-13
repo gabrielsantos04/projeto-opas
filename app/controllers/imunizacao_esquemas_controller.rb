@@ -57,7 +57,7 @@ class ImunizacaoEsquemasController < ApplicationController
     @imunizacao_esquema = ImunizacaoEsquema.new(imunizacao_esquema_params)
 
     if @imunizacao_esquema.save
-      redirect_to @imunizacao_esquema, notice: 'Imunizacao esquema was successfully created.'
+      redirect_to @imunizacao_esquema, notice: 'Esquema criado com sucesso.'
     else
       render :new
     end
@@ -66,7 +66,7 @@ class ImunizacaoEsquemasController < ApplicationController
   # PATCH/PUT /imunizacao_esquemas/1
   def update
     if @imunizacao_esquema.update(imunizacao_esquema_params)
-      redirect_to @imunizacao_esquema, notice: 'Imunizacao esquema was successfully updated.'
+      redirect_to @imunizacao_esquema, notice: 'Esquema atualizado com sucesso.'
     else
       render :edit
     end
@@ -75,7 +75,7 @@ class ImunizacaoEsquemasController < ApplicationController
   # DELETE /imunizacao_esquemas/1
   def destroy
     @imunizacao_esquema.destroy
-    redirect_to imunizacao_esquemas_url, notice: 'Imunizacao esquema was successfully destroyed.'
+    redirect_to imunizacao_esquemas_url, notice: 'Esquema excluído com sucesso.'
   end
 
   private

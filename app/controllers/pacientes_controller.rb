@@ -41,7 +41,7 @@ class PacientesController < ApplicationController
     @paciente = Paciente.new(paciente_params)
 
     if @paciente.save
-      redirect_to @paciente, notice: 'Paciente was successfully created.'
+      redirect_to @paciente, notice: 'Paciente criado com sucesso.'
     else
       render :new
     end
@@ -50,7 +50,7 @@ class PacientesController < ApplicationController
   # PATCH/PUT /pacientes/1
   def update
     if @paciente.update(paciente_params)
-      redirect_to @paciente, notice: 'Paciente was successfully updated.'
+      redirect_to @paciente, notice: 'Paciente atualizado com sucesso.'
     else
       render :edit
     end
@@ -59,7 +59,7 @@ class PacientesController < ApplicationController
   # DELETE /pacientes/1
   def destroy
     @paciente.destroy
-    redirect_to pacientes_url, notice: 'Paciente was successfully destroyed.'
+    redirect_to pacientes_url, notice: 'Paciente excluído com sucesso.'
   end
 
   private

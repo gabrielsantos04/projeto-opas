@@ -26,7 +26,7 @@ class DstSolicitacaoProdutosController < ApplicationController
     @dst_solicitacao_produto = DstSolicitacaoProduto.new(dst_solicitacao_produto_params)
 
     if @dst_solicitacao_produto.save
-      redirect_to @dst_solicitacao_produto, notice: 'Dst solicitacao produto was successfully created.'
+      redirect_to @dst_solicitacao_produto, notice: 'Produto criado com sucesso.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class DstSolicitacaoProdutosController < ApplicationController
   # PATCH/PUT /dst_solicitacao_produtos/1
   def update
     if @dst_solicitacao_produto.update(dst_solicitacao_produto_params)
-      redirect_to @dst_solicitacao_produto, notice: 'Dst solicitacao produto was successfully updated.'
+      redirect_to @dst_solicitacao_produto, notice: 'Produto atualizado com sucesso.'
     else
       render :edit
     end
@@ -44,7 +44,7 @@ class DstSolicitacaoProdutosController < ApplicationController
   # DELETE /dst_solicitacao_produtos/1
   def destroy
     @dst_solicitacao_produto.destroy
-    redirect_to dst_solicitacao_produtos_url, notice: 'Dst solicitacao produto was successfully destroyed.'
+    redirect_to dst_solicitacao_produtos_url, notice: 'Produto excluído com sucesso.'
   end
 
   private

@@ -28,7 +28,7 @@ class ImunizacaoEncerramentosController < ApplicationController
     @imunizacao_encerramento = ImunizacaoEncerramento.new(imunizacao_encerramento_params)
 
     if @imunizacao_encerramento.save
-      redirect_to @imunizacao_encerramento, notice: 'Imunizacao encerramento was successfully created.'
+      redirect_to @imunizacao_encerramento, notice: 'Imunização encerramento criado com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class ImunizacaoEncerramentosController < ApplicationController
   # PATCH/PUT /imunizacao_encerramentos/1
   def update
     if @imunizacao_encerramento.update(imunizacao_encerramento_params)
-      redirect_to @imunizacao_encerramento, notice: 'Imunizacao encerramento was successfully updated.'
+      redirect_to @imunizacao_encerramento, notice: 'Imunização encerramento atualizado com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class ImunizacaoEncerramentosController < ApplicationController
   # DELETE /imunizacao_encerramentos/1
   def destroy
     @imunizacao_encerramento.destroy
-    redirect_to imunizacao_encerramentos_url, notice: 'Imunizacao encerramento was successfully destroyed.'
+    redirect_to imunizacao_encerramentos_url, notice: 'Imunização encerramento excluído com sucesso.'
   end
 
   private

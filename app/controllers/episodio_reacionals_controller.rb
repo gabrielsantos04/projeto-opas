@@ -28,7 +28,7 @@ class EpisodioReacionalsController < ApplicationController
     @episodio_reacional = EpisodioReacional.new(episodio_reacional_params)
 
     if @episodio_reacional.save
-      redirect_to @episodio_reacional, notice: 'Episodio reacional was successfully created.'
+      redirect_to @episodio_reacional, notice: 'Episódio reacional criado com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class EpisodioReacionalsController < ApplicationController
   # PATCH/PUT /episodio_reacionals/1
   def update
     if @episodio_reacional.update(episodio_reacional_params)
-      redirect_to @episodio_reacional, notice: 'Episodio reacional was successfully updated.'
+      redirect_to @episodio_reacional, notice: 'Episódio reacional atualizado com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class EpisodioReacionalsController < ApplicationController
   # DELETE /episodio_reacionals/1
   def destroy
     @episodio_reacional.destroy
-    redirect_to episodio_reacionals_url, notice: 'Episodio reacional was successfully destroyed.'
+    redirect_to episodio_reacionals_url, notice: 'Episódio reacional excluído com sucesso.'
   end
 
   private

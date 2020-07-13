@@ -35,7 +35,7 @@ class EscalaPartsController < ApplicationController
     @escala_part = EscalaPart.new(escala_part_params)
 
     if @escala_part.save
-      redirect_to @escala_part, notice: 'Escala part was successfully created.'
+      redirect_to @escala_part, notice: 'Escala criada com sucesso.'
     else
       render :new
     end
@@ -44,7 +44,7 @@ class EscalaPartsController < ApplicationController
   # PATCH/PUT /escala_parts/1
   def update
     if @escala_part.update(escala_part_params)
-      redirect_to @escala_part, notice: 'Escala part was successfully updated.'
+      redirect_to @escala_part, notice: 'Escala atualizada com sucesso.'
     else
       render :edit
     end
@@ -53,7 +53,7 @@ class EscalaPartsController < ApplicationController
   # DELETE /escala_parts/1
   def destroy
     @escala_part.destroy
-    redirect_to escala_parts_url, notice: 'Escala part was successfully destroyed.'
+    redirect_to escala_parts_url, notice: 'Escala excluída com sucesso.'
   end
 
   private

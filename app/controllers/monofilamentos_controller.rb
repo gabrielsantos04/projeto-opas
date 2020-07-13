@@ -28,7 +28,7 @@ class MonofilamentosController < ApplicationController
     @monofilamento = Monofilamento.new(monofilamento_params)
 
     if @monofilamento.save
-      redirect_to @monofilamento, notice: 'Monofilamento was successfully created.'
+      redirect_to @monofilamento, notice: 'Monofilamento criado com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class MonofilamentosController < ApplicationController
   # PATCH/PUT /monofilamentos/1
   def update
     if @monofilamento.update(monofilamento_params)
-      redirect_to @monofilamento, notice: 'Monofilamento was successfully updated.'
+      redirect_to @monofilamento, notice: 'Monofilamento atualizado com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class MonofilamentosController < ApplicationController
   # DELETE /monofilamentos/1
   def destroy
     @monofilamento.destroy
-    redirect_to monofilamentos_url, notice: 'Monofilamento was successfully destroyed.'
+    redirect_to monofilamentos_url, notice: 'Monofilamento excluído com sucesso.'
   end
 
   private

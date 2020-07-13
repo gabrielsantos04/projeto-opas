@@ -28,7 +28,7 @@ class SinaisSintomasController < ApplicationController
     @sinais_sintoma = SinaisSintoma.new(sinais_sintoma_params)
 
     if @sinais_sintoma.save
-      redirect_to sinais_sintomas_path, notice: 'Sinais sintoma was successfully created.'
+      redirect_to sinais_sintomas_path, notice: 'Sinais/sintomas criado com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class SinaisSintomasController < ApplicationController
   # PATCH/PUT /sinais_sintomas/1
   def update
     if @sinais_sintoma.update(sinais_sintoma_params)
-      redirect_to sinais_sintomas_path, notice: 'Sinais sintoma was successfully updated.'
+      redirect_to sinais_sintomas_path, notice: 'Sinais/sintomas atualizado com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class SinaisSintomasController < ApplicationController
   # DELETE /sinais_sintomas/1
   def destroy
     @sinais_sintoma.destroy
-    redirect_to sinais_sintomas_url, notice: 'Sinais sintoma was successfully destroyed.'
+    redirect_to sinais_sintomas_url, notice: 'Sinais/sintomas excluído com sucesso.'
   end
 
   private

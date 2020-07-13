@@ -28,7 +28,7 @@ class CondutasController < ApplicationController
     @conduta = Conduta.new(conduta_params)
 
     if @conduta.save
-      redirect_to condutas_path, notice: 'Condutum was successfully created.'
+      redirect_to condutas_path, notice: 'Conduda criada com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class CondutasController < ApplicationController
   # PATCH/PUT /condutas/1
   def update
     if @conduta.update(conduta_params)
-      redirect_to condutas_path, notice: 'Condutum was successfully updated.'
+      redirect_to condutas_path, notice: 'Conduta atualiza com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class CondutasController < ApplicationController
   # DELETE /condutas/1
   def destroy
     @conduta.destroy
-    redirect_to condutas_path, notice: 'Condutum was successfully destroyed.'
+    redirect_to condutas_path, notice: 'Conduta excluída com sucesso.'
   end
 
   private

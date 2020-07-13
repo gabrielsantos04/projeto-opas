@@ -28,7 +28,7 @@ class MedicamentosController < ApplicationController
     @medicamento = Medicamento.new(medicamento_params)
 
     if @medicamento.save
-      redirect_to @medicamento, notice: 'Medicamento was successfully created.'
+      redirect_to @medicamento, notice: 'Medicamento criado com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class MedicamentosController < ApplicationController
   # PATCH/PUT /medicamentos/1
   def update
     if @medicamento.update(medicamento_params)
-      redirect_to @medicamento, notice: 'Medicamento was successfully updated.'
+      redirect_to @medicamento, notice: 'Medicamento atualizado com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class MedicamentosController < ApplicationController
   # DELETE /medicamentos/1
   def destroy
     @medicamento.destroy
-    redirect_to medicamentos_url, notice: 'Medicamento was successfully destroyed.'
+    redirect_to medicamentos_url, notice: 'Medicamento excluído com sucesso.'
   end
 
   private

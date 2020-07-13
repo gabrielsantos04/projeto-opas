@@ -33,7 +33,7 @@ class DantResponsavelProgramsController < ApplicationController
     @dant_responsavel_program = DantResponsavelProgram.new(dant_responsavel_program_params)
 
     if @dant_responsavel_program.save
-      redirect_to @dant_responsavel_program, notice: 'Dant responsavel program was successfully created.'
+      redirect_to @dant_responsavel_program, notice: 'Responsável criado com sucesso.'
     else
       render :new
     end
@@ -42,7 +42,7 @@ class DantResponsavelProgramsController < ApplicationController
   # PATCH/PUT /dant_responsavel_programs/1
   def update
     if @dant_responsavel_program.update(dant_responsavel_program_params)
-      redirect_to @dant_responsavel_program, notice: 'Dant responsavel program was successfully updated.'
+      redirect_to @dant_responsavel_program, notice: 'Responsável atualizado com sucesso.'
     else
       render :edit
     end
@@ -51,7 +51,7 @@ class DantResponsavelProgramsController < ApplicationController
   # DELETE /dant_responsavel_programs/1
   def destroy
     @dant_responsavel_program.destroy
-    redirect_to dant_responsavel_programs_url, notice: 'Dant responsavel program was successfully destroyed.'
+    redirect_to dant_responsavel_programs_url, notice: 'Responsável excluído com sucesso.'
   end
 
   private

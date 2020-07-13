@@ -101,7 +101,7 @@ class NotificacaosController < ApplicationController
   # PATCH/PUT /notificacaos/1
   def update
     if @notificacao.update(notificacao_params)
-      redirect_to @notificacao, notice: 'Notificacao was successfully updated.'
+      redirect_to @notificacao, notice: 'Notificação atualizada com sucesso.'
     else
       render :edit
     end
@@ -110,7 +110,7 @@ class NotificacaosController < ApplicationController
   # DELETE /notificacaos/1
   def destroy
     @notificacao.destroy
-    redirect_to notificacaos_url, notice: 'Notificacao was successfully destroyed.'
+    redirect_to notificacaos_url, notice: 'Notificação excluída com sucesso.'
   end
 
   private

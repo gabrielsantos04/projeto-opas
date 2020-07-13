@@ -28,7 +28,7 @@ class DadosClinicosController < ApplicationController
     @dados_clinico = DadosClinico.new(dados_clinico_params)
 
     if @dados_clinico.save
-      redirect_to @dados_clinico, notice: 'Dados clinico was successfully created.'
+      redirect_to @dados_clinico, notice: 'Dados Clínico criado com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class DadosClinicosController < ApplicationController
   # PATCH/PUT /dados_clinicos/1
   def update
     if @dados_clinico.update(dados_clinico_params)
-      redirect_to @dados_clinico, notice: 'Dados clinico was successfully updated.'
+      redirect_to @dados_clinico, notice: 'Dados Clínico atualizado com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class DadosClinicosController < ApplicationController
   # DELETE /dados_clinicos/1
   def destroy
     @dados_clinico.destroy
-    redirect_to dados_clinicos_url, notice: 'Dados clinico was successfully destroyed.'
+    redirect_to dados_clinicos_url, notice: 'Dados Clínico excluído com sucesso.'
   end
 
   private

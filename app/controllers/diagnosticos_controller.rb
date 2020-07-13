@@ -28,7 +28,7 @@ class DiagnosticosController < ApplicationController
     @diagnostico = Diagnostico.new(diagnostico_params)
 
     if @diagnostico.save
-      redirect_to diagnosticos_path, notice: 'Diagnostico was successfully created.'
+      redirect_to diagnosticos_path, notice: 'Diagnóstico criado com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class DiagnosticosController < ApplicationController
   # PATCH/PUT /diagnosticos/1
   def update
     if @diagnostico.update(diagnostico_params)
-      redirect_to diagnosticos_path, notice: 'Diagnostico was successfully updated.'
+      redirect_to diagnosticos_path, notice: 'Diagnóstico atualizado com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class DiagnosticosController < ApplicationController
   # DELETE /diagnosticos/1
   def destroy
     @diagnostico.destroy
-    redirect_to diagnosticos_url, notice: 'Diagnostico was successfully destroyed.'
+    redirect_to diagnosticos_url, notice: 'Diagnóstico excluído com sucesso.'
   end
 
   private

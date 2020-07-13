@@ -29,7 +29,7 @@ class DstProdutosController < ApplicationController
     @dst_produto = DstProduto.new(dst_produto_params)
 
     if @dst_produto.save
-      redirect_to @dst_produto, notice: 'Dst produto was successfully created.'
+      redirect_to @dst_produto, notice: 'Produto criado com sucesso.'
     else
       render :new
     end
@@ -38,7 +38,7 @@ class DstProdutosController < ApplicationController
   # PATCH/PUT /dst_produtos/1
   def update
     if @dst_produto.update(dst_produto_params)
-      redirect_to @dst_produto, notice: 'Dst produto was successfully updated.'
+      redirect_to @dst_produto, notice: 'Produto atualizado com sucesso.'
     else
       render :edit
     end
@@ -47,7 +47,7 @@ class DstProdutosController < ApplicationController
   # DELETE /dst_produtos/1
   def destroy
     @dst_produto.destroy
-    redirect_to dst_produtos_url, notice: 'Dst produto was successfully destroyed.'
+    redirect_to dst_produtos_url, notice: 'Produto excluído com sucesso.'
   end
 
   #Método utilizado para atualizar os lotes

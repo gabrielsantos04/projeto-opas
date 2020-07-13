@@ -28,7 +28,7 @@ class EsquemaSubstitutivosController < ApplicationController
     @esquema_substitutivo = EsquemaSubstitutivo.new(esquema_substitutivo_params)
 
     if @esquema_substitutivo.save
-      redirect_to @esquema_substitutivo, notice: 'Esquema substitutivo was successfully created.'
+      redirect_to @esquema_substitutivo, notice: 'Esquema substitutivo criado com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class EsquemaSubstitutivosController < ApplicationController
   # PATCH/PUT /esquema_substitutivos/1
   def update
     if @esquema_substitutivo.update(esquema_substitutivo_params)
-      redirect_to @esquema_substitutivo, notice: 'Esquema substitutivo was successfully updated.'
+      redirect_to @esquema_substitutivo, notice: 'Esquema substitutivo atualizado com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class EsquemaSubstitutivosController < ApplicationController
   # DELETE /esquema_substitutivos/1
   def destroy
     @esquema_substitutivo.destroy
-    redirect_to esquema_substitutivos_url, notice: 'Esquema substitutivo was successfully destroyed.'
+    redirect_to esquema_substitutivos_url, notice: 'Esquema substitutivo excluído com sucesso.'
   end
 
   private

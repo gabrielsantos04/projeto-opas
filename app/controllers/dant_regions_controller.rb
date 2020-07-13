@@ -27,7 +27,7 @@ class DantRegionsController < ApplicationController
     @dant_region = DantRegion.new(dant_region_params)
 
     if @dant_region.save
-      redirect_to @dant_region, notice: 'Dant region was successfully created.'
+      redirect_to @dant_region, notice: 'Região criada com sucesso.'
     else
       render :new
     end
@@ -36,7 +36,7 @@ class DantRegionsController < ApplicationController
   # PATCH/PUT /dant_regions/1
   def update
     if @dant_region.update(dant_region_params)
-      redirect_to @dant_region, notice: 'Dant region was successfully updated.'
+      redirect_to @dant_region, notice: 'Região atualizada com sucesso.'
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class DantRegionsController < ApplicationController
   # DELETE /dant_regions/1
   def destroy
     @dant_region.destroy
-    redirect_to dant_regions_url, notice: 'Dant region was successfully destroyed.'
+    redirect_to dant_regions_url, notice: 'Região excluída com sucesso.'
   end
 
   private

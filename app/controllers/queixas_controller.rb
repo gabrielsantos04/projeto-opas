@@ -38,7 +38,7 @@ class QueixasController < ApplicationController
   # PATCH/PUT /queixas/1
   def update
     if @queixa.update(queixa_params)
-      redirect_to @queixa, notice: 'Queixa was successfully updated.'
+      redirect_to @queixa, notice: 'Queixa atualizada com sucesso.'
     else
       render :edit
     end
@@ -47,7 +47,7 @@ class QueixasController < ApplicationController
   # DELETE /queixas/1
   def destroy
     @queixa.destroy
-    redirect_to queixas_url, notice: 'Queixa was successfully destroyed.'
+    redirect_to queixas_url, notice: 'Queixa excluída com sucesso.'
   end
 
 

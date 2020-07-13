@@ -28,7 +28,7 @@ class ClassificacaoGrausController < ApplicationController
     @classificacao_grau = ClassificacaoGrau.new(classificacao_grau_params)
 
     if @classificacao_grau.save
-      redirect_to @classificacao_grau, notice: 'Classificacao grau was successfully created.'
+      redirect_to @classificacao_grau, notice: 'Classificaçãoo grau criada com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class ClassificacaoGrausController < ApplicationController
   # PATCH/PUT /classificacao_graus/1
   def update
     if @classificacao_grau.update(classificacao_grau_params)
-      redirect_to @classificacao_grau, notice: 'Classificacao grau was successfully updated.'
+      redirect_to @classificacao_grau, notice: 'Classificação grau atualizada com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class ClassificacaoGrausController < ApplicationController
   # DELETE /classificacao_graus/1
   def destroy
     @classificacao_grau.destroy
-    redirect_to classificacao_graus_url, notice: 'Classificacao grau was successfully destroyed.'
+    redirect_to classificacao_graus_url, notice: 'Classificaçãoo grau excluída com sucesso.'
   end
 
   private

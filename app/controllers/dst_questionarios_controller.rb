@@ -26,7 +26,7 @@ class DstQuestionariosController < ApplicationController
     @dst_questionario = DstQuestionario.new(dst_questionario_params)
 
     if @dst_questionario.save
-      redirect_to @dst_questionario, notice: 'Dst questionario was successfully created.'
+      redirect_to @dst_questionario, notice: 'Questionário criado com sucesso.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class DstQuestionariosController < ApplicationController
   # PATCH/PUT /dst_questionarios/1
   def update
     if @dst_questionario.update(dst_questionario_params)
-      redirect_to @dst_questionario, notice: 'Dst questionario was successfully updated.'
+      redirect_to @dst_questionario, notice: 'Questionário atualizado com sucesso.'
     else
       render :edit
     end
@@ -44,7 +44,7 @@ class DstQuestionariosController < ApplicationController
   # DELETE /dst_questionarios/1
   def destroy
     @dst_questionario.destroy
-    redirect_to dst_questionarios_url, notice: 'Dst questionario was successfully destroyed.'
+    redirect_to dst_questionarios_url, notice: 'Questionário excluído com sucesso.'
   end
 
   private

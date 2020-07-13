@@ -28,7 +28,7 @@ class OcupacaosController < ApplicationController
     @ocupacao = Ocupacao.new(ocupacao_params)
 
     if @ocupacao.save
-      redirect_to @ocupacao, notice: 'Ocupacao was successfully created.'
+      redirect_to @ocupacao, notice: 'Ocupação criada com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class OcupacaosController < ApplicationController
   # PATCH/PUT /ocupacaos/1
   def update
     if @ocupacao.update(ocupacao_params)
-      redirect_to @ocupacao, notice: 'Ocupacao was successfully updated.'
+      redirect_to @ocupacao, notice: 'Ocupação atualizada com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class OcupacaosController < ApplicationController
   # DELETE /ocupacaos/1
   def destroy
     @ocupacao.destroy
-    redirect_to ocupacaos_url, notice: 'Ocupacao was successfully destroyed.'
+    redirect_to ocupacaos_url, notice: 'Ocupação excluída com sucesso.'
   end
 
   private

@@ -34,7 +34,7 @@ class DstLocalsController < ApplicationController
     @dst_local = DstLocal.new(dst_local_params)
 
     if @dst_local.save
-      redirect_to @dst_local, notice: 'Dst local was successfully created.'
+      redirect_to @dst_local, notice: 'Local criado com sucesso.'
     else
       render :new
     end
@@ -43,7 +43,7 @@ class DstLocalsController < ApplicationController
   # PATCH/PUT /dst_locals/1
   def update
     if @dst_local.update(dst_local_params)
-      redirect_to @dst_local, notice: 'Dst local was successfully updated.'
+      redirect_to @dst_local, notice: 'Local atualizado com sucesso.'
     else
       render :edit
     end
@@ -52,7 +52,7 @@ class DstLocalsController < ApplicationController
   # DELETE /dst_locals/1
   def destroy
     @dst_local.destroy
-    redirect_to dst_locals_url, notice: 'Dst local was successfully destroyed.'
+    redirect_to dst_locals_url, notice: 'Local excluído com sucesso.'
   end
 
   private

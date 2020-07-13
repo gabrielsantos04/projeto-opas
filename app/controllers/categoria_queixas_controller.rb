@@ -28,7 +28,7 @@ class CategoriaQueixasController < ApplicationController
     @categoria_queixa = CategoriaQueixa.new(categoria_queixa_params)
 
     if @categoria_queixa.save
-      redirect_to @categoria_queixa, notice: 'Categoria queixa was successfully created.'
+      redirect_to @categoria_queixa, notice: 'Categoria Queixa criada com sucesso.'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class CategoriaQueixasController < ApplicationController
   # PATCH/PUT /categoria_queixas/1
   def update
     if @categoria_queixa.update(categoria_queixa_params)
-      redirect_to @categoria_queixa, notice: 'Categoria queixa was successfully updated.'
+      redirect_to @categoria_queixa, notice: 'Categoria Queixa atualizada com sucesso.'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class CategoriaQueixasController < ApplicationController
   # DELETE /categoria_queixas/1
   def destroy
     @categoria_queixa.destroy
-    redirect_to categoria_queixas_url, notice: 'Categoria queixa was successfully destroyed.'
+    redirect_to categoria_queixas_url, notice: 'Categoria Queixa excluída com sucesso.'
   end
 
   private

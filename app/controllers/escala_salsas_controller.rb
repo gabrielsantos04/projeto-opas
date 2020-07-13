@@ -30,7 +30,7 @@ class EscalaSalsasController < ApplicationController
     @escala_salsa = EscalaSalsa.new(escala_salsa_params)
 
     if @escala_salsa.save
-      redirect_to @escala_salsa, notice: 'Escala salsa was successfully created.'
+      redirect_to @escala_salsa, notice: 'Escala salsa criada com sucesso.'
     else
       render :new
     end
@@ -39,7 +39,7 @@ class EscalaSalsasController < ApplicationController
   # PATCH/PUT /escala_salsas/1
   def update
     if @escala_salsa.update(escala_salsa_params)
-      redirect_to @escala_salsa, notice: 'Escala salsa was successfully updated.'
+      redirect_to @escala_salsa, notice: 'Escala salsa atualizada com sucesso.'
     else
       render :edit
     end
@@ -48,7 +48,7 @@ class EscalaSalsasController < ApplicationController
   # DELETE /escala_salsas/1
   def destroy
     @escala_salsa.destroy
-    redirect_to escala_salsas_url, notice: 'Escala salsa was successfully destroyed.'
+    redirect_to escala_salsas_url, notice: 'Escala salsa excluída com sucesso.'
   end
 
   private

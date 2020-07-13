@@ -50,7 +50,7 @@ class DantPacientsController < ApplicationController
   # DELETE /dant_pacients/1
   def destroy
     @dant_pacient.destroy
-    redirect_to dant_pacients_url, notice: 'Paciente removido com sucesso.'
+    redirect_to dant_pacients_url, notice: 'Paciente excluído com sucesso.'
   end
 
   private

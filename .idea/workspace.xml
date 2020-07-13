@@ -3,7 +3,46 @@
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/avaliacao_neurologicas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/avaliacao_neurologicas_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/avaliacao_notificacaos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/categoria_queixas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categoria_queixas_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/classificacao_graus_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/classificacao_graus_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/condutas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/condutas_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dados_clinicos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dados_clinicos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dant_faixa_etaria_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dant_faixa_etaria_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dant_questions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dant_questions_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dant_regions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dant_regions_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dant_requests_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dant_responsavel_programs_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dant_responsavel_programs_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dermatologicas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dermatologicas_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/diagnosticos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/diagnosticos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_locals_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_locals_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_lotes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_lotes_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_movimentacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_movimentacaos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_produtos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_produtos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_questionarios_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_questionarios_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_solicitacao_produtos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_solicitacao_produtos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/episodio_reacionals_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/episodio_reacionals_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/escala_parts_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/escala_parts_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/escala_salsas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/escala_salsas_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/esquema_substitutivos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/esquema_substitutivos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_encerramentos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_encerramentos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_esquemas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_esquemas_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_imunobiologicos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_imunobiologicos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_solicitacaos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/imunizacao_vacinas_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/medicamentos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/medicamentos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/monofilamentos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/monofilamentos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/notificacao_contatos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/notificacao_contatos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/notificacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/notificacaos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ocupacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ocupacaos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/pacientes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pacientes_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/queixas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/queixas_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/sinais_sintomas_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sinais_sintomas_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dant_requests/dashboard.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_requests/dashboard.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
