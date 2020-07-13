@@ -58,4 +58,5 @@ class User < ApplicationRecord
   def active_for_authentication?
     super and self.ativo
   end
+
 end
