@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dant_pacients/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_pacients/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_requests/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +232,7 @@
       <workItem from="1581515149990" duration="3763000" />
       <workItem from="1591619544811" duration="504000" />
       <workItem from="1591701684257" duration="6129000" />
-      <workItem from="1594725980159" duration="206000" />
+      <workItem from="1594725980159" duration="484000" />
     </task>
     <servers />
   </component>

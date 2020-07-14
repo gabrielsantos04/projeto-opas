@@ -1,7 +1,7 @@
 #Classe que controla as açoes da DantPacient
 class DantPacientsController < ApplicationController
   before_action :set_dant_pacient, only: [:show, :edit, :update, :destroy]
-  before_action :set_combos, only: [:new, :edit, :create]
+  before_action :set_combos, only: [:index,:new, :edit, :create]
 
   # GET /dant_pacients
   def index
