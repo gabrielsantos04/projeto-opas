@@ -16,7 +16,7 @@
 
     <div class="field">
       <%= f.label :cidade_id, "Cidade" %><br />
-      <%= f.select :cidade_id, Cidade.where(status: true).sort_by{|a| a.nome}.map{|a| [a.nome,a.id]},{prompt:true},{class:"browser-default select2"} %>
+      <%= f.select :cidade_id, Cidade.all.sort_by{|a| a.nome}.map{|a| [a.nome,a.id]},{prompt:true},{class:"browser-default select2"} %>
     </div>
     <br>
   <div class="field">
