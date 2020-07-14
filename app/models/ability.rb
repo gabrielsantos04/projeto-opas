@@ -7,6 +7,38 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.administrador?
       can :manage, :all
+    elsif user.admin_hans?
+      can :manage, AvaliacaoNeurologica
+      can :manage, AvaliacaoNotificacao
+      can :manage, AvaliacaoSensitiva
+      can :manage, CategoriaQueixa
+      can :manage, Cidade
+      can :manage, ClassificacaoGrau
+      can :manage, Conduta
+      can :manage, CondutaRecidiva
+      can :manage, ContatoAvaliacao
+      can :manage, DadosClinico
+      can :manage, Dermatologica
+      can :manage, DermatologicoRecidiva
+      can :manage, EpidosiosReacionaisRecidiva
+      can :manage, EpisodioReacional
+      can :manage, EscalaPart
+      can :manage, EscalaSalsa
+      can :manage, EsquemaSubstitutivo
+      can :manage, Marcacao
+      can :manage, Medicamento
+      can :manage, Monofilamento
+      can :manage, NervosRecidiva
+      can :manage, Notificacao
+      can :manage, NotificacaoContato
+      can :manage, Ocupacao
+      can :manage, Paciente
+      can :manage, Queixa
+      can :manage, Recidiva
+      can :manage, SensitivaImage
+      can :manage, SinaisSintoma
+      can :manage, SintomasRecidiva
+      can :manage, User
     elsif user.municipio_hans? || user.municipio?
       can :create, Paciente
       can :manage, Paciente do |p|
