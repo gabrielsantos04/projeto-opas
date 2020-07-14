@@ -55,6 +55,6 @@ class DstSolicitacaoProdutosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def dst_solicitacao_produto_params
-      params.require(:dst_solicitacao_produto).permit(:quantidade_atendido,:dst_produto_id, :quantidade_aprovada, :status, :dst_solicitacao_id, :user_id, :observacoes)
+      params.require(:dst_solicitacao_produto).permit(:dst_lote_id, :quantidade_atendido,:dst_produto_id, :quantidade_aprovada, :status, :dst_solicitacao_id, :user_id, :observacoes)
     end
 end

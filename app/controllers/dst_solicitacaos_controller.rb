@@ -53,7 +53,7 @@ class DstSolicitacaosController < ApplicationController
   def recusar
     @dst_solicitacao.status = :recusado
     @dst_solicitacao.save
-    @dst_solicitacao.dst_solicitacao_produtos.update_all(quantidade_aprovada: 0, status: :recusado)
+    @dst_solicitacao.dst_solicitacao_produtos.update_all(quantidade_aprovada: 0, status: :recusado, quantidade_atendido: 0)
     redirect_to @dst_solicitacao
   end
 

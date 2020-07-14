@@ -15,7 +15,7 @@
   <thead>
     <tr>
             <th>Nome</th>
-            <th>Descricao</th>
+            <th>Descrição</th>
             <th>Cidade</th>
             <th>Categoria</th>
           </tr>
@@ -37,7 +37,7 @@
         
               
 
-          <td><%= dst_local.categoria %></td>
+          <td><%= dst_local.categoria.upcase %></td>
         
           </tr>
     <% end %>
@@ -48,4 +48,4 @@
   <%= paginate(@dst_locals)  %>
 </div>
 
-<%= link_to '+ Cadastrar', new_dst_local_path, class:"btn" if current_user.admin_dst? || current_user.administrador? %>
+<%= link_to '+ Cadastrar', new_dst_local_path, class:"btn" if current_user.admin_dst? || current_user.administrador? if @dst_locals.size == 0 %>

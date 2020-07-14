@@ -225,6 +225,28 @@ pt-BR:
           other: "%{count} erros"
   enumerize:
     defaults:
+      role:
+        administrador: "Administrador Sistema"
+        municipio_hans: "Município Hanseníase"
+        municipio_dant: "Município Dant"
+        municipio_dst: "Município DST"
+        municipio_imuni: "Município Imunização"
+        municipio: "Município"
+        referencia: "Referência"
+        admin_dant: "Administrador Dant"
+        admin_hans: "Administrador Hanseníase"
+        admin_dst: "Administrador DST"
+        dst_produtos: "Estoque DST"
+        admin_imuni: "Administrador Imunização"
+      categoria:
+        estoque_inicial: "Estoque Inicial"
+        distribuicao_municipio: "Distribuição Município"
+        distribuicao_usuario: "Distribuição Usuário"
+        acerto: "Acerto"
+        remanejamento: "Remanejamento"
+        perda: "Perda"
+        vencimento: "Vencimento"
+        entrada_em_estoque: "Entrada em Estoque"
       tipo_insulina:
         nph_frascos: "NPH FRASCOS"
         regular_frascos: "REGULAR FRASCOS"

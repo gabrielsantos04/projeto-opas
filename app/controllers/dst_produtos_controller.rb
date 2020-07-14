@@ -52,7 +52,7 @@ class DstProdutosController < ApplicationController
 
   #Método utilizado para atualizar os lotes
   def lotes_ajax
-    render json: @dst_produto.dst_lotes
+    render json: @dst_produto.dst_lotes.where(" ? < validade", Date.today)
   end
 
   private

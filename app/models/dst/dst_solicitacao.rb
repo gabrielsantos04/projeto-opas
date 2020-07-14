@@ -45,6 +45,36 @@ class DstSolicitacao < ApplicationRecord
 
   enumerize :status, in: [:solicitado, :autorizado, :recusado], default: :solicitado,  predicates: true
 
+  after_save :realizar_movimentacao
+
+  #Método que realiza as movimentações no estoque após a conclusão da solicitação
+  def realizar_movimentacao
+    #binding.pry
+    if self.status == :autorizado
+      estoque = DstLocal.last
+      if estoque.present?
+      self.dst_solicitacao_produtos.each do |p|
+        if p.status == :autorizado
+          movimentacao = DstMovimentacao.find_or_initialize_by(dst_solicitacao_produto_id: p.id)
+          movimentacao.dst_produto_id = p.dst_produto_id
+          movimentacao.tipo = :saida
+          movimentacao.categoria = :distribuicao_municipio
+          movimentacao.quantidade = p.quantidade_atendido
+          movimentacao.dst_lote_id = p.dst_lote_id
+          movimentacao.descricao = "Realizado automaticamente pelo sistema"
+          movimentacao.dst_local_id = estoque.id
+          movimentacao.save
+        end
+      end
+      end
+    elsif self.status == :recusado
+      self.dst_solicitacao_produtos.each do |p|
+        DstMovimentacao.where(dst_solicitacao_produto_id: p.id).destroy_all
+      end
+    end
+
+  end
+
   #Método que retorna o nome do objeto
   def to_s
     "Solicitação Nº#{self.id}"

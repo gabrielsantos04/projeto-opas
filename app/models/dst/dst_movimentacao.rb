@@ -34,6 +34,7 @@ class DstMovimentacao < ApplicationRecord
   belongs_to :dst_lote
   belongs_to :dst_local, optional: true
   belongs_to :dst_solicitacao_produto, optional: true
+  has_one :dst_solicitacao, through: :dst_solicitacao_produto
 
   extend Enumerize
 
@@ -43,7 +44,7 @@ class DstMovimentacao < ApplicationRecord
       :remanejamento, :perda, :vencimento, :entrada_em_estoque
   ], predicates: true
 
-  validate :check_balance
+  #validate :check_balance
   before_validation :check_value
 
   #Método que retorna o nome do objeto

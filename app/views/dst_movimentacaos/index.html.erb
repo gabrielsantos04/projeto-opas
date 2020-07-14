@@ -43,11 +43,11 @@
 
 
 
-        <td><%= dst_movimentacao.tipo %></td>
+        <td><%= dst_movimentacao.tipo_text %></td>
 
 
 
-        <td><%= dst_movimentacao.categoria %></td>
+        <td><%= dst_movimentacao.categoria_text %></td>
 
 
 
@@ -70,4 +70,4 @@
   <%= paginate(@dst_movimentacaos)  %>
 </div>
 
-<%= link_to '+ Cadastrar', new_dst_movimentacao_path, class:"btn" %>
+<%= link_to '+ Cadastrar', new_dst_movimentacao_path, class:"btn", target: "_self" %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200121123441) do
+ActiveRecord::Schema.define(version: 20200714121813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -578,6 +578,8 @@ ActiveRecord::Schema.define(version: 20200121123441) do
     t.integer "qtd_perdas"
     t.integer "saldo_final"
     t.integer "quantidade_atendido"
+    t.bigint "dst_lote_id"
+    t.index ["dst_lote_id"], name: "index_dst_solicitacao_produtos_on_dst_lote_id"
     t.index ["dst_produto_id"], name: "index_dst_solicitacao_produtos_on_dst_produto_id"
     t.index ["dst_solicitacao_id"], name: "index_dst_solicitacao_produtos_on_dst_solicitacao_id"
     t.index ["user_id"], name: "index_dst_solicitacao_produtos_on_user_id"
@@ -1083,6 +1085,7 @@ ActiveRecord::Schema.define(version: 20200121123441) do
   add_foreign_key "dst_movimentacaos", "dst_solicitacao_produtos"
   add_foreign_key "dst_resposta", "dst_questionarios"
   add_foreign_key "dst_resposta", "dst_solicitacaos"
+  add_foreign_key "dst_solicitacao_produtos", "dst_lotes"
   add_foreign_key "dst_solicitacao_produtos", "dst_produtos"
   add_foreign_key "dst_solicitacao_produtos", "dst_solicitacaos"
   add_foreign_key "dst_solicitacao_produtos", "users"

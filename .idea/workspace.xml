@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dant_pacients_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_produtos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_produtos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_solicitacao_produtos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_solicitacao_produtos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_solicitacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_solicitacaos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/dst/dst_movimentacao.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dst/dst_movimentacao.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/dst/dst_solicitacao.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dst/dst_solicitacao.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/dst/dst_solicitacao_produto.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dst/dst_solicitacao_produto.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dst_locals/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_locals/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dst_movimentacaos/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_movimentacaos/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dst_movimentacaos/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_movimentacaos/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dst_solicitacao_produtos/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_solicitacao_produtos/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dst_solicitacaos/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_solicitacaos/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/_left_sidebar_dst.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_left_sidebar_dst.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/locales/pt-BR.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/pt-BR.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fixtures/dst_solicitacao_produtos.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/dst_solicitacao_produtos.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/models/dst_solicitacao_produto_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/dst_solicitacao_produto_test.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +249,7 @@
       <workItem from="1581515149990" duration="3763000" />
       <workItem from="1591619544811" duration="504000" />
       <workItem from="1591701684257" duration="6129000" />
-      <workItem from="1594725980159" duration="484000" />
+      <workItem from="1594725980159" duration="6837000" />
     </task>
     <servers />
   </component>
@@ -262,13 +279,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="608" y="267" width="704" height="528" key="find.popup" timestamp="1576000042476">
+    <state x="663" y="323" width="583" height="416" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594732815279">
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
-    <state x="608" y="267" width="704" height="528" key="find.popup/0.27.1920.1010/1920.651.1366.768@0.27.1920.1010" timestamp="1576000042476" />
-    <state width="600" height="424" key="javadoc.popup" timestamp="1577709616623">
-      <screen x="0" y="27" width="1920" height="1010" />
-    </state>
-    <state width="600" height="424" key="javadoc.popup/0.27.1920.1010/1920.651.1366.768@0.27.1920.1010" timestamp="1577709616623" />
+    <state x="663" y="323" width="583" height="416" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1010/1920.651.1366.768@0.27.1920.1010" timestamp="1594732815279" />
   </component>
 </project>

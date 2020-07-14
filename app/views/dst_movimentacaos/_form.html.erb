@@ -59,7 +59,7 @@
                 dataType: "json",
             }).done(function( data ) {
                 $.each( $.map( data, function( item ) {
-                    $('#lote').append('<option value="'+item.id+'">' + item.nome + '</option>');
+                    $('#lote').append('<option value="'+item.id+'">' + item.nome +" - "+  item.validade + '</option>');
                 }));
 
                 $("#lote").trigger("chosen:updated");

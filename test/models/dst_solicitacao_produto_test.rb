@@ -19,15 +19,18 @@
 #  qtd_perdas          :integer
 #  saldo_final         :integer
 #  quantidade_atendido :integer
+#  dst_lote_id         :integer
 #
 # Indexes
 #
+#  index_dst_solicitacao_produtos_on_dst_lote_id         (dst_lote_id)
 #  index_dst_solicitacao_produtos_on_dst_produto_id      (dst_produto_id)
 #  index_dst_solicitacao_produtos_on_dst_solicitacao_id  (dst_solicitacao_id)
 #  index_dst_solicitacao_produtos_on_user_id             (user_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (dst_lote_id => dst_lotes.id)
 #  fk_rails_...  (dst_produto_id => dst_produtos.id)
 #  fk_rails_...  (dst_solicitacao_id => dst_solicitacaos.id)
 #  fk_rails_...  (user_id => users.id)
