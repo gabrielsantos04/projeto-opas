@@ -23,7 +23,7 @@
           <div class="row">
             <div class="col s12 l6">
               <%= f.label "Município" %>
-              <%= f.select :cidade_id_eq, Cidade.to_select,{prompt: "Todo o Estado",include_blank: true},{class:"browser-default chosen-select"} %>
+              <%= f.select :cidade_id_eq, @cidades,{prompt: "Todo o Estado",include_blank: true},{class:"browser-default chosen-select"} %>
 
             </div>
             <div class="col l6 s12">

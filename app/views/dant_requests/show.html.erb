@@ -218,7 +218,7 @@
           <thead>
            <th>Nome</th>
            <th>Idade</th>
-           <th>Frascos Diários</th>
+           <th>Doses Diárias</th>
            <th>Frascos Mensais</th>
           </thead>
           <tbody>
@@ -242,8 +242,8 @@
         <thead>
         <th>Nome</th>
         <th>Idade</th>
-        <th>Dose Diários</th>
-        <th>Caneta Mensais</th>
+        <th>Dose Diárias</th>
+        <th>Canetas Mensais</th>
         </thead>
         <tbody>
         <% @dant_request.dant_request_pacients.includes(:dant_doses).where(dant_doses: {tipo_insulina: "nph_de_caneta"}).each do |p| %>
@@ -266,7 +266,7 @@
         <thead>
         <th>Nome</th>
         <th>Idade</th>
-        <th>Frascos Diários</th>
+        <th>Doses Diárias</th>
         <th>Frascos Mensais</th>
         </thead>
         <tbody>
@@ -290,8 +290,8 @@
         <thead>
         <th>Nome</th>
         <th>Idade</th>
-        <th>Dose Diária</th>
-        <th>Caneta Mensais</th>
+        <th>Doses Diárias</th>
+        <th>Canetas Mensais</th>
         </thead>
         <tbody>
         <% @dant_request.dant_request_pacients.includes(:dant_doses).where(dant_doses: {tipo_insulina: "regular_de_caneta"}).each do |p| %>
