@@ -1,3 +1,5 @@
+<h1 class="center-align">Movimentação</h1>
+
 <div class="card-panel">
 	
 <p>
@@ -20,23 +22,19 @@
   <%= @dst_movimentacao.quantidade %>
 </p>
 
-<p>
-  <strong>Lote:</strong>
-  <%= @dst_movimentacao.dst_lote %>
-</p>
 
 <p>
-  <strong>Descricao:</strong>
+  <strong>Descrição:</strong>
   <%= @dst_movimentacao.descricao %>
 </p>
 
-<p>
-  <strong>Local de Movimentação:</strong>
-  <%= @dst_movimentacao.dst_local %>
-</p>
+<!--<p>-->
+<!--  <strong>Local de Movimentação:</strong>-->
+  <%#= @dst_movimentacao.dst_local %>
+<!--</p>-->
 
 <p>
-  <strong>Solicitacao:</strong>
+  <strong>Solicitação:</strong>
   <%= @dst_movimentacao.dst_solicitacao_produto || "Não cadastrada" %>
 </p>
 

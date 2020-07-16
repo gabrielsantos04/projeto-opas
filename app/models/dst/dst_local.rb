@@ -20,7 +20,7 @@
 #
 
 class DstLocal < ApplicationRecord
-  belongs_to :cidade, dependent: :destroy
+  belongs_to :cidade, optional: true
   has_many :dst_user_locals
   has_many :dst_movimentacaos
   has_many :dst_solicitacaos

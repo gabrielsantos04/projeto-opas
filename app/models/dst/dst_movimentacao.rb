@@ -31,7 +31,7 @@
 
 class DstMovimentacao < ApplicationRecord
   belongs_to :dst_produto
-  belongs_to :dst_lote
+  belongs_to :dst_lote, optional: true
   belongs_to :dst_local, optional: true
   belongs_to :dst_solicitacao_produto, optional: true
   has_one :dst_solicitacao, through: :dst_solicitacao_produto

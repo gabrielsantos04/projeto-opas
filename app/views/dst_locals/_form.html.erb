@@ -17,14 +17,14 @@
       </div>
 
       <div class="">
-        <%= f.label :descricao %>
-        <%= f.text_area :descricao %>
+        <%= f.label :descricao, "Descrição" %>
+        <%= f.text_area :descricao, class: "materialize-textarea"%>
       </div>
 
-      <div class="">
-        <%= f.label :cidade %>
-        <%= f.collection_select :cidade_id, Cidade.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select"}  %>
-      </div>
+<!--      <div class="">-->
+        <%#= f.label :cidade %>
+        <%#= f.collection_select :cidade_id, Cidade.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select"}  %>
+<!--      </div>-->
 
       <div class="">
         <%= f.label :categoria %>
@@ -32,22 +32,22 @@
       </div>
 
     </div>
-    <div class="card-panel" style="overflow: visible">
-      <h4 class="header2">Responsáveis</h4>
-      <%= f.fields_for :dst_user_locals do |ul| %>
-          <div class="card row" style="overflow: visible">
-            <div class="col s12 m10">
-              <%= ul.collection_select :user_id, User.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select"}  %>
-            </div>
-            <div class="col s12 m2">
-              <%= ul.link_to_remove do %>
-                <i class="material-icons red-text">delete</i>
-              <% end %>
-            </div>
-          </div>
-      <% end %>
-      <%= f.link_to_add "Novo Responsável", :dst_user_locals, class:"btn" %>
-    </div>
+<!--    <div class="card-panel" style="overflow: visible">-->
+<!--      <h4 class="header2">Responsáveis</h4>-->
+      <%#= f.fields_for :dst_user_locals do |ul| %>
+<!--          <div class="card row" style="overflow: visible">-->
+<!--            <div class="col s12 m10">-->
+              <%#= ul.collection_select :user_id, User.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select"}  %>
+<!--            </div>-->
+<!--            <div class="col s12 m2">-->
+              <%#= ul.link_to_remove do %>
+<!--                <i class="material-icons red-text">delete</i>-->
+              <%# end %>
+<!--            </div>-->
+<!--          </div>-->
+      <%# end %>
+      <%#= f.link_to_add "Novo Responsável", :dst_user_locals, class:"btn" %>
+<!--    </div>-->
     <div class="actions">
       <%= f.submit "Salvar", class:"btn" %>
     </div>

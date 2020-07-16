@@ -18,6 +18,7 @@ class DstMovimentacaosController < ApplicationController
   def new
     @lotes = []
     @dst_movimentacao = DstMovimentacao.new
+    @dst_movimentacao.dst_local_id = DstLocal.last.id
   end
 
   # GET /dst_movimentacaos/1/edit

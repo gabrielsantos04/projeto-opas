@@ -80,6 +80,7 @@ class Ability
       can :manage, DantCidadeRegion
       can :manage, DantRegion
       can :manage, DantRequest
+      can :manage, User
     elsif user.admin_imuni?
       can :manage, ImunizacaoEncerramento
       can :manage, ImunizacaoEsquema

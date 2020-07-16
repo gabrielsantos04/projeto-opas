@@ -11,19 +11,18 @@
         </div>
     <% end %>
     <div class="card-panel">
-      <div class="input-field">
-        <%= f.select :dst_local_id, @locals %>
-      </div>
+
+      <%= f.hidden_field :dst_local_id%>
 
       <div>
         <%= f.label :produto %>
         <%= f.collection_select :dst_produto_id, DstProduto.all, :id, :nome, {prompt: true}, html_options = {class:"browser-default chosen-select", id: :produto}  %>
       </div>
 
-      <div>
-        <%= f.label :lote %>
-        <%= f.select :dst_lote_id,@lotes , {prompt: true},  {class:"browser-default chosen-select", id: :lote} %>
-      </div>
+<!--      <div>-->
+        <%#= f.label :lote %>
+        <%#= f.select :dst_lote_id,@lotes , {prompt: true},  {class:"browser-default chosen-select", id: :lote} %>
+<!--      </div>-->
 
       <div>
         <%= f.label :tipo %>
@@ -52,20 +51,20 @@
 
 <%= content_for :scripts do  %>
     <script type="text/javascript" charset="utf-8">
-        $("#produto").change(function(){
-            $("#lote").empty();
-            $.ajax({
-                url: "/dst/dst_produtos/"+$("#produto").val()+"/lotes_ajax",
-                dataType: "json",
-            }).done(function( data ) {
-                $.each( $.map( data, function( item ) {
-                    $('#lote').append('<option value="'+item.id+'">' + item.nome +" - "+  item.validade + '</option>');
-                }));
-
-                $("#lote").trigger("chosen:updated");
-                $("#lote").trigger("liszt:updated");
-
-            });
-        });
+        // $("#produto").change(function(){
+        //     $("#lote").empty();
+        //     $.ajax({
+        //         url: "/dst/dst_produtos/"+$("#produto").val()+"/lotes_ajax",
+        //         dataType: "json",
+        //     }).done(function( data ) {
+        //         $.each( $.map( data, function( item ) {
+        //             $('#lote').append('<option value="'+item.id+'">' + item.nome +" - "+  item.validade + '</option>');
+        //         }));
+        //
+        //         $("#lote").trigger("chosen:updated");
+        //         $("#lote").trigger("liszt:updated");
+        //
+        //     });
+        // });
     </script>
 <% end %>

@@ -60,7 +60,7 @@ class DstSolicitacao < ApplicationRecord
           movimentacao.tipo = :saida
           movimentacao.categoria = :distribuicao_municipio
           movimentacao.quantidade = p.quantidade_atendido
-          movimentacao.dst_lote_id = p.dst_lote_id
+          #movimentacao.dst_lote_id = p.dst_lote_id
           movimentacao.descricao = "Realizado automaticamente pelo sistema"
           movimentacao.dst_local_id = estoque.id
           movimentacao.save

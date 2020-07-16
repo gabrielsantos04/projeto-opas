@@ -7,11 +7,9 @@ class DstLocalsController < ApplicationController
 
   # GET /dst_locals
   def index
-    if current_user.admin_dst?
-      @q = DstLocal.all.ransack(params[:q])
-    else
-      @q = current_user.dst_locals.ransack(params[:q])
-    end
+
+    @q = DstLocal.all.ransack(params[:q])
+
     @dst_locals = @q.result.page(params[:page])
   end
 
