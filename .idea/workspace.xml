@@ -3,22 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dst_locals_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_locals_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dst_movimentacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_movimentacaos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/ability.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ability.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dst/dst_local.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dst/dst_local.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dst/dst_movimentacao.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dst/dst_movimentacao.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/dst/dst_solicitacao.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dst/dst_solicitacao.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dst_locals/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_locals/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dst_locals/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_locals/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dst_locals/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_locals/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dst_locals/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_locals/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dst_movimentacaos/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_movimentacaos/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dst_movimentacaos/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_movimentacaos/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dst_movimentacaos/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_movimentacaos/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dst_movimentacaos/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_movimentacaos/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dst_movimentacaos/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dst_movimentacaos/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_left_sidebar_dst.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_left_sidebar_dst.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/dant_cidade_region.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/dant_cidade_region.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +233,8 @@
       <workItem from="1581515149990" duration="3763000" />
       <workItem from="1591619544811" duration="504000" />
       <workItem from="1591701684257" duration="6129000" />
-      <workItem from="1594725980159" duration="13651000" />
+      <workItem from="1594725980159" duration="14853000" />
+      <workItem from="1594986856010" duration="296000" />
     </task>
     <servers />
   </component>
