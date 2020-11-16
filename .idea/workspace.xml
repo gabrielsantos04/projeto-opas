@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dant_pacients/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dant_pacients/_form.html.erb" afterDir="false" />
-    </list>
+    <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -236,7 +233,7 @@
       <workItem from="1594725980159" duration="14853000" />
       <workItem from="1594986856010" duration="1008000" />
       <workItem from="1595342854689" duration="1779000" />
-      <workItem from="1595514086343" duration="40000" />
+      <workItem from="1595514086343" duration="773000" />
     </task>
     <servers />
   </component>
