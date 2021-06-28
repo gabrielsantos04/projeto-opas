@@ -18,7 +18,7 @@
           </div>
         </li>
 
-        <% if current_user.administrador? %>
+        <% if current_user.administrador?  || current_user.admin_hans? %>
         <li class="bold">
           <a href="/notificacaos/home" class="waves-effect waves-cyan">
             <i class="fa fa-home"></i> Início
@@ -55,7 +55,7 @@
             <i class="fa fa-list"></i> Escala de Participação
           </a>
         </li>
-        <% if current_user.administrador?  %>
+        <% if current_user.administrador? || current_user.admin_hans?  %>
             <li class="bold">
               <a href="/ocupacaos" class="waves-effect waves-cyan">
                 <i class="fa fa-briefcase"></i> Ocupações
