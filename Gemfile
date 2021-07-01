@@ -9,11 +9,11 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -40,10 +40,10 @@ gem 'rest-client'
 gem 'cancancan', '~> 2.0'
 gem 'enumerize'
 gem 'ryanb-uniquify'
-gem "ransack", github:"activerecord-hackery/ransack", branch:"master"
-gem "kaminari", github: "amatsuda/kaminari", branch: '0-17-stable'
+gem "ransack"#, github:"activerecord-hackery/ransack", branch:"master"
+gem "kaminari"#, github: "amatsuda/kaminari", branch: '0-17-stable'
 gem 'nested_form'
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave'#, github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave-base64'
 gem 'ryanb-uniquify'
 gem 'sdoc'
@@ -61,9 +61,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'pry-rails'
-  gem 'pry-remote'
-  gem 'pry-byebug'
+  #gem 'pry-rails'
+  #gem 'pry-remote'
+  #gem 'pry-byebug'
 end
 
 group :development do
@@ -73,8 +73,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'annotate'
-  gem 'seed_dump'
+  #gem 'annotate'
+  #gem 'seed_dump'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
