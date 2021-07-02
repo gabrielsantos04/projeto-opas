@@ -6,7 +6,7 @@ class DstMovimentacaosController < ApplicationController
 
   # GET /dst_movimentacaos
   def index
-    @q = current_user.dst_movimentacaos.all.ransack(params[:q])
+    @q = DstMovimentacao.all.ransack(params[:q])
     @dst_movimentacaos = @q.result.page(params[:page])
   end
 

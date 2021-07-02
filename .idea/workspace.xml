@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_movimentacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_movimentacaos_controller.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +15,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1QKqf8iuPsoh4LB0YNHQd1Vhoj9" />
   <component name="ProjectViewState">
@@ -248,7 +254,8 @@
       <workItem from="1621294138405" duration="323000" />
       <workItem from="1621297869927" duration="593000" />
       <workItem from="1625085910691" duration="1725000" />
-      <workItem from="1625158168808" duration="2773000" />
+      <workItem from="1625158168808" duration="3042000" />
+      <workItem from="1625237077781" duration="2032000" />
     </task>
     <servers />
   </component>
@@ -276,15 +283,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="663" y="323" width="583" height="416" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594732815279">
-      <screen x="0" y="27" width="1920" height="1010" />
-    </state>
-    <state x="663" y="323" width="583" height="416" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1010/1920.651.1366.768@0.27.1920.1010" timestamp="1594732815279" />
-    <state x="652" y="254" width="616" height="554" key="find.popup" timestamp="1594987239749">
-      <screen x="0" y="27" width="1920" height="1010" />
-    </state>
-    <state x="652" y="254" width="616" height="554" key="find.popup/0.27.1920.1010/1920.651.1366.768@0.27.1920.1010" timestamp="1594987239749" />
   </component>
 </project>
