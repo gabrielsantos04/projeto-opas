@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cc930c85-2c21-424f-a3da-f7627a5aa18c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dst_movimentacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_movimentacaos_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dst_solicitacaos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dst_solicitacaos_controller.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +255,7 @@
       <workItem from="1621297869927" duration="593000" />
       <workItem from="1625085910691" duration="1725000" />
       <workItem from="1625158168808" duration="3042000" />
-      <workItem from="1625237077781" duration="2032000" />
+      <workItem from="1625237077781" duration="2502000" />
     </task>
     <servers />
   </component>
