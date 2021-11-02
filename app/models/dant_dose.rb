@@ -31,16 +31,11 @@ class DantDose < ApplicationRecord
   #Método que seta a quantidade de frascos mensais
   def set_frascos
     if self.tipo_insulina == "nph_frascos" || self.tipo_insulina == "regular_frascos"
-      case self.dose_diaria
-      when 1..33
-        self.frascos_mensais = 1
-      when 34..66
-        self.frascos_mensais = 2
-      when 67..99
-        self.frascos_mensais = 3
-      when 100..132
-        self.frascos_mensais = 4
+      quantidade = self.dose_diaria / 33
+      if self.dose_diaria % 33 != 0
+        quantidade = quantidade + 1
       end
+      self.frascos_mensais = quantidade
     else
       quantidade = self.dose_diaria / 10
       if self.dose_diaria % 10 != 0

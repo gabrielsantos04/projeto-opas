@@ -180,19 +180,6 @@
 
     </div>
 
-<!--    <div class="card-panel">-->
-<!--      <h4 class="header2">Outros Imunobiológicos</h4>-->
-      <%#= f.fields_for :outros_imunobiologicos do |i| %>
-          <%#= i.hidden_field :imunizacao_solicitacao_id %>
-<!--          <div class="card-panel">-->
-            <%#= i.text_field :nome_vacina %>
-            <%#= i.link_to_remove "Apagar", class: "btn red" %>
-
-<!--          </div>-->
-      <%# end %>
-      <%#= f.link_to_add "Inserir", :outros_imunobiologicos, class: :btn %>
-<!--    </div>-->
-
     <%= f.hidden_field :municipio_atual_id%>
 
     <div class="card-panel">
@@ -233,7 +220,6 @@
 <script type="text/javascript" charset="utf-8">
     function indicacoes(combo)
     {
-        console.log($('#'+combo).val());
         $.get('/imunizacao/imunizacao_indications/'+ $('#'+combo).val()+'/retornar_vacinas?combo='+combo );
     }
 </script>
