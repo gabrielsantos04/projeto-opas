@@ -1,5 +1,7 @@
 #Classe que controla as açoes da DstSolicitacao
 class DstSolicitacaosController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_dst_solicitacao, only: [:show, :edit, :update, :destroy,:autorizar,:recusar]
   before_action :set_combos, only: [:new, :edit, :create, :update]
 
@@ -45,6 +47,12 @@ class DstSolicitacaosController < ApplicationController
 
   # GET /dst_solicitacaos/1/edit
   def edit
+    if current_user.dst_produtos?
+      redirect_to @dst_solicitacao, alert: "Você não tem permissão para editar a Solicitação!"
+    end
+    if @dst_solicitacao.entregue? || @dst_solicitacao.recusado?
+      redirect_to @dst_solicitacao, alert: "Não é possível editar a solicitação após ser Recusada ou Entregue!"
+    end
   end
 
   def autorizar
@@ -52,6 +60,17 @@ class DstSolicitacaosController < ApplicationController
     @dst_solicitacao.save
     redirect_to @dst_solicitacao
   end
+
+  def entregar
+    unless possui_quantidade_atendida?
+      redirect_to @dst_solicitacao, alert: "Informe as quantidades atendidas!"
+    else
+      @dst_solicitacao.status = :entregue
+      @dst_solicitacao.save
+      redirect_to @dst_solicitacao
+    end
+  end
+
   def recusar
     @dst_solicitacao.status = :recusado
     @dst_solicitacao.save
@@ -88,6 +107,13 @@ class DstSolicitacaosController < ApplicationController
   end
 
   private
+    def possui_quantidade_atendida?
+      @dst_solicitacao.dst_solicitacao_produtos.each do |p|
+        return if p.quantidade_atendido == nil
+      end
+
+      true
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_dst_solicitacao
       @dst_solicitacao = DstSolicitacao.find(params[:id])

@@ -1,4 +1,6 @@
 class ImunizacaoIndicationsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_imunizacao_indication, only: [:show, :edit, :update, :destroy,:retornar_vacinas]
   before_action :set_combos, only: [:new, :edit, :update, :create]
 

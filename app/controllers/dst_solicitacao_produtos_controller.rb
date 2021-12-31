@@ -1,5 +1,7 @@
 #Classe que controla as açoes da DstSolicitacaoProduto
 class DstSolicitacaoProdutosController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_dst_solicitacao_produto, only: [:show, :edit, :update, :destroy]
 
   # GET /dst_solicitacao_produtos
@@ -19,6 +21,9 @@ class DstSolicitacaoProdutosController < ApplicationController
 
   # GET /dst_solicitacao_produtos/1/edit
   def edit
+    if @dst_solicitacao_produto.dst_solicitacao.entregue? || @dst_solicitacao_produto.dst_solicitacao.recusado?
+      redirect_to @dst_solicitacao_produto, alert: "Não é possível editar a solicitação após ser Recusada ou Entregue!"
+    end
   end
 
   # POST /dst_solicitacao_produtos

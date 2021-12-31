@@ -29,7 +29,7 @@
 
   <p>
     <strong>Status:</strong>
-    <%= @dst_solicitacao.status_text %>
+    <%= @dst_solicitacao.status_text.upcase  %>
   </p>
 
 </div>
@@ -74,7 +74,9 @@
             <%= sp.quantidade_aprovada.to_i || 0 %>
             <%= link_to sp do %>
                 <i class="material-icons tiny">edit</i>
-            <% end if current_user.administrador? || current_user.admin_dst? || current_user.dst_produtos? %>
+            <% end if (current_user.administrador? ||
+              current_user.admin_dst? ||
+              current_user.dst_produtos?) and !@dst_solicitacao.entregue? %>
           </td>
           <td>
             <%= sp.quantidade_atendido %>
@@ -83,7 +85,7 @@
             <%= sp.saldo_final %>
           </td>
           <td>
-            <%= sp.status %>
+            <%= sp.status.upcase  %>
           </td>
         </tr>
       <% end %>
@@ -105,6 +107,9 @@
 
 <%= link_to 'Voltar', dst_solicitacaos_path, class:"btn" %>
 <% if current_user.administrador? || current_user.admin_dst? %>
-  <%= link_to 'Aprovar', autorizar_dst_solicitacao_path(@dst_solicitacao), class:"btn green" %>
-  <%= link_to 'Recusar', recusar_dst_solicitacao_path(@dst_solicitacao), class:"btn red" %>
+  <%= link_to 'Aprovar', autorizar_dst_solicitacao_path(@dst_solicitacao), class:"btn green" if @dst_solicitacao.solicitado? %>
+  <%= link_to 'Recusar', recusar_dst_solicitacao_path(@dst_solicitacao), class:"btn red" if @dst_solicitacao.solicitado? %>
+<% end %>
+<% if current_user.dst_produtos? and @dst_solicitacao.autorizado? %>
+  <%= link_to 'Entregar', entregar_dst_solicitacao_path(@dst_solicitacao), class:"btn green", target: '_self' %>
 <% end %>

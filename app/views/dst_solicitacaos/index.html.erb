@@ -39,7 +39,7 @@
           <td><%= link_to dst_solicitacao.id ,dst_solicitacao %></td>
 
 
-      <td><%= dst_solicitacao.mes %></td>
+      <td><%= dst_solicitacao.mes.upcase  %></td>
           <td><%= dst_solicitacao.cidade %></td>
         
               
@@ -48,7 +48,7 @@
         
               
 
-          <td><%= dst_solicitacao.status %></td>
+          <td><%= dst_solicitacao.status.upcase  %></td>
         
           </tr>
     <% end %>

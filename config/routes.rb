@@ -121,6 +121,7 @@ Rails.application.routes.draw do
       member do
         get "autorizar"
         get "recusar"
+        get "entregar"
       end
       collection do
         get "mapa"

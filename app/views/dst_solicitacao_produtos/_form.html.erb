@@ -38,10 +38,10 @@
       <%= f.label :quantidade_atendido, "Quantidade Entregue" %>
       <%= f.number_field :quantidade_atendido, id:"qdd_field",step:1, min: 0, max: @dst_solicitacao_produto.quantidade, required: true %>
     </div>
-    <div>
-      <%= f.label :dst_lote_id, "Lote" %>
-      <%= f.select :dst_lote_id, @dst_solicitacao_produto.dst_produto.dst_lotes.where(" ? < validade", Date.today).map{|a| ["#{a.nome} - #{a.validade}",a.id]} , {}, {id: "status"}%>
-    </div>
+<!--    <div>-->
+      <%#= f.label :dst_lote_id, "Lote" %>
+      <%#= f.select :dst_lote_id, @dst_solicitacao_produto.dst_produto.dst_lotes.where(" ? < validade", Date.today).map{|a| ["#{a.nome} - #{a.validade}",a.id]} , {}, {id: "status"}%>
+<!--    </div>-->
   <% end %>
   <div>
     <%= f.label :observacoes, "Observações" %>

@@ -1,5 +1,7 @@
 #Classe que controla as açoes da DantRegion
 class DantRegionsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_dant_region, only: [:show, :edit, :update, :destroy]
   before_action :set_combos, only: [:new, :edit, :create]
 

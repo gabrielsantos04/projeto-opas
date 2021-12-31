@@ -1,5 +1,7 @@
 #Classe que controla as açoes da DstProdutos
 class DstProdutosController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_dst_produto, only: [:show, :edit, :update, :destroy, :lotes_ajax]
 
   # GET /dst_produtos

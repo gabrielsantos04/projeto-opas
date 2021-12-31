@@ -1,5 +1,7 @@
 #Classe que controla as açoes da DantResponsavelPrograms
 class DantResponsavelProgramsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_dant_responsavel_program, only: [:show, :edit, :update, :destroy]
   before_action :set_combos, only: [:new, :edit, :create]
 

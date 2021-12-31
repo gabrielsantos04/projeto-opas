@@ -39,6 +39,7 @@ class Ability
       can :manage, SinaisSintoma
       can :manage, SintomasRecidiva
       can :manage, User
+      can :manage, Diagnostico
     elsif user.municipio_hans? || user.municipio?
       can :create, Paciente
       can :manage, Paciente do |p|
@@ -69,10 +70,18 @@ class Ability
       can :manage, DstSolicitacaoProduto
       can :manage, DstProduto
       can :manage, DstLote
+      can :manage, DstMovimentacao
+      can :manage, DstSolicitacao
+      can :manage, DstQuestionario
+      can :manage, User
     elsif user.dst_produtos?
       can :manage, DstSolicitacaoProduto
       can :manage, DstProduto
       can :manage, DstLote
+      can :manage, DstSolicitacaoProduto
+      can :manage, DstSolicitacao
+      can :manage, DstLocal
+      can :manage, DstMovimentacao
     elsif user.admin_dant?
       can :manage, DantPacient
       can :manage, DantQuestion
@@ -91,10 +100,14 @@ class Ability
       can :manage, ImunizacaoSolicitacao
       can :manage, ImunizacaoEncerramento
       can :manage, ImunizacaoEsquema
+    elsif user.municipio_dst?
+      #Permissões para Módulo DST
+      can :read, DstLocal
+      can :read, DstMovimentacao
+      can :create, DstMovimentacao
+      can :read, DstSolicitacao
+      can :create, DstSolicitacao
     else
-
-
-
       can :create, Paciente
       can :manage, Paciente do |p|
         p.cidade == user.cidade
@@ -106,14 +119,6 @@ class Ability
       can :show, :all
     end
 
-    #Permissões para Módulo DST
-    can :read, DstLocal
-    can :read, DstMovimentacao
-    can :create, DstMovimentacao
-    can :read, DstSolicitacao
-    can :create, DstSolicitacao
-
     can :home, User
-
   end
 end

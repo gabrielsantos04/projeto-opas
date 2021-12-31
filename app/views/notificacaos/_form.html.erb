@@ -183,9 +183,9 @@
               <%= esq.select :forma_clinica, @formas_clinicas, {prompt: true},{class:"browser-default"} %>
 
             </div>
-            <div class="col s4 l2 input-field">
-              <%= esq.select :classificacao_operacional, @classificacoes_operacional, {prompt: true} %>
+            <div class="col s4 l2">
               <%= esq.label :classificacao_operacional,"Classificação Operacional" %>
+              <%= esq.select :classificacao_operacional, @classificacoes_operacional, {prompt: true},{class:"browser-default"} %>
             </div>
             <div class="col s4 l1">
               <%= esq.label :nervos_afetados, "Nervos Afetados" %>

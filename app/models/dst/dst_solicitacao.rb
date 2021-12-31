@@ -43,14 +43,13 @@ class DstSolicitacao < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :status, in: [:solicitado, :autorizado, :recusado], default: :solicitado,  predicates: true
+  enumerize :status, in: [:solicitado, :autorizado, :recusado, :entregue], default: :solicitado,  predicates: true
 
   after_save :realizar_movimentacao
 
   #Método que realiza as movimentações no estoque após a conclusão da solicitação
   def realizar_movimentacao
-    #binding.pry
-    if self.status == :autorizado
+    if self.status == :entregue
       estoque = DstLocal.last
       if estoque.present?
       self.dst_solicitacao_produtos.each do |p|
@@ -60,7 +59,6 @@ class DstSolicitacao < ApplicationRecord
           movimentacao.tipo = :saida
           movimentacao.categoria = :distribuicao_municipio
           movimentacao.quantidade = p.quantidade_atendido
-          #movimentacao.dst_lote_id = p.dst_lote_id
           movimentacao.descricao = "Realizado automaticamente pelo sistema"
           movimentacao.dst_local_id = estoque.id
           movimentacao.save

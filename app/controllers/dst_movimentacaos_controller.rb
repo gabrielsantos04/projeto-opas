@@ -1,5 +1,7 @@
 #Classe que controla as açoes da DstMovimentacaos
 class DstMovimentacaosController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_dst_movimentacao, only: [:show, :edit, :update, :destroy]
   before_action :set_combos, only: [:new, :edit, :create, :update]
   before_action :set_lotes, only: [:edit, :create, :update]

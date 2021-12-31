@@ -1,5 +1,7 @@
 #Classe que controla as açoes da DantQuestions
 class DantQuestionsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_dant_question, only: [:show, :edit, :update, :destroy]
 
   # GET /dant_questions

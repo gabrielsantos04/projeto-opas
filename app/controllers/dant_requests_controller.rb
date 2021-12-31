@@ -1,5 +1,7 @@
 #Classe que controla as açoes da DantRequest
 class DantRequestsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_dant_request, only: [:show, :edit, :update, :destroy,:enviar,:faixa_etaria,:alterar_status]
   before_action :set_combos, only: [:new, :edit, :create]
 
