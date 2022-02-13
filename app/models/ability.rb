@@ -41,6 +41,7 @@ class Ability
       can :manage, User
       can :manage, Diagnostico
     elsif user.municipio_hans? || user.municipio?
+      can [:home, :avaliacao_pendente], Notificacao
       can :create, Paciente
       can :manage, Paciente do |p|
         p.cidade == user.cidade

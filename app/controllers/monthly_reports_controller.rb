@@ -32,7 +32,7 @@ class MonthlyReportsController < ApplicationController
     @monthly_report = MonthlyReport.new(monthly_report_params)
 
     if @monthly_report.save
-      redirect_to @monthly_report, notice: 'Monthly report was successfully created.'
+      redirect_to @monthly_report, notice: 'Relatório mensal criado com sucesso.'
     else
       render :new
     end
@@ -41,7 +41,7 @@ class MonthlyReportsController < ApplicationController
   # PATCH/PUT /monthly_reports/1
   def update
     if @monthly_report.update(monthly_report_params)
-      redirect_to @monthly_report, notice: 'Monthly report was successfully updated.'
+      redirect_to @monthly_report, notice: 'Relatório mensal atualizado com sucesso.'
     else
       render :edit
     end
@@ -50,7 +50,7 @@ class MonthlyReportsController < ApplicationController
   # DELETE /monthly_reports/1
   def destroy
     @monthly_report.destroy
-    redirect_to monthly_reports_url, notice: 'Monthly report was successfully destroyed.'
+    redirect_to monthly_reports_url, notice: 'Relatório mensal excluído com sucesso.'
   end
 
   private
