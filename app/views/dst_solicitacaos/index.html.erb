@@ -1,21 +1,39 @@
-<div class="card">  
+<div class="card"  style="overflow: visible;">
   <div class="card-content">
     <span class="card-title grey-text text-darken-4" onclick="toogle_div('#pesquisa')">
       Pesquisa
     </span>
     <div id="pesquisa" class="not-show">
       <%= search_form_for @q, url: request.env['PATH_INFO'] do |f|  %>
-          <%= f.text_field :user_nome_or_status_or_dst_local_nome_cont, placeholder: "Pesquisar..." %>
-          <div class="row">
-            <div class="col s12 m5">
-              <%= f.date_field :created_at_gteq %>
-            </div>
-            <div class="col s12 m2"> até </div>
-            <div class="col s12 m5">
-              <%= f.date_field :created_at_lteq %>
-            </div>
+        <%= f.text_field :user_nome_or_status_or_dst_local_nome_cont, placeholder: "Pesquisar..." %>
+        <div class="row">
+          <div class="col s12 m5">
+            <%= f.label :created_at_gteq, "Criada em" %>
+            <%= f.date_field :created_at_gteq %>
           </div>
-          <%= f.submit "Filtrar", class:"btn" %>
+          <div class="col s12 m2"> até </div>
+          <div class="col s12 m5">
+            <%= f.label :created_at_lteq, "Criada em" %>
+            <%= f.date_field :created_at_lteq %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m5">
+            <%= f.label :mes, "Mês" %>
+            <%= f.select :mes_cont, meses_for_select, placeholder: "Mês", prompt: true, include_blank: true %>
+          </div>
+          <div class="col s12 m5">
+            <%= f.label :mes, "Ano" %>
+            <%= f.number_field :ano_eq, placeholder: "Ano"  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m5">
+            <%= f.label :status_cont, "Status" %>
+            <%= f.select :status_cont, DstSolicitacao.status.options, prompt: true, include_blank: true %>
+          </div>
+        </div>
+        <%= f.submit "Filtrar", class:"btn" %>
       <% end %>
     </div>
   </div>
@@ -24,33 +42,25 @@
 <table class="card striped responsive-table">
   <thead>
     <tr>
-            <th>Solicitação Nº</th>
+      <th>Solicitação Nº</th>
       <th>Mês</th>
-            <th>Município</th>
-            <th>Solicitante</th>
-            <th>Status</th>
-          </tr>
+      <th>Ano</th>
+      <th>Município</th>
+      <th>Solicitante</th>
+      <th>Status</th>
+    </tr>
   </thead>
 
   <tbody>
     <% @dst_solicitacaos.each do |dst_solicitacao| %>
     <tr>
-              
-          <td><%= link_to dst_solicitacao.id ,dst_solicitacao %></td>
-
-
+      <td><%= link_to dst_solicitacao.id ,dst_solicitacao %></td>
       <td><%= dst_solicitacao.mes.upcase  %></td>
-          <td><%= dst_solicitacao.cidade %></td>
-        
-              
-
-          <td><%= dst_solicitacao.user %></td>
-        
-              
-
-          <td><%= dst_solicitacao.status.upcase  %></td>
-        
-          </tr>
+      <td><%= dst_solicitacao.ano  %></td>
+      <td><%= dst_solicitacao.cidade %></td>
+      <td><%= dst_solicitacao.user %></td>
+      <td><%= dst_solicitacao.status.upcase  %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>

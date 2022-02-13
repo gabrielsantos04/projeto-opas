@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200714121813) do
+ActiveRecord::Schema.define(version: 2022_02_13_132326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -598,6 +598,7 @@ ActiveRecord::Schema.define(version: 20200714121813) do
     t.string "contato"
     t.bigint "cidade_id"
     t.string "mes"
+    t.integer "ano"
     t.index ["cidade_id"], name: "index_dst_solicitacaos_on_cidade_id"
     t.index ["dst_local_id"], name: "index_dst_solicitacaos_on_dst_local_id"
     t.index ["user_id"], name: "index_dst_solicitacaos_on_user_id"

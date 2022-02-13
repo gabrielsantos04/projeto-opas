@@ -1,5 +1,5 @@
 <div class="card-panel">
-  <h4 class="center"><%= @dst_solicitacao_produto %></h4>
+  <h4 class="center">Produto Solicitado: <%= @dst_solicitacao_produto.dst_produto %></h4>
 
   <p>
     <strong>Produto:</strong>
@@ -14,6 +14,11 @@
   <p>
     <strong>Status:</strong>
     <%= @dst_solicitacao_produto.status.titleize %>
+  </p>
+
+  <p>
+    <strong>Município:</strong>
+    <%= @dst_solicitacao_produto.dst_solicitacao.cidade %>
   </p>
 
   <p>

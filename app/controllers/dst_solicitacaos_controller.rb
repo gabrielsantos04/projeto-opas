@@ -8,11 +8,11 @@ class DstSolicitacaosController < ApplicationController
   # GET /dst_solicitacaos
   def index
     if current_user.admin_dst? || current_user.administrador?
-      @q = DstSolicitacao.all.ransack(params[:q])
+      @q = DstSolicitacao.all.order(created_at: :desc).ransack(params[:q])
     elsif current_user.dst_produtos?
-      @q = DstSolicitacao.where(status: :autorizado).ransack(params[:q])
+      @q = DstSolicitacao.where(status: :autorizado).order(created_at: :desc).ransack(params[:q])
     else
-      @q = current_user.dst_solicitacaos.ransack(params[:q])
+      @q = current_user.dst_solicitacaos.order(created_at: :desc).ransack(params[:q])
     end
     @dst_solicitacaos = @q.result.page(params[:page])
   end
@@ -31,6 +31,7 @@ class DstSolicitacaosController < ApplicationController
   def new
     @dst_solicitacao = DstSolicitacao.new
     @dst_solicitacao.cidade = current_user.cidade
+    @dst_solicitacao.ano = Date.today.year
     DstQuestionario.where(ativo: true).map do |q|
       @dst_solicitacao.dst_resposta.build(dst_questionario: q)
     end
@@ -122,7 +123,7 @@ class DstSolicitacaosController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def dst_solicitacao_params
       params.require(:dst_solicitacao).permit(
-          :dst_local_id, :observacoes, :user_id, :status,:responsavel,:cargo_funcao,:contato,:cidade_id,:mes,
+          :dst_local_id, :observacoes, :user_id, :status,:responsavel,:cargo_funcao,:contato,:cidade_id,:mes, :ano,
           dst_solicitacao_produtos_attributes:[
               :id, :dst_produto_id,:saldo_anterior,:entradas_ms,:qtd_remanejado,:qtd_perdas,:saldo_final, :quantidade, :distribuido, :_destroy
           ],

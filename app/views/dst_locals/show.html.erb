@@ -28,7 +28,7 @@
     <% @dst_produtos.each do |p| %>
         <tr>
           <td><%= p[0] %></td>
-          <td><%= p[1] %></td>
+          <td><%= p[1].to_i %></td>
         </tr>
     <% end %>
     </tbody>

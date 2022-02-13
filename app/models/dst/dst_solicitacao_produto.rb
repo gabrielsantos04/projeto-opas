@@ -46,7 +46,7 @@ class DstSolicitacaoProduto < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :status, in: [:solicitado, :autorizado, :recusado, :atendido, :atendido_parcialmente], default: :solicitado,  predicates: true
+  enumerize :status, in: [:solicitado, :autorizado, :recusado, :entregue], default: :solicitado,  predicates: true
 
   before_save :atualiza_saldo_final
 
@@ -58,11 +58,6 @@ class DstSolicitacaoProduto < ApplicationRecord
   def to_s
     "Solicitação de Produto Nº#{self.id}"
   end
-
-  #Método que retorna a quantidade atendida
-  # def quantidade_atendido
-  #   dst_movimentacaos.where(tipo: 'entrada').sum(:quantidade)
-  # end
 
   #Método que retorna a quantidade máxima permitida
   def max_atender

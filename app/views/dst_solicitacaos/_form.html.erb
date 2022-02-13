@@ -13,8 +13,13 @@
     <div class="card-panel">
 
       <div class="input-field">
-        <%= f.select :mes, [["Janeiro","janeiro"],["Fevereiro","fevereiro"],["Março","março"],["Abril","abril"],["Maio","maio"],["Junho","junho"],["Julho","julho"],["Agosto","agosto"],["Setembro","setembro"],["Outubro","outubro"],["Novembro","novembro"],["Dezembro","dezembro"]] %>
+        <%= f.select :mes, meses_for_select %>
         <%= f.label :mes, "Mês" %>
+      </div>
+
+      <div class="input-field">
+        <%= f.select :ano, (Date.today.year - 1)..(Date.today.year)%>
+        <%= f.label :ano, "Ano" %>
       </div>
 
       <div class="input-field">

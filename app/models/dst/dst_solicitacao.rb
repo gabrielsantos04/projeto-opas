@@ -52,18 +52,19 @@ class DstSolicitacao < ApplicationRecord
     if self.status == :entregue
       estoque = DstLocal.last
       if estoque.present?
-      self.dst_solicitacao_produtos.each do |p|
-        if p.status == :autorizado
-          movimentacao = DstMovimentacao.find_or_initialize_by(dst_solicitacao_produto_id: p.id)
-          movimentacao.dst_produto_id = p.dst_produto_id
-          movimentacao.tipo = :saida
-          movimentacao.categoria = :distribuicao_municipio
-          movimentacao.quantidade = p.quantidade_atendido
-          movimentacao.descricao = "Realizado automaticamente pelo sistema"
-          movimentacao.dst_local_id = estoque.id
-          movimentacao.save
+        self.dst_solicitacao_produtos.each do |p|
+          if p.status == :autorizado
+            movimentacao = DstMovimentacao.find_or_initialize_by(dst_solicitacao_produto_id: p.id)
+            movimentacao.dst_produto_id = p.dst_produto_id
+            movimentacao.tipo = :saida
+            movimentacao.categoria = :distribuicao_municipio
+            movimentacao.quantidade = p.quantidade_atendido
+            movimentacao.descricao = "Realizado automaticamente pelo sistema"
+            movimentacao.dst_local_id = estoque.id
+            movimentacao.save
+            p.update(status: :entregue)
+          end
         end
-      end
       end
     elsif self.status == :recusado
       self.dst_solicitacao_produtos.each do |p|
@@ -75,7 +76,7 @@ class DstSolicitacao < ApplicationRecord
 
   #Método que retorna o nome do objeto
   def to_s
-    "Solicitação Nº#{self.id}"
+    "Solicitação #{self.mes.upcase}/#{self.ano}"
   end
 
   ransacker :ano do
